@@ -46,6 +46,65 @@
     "thumbnailUrl": "/am-thanh/1.0.0/thumb.png"
   },
   {
+    "slug": "an-mon-kim-loai",
+    "version": "1.0.0",
+    "title": "Ăn mòn kim loại và chống ăn mòn",
+    "subject": "chemistry",
+    "grades": [
+      12
+    ],
+    "description": "Bảy ống nghiệm đựng đinh sắt trong các điều kiện khác nhau: nước cất đun sôi phủ dầu, không khí khô có chất hút ẩm, nước máy, nước muối, đinh nối với kẽm, đinh nối với đồng, đinh sơn phủ. Dự đoán thứ tự gỉ, cho thời gian trôi 10 ngày và so sánh. Giải thích ăn mòn hóa học, ăn mòn điện hóa và bảo vệ bằng kim loại hi sinh. Tốc độ gỉ là thang tương đối định tính, chỉ thứ tự là có căn cứ.",
+    "learningGoals": [
+      "Sắt bị gỉ khi có đồng thời nước và oxygen; thiếu một trong hai thì hầu như không gỉ.",
+      "Dung dịch chất điện li (nước muối) làm ăn mòn điện hóa xảy ra nhanh hơn.",
+      "Phân biệt ăn mòn hóa học và ăn mòn điện hóa; nêu điều kiện xảy ra ăn mòn điện hóa.",
+      "Khi Fe tiếp xúc kim loại kém hoạt động hơn (Cu), Fe là anode và bị ăn mòn nhanh hơn; khi tiếp xúc kim loại hoạt động hơn (Zn), Zn bị ăn mòn và Fe được bảo vệ.",
+      "Nêu các cách chống ăn mòn: bảo vệ bề mặt (sơn, mạ, bôi dầu) và phương pháp điện hóa."
+    ],
+    "state": {
+      "day": "Thời gian kể từ khi đặt đinh vào ống (ngày, 0–10)",
+      "focus": "Ống đang xem giải thích (0–6 theo thứ tự: dầu, khô, nước máy, nước muối, Fe–Zn, Fe–Cu, sơn)",
+      "showTheory": "true khi hiện so sánh ăn mòn hóa học và ăn mòn điện hóa",
+      "p1": "Ống dự đoán gỉ nhanh nhất (0–6, −1 chưa chọn)",
+      "p2": "Ống dự đoán gỉ nhanh thứ hai (0–6, −1 chưa chọn)",
+      "p3": "Ống dự đoán gỉ nhanh thứ ba (0–6, −1 chưa chọn)",
+      "reported": "true khi lượt quan sát này đã đến ngày cuối và đã gửi kết quả",
+      "verdict": "Kết quả dự đoán: 1 đúng, 0 sai, −1 chưa chấm"
+    },
+    "events": {
+      "rust-ranking": {
+        "kind": "result",
+        "description": "Thời gian đã trôi đến ngày cuối; mức gỉ của từng ống và thứ tự gỉ",
+        "data": {
+          "day": "Số ngày quan sát",
+          "rust1": "Phần trăm bề mặt đinh bị gỉ ở ống 1 (dầu) (%)",
+          "rust2": "Ống 2 (không khí khô) (%)",
+          "rust3": "Ống 3 (nước máy) (%)",
+          "rust4": "Ống 4 (nước muối) (%)",
+          "rust5": "Ống 5 (Fe nối Zn) (%)",
+          "rust6": "Ống 6 (Fe nối Cu) (%)",
+          "rust7": "Ống 7 (sơn phủ) (%)",
+          "zinc": "Phần trăm thanh kẽm ở ống 5 bị ăn mòn (%)",
+          "first": "Số thứ tự ống gỉ nhiều nhất (1–7)",
+          "second": "Ống gỉ nhiều thứ hai (1–7)",
+          "third": "Ống gỉ nhiều thứ ba (1–7)",
+          "predicted": "1 dự đoán đúng, 0 sai, −1 chưa dự đoán đủ"
+        }
+      },
+      "ranking-predicted": {
+        "kind": "goal",
+        "description": "Học sinh dự đoán đúng ba ống gỉ nhanh nhất theo đúng thứ tự trước khi quan sát",
+        "data": {
+          "first": "Ống dự đoán gỉ nhanh nhất (1–7)",
+          "second": "Ống thứ hai (1–7)",
+          "third": "Ống thứ ba (1–7)"
+        }
+      }
+    },
+    "url": "/an-mon-kim-loai/1.0.0/index.html",
+    "thumbnailUrl": "/an-mon-kim-loai/1.0.0/thumb.png"
+  },
+  {
     "slug": "ap-suat-chat-long",
     "version": "1.0.0",
     "title": "Áp suất chất lỏng",
@@ -3056,6 +3115,59 @@
     "thumbnailUrl": "/guong/1.0.0/thumb.png"
   },
   {
+    "slug": "halogen",
+    "version": "1.0.0",
+    "title": "Tính chất của nhóm halogen",
+    "subject": "chemistry",
+    "grades": [
+      10
+    ],
+    "description": "Thẻ tính chất của F₂, Cl₂, Br₂, I₂ (màu, thể, độ âm điện, bán kính nguyên tử) và xu hướng biến đổi trong nhóm VIIA. Thí nghiệm nhỏ nước chlorine, nước bromine, nước iodine vào dung dịch KCl, KBr, KI: quan sát có phản ứng hay không, sự đổi màu và phương trình hóa học; dự đoán cả bảng 3 × 3 trước khi làm. Màu dung dịch là minh họa gần đúng.",
+    "learningGoals": [
+      "Nêu được trạng thái, màu sắc của các đơn chất halogen ở điều kiện thường.",
+      "Nhận xét được xu hướng biến đổi bán kính nguyên tử, độ âm điện trong nhóm halogen từ F đến I.",
+      "Tính oxi hóa của các halogen giảm dần F₂ > Cl₂ > Br₂ > I₂.",
+      "Halogen mạnh hơn đẩy halogen yếu hơn ra khỏi dung dịch muối halide (Cl₂ + 2KBr → 2KCl + Br₂), còn halogen yếu hơn thì không (Br₂ + KCl không phản ứng).",
+      "Viết được phương trình hóa học đã cân bằng của các phản ứng trên."
+    ],
+    "state": {
+      "tab": "Màn hình đang xem: \"props\" (thẻ tính chất và xu hướng) hoặc \"exp\" (thí nghiệm)",
+      "halogen": "Halogen nhỏ vào: 1 Cl₂, 2 Br₂, 3 I₂",
+      "halide": "Dung dịch muối trong ống: 1 KCl, 2 KBr, 3 KI",
+      "added": "true khi đã nhỏ halogen vào ống nghiệm",
+      "progress": "Tiến trình hoạt hình sau khi nhỏ, 0 đến 1",
+      "done": "Chuỗi 9 ký tự \"0\"/\"1\" đánh dấu các ô đã làm trong bảng 3 × 3 (hàng: Cl₂, Br₂, I₂; cột: KCl, KBr, KI)",
+      "practice": "true khi bật chế độ dự đoán cả bảng",
+      "pClBr": "Dự đoán Cl₂ + KBr: \"?\" chưa chọn, \"yes\" có phản ứng, \"no\" không",
+      "pClI": "Dự đoán Cl₂ + KI",
+      "pBrCl": "Dự đoán Br₂ + KCl",
+      "pBrI": "Dự đoán Br₂ + KI",
+      "pICl": "Dự đoán I₂ + KCl",
+      "pIBr": "Dự đoán I₂ + KBr",
+      "score": "Số dự đoán đúng (trên 6) ở lần kiểm tra gần nhất, −1 chưa kiểm tra"
+    },
+    "events": {
+      "displacement-test": {
+        "kind": "result",
+        "description": "Học sinh nhỏ một halogen vào một dung dịch muối halide",
+        "data": {
+          "halogen": "Halogen nhỏ vào (1 Cl₂, 2 Br₂, 3 I₂)",
+          "halide": "Muối trong ống (1 KCl, 2 KBr, 3 KI)",
+          "reacted": "1 nếu có phản ứng, 0 nếu không"
+        }
+      },
+      "grid-predicted": {
+        "kind": "goal",
+        "description": "Học sinh dự đoán đúng cả 6 ô (các cặp halogen khác nhau) của bảng thí nghiệm",
+        "data": {
+          "correct": "Số dự đoán đúng (luôn là 6)"
+        }
+      }
+    },
+    "url": "/halogen/1.0.0/index.html",
+    "thumbnailUrl": "/halogen/1.0.0/thumb.png"
+  },
+  {
     "slug": "ham-so-mu-logarit",
     "version": "1.0.0",
     "title": "Hàm số mũ và hàm số lôgarit",
@@ -3525,6 +3637,52 @@
     },
     "url": "/khuc-xa-anh-sang/1.0.0/index.html",
     "thumbnailUrl": "/khuc-xa-anh-sang/1.0.0/thumb.png"
+  },
+  {
+    "slug": "kim-loai-kiem-nuoc",
+    "version": "1.0.0",
+    "title": "Kim loại kiềm tác dụng với nước",
+    "subject": "chemistry",
+    "grades": [
+      12
+    ],
+    "description": "Thả một mẩu lithium, sodium, potassium (hoặc calcium, magnesium) vào cốc nước có phenolphthalein. Quan sát mức độ phản ứng, bọt khí hydrogen, dung dịch chuyển hồng; đọc phương trình hóa học đã cân bằng và tính thể tích H₂ ở điều kiện chuẩn (24,79 L/mol) từ khối lượng kim loại. Xếp thứ tự mức độ phản ứng của Li, Na, K. Mức độ phản ứng là thang định tính, hình và thời gian không theo tỉ lệ.",
+    "learningGoals": [
+      "Viết được phương trình 2M + 2H₂O → 2MOH + H₂ của kim loại kiềm và M + 2H₂O → M(OH)₂ + H₂ của Ca, Mg.",
+      "Tính được n(H₂) = n(M)/2 với kim loại kiềm và thể tích H₂ ở điều kiện chuẩn.",
+      "Nhận ra mức độ phản ứng với nước tăng dần Li < Na < K trong nhóm IA.",
+      "Biết Mg hầu như không phản ứng với nước lạnh.",
+      "Giải thích dung dịch sau phản ứng làm phenolphthalein chuyển hồng do tạo base."
+    ],
+    "state": {
+      "metal": "Chỉ số kim loại: 0 Li, 1 Na, 2 K, 3 Ca, 4 Mg",
+      "mass": "Khối lượng mẩu kim loại (g)",
+      "dropped": "true khi kim loại đã được thả vào nước",
+      "progress": "Tiến trình hoạt hình sau khi thả, 0 đến 1",
+      "rank": "Thứ tự mức độ phản ứng học sinh chọn, ví dụ \"Li<Na<K\" (yếu đến mạnh), \"none\" nếu chưa chọn",
+      "rankVerdict": "Kết quả kiểm tra thứ tự: 1 đúng, 0 sai, −1 chưa kiểm tra"
+    },
+    "events": {
+      "metal-dropped": {
+        "kind": "result",
+        "description": "Học sinh thả một mẩu kim loại vào nước",
+        "data": {
+          "metal": "Chỉ số kim loại (0 Li, 1 Na, 2 K, 3 Ca, 4 Mg)",
+          "mass": "Khối lượng kim loại (g)",
+          "nMetal": "Số mol kim loại (mol)",
+          "nH2": "Số mol H₂ theo phương trình khi phản ứng hết (mol)",
+          "volumeH2": "Thể tích H₂ thu được trong thời gian quan sát ở điều kiện chuẩn, 24,79 L/mol (L); 0 với Mg trong nước lạnh",
+          "reacted": "1 nếu phản ứng quan sát được với nước lạnh, 0 nếu không (Mg)"
+        }
+      },
+      "reactivity-ranked": {
+        "kind": "goal",
+        "description": "Học sinh xếp đúng thứ tự mức độ phản ứng với nước Li < Na < K",
+        "data": {}
+      }
+    },
+    "url": "/kim-loai-kiem-nuoc/1.0.0/index.html",
+    "thumbnailUrl": "/kim-loai-kiem-nuoc/1.0.0/thumb.png"
   },
   {
     "slug": "kinh-lup-kinh-hien-vi",

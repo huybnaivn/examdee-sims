@@ -1,0 +1,44 @@
+{
+  "slug": "kim-loai-kiem-nuoc",
+  "version": "1.0.0",
+  "title": "Kim loại kiềm tác dụng với nước",
+  "subject": "chemistry",
+  "grades": [
+    12
+  ],
+  "description": "Thả một mẩu lithium, sodium, potassium (hoặc calcium, magnesium) vào cốc nước có phenolphthalein. Quan sát mức độ phản ứng, bọt khí hydrogen, dung dịch chuyển hồng; đọc phương trình hóa học đã cân bằng và tính thể tích H₂ ở điều kiện chuẩn (24,79 L/mol) từ khối lượng kim loại. Xếp thứ tự mức độ phản ứng của Li, Na, K. Mức độ phản ứng là thang định tính, hình và thời gian không theo tỉ lệ.",
+  "learningGoals": [
+    "Viết được phương trình 2M + 2H₂O → 2MOH + H₂ của kim loại kiềm và M + 2H₂O → M(OH)₂ + H₂ của Ca, Mg.",
+    "Tính được n(H₂) = n(M)/2 với kim loại kiềm và thể tích H₂ ở điều kiện chuẩn.",
+    "Nhận ra mức độ phản ứng với nước tăng dần Li < Na < K trong nhóm IA.",
+    "Biết Mg hầu như không phản ứng với nước lạnh.",
+    "Giải thích dung dịch sau phản ứng làm phenolphthalein chuyển hồng do tạo base."
+  ],
+  "state": {
+    "metal": "Chỉ số kim loại: 0 Li, 1 Na, 2 K, 3 Ca, 4 Mg",
+    "mass": "Khối lượng mẩu kim loại (g)",
+    "dropped": "true khi kim loại đã được thả vào nước",
+    "progress": "Tiến trình hoạt hình sau khi thả, 0 đến 1",
+    "rank": "Thứ tự mức độ phản ứng học sinh chọn, ví dụ \"Li<Na<K\" (yếu đến mạnh), \"none\" nếu chưa chọn",
+    "rankVerdict": "Kết quả kiểm tra thứ tự: 1 đúng, 0 sai, −1 chưa kiểm tra"
+  },
+  "events": {
+    "metal-dropped": {
+      "kind": "result",
+      "description": "Học sinh thả một mẩu kim loại vào nước",
+      "data": {
+        "metal": "Chỉ số kim loại (0 Li, 1 Na, 2 K, 3 Ca, 4 Mg)",
+        "mass": "Khối lượng kim loại (g)",
+        "nMetal": "Số mol kim loại (mol)",
+        "nH2": "Số mol H₂ theo phương trình khi phản ứng hết (mol)",
+        "volumeH2": "Thể tích H₂ thu được trong thời gian quan sát ở điều kiện chuẩn, 24,79 L/mol (L); 0 với Mg trong nước lạnh",
+        "reacted": "1 nếu phản ứng quan sát được với nước lạnh, 0 nếu không (Mg)"
+      }
+    },
+    "reactivity-ranked": {
+      "kind": "goal",
+      "description": "Học sinh xếp đúng thứ tự mức độ phản ứng với nước Li < Na < K",
+      "data": {}
+    }
+  }
+}

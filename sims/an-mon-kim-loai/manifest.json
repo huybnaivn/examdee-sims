@@ -1,0 +1,57 @@
+{
+  "slug": "an-mon-kim-loai",
+  "version": "1.0.0",
+  "title": "Ăn mòn kim loại và chống ăn mòn",
+  "subject": "chemistry",
+  "grades": [
+    12
+  ],
+  "description": "Bảy ống nghiệm đựng đinh sắt trong các điều kiện khác nhau: nước cất đun sôi phủ dầu, không khí khô có chất hút ẩm, nước máy, nước muối, đinh nối với kẽm, đinh nối với đồng, đinh sơn phủ. Dự đoán thứ tự gỉ, cho thời gian trôi 10 ngày và so sánh. Giải thích ăn mòn hóa học, ăn mòn điện hóa và bảo vệ bằng kim loại hi sinh. Tốc độ gỉ là thang tương đối định tính, chỉ thứ tự là có căn cứ.",
+  "learningGoals": [
+    "Sắt bị gỉ khi có đồng thời nước và oxygen; thiếu một trong hai thì hầu như không gỉ.",
+    "Dung dịch chất điện li (nước muối) làm ăn mòn điện hóa xảy ra nhanh hơn.",
+    "Phân biệt ăn mòn hóa học và ăn mòn điện hóa; nêu điều kiện xảy ra ăn mòn điện hóa.",
+    "Khi Fe tiếp xúc kim loại kém hoạt động hơn (Cu), Fe là anode và bị ăn mòn nhanh hơn; khi tiếp xúc kim loại hoạt động hơn (Zn), Zn bị ăn mòn và Fe được bảo vệ.",
+    "Nêu các cách chống ăn mòn: bảo vệ bề mặt (sơn, mạ, bôi dầu) và phương pháp điện hóa."
+  ],
+  "state": {
+    "day": "Thời gian kể từ khi đặt đinh vào ống (ngày, 0–10)",
+    "focus": "Ống đang xem giải thích (0–6 theo thứ tự: dầu, khô, nước máy, nước muối, Fe–Zn, Fe–Cu, sơn)",
+    "showTheory": "true khi hiện so sánh ăn mòn hóa học và ăn mòn điện hóa",
+    "p1": "Ống dự đoán gỉ nhanh nhất (0–6, −1 chưa chọn)",
+    "p2": "Ống dự đoán gỉ nhanh thứ hai (0–6, −1 chưa chọn)",
+    "p3": "Ống dự đoán gỉ nhanh thứ ba (0–6, −1 chưa chọn)",
+    "reported": "true khi lượt quan sát này đã đến ngày cuối và đã gửi kết quả",
+    "verdict": "Kết quả dự đoán: 1 đúng, 0 sai, −1 chưa chấm"
+  },
+  "events": {
+    "rust-ranking": {
+      "kind": "result",
+      "description": "Thời gian đã trôi đến ngày cuối; mức gỉ của từng ống và thứ tự gỉ",
+      "data": {
+        "day": "Số ngày quan sát",
+        "rust1": "Phần trăm bề mặt đinh bị gỉ ở ống 1 (dầu) (%)",
+        "rust2": "Ống 2 (không khí khô) (%)",
+        "rust3": "Ống 3 (nước máy) (%)",
+        "rust4": "Ống 4 (nước muối) (%)",
+        "rust5": "Ống 5 (Fe nối Zn) (%)",
+        "rust6": "Ống 6 (Fe nối Cu) (%)",
+        "rust7": "Ống 7 (sơn phủ) (%)",
+        "zinc": "Phần trăm thanh kẽm ở ống 5 bị ăn mòn (%)",
+        "first": "Số thứ tự ống gỉ nhiều nhất (1–7)",
+        "second": "Ống gỉ nhiều thứ hai (1–7)",
+        "third": "Ống gỉ nhiều thứ ba (1–7)",
+        "predicted": "1 dự đoán đúng, 0 sai, −1 chưa dự đoán đủ"
+      }
+    },
+    "ranking-predicted": {
+      "kind": "goal",
+      "description": "Học sinh dự đoán đúng ba ống gỉ nhanh nhất theo đúng thứ tự trước khi quan sát",
+      "data": {
+        "first": "Ống dự đoán gỉ nhanh nhất (1–7)",
+        "second": "Ống thứ hai (1–7)",
+        "third": "Ống thứ ba (1–7)"
+      }
+    }
+  }
+}

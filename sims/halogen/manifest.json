@@ -1,0 +1,51 @@
+{
+  "slug": "halogen",
+  "version": "1.0.0",
+  "title": "Tính chất của nhóm halogen",
+  "subject": "chemistry",
+  "grades": [
+    10
+  ],
+  "description": "Thẻ tính chất của F₂, Cl₂, Br₂, I₂ (màu, thể, độ âm điện, bán kính nguyên tử) và xu hướng biến đổi trong nhóm VIIA. Thí nghiệm nhỏ nước chlorine, nước bromine, nước iodine vào dung dịch KCl, KBr, KI: quan sát có phản ứng hay không, sự đổi màu và phương trình hóa học; dự đoán cả bảng 3 × 3 trước khi làm. Màu dung dịch là minh họa gần đúng.",
+  "learningGoals": [
+    "Nêu được trạng thái, màu sắc của các đơn chất halogen ở điều kiện thường.",
+    "Nhận xét được xu hướng biến đổi bán kính nguyên tử, độ âm điện trong nhóm halogen từ F đến I.",
+    "Tính oxi hóa của các halogen giảm dần F₂ > Cl₂ > Br₂ > I₂.",
+    "Halogen mạnh hơn đẩy halogen yếu hơn ra khỏi dung dịch muối halide (Cl₂ + 2KBr → 2KCl + Br₂), còn halogen yếu hơn thì không (Br₂ + KCl không phản ứng).",
+    "Viết được phương trình hóa học đã cân bằng của các phản ứng trên."
+  ],
+  "state": {
+    "tab": "Màn hình đang xem: \"props\" (thẻ tính chất và xu hướng) hoặc \"exp\" (thí nghiệm)",
+    "halogen": "Halogen nhỏ vào: 1 Cl₂, 2 Br₂, 3 I₂",
+    "halide": "Dung dịch muối trong ống: 1 KCl, 2 KBr, 3 KI",
+    "added": "true khi đã nhỏ halogen vào ống nghiệm",
+    "progress": "Tiến trình hoạt hình sau khi nhỏ, 0 đến 1",
+    "done": "Chuỗi 9 ký tự \"0\"/\"1\" đánh dấu các ô đã làm trong bảng 3 × 3 (hàng: Cl₂, Br₂, I₂; cột: KCl, KBr, KI)",
+    "practice": "true khi bật chế độ dự đoán cả bảng",
+    "pClBr": "Dự đoán Cl₂ + KBr: \"?\" chưa chọn, \"yes\" có phản ứng, \"no\" không",
+    "pClI": "Dự đoán Cl₂ + KI",
+    "pBrCl": "Dự đoán Br₂ + KCl",
+    "pBrI": "Dự đoán Br₂ + KI",
+    "pICl": "Dự đoán I₂ + KCl",
+    "pIBr": "Dự đoán I₂ + KBr",
+    "score": "Số dự đoán đúng (trên 6) ở lần kiểm tra gần nhất, −1 chưa kiểm tra"
+  },
+  "events": {
+    "displacement-test": {
+      "kind": "result",
+      "description": "Học sinh nhỏ một halogen vào một dung dịch muối halide",
+      "data": {
+        "halogen": "Halogen nhỏ vào (1 Cl₂, 2 Br₂, 3 I₂)",
+        "halide": "Muối trong ống (1 KCl, 2 KBr, 3 KI)",
+        "reacted": "1 nếu có phản ứng, 0 nếu không"
+      }
+    },
+    "grid-predicted": {
+      "kind": "goal",
+      "description": "Học sinh dự đoán đúng cả 6 ô (các cặp halogen khác nhau) của bảng thí nghiệm",
+      "data": {
+        "correct": "Số dự đoán đúng (luôn là 6)"
+      }
+    }
+  }
+}
