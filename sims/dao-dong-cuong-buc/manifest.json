@@ -1,0 +1,69 @@
+{
+  "slug": "dao-dong-cuong-buc",
+  "version": "1.0.0",
+  "title": "Dao động tắt dần, duy trì và cưỡng bức",
+  "subject": "physics",
+  "grades": [
+    11
+  ],
+  "description": "Con lắc lò xo nằm ngang có lực cản. Thả vật để quan sát dao động tắt dần, bật nguồn bù năng lượng để có dao động duy trì, hoặc tác dụng ngoại lực tuần hoàn F = F₀cos(Ωt) để có dao động cưỡng bức. Đồ thị li độ x(t) cho thấy giai đoạn chuyển tiếp và biên độ ổn định; mỗi lần đổi tần số Ω và chờ ổn định, sim thêm một điểm vào đồ thị biên độ theo tần số (đồ thị cộng hưởng). Vị trí vật trên hình được phóng to, không theo tỉ lệ.",
+  "learningGoals": [
+    "Nhận ra biên độ dao động tắt dần giảm theo thời gian, theo đường bao A₀·e^(−bt/2m); lực cản càng lớn thì tắt càng nhanh.",
+    "Giải thích dao động duy trì: nguồn năng lượng bù đúng phần mất do lực cản, vật dao động với tần số riêng và biên độ không đổi.",
+    "Nhận ra khi ổn định, dao động cưỡng bức có tần số bằng tần số của ngoại lực, không phải tần số riêng.",
+    "Kiểm chứng biên độ ổn định A = F₀/√((k − mΩ²)² + (bΩ)²) và hiện tượng cộng hưởng: biên độ lớn nhất khi Ω gần ω₀ = √(k/m), cộng hưởng càng nhọn khi lực cản càng nhỏ."
+  ],
+  "state": {
+    "mode": "Dạng dao động: \"driven\" (cưỡng bức), \"free\" (tắt dần) hoặc \"maintained\" (duy trì)",
+    "mass": "Khối lượng vật m (kg)",
+    "stiffness": "Độ cứng lò xo k (N/m)",
+    "damping": "Hệ số lực cản b (kg/s), lực cản F = −b·v",
+    "force": "Biên độ ngoại lực F₀ (N)",
+    "drive": "Tần số góc của ngoại lực Ω (rad/s)",
+    "amp0": "Li độ ban đầu x₀ khi thả vật ở dao động tắt dần và duy trì (cm)",
+    "showTheory": "Có vẽ đường cộng hưởng lý thuyết hay không",
+    "x": "Li độ hiện tại (m), dương về bên phải vị trí cân bằng O",
+    "v": "Vận tốc hiện tại (m/s)",
+    "phase": "Pha hiện tại của ngoại lực Ωt (rad)",
+    "time": "Thời gian từ lúc bắt đầu (s)",
+    "settle": "Thời gian từ lần đổi tần số hoặc thông số gần nhất (s)",
+    "cyclePeak": "Li độ lớn nhất (giá trị tuyệt đối) trong chu kì ngoại lực đang chạy (m)",
+    "lastPeak": "Li độ lớn nhất trong chu kì ngoại lực vừa xong (m)",
+    "amplitude": "Biên độ ổn định đo được (m), 0 khi còn đang chuyển tiếp",
+    "lastCross": "Thời điểm gần nhất vật qua O theo chiều dương (s), −1 nếu chưa có",
+    "measuredPeriod": "Chu kì đo được giữa hai lần qua O theo chiều dương (s), 0 nếu chưa đủ",
+    "points": "Các điểm của đồ thị cộng hưởng đã đo: danh sách { w: tần số góc Ω (rad/s), A: biên độ ổn định (m) }"
+  },
+  "events": {
+    "steady-state": {
+      "kind": "result",
+      "description": "Dao động cưỡng bức đã ổn định; điểm (Ω, A) được thêm vào đồ thị cộng hưởng",
+      "data": {
+        "frequency": "Tần số góc của ngoại lực Ω (rad/s)",
+        "amplitude": "Biên độ ổn định đo được (m)",
+        "theory": "Biên độ lý thuyết F₀/√((k − mΩ²)² + (bΩ)²) (m)",
+        "naturalFrequency": "Tần số góc riêng ω₀ = √(k/m) (rad/s)"
+      }
+    },
+    "resonance": {
+      "kind": "goal",
+      "description": "Học sinh tìm được cộng hưởng: biên độ đã ổn định ở tần số Ω lệch không quá 4 % so với tần số cho biên độ lớn nhất",
+      "data": {
+        "frequency": "Tần số góc của ngoại lực Ω (rad/s)",
+        "resonanceFrequency": "Tần số góc cho biên độ lớn nhất √(ω₀² − b²/(2m²)) (rad/s)",
+        "naturalFrequency": "Tần số góc riêng ω₀ (rad/s)",
+        "amplitude": "Biên độ ổn định đo được (m)"
+      }
+    },
+    "skip-transient": {
+      "kind": "action",
+      "description": "Học sinh bấm bỏ qua giai đoạn chuyển tiếp: vật được đặt ngay vào dao động ổn định",
+      "data": {}
+    },
+    "clear-curve": {
+      "kind": "action",
+      "description": "Học sinh xóa các điểm của đồ thị cộng hưởng",
+      "data": {}
+    }
+  }
+}

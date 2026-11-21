@@ -1,0 +1,58 @@
+{
+  "slug": "dinh-luat-kepler",
+  "version": "1.0.0",
+  "title": "Các định luật Kê-ple",
+  "subject": "physics",
+  "grades": [
+    10,
+    11
+  ],
+  "description": "Một hành tinh chuyển động quanh Mặt Trời trên quỹ đạo elip có bán trục lớn a và tâm sai e tùy chọn (hoặc chọn một hành tinh thật). Tô hai diện tích mà đoạn nối Mặt Trời – hành tinh quét được trong cùng một khoảng thời gian Δt, một quanh điểm cận nhật và một quanh điểm viễn nhật, để thấy chúng bằng nhau; so sánh tốc độ ở cận nhật và viễn nhật; thêm nhiều quỹ đạo vào biểu đồ T² theo a³ để thấy T²/a³ như nhau. Đơn vị: khoảng cách tính bằng đơn vị thiên văn AU (1 AU ≈ 1,496·10¹¹ m), thời gian tính bằng năm; 1 AU/năm ≈ 4,74 km/s. Kích thước Mặt Trời và hành tinh không theo tỉ lệ.",
+  "learningGoals": [
+    "Định luật I: mọi hành tinh chuyển động trên quỹ đạo elip mà Mặt Trời nằm ở một tiêu điểm, cách tâm elip một khoảng c = a·e; e = 0 cho quỹ đạo tròn.",
+    "Định luật II: đoạn thẳng nối Mặt Trời và hành tinh quét được những diện tích bằng nhau trong những khoảng thời gian bằng nhau.",
+    "Suy ra hành tinh chuyển động nhanh nhất ở cận nhật, chậm nhất ở viễn nhật, với rp·vp = ra·va; quỹ đạo tròn thì tốc độ không đổi.",
+    "Định luật III: tỉ số T²/a³ như nhau với mọi hành tinh quay quanh Mặt Trời (bằng 1 năm²/AU³)."
+  ],
+  "state": {
+    "a": "Bán trục lớn của quỹ đạo a (AU)",
+    "e": "Tâm sai của quỹ đạo e (0 là đường tròn)",
+    "sweep": "Khoảng thời gian Δt của mỗi phần diện tích được tô, tính bằng phần trăm chu kì T",
+    "preset": "Hành tinh mẫu đang chọn: custom (tự chọn), mercury, venus, earth, mars, jupiter",
+    "showSectors": "Có tô hai diện tích quét trong cùng Δt hay không",
+    "showSpeeds": "Có hiện tốc độ ở cận nhật và viễn nhật hay không",
+    "showChart": "Có hiện biểu đồ T² theo a³ hay không",
+    "t": "Thời gian kể từ lúc hành tinh qua cận nhật (năm)",
+    "planets": "Các quỹ đạo đã thêm vào biểu đồ T² theo a³: danh sách { a: bán trục lớn (AU), e: tâm sai }"
+  },
+  "events": {
+    "areas-compared": {
+      "kind": "result",
+      "description": "Hai diện tích quét trong cùng Δt (quanh cận nhật và quanh viễn nhật) được tô và so sánh; chúng bằng nhau trong sai số tính số (ratio ≈ 1)",
+      "data": {
+        "areaPerihelion": "Diện tích quét quanh cận nhật S₁ (AU²)",
+        "areaAphelion": "Diện tích quét quanh viễn nhật S₂ (AU²)",
+        "sweepTime": "Khoảng thời gian quét Δt (năm)",
+        "ratio": "Tỉ số S₁/S₂",
+        "a": "Bán trục lớn (AU)",
+        "e": "Tâm sai"
+      }
+    },
+    "planet-added": {
+      "kind": "result",
+      "description": "Học sinh thêm quỹ đạo đang chọn vào biểu đồ T² theo a³",
+      "data": {
+        "a": "Bán trục lớn (AU)",
+        "e": "Tâm sai",
+        "period": "Chu kì T (năm)",
+        "ratio": "T²/a³ (năm²/AU³)",
+        "count": "Số quỹ đạo đang có trên biểu đồ"
+      }
+    },
+    "clear-chart": {
+      "kind": "action",
+      "description": "Học sinh xóa biểu đồ T² theo a³",
+      "data": {}
+    }
+  }
+}

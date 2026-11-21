@@ -1,0 +1,63 @@
+{
+  "slug": "nem-ngang",
+  "version": "1.0.0",
+  "title": "Chuyển động ném ngang",
+  "subject": "physics",
+  "grades": [
+    10
+  ],
+  "description": "Ném ngang bi A từ độ cao h với vận tốc v₀, đồng thời thả rơi bi B từ cùng độ cao. Ảnh hoạt nghiệm chụp hai bi cách đều nhau một khoảng thời gian Δt cho thấy theo phương ngang bi A chuyển động thẳng đều, theo phương thẳng đứng bi A rơi tự do và luôn ngang hàng với bi B. Chọn v₀ và h để ném trúng giỏ đặt trên mặt đất. Hệ tọa độ: gốc O tại điểm ném, trục Ox nằm ngang theo hướng ném, trục Oy thẳng đứng hướng xuống; bỏ qua sức cản không khí; hai trục cùng tỉ lệ.",
+  "learningGoals": [
+    "Phân tích chuyển động ném ngang thành chuyển động thẳng đều theo phương ngang (x = v₀t) và rơi tự do theo phương thẳng đứng (y = ½gt²).",
+    "Nhận ra thời gian rơi t = √(2h/g) chỉ phụ thuộc độ cao, không phụ thuộc v₀: vật ném ngang và vật thả rơi từ cùng độ cao chạm đất cùng lúc.",
+    "Vận dụng công thức tầm xa L = v₀√(2h/g) để ném trúng đích.",
+    "Nhận ra quỹ đạo là một nhánh parabol y = g·x²/(2v₀²) và tính tốc độ chạm đất v = √(v₀² + 2gh)."
+  ],
+  "state": {
+    "speed": "Vận tốc ném v₀ (m/s), nằm ngang",
+    "height": "Độ cao của điểm ném so với mặt đất h (m)",
+    "gravity": "Gia tốc trọng trường g (m/s²)",
+    "target": "Tọa độ x của tâm giỏ trên mặt đất (m); giỏ rộng 2 m",
+    "showStrobe": "Có hiện ảnh hoạt nghiệm (vị trí hai bi sau mỗi Δt) hay không",
+    "showDropped": "Có thả rơi bi B cùng lúc để so sánh hay không",
+    "showVectors": "Có hiện vectơ vận tốc và hai thành phần hay không",
+    "phase": "Giai đoạn: ready (chưa ném), flying (đang bay), landed (đã chạm đất)",
+    "time": "Thời gian từ lúc ném (s); khi đã chạm đất là thời gian rơi",
+    "x": "Tọa độ x của bi A (m); khi đã chạm đất là tầm xa",
+    "y": "Tọa độ y của bi A, đo từ O hướng xuống (m); bằng h khi chạm đất",
+    "vx": "Thành phần vận tốc theo phương ngang (m/s)",
+    "vy": "Thành phần vận tốc theo phương thẳng đứng, dương hướng xuống (m/s)"
+  },
+  "events": {
+    "launch": {
+      "kind": "action",
+      "description": "Học sinh ném bi A (và thả bi B)",
+      "data": {
+        "speed": "Vận tốc ném v₀ (m/s)",
+        "height": "Độ cao h (m)",
+        "gravity": "Gia tốc trọng trường g (m/s²)"
+      }
+    },
+    "landed": {
+      "kind": "result",
+      "description": "Bi A chạm đất",
+      "data": {
+        "time": "Thời gian rơi đo được (s)",
+        "range": "Tầm xa đo được (m)",
+        "impactSpeed": "Tốc độ lúc chạm đất (m/s)",
+        "theoryTime": "Thời gian rơi lý thuyết √(2h/g) (s)",
+        "theoryRange": "Tầm xa lý thuyết v₀√(2h/g) (m)"
+      }
+    },
+    "hit-target": {
+      "kind": "goal",
+      "description": "Bi A rơi trúng giỏ (cách tâm giỏ không quá 1 m)",
+      "data": {
+        "range": "Tầm xa (m)",
+        "target": "Tọa độ tâm giỏ (m)",
+        "speed": "Vận tốc ném v₀ đã dùng (m/s)",
+        "height": "Độ cao h đã dùng (m)"
+      }
+    }
+  }
+}
