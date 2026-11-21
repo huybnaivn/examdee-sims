@@ -1,0 +1,36 @@
+{
+  "slug": "chat-het-chat-du",
+  "version": "1.0.0",
+  "title": "Chất hết, chất dư và hiệu suất",
+  "subject": "chemistry",
+  "grades": [8, 10],
+  "description": "Chọn một phản ứng, đặt lượng hai chất tham gia (theo mol hoặc theo gam) và hiệu suất phản ứng. Hình phân tử trước và sau phản ứng cho thấy chất nào hết, chất nào dư; sim tính lượng chất dư, lượng sản phẩm theo lí thuyết và thực tế, và kiểm tra định luật bảo toàn khối lượng.",
+  "learningGoals": [
+    "Xác định chất hết, chất dư bằng cách so sánh tỉ lệ số mol : hệ số của các chất tham gia.",
+    "Tính lượng chất dư và lượng sản phẩm theo chất hết.",
+    "Tính lượng sản phẩm thực tế từ hiệu suất: H = lượng thực tế / lượng lí thuyết × 100%."
+  ],
+  "state": {
+    "reaction": "Mã phản ứng: h2-o2 (2H₂ + O₂ → 2H₂O), n2-h2 (N₂ + 3H₂ ⇌ 2NH₃), fe-s (Fe + S → FeS), caco3-hcl (CaCO₃ + 2HCl → CaCl₂ + CO₂ + H₂O, sản phẩm theo dõi là CO₂), zn-hcl (Zn + 2HCl → ZnCl₂ + H₂, theo dõi H₂), ch4-o2 (CH₄ + 2O₂ → CO₂ + 2H₂O, theo dõi CO₂), al-o2 (4Al + 3O₂ → 2Al₂O₃)",
+    "unit": "\"mol\" nếu nhập số mol (n1, n2), \"g\" nếu nhập khối lượng (m1, m2)",
+    "n1": "Số mol chất tham gia thứ nhất (mol, 0–10), dùng khi unit = mol",
+    "n2": "Số mol chất tham gia thứ hai (mol, 0–10)",
+    "m1": "Khối lượng chất tham gia thứ nhất (g, 0–200), dùng khi unit = g",
+    "m2": "Khối lượng chất tham gia thứ hai (g, 0–200)",
+    "yield": "Hiệu suất phản ứng H (%)"
+  },
+  "events": {
+    "reaction-result": {
+      "kind": "result",
+      "description": "Học sinh vừa đặt xong phản ứng, lượng chất hoặc hiệu suất; kết quả tính theo chất hết",
+      "data": {
+        "reaction": "Chỉ số phản ứng trong danh sách (0 = h2-o2, theo thứ tự ở state.reaction)",
+        "limiting": "Chất hết: 1 hoặc 2 (chất tham gia thứ mấy); 0 nếu hai chất vừa đủ",
+        "excessLeft": "Số mol chất dư còn lại khi phản ứng hoàn toàn (mol)",
+        "productTheoretical": "Số mol sản phẩm theo dõi tính theo lí thuyết (mol)",
+        "productActual": "Số mol sản phẩm thực tế = H × lí thuyết (mol)",
+        "yield": "Hiệu suất (%)"
+      }
+    }
+  }
+}

@@ -537,6 +537,73 @@
     "thumbnailUrl": "/can-bang-nhiet/1.0.0/thumb.png"
   },
   {
+    "slug": "can-bang-oxi-hoa-khu",
+    "version": "1.0.0",
+    "title": "Cân bằng phản ứng oxi hóa – khử",
+    "subject": "chemistry",
+    "grades": [
+      10
+    ],
+    "description": "Chọn một phản ứng oxi hóa – khử và đi qua từng bước của phương pháp thăng bằng electron: ghi số oxi hóa trên mọi nguyên tử, xác định chất khử và chất oxi hóa, viết quá trình oxi hóa và quá trình khử, tìm bội chung nhỏ nhất của số electron, đặt hệ số rồi cân bằng các nguyên tố còn lại. Chế độ tự luyện cho học sinh tự làm và kiểm tra từng bước.",
+    "learningGoals": [
+      "Xác định số oxi hóa của nguyên tử các nguyên tố trong đơn chất, hợp chất và ion theo các quy tắc.",
+      "Nhận ra chất khử (chứa nguyên tố có số oxi hóa tăng, nhường electron) và chất oxi hóa (chứa nguyên tố có số oxi hóa giảm, nhận electron).",
+      "Viết quá trình oxi hóa, quá trình khử và cân bằng phương trình bằng phương pháp thăng bằng electron với bộ hệ số nguyên tối giản."
+    ],
+    "state": {
+      "reaction": "Mã phản ứng: fe-o2, zn-hcl, fe2o3-co, cu-hno3-loang, cu-hno3-dac, fe-hno3-loang, al-h2so4-dac, c-h2so4-dac, mno2-hcl, kmno4-hcl, nh3-o2, fe-cuso4, fe2-mno4 (ion Fe²⁺ + MnO₄⁻ + H⁺)",
+      "mode": "\"demo\" (xem lời giải từng bước) hoặc \"practice\" (tự luyện)",
+      "step": "Bước đang xem, 0 đến 6: 0 sơ đồ; 1 số oxi hóa; 2 chất khử, chất oxi hóa; 3 quá trình oxi hóa, khử; 4 BCNN số electron; 5 hệ số theo electron; 6 cân bằng toàn bộ",
+      "solved": "Tự luyện: học sinh đã cân bằng xong",
+      "mistakes": "Tự luyện: số lần bấm Kiểm tra mà trả lời sai",
+      "p1": "Tự luyện bước 1: số oxi hóa học sinh nhập cho nguyên tố đổi số oxi hóa thứ nhất trong chất phản ứng",
+      "p2": "Tự luyện bước 1: số oxi hóa của nguyên tố đó trong sản phẩm",
+      "p3": "Tự luyện bước 1: số oxi hóa của nguyên tố đổi số oxi hóa thứ hai trong chất phản ứng",
+      "p4": "Tự luyện bước 1: số oxi hóa của nguyên tố thứ hai trong sản phẩm",
+      "pRed": "Tự luyện bước 2: chỉ số (từ 0, trái sang phải) của chất học sinh chọn là chất khử; −1 nếu chưa chọn",
+      "pOx": "Tự luyện bước 2: chỉ số của chất học sinh chọn là chất oxi hóa; −1 nếu chưa chọn",
+      "pe1": "Tự luyện bước 3: số electron của quá trình thứ nhất",
+      "pe2": "Tự luyện bước 3: số electron của quá trình thứ hai",
+      "pm1": "Tự luyện bước 4: số nhân cho quá trình thứ nhất",
+      "pm2": "Tự luyện bước 4: số nhân cho quá trình thứ hai",
+      "c1": "Tự luyện bước 6: hệ số chất thứ nhất (đếm trái sang phải qua cả hai vế, 1 đến 20)",
+      "c2": "Hệ số chất thứ hai",
+      "c3": "Hệ số chất thứ ba",
+      "c4": "Hệ số chất thứ tư",
+      "c5": "Hệ số chất thứ năm",
+      "c6": "Hệ số chất thứ sáu"
+    },
+    "events": {
+      "step": {
+        "kind": "action",
+        "description": "Học sinh chuyển bước (xem lời giải) hoặc bấm Kiểm tra một bước (tự luyện)",
+        "data": {
+          "step": "Xem lời giải: bước vừa chuyển tới; tự luyện: bước vừa kiểm tra (0–6)",
+          "practice": "1 nếu ở chế độ tự luyện, 0 nếu xem lời giải",
+          "correct": "1 nếu trả lời đúng (luôn là 1 khi xem lời giải), 0 nếu sai"
+        }
+      },
+      "balanced": {
+        "kind": "result",
+        "description": "Phương trình đã được cân bằng (xem tới bước cuối, hoặc tự cân bằng đúng)",
+        "data": {
+          "reaction": "Chỉ số phản ứng trong danh sách (0 = fe-o2, theo thứ tự ở mục state.reaction)",
+          "electrons": "Tổng số electron trao đổi trong phương trình đã cân bằng (= BCNN)"
+        }
+      },
+      "practice-solved": {
+        "kind": "goal",
+        "description": "Ở chế độ tự luyện, học sinh tự cân bằng đúng phương trình với hệ số tối giản",
+        "data": {
+          "reaction": "Chỉ số phản ứng",
+          "mistakes": "Số lần trả lời sai trước khi xong"
+        }
+      }
+    },
+    "url": "/can-bang-oxi-hoa-khu/1.0.0/index.html",
+    "thumbnailUrl": "/can-bang-oxi-hoa-khu/1.0.0/thumb.png"
+  },
+  {
     "slug": "can-bang-phuong-trinh",
     "version": "1.0.0",
     "title": "Cân bằng phương trình hóa học",
@@ -654,6 +721,82 @@
     },
     "url": "/cau-tao-nguyen-tu/1.0.0/index.html",
     "thumbnailUrl": "/cau-tao-nguyen-tu/1.0.0/thumb.png"
+  },
+  {
+    "slug": "chat-dien-li",
+    "version": "1.0.0",
+    "title": "Chất điện li và độ dẫn điện",
+    "subject": "chemistry",
+    "grades": [
+      11
+    ],
+    "description": "Nhúng hai điện cực của bộ thử tính dẫn điện vào các dung dịch NaCl, HCl, NaOH, CaCl₂, CH₃COOH, saccharose, ethanol hoặc nước cất và thay đổi nồng độ. Sim cho thấy ion và phân tử trong cốc, phương trình điện li (→ hoặc ⇌), độ điện li α của acid yếu tính từ Kₐ, độ dẫn điện theo mô hình và độ sáng của đèn.",
+    "learningGoals": [
+      "Phân biệt chất điện li mạnh, chất điện li yếu và chất không điện li qua khả năng dẫn điện của dung dịch.",
+      "Viết phương trình điện li: chất điện li mạnh dùng mũi tên một chiều, chất điện li yếu dùng mũi tên hai chiều.",
+      "Hiểu độ điện li α của chất điện li yếu và thấy α tăng khi pha loãng dung dịch."
+    ],
+    "state": {
+      "solution": "Mã dung dịch: nacl, hcl, naoh, cacl2, ch3cooh, saccarose (saccharose), ethanol, water (nước cất)",
+      "logC": "log₁₀ của nồng độ mol chất tan (từ −3 đến 0, tức 0,001 đến 1 mol/L); bỏ qua với nước cất"
+    },
+    "events": {
+      "conductivity-measured": {
+        "kind": "result",
+        "description": "Học sinh vừa chọn dung dịch hoặc đặt xong nồng độ; kết quả đo của bộ thử theo mô hình",
+        "data": {
+          "solution": "Chỉ số dung dịch trong danh sách (0 = nacl, theo thứ tự ở state.solution)",
+          "concentration": "Nồng độ chất tan (mol/L), 0 với nước cất",
+          "alpha": "Độ điện li α (0 đến 1)",
+          "conductivity": "Độ dẫn điện κ theo mô hình Σcλ° (S/m)",
+          "current": "Cường độ dòng điện qua đèn (A)",
+          "brightness": "Công suất đèn chia công suất định mức 3 W (0 đến 1)"
+        }
+      }
+    },
+    "url": "/chat-dien-li/1.0.0/index.html",
+    "thumbnailUrl": "/chat-dien-li/1.0.0/thumb.png"
+  },
+  {
+    "slug": "chat-het-chat-du",
+    "version": "1.0.0",
+    "title": "Chất hết, chất dư và hiệu suất",
+    "subject": "chemistry",
+    "grades": [
+      8,
+      10
+    ],
+    "description": "Chọn một phản ứng, đặt lượng hai chất tham gia (theo mol hoặc theo gam) và hiệu suất phản ứng. Hình phân tử trước và sau phản ứng cho thấy chất nào hết, chất nào dư; sim tính lượng chất dư, lượng sản phẩm theo lí thuyết và thực tế, và kiểm tra định luật bảo toàn khối lượng.",
+    "learningGoals": [
+      "Xác định chất hết, chất dư bằng cách so sánh tỉ lệ số mol : hệ số của các chất tham gia.",
+      "Tính lượng chất dư và lượng sản phẩm theo chất hết.",
+      "Tính lượng sản phẩm thực tế từ hiệu suất: H = lượng thực tế / lượng lí thuyết × 100%."
+    ],
+    "state": {
+      "reaction": "Mã phản ứng: h2-o2 (2H₂ + O₂ → 2H₂O), n2-h2 (N₂ + 3H₂ ⇌ 2NH₃), fe-s (Fe + S → FeS), caco3-hcl (CaCO₃ + 2HCl → CaCl₂ + CO₂ + H₂O, sản phẩm theo dõi là CO₂), zn-hcl (Zn + 2HCl → ZnCl₂ + H₂, theo dõi H₂), ch4-o2 (CH₄ + 2O₂ → CO₂ + 2H₂O, theo dõi CO₂), al-o2 (4Al + 3O₂ → 2Al₂O₃)",
+      "unit": "\"mol\" nếu nhập số mol (n1, n2), \"g\" nếu nhập khối lượng (m1, m2)",
+      "n1": "Số mol chất tham gia thứ nhất (mol, 0–10), dùng khi unit = mol",
+      "n2": "Số mol chất tham gia thứ hai (mol, 0–10)",
+      "m1": "Khối lượng chất tham gia thứ nhất (g, 0–200), dùng khi unit = g",
+      "m2": "Khối lượng chất tham gia thứ hai (g, 0–200)",
+      "yield": "Hiệu suất phản ứng H (%)"
+    },
+    "events": {
+      "reaction-result": {
+        "kind": "result",
+        "description": "Học sinh vừa đặt xong phản ứng, lượng chất hoặc hiệu suất; kết quả tính theo chất hết",
+        "data": {
+          "reaction": "Chỉ số phản ứng trong danh sách (0 = h2-o2, theo thứ tự ở state.reaction)",
+          "limiting": "Chất hết: 1 hoặc 2 (chất tham gia thứ mấy); 0 nếu hai chất vừa đủ",
+          "excessLeft": "Số mol chất dư còn lại khi phản ứng hoàn toàn (mol)",
+          "productTheoretical": "Số mol sản phẩm theo dõi tính theo lí thuyết (mol)",
+          "productActual": "Số mol sản phẩm thực tế = H × lí thuyết (mol)",
+          "yield": "Hiệu suất (%)"
+        }
+      }
+    },
+    "url": "/chat-het-chat-du/1.0.0/index.html",
+    "thumbnailUrl": "/chat-het-chat-du/1.0.0/thumb.png"
   },
   {
     "slug": "chon-loc-tu-nhien",

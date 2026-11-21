@@ -1,0 +1,63 @@
+{
+  "slug": "can-bang-oxi-hoa-khu",
+  "version": "1.0.0",
+  "title": "Cân bằng phản ứng oxi hóa – khử",
+  "subject": "chemistry",
+  "grades": [10],
+  "description": "Chọn một phản ứng oxi hóa – khử và đi qua từng bước của phương pháp thăng bằng electron: ghi số oxi hóa trên mọi nguyên tử, xác định chất khử và chất oxi hóa, viết quá trình oxi hóa và quá trình khử, tìm bội chung nhỏ nhất của số electron, đặt hệ số rồi cân bằng các nguyên tố còn lại. Chế độ tự luyện cho học sinh tự làm và kiểm tra từng bước.",
+  "learningGoals": [
+    "Xác định số oxi hóa của nguyên tử các nguyên tố trong đơn chất, hợp chất và ion theo các quy tắc.",
+    "Nhận ra chất khử (chứa nguyên tố có số oxi hóa tăng, nhường electron) và chất oxi hóa (chứa nguyên tố có số oxi hóa giảm, nhận electron).",
+    "Viết quá trình oxi hóa, quá trình khử và cân bằng phương trình bằng phương pháp thăng bằng electron với bộ hệ số nguyên tối giản."
+  ],
+  "state": {
+    "reaction": "Mã phản ứng: fe-o2, zn-hcl, fe2o3-co, cu-hno3-loang, cu-hno3-dac, fe-hno3-loang, al-h2so4-dac, c-h2so4-dac, mno2-hcl, kmno4-hcl, nh3-o2, fe-cuso4, fe2-mno4 (ion Fe²⁺ + MnO₄⁻ + H⁺)",
+    "mode": "\"demo\" (xem lời giải từng bước) hoặc \"practice\" (tự luyện)",
+    "step": "Bước đang xem, 0 đến 6: 0 sơ đồ; 1 số oxi hóa; 2 chất khử, chất oxi hóa; 3 quá trình oxi hóa, khử; 4 BCNN số electron; 5 hệ số theo electron; 6 cân bằng toàn bộ",
+    "solved": "Tự luyện: học sinh đã cân bằng xong",
+    "mistakes": "Tự luyện: số lần bấm Kiểm tra mà trả lời sai",
+    "p1": "Tự luyện bước 1: số oxi hóa học sinh nhập cho nguyên tố đổi số oxi hóa thứ nhất trong chất phản ứng",
+    "p2": "Tự luyện bước 1: số oxi hóa của nguyên tố đó trong sản phẩm",
+    "p3": "Tự luyện bước 1: số oxi hóa của nguyên tố đổi số oxi hóa thứ hai trong chất phản ứng",
+    "p4": "Tự luyện bước 1: số oxi hóa của nguyên tố thứ hai trong sản phẩm",
+    "pRed": "Tự luyện bước 2: chỉ số (từ 0, trái sang phải) của chất học sinh chọn là chất khử; −1 nếu chưa chọn",
+    "pOx": "Tự luyện bước 2: chỉ số của chất học sinh chọn là chất oxi hóa; −1 nếu chưa chọn",
+    "pe1": "Tự luyện bước 3: số electron của quá trình thứ nhất",
+    "pe2": "Tự luyện bước 3: số electron của quá trình thứ hai",
+    "pm1": "Tự luyện bước 4: số nhân cho quá trình thứ nhất",
+    "pm2": "Tự luyện bước 4: số nhân cho quá trình thứ hai",
+    "c1": "Tự luyện bước 6: hệ số chất thứ nhất (đếm trái sang phải qua cả hai vế, 1 đến 20)",
+    "c2": "Hệ số chất thứ hai",
+    "c3": "Hệ số chất thứ ba",
+    "c4": "Hệ số chất thứ tư",
+    "c5": "Hệ số chất thứ năm",
+    "c6": "Hệ số chất thứ sáu"
+  },
+  "events": {
+    "step": {
+      "kind": "action",
+      "description": "Học sinh chuyển bước (xem lời giải) hoặc bấm Kiểm tra một bước (tự luyện)",
+      "data": {
+        "step": "Xem lời giải: bước vừa chuyển tới; tự luyện: bước vừa kiểm tra (0–6)",
+        "practice": "1 nếu ở chế độ tự luyện, 0 nếu xem lời giải",
+        "correct": "1 nếu trả lời đúng (luôn là 1 khi xem lời giải), 0 nếu sai"
+      }
+    },
+    "balanced": {
+      "kind": "result",
+      "description": "Phương trình đã được cân bằng (xem tới bước cuối, hoặc tự cân bằng đúng)",
+      "data": {
+        "reaction": "Chỉ số phản ứng trong danh sách (0 = fe-o2, theo thứ tự ở mục state.reaction)",
+        "electrons": "Tổng số electron trao đổi trong phương trình đã cân bằng (= BCNN)"
+      }
+    },
+    "practice-solved": {
+      "kind": "goal",
+      "description": "Ở chế độ tự luyện, học sinh tự cân bằng đúng phương trình với hệ số tối giản",
+      "data": {
+        "reaction": "Chỉ số phản ứng",
+        "mistakes": "Số lần trả lời sai trước khi xong"
+      }
+    }
+  }
+}

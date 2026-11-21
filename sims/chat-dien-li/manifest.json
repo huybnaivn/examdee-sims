@@ -1,0 +1,31 @@
+{
+  "slug": "chat-dien-li",
+  "version": "1.0.0",
+  "title": "Chất điện li và độ dẫn điện",
+  "subject": "chemistry",
+  "grades": [11],
+  "description": "Nhúng hai điện cực của bộ thử tính dẫn điện vào các dung dịch NaCl, HCl, NaOH, CaCl₂, CH₃COOH, saccharose, ethanol hoặc nước cất và thay đổi nồng độ. Sim cho thấy ion và phân tử trong cốc, phương trình điện li (→ hoặc ⇌), độ điện li α của acid yếu tính từ Kₐ, độ dẫn điện theo mô hình và độ sáng của đèn.",
+  "learningGoals": [
+    "Phân biệt chất điện li mạnh, chất điện li yếu và chất không điện li qua khả năng dẫn điện của dung dịch.",
+    "Viết phương trình điện li: chất điện li mạnh dùng mũi tên một chiều, chất điện li yếu dùng mũi tên hai chiều.",
+    "Hiểu độ điện li α của chất điện li yếu và thấy α tăng khi pha loãng dung dịch."
+  ],
+  "state": {
+    "solution": "Mã dung dịch: nacl, hcl, naoh, cacl2, ch3cooh, saccarose (saccharose), ethanol, water (nước cất)",
+    "logC": "log₁₀ của nồng độ mol chất tan (từ −3 đến 0, tức 0,001 đến 1 mol/L); bỏ qua với nước cất"
+  },
+  "events": {
+    "conductivity-measured": {
+      "kind": "result",
+      "description": "Học sinh vừa chọn dung dịch hoặc đặt xong nồng độ; kết quả đo của bộ thử theo mô hình",
+      "data": {
+        "solution": "Chỉ số dung dịch trong danh sách (0 = nacl, theo thứ tự ở state.solution)",
+        "concentration": "Nồng độ chất tan (mol/L), 0 với nước cất",
+        "alpha": "Độ điện li α (0 đến 1)",
+        "conductivity": "Độ dẫn điện κ theo mô hình Σcλ° (S/m)",
+        "current": "Cường độ dòng điện qua đèn (A)",
+        "brightness": "Công suất đèn chia công suất định mức 3 W (0 đến 1)"
+      }
+    }
+  }
+}
