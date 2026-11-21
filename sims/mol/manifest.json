@@ -1,0 +1,34 @@
+{
+  "slug": "mol",
+  "version": "1.0.0",
+  "title": "Mol và các đại lượng liên quan",
+  "subject": "chemistry",
+  "grades": [8, 10],
+  "description": "Chọn một chất và nhập một trong bốn đại lượng: khối lượng, lượng chất (mol), số hạt hoặc thể tích khí ở điều kiện chuẩn (chỉ với chất khí). Các đại lượng còn lại được tính theo chuỗi m ⇄ n ⇄ N và n ⇄ V, kèm phép tính từng bước và hình minh họa số hạt theo tỉ lệ thu nhỏ.",
+  "learningGoals": [
+    "Tính khối lượng mol M từ công thức hóa học (kể cả nhóm nguyên tử trong ngoặc) và khối lượng nguyên tử.",
+    "Chuyển đổi giữa khối lượng, lượng chất và số hạt: m = n·M, N = n·N_A với N_A = 6,022·10²³ mol⁻¹.",
+    "Tính thể tích chất khí ở điều kiện chuẩn (25 °C, 1 bar): V = n·24,79 L, và nhận ra công thức này chỉ dùng cho chất khí."
+  ],
+  "state": {
+    "substance": "Công thức của chất đang chọn: H2O, CO2, NaCl, O2, Fe, C12H22O11, N2, H2, CH4 hoặc Ca(OH)2",
+    "given": "Đại lượng học sinh nhập: \"mass\", \"mol\", \"particles\" hoặc \"volume\"",
+    "mass": "Khối lượng m (g); là đầu vào khi given = mass",
+    "mol": "Lượng chất n (mol); là đầu vào khi given = mol",
+    "particles": "Số hạt N, tính theo đơn vị 10²³ hạt; là đầu vào khi given = particles",
+    "volume": "Thể tích khí ở điều kiện chuẩn V (L); là đầu vào khi given = volume, chỉ hợp lệ với chất khí"
+  },
+  "events": {
+    "converted": {
+      "kind": "result",
+      "description": "Học sinh chốt một giá trị (thả thanh trượt hoặc đổi chất) và sim tính xong các đại lượng còn lại. Không gửi khi chuyển đổi bị từ chối (nhập thể tích cho chất không phải chất khí).",
+      "data": {
+        "substance": "Số thứ tự của chất trong danh sách (0–9, theo thứ tự trong state.substance)",
+        "mass": "Khối lượng m (g)",
+        "mol": "Lượng chất n (mol)",
+        "particles": "Số hạt N (hạt, số thực, không chia 10²³)",
+        "volume": "Thể tích khí ở điều kiện chuẩn V (L); chỉ có khi chất là chất khí"
+      }
+    }
+  }
+}

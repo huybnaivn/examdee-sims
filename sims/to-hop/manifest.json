@@ -1,0 +1,35 @@
+{
+  "slug": "to-hop",
+  "version": "1.0.0",
+  "title": "Hoán vị, chỉnh hợp và tổ hợp",
+  "subject": "math",
+  "grades": [
+    10
+  ],
+  "description": "Chọn n đồ vật khác nhau (những quả bóng màu mang chữ cái A, B, C, …) và số k đồ vật cần lấy, rồi chọn có kể thứ tự hay không, có được lặp lại hay không. Hình vẽ liệt kê từng cách chọn (vẽ tối đa số ô vừa khung, cho biết còn bao nhiêu cách chưa vẽ) và viết công thức đếm tương ứng với các số đã thay vào: hoán vị Pₙ = n!, chỉnh hợp, tổ hợp, và phần mở rộng chỉnh hợp lặp nᵏ, tổ hợp lặp. Số cách luôn được tính đúng tuyệt đối, kể cả khi rất lớn.",
+  "learningGoals": [
+    "Phân biệt hoán vị, chỉnh hợp và tổ hợp theo hai câu hỏi: có kể thứ tự không, có lấy hết n phần tử không.",
+    "Vận dụng các công thức Pₙ = n!, Aₙᵏ = n!/(n − k)!, Cₙᵏ = n!/(k!(n − k)!).",
+    "Kiểm chứng bằng cách liệt kê: số ô trên hình đúng bằng giá trị của công thức; Aₙᵏ = k! · Cₙᵏ.",
+    "Nhận ra tính chất Cₙᵏ = Cₙⁿ⁻ᵏ (chọn k phần tử cũng là chọn n − k phần tử bỏ lại).",
+    "Mở rộng: khi được lặp lại, số cách có kể thứ tự là nᵏ, không kể thứ tự là Cₙ₊ₖ₋₁ᵏ."
+  ],
+  "state": {
+    "n": "Số đồ vật khác nhau n (1 đến 20)",
+    "k": "Số đồ vật lấy ra k (1 đến 20; khi không lặp lại thì k không vượt quá n)",
+    "ordered": "true nếu có kể thứ tự (đổi chỗ là một cách khác): chỉnh hợp, hoán vị, chỉnh hợp lặp; false: tổ hợp, tổ hợp lặp",
+    "repeat": "true nếu mỗi đồ vật được lấy nhiều lần (chỉnh hợp lặp, tổ hợp lặp: phần mở rộng)"
+  },
+  "events": {
+    "counted": {
+      "kind": "result",
+      "description": "Học sinh vừa chốt một lựa chọn (thả thanh trượt n hoặc k, bật/tắt kể thứ tự hoặc lặp lại); sim báo loại bài toán đếm và số cách",
+      "data": {
+        "n": "Số đồ vật khác nhau",
+        "k": "Số đồ vật lấy ra",
+        "type": "Loại: 1 hoán vị, 2 chỉnh hợp, 3 tổ hợp, 4 chỉnh hợp lặp, 5 tổ hợp lặp",
+        "count": "Số cách (số nguyên; trên 2^53 có thể bị làm tròn, sim hiển thị giá trị đúng tuyệt đối)"
+      }
+    }
+  }
+}

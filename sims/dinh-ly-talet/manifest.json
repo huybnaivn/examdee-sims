@@ -1,0 +1,51 @@
+{
+  "slug": "dinh-ly-talet",
+  "version": "1.0.0",
+  "title": "Định lí Ta-lét và tam giác đồng dạng",
+  "subject": "math",
+  "grades": [
+    8
+  ],
+  "description": "Tam giác ABC có AB = 5 cm, AC = 7 cm, BC = 8 cm. Kéo điểm M trên cạnh AB; điểm N trên AC chạy theo sao cho MN luôn song song với BC, và hình vẽ cho thấy ba tỉ số AM/AB, AN/AC, MN/BC luôn bằng nhau (định lí Ta-lét và hệ quả), cùng AM/MB = AN/NC. Bật định lí đảo để kéo N tự do: MN song song với BC đúng khi AM/AB = AN/AC. Chế độ thứ hai vẽ tam giác A'B'C' đồng dạng với ABC theo tỉ số k: các cạnh tương ứng tỉ lệ k, các góc tương ứng bằng nhau, tỉ số chu vi bằng k và tỉ số diện tích bằng k².",
+  "learningGoals": [
+    "Phát biểu và kiểm chứng định lí Ta-lét: nếu MN // BC thì AM/AB = AN/AC (và AM/MB = AN/NC).",
+    "Kiểm chứng hệ quả của định lí Ta-lét: MN/BC cũng bằng AM/AB.",
+    "Vận dụng định lí Ta-lét đảo: nếu AM/AB = AN/AC thì MN // BC; tỉ số khác nhau thì không song song.",
+    "Nhận biết hai tam giác đồng dạng: góc tương ứng bằng nhau, cạnh tương ứng tỉ lệ theo tỉ số đồng dạng k.",
+    "Biết tỉ số chu vi bằng k và tỉ số diện tích bằng k² của hai tam giác đồng dạng."
+  ],
+  "state": {
+    "mode": "Nội dung: \"talet\" (định lí Ta-lét) hoặc \"similar\" (tam giác đồng dạng)",
+    "t": "Tỉ số AM/AB, vị trí của M trên cạnh AB (0 là M ≡ A, 1 là M ≡ B; bước 0,05)",
+    "converse": "true khi bật định lí đảo: N di chuyển tự do trên AC; false: N luôn ở vị trí để MN // BC (AN/AC = AM/AB)",
+    "u": "Tỉ số AN/AC, vị trí của N trên cạnh AC (chỉ có tác dụng khi converse = true; bước 0,05)",
+    "k": "Tỉ số đồng dạng k của tam giác A'B'C' so với ABC (0,5 đến 2,5)"
+  },
+  "events": {
+    "ratio-measured": {
+      "kind": "result",
+      "description": "Học sinh thả điểm M hoặc N (kéo trên hình hoặc thả thanh trượt); sim báo các tỉ số và MN có song song với BC hay không",
+      "data": {
+        "ratio": "Tỉ số AM/AB (0 đến 1)",
+        "ratioN": "Tỉ số AN/AC (0 đến 1)",
+        "parallel": "1 nếu MN // BC, 0 nếu không (kể cả khi M hoặc N trùng một đỉnh)"
+      }
+    },
+    "parallel-restored": {
+      "kind": "goal",
+      "description": "Ở chế độ định lí đảo, học sinh đưa MN trở lại song song với BC (AN/AC = AM/AB) sau khi đã làm lệch",
+      "data": {
+        "ratio": "Tỉ số chung AM/AB = AN/AC"
+      }
+    },
+    "similar-measured": {
+      "kind": "result",
+      "description": "Học sinh thả thanh trượt tỉ số đồng dạng k; sim báo tỉ số chu vi và tỉ số diện tích",
+      "data": {
+        "k": "Tỉ số đồng dạng",
+        "perimeterRatio": "Tỉ số chu vi A'B'C' / ABC (bằng k)",
+        "areaRatio": "Tỉ số diện tích A'B'C' / ABC (bằng k²)"
+      }
+    }
+  }
+}

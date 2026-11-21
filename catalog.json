@@ -1450,6 +1450,59 @@
     "thumbnailUrl": "/dinh-luat-ohm/1.0.0/thumb.png"
   },
   {
+    "slug": "dinh-ly-talet",
+    "version": "1.0.0",
+    "title": "Định lí Ta-lét và tam giác đồng dạng",
+    "subject": "math",
+    "grades": [
+      8
+    ],
+    "description": "Tam giác ABC có AB = 5 cm, AC = 7 cm, BC = 8 cm. Kéo điểm M trên cạnh AB; điểm N trên AC chạy theo sao cho MN luôn song song với BC, và hình vẽ cho thấy ba tỉ số AM/AB, AN/AC, MN/BC luôn bằng nhau (định lí Ta-lét và hệ quả), cùng AM/MB = AN/NC. Bật định lí đảo để kéo N tự do: MN song song với BC đúng khi AM/AB = AN/AC. Chế độ thứ hai vẽ tam giác A'B'C' đồng dạng với ABC theo tỉ số k: các cạnh tương ứng tỉ lệ k, các góc tương ứng bằng nhau, tỉ số chu vi bằng k và tỉ số diện tích bằng k².",
+    "learningGoals": [
+      "Phát biểu và kiểm chứng định lí Ta-lét: nếu MN // BC thì AM/AB = AN/AC (và AM/MB = AN/NC).",
+      "Kiểm chứng hệ quả của định lí Ta-lét: MN/BC cũng bằng AM/AB.",
+      "Vận dụng định lí Ta-lét đảo: nếu AM/AB = AN/AC thì MN // BC; tỉ số khác nhau thì không song song.",
+      "Nhận biết hai tam giác đồng dạng: góc tương ứng bằng nhau, cạnh tương ứng tỉ lệ theo tỉ số đồng dạng k.",
+      "Biết tỉ số chu vi bằng k và tỉ số diện tích bằng k² của hai tam giác đồng dạng."
+    ],
+    "state": {
+      "mode": "Nội dung: \"talet\" (định lí Ta-lét) hoặc \"similar\" (tam giác đồng dạng)",
+      "t": "Tỉ số AM/AB, vị trí của M trên cạnh AB (0 là M ≡ A, 1 là M ≡ B; bước 0,05)",
+      "converse": "true khi bật định lí đảo: N di chuyển tự do trên AC; false: N luôn ở vị trí để MN // BC (AN/AC = AM/AB)",
+      "u": "Tỉ số AN/AC, vị trí của N trên cạnh AC (chỉ có tác dụng khi converse = true; bước 0,05)",
+      "k": "Tỉ số đồng dạng k của tam giác A'B'C' so với ABC (0,5 đến 2,5)"
+    },
+    "events": {
+      "ratio-measured": {
+        "kind": "result",
+        "description": "Học sinh thả điểm M hoặc N (kéo trên hình hoặc thả thanh trượt); sim báo các tỉ số và MN có song song với BC hay không",
+        "data": {
+          "ratio": "Tỉ số AM/AB (0 đến 1)",
+          "ratioN": "Tỉ số AN/AC (0 đến 1)",
+          "parallel": "1 nếu MN // BC, 0 nếu không (kể cả khi M hoặc N trùng một đỉnh)"
+        }
+      },
+      "parallel-restored": {
+        "kind": "goal",
+        "description": "Ở chế độ định lí đảo, học sinh đưa MN trở lại song song với BC (AN/AC = AM/AB) sau khi đã làm lệch",
+        "data": {
+          "ratio": "Tỉ số chung AM/AB = AN/AC"
+        }
+      },
+      "similar-measured": {
+        "kind": "result",
+        "description": "Học sinh thả thanh trượt tỉ số đồng dạng k; sim báo tỉ số chu vi và tỉ số diện tích",
+        "data": {
+          "k": "Tỉ số đồng dạng",
+          "perimeterRatio": "Tỉ số chu vi A'B'C' / ABC (bằng k)",
+          "areaRatio": "Tỉ số diện tích A'B'C' / ABC (bằng k²)"
+        }
+      }
+    },
+    "url": "/dinh-ly-talet/1.0.0/index.html",
+    "thumbnailUrl": "/dinh-ly-talet/1.0.0/thumb.png"
+  },
+  {
     "slug": "do-thi-ham-so",
     "version": "1.0.0",
     "title": "Đồ thị hàm số bậc nhất và bậc hai",
@@ -2428,6 +2481,43 @@
     "thumbnailUrl": "/lang-kinh-tan-sac/1.0.0/thumb.png"
   },
   {
+    "slug": "lien-ket-hoa-hoc",
+    "version": "1.0.0",
+    "title": "Liên kết ion và liên kết cộng hóa trị",
+    "subject": "chemistry",
+    "grades": [
+      10
+    ],
+    "description": "Chọn hai nguyên tố trong H, C, N, O, F, Na, Mg, Cl, K, Ca. Sim tính hiệu độ âm điện Δχ, xếp loại liên kết theo ngưỡng trong sách giáo khoa (Δχ < 0,4: cộng hóa trị không phân cực; 0,4 ≤ Δχ < 1,7: cộng hóa trị phân cực; Δχ ≥ 1,7: ion), lập công thức hợp chất theo hóa trị, vẽ sơ đồ Lewis (sự nhường, nhận electron với liên kết ion; các cặp electron dùng chung với liên kết cộng hóa trị) và kiểm tra quy tắc octet.",
+    "learningGoals": [
+      "Dùng hiệu độ âm điện Δχ để dự đoán liên kết cộng hóa trị không phân cực, cộng hóa trị phân cực hay liên kết ion, và biết ngưỡng này chỉ gần đúng (ví dụ HF).",
+      "Mô tả sự hình thành liên kết ion bằng sự nhường và nhận electron để tạo các ion có lớp vỏ giống khí hiếm.",
+      "Mô tả liên kết cộng hóa trị bằng các cặp electron dùng chung: liên kết đơn, đôi, ba.",
+      "Lập công thức hợp chất hai nguyên tố theo hóa trị và kiểm tra quy tắc octet (duet với H)."
+    ],
+    "state": {
+      "a": "Kí hiệu nguyên tố thứ nhất: H, C, N, O, F, Na, Mg, Cl, K hoặc Ca",
+      "b": "Kí hiệu nguyên tố thứ hai, cùng danh sách; có thể trùng nguyên tố thứ nhất (H₂, N₂, O₂, F₂, Cl₂)",
+      "showShells": "true nếu hiện cấu hình electron theo lớp của hai nguyên tố"
+    },
+    "events": {
+      "bond-chosen": {
+        "kind": "result",
+        "description": "Học sinh chọn xong một cặp nguyên tố; sim xếp loại liên kết và lập công thức",
+        "data": {
+          "a": "Chỉ số nguyên tố thứ nhất trong danh sách H, C, N, O, F, Na, Mg, Cl, K, Ca (0–9)",
+          "b": "Chỉ số nguyên tố thứ hai, cùng danh sách (0–9)",
+          "deltaChi": "Hiệu độ âm điện Δχ (thang Pauling, không đơn vị)",
+          "bondType": "Loại liên kết sim kết luận: 0 cộng hóa trị không phân cực, 1 cộng hóa trị phân cực, 2 ion; −1 nếu cặp không được xét",
+          "ruleType": "Loại liên kết chỉ theo ngưỡng Δχ (mã như bondType); khác bondType với HF; −1 nếu cặp không được xét",
+          "formula": "Chỉ số hợp chất trong danh sách của sim: 0 H2, 1 N2, 2 O2, 3 F2, 4 Cl2, 5 CH4, 6 NH3, 7 H2O, 8 HF, 9 HCl, 10 CO2, 11 CF4, 12 CCl4, 13 NF3, 14 NCl3, 15 OF2, 16 Cl2O, 17 ClF, 18 NaF, 19 NaCl, 20 Na2O, 21 MgF2, 22 MgCl2, 23 MgO, 24 KF, 25 KCl, 26 K2O, 27 CaF2, 28 CaCl2, 29 CaO; −1 nếu cặp không được xét"
+        }
+      }
+    },
+    "url": "/lien-ket-hoa-hoc/1.0.0/index.html",
+    "thumbnailUrl": "/lien-ket-hoa-hoc/1.0.0/thumb.png"
+  },
+  {
     "slug": "lo-xo",
     "version": "1.0.0",
     "title": "Con lắc lò xo",
@@ -2942,6 +3032,45 @@
     },
     "url": "/may-bien-ap/1.0.0/index.html",
     "thumbnailUrl": "/may-bien-ap/1.0.0/thumb.png"
+  },
+  {
+    "slug": "mol",
+    "version": "1.0.0",
+    "title": "Mol và các đại lượng liên quan",
+    "subject": "chemistry",
+    "grades": [
+      8,
+      10
+    ],
+    "description": "Chọn một chất và nhập một trong bốn đại lượng: khối lượng, lượng chất (mol), số hạt hoặc thể tích khí ở điều kiện chuẩn (chỉ với chất khí). Các đại lượng còn lại được tính theo chuỗi m ⇄ n ⇄ N và n ⇄ V, kèm phép tính từng bước và hình minh họa số hạt theo tỉ lệ thu nhỏ.",
+    "learningGoals": [
+      "Tính khối lượng mol M từ công thức hóa học (kể cả nhóm nguyên tử trong ngoặc) và khối lượng nguyên tử.",
+      "Chuyển đổi giữa khối lượng, lượng chất và số hạt: m = n·M, N = n·N_A với N_A = 6,022·10²³ mol⁻¹.",
+      "Tính thể tích chất khí ở điều kiện chuẩn (25 °C, 1 bar): V = n·24,79 L, và nhận ra công thức này chỉ dùng cho chất khí."
+    ],
+    "state": {
+      "substance": "Công thức của chất đang chọn: H2O, CO2, NaCl, O2, Fe, C12H22O11, N2, H2, CH4 hoặc Ca(OH)2",
+      "given": "Đại lượng học sinh nhập: \"mass\", \"mol\", \"particles\" hoặc \"volume\"",
+      "mass": "Khối lượng m (g); là đầu vào khi given = mass",
+      "mol": "Lượng chất n (mol); là đầu vào khi given = mol",
+      "particles": "Số hạt N, tính theo đơn vị 10²³ hạt; là đầu vào khi given = particles",
+      "volume": "Thể tích khí ở điều kiện chuẩn V (L); là đầu vào khi given = volume, chỉ hợp lệ với chất khí"
+    },
+    "events": {
+      "converted": {
+        "kind": "result",
+        "description": "Học sinh chốt một giá trị (thả thanh trượt hoặc đổi chất) và sim tính xong các đại lượng còn lại. Không gửi khi chuyển đổi bị từ chối (nhập thể tích cho chất không phải chất khí).",
+        "data": {
+          "substance": "Số thứ tự của chất trong danh sách (0–9, theo thứ tự trong state.substance)",
+          "mass": "Khối lượng m (g)",
+          "mol": "Lượng chất n (mol)",
+          "particles": "Số hạt N (hạt, số thực, không chia 10²³)",
+          "volume": "Thể tích khí ở điều kiện chuẩn V (L); chỉ có khi chất là chất khí"
+        }
+      }
+    },
+    "url": "/mol/1.0.0/index.html",
+    "thumbnailUrl": "/mol/1.0.0/thumb.png"
   },
   {
     "slug": "nem-xien",
@@ -3879,6 +4008,43 @@
     },
     "url": "/tich-phan/1.0.0/index.html",
     "thumbnailUrl": "/tich-phan/1.0.0/thumb.png"
+  },
+  {
+    "slug": "to-hop",
+    "version": "1.0.0",
+    "title": "Hoán vị, chỉnh hợp và tổ hợp",
+    "subject": "math",
+    "grades": [
+      10
+    ],
+    "description": "Chọn n đồ vật khác nhau (những quả bóng màu mang chữ cái A, B, C, …) và số k đồ vật cần lấy, rồi chọn có kể thứ tự hay không, có được lặp lại hay không. Hình vẽ liệt kê từng cách chọn (vẽ tối đa số ô vừa khung, cho biết còn bao nhiêu cách chưa vẽ) và viết công thức đếm tương ứng với các số đã thay vào: hoán vị Pₙ = n!, chỉnh hợp, tổ hợp, và phần mở rộng chỉnh hợp lặp nᵏ, tổ hợp lặp. Số cách luôn được tính đúng tuyệt đối, kể cả khi rất lớn.",
+    "learningGoals": [
+      "Phân biệt hoán vị, chỉnh hợp và tổ hợp theo hai câu hỏi: có kể thứ tự không, có lấy hết n phần tử không.",
+      "Vận dụng các công thức Pₙ = n!, Aₙᵏ = n!/(n − k)!, Cₙᵏ = n!/(k!(n − k)!).",
+      "Kiểm chứng bằng cách liệt kê: số ô trên hình đúng bằng giá trị của công thức; Aₙᵏ = k! · Cₙᵏ.",
+      "Nhận ra tính chất Cₙᵏ = Cₙⁿ⁻ᵏ (chọn k phần tử cũng là chọn n − k phần tử bỏ lại).",
+      "Mở rộng: khi được lặp lại, số cách có kể thứ tự là nᵏ, không kể thứ tự là Cₙ₊ₖ₋₁ᵏ."
+    ],
+    "state": {
+      "n": "Số đồ vật khác nhau n (1 đến 20)",
+      "k": "Số đồ vật lấy ra k (1 đến 20; khi không lặp lại thì k không vượt quá n)",
+      "ordered": "true nếu có kể thứ tự (đổi chỗ là một cách khác): chỉnh hợp, hoán vị, chỉnh hợp lặp; false: tổ hợp, tổ hợp lặp",
+      "repeat": "true nếu mỗi đồ vật được lấy nhiều lần (chỉnh hợp lặp, tổ hợp lặp: phần mở rộng)"
+    },
+    "events": {
+      "counted": {
+        "kind": "result",
+        "description": "Học sinh vừa chốt một lựa chọn (thả thanh trượt n hoặc k, bật/tắt kể thứ tự hoặc lặp lại); sim báo loại bài toán đếm và số cách",
+        "data": {
+          "n": "Số đồ vật khác nhau",
+          "k": "Số đồ vật lấy ra",
+          "type": "Loại: 1 hoán vị, 2 chỉnh hợp, 3 tổ hợp, 4 chỉnh hợp lặp, 5 tổ hợp lặp",
+          "count": "Số cách (số nguyên; trên 2^53 có thể bị làm tròn, sim hiển thị giá trị đúng tuyệt đối)"
+        }
+      }
+    },
+    "url": "/to-hop/1.0.0/index.html",
+    "thumbnailUrl": "/to-hop/1.0.0/thumb.png"
   },
   {
     "slug": "toc-do-phan-ung",

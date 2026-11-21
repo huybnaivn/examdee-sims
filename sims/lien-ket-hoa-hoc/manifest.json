@@ -1,0 +1,35 @@
+{
+  "slug": "lien-ket-hoa-hoc",
+  "version": "1.0.0",
+  "title": "Liên kết ion và liên kết cộng hóa trị",
+  "subject": "chemistry",
+  "grades": [
+    10
+  ],
+  "description": "Chọn hai nguyên tố trong H, C, N, O, F, Na, Mg, Cl, K, Ca. Sim tính hiệu độ âm điện Δχ, xếp loại liên kết theo ngưỡng trong sách giáo khoa (Δχ < 0,4: cộng hóa trị không phân cực; 0,4 ≤ Δχ < 1,7: cộng hóa trị phân cực; Δχ ≥ 1,7: ion), lập công thức hợp chất theo hóa trị, vẽ sơ đồ Lewis (sự nhường, nhận electron với liên kết ion; các cặp electron dùng chung với liên kết cộng hóa trị) và kiểm tra quy tắc octet.",
+  "learningGoals": [
+    "Dùng hiệu độ âm điện Δχ để dự đoán liên kết cộng hóa trị không phân cực, cộng hóa trị phân cực hay liên kết ion, và biết ngưỡng này chỉ gần đúng (ví dụ HF).",
+    "Mô tả sự hình thành liên kết ion bằng sự nhường và nhận electron để tạo các ion có lớp vỏ giống khí hiếm.",
+    "Mô tả liên kết cộng hóa trị bằng các cặp electron dùng chung: liên kết đơn, đôi, ba.",
+    "Lập công thức hợp chất hai nguyên tố theo hóa trị và kiểm tra quy tắc octet (duet với H)."
+  ],
+  "state": {
+    "a": "Kí hiệu nguyên tố thứ nhất: H, C, N, O, F, Na, Mg, Cl, K hoặc Ca",
+    "b": "Kí hiệu nguyên tố thứ hai, cùng danh sách; có thể trùng nguyên tố thứ nhất (H₂, N₂, O₂, F₂, Cl₂)",
+    "showShells": "true nếu hiện cấu hình electron theo lớp của hai nguyên tố"
+  },
+  "events": {
+    "bond-chosen": {
+      "kind": "result",
+      "description": "Học sinh chọn xong một cặp nguyên tố; sim xếp loại liên kết và lập công thức",
+      "data": {
+        "a": "Chỉ số nguyên tố thứ nhất trong danh sách H, C, N, O, F, Na, Mg, Cl, K, Ca (0–9)",
+        "b": "Chỉ số nguyên tố thứ hai, cùng danh sách (0–9)",
+        "deltaChi": "Hiệu độ âm điện Δχ (thang Pauling, không đơn vị)",
+        "bondType": "Loại liên kết sim kết luận: 0 cộng hóa trị không phân cực, 1 cộng hóa trị phân cực, 2 ion; −1 nếu cặp không được xét",
+        "ruleType": "Loại liên kết chỉ theo ngưỡng Δχ (mã như bondType); khác bondType với HF; −1 nếu cặp không được xét",
+        "formula": "Chỉ số hợp chất trong danh sách của sim: 0 H2, 1 N2, 2 O2, 3 F2, 4 Cl2, 5 CH4, 6 NH3, 7 H2O, 8 HF, 9 HCl, 10 CO2, 11 CF4, 12 CCl4, 13 NF3, 14 NCl3, 15 OF2, 16 Cl2O, 17 ClF, 18 NaF, 19 NaCl, 20 Na2O, 21 MgF2, 22 MgCl2, 23 MgO, 24 KF, 25 KCl, 26 K2O, 27 CaF2, 28 CaCl2, 29 CaO; −1 nếu cặp không được xét"
+      }
+    }
+  }
+}
