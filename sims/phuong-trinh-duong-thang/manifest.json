@@ -1,0 +1,77 @@
+{
+  "slug": "phuong-trinh-duong-thang",
+  "version": "1.0.0",
+  "title": "Phương trình đường thẳng",
+  "subject": "math",
+  "grades": [
+    10
+  ],
+  "description": "Xác định đường thẳng d₁ trong mặt phẳng tọa độ bởi hai điểm, bởi một điểm và vectơ chỉ phương, hoặc bởi một điểm và vectơ pháp tuyến; kéo các điểm trên hình. Sim viết phương trình tham số, phương trình tổng quát ax + by + c = 0 và dạng y = kx + m khi d₁ có hệ số góc. Thêm đường thẳng d₂ để xét vị trí tương đối (cắt nhau, song song, trùng nhau, vuông góc), tìm giao điểm bằng định thức (quy tắc Cramer), tính góc giữa hai đường thẳng; thêm điểm M để tính khoảng cách từ M đến d₁.",
+  "learningGoals": [
+    "Lập phương trình tham số của đường thẳng đi qua một điểm và có vectơ chỉ phương u.",
+    "Lập phương trình tổng quát của đường thẳng đi qua một điểm và có vectơ pháp tuyến n, và chuyển đổi giữa vectơ chỉ phương và vectơ pháp tuyến.",
+    "Nhận biết đường thẳng song song với Oy (b = 0) không có hệ số góc.",
+    "Xét vị trí tương đối của hai đường thẳng bằng hệ phương trình: cắt nhau, song song, trùng nhau.",
+    "Tính góc giữa hai đường thẳng: cos φ = |a₁a₂ + b₁b₂| / (√(a₁² + b₁²)·√(a₂² + b₂²)); d₁ ⊥ d₂ khi a₁a₂ + b₁b₂ = 0.",
+    "Tính khoảng cách từ điểm M(x₀; y₀) đến đường thẳng: |ax₀ + by₀ + c| / √(a² + b²)."
+  ],
+  "state": {
+    "mode": "Cách xác định d₁: \"two-points\" (hai điểm A, B), \"point-direction\" (điểm A và vectơ chỉ phương u), \"point-normal\" (điểm A và vectơ pháp tuyến n)",
+    "x1": "Hoành độ điểm A trên d₁",
+    "y1": "Tung độ điểm A trên d₁",
+    "x2": "Hoành độ điểm B (chế độ hai điểm)",
+    "y2": "Tung độ điểm B (chế độ hai điểm)",
+    "ux": "Hoành độ vectơ chỉ phương u (chế độ điểm và vectơ chỉ phương)",
+    "uy": "Tung độ vectơ chỉ phương u",
+    "nx": "Hoành độ vectơ pháp tuyến n (chế độ điểm và vectơ pháp tuyến)",
+    "ny": "Tung độ vectơ pháp tuyến n",
+    "showSecond": "true thì có đường thẳng thứ hai d₂ đi qua C và D",
+    "x3": "Hoành độ điểm C trên d₂",
+    "y3": "Tung độ điểm C trên d₂",
+    "x4": "Hoành độ điểm D trên d₂",
+    "y4": "Tung độ điểm D trên d₂",
+    "showDistance": "true thì có điểm M và khoảng cách từ M đến d₁",
+    "mx": "Hoành độ điểm M",
+    "my": "Tung độ điểm M"
+  },
+  "events": {
+    "point-moved": {
+      "kind": "action",
+      "description": "Học sinh kéo một điểm hoặc đầu một vectơ trên hình rồi thả",
+      "data": {
+        "point": "1 = A, 2 = B, 3 = đầu vectơ u, 4 = đầu vectơ n, 5 = C, 6 = D, 7 = M",
+        "x": "Hoành độ mới (với u, n là tọa độ của vectơ)",
+        "y": "Tung độ mới (với u, n là tọa độ của vectơ)"
+      }
+    },
+    "line-equation": {
+      "kind": "result",
+      "description": "Phương trình tổng quát ax + by + c = 0 (dạng tối giản) của đường thẳng vừa thay đổi",
+      "data": {
+        "line": "1 là d₁, 2 là d₂",
+        "a": "Hệ số a",
+        "b": "Hệ số b",
+        "c": "Hệ số c"
+      }
+    },
+    "point-distance": {
+      "kind": "result",
+      "description": "Khoảng cách từ M đến d₁ sau khi học sinh đặt xong điểm M",
+      "data": {
+        "x": "Hoành độ của M",
+        "y": "Tung độ của M",
+        "distance": "Khoảng cách từ M đến d₁ (đơn vị độ dài)"
+      }
+    },
+    "perpendicular": {
+      "kind": "goal",
+      "description": "Học sinh vừa làm cho d₁ vuông góc với d₂ (a₁a₂ + b₁b₂ = 0)",
+      "data": {
+        "a1": "Hệ số a của d₁",
+        "b1": "Hệ số b của d₁",
+        "a2": "Hệ số a của d₂",
+        "b2": "Hệ số b của d₂"
+      }
+    }
+  }
+}

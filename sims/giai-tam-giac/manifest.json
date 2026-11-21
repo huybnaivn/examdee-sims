@@ -1,0 +1,43 @@
+{
+  "slug": "giai-tam-giac",
+  "version": "1.0.0",
+  "title": "Định lí côsin, định lí sin và giải tam giác",
+  "subject": "math",
+  "grades": [
+    10
+  ],
+  "description": "Cho ba yếu tố của tam giác ABC (ba cạnh; hai cạnh và góc xen giữa; một cạnh và hai góc kề; hai cạnh và một góc đối diện), sim giải tam giác từng bước, ghi rõ định lí côsin hay định lí sin được dùng, và vẽ tam giác đúng tỉ lệ. Tính diện tích bằng S = ½ab·sin C và công thức Hê-rông, bán kính đường tròn ngoại tiếp R = a/(2sin A) và nội tiếp r = S/p. Trường hợp hai cạnh và góc đối diện cho thấy có thể có 0, 1 hoặc 2 tam giác.",
+  "learningGoals": [
+    "Vận dụng định lí côsin a² = b² + c² − 2bc·cos A để tính cạnh khi biết hai cạnh và góc xen giữa, và tính góc khi biết ba cạnh.",
+    "Vận dụng định lí sin a/sin A = b/sin B = c/sin C = 2R để tính cạnh khi biết một cạnh và hai góc.",
+    "Biện luận số tam giác khi biết hai cạnh và một góc đối diện: không có, một hoặc hai tam giác.",
+    "Tính diện tích tam giác bằng S = ½ab·sin C và bằng công thức Hê-rông, nhận thấy hai cách cho cùng kết quả.",
+    "Tính bán kính đường tròn ngoại tiếp R và nội tiếp r = S/p.",
+    "Nhận biết bộ ba yếu tố không tạo thành tam giác (vi phạm bất đẳng thức tam giác, tổng hai góc từ 180° trở lên)."
+  ],
+  "state": {
+    "mode": "Ba yếu tố đã biết: \"SSS\" (ba cạnh a, b, c), \"SAS\" (cạnh b, góc A, cạnh c), \"ASA\" (góc B, cạnh a, góc C), \"SSA\" (cạnh a, cạnh b, góc A đối diện a)",
+    "a": "Cạnh a = BC (cm), dùng trong SSS, ASA, SSA",
+    "b": "Cạnh b = CA (cm), dùng trong SSS, SAS, SSA",
+    "c": "Cạnh c = AB (cm), dùng trong SSS, SAS",
+    "A": "Góc A (độ), dùng trong SAS, SSA",
+    "B": "Góc B (độ), dùng trong ASA",
+    "C": "Góc C (độ), dùng trong ASA",
+    "pick": "Khi SSA có hai tam giác: 1 vẽ đậm tam giác có B nhọn, 2 vẽ đậm tam giác có B tù",
+    "circle": "true thì vẽ đường tròn ngoại tiếp tâm O"
+  },
+  "events": {
+    "triangle-solved": {
+      "kind": "result",
+      "description": "Kết quả giải tam giác sau khi học sinh đổi xong một yếu tố hoặc trường hợp",
+      "data": {
+        "caseCode": "Trường hợp: 1 = c.c.c (SSS), 2 = c.g.c (SAS), 3 = g.c.g (ASA), 4 = c.c.g (SSA)",
+        "solutions": "Số tam giác thỏa mãn (0, 1 hoặc 2)",
+        "area": "Diện tích tam giác đang vẽ đậm (cm²), 0 khi không có tam giác",
+        "a": "Cạnh a của tam giác đang vẽ đậm (cm); không có khi không có tam giác",
+        "b": "Cạnh b (cm); không có khi không có tam giác",
+        "c": "Cạnh c (cm); không có khi không có tam giác"
+      }
+    }
+  }
+}

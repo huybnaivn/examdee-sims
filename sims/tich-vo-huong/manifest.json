@@ -1,0 +1,57 @@
+{
+  "slug": "tich-vo-huong",
+  "version": "1.0.0",
+  "title": "Tích vô hướng của hai vectơ",
+  "subject": "math",
+  "grades": [
+    10
+  ],
+  "description": "Hai vectơ a và b chung gốc O trên mặt phẳng tọa độ, kéo được đầu mút hoặc chỉnh bằng thanh trượt. Sim tính tích vô hướng theo định nghĩa a·b = |a|·|b|·cos(a, b) và theo tọa độ a₁b₁ + a₂b₂, cho thấy hai cách bằng nhau, vẽ hình chiếu vuông góc của b lên giá của a, và cho biết dấu của tích vô hướng ứng với góc nhọn, vuông hay tù.",
+  "learningGoals": [
+    "Tính tích vô hướng theo định nghĩa a·b = |a|·|b|·cos(a, b) và theo biểu thức tọa độ a·b = a₁b₁ + a₂b₂.",
+    "Nhận biết a ⊥ b khi và chỉ khi a·b = 0.",
+    "Liên hệ dấu của tích vô hướng với góc giữa hai vectơ: dương khi góc nhọn, âm khi góc tù.",
+    "Hiểu a·b bằng |a| nhân với hình chiếu (có dấu) của b lên giá của a.",
+    "Nhận ra a·a = |a|² và các tính chất giao hoán, phân phối của tích vô hướng."
+  ],
+  "state": {
+    "ax": "Hoành độ a₁ của vectơ a (−5 đến 5, bước 0,5)",
+    "ay": "Tung độ a₂ của vectơ a (−5 đến 5, bước 0,5)",
+    "bx": "Hoành độ b₁ của vectơ b (−5 đến 5, bước 0,5)",
+    "by": "Tung độ b₂ của vectơ b (−5 đến 5, bước 0,5)",
+    "showProjection": "true thì vẽ giá của a và hình chiếu vuông góc của b lên đó"
+  },
+  "events": {
+    "vector-moved": {
+      "kind": "action",
+      "description": "Học sinh kéo đầu mút một vectơ trên hình rồi thả",
+      "data": {
+        "vector": "1 là vectơ a, 2 là vectơ b",
+        "x": "Hoành độ mới",
+        "y": "Tung độ mới"
+      }
+    },
+    "dot-product": {
+      "kind": "result",
+      "description": "Tích vô hướng sau khi học sinh thả một vectơ hoặc chỉnh xong một tọa độ",
+      "data": {
+        "dot": "Tích vô hướng a·b",
+        "angle": "Góc giữa a và b (độ); không có khi một vectơ là vectơ-không",
+        "ax": "Hoành độ của a",
+        "ay": "Tung độ của a",
+        "bx": "Hoành độ của b",
+        "by": "Tung độ của b"
+      }
+    },
+    "perpendicular": {
+      "kind": "goal",
+      "description": "Học sinh vừa làm cho hai vectơ (khác vectơ-không) vuông góc, a·b = 0",
+      "data": {
+        "ax": "Hoành độ của a",
+        "ay": "Tung độ của a",
+        "bx": "Hoành độ của b",
+        "by": "Tung độ của b"
+      }
+    }
+  }
+}
