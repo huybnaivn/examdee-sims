@@ -1,0 +1,48 @@
+{
+  "slug": "ham-so-bac-nhat",
+  "version": "1.0.0",
+  "title": "Hệ số góc và vị trí hai đường thẳng",
+  "subject": "math",
+  "grades": [8, 9],
+  "description": "Hai đường thẳng d₁: y = a₁x + b₁ và d₂: y = a₂x + b₂ trên mặt phẳng tọa độ, chỉnh bằng thanh trượt. Tam giác hệ số góc cho thấy a là độ tăng của y khi x tăng 1 đơn vị, cung tròn cho góc α tạo bởi đường thẳng và trục Ox (tan α = a). Mô phỏng nhận biết hai đường thẳng cắt nhau, song song, trùng nhau, vuông góc và tìm giao điểm; có nhiệm vụ tìm đường thẳng song song hoặc vuông góc với d₁, có thể đi qua một điểm M cho trước.",
+  "learningGoals": [
+    "Hiểu hệ số góc a của đường thẳng y = ax + b: khi x tăng 1 thì y tăng a; a > 0 thì góc α nhọn, a < 0 thì góc α tù, tan α = a.",
+    "Nhận biết vị trí hai đường thẳng: cắt nhau khi a₁ ≠ a₂; song song khi a₁ = a₂, b₁ ≠ b₂; trùng nhau khi a₁ = a₂, b₁ = b₂; vuông góc khi a₁·a₂ = −1.",
+    "Tìm tọa độ giao điểm của hai đường thẳng cắt nhau.",
+    "Viết phương trình đường thẳng đi qua một điểm và song song hoặc vuông góc với một đường thẳng cho trước."
+  ],
+  "state": {
+    "a1": "Hệ số góc a₁ của d₁ (bước 0,25)",
+    "b1": "Tung độ gốc b₁ của d₁",
+    "a2": "Hệ số góc a₂ của d₂ (bước 0,25)",
+    "b2": "Tung độ gốc b₂ của d₂",
+    "showSlope": "true nếu hiện tam giác hệ số góc và góc tạo với Ox",
+    "task": "Nhiệm vụ: 0 tự do; 1 làm d₂ song song d₁; 2 làm d₂ vuông góc d₁; 3 d₂ đi qua M và song song d₁; 4 d₂ đi qua M và vuông góc d₁",
+    "mx": "Hoành độ điểm M (nhiệm vụ 3, 4)",
+    "my": "Tung độ điểm M (nhiệm vụ 3, 4)",
+    "taskDone": "true khi nhiệm vụ hiện tại đang đạt"
+  },
+  "events": {
+    "lines-committed": {
+      "kind": "result",
+      "description": "Học sinh chỉnh xong một hệ số hoặc nhiệm vụ: vị trí tương đối của hai đường thẳng",
+      "data": {
+        "classification": "1 cắt nhau (không vuông góc), 2 song song, 3 trùng nhau, 4 vuông góc",
+        "hasIntersection": "1 nếu có đúng một giao điểm, 0 nếu song song hoặc trùng nhau",
+        "x": "Hoành độ giao điểm (không có khi hasIntersection = 0)",
+        "y": "Tung độ giao điểm (không có khi hasIntersection = 0)",
+        "a1": "Hệ số góc a₁",
+        "a2": "Hệ số góc a₂"
+      }
+    },
+    "task-done": {
+      "kind": "goal",
+      "description": "Học sinh làm đúng nhiệm vụ: d₂ song song hoặc vuông góc với d₁ (đi qua M nếu được yêu cầu)",
+      "data": {
+        "task": "Số thứ tự nhiệm vụ (xem state.task)",
+        "a2": "Hệ số góc a₂ tìm được",
+        "b2": "Tung độ gốc b₂ tìm được"
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "ti-so-luong-giac",
+  "version": "1.0.0",
+  "title": "Tỉ số lượng giác của góc nhọn",
+  "subject": "math",
+  "grades": [9],
+  "description": "Tam giác ABC vuông tại A với góc nhọn B = α. Kéo đỉnh C để đổi góc, kéo đỉnh B để phóng to, thu nhỏ tam giác. Cạnh đối, cạnh kề, cạnh huyền được tô màu theo góc đang xét; sin, cos, tan, cot được tính từ độ dài các cạnh. Tam giác đồng dạng nhỏ hơn cho cùng tỉ số. Xét góc C = 90° − α để thấy quan hệ giữa hai góc phụ nhau, và làm nhiệm vụ tìm góc khi biết một tỉ số lượng giác.",
+  "learningGoals": [
+    "Xác định cạnh đối, cạnh kề, cạnh huyền đối với một góc nhọn và viết sin α = đối/huyền, cos α = kề/huyền, tan α = đối/kề, cot α = kề/đối.",
+    "Giải thích vì sao tỉ số lượng giác chỉ phụ thuộc vào góc, không phụ thuộc kích thước tam giác (tam giác đồng dạng).",
+    "Vận dụng tỉ số lượng giác của hai góc phụ nhau: sin α = cos(90° − α), tan α = cot(90° − α).",
+    "Kiểm chứng tan α · cot α = 1, sin²α + cos²α = 1 và nhớ giá trị lượng giác của góc 30°, 45°, 60°.",
+    "Tìm góc nhọn khi biết một tỉ số lượng giác của nó."
+  ],
+  "state": {
+    "alpha": "Góc B = α (độ, số nguyên từ 5 đến 85)",
+    "bc": "Độ dài cạnh huyền BC (cm)",
+    "atC": "true nếu đang xét góc C = 90° − α (cạnh đối và cạnh kề đổi vai trò)",
+    "showSimilar": "true nếu hiện tam giác A'BC' đồng dạng với cạnh huyền bằng một nửa",
+    "task": "Nhiệm vụ tìm góc: 0 không có; 1 sin α = 0,5; 2 cos α = 0,5; 3 tan α = 1; 4 sin α = 0,8; 5 tan α = 2; 6 cos α = 0,9; 7 cot α = 3 (α làm tròn đến độ)",
+    "taskDone": "true khi nhiệm vụ hiện tại đã đạt"
+  },
+  "events": {
+    "drag-vertex": {
+      "kind": "action",
+      "description": "Học sinh kéo một đỉnh của tam giác rồi thả",
+      "data": {
+        "vertex": "1 đỉnh C (đổi góc), 2 đỉnh B (đổi kích thước)",
+        "angle": "Góc α sau khi thả (độ)",
+        "hypotenuse": "Cạnh huyền BC sau khi thả (cm)"
+      }
+    },
+    "angle-committed": {
+      "kind": "result",
+      "description": "Học sinh chỉnh xong góc hoặc kích thước tam giác",
+      "data": {
+        "angle": "Góc α (độ)",
+        "sin": "sin α",
+        "cos": "cos α",
+        "tan": "tan α"
+      }
+    },
+    "angle-found": {
+      "kind": "goal",
+      "description": "Học sinh tìm đúng góc α (làm tròn đến độ) có tỉ số lượng giác được yêu cầu",
+      "data": {
+        "angle": "Góc tìm được (độ)",
+        "task": "Số thứ tự nhiệm vụ (xem state.task)"
+      }
+    }
+  }
+}

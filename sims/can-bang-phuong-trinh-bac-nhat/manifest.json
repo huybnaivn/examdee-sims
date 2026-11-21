@@ -1,0 +1,61 @@
+{
+  "slug": "can-bang-phuong-trinh-bac-nhat",
+  "version": "1.0.0",
+  "title": "Giải phương trình bậc nhất bằng cân thăng bằng",
+  "subject": "math",
+  "grades": [6, 7, 8],
+  "description": "Phương trình ax + b = cx + d được đặt lên một chiếc cân: hộp x và quả cân 1 đứng trên đĩa, số hạng âm là bóng bay kéo lên. Học sinh thêm, bớt hoặc chia thành các phần bằng nhau ở cả hai đĩa để cân luôn thăng bằng, cho đến khi một đĩa chỉ còn một hộp x. Mỗi bước được viết lại thành phương trình tương đương. Thử làm ở một đĩa thì cân bị lệch và thao tác bị từ chối. Có cả đề vô nghiệm và đề có vô số nghiệm.",
+  "learningGoals": [
+    "Hiểu quy tắc chuyển vế và quy tắc nhân (chia) như việc làm giống nhau ở hai đĩa cân: phương trình mới tương đương phương trình cũ.",
+    "Giải phương trình bậc nhất một ẩn ax + b = cx + d và kiểm tra nghiệm x = (d − b)/(a − c).",
+    "Nhận ra phương trình vô nghiệm (dẫn tới 0 = k với k ≠ 0) và phương trình có vô số nghiệm (dẫn tới k = k).",
+    "Tìm cách giải với ít bước biến đổi nhất."
+  ],
+  "state": {
+    "preset": "Chỉ số đề bài (0–7) trong danh sách: 3x + 2 = x + 8; 2x + 5 = 11; 5x − 3 = 2x + 9; 2x + 7 = 4x + 1; −x + 7 = x + 1; x + 4 = 3x − 6; 2x + 3 = 2x + 5 (vô nghiệm); 3x + 6 = 3x + 6 (vô số nghiệm)",
+    "la": "Số hộp x trên đĩa trái (âm là bóng bay x), hệ số của x ở vế trái",
+    "lb": "Số quả cân 1 trên đĩa trái (âm là bóng bay), hạng tử tự do ở vế trái",
+    "ra": "Hệ số của x ở vế phải",
+    "rb": "Hạng tử tự do ở vế phải",
+    "steps": "Số bước biến đổi hợp lệ đã làm",
+    "log": "Các bước đã làm, mỗi dòng một bước: \"tên thao tác: phương trình mới\"; dòng đầu là đề bài",
+    "item": "Vật được thêm, bớt: \"x\" (hộp x) hoặc \"1\" (quả cân 1)",
+    "amount": "Số lượng n vật thêm, bớt hoặc số phần khi chia (1–9)",
+    "side": "Làm ở \"both\" (cả hai đĩa), \"left\" hoặc \"right\" (chỉ một đĩa, sẽ bị từ chối)"
+  },
+  "events": {
+    "operation": {
+      "kind": "action",
+      "description": "Học sinh thực hiện một thao tác trên cân",
+      "data": {
+        "op": "1 thêm, 2 bớt, 3 chia thành n phần",
+        "item": "1 hộp x, 0 quả cân 1",
+        "amount": "Số lượng n",
+        "side": "0 cả hai đĩa, 1 chỉ đĩa trái, 2 chỉ đĩa phải",
+        "accepted": "1 nếu thao tác hợp lệ, 0 nếu bị từ chối (làm một đĩa, chia không đều, đĩa đầy)"
+      }
+    },
+    "solved": {
+      "kind": "result",
+      "description": "Một đĩa chỉ còn một hộp x: đã tìm được nghiệm",
+      "data": {
+        "x": "Nghiệm tìm được",
+        "steps": "Số bước học sinh đã dùng",
+        "minSteps": "Số bước ít nhất có thể"
+      }
+    },
+    "no-unique-solution": {
+      "kind": "result",
+      "description": "Hai đĩa không còn hộp x: phương trình vô nghiệm hoặc có vô số nghiệm",
+      "data": {
+        "infinite": "1 nếu vô số nghiệm, 0 nếu vô nghiệm",
+        "steps": "Số bước học sinh đã dùng"
+      }
+    },
+    "solved-minimum": {
+      "kind": "goal",
+      "description": "Học sinh giải xong với số bước ít nhất",
+      "data": { "steps": "Số bước" }
+    }
+  }
+}

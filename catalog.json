@@ -739,6 +739,75 @@
     "thumbnailUrl": "/can-bang-phuong-trinh/1.0.0/thumb.png"
   },
   {
+    "slug": "can-bang-phuong-trinh-bac-nhat",
+    "version": "1.0.0",
+    "title": "Giải phương trình bậc nhất bằng cân thăng bằng",
+    "subject": "math",
+    "grades": [
+      6,
+      7,
+      8
+    ],
+    "description": "Phương trình ax + b = cx + d được đặt lên một chiếc cân: hộp x và quả cân 1 đứng trên đĩa, số hạng âm là bóng bay kéo lên. Học sinh thêm, bớt hoặc chia thành các phần bằng nhau ở cả hai đĩa để cân luôn thăng bằng, cho đến khi một đĩa chỉ còn một hộp x. Mỗi bước được viết lại thành phương trình tương đương. Thử làm ở một đĩa thì cân bị lệch và thao tác bị từ chối. Có cả đề vô nghiệm và đề có vô số nghiệm.",
+    "learningGoals": [
+      "Hiểu quy tắc chuyển vế và quy tắc nhân (chia) như việc làm giống nhau ở hai đĩa cân: phương trình mới tương đương phương trình cũ.",
+      "Giải phương trình bậc nhất một ẩn ax + b = cx + d và kiểm tra nghiệm x = (d − b)/(a − c).",
+      "Nhận ra phương trình vô nghiệm (dẫn tới 0 = k với k ≠ 0) và phương trình có vô số nghiệm (dẫn tới k = k).",
+      "Tìm cách giải với ít bước biến đổi nhất."
+    ],
+    "state": {
+      "preset": "Chỉ số đề bài (0–7) trong danh sách: 3x + 2 = x + 8; 2x + 5 = 11; 5x − 3 = 2x + 9; 2x + 7 = 4x + 1; −x + 7 = x + 1; x + 4 = 3x − 6; 2x + 3 = 2x + 5 (vô nghiệm); 3x + 6 = 3x + 6 (vô số nghiệm)",
+      "la": "Số hộp x trên đĩa trái (âm là bóng bay x), hệ số của x ở vế trái",
+      "lb": "Số quả cân 1 trên đĩa trái (âm là bóng bay), hạng tử tự do ở vế trái",
+      "ra": "Hệ số của x ở vế phải",
+      "rb": "Hạng tử tự do ở vế phải",
+      "steps": "Số bước biến đổi hợp lệ đã làm",
+      "log": "Các bước đã làm, mỗi dòng một bước: \"tên thao tác: phương trình mới\"; dòng đầu là đề bài",
+      "item": "Vật được thêm, bớt: \"x\" (hộp x) hoặc \"1\" (quả cân 1)",
+      "amount": "Số lượng n vật thêm, bớt hoặc số phần khi chia (1–9)",
+      "side": "Làm ở \"both\" (cả hai đĩa), \"left\" hoặc \"right\" (chỉ một đĩa, sẽ bị từ chối)"
+    },
+    "events": {
+      "operation": {
+        "kind": "action",
+        "description": "Học sinh thực hiện một thao tác trên cân",
+        "data": {
+          "op": "1 thêm, 2 bớt, 3 chia thành n phần",
+          "item": "1 hộp x, 0 quả cân 1",
+          "amount": "Số lượng n",
+          "side": "0 cả hai đĩa, 1 chỉ đĩa trái, 2 chỉ đĩa phải",
+          "accepted": "1 nếu thao tác hợp lệ, 0 nếu bị từ chối (làm một đĩa, chia không đều, đĩa đầy)"
+        }
+      },
+      "solved": {
+        "kind": "result",
+        "description": "Một đĩa chỉ còn một hộp x: đã tìm được nghiệm",
+        "data": {
+          "x": "Nghiệm tìm được",
+          "steps": "Số bước học sinh đã dùng",
+          "minSteps": "Số bước ít nhất có thể"
+        }
+      },
+      "no-unique-solution": {
+        "kind": "result",
+        "description": "Hai đĩa không còn hộp x: phương trình vô nghiệm hoặc có vô số nghiệm",
+        "data": {
+          "infinite": "1 nếu vô số nghiệm, 0 nếu vô nghiệm",
+          "steps": "Số bước học sinh đã dùng"
+        }
+      },
+      "solved-minimum": {
+        "kind": "goal",
+        "description": "Học sinh giải xong với số bước ít nhất",
+        "data": {
+          "steps": "Số bước"
+        }
+      }
+    },
+    "url": "/can-bang-phuong-trinh-bac-nhat/1.0.0/index.html",
+    "thumbnailUrl": "/can-bang-phuong-trinh-bac-nhat/1.0.0/thumb.png"
+  },
+  {
     "slug": "cap-so",
     "version": "1.0.0",
     "title": "Cấp số cộng và cấp số nhân",
@@ -3166,6 +3235,59 @@
     },
     "url": "/halogen/1.0.0/index.html",
     "thumbnailUrl": "/halogen/1.0.0/thumb.png"
+  },
+  {
+    "slug": "ham-so-bac-nhat",
+    "version": "1.0.0",
+    "title": "Hệ số góc và vị trí hai đường thẳng",
+    "subject": "math",
+    "grades": [
+      8,
+      9
+    ],
+    "description": "Hai đường thẳng d₁: y = a₁x + b₁ và d₂: y = a₂x + b₂ trên mặt phẳng tọa độ, chỉnh bằng thanh trượt. Tam giác hệ số góc cho thấy a là độ tăng của y khi x tăng 1 đơn vị, cung tròn cho góc α tạo bởi đường thẳng và trục Ox (tan α = a). Mô phỏng nhận biết hai đường thẳng cắt nhau, song song, trùng nhau, vuông góc và tìm giao điểm; có nhiệm vụ tìm đường thẳng song song hoặc vuông góc với d₁, có thể đi qua một điểm M cho trước.",
+    "learningGoals": [
+      "Hiểu hệ số góc a của đường thẳng y = ax + b: khi x tăng 1 thì y tăng a; a > 0 thì góc α nhọn, a < 0 thì góc α tù, tan α = a.",
+      "Nhận biết vị trí hai đường thẳng: cắt nhau khi a₁ ≠ a₂; song song khi a₁ = a₂, b₁ ≠ b₂; trùng nhau khi a₁ = a₂, b₁ = b₂; vuông góc khi a₁·a₂ = −1.",
+      "Tìm tọa độ giao điểm của hai đường thẳng cắt nhau.",
+      "Viết phương trình đường thẳng đi qua một điểm và song song hoặc vuông góc với một đường thẳng cho trước."
+    ],
+    "state": {
+      "a1": "Hệ số góc a₁ của d₁ (bước 0,25)",
+      "b1": "Tung độ gốc b₁ của d₁",
+      "a2": "Hệ số góc a₂ của d₂ (bước 0,25)",
+      "b2": "Tung độ gốc b₂ của d₂",
+      "showSlope": "true nếu hiện tam giác hệ số góc và góc tạo với Ox",
+      "task": "Nhiệm vụ: 0 tự do; 1 làm d₂ song song d₁; 2 làm d₂ vuông góc d₁; 3 d₂ đi qua M và song song d₁; 4 d₂ đi qua M và vuông góc d₁",
+      "mx": "Hoành độ điểm M (nhiệm vụ 3, 4)",
+      "my": "Tung độ điểm M (nhiệm vụ 3, 4)",
+      "taskDone": "true khi nhiệm vụ hiện tại đang đạt"
+    },
+    "events": {
+      "lines-committed": {
+        "kind": "result",
+        "description": "Học sinh chỉnh xong một hệ số hoặc nhiệm vụ: vị trí tương đối của hai đường thẳng",
+        "data": {
+          "classification": "1 cắt nhau (không vuông góc), 2 song song, 3 trùng nhau, 4 vuông góc",
+          "hasIntersection": "1 nếu có đúng một giao điểm, 0 nếu song song hoặc trùng nhau",
+          "x": "Hoành độ giao điểm (không có khi hasIntersection = 0)",
+          "y": "Tung độ giao điểm (không có khi hasIntersection = 0)",
+          "a1": "Hệ số góc a₁",
+          "a2": "Hệ số góc a₂"
+        }
+      },
+      "task-done": {
+        "kind": "goal",
+        "description": "Học sinh làm đúng nhiệm vụ: d₂ song song hoặc vuông góc với d₁ (đi qua M nếu được yêu cầu)",
+        "data": {
+          "task": "Số thứ tự nhiệm vụ (xem state.task)",
+          "a2": "Hệ số góc a₂ tìm được",
+          "b2": "Tung độ gốc b₂ tìm được"
+        }
+      }
+    },
+    "url": "/ham-so-bac-nhat/1.0.0/index.html",
+    "thumbnailUrl": "/ham-so-bac-nhat/1.0.0/thumb.png"
   },
   {
     "slug": "ham-so-mu-logarit",
@@ -6409,6 +6531,62 @@
     },
     "url": "/thong-ke-mo-ta/1.0.0/index.html",
     "thumbnailUrl": "/thong-ke-mo-ta/1.0.0/thumb.png"
+  },
+  {
+    "slug": "ti-so-luong-giac",
+    "version": "1.0.0",
+    "title": "Tỉ số lượng giác của góc nhọn",
+    "subject": "math",
+    "grades": [
+      9
+    ],
+    "description": "Tam giác ABC vuông tại A với góc nhọn B = α. Kéo đỉnh C để đổi góc, kéo đỉnh B để phóng to, thu nhỏ tam giác. Cạnh đối, cạnh kề, cạnh huyền được tô màu theo góc đang xét; sin, cos, tan, cot được tính từ độ dài các cạnh. Tam giác đồng dạng nhỏ hơn cho cùng tỉ số. Xét góc C = 90° − α để thấy quan hệ giữa hai góc phụ nhau, và làm nhiệm vụ tìm góc khi biết một tỉ số lượng giác.",
+    "learningGoals": [
+      "Xác định cạnh đối, cạnh kề, cạnh huyền đối với một góc nhọn và viết sin α = đối/huyền, cos α = kề/huyền, tan α = đối/kề, cot α = kề/đối.",
+      "Giải thích vì sao tỉ số lượng giác chỉ phụ thuộc vào góc, không phụ thuộc kích thước tam giác (tam giác đồng dạng).",
+      "Vận dụng tỉ số lượng giác của hai góc phụ nhau: sin α = cos(90° − α), tan α = cot(90° − α).",
+      "Kiểm chứng tan α · cot α = 1, sin²α + cos²α = 1 và nhớ giá trị lượng giác của góc 30°, 45°, 60°.",
+      "Tìm góc nhọn khi biết một tỉ số lượng giác của nó."
+    ],
+    "state": {
+      "alpha": "Góc B = α (độ, số nguyên từ 5 đến 85)",
+      "bc": "Độ dài cạnh huyền BC (cm)",
+      "atC": "true nếu đang xét góc C = 90° − α (cạnh đối và cạnh kề đổi vai trò)",
+      "showSimilar": "true nếu hiện tam giác A'BC' đồng dạng với cạnh huyền bằng một nửa",
+      "task": "Nhiệm vụ tìm góc: 0 không có; 1 sin α = 0,5; 2 cos α = 0,5; 3 tan α = 1; 4 sin α = 0,8; 5 tan α = 2; 6 cos α = 0,9; 7 cot α = 3 (α làm tròn đến độ)",
+      "taskDone": "true khi nhiệm vụ hiện tại đã đạt"
+    },
+    "events": {
+      "drag-vertex": {
+        "kind": "action",
+        "description": "Học sinh kéo một đỉnh của tam giác rồi thả",
+        "data": {
+          "vertex": "1 đỉnh C (đổi góc), 2 đỉnh B (đổi kích thước)",
+          "angle": "Góc α sau khi thả (độ)",
+          "hypotenuse": "Cạnh huyền BC sau khi thả (cm)"
+        }
+      },
+      "angle-committed": {
+        "kind": "result",
+        "description": "Học sinh chỉnh xong góc hoặc kích thước tam giác",
+        "data": {
+          "angle": "Góc α (độ)",
+          "sin": "sin α",
+          "cos": "cos α",
+          "tan": "tan α"
+        }
+      },
+      "angle-found": {
+        "kind": "goal",
+        "description": "Học sinh tìm đúng góc α (làm tròn đến độ) có tỉ số lượng giác được yêu cầu",
+        "data": {
+          "angle": "Góc tìm được (độ)",
+          "task": "Số thứ tự nhiệm vụ (xem state.task)"
+        }
+      }
+    },
+    "url": "/ti-so-luong-giac/1.0.0/index.html",
+    "thumbnailUrl": "/ti-so-luong-giac/1.0.0/thumb.png"
   },
   {
     "slug": "ti-so-phan-tram",
