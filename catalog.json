@@ -3237,6 +3237,48 @@
     "thumbnailUrl": "/may-bien-ap/1.0.0/thumb.png"
   },
   {
+    "slug": "may-phat-dien",
+    "version": "1.0.0",
+    "title": "Máy phát điện xoay chiều",
+    "subject": "physics",
+    "grades": [
+      9,
+      12
+    ],
+    "description": "Khung dây phẳng N vòng, diện tích S quay đều với tốc độ n vòng/s trong từ trường đều B (nhìn dọc trục quay). Sim vẽ pháp tuyến của khung, chiều dòng điện trong hai cạnh khung, đồ thị suất điện động e = E₀·sin(ωt + φ) và từ thông Φ = NBS·cos(ωt + φ) theo thời gian, cùng một bóng đèn sáng theo |e|. Có thể đổi số cặp cực p (f = n·p) và bật cổ góp để có máy phát điện một chiều (điện áp ra không đổi chiều). E₀ = NBSω, giá trị hiệu dụng E = E₀/√2. Chuyển động quay được làm chậm để quan sát; hình không theo tỉ lệ.",
+    "learningGoals": [
+      "Giải thích sự xuất hiện suất điện động xoay chiều khi khung dây quay đều trong từ trường đều: từ thông qua khung Φ = NBS·cos ωt biến thiên điều hòa.",
+      "Vận dụng e = E₀·sin(ωt + φ) với E₀ = NBSω và giá trị hiệu dụng E = E₀/√2; nhận ra E₀ tỉ lệ với N, B, S và tốc độ quay.",
+      "Nhận ra e = 0 khi từ thông qua khung cực đại (mặt khung vuông góc với B) và |e| cực đại khi từ thông bằng 0.",
+      "Vận dụng f = n·p cho máy phát có p cặp cực quay n vòng/s.",
+      "Phân biệt máy phát dùng hai vành khuyên (dòng xoay chiều) với máy phát dùng cổ góp (dòng một chiều, điện áp ra không đổi dấu)."
+    ],
+    "state": {
+      "n": "Tốc độ quay n (vòng/s)",
+      "p": "Số cặp cực p",
+      "turns": "Số vòng dây N của khung",
+      "area": "Diện tích mỗi vòng dây S (cm²)",
+      "B": "Cảm ứng từ B (T)",
+      "phase": "Pha ban đầu φ (độ): góc giữa pháp tuyến khung và B lúc t = 0, tính theo góc điện",
+      "dc": "true: lấy điện ra qua cổ góp (máy phát điện một chiều); false: qua hai vành khuyên",
+      "t": "Thời gian thực (s), quay vòng sau một số nguyên vòng quay"
+    },
+    "events": {
+      "generator-set": {
+        "kind": "result",
+        "description": "Học sinh vừa chốt một thiết lập (thả thanh trượt, đổi số cặp cực hoặc bật/tắt cổ góp); kèm các đại lượng tính được",
+        "data": {
+          "E0": "Suất điện động cực đại E₀ = NBSω (V)",
+          "Eeff": "Suất điện động hiệu dụng E = E₀/√2 (V)",
+          "f": "Tần số f = n·p (Hz)",
+          "dc": "1 nếu dùng cổ góp (máy phát một chiều), 0 nếu dùng vành khuyên"
+        }
+      }
+    },
+    "url": "/may-phat-dien/1.0.0/index.html",
+    "thumbnailUrl": "/may-phat-dien/1.0.0/thumb.png"
+  },
+  {
     "slug": "mol",
     "version": "1.0.0",
     "title": "Mol và các đại lượng liên quan",
@@ -3547,6 +3589,54 @@
     },
     "url": "/phong-xa/1.0.0/index.html",
     "thumbnailUrl": "/phong-xa/1.0.0/thumb.png"
+  },
+  {
+    "slug": "pin-dien-hoa",
+    "version": "1.0.0",
+    "title": "Pin điện hóa",
+    "subject": "chemistry",
+    "grades": [
+      12
+    ],
+    "description": "Lắp pin điện hóa từ hai điện cực kim loại (Mg, Zn, Fe, Cu, Ag), mỗi điện cực nhúng trong dung dịch muối 1 M của chính nó, nối bằng cầu muối KNO₃ và mạch ngoài có điện trở R và vôn kế. Sim xác định anode (kim loại có thế điện cực chuẩn âm hơn) và cathode, tính E°pin = E°catot − E°anot, viết các nửa phản ứng và phản ứng chung, vẽ chiều electron ở mạch ngoài và sự di chuyển của K⁺, NO₃⁻ trong cầu muối. Khi cho pin hoạt động qua R trong thời gian t: I = E°pin/R, Q = I·t, n(e) = Q/F; anode mòn đi, cathode dày lên theo bảo toàn electron. Thế điện cực chuẩn dùng: Mg −2,37; Zn −0,763; Fe −0,440; Cu +0,340; Ag +0,799 V. Bỏ qua điện trở trong và sự thay đổi nồng độ. Hình không theo tỉ lệ.",
+    "learningGoals": [
+      "Xác định anode (cực âm, kim loại có E° nhỏ hơn bị oxi hóa) và cathode (cực dương, ion kim loại có E° lớn hơn bị khử) của pin điện hóa.",
+      "Tính suất điện động chuẩn E°pin = E°catot − E°anot từ bảng thế điện cực chuẩn; hai điện cực giống nhau thì E°pin = 0.",
+      "Viết nửa phản ứng ở mỗi điện cực và phản ứng xảy ra trong pin.",
+      "Mô tả chiều electron ở mạch ngoài (từ anode sang cathode) và vai trò của cầu muối (K⁺ về phía cathode, NO₃⁻ về phía anode).",
+      "Tính khối lượng anode giảm và cathode tăng theo điện lượng Q = I·t và bảo toàn electron."
+    ],
+    "state": {
+      "left": "Kim loại điện cực bên trái: \"Mg\", \"Zn\", \"Fe\", \"Cu\" hoặc \"Ag\" (nhúng trong dung dịch muối 1 M của nó)",
+      "right": "Kim loại điện cực bên phải, cùng các giá trị như left",
+      "R": "Điện trở mạch ngoài R (Ω)",
+      "duration": "Thời gian đóng mạch đã đặt (s); pin tự ngắt khi t đạt giá trị này",
+      "t": "Thời gian pin đã phát điện trong lần chạy này (s)"
+    },
+    "events": {
+      "cell-assembled": {
+        "kind": "result",
+        "description": "Học sinh vừa chọn xong một điện cực, tức là lắp xong một pin",
+        "data": {
+          "anode": "Chỉ số kim loại làm anode: 0 Mg, 1 Zn, 2 Fe, 3 Cu, 4 Ag (bằng cathode khi hai điện cực giống nhau)",
+          "cathode": "Chỉ số kim loại làm cathode, cùng cách đánh số",
+          "emf": "Suất điện động chuẩn E°pin (V)"
+        }
+      },
+      "run-stopped": {
+        "kind": "result",
+        "description": "Một lần cho pin hoạt động vừa dừng (hết thời gian đã đặt hoặc học sinh ngắt mạch)",
+        "data": {
+          "time": "Thời gian pin đã phát điện (s)",
+          "charge": "Điện lượng Q = I·t đã qua mạch (C)",
+          "anodeMassLoss": "Khối lượng anode giảm (g)",
+          "cathodeMassGain": "Khối lượng cathode tăng (g)",
+          "emf": "Suất điện động chuẩn E°pin (V)"
+        }
+      }
+    },
+    "url": "/pin-dien-hoa/1.0.0/index.html",
+    "thumbnailUrl": "/pin-dien-hoa/1.0.0/thumb.png"
   },
   {
     "slug": "quan-he-vat-an-thit-con-moi",
@@ -3980,6 +4070,50 @@
     },
     "url": "/song-dung/1.0.0/index.html",
     "thumbnailUrl": "/song-dung/1.0.0/thumb.png"
+  },
+  {
+    "slug": "su-no-vi-nhiet",
+    "version": "1.0.0",
+    "title": "Sự nở vì nhiệt",
+    "subject": "physics",
+    "grades": [
+      6,
+      10
+    ],
+    "description": "Nung nóng hoặc làm lạnh một thanh, một tấm phẳng, một khối lập phương (thép, nhôm, đồng, thủy tinh) hoặc chất lỏng trong bình (nước, rượu etanol). Chọn kích thước ban đầu, nhiệt độ ban đầu và độ tăng nhiệt độ để thấy độ nở được vẽ phóng đại cùng công thức Δl = α·l₀·Δt, ΔS ≈ 2α·S₀·Δt, ΔV ≈ 3α·V₀·Δt (β ≈ 3α với chất rắn) và ΔV = β·V₀·Δt với chất lỏng. Hệ số nở dài dùng: thép 11·10⁻⁶, nhôm 24·10⁻⁶, đồng 17·10⁻⁶, thủy tinh 9·10⁻⁶ K⁻¹; rượu β = 1,1·10⁻³ K⁻¹. Thể tích nước được tính từ bảng khối lượng riêng nên thấy được nước co lại khi nóng từ 0 °C đến 4 °C. Khung ví dụ thực tế: khe hở giữa hai thanh ray thép 12,5 m (khe 6 mm lúc lắp), băng kép đồng – thép cong về phía kim loại nở ít hơn, đồ thị thể tích 1 g nước từ 0 đến 12 °C. Bỏ qua sự nở của bình. Hình không theo tỉ lệ.",
+    "learningGoals": [
+      "Nhận biết chất rắn, chất lỏng nở ra khi nóng lên và co lại khi lạnh đi; các chất khác nhau nở vì nhiệt khác nhau; chất lỏng nở vì nhiệt nhiều hơn chất rắn.",
+      "Vận dụng Δl = α·l₀·Δt để tính độ nở dài; ΔS ≈ 2α·S₀·Δt và ΔV ≈ 3α·V₀·Δt (β ≈ 3α) cho chất rắn; ΔV = β·V₀·Δt cho chất lỏng.",
+      "Giải thích vì sao phải để khe hở giữa các thanh ray và vì sao băng kép bị cong về phía kim loại nở ít hơn khi bị nung nóng.",
+      "Nhận ra sự nở bất thường của nước: từ 0 °C đến 4 °C nước co lại khi nóng lên, ở 4 °C nước có khối lượng riêng lớn nhất."
+    ],
+    "state": {
+      "object": "Vật được nung: \"rod\" thanh, \"plate\" tấm phẳng, \"block\" khối lập phương, \"liquid\" chất lỏng trong bình",
+      "solid": "Chất rắn khi vật là thanh, tấm hay khối: \"steel\" thép, \"aluminium\" nhôm, \"copper\" đồng, \"glass\" thủy tinh",
+      "liquid": "Chất lỏng khi vật là chất lỏng: \"water\" nước (tính theo bảng khối lượng riêng), \"alcohol\" rượu etanol",
+      "l0": "Chiều dài ban đầu của thanh l₀ (m)",
+      "s0": "Diện tích ban đầu của tấm S₀ (cm²)",
+      "v0": "Thể tích ban đầu V₀ của khối hoặc chất lỏng (cm³)",
+      "t0": "Nhiệt độ ban đầu t₀ (°C)",
+      "dT": "Độ tăng nhiệt độ Δt = t − t₀ (°C), âm khi làm lạnh; với chất lỏng được giới hạn để chất vẫn ở thể lỏng",
+      "panel": "Khung ví dụ thực tế: \"rail\" khe hở đường ray, \"bimetal\" băng kép, \"water\" sự nở bất thường của nước, \"none\" ẩn"
+    },
+    "events": {
+      "expanded": {
+        "kind": "result",
+        "description": "Học sinh vừa chốt một thiết lập (thả thanh trượt hoặc chọn vật, chất); kèm độ nở tính được",
+        "data": {
+          "object": "Chỉ số vật: 0 thanh, 1 tấm phẳng, 2 khối lập phương, 3 chất lỏng",
+          "material": "Chỉ số chất: 0 thép, 1 nhôm, 2 đồng, 3 thủy tinh, 4 nước, 5 rượu",
+          "size0": "Kích thước ban đầu: l₀ (m) với thanh, S₀ (cm²) với tấm, V₀ (cm³) với khối và chất lỏng",
+          "deltaT": "Độ tăng nhiệt độ Δt (°C)",
+          "expansion": "Độ nở: Δl (mm) với thanh, ΔS (cm²) với tấm, ΔV (cm³) với khối và chất lỏng; âm khi co lại",
+          "relative": "Độ nở tương đối Δl/l₀, ΔS/S₀ hoặc ΔV/V₀ (không đơn vị)"
+        }
+      }
+    },
+    "url": "/su-no-vi-nhiet/1.0.0/index.html",
+    "thumbnailUrl": "/su-no-vi-nhiet/1.0.0/thumb.png"
   },
   {
     "slug": "tam-giac",

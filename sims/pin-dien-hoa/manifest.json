@@ -1,0 +1,44 @@
+{
+  "slug": "pin-dien-hoa",
+  "version": "1.0.0",
+  "title": "Pin điện hóa",
+  "subject": "chemistry",
+  "grades": [12],
+  "description": "Lắp pin điện hóa từ hai điện cực kim loại (Mg, Zn, Fe, Cu, Ag), mỗi điện cực nhúng trong dung dịch muối 1 M của chính nó, nối bằng cầu muối KNO₃ và mạch ngoài có điện trở R và vôn kế. Sim xác định anode (kim loại có thế điện cực chuẩn âm hơn) và cathode, tính E°pin = E°catot − E°anot, viết các nửa phản ứng và phản ứng chung, vẽ chiều electron ở mạch ngoài và sự di chuyển của K⁺, NO₃⁻ trong cầu muối. Khi cho pin hoạt động qua R trong thời gian t: I = E°pin/R, Q = I·t, n(e) = Q/F; anode mòn đi, cathode dày lên theo bảo toàn electron. Thế điện cực chuẩn dùng: Mg −2,37; Zn −0,763; Fe −0,440; Cu +0,340; Ag +0,799 V. Bỏ qua điện trở trong và sự thay đổi nồng độ. Hình không theo tỉ lệ.",
+  "learningGoals": [
+    "Xác định anode (cực âm, kim loại có E° nhỏ hơn bị oxi hóa) và cathode (cực dương, ion kim loại có E° lớn hơn bị khử) của pin điện hóa.",
+    "Tính suất điện động chuẩn E°pin = E°catot − E°anot từ bảng thế điện cực chuẩn; hai điện cực giống nhau thì E°pin = 0.",
+    "Viết nửa phản ứng ở mỗi điện cực và phản ứng xảy ra trong pin.",
+    "Mô tả chiều electron ở mạch ngoài (từ anode sang cathode) và vai trò của cầu muối (K⁺ về phía cathode, NO₃⁻ về phía anode).",
+    "Tính khối lượng anode giảm và cathode tăng theo điện lượng Q = I·t và bảo toàn electron."
+  ],
+  "state": {
+    "left": "Kim loại điện cực bên trái: \"Mg\", \"Zn\", \"Fe\", \"Cu\" hoặc \"Ag\" (nhúng trong dung dịch muối 1 M của nó)",
+    "right": "Kim loại điện cực bên phải, cùng các giá trị như left",
+    "R": "Điện trở mạch ngoài R (Ω)",
+    "duration": "Thời gian đóng mạch đã đặt (s); pin tự ngắt khi t đạt giá trị này",
+    "t": "Thời gian pin đã phát điện trong lần chạy này (s)"
+  },
+  "events": {
+    "cell-assembled": {
+      "kind": "result",
+      "description": "Học sinh vừa chọn xong một điện cực, tức là lắp xong một pin",
+      "data": {
+        "anode": "Chỉ số kim loại làm anode: 0 Mg, 1 Zn, 2 Fe, 3 Cu, 4 Ag (bằng cathode khi hai điện cực giống nhau)",
+        "cathode": "Chỉ số kim loại làm cathode, cùng cách đánh số",
+        "emf": "Suất điện động chuẩn E°pin (V)"
+      }
+    },
+    "run-stopped": {
+      "kind": "result",
+      "description": "Một lần cho pin hoạt động vừa dừng (hết thời gian đã đặt hoặc học sinh ngắt mạch)",
+      "data": {
+        "time": "Thời gian pin đã phát điện (s)",
+        "charge": "Điện lượng Q = I·t đã qua mạch (C)",
+        "anodeMassLoss": "Khối lượng anode giảm (g)",
+        "cathodeMassGain": "Khối lượng cathode tăng (g)",
+        "emf": "Suất điện động chuẩn E°pin (V)"
+      }
+    }
+  }
+}

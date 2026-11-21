@@ -1,0 +1,37 @@
+{
+  "slug": "may-phat-dien",
+  "version": "1.0.0",
+  "title": "Máy phát điện xoay chiều",
+  "subject": "physics",
+  "grades": [9, 12],
+  "description": "Khung dây phẳng N vòng, diện tích S quay đều với tốc độ n vòng/s trong từ trường đều B (nhìn dọc trục quay). Sim vẽ pháp tuyến của khung, chiều dòng điện trong hai cạnh khung, đồ thị suất điện động e = E₀·sin(ωt + φ) và từ thông Φ = NBS·cos(ωt + φ) theo thời gian, cùng một bóng đèn sáng theo |e|. Có thể đổi số cặp cực p (f = n·p) và bật cổ góp để có máy phát điện một chiều (điện áp ra không đổi chiều). E₀ = NBSω, giá trị hiệu dụng E = E₀/√2. Chuyển động quay được làm chậm để quan sát; hình không theo tỉ lệ.",
+  "learningGoals": [
+    "Giải thích sự xuất hiện suất điện động xoay chiều khi khung dây quay đều trong từ trường đều: từ thông qua khung Φ = NBS·cos ωt biến thiên điều hòa.",
+    "Vận dụng e = E₀·sin(ωt + φ) với E₀ = NBSω và giá trị hiệu dụng E = E₀/√2; nhận ra E₀ tỉ lệ với N, B, S và tốc độ quay.",
+    "Nhận ra e = 0 khi từ thông qua khung cực đại (mặt khung vuông góc với B) và |e| cực đại khi từ thông bằng 0.",
+    "Vận dụng f = n·p cho máy phát có p cặp cực quay n vòng/s.",
+    "Phân biệt máy phát dùng hai vành khuyên (dòng xoay chiều) với máy phát dùng cổ góp (dòng một chiều, điện áp ra không đổi dấu)."
+  ],
+  "state": {
+    "n": "Tốc độ quay n (vòng/s)",
+    "p": "Số cặp cực p",
+    "turns": "Số vòng dây N của khung",
+    "area": "Diện tích mỗi vòng dây S (cm²)",
+    "B": "Cảm ứng từ B (T)",
+    "phase": "Pha ban đầu φ (độ): góc giữa pháp tuyến khung và B lúc t = 0, tính theo góc điện",
+    "dc": "true: lấy điện ra qua cổ góp (máy phát điện một chiều); false: qua hai vành khuyên",
+    "t": "Thời gian thực (s), quay vòng sau một số nguyên vòng quay"
+  },
+  "events": {
+    "generator-set": {
+      "kind": "result",
+      "description": "Học sinh vừa chốt một thiết lập (thả thanh trượt, đổi số cặp cực hoặc bật/tắt cổ góp); kèm các đại lượng tính được",
+      "data": {
+        "E0": "Suất điện động cực đại E₀ = NBSω (V)",
+        "Eeff": "Suất điện động hiệu dụng E = E₀/√2 (V)",
+        "f": "Tần số f = n·p (Hz)",
+        "dc": "1 nếu dùng cổ góp (máy phát một chiều), 0 nếu dùng vành khuyên"
+      }
+    }
+  }
+}

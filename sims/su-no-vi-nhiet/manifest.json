@@ -1,0 +1,39 @@
+{
+  "slug": "su-no-vi-nhiet",
+  "version": "1.0.0",
+  "title": "Sự nở vì nhiệt",
+  "subject": "physics",
+  "grades": [6, 10],
+  "description": "Nung nóng hoặc làm lạnh một thanh, một tấm phẳng, một khối lập phương (thép, nhôm, đồng, thủy tinh) hoặc chất lỏng trong bình (nước, rượu etanol). Chọn kích thước ban đầu, nhiệt độ ban đầu và độ tăng nhiệt độ để thấy độ nở được vẽ phóng đại cùng công thức Δl = α·l₀·Δt, ΔS ≈ 2α·S₀·Δt, ΔV ≈ 3α·V₀·Δt (β ≈ 3α với chất rắn) và ΔV = β·V₀·Δt với chất lỏng. Hệ số nở dài dùng: thép 11·10⁻⁶, nhôm 24·10⁻⁶, đồng 17·10⁻⁶, thủy tinh 9·10⁻⁶ K⁻¹; rượu β = 1,1·10⁻³ K⁻¹. Thể tích nước được tính từ bảng khối lượng riêng nên thấy được nước co lại khi nóng từ 0 °C đến 4 °C. Khung ví dụ thực tế: khe hở giữa hai thanh ray thép 12,5 m (khe 6 mm lúc lắp), băng kép đồng – thép cong về phía kim loại nở ít hơn, đồ thị thể tích 1 g nước từ 0 đến 12 °C. Bỏ qua sự nở của bình. Hình không theo tỉ lệ.",
+  "learningGoals": [
+    "Nhận biết chất rắn, chất lỏng nở ra khi nóng lên và co lại khi lạnh đi; các chất khác nhau nở vì nhiệt khác nhau; chất lỏng nở vì nhiệt nhiều hơn chất rắn.",
+    "Vận dụng Δl = α·l₀·Δt để tính độ nở dài; ΔS ≈ 2α·S₀·Δt và ΔV ≈ 3α·V₀·Δt (β ≈ 3α) cho chất rắn; ΔV = β·V₀·Δt cho chất lỏng.",
+    "Giải thích vì sao phải để khe hở giữa các thanh ray và vì sao băng kép bị cong về phía kim loại nở ít hơn khi bị nung nóng.",
+    "Nhận ra sự nở bất thường của nước: từ 0 °C đến 4 °C nước co lại khi nóng lên, ở 4 °C nước có khối lượng riêng lớn nhất."
+  ],
+  "state": {
+    "object": "Vật được nung: \"rod\" thanh, \"plate\" tấm phẳng, \"block\" khối lập phương, \"liquid\" chất lỏng trong bình",
+    "solid": "Chất rắn khi vật là thanh, tấm hay khối: \"steel\" thép, \"aluminium\" nhôm, \"copper\" đồng, \"glass\" thủy tinh",
+    "liquid": "Chất lỏng khi vật là chất lỏng: \"water\" nước (tính theo bảng khối lượng riêng), \"alcohol\" rượu etanol",
+    "l0": "Chiều dài ban đầu của thanh l₀ (m)",
+    "s0": "Diện tích ban đầu của tấm S₀ (cm²)",
+    "v0": "Thể tích ban đầu V₀ của khối hoặc chất lỏng (cm³)",
+    "t0": "Nhiệt độ ban đầu t₀ (°C)",
+    "dT": "Độ tăng nhiệt độ Δt = t − t₀ (°C), âm khi làm lạnh; với chất lỏng được giới hạn để chất vẫn ở thể lỏng",
+    "panel": "Khung ví dụ thực tế: \"rail\" khe hở đường ray, \"bimetal\" băng kép, \"water\" sự nở bất thường của nước, \"none\" ẩn"
+  },
+  "events": {
+    "expanded": {
+      "kind": "result",
+      "description": "Học sinh vừa chốt một thiết lập (thả thanh trượt hoặc chọn vật, chất); kèm độ nở tính được",
+      "data": {
+        "object": "Chỉ số vật: 0 thanh, 1 tấm phẳng, 2 khối lập phương, 3 chất lỏng",
+        "material": "Chỉ số chất: 0 thép, 1 nhôm, 2 đồng, 3 thủy tinh, 4 nước, 5 rượu",
+        "size0": "Kích thước ban đầu: l₀ (m) với thanh, S₀ (cm²) với tấm, V₀ (cm³) với khối và chất lỏng",
+        "deltaT": "Độ tăng nhiệt độ Δt (°C)",
+        "expansion": "Độ nở: Δl (mm) với thanh, ΔS (cm²) với tấm, ΔV (cm³) với khối và chất lỏng; âm khi co lại",
+        "relative": "Độ nở tương đối Δl/l₀, ΔS/S₀ hoặc ΔV/V₀ (không đơn vị)"
+      }
+    }
+  }
+}
