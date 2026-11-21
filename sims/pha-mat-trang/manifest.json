@@ -1,0 +1,47 @@
+{
+  "slug": "pha-mat-trang",
+  "version": "1.0.0",
+  "title": "Các pha của Mặt Trăng",
+  "subject": "physics",
+  "grades": [6, 6],
+  "description": "Hình nhìn từ trên cực Bắc xuống cho thấy ánh sáng Mặt Trời, Trái Đất và Mặt Trăng trên quỹ đạo; bên cạnh là hình dạng Mặt Trăng nhìn từ Trái Đất (Bắc bán cầu). Kéo Mặt Trăng hoặc cho chạy theo ngày. Góc θ = 360°·ngày/29,5 tính từ trăng mới; phần đĩa được chiếu sáng là (1 − cos θ)/2. Tám pha theo sách KHTN 6, mỗi pha ứng với 45°: không trăng, lưỡi liềm, bán nguyệt, khuyết đầu tháng, trăng tròn, khuyết, bán nguyệt, lưỡi liềm cuối tháng. Ngày âm lịch: mùng 1 lúc trăng mới, trăng tròn vào khoảng ngày 15. Trăng đầu tháng sáng ở bên phải, cuối tháng sáng ở bên trái. Kích thước và khoảng cách không theo tỉ lệ. Có chế độ câu hỏi: đặt Mặt Trăng để thấy pha được hỏi.",
+  "learningGoals": [
+    "Giải thích được Mặt Trăng luôn được Mặt Trời chiếu sáng một nửa, nhưng phần nhìn thấy từ Trái Đất thay đổi theo vị trí của Mặt Trăng trên quỹ đạo.",
+    "Nêu được tên và thứ tự các pha của Mặt Trăng trong một tháng âm lịch (khoảng 29,5 ngày).",
+    "Nhận ra trăng mới vào đầu tháng âm lịch, trăng tròn vào khoảng giữa tháng; trăng đầu tháng sáng ở bên phải, cuối tháng sáng ở bên trái (khi quan sát ở Bắc bán cầu).",
+    "Xác định vị trí của Mặt Trăng so với Trái Đất và Mặt Trời ứng với một pha cho trước."
+  ],
+  "state": {
+    "day": "Số ngày kể từ trăng mới (0 đến 29,5); góc θ = 360°·day/29,5",
+    "speed": "Tốc độ khi chạy (ngày/giây, 0,5 đến 5)",
+    "quiz": "true khi đang ở chế độ câu hỏi (tên pha bị ẩn cho đến khi trả lời đúng)",
+    "target": "Chỉ số pha được hỏi (0 đến 7): 0 không trăng, 1 lưỡi liềm đầu tháng, 2 bán nguyệt đầu tháng, 3 khuyết đầu tháng, 4 trăng tròn, 5 khuyết cuối tháng, 6 bán nguyệt cuối tháng, 7 lưỡi liềm cuối tháng",
+    "solved": "true khi học sinh đã đặt Mặt Trăng đúng pha được hỏi"
+  },
+  "events": {
+    "moon-placed": {
+      "kind": "result",
+      "description": "Học sinh đặt Mặt Trăng tại một vị trí (thả tay khi kéo, hoặc thả thanh trượt ngày)",
+      "data": {
+        "day": "Số ngày kể từ trăng mới (ngày)",
+        "phase": "Chỉ số pha nhìn thấy (0 đến 7, như state.target)",
+        "lit": "Phần đĩa được chiếu sáng nhìn từ Trái Đất (0 đến 1)"
+      }
+    },
+    "phase-matched": {
+      "kind": "goal",
+      "description": "Ở chế độ câu hỏi, học sinh đặt Mặt Trăng đúng pha được hỏi",
+      "data": {
+        "target": "Chỉ số pha được hỏi (0 đến 7)",
+        "day": "Số ngày kể từ trăng mới khi trả lời đúng (ngày)"
+      }
+    },
+    "new-question": {
+      "kind": "action",
+      "description": "Học sinh bấm Câu hỏi mới",
+      "data": {
+        "target": "Chỉ số pha mới được hỏi (0 đến 7)"
+      }
+    }
+  }
+}

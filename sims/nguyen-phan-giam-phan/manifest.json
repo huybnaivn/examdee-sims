@@ -1,0 +1,53 @@
+{
+  "slug": "nguyen-phan-giam-phan",
+  "version": "1.0.0",
+  "title": "Nguyên phân và giảm phân",
+  "subject": "biology",
+  "grades": [9, 10],
+  "description": "Một tế bào có bộ NST 2n = 4, 6 hoặc 8 (mỗi cặp NST tương đồng một màu, đậm là NST từ mẹ, nhạt là NST từ bố) đi qua từng kì của nguyên phân (6 bước, gồm kì trung gian trước và sau khi NST nhân đôi) hoặc giảm phân (10 bước). Có thể bấm từng bước hoặc cho chạy. Số NST, trạng thái đơn/kép, số chromatid và số tâm động trong mỗi tế bào được đếm trên chính các tế bào vẽ trong hình (NST đơn tính 0 chromatid). Ở kì giữa I, mỗi cặp NST kép tương đồng xếp ngẫu nhiên về một phía; có thể bật trao đổi chéo ở cặp NST lớn nhất. Nguyên phân tạo 2 tế bào con có 2n NST; giảm phân tạo 4 tế bào con có n NST, với 2ⁿ loại giao tử khi không có trao đổi chéo. Chế độ câu hỏi: học sinh nhập số NST mỗi tế bào bằng nút − / + và chọn đơn hay kép.",
+  "learningGoals": [
+    "Mô tả diễn biến của NST qua các kì của nguyên phân và giảm phân.",
+    "Xác định số NST, trạng thái đơn/kép, số chromatid và số tâm động trong một tế bào ở mỗi kì.",
+    "So sánh nguyên phân (2 tế bào con, 2n NST, giống tế bào mẹ) với giảm phân (4 tế bào con, n NST).",
+    "Giải thích sự đa dạng của giao tử: các cặp NST tương đồng phân li độc lập tạo 2ⁿ loại giao tử, trao đổi chéo tạo thêm các tổ hợp mới."
+  ],
+  "state": {
+    "type": "Quá trình: \"mitosis\" (nguyên phân) hoặc \"meiosis\" (giảm phân)",
+    "n2": "Bộ NST lưỡng bội 2n của tế bào: 4, 6 hoặc 8",
+    "phase": "Bước hiện tại, tính từ 0: nguyên phân 0 đến 5 (kì trung gian trước/sau nhân đôi, kì đầu, kì giữa, kì sau, kì cuối), giảm phân 0 đến 9 (kì trung gian trước/sau nhân đôi, kì đầu I … kì cuối II)",
+    "orient": "Cách xếp các cặp NST ở kì giữa I: bit thứ i bằng 1 thì NST từ bố của cặp i đi về cực trên; chọn ngẫu nhiên mỗi khi tế bào bước vào kì giữa I",
+    "crossing": "true nếu có trao đổi chéo giữa hai chromatid không chị em của cặp NST lớn nhất ở kì đầu I",
+    "quiz": "true khi ở chế độ câu hỏi (số liệu bị ẩn cho đến khi trả lời đúng)",
+    "guess": "Số NST mỗi tế bào học sinh dự đoán (1 đến 32)",
+    "guessKind": "Trạng thái NST học sinh dự đoán: \"don\" (đơn) hoặc \"kep\" (kép)",
+    "answer": "Kết quả lần kiểm tra gần nhất ở bước hiện tại: \"\" (chưa kiểm tra), \"right\" hoặc \"wrong\""
+  },
+  "events": {
+    "phase-step": {
+      "kind": "action",
+      "description": "Học sinh bấm Bước tiếp hoặc Bước trước",
+      "data": {
+        "phase": "Bước mới (tính từ 0, như state.phase)",
+        "direction": "1 nếu tiến, −1 nếu lùi"
+      }
+    },
+    "division-complete": {
+      "kind": "result",
+      "description": "Tế bào hoàn tất quá trình phân bào (tới kì cuối hoặc kì cuối II)",
+      "data": {
+        "type": "0 nếu là nguyên phân, 1 nếu là giảm phân",
+        "daughterCells": "Số tế bào con tạo thành",
+        "chromosomesPerCell": "Số NST trong mỗi tế bào con"
+      }
+    },
+    "count-predicted": {
+      "kind": "goal",
+      "description": "Ở chế độ câu hỏi, học sinh dự đoán đúng số NST mỗi tế bào và trạng thái đơn/kép ở bước hiện tại",
+      "data": {
+        "phase": "Bước hiện tại (tính từ 0)",
+        "chromosomes": "Số NST mỗi tế bào (đáp án đúng)",
+        "kep": "1 nếu NST kép, 0 nếu NST đơn"
+      }
+    }
+  }
+}

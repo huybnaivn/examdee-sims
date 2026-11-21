@@ -1,0 +1,67 @@
+{
+  "slug": "chuoi-thuc-an",
+  "version": "1.0.0",
+  "title": "Chuỗi, lưới thức ăn và tháp năng lượng",
+  "subject": "biology",
+  "grades": [8, 12],
+  "description": "Nối các sinh vật (cỏ, châu chấu, thỏ, chuột, ếch, rắn, cú, vi khuẩn phân giải) bằng mũi tên từ sinh vật bị ăn đến sinh vật ăn nó để tạo chuỗi và lưới thức ăn. Mỗi mũi tên được kiểm tra: mũi tên tạo vòng khép kín bị từ chối trước, sau đó đến mũi tên không đúng với thức ăn của loài. Bậc dinh dưỡng của một loài là độ dài chuỗi dài nhất từ sinh vật sản xuất đến nó (sinh vật sản xuất là bậc 1; vi khuẩn phân giải không tính bậc). Tháp năng lượng: bậc k nhận E₀·eᵏ⁻¹ với E₀ = 10 000 kJ và hiệu suất sinh thái e từ 5 % đến 20 %. Loại bỏ một loài thì các loài chỉ ăn loài đó (trực tiếp hoặc gián tiếp) cũng chết theo.",
+  "learningGoals": [
+    "Phân biệt sinh vật sản xuất, sinh vật tiêu thụ và sinh vật phân giải; viết được chuỗi thức ăn bằng mũi tên chỉ chiều của dòng năng lượng.",
+    "Xây dựng lưới thức ăn từ nhiều chuỗi có mắt xích chung và xác định bậc dinh dưỡng của mỗi loài.",
+    "Giải thích năng lượng giảm dần qua các bậc dinh dưỡng (chỉ khoảng 10 % được chuyển lên bậc sau) nên chuỗi thức ăn thường không quá 4–5 mắt xích.",
+    "Dự đoán hậu quả khi một loài bị loại khỏi quần xã, đặc biệt khi mất sinh vật sản xuất."
+  ],
+  "state": {
+    "links": "Các mũi tên, dạng chuỗi \"a>b,c>d\" (a bị b ăn); mã loài: co, chauchau, tho, chuot, ech, ran, cu, vikhuan. Được kiểm tra lại khi đọc: mũi tên sai, trùng hoặc tạo vòng bị bỏ",
+    "removed": "Các loài đã bị loại bỏ, dạng chuỗi mã loài cách nhau bởi dấu phẩy (ví dụ \"co,ran\")",
+    "efficiency": "Hiệu suất sinh thái e: phần trăm năng lượng của một bậc được chuyển lên bậc sau (5 đến 20 %)",
+    "from": "Mã loài đang chọn làm gốc mũi tên (sinh vật bị ăn)",
+    "to": "Mã loài đang chọn làm đầu mũi tên (sinh vật ăn)",
+    "target": "Mã loài đang chọn để loại bỏ"
+  },
+  "events": {
+    "link-added": {
+      "kind": "action",
+      "description": "Học sinh thêm một mũi tên hợp lệ vào lưới thức ăn",
+      "data": { "from": "Mã loài bị ăn", "to": "Mã loài ăn nó" }
+    },
+    "link-rejected": {
+      "kind": "action",
+      "description": "Học sinh thử thêm một mũi tên không hợp lệ",
+      "data": {
+        "from": "Mã loài ở gốc mũi tên",
+        "to": "Mã loài ở đầu mũi tên",
+        "reason": "Lí do: cycle (tạo vòng), diet (không phải thức ăn của loài), duplicate (đã có), self (cùng một loài), removed (loài đã bị loại bỏ)"
+      }
+    },
+    "link-removed": {
+      "kind": "action",
+      "description": "Học sinh xoá một mũi tên",
+      "data": { "from": "Mã loài bị ăn", "to": "Mã loài ăn nó" }
+    },
+    "species-removed": {
+      "kind": "action",
+      "description": "Học sinh loại bỏ một loài khỏi quần xã",
+      "data": { "species": "Mã loài bị loại bỏ", "collapsed": "Số loài khác chết theo vì mất hết nguồn thức ăn" }
+    },
+    "species-restored": {
+      "kind": "action",
+      "description": "Học sinh khôi phục tất cả các loài đã bị loại bỏ",
+      "data": {}
+    },
+    "pyramid": {
+      "kind": "result",
+      "description": "Tháp năng lượng sau mỗi thay đổi của lưới thức ăn hoặc của hiệu suất sinh thái",
+      "data": {
+        "levels": "Số bậc dinh dưỡng của lưới hiện tại",
+        "topEnergy": "Năng lượng ở bậc cao nhất (kJ), E₀·eᵏ⁻¹",
+        "efficiency": "Hiệu suất sinh thái (%)"
+      }
+    },
+    "chain-complete": {
+      "kind": "goal",
+      "description": "Một mũi tên mới làm chuỗi thức ăn dài nhất (từ sinh vật sản xuất) dài thêm và đạt từ 3 bậc dinh dưỡng trở lên",
+      "data": { "levels": "Số bậc dinh dưỡng của chuỗi dài nhất" }
+    }
+  }
+}

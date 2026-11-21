@@ -775,6 +775,89 @@
     "thumbnailUrl": "/chuan-do-acid-base/1.0.0/thumb.png"
   },
   {
+    "slug": "chuoi-thuc-an",
+    "version": "1.0.0",
+    "title": "Chuỗi, lưới thức ăn và tháp năng lượng",
+    "subject": "biology",
+    "grades": [
+      8,
+      12
+    ],
+    "description": "Nối các sinh vật (cỏ, châu chấu, thỏ, chuột, ếch, rắn, cú, vi khuẩn phân giải) bằng mũi tên từ sinh vật bị ăn đến sinh vật ăn nó để tạo chuỗi và lưới thức ăn. Mỗi mũi tên được kiểm tra: mũi tên tạo vòng khép kín bị từ chối trước, sau đó đến mũi tên không đúng với thức ăn của loài. Bậc dinh dưỡng của một loài là độ dài chuỗi dài nhất từ sinh vật sản xuất đến nó (sinh vật sản xuất là bậc 1; vi khuẩn phân giải không tính bậc). Tháp năng lượng: bậc k nhận E₀·eᵏ⁻¹ với E₀ = 10 000 kJ và hiệu suất sinh thái e từ 5 % đến 20 %. Loại bỏ một loài thì các loài chỉ ăn loài đó (trực tiếp hoặc gián tiếp) cũng chết theo.",
+    "learningGoals": [
+      "Phân biệt sinh vật sản xuất, sinh vật tiêu thụ và sinh vật phân giải; viết được chuỗi thức ăn bằng mũi tên chỉ chiều của dòng năng lượng.",
+      "Xây dựng lưới thức ăn từ nhiều chuỗi có mắt xích chung và xác định bậc dinh dưỡng của mỗi loài.",
+      "Giải thích năng lượng giảm dần qua các bậc dinh dưỡng (chỉ khoảng 10 % được chuyển lên bậc sau) nên chuỗi thức ăn thường không quá 4–5 mắt xích.",
+      "Dự đoán hậu quả khi một loài bị loại khỏi quần xã, đặc biệt khi mất sinh vật sản xuất."
+    ],
+    "state": {
+      "links": "Các mũi tên, dạng chuỗi \"a>b,c>d\" (a bị b ăn); mã loài: co, chauchau, tho, chuot, ech, ran, cu, vikhuan. Được kiểm tra lại khi đọc: mũi tên sai, trùng hoặc tạo vòng bị bỏ",
+      "removed": "Các loài đã bị loại bỏ, dạng chuỗi mã loài cách nhau bởi dấu phẩy (ví dụ \"co,ran\")",
+      "efficiency": "Hiệu suất sinh thái e: phần trăm năng lượng của một bậc được chuyển lên bậc sau (5 đến 20 %)",
+      "from": "Mã loài đang chọn làm gốc mũi tên (sinh vật bị ăn)",
+      "to": "Mã loài đang chọn làm đầu mũi tên (sinh vật ăn)",
+      "target": "Mã loài đang chọn để loại bỏ"
+    },
+    "events": {
+      "link-added": {
+        "kind": "action",
+        "description": "Học sinh thêm một mũi tên hợp lệ vào lưới thức ăn",
+        "data": {
+          "from": "Mã loài bị ăn",
+          "to": "Mã loài ăn nó"
+        }
+      },
+      "link-rejected": {
+        "kind": "action",
+        "description": "Học sinh thử thêm một mũi tên không hợp lệ",
+        "data": {
+          "from": "Mã loài ở gốc mũi tên",
+          "to": "Mã loài ở đầu mũi tên",
+          "reason": "Lí do: cycle (tạo vòng), diet (không phải thức ăn của loài), duplicate (đã có), self (cùng một loài), removed (loài đã bị loại bỏ)"
+        }
+      },
+      "link-removed": {
+        "kind": "action",
+        "description": "Học sinh xoá một mũi tên",
+        "data": {
+          "from": "Mã loài bị ăn",
+          "to": "Mã loài ăn nó"
+        }
+      },
+      "species-removed": {
+        "kind": "action",
+        "description": "Học sinh loại bỏ một loài khỏi quần xã",
+        "data": {
+          "species": "Mã loài bị loại bỏ",
+          "collapsed": "Số loài khác chết theo vì mất hết nguồn thức ăn"
+        }
+      },
+      "species-restored": {
+        "kind": "action",
+        "description": "Học sinh khôi phục tất cả các loài đã bị loại bỏ",
+        "data": {}
+      },
+      "pyramid": {
+        "kind": "result",
+        "description": "Tháp năng lượng sau mỗi thay đổi của lưới thức ăn hoặc của hiệu suất sinh thái",
+        "data": {
+          "levels": "Số bậc dinh dưỡng của lưới hiện tại",
+          "topEnergy": "Năng lượng ở bậc cao nhất (kJ), E₀·eᵏ⁻¹",
+          "efficiency": "Hiệu suất sinh thái (%)"
+        }
+      },
+      "chain-complete": {
+        "kind": "goal",
+        "description": "Một mũi tên mới làm chuỗi thức ăn dài nhất (từ sinh vật sản xuất) dài thêm và đạt từ 3 bậc dinh dưỡng trở lên",
+        "data": {
+          "levels": "Số bậc dinh dưỡng của chuỗi dài nhất"
+        }
+      }
+    },
+    "url": "/chuoi-thuc-an/1.0.0/index.html",
+    "thumbnailUrl": "/chuoi-thuc-an/1.0.0/thumb.png"
+  },
+  {
     "slug": "chuyen-dong-thang",
     "version": "1.0.0",
     "title": "Chuyển động thẳng biến đổi đều",
@@ -3361,6 +3444,64 @@
     "thumbnailUrl": "/nem-xien/1.0.0/thumb.png"
   },
   {
+    "slug": "nguyen-phan-giam-phan",
+    "version": "1.0.0",
+    "title": "Nguyên phân và giảm phân",
+    "subject": "biology",
+    "grades": [
+      9,
+      10
+    ],
+    "description": "Một tế bào có bộ NST 2n = 4, 6 hoặc 8 (mỗi cặp NST tương đồng một màu, đậm là NST từ mẹ, nhạt là NST từ bố) đi qua từng kì của nguyên phân (6 bước, gồm kì trung gian trước và sau khi NST nhân đôi) hoặc giảm phân (10 bước). Có thể bấm từng bước hoặc cho chạy. Số NST, trạng thái đơn/kép, số chromatid và số tâm động trong mỗi tế bào được đếm trên chính các tế bào vẽ trong hình (NST đơn tính 0 chromatid). Ở kì giữa I, mỗi cặp NST kép tương đồng xếp ngẫu nhiên về một phía; có thể bật trao đổi chéo ở cặp NST lớn nhất. Nguyên phân tạo 2 tế bào con có 2n NST; giảm phân tạo 4 tế bào con có n NST, với 2ⁿ loại giao tử khi không có trao đổi chéo. Chế độ câu hỏi: học sinh nhập số NST mỗi tế bào bằng nút − / + và chọn đơn hay kép.",
+    "learningGoals": [
+      "Mô tả diễn biến của NST qua các kì của nguyên phân và giảm phân.",
+      "Xác định số NST, trạng thái đơn/kép, số chromatid và số tâm động trong một tế bào ở mỗi kì.",
+      "So sánh nguyên phân (2 tế bào con, 2n NST, giống tế bào mẹ) với giảm phân (4 tế bào con, n NST).",
+      "Giải thích sự đa dạng của giao tử: các cặp NST tương đồng phân li độc lập tạo 2ⁿ loại giao tử, trao đổi chéo tạo thêm các tổ hợp mới."
+    ],
+    "state": {
+      "type": "Quá trình: \"mitosis\" (nguyên phân) hoặc \"meiosis\" (giảm phân)",
+      "n2": "Bộ NST lưỡng bội 2n của tế bào: 4, 6 hoặc 8",
+      "phase": "Bước hiện tại, tính từ 0: nguyên phân 0 đến 5 (kì trung gian trước/sau nhân đôi, kì đầu, kì giữa, kì sau, kì cuối), giảm phân 0 đến 9 (kì trung gian trước/sau nhân đôi, kì đầu I … kì cuối II)",
+      "orient": "Cách xếp các cặp NST ở kì giữa I: bit thứ i bằng 1 thì NST từ bố của cặp i đi về cực trên; chọn ngẫu nhiên mỗi khi tế bào bước vào kì giữa I",
+      "crossing": "true nếu có trao đổi chéo giữa hai chromatid không chị em của cặp NST lớn nhất ở kì đầu I",
+      "quiz": "true khi ở chế độ câu hỏi (số liệu bị ẩn cho đến khi trả lời đúng)",
+      "guess": "Số NST mỗi tế bào học sinh dự đoán (1 đến 32)",
+      "guessKind": "Trạng thái NST học sinh dự đoán: \"don\" (đơn) hoặc \"kep\" (kép)",
+      "answer": "Kết quả lần kiểm tra gần nhất ở bước hiện tại: \"\" (chưa kiểm tra), \"right\" hoặc \"wrong\""
+    },
+    "events": {
+      "phase-step": {
+        "kind": "action",
+        "description": "Học sinh bấm Bước tiếp hoặc Bước trước",
+        "data": {
+          "phase": "Bước mới (tính từ 0, như state.phase)",
+          "direction": "1 nếu tiến, −1 nếu lùi"
+        }
+      },
+      "division-complete": {
+        "kind": "result",
+        "description": "Tế bào hoàn tất quá trình phân bào (tới kì cuối hoặc kì cuối II)",
+        "data": {
+          "type": "0 nếu là nguyên phân, 1 nếu là giảm phân",
+          "daughterCells": "Số tế bào con tạo thành",
+          "chromosomesPerCell": "Số NST trong mỗi tế bào con"
+        }
+      },
+      "count-predicted": {
+        "kind": "goal",
+        "description": "Ở chế độ câu hỏi, học sinh dự đoán đúng số NST mỗi tế bào và trạng thái đơn/kép ở bước hiện tại",
+        "data": {
+          "phase": "Bước hiện tại (tính từ 0)",
+          "chromosomes": "Số NST mỗi tế bào (đáp án đúng)",
+          "kep": "1 nếu NST kép, 0 nếu NST đơn"
+        }
+      }
+    },
+    "url": "/nguyen-phan-giam-phan/1.0.0/index.html",
+    "thumbnailUrl": "/nguyen-phan-giam-phan/1.0.0/thumb.png"
+  },
+  {
     "slug": "nong-do-dung-dich",
     "version": "1.0.0",
     "title": "Nồng độ dung dịch",
@@ -3421,6 +3562,58 @@
     },
     "url": "/nong-do-dung-dich/1.0.0/index.html",
     "thumbnailUrl": "/nong-do-dung-dich/1.0.0/thumb.png"
+  },
+  {
+    "slug": "pha-mat-trang",
+    "version": "1.0.0",
+    "title": "Các pha của Mặt Trăng",
+    "subject": "physics",
+    "grades": [
+      6,
+      6
+    ],
+    "description": "Hình nhìn từ trên cực Bắc xuống cho thấy ánh sáng Mặt Trời, Trái Đất và Mặt Trăng trên quỹ đạo; bên cạnh là hình dạng Mặt Trăng nhìn từ Trái Đất (Bắc bán cầu). Kéo Mặt Trăng hoặc cho chạy theo ngày. Góc θ = 360°·ngày/29,5 tính từ trăng mới; phần đĩa được chiếu sáng là (1 − cos θ)/2. Tám pha theo sách KHTN 6, mỗi pha ứng với 45°: không trăng, lưỡi liềm, bán nguyệt, khuyết đầu tháng, trăng tròn, khuyết, bán nguyệt, lưỡi liềm cuối tháng. Ngày âm lịch: mùng 1 lúc trăng mới, trăng tròn vào khoảng ngày 15. Trăng đầu tháng sáng ở bên phải, cuối tháng sáng ở bên trái. Kích thước và khoảng cách không theo tỉ lệ. Có chế độ câu hỏi: đặt Mặt Trăng để thấy pha được hỏi.",
+    "learningGoals": [
+      "Giải thích được Mặt Trăng luôn được Mặt Trời chiếu sáng một nửa, nhưng phần nhìn thấy từ Trái Đất thay đổi theo vị trí của Mặt Trăng trên quỹ đạo.",
+      "Nêu được tên và thứ tự các pha của Mặt Trăng trong một tháng âm lịch (khoảng 29,5 ngày).",
+      "Nhận ra trăng mới vào đầu tháng âm lịch, trăng tròn vào khoảng giữa tháng; trăng đầu tháng sáng ở bên phải, cuối tháng sáng ở bên trái (khi quan sát ở Bắc bán cầu).",
+      "Xác định vị trí của Mặt Trăng so với Trái Đất và Mặt Trời ứng với một pha cho trước."
+    ],
+    "state": {
+      "day": "Số ngày kể từ trăng mới (0 đến 29,5); góc θ = 360°·day/29,5",
+      "speed": "Tốc độ khi chạy (ngày/giây, 0,5 đến 5)",
+      "quiz": "true khi đang ở chế độ câu hỏi (tên pha bị ẩn cho đến khi trả lời đúng)",
+      "target": "Chỉ số pha được hỏi (0 đến 7): 0 không trăng, 1 lưỡi liềm đầu tháng, 2 bán nguyệt đầu tháng, 3 khuyết đầu tháng, 4 trăng tròn, 5 khuyết cuối tháng, 6 bán nguyệt cuối tháng, 7 lưỡi liềm cuối tháng",
+      "solved": "true khi học sinh đã đặt Mặt Trăng đúng pha được hỏi"
+    },
+    "events": {
+      "moon-placed": {
+        "kind": "result",
+        "description": "Học sinh đặt Mặt Trăng tại một vị trí (thả tay khi kéo, hoặc thả thanh trượt ngày)",
+        "data": {
+          "day": "Số ngày kể từ trăng mới (ngày)",
+          "phase": "Chỉ số pha nhìn thấy (0 đến 7, như state.target)",
+          "lit": "Phần đĩa được chiếu sáng nhìn từ Trái Đất (0 đến 1)"
+        }
+      },
+      "phase-matched": {
+        "kind": "goal",
+        "description": "Ở chế độ câu hỏi, học sinh đặt Mặt Trăng đúng pha được hỏi",
+        "data": {
+          "target": "Chỉ số pha được hỏi (0 đến 7)",
+          "day": "Số ngày kể từ trăng mới khi trả lời đúng (ngày)"
+        }
+      },
+      "new-question": {
+        "kind": "action",
+        "description": "Học sinh bấm Câu hỏi mới",
+        "data": {
+          "target": "Chỉ số pha mới được hỏi (0 đến 7)"
+        }
+      }
+    },
+    "url": "/pha-mat-trang/1.0.0/index.html",
+    "thumbnailUrl": "/pha-mat-trang/1.0.0/thumb.png"
   },
   {
     "slug": "phan-so",
