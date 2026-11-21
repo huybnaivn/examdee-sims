@@ -1,0 +1,49 @@
+{
+  "slug": "bien-tro",
+  "version": "1.0.0",
+  "title": "Biến trở và mạch chia điện áp",
+  "subject": "physics",
+  "grades": [9, 11],
+  "description": "Biến trở con chạy mắc nối tiếp với bóng đèn 6 V – 3 W: kéo con chạy dọc cuộn dây để đổi chiều dài phần dây có dòng điện, quan sát điện trở biến trở, cường độ dòng điện và độ sáng của đèn; tìm vị trí để đèn sáng đúng định mức. Chế độ thứ hai dùng biến trở làm chiết áp chia điện áp: U_ra = U·R₂/(R₁ + R₂) khi không tải; mắc thêm tải thì U_ra giảm.",
+  "learningGoals": [
+    "Nhận ra điện trở của biến trở tỉ lệ thuận với chiều dài phần cuộn dây có dòng điện chạy qua.",
+    "Vận dụng định luật Ohm cho đoạn mạch nối tiếp I = U/(R_đ + R_b) để điều chỉnh độ sáng của đèn và tìm giá trị biến trở cho đèn sáng bình thường.",
+    "Tính hiệu điện thế ra của mạch chia điện áp U_ra = U·R₂/(R₁ + R₂) và giải thích vì sao mắc tải làm U_ra giảm.",
+    "Nêu giá trị cực đại, cực tiểu khi con chạy ở hai đầu cuộn dây."
+  ],
+  "state": {
+    "mode": "Cách dùng biến trở: \"rheostat\" (biến trở nối tiếp với đèn 6 V – 3 W, R_đ = 12 Ω coi như không đổi) hoặc \"divider\" (chiết áp chia điện áp mắc hai đầu vào nguồn)",
+    "voltage": "Hiệu điện thế nguồn U (V), nguồn lí tưởng",
+    "rMax": "Điện trở toàn phần của cuộn dây biến trở (Ω)",
+    "position": "Vị trí con chạy C (%): phần trăm chiều dài cuộn dây tính từ đầu A; là phần đang dùng R_b (rheostat) hoặc phần R₂ giữa A và C (divider)",
+    "loaded": "Chỉ khi mode = divider: true nếu mắc tải R_t vào đầu ra (song song với R₂)",
+    "rLoad": "Điện trở tải R_t (Ω), chỉ có tác dụng khi loaded = true"
+  },
+  "events": {
+    "slider-drag": {
+      "kind": "action",
+      "description": "Học sinh kéo con chạy trên hình và thả tay",
+      "data": {
+        "position": "Vị trí con chạy (%)"
+      }
+    },
+    "slider-set": {
+      "kind": "result",
+      "description": "Học sinh vừa thả con chạy hoặc đổi xong một thông số; số đo của mạch",
+      "data": {
+        "position": "Vị trí con chạy (%)",
+        "resistance": "Điện trở biến trở đang dùng R_b (rheostat) hoặc R₂ (divider) (Ω)",
+        "current": "Cường độ dòng điện qua nguồn (A)",
+        "outputVoltage": "Hiệu điện thế giữa hai đầu đèn (rheostat) hoặc đầu ra U_ra (divider) (V)"
+      }
+    },
+    "rated-brightness": {
+      "kind": "goal",
+      "description": "Đèn vừa được chỉnh sáng đúng định mức (cường độ dòng điện lệch không quá 3 % so với 0,5 A)",
+      "data": {
+        "resistance": "Điện trở biến trở R_b (Ω)",
+        "current": "Cường độ dòng điện (A)"
+      }
+    }
+  }
+}

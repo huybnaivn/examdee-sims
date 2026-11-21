@@ -190,6 +190,53 @@
     "thumbnailUrl": "/ap-suat-chat-ran/1.0.0/thumb.png"
   },
   {
+    "slug": "ap-suat-khi-quyen",
+    "version": "1.0.0",
+    "title": "Áp suất khí quyển",
+    "subject": "physics",
+    "grades": [
+      8,
+      10
+    ],
+    "description": "Thí nghiệm Torricelli: ống thủy ngân dài 1 m úp ngược trong chậu, cột thủy ngân cao khoảng 76 cm ở mực nước biển. Đổi độ cao để thấy áp suất khí quyển và cột thủy ngân giảm (mô hình khí quyển chuẩn), nghiêng ống hoặc đổi tiết diện ống để thấy độ cao thẳng đứng của cột không đổi. Hai thí nghiệm quen thuộc: cốc nước úp ngược có tờ giấy và hộp sữa giấy bị bẹp khi hút bớt không khí. Đổi đơn vị Pa, mmHg, atm, hPa.",
+    "learningGoals": [
+      "Giải thích thí nghiệm Torricelli và tính áp suất khí quyển p = ρ·g·h từ cột thủy ngân (76 cmHg ≈ 1,013·10⁵ Pa).",
+      "Nhận ra càng lên cao áp suất khí quyển càng giảm (gần mặt đất khoảng 1 mmHg cho mỗi 11–12 m).",
+      "Nhận ra độ cao thẳng đứng của cột thủy ngân không phụ thuộc tiết diện và độ nghiêng của ống.",
+      "Đổi đơn vị áp suất giữa Pa, mmHg, atm và hPa.",
+      "Dùng áp suất khí quyển giải thích hiện tượng cốc nước úp ngược và hộp sữa bị bẹp."
+    ],
+    "state": {
+      "demo": "Thí nghiệm đang xem: \"torricelli\" (ống Torricelli), \"cup\" (cốc nước úp ngược có tờ giấy) hoặc \"carton\" (hút hộp sữa giấy)",
+      "altitude": "Độ cao so với mực nước biển (m); áp suất theo mô hình khí quyển chuẩn ISA tầng đối lưu p = 101325·(1 − 2,25577·10⁻⁵·h)^5,25588 Pa",
+      "tilt": "Góc nghiêng của ống Torricelli so với phương thẳng đứng (°); ống dài 1 m",
+      "area": "Tiết diện trong của ống Torricelli (cm²)",
+      "answer": "Câu trả lời cho câu hỏi vì sao nước không chảy ra khỏi cốc úp ngược: \"none\" (chưa chọn), \"a\" (nước dính vào giấy), \"b\" (áp suất khí quyển đẩy lên lớn hơn áp suất nước, đáp án đúng), \"c\" (đáy cốc hút nước), \"d\" (nước không có trọng lượng)",
+      "suction": "Phần trăm không khí đã hút ra khỏi hộp sữa (%)"
+    },
+    "events": {
+      "altitude-set": {
+        "kind": "result",
+        "description": "Học sinh vừa chọn xong một độ cao; số đo áp suất khí quyển và cột thủy ngân ở độ cao đó",
+        "data": {
+          "altitude": "Độ cao (m)",
+          "pressure": "Áp suất khí quyển (Pa)",
+          "mmHg": "Áp suất khí quyển (mmHg)",
+          "columnHeight": "Độ cao thẳng đứng của cột thủy ngân (mm)"
+        }
+      },
+      "explained": {
+        "kind": "goal",
+        "description": "Học sinh chọn đúng lí do nước không chảy ra khỏi cốc úp ngược: áp suất khí quyển đẩy tờ giấy lên lớn hơn áp suất nước ép xuống",
+        "data": {
+          "pressure": "Áp suất khí quyển lúc trả lời (Pa)"
+        }
+      }
+    },
+    "url": "/ap-suat-khi-quyen/1.0.0/index.html",
+    "thumbnailUrl": "/ap-suat-khi-quyen/1.0.0/thumb.png"
+  },
+  {
     "slug": "bang-nhan",
     "version": "1.0.0",
     "title": "Phép nhân bằng mảng",
@@ -404,6 +451,60 @@
     },
     "url": "/bat-phuong-trinh-hai-an/1.0.0/index.html",
     "thumbnailUrl": "/bat-phuong-trinh-hai-an/1.0.0/thumb.png"
+  },
+  {
+    "slug": "bien-tro",
+    "version": "1.0.0",
+    "title": "Biến trở và mạch chia điện áp",
+    "subject": "physics",
+    "grades": [
+      9,
+      11
+    ],
+    "description": "Biến trở con chạy mắc nối tiếp với bóng đèn 6 V – 3 W: kéo con chạy dọc cuộn dây để đổi chiều dài phần dây có dòng điện, quan sát điện trở biến trở, cường độ dòng điện và độ sáng của đèn; tìm vị trí để đèn sáng đúng định mức. Chế độ thứ hai dùng biến trở làm chiết áp chia điện áp: U_ra = U·R₂/(R₁ + R₂) khi không tải; mắc thêm tải thì U_ra giảm.",
+    "learningGoals": [
+      "Nhận ra điện trở của biến trở tỉ lệ thuận với chiều dài phần cuộn dây có dòng điện chạy qua.",
+      "Vận dụng định luật Ohm cho đoạn mạch nối tiếp I = U/(R_đ + R_b) để điều chỉnh độ sáng của đèn và tìm giá trị biến trở cho đèn sáng bình thường.",
+      "Tính hiệu điện thế ra của mạch chia điện áp U_ra = U·R₂/(R₁ + R₂) và giải thích vì sao mắc tải làm U_ra giảm.",
+      "Nêu giá trị cực đại, cực tiểu khi con chạy ở hai đầu cuộn dây."
+    ],
+    "state": {
+      "mode": "Cách dùng biến trở: \"rheostat\" (biến trở nối tiếp với đèn 6 V – 3 W, R_đ = 12 Ω coi như không đổi) hoặc \"divider\" (chiết áp chia điện áp mắc hai đầu vào nguồn)",
+      "voltage": "Hiệu điện thế nguồn U (V), nguồn lí tưởng",
+      "rMax": "Điện trở toàn phần của cuộn dây biến trở (Ω)",
+      "position": "Vị trí con chạy C (%): phần trăm chiều dài cuộn dây tính từ đầu A; là phần đang dùng R_b (rheostat) hoặc phần R₂ giữa A và C (divider)",
+      "loaded": "Chỉ khi mode = divider: true nếu mắc tải R_t vào đầu ra (song song với R₂)",
+      "rLoad": "Điện trở tải R_t (Ω), chỉ có tác dụng khi loaded = true"
+    },
+    "events": {
+      "slider-drag": {
+        "kind": "action",
+        "description": "Học sinh kéo con chạy trên hình và thả tay",
+        "data": {
+          "position": "Vị trí con chạy (%)"
+        }
+      },
+      "slider-set": {
+        "kind": "result",
+        "description": "Học sinh vừa thả con chạy hoặc đổi xong một thông số; số đo của mạch",
+        "data": {
+          "position": "Vị trí con chạy (%)",
+          "resistance": "Điện trở biến trở đang dùng R_b (rheostat) hoặc R₂ (divider) (Ω)",
+          "current": "Cường độ dòng điện qua nguồn (A)",
+          "outputVoltage": "Hiệu điện thế giữa hai đầu đèn (rheostat) hoặc đầu ra U_ra (divider) (V)"
+        }
+      },
+      "rated-brightness": {
+        "kind": "goal",
+        "description": "Đèn vừa được chỉnh sáng đúng định mức (cường độ dòng điện lệch không quá 3 % so với 0,5 A)",
+        "data": {
+          "resistance": "Điện trở biến trở R_b (Ω)",
+          "current": "Cường độ dòng điện (A)"
+        }
+      }
+    },
+    "url": "/bien-tro/1.0.0/index.html",
+    "thumbnailUrl": "/bien-tro/1.0.0/thumb.png"
   },
   {
     "slug": "bieu-do-thong-ke",
@@ -1534,6 +1635,61 @@
     },
     "url": "/cong-tru-phan-so/1.0.0/index.html",
     "thumbnailUrl": "/cong-tru-phan-so/1.0.0/thumb.png"
+  },
+  {
+    "slug": "cong-va-cong-suat",
+    "version": "1.0.0",
+    "title": "Công và công suất",
+    "subject": "physics",
+    "grades": [
+      8,
+      10
+    ],
+    "description": "Hai máy (người, tời điện, động cơ 1 mã lực, cần cẩu hoặc động cơ tự chọn công suất) cùng nâng một vật lên cao hoặc cùng kéo một thùng trên sàn với góc α tùy chọn. Quan sát lực, độ dịch chuyển, góc giữa chúng, công A = F·s·cosα của từng lực (kể cả công bằng 0 và công âm), thời gian mỗi máy cần và công suất P = A/t; hiệu suất H cho biết công có ích chỉ là một phần của công toàn phần. Đặt thời hạn và chọn máy 1 sao cho làm xong kịp.",
+    "learningGoals": [
+      "Tính công cơ học A = F·s·cosα; nhận ra công bằng 0 khi lực vuông góc với độ dịch chuyển (α = 90°) và công âm khi α > 90° (lực ma sát, trọng lực khi nâng vật).",
+      "Tính công suất P = A/t và đổi đơn vị J, W, kW, mã lực (1 HP ≈ 746 W).",
+      "Giải thích vì sao cùng một công, máy làm xong nhanh hơn thì có công suất lớn hơn.",
+      "Vận dụng hiệu suất H = A_ci/A_tp: công có ích chỉ là một phần của công toàn phần máy tiêu tốn."
+    ],
+    "state": {
+      "task": "Công việc: \"lift\" (nâng vật thẳng đứng lên độ cao h, lực kéo cùng hướng dịch chuyển) hoặc \"push\" (kéo thùng đều trên sàn nằm ngang bằng dây nghiêng góc α)",
+      "mass": "Khối lượng vật (kg)",
+      "distance": "Độ dịch chuyển (m): độ cao h khi nâng, quãng đường s khi kéo",
+      "mu": "Hệ số ma sát trượt giữa thùng và sàn (chỉ khi task = push)",
+      "angle": "Góc α giữa dây kéo và mặt sàn (°) (chỉ khi task = push)",
+      "efficiency": "Hiệu suất H (%) của cả hai máy: công có ích A = H·A_tp",
+      "machine1": "Máy 1: \"person\" (người, 75 W), \"winch\" (tời điện 500 W), \"hp1\" (động cơ 1 mã lực, 746 W), \"crane\" (cần cẩu 5 kW) hoặc \"motor\" (công suất power1)",
+      "machine2": "Máy 2, cùng các giá trị như machine1 (công suất power2 khi là \"motor\")",
+      "power1": "Công suất toàn phần của máy 1 khi machine1 = motor (kW)",
+      "power2": "Công suất toàn phần của máy 2 khi machine2 = motor (kW)",
+      "targetTime": "Thời hạn máy 1 phải làm xong công việc (s)",
+      "time": "Đồng hồ mô phỏng từ lúc bắt đầu (s)"
+    },
+    "events": {
+      "task-done": {
+        "kind": "result",
+        "description": "Một máy vừa làm xong công việc (mỗi máy một lần trong mỗi lượt chạy)",
+        "data": {
+          "machine": "Số thứ tự máy (1 hoặc 2)",
+          "work": "Công toàn phần máy đã thực hiện A_tp (J)",
+          "usefulWork": "Công có ích A = F·s·cosα (J)",
+          "time": "Thời gian máy cần để làm xong (s)",
+          "power": "Công suất P = A_tp/t (W)"
+        }
+      },
+      "target-met": {
+        "kind": "goal",
+        "description": "Máy 1 do học sinh chọn đã làm xong công việc trong thời hạn cho phép",
+        "data": {
+          "time": "Thời gian máy 1 cần (s)",
+          "targetTime": "Thời hạn (s)",
+          "power": "Công suất máy 1 (W)"
+        }
+      }
+    },
+    "url": "/cong-va-cong-suat/1.0.0/index.html",
+    "thumbnailUrl": "/cong-va-cong-suat/1.0.0/thumb.png"
   },
   {
     "slug": "cong-vecto",

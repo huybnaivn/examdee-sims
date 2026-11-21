@@ -1,0 +1,50 @@
+{
+  "slug": "cong-va-cong-suat",
+  "version": "1.0.0",
+  "title": "Công và công suất",
+  "subject": "physics",
+  "grades": [8, 10],
+  "description": "Hai máy (người, tời điện, động cơ 1 mã lực, cần cẩu hoặc động cơ tự chọn công suất) cùng nâng một vật lên cao hoặc cùng kéo một thùng trên sàn với góc α tùy chọn. Quan sát lực, độ dịch chuyển, góc giữa chúng, công A = F·s·cosα của từng lực (kể cả công bằng 0 và công âm), thời gian mỗi máy cần và công suất P = A/t; hiệu suất H cho biết công có ích chỉ là một phần của công toàn phần. Đặt thời hạn và chọn máy 1 sao cho làm xong kịp.",
+  "learningGoals": [
+    "Tính công cơ học A = F·s·cosα; nhận ra công bằng 0 khi lực vuông góc với độ dịch chuyển (α = 90°) và công âm khi α > 90° (lực ma sát, trọng lực khi nâng vật).",
+    "Tính công suất P = A/t và đổi đơn vị J, W, kW, mã lực (1 HP ≈ 746 W).",
+    "Giải thích vì sao cùng một công, máy làm xong nhanh hơn thì có công suất lớn hơn.",
+    "Vận dụng hiệu suất H = A_ci/A_tp: công có ích chỉ là một phần của công toàn phần máy tiêu tốn."
+  ],
+  "state": {
+    "task": "Công việc: \"lift\" (nâng vật thẳng đứng lên độ cao h, lực kéo cùng hướng dịch chuyển) hoặc \"push\" (kéo thùng đều trên sàn nằm ngang bằng dây nghiêng góc α)",
+    "mass": "Khối lượng vật (kg)",
+    "distance": "Độ dịch chuyển (m): độ cao h khi nâng, quãng đường s khi kéo",
+    "mu": "Hệ số ma sát trượt giữa thùng và sàn (chỉ khi task = push)",
+    "angle": "Góc α giữa dây kéo và mặt sàn (°) (chỉ khi task = push)",
+    "efficiency": "Hiệu suất H (%) của cả hai máy: công có ích A = H·A_tp",
+    "machine1": "Máy 1: \"person\" (người, 75 W), \"winch\" (tời điện 500 W), \"hp1\" (động cơ 1 mã lực, 746 W), \"crane\" (cần cẩu 5 kW) hoặc \"motor\" (công suất power1)",
+    "machine2": "Máy 2, cùng các giá trị như machine1 (công suất power2 khi là \"motor\")",
+    "power1": "Công suất toàn phần của máy 1 khi machine1 = motor (kW)",
+    "power2": "Công suất toàn phần của máy 2 khi machine2 = motor (kW)",
+    "targetTime": "Thời hạn máy 1 phải làm xong công việc (s)",
+    "time": "Đồng hồ mô phỏng từ lúc bắt đầu (s)"
+  },
+  "events": {
+    "task-done": {
+      "kind": "result",
+      "description": "Một máy vừa làm xong công việc (mỗi máy một lần trong mỗi lượt chạy)",
+      "data": {
+        "machine": "Số thứ tự máy (1 hoặc 2)",
+        "work": "Công toàn phần máy đã thực hiện A_tp (J)",
+        "usefulWork": "Công có ích A = F·s·cosα (J)",
+        "time": "Thời gian máy cần để làm xong (s)",
+        "power": "Công suất P = A_tp/t (W)"
+      }
+    },
+    "target-met": {
+      "kind": "goal",
+      "description": "Máy 1 do học sinh chọn đã làm xong công việc trong thời hạn cho phép",
+      "data": {
+        "time": "Thời gian máy 1 cần (s)",
+        "targetTime": "Thời hạn (s)",
+        "power": "Công suất máy 1 (W)"
+      }
+    }
+  }
+}

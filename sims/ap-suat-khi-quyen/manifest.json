@@ -1,0 +1,42 @@
+{
+  "slug": "ap-suat-khi-quyen",
+  "version": "1.0.0",
+  "title": "Áp suất khí quyển",
+  "subject": "physics",
+  "grades": [8, 10],
+  "description": "Thí nghiệm Torricelli: ống thủy ngân dài 1 m úp ngược trong chậu, cột thủy ngân cao khoảng 76 cm ở mực nước biển. Đổi độ cao để thấy áp suất khí quyển và cột thủy ngân giảm (mô hình khí quyển chuẩn), nghiêng ống hoặc đổi tiết diện ống để thấy độ cao thẳng đứng của cột không đổi. Hai thí nghiệm quen thuộc: cốc nước úp ngược có tờ giấy và hộp sữa giấy bị bẹp khi hút bớt không khí. Đổi đơn vị Pa, mmHg, atm, hPa.",
+  "learningGoals": [
+    "Giải thích thí nghiệm Torricelli và tính áp suất khí quyển p = ρ·g·h từ cột thủy ngân (76 cmHg ≈ 1,013·10⁵ Pa).",
+    "Nhận ra càng lên cao áp suất khí quyển càng giảm (gần mặt đất khoảng 1 mmHg cho mỗi 11–12 m).",
+    "Nhận ra độ cao thẳng đứng của cột thủy ngân không phụ thuộc tiết diện và độ nghiêng của ống.",
+    "Đổi đơn vị áp suất giữa Pa, mmHg, atm và hPa.",
+    "Dùng áp suất khí quyển giải thích hiện tượng cốc nước úp ngược và hộp sữa bị bẹp."
+  ],
+  "state": {
+    "demo": "Thí nghiệm đang xem: \"torricelli\" (ống Torricelli), \"cup\" (cốc nước úp ngược có tờ giấy) hoặc \"carton\" (hút hộp sữa giấy)",
+    "altitude": "Độ cao so với mực nước biển (m); áp suất theo mô hình khí quyển chuẩn ISA tầng đối lưu p = 101325·(1 − 2,25577·10⁻⁵·h)^5,25588 Pa",
+    "tilt": "Góc nghiêng của ống Torricelli so với phương thẳng đứng (°); ống dài 1 m",
+    "area": "Tiết diện trong của ống Torricelli (cm²)",
+    "answer": "Câu trả lời cho câu hỏi vì sao nước không chảy ra khỏi cốc úp ngược: \"none\" (chưa chọn), \"a\" (nước dính vào giấy), \"b\" (áp suất khí quyển đẩy lên lớn hơn áp suất nước, đáp án đúng), \"c\" (đáy cốc hút nước), \"d\" (nước không có trọng lượng)",
+    "suction": "Phần trăm không khí đã hút ra khỏi hộp sữa (%)"
+  },
+  "events": {
+    "altitude-set": {
+      "kind": "result",
+      "description": "Học sinh vừa chọn xong một độ cao; số đo áp suất khí quyển và cột thủy ngân ở độ cao đó",
+      "data": {
+        "altitude": "Độ cao (m)",
+        "pressure": "Áp suất khí quyển (Pa)",
+        "mmHg": "Áp suất khí quyển (mmHg)",
+        "columnHeight": "Độ cao thẳng đứng của cột thủy ngân (mm)"
+      }
+    },
+    "explained": {
+      "kind": "goal",
+      "description": "Học sinh chọn đúng lí do nước không chảy ra khỏi cốc úp ngược: áp suất khí quyển đẩy tờ giấy lên lớn hơn áp suất nước ép xuống",
+      "data": {
+        "pressure": "Áp suất khí quyển lúc trả lời (Pa)"
+      }
+    }
+  }
+}
