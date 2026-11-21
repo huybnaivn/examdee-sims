@@ -86,6 +86,61 @@
     "thumbnailUrl": "/ap-suat-chat-long/1.0.0/thumb.png"
   },
   {
+    "slug": "bang-nhan",
+    "version": "1.0.0",
+    "title": "Phép nhân bằng mảng",
+    "subject": "math",
+    "grades": [
+      2,
+      3
+    ],
+    "description": "Xếp các chấm thành mảng gồm một số hàng (1 đến 10), mỗi hàng có số chấm bằng nhau (1 đến 10). Mô phỏng viết phép nhân theo thứ tự trong sách giáo khoa (số chấm một hàng được lấy số hàng lần: 5 × 3 = 15) kèm tổng các số hạng bằng nhau (5 + 5 + 5 = 15), đếm thêm ở cuối mỗi hàng, và hai phép chia ngược lại (15 : 3 = 5, 15 : 5 = 3). Nút xoay mảng đổi hàng thành cột để thấy 5 × 3 = 3 × 5. Chế độ luyện tập hỏi một phép nhân với 12 nút đáp án lớn.",
+    "learningGoals": [
+      "Hiểu phép nhân là phép cộng các số hạng bằng nhau: 5 × 3 nghĩa là 5 được lấy 3 lần, 5 + 5 + 5.",
+      "Đếm thêm theo từng hàng để tìm tích.",
+      "Thấy khi đổi chỗ hai thừa số thì tích không thay đổi (xoay mảng).",
+      "Hiểu phép chia là phép tính ngược của phép nhân: chia đều 15 chấm thành 3 hàng, mỗi hàng 5 chấm.",
+      "Thuộc bảng nhân qua luyện tập."
+    ],
+    "state": {
+      "rows": "Số hàng của mảng (số nguyên từ 1 đến 10); là thừa số thứ hai trong phép nhân",
+      "columns": "Số chấm mỗi hàng (số nguyên từ 1 đến 10); là thừa số thứ nhất trong phép nhân",
+      "mode": "Hoạt động: \"explore\" (xếp mảng chấm) hoặc \"practice\" (luyện tập: tìm tích của mảng đang hiện)"
+    },
+    "events": {
+      "array-set": {
+        "kind": "result",
+        "description": "Mảng vừa thay đổi: học sinh đổi số hàng hoặc số chấm mỗi hàng, xoay mảng, hoặc lấy câu luyện tập khác",
+        "data": {
+          "rows": "Số hàng",
+          "columns": "Số chấm mỗi hàng",
+          "product": "Tích = số hàng × số chấm mỗi hàng"
+        }
+      },
+      "correct-answer": {
+        "kind": "goal",
+        "description": "Trong luyện tập, học sinh bấm đúng tích; báo một lần cho mỗi câu",
+        "data": {
+          "rows": "Số hàng",
+          "columns": "Số chấm mỗi hàng",
+          "product": "Tích",
+          "wrongTries": "Số lần bấm sai trước khi đúng ở câu này"
+        }
+      },
+      "wrong-answer": {
+        "kind": "action",
+        "description": "Trong luyện tập, học sinh bấm một đáp án sai (mỗi đáp án sai chỉ bấm được một lần)",
+        "data": {
+          "answer": "Số học sinh đã bấm",
+          "rows": "Số hàng",
+          "columns": "Số chấm mỗi hàng"
+        }
+      }
+    },
+    "url": "/bang-nhan/1.0.0/index.html",
+    "thumbnailUrl": "/bang-nhan/1.0.0/thumb.png"
+  },
+  {
     "slug": "bang-tuan-hoan",
     "version": "1.0.0",
     "title": "Xu hướng biến đổi trong bảng tuần hoàn",
@@ -2008,6 +2063,61 @@
     "thumbnailUrl": "/giao-thoa-y-ang/1.0.0/thumb.png"
   },
   {
+    "slug": "goc-noi-tiep",
+    "version": "1.0.0",
+    "title": "Góc nội tiếp và góc ở tâm",
+    "subject": "math",
+    "grades": [
+      9
+    ],
+    "description": "Kéo các điểm A, B, C (và D) trên đường tròn tâm O; các điểm luôn nằm trên đường tròn và dừng ở số đo nguyên độ. Hình vẽ cho thấy góc nội tiếp ACB, góc ở tâm AOB và cung AB bị chắn với số đo trực tiếp. Có thể vẽ thêm góc nội tiếp thứ hai ADB (cùng chắn cung AB hoặc tạo thành tứ giác nội tiếp ACBD) và góc tạo bởi tia tiếp tuyến Ax với dây cung AB. Khi kéo A hoặc B gần đầu kia của đường kính (trong khoảng 2°), điểm tự hút vào để AB là đường kính.",
+    "learningGoals": [
+      "Nhận biết góc nội tiếp, góc ở tâm và cung bị chắn; số đo góc ở tâm bằng số đo cung bị chắn.",
+      "Góc nội tiếp bằng nửa số đo cung bị chắn, kể cả khi cung bị chắn là cung lớn (góc nội tiếp tù).",
+      "Các góc nội tiếp cùng chắn một cung thì bằng nhau; góc nội tiếp chắn nửa đường tròn là góc vuông.",
+      "Góc tạo bởi tia tiếp tuyến và dây cung bằng nửa số đo cung bị chắn.",
+      "Tứ giác nội tiếp đường tròn có tổng hai góc đối diện bằng 180°."
+    ],
+    "state": {
+      "a": "Vị trí điểm A trên đường tròn: góc (độ, nguyên, 0 đến 359) tính ngược chiều kim đồng hồ từ bán kính nằm ngang bên phải",
+      "b": "Vị trí điểm B, cùng quy ước với a",
+      "c": "Vị trí điểm C, đỉnh của góc nội tiếp ACB",
+      "d": "Vị trí điểm D, đỉnh của góc nội tiếp thứ hai ADB",
+      "second": "true nếu vẽ góc nội tiếp thứ hai ADB",
+      "tangent": "true nếu vẽ tiếp tuyến tại A và góc xAB tạo bởi tia tiếp tuyến Ax với dây AB (Ax nằm về phía cung AB không chứa C)"
+    },
+    "events": {
+      "point-moved": {
+        "kind": "action",
+        "description": "Học sinh kéo một điểm trên đường tròn rồi thả tay",
+        "data": {
+          "point": "Tên điểm vừa kéo: \"A\", \"B\", \"C\" hoặc \"D\"",
+          "angle": "Vị trí mới của điểm (độ, 0 đến 359)"
+        }
+      },
+      "angle-measured": {
+        "kind": "result",
+        "description": "Các số đo góc sau khi học sinh đổi xong vị trí một điểm (kéo hoặc thanh trượt)",
+        "data": {
+          "inscribed": "Góc nội tiếp ACB (độ)",
+          "central": "Góc ở tâm AOB (độ, 0 đến 180)",
+          "arc": "Số đo cung AB không chứa C, tức cung bị chắn (độ, có thể lớn hơn 180)",
+          "second": "Góc nội tiếp ADB (độ), chỉ có khi đang vẽ góc thứ hai",
+          "tangentChord": "Góc xAB tạo bởi tia tiếp tuyến và dây cung (độ), chỉ có khi đang vẽ tiếp tuyến"
+        }
+      },
+      "right-inscribed-angle": {
+        "kind": "goal",
+        "description": "AB vừa trở thành đường kính nên góc nội tiếp ACB là góc vuông; báo một lần cho đến khi AB không còn là đường kính",
+        "data": {
+          "inscribed": "Góc nội tiếp ACB (độ), bằng 90"
+        }
+      }
+    },
+    "url": "/goc-noi-tiep/1.0.0/index.html",
+    "thumbnailUrl": "/goc-noi-tiep/1.0.0/thumb.png"
+  },
+  {
     "slug": "guong",
     "version": "1.0.0",
     "title": "Gương phẳng và gương cầu",
@@ -3619,6 +3729,71 @@
     },
     "url": "/so-nguyen/1.0.0/index.html",
     "thumbnailUrl": "/so-nguyen/1.0.0/thumb.png"
+  },
+  {
+    "slug": "so-thap-phan",
+    "version": "1.0.0",
+    "title": "Giá trị theo vị trí và số thập phân",
+    "subject": "math",
+    "grades": [
+      4,
+      5
+    ],
+    "description": "Thêm, bớt các khối nghìn, trăm, chục, đơn vị, phần mười và phần trăm. Khi một hàng đủ 10 khối, 10 khối đó đổi thành 1 khối của hàng liền bên trái (có hoạt cảnh). Mô phỏng viết số bằng chữ số với dấu phẩy thập phân, đọc số bằng lời (mốt, lăm, linh/lẻ, mươi, phẩy, \"không năm\" cho 0,05) và điền bảng các hàng. Có thêm ba hoạt động: so sánh với số B (kể cả hai số thập phân có số chữ số khác nhau như 0,5 và 0,45), làm tròn đến hàng đã chọn, và xếp khối theo số mẫu.",
+    "learningGoals": [
+      "Hiểu giá trị của chữ số theo vị trí: mỗi hàng gấp 10 lần hàng liền bên phải.",
+      "Đổi 10 đơn vị của một hàng thành 1 đơn vị của hàng liền trên mà giá trị số không đổi.",
+      "Đọc, viết số tự nhiên và số thập phân; đọc đúng mốt, lăm, linh (lẻ), không năm.",
+      "So sánh hai số thập phân bằng cách so sánh lần lượt từng hàng từ trái sang phải; 0,5 = 0,50 > 0,45.",
+      "Làm tròn số thập phân đến hàng phần mười, hàng đơn vị, hàng chục, hàng trăm."
+    ],
+    "state": {
+      "th": "Số khối nghìn (0 đến 9)",
+      "h": "Số khối trăm (0 đến 9)",
+      "t": "Số khối chục (0 đến 9)",
+      "u": "Số khối đơn vị (0 đến 9)",
+      "d": "Số khối phần mười (0 đến 9)",
+      "c": "Số khối phần trăm (0 đến 9); số A = 1000·th + 100·h + 10·t + u + d/10 + c/100",
+      "mode": "Hoạt động: \"build\" (đọc, viết số), \"compare\" (so sánh A với B), \"round\" (làm tròn A), \"target\" (xếp khối để được số mẫu)",
+      "bInt": "Phần nguyên của số B (0 đến 9999)",
+      "bD": "Chữ số hàng phần mười của B (0 đến 9)",
+      "bC": "Chữ số hàng phần trăm của B (0 đến 9)",
+      "roundTo": "Hàng làm tròn, tính bằng phần trăm: 10 (hàng phần mười), 100 (hàng đơn vị), 1000 (hàng chục), 10000 (hàng trăm)",
+      "target": "Số mẫu cần xếp trong hoạt động \"target\", tính bằng phần trăm (1234 nghĩa là 12,34)"
+    },
+    "events": {
+      "block-change": {
+        "kind": "action",
+        "description": "Học sinh thêm hoặc bớt một khối",
+        "data": {
+          "place": "Giá trị một khối của hàng vừa đổi (1000, 100, 10, 1, 0.1 hoặc 0.01)",
+          "count": "Số khối của hàng đó sau khi thay đổi (và sau khi đổi 10 khối nếu có)",
+          "value": "Số A sau khi thay đổi"
+        }
+      },
+      "regrouped": {
+        "kind": "result",
+        "description": "Mười khối của một hàng vừa được đổi thành một khối của hàng liền trên; giá trị số không đổi",
+        "data": {
+          "place": "Giá trị một khối của hàng nhận thêm khối (1000, 100, 10, 1 hoặc 0.1)",
+          "value": "Số A sau khi đổi"
+        }
+      },
+      "target-built": {
+        "kind": "goal",
+        "description": "Trong hoạt động xếp số theo mẫu, học sinh vừa xếp đúng số mẫu; báo một lần cho mỗi số mẫu",
+        "data": {
+          "target": "Số mẫu"
+        }
+      },
+      "new-target": {
+        "kind": "action",
+        "description": "Học sinh bấm \"Số khác\" để lấy số mẫu mới",
+        "data": {}
+      }
+    },
+    "url": "/so-thap-phan/1.0.0/index.html",
+    "thumbnailUrl": "/so-thap-phan/1.0.0/thumb.png"
   },
   {
     "slug": "song-dung",

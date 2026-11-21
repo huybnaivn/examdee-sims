@@ -1,0 +1,50 @@
+{
+  "slug": "bang-nhan",
+  "version": "1.0.0",
+  "title": "Phép nhân bằng mảng",
+  "subject": "math",
+  "grades": [2, 3],
+  "description": "Xếp các chấm thành mảng gồm một số hàng (1 đến 10), mỗi hàng có số chấm bằng nhau (1 đến 10). Mô phỏng viết phép nhân theo thứ tự trong sách giáo khoa (số chấm một hàng được lấy số hàng lần: 5 × 3 = 15) kèm tổng các số hạng bằng nhau (5 + 5 + 5 = 15), đếm thêm ở cuối mỗi hàng, và hai phép chia ngược lại (15 : 3 = 5, 15 : 5 = 3). Nút xoay mảng đổi hàng thành cột để thấy 5 × 3 = 3 × 5. Chế độ luyện tập hỏi một phép nhân với 12 nút đáp án lớn.",
+  "learningGoals": [
+    "Hiểu phép nhân là phép cộng các số hạng bằng nhau: 5 × 3 nghĩa là 5 được lấy 3 lần, 5 + 5 + 5.",
+    "Đếm thêm theo từng hàng để tìm tích.",
+    "Thấy khi đổi chỗ hai thừa số thì tích không thay đổi (xoay mảng).",
+    "Hiểu phép chia là phép tính ngược của phép nhân: chia đều 15 chấm thành 3 hàng, mỗi hàng 5 chấm.",
+    "Thuộc bảng nhân qua luyện tập."
+  ],
+  "state": {
+    "rows": "Số hàng của mảng (số nguyên từ 1 đến 10); là thừa số thứ hai trong phép nhân",
+    "columns": "Số chấm mỗi hàng (số nguyên từ 1 đến 10); là thừa số thứ nhất trong phép nhân",
+    "mode": "Hoạt động: \"explore\" (xếp mảng chấm) hoặc \"practice\" (luyện tập: tìm tích của mảng đang hiện)"
+  },
+  "events": {
+    "array-set": {
+      "kind": "result",
+      "description": "Mảng vừa thay đổi: học sinh đổi số hàng hoặc số chấm mỗi hàng, xoay mảng, hoặc lấy câu luyện tập khác",
+      "data": {
+        "rows": "Số hàng",
+        "columns": "Số chấm mỗi hàng",
+        "product": "Tích = số hàng × số chấm mỗi hàng"
+      }
+    },
+    "correct-answer": {
+      "kind": "goal",
+      "description": "Trong luyện tập, học sinh bấm đúng tích; báo một lần cho mỗi câu",
+      "data": {
+        "rows": "Số hàng",
+        "columns": "Số chấm mỗi hàng",
+        "product": "Tích",
+        "wrongTries": "Số lần bấm sai trước khi đúng ở câu này"
+      }
+    },
+    "wrong-answer": {
+      "kind": "action",
+      "description": "Trong luyện tập, học sinh bấm một đáp án sai (mỗi đáp án sai chỉ bấm được một lần)",
+      "data": {
+        "answer": "Số học sinh đã bấm",
+        "rows": "Số hàng",
+        "columns": "Số chấm mỗi hàng"
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "goc-noi-tiep",
+  "version": "1.0.0",
+  "title": "Góc nội tiếp và góc ở tâm",
+  "subject": "math",
+  "grades": [9],
+  "description": "Kéo các điểm A, B, C (và D) trên đường tròn tâm O; các điểm luôn nằm trên đường tròn và dừng ở số đo nguyên độ. Hình vẽ cho thấy góc nội tiếp ACB, góc ở tâm AOB và cung AB bị chắn với số đo trực tiếp. Có thể vẽ thêm góc nội tiếp thứ hai ADB (cùng chắn cung AB hoặc tạo thành tứ giác nội tiếp ACBD) và góc tạo bởi tia tiếp tuyến Ax với dây cung AB. Khi kéo A hoặc B gần đầu kia của đường kính (trong khoảng 2°), điểm tự hút vào để AB là đường kính.",
+  "learningGoals": [
+    "Nhận biết góc nội tiếp, góc ở tâm và cung bị chắn; số đo góc ở tâm bằng số đo cung bị chắn.",
+    "Góc nội tiếp bằng nửa số đo cung bị chắn, kể cả khi cung bị chắn là cung lớn (góc nội tiếp tù).",
+    "Các góc nội tiếp cùng chắn một cung thì bằng nhau; góc nội tiếp chắn nửa đường tròn là góc vuông.",
+    "Góc tạo bởi tia tiếp tuyến và dây cung bằng nửa số đo cung bị chắn.",
+    "Tứ giác nội tiếp đường tròn có tổng hai góc đối diện bằng 180°."
+  ],
+  "state": {
+    "a": "Vị trí điểm A trên đường tròn: góc (độ, nguyên, 0 đến 359) tính ngược chiều kim đồng hồ từ bán kính nằm ngang bên phải",
+    "b": "Vị trí điểm B, cùng quy ước với a",
+    "c": "Vị trí điểm C, đỉnh của góc nội tiếp ACB",
+    "d": "Vị trí điểm D, đỉnh của góc nội tiếp thứ hai ADB",
+    "second": "true nếu vẽ góc nội tiếp thứ hai ADB",
+    "tangent": "true nếu vẽ tiếp tuyến tại A và góc xAB tạo bởi tia tiếp tuyến Ax với dây AB (Ax nằm về phía cung AB không chứa C)"
+  },
+  "events": {
+    "point-moved": {
+      "kind": "action",
+      "description": "Học sinh kéo một điểm trên đường tròn rồi thả tay",
+      "data": {
+        "point": "Tên điểm vừa kéo: \"A\", \"B\", \"C\" hoặc \"D\"",
+        "angle": "Vị trí mới của điểm (độ, 0 đến 359)"
+      }
+    },
+    "angle-measured": {
+      "kind": "result",
+      "description": "Các số đo góc sau khi học sinh đổi xong vị trí một điểm (kéo hoặc thanh trượt)",
+      "data": {
+        "inscribed": "Góc nội tiếp ACB (độ)",
+        "central": "Góc ở tâm AOB (độ, 0 đến 180)",
+        "arc": "Số đo cung AB không chứa C, tức cung bị chắn (độ, có thể lớn hơn 180)",
+        "second": "Góc nội tiếp ADB (độ), chỉ có khi đang vẽ góc thứ hai",
+        "tangentChord": "Góc xAB tạo bởi tia tiếp tuyến và dây cung (độ), chỉ có khi đang vẽ tiếp tuyến"
+      }
+    },
+    "right-inscribed-angle": {
+      "kind": "goal",
+      "description": "AB vừa trở thành đường kính nên góc nội tiếp ACB là góc vuông; báo một lần cho đến khi AB không còn là đường kính",
+      "data": {
+        "inscribed": "Góc nội tiếp ACB (độ), bằng 90"
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "so-thap-phan",
+  "version": "1.0.0",
+  "title": "Giá trị theo vị trí và số thập phân",
+  "subject": "math",
+  "grades": [4, 5],
+  "description": "Thêm, bớt các khối nghìn, trăm, chục, đơn vị, phần mười và phần trăm. Khi một hàng đủ 10 khối, 10 khối đó đổi thành 1 khối của hàng liền bên trái (có hoạt cảnh). Mô phỏng viết số bằng chữ số với dấu phẩy thập phân, đọc số bằng lời (mốt, lăm, linh/lẻ, mươi, phẩy, \"không năm\" cho 0,05) và điền bảng các hàng. Có thêm ba hoạt động: so sánh với số B (kể cả hai số thập phân có số chữ số khác nhau như 0,5 và 0,45), làm tròn đến hàng đã chọn, và xếp khối theo số mẫu.",
+  "learningGoals": [
+    "Hiểu giá trị của chữ số theo vị trí: mỗi hàng gấp 10 lần hàng liền bên phải.",
+    "Đổi 10 đơn vị của một hàng thành 1 đơn vị của hàng liền trên mà giá trị số không đổi.",
+    "Đọc, viết số tự nhiên và số thập phân; đọc đúng mốt, lăm, linh (lẻ), không năm.",
+    "So sánh hai số thập phân bằng cách so sánh lần lượt từng hàng từ trái sang phải; 0,5 = 0,50 > 0,45.",
+    "Làm tròn số thập phân đến hàng phần mười, hàng đơn vị, hàng chục, hàng trăm."
+  ],
+  "state": {
+    "th": "Số khối nghìn (0 đến 9)",
+    "h": "Số khối trăm (0 đến 9)",
+    "t": "Số khối chục (0 đến 9)",
+    "u": "Số khối đơn vị (0 đến 9)",
+    "d": "Số khối phần mười (0 đến 9)",
+    "c": "Số khối phần trăm (0 đến 9); số A = 1000·th + 100·h + 10·t + u + d/10 + c/100",
+    "mode": "Hoạt động: \"build\" (đọc, viết số), \"compare\" (so sánh A với B), \"round\" (làm tròn A), \"target\" (xếp khối để được số mẫu)",
+    "bInt": "Phần nguyên của số B (0 đến 9999)",
+    "bD": "Chữ số hàng phần mười của B (0 đến 9)",
+    "bC": "Chữ số hàng phần trăm của B (0 đến 9)",
+    "roundTo": "Hàng làm tròn, tính bằng phần trăm: 10 (hàng phần mười), 100 (hàng đơn vị), 1000 (hàng chục), 10000 (hàng trăm)",
+    "target": "Số mẫu cần xếp trong hoạt động \"target\", tính bằng phần trăm (1234 nghĩa là 12,34)"
+  },
+  "events": {
+    "block-change": {
+      "kind": "action",
+      "description": "Học sinh thêm hoặc bớt một khối",
+      "data": {
+        "place": "Giá trị một khối của hàng vừa đổi (1000, 100, 10, 1, 0.1 hoặc 0.01)",
+        "count": "Số khối của hàng đó sau khi thay đổi (và sau khi đổi 10 khối nếu có)",
+        "value": "Số A sau khi thay đổi"
+      }
+    },
+    "regrouped": {
+      "kind": "result",
+      "description": "Mười khối của một hàng vừa được đổi thành một khối của hàng liền trên; giá trị số không đổi",
+      "data": {
+        "place": "Giá trị một khối của hàng nhận thêm khối (1000, 100, 10, 1 hoặc 0.1)",
+        "value": "Số A sau khi đổi"
+      }
+    },
+    "target-built": {
+      "kind": "goal",
+      "description": "Trong hoạt động xếp số theo mẫu, học sinh vừa xếp đúng số mẫu; báo một lần cho mỗi số mẫu",
+      "data": {
+        "target": "Số mẫu"
+      }
+    },
+    "new-target": {
+      "kind": "action",
+      "description": "Học sinh bấm \"Số khác\" để lấy số mẫu mới",
+      "data": {}
+    }
+  }
+}
