@@ -2882,6 +2882,57 @@
     "thumbnailUrl": "/hieu-ung-doppler/1.0.0/thumb.png"
   },
   {
+    "slug": "hieu-ung-nha-kinh",
+    "version": "1.0.0",
+    "title": "Hiệu ứng nhà kính",
+    "subject": "physics",
+    "grades": [
+      8,
+      9,
+      10
+    ],
+    "description": "Ánh sáng Mặt Trời (sóng ngắn) xuyên qua khí quyển tới mặt đất; mặt đất bức xạ hồng ngoại (sóng dài), một phần bị các phân tử khí nhà kính hấp thụ rồi phát xạ trở lại. Thay đổi nồng độ CO₂ và lượng mây để xem nhiệt độ bề mặt cân bằng theo mô hình cân bằng năng lượng một lớp, và thử giữ mức tăng nhiệt độ dưới giới hạn +1,5 °C hoặc +2 °C.",
+    "learningGoals": [
+      "Mô tả hiệu ứng nhà kính: khí nhà kính cho ánh sáng Mặt Trời đi qua nhưng hấp thụ và phát xạ lại bức xạ hồng ngoại từ mặt đất.",
+      "Hiểu cân bằng năng lượng: khi nhiệt độ ổn định, năng lượng Mặt Trời được hấp thụ bằng năng lượng bức xạ ra vũ trụ.",
+      "Nhận ra khi không có khí nhà kính, Trái Đất chỉ khoảng −18 °C; tăng CO₂ làm nhiệt độ bề mặt tăng.",
+      "Nhận ra mây phản xạ ánh sáng Mặt Trời (suất phản chiếu) làm giảm năng lượng được hấp thụ."
+    ],
+    "state": {
+      "co2": "Nồng độ CO₂ (ppm); 280 là thời tiền công nghiệp, khoảng 420 là hiện nay",
+      "cloud": "Lượng mây che phủ (%); suất phản chiếu α = 0,10 + 0,30 × mây",
+      "atmosphere": "true nếu có lớp khí nhà kính hấp thụ hồng ngoại; false là Trái Đất không có khí nhà kính",
+      "target": "Giới hạn mức tăng nhiệt độ so với thời tiền công nghiệp (°C): 1,5 hoặc 2",
+      "goalMet": "true nếu ở lần điều chỉnh gần nhất mức tăng nhiệt độ cân bằng không vượt quá giới hạn",
+      "temp": "Nhiệt độ mặt đất lúc này (K), tiến dần tới nhiệt độ cân bằng"
+    },
+    "events": {
+      "climate-result": {
+        "kind": "result",
+        "description": "Nhiệt độ cân bằng sau khi học sinh thả thanh trượt CO₂, mây hoặc đổi lựa chọn khí nhà kính, giới hạn",
+        "data": {
+          "co2": "Nồng độ CO₂ (ppm)",
+          "cloud": "Lượng mây (%)",
+          "atmosphere": "1 nếu có khí nhà kính, 0 nếu không",
+          "surfaceTemp": "Nhiệt độ bề mặt cân bằng T = Tₑ·(2/(2 − ε))^¼ (°C)",
+          "rise": "Mức tăng so với thời tiền công nghiệp (280 ppm, mây 67 %) (°C)"
+        }
+      },
+      "target-kept": {
+        "kind": "goal",
+        "description": "Học sinh đưa mức tăng nhiệt độ cân bằng về không vượt quá giới hạn đã chọn (khi vẫn có khí nhà kính)",
+        "data": {
+          "co2": "Nồng độ CO₂ (ppm)",
+          "cloud": "Lượng mây (%)",
+          "rise": "Mức tăng nhiệt độ (°C)",
+          "target": "Giới hạn đã chọn (°C)"
+        }
+      }
+    },
+    "url": "/hieu-ung-nha-kinh/1.0.0/index.html",
+    "thumbnailUrl": "/hieu-ung-nha-kinh/1.0.0/thumb.png"
+  },
+  {
     "slug": "khao-sat-ham-so",
     "version": "1.0.0",
     "title": "Khảo sát hàm số bậc ba",
@@ -3842,6 +3893,59 @@
     "thumbnailUrl": "/mol/1.0.0/thumb.png"
   },
   {
+    "slug": "nang-luong-tai-tao",
+    "version": "1.0.0",
+    "title": "Năng lượng tái tạo: pin mặt trời và tua-bin gió",
+    "subject": "physics",
+    "grades": [
+      9,
+      10
+    ],
+    "description": "Hai nguồn năng lượng tái tạo đặt cạnh nhau: pin mặt trời (diện tích, hiệu suất, góc tia nắng, số giờ nắng) và tua-bin gió (chiều dài cánh, tốc độ gió, hệ số công suất). Xem công suất, điện năng mỗi ngày, so sánh với nhu cầu điện của một hộ gia đình và quan sát công suất gió tỉ lệ với lập phương tốc độ gió.",
+    "learningGoals": [
+      "Tính công suất pin mặt trời P = η·G·A·cos θ và nhận ra công suất lớn nhất khi tia nắng vuông góc với tấm pin.",
+      "Tính công suất tua-bin gió P = ½ρAv³·Cp với A = πR²; tốc độ gió tăng gấp đôi thì công suất tăng gấp tám lần.",
+      "Biết hệ số công suất của tua-bin không vượt quá giới hạn Betz 16/27 ≈ 0,593.",
+      "Tính điện năng mỗi ngày E = P·t và so sánh với nhu cầu điện của hộ gia đình."
+    ],
+    "state": {
+      "area": "Diện tích tấm pin A (m²)",
+      "efficiency": "Hiệu suất pin η (%)",
+      "sunAngle": "Góc θ giữa tia nắng và pháp tuyến của tấm pin (độ)",
+      "sunHours": "Số giờ nắng đủ (G = 1000 W/m²) mỗi ngày (h)",
+      "blade": "Chiều dài cánh tua-bin R (m), diện tích quét A = πR²",
+      "windSpeed": "Tốc độ gió v (m/s)",
+      "cp": "Hệ số công suất Cp của tua-bin; mô hình không cho vượt 16/27",
+      "windHours": "Số giờ có gió với tốc độ v mỗi ngày (h)",
+      "need": "Nhu cầu điện của hộ gia đình (kWh/ngày): 5, 10, 15 hoặc 20",
+      "goalMet": "true nếu ở lần điều chỉnh gần nhất tổng điện năng đủ nhu cầu"
+    },
+    "events": {
+      "energy-output": {
+        "kind": "result",
+        "description": "Công suất và điện năng mỗi ngày sau khi học sinh thả một thanh trượt hoặc đổi nhu cầu",
+        "data": {
+          "solarPower": "Công suất pin mặt trời η·G·A·cos θ (W)",
+          "windPower": "Công suất tua-bin gió ½ρπR²v³·Cp (W)",
+          "solarKWh": "Điện năng pin mặt trời mỗi ngày (kWh)",
+          "windKWh": "Điện năng tua-bin gió mỗi ngày (kWh)",
+          "total": "Tổng điện năng mỗi ngày (kWh)",
+          "need": "Nhu cầu của hộ gia đình (kWh/ngày)"
+        }
+      },
+      "need-met": {
+        "kind": "goal",
+        "description": "Tổng điện năng mỗi ngày vừa đủ (hoặc vượt) nhu cầu của hộ gia đình",
+        "data": {
+          "total": "Tổng điện năng mỗi ngày (kWh)",
+          "need": "Nhu cầu của hộ gia đình (kWh/ngày)"
+        }
+      }
+    },
+    "url": "/nang-luong-tai-tao/1.0.0/index.html",
+    "thumbnailUrl": "/nang-luong-tai-tao/1.0.0/thumb.png"
+  },
+  {
     "slug": "nem-ngang",
     "version": "1.0.0",
     "title": "Chuyển động ném ngang",
@@ -3948,6 +4052,49 @@
     },
     "url": "/nem-xien/1.0.0/index.html",
     "thumbnailUrl": "/nem-xien/1.0.0/thumb.png"
+  },
+  {
+    "slug": "ngay-dem-va-mua",
+    "version": "1.0.0",
+    "title": "Ngày, đêm và các mùa trên Trái Đất",
+    "subject": "physics",
+    "grades": [
+      6,
+      10
+    ],
+    "description": "Trái Đất có trục nghiêng chuyển động quanh Mặt Trời. Kéo Trái Đất trên quỹ đạo hoặc cho chạy để đổi ngày, xem nửa được chiếu sáng của Trái Đất, chọn vĩ độ (Hà Nội, TP Hồ Chí Minh, Xích đạo, Vòng cực) để thấy thời gian ban ngày và độ cao Mặt Trời lúc trưa thay đổi trong năm; các ngày Xuân phân, Hạ chí, Thu phân, Đông chí được đánh dấu.",
+    "learningGoals": [
+      "Giải thích hiện tượng ngày, đêm dài ngắn khác nhau theo mùa và theo vĩ độ do trục Trái Đất nghiêng và giữ nguyên phương khi chuyển động quanh Mặt Trời.",
+      "Nhận ra ở Xích đạo ngày dài bằng đêm quanh năm, và mọi nơi có ngày dài bằng đêm vào Xuân phân, Thu phân.",
+      "Nhận ra hiện tượng ngày địa cực, đêm địa cực ở vùng từ vòng cực về cực.",
+      "Tính độ cao Mặt Trời lúc trưa h = 90° − |φ − δ|; nửa cầu Bắc là mùa hạ khi cực Bắc ngả về phía Mặt Trời."
+    ],
+    "state": {
+      "day": "Ngày trong năm (1 = 1/1, 365 = 31/12, năm không nhuận); có thể là số lẻ khi đang chạy",
+      "latitude": "Vĩ độ nơi quan sát φ (độ, dương là vĩ độ Bắc): 21,03 Hà Nội, 10,82 TP Hồ Chí Minh, 0 Xích đạo, 66,56 Vòng cực Bắc, 80 vùng cực"
+    },
+    "events": {
+      "move-date": {
+        "kind": "action",
+        "description": "Học sinh kéo Trái Đất trên quỹ đạo hoặc bấm/kéo trên đồ thị để chọn ngày rồi thả tay",
+        "data": {
+          "day": "Ngày trong năm được chọn (1–365)"
+        }
+      },
+      "day-measured": {
+        "kind": "result",
+        "description": "Kết quả cho ngày và vĩ độ vừa chọn (sau khi thả thanh trượt ngày, thả Trái Đất/đồ thị hoặc đổi vĩ độ)",
+        "data": {
+          "day": "Ngày trong năm (1–365)",
+          "latitude": "Vĩ độ φ (độ, dương là Bắc)",
+          "declination": "Xích vĩ Mặt Trời δ = −23,44°·cos(360°(N + 10)/365) (độ)",
+          "dayLength": "Thời gian ban ngày (giờ)",
+          "noonAltitude": "Độ cao Mặt Trời lúc trưa 90° − |φ − δ| (độ), âm nếu Mặt Trời không mọc"
+        }
+      }
+    },
+    "url": "/ngay-dem-va-mua/1.0.0/index.html",
+    "thumbnailUrl": "/ngay-dem-va-mua/1.0.0/thumb.png"
   },
   {
     "slug": "nguyen-phan-giam-phan",

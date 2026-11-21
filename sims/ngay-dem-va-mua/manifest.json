@@ -1,0 +1,38 @@
+{
+  "slug": "ngay-dem-va-mua",
+  "version": "1.0.0",
+  "title": "Ngày, đêm và các mùa trên Trái Đất",
+  "subject": "physics",
+  "grades": [6, 10],
+  "description": "Trái Đất có trục nghiêng chuyển động quanh Mặt Trời. Kéo Trái Đất trên quỹ đạo hoặc cho chạy để đổi ngày, xem nửa được chiếu sáng của Trái Đất, chọn vĩ độ (Hà Nội, TP Hồ Chí Minh, Xích đạo, Vòng cực) để thấy thời gian ban ngày và độ cao Mặt Trời lúc trưa thay đổi trong năm; các ngày Xuân phân, Hạ chí, Thu phân, Đông chí được đánh dấu.",
+  "learningGoals": [
+    "Giải thích hiện tượng ngày, đêm dài ngắn khác nhau theo mùa và theo vĩ độ do trục Trái Đất nghiêng và giữ nguyên phương khi chuyển động quanh Mặt Trời.",
+    "Nhận ra ở Xích đạo ngày dài bằng đêm quanh năm, và mọi nơi có ngày dài bằng đêm vào Xuân phân, Thu phân.",
+    "Nhận ra hiện tượng ngày địa cực, đêm địa cực ở vùng từ vòng cực về cực.",
+    "Tính độ cao Mặt Trời lúc trưa h = 90° − |φ − δ|; nửa cầu Bắc là mùa hạ khi cực Bắc ngả về phía Mặt Trời."
+  ],
+  "state": {
+    "day": "Ngày trong năm (1 = 1/1, 365 = 31/12, năm không nhuận); có thể là số lẻ khi đang chạy",
+    "latitude": "Vĩ độ nơi quan sát φ (độ, dương là vĩ độ Bắc): 21,03 Hà Nội, 10,82 TP Hồ Chí Minh, 0 Xích đạo, 66,56 Vòng cực Bắc, 80 vùng cực"
+  },
+  "events": {
+    "move-date": {
+      "kind": "action",
+      "description": "Học sinh kéo Trái Đất trên quỹ đạo hoặc bấm/kéo trên đồ thị để chọn ngày rồi thả tay",
+      "data": {
+        "day": "Ngày trong năm được chọn (1–365)"
+      }
+    },
+    "day-measured": {
+      "kind": "result",
+      "description": "Kết quả cho ngày và vĩ độ vừa chọn (sau khi thả thanh trượt ngày, thả Trái Đất/đồ thị hoặc đổi vĩ độ)",
+      "data": {
+        "day": "Ngày trong năm (1–365)",
+        "latitude": "Vĩ độ φ (độ, dương là Bắc)",
+        "declination": "Xích vĩ Mặt Trời δ = −23,44°·cos(360°(N + 10)/365) (độ)",
+        "dayLength": "Thời gian ban ngày (giờ)",
+        "noonAltitude": "Độ cao Mặt Trời lúc trưa 90° − |φ − δ| (độ), âm nếu Mặt Trời không mọc"
+      }
+    }
+  }
+}

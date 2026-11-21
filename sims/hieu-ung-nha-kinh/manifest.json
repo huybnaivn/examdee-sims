@@ -1,0 +1,45 @@
+{
+  "slug": "hieu-ung-nha-kinh",
+  "version": "1.0.0",
+  "title": "Hiệu ứng nhà kính",
+  "subject": "physics",
+  "grades": [8, 9, 10],
+  "description": "Ánh sáng Mặt Trời (sóng ngắn) xuyên qua khí quyển tới mặt đất; mặt đất bức xạ hồng ngoại (sóng dài), một phần bị các phân tử khí nhà kính hấp thụ rồi phát xạ trở lại. Thay đổi nồng độ CO₂ và lượng mây để xem nhiệt độ bề mặt cân bằng theo mô hình cân bằng năng lượng một lớp, và thử giữ mức tăng nhiệt độ dưới giới hạn +1,5 °C hoặc +2 °C.",
+  "learningGoals": [
+    "Mô tả hiệu ứng nhà kính: khí nhà kính cho ánh sáng Mặt Trời đi qua nhưng hấp thụ và phát xạ lại bức xạ hồng ngoại từ mặt đất.",
+    "Hiểu cân bằng năng lượng: khi nhiệt độ ổn định, năng lượng Mặt Trời được hấp thụ bằng năng lượng bức xạ ra vũ trụ.",
+    "Nhận ra khi không có khí nhà kính, Trái Đất chỉ khoảng −18 °C; tăng CO₂ làm nhiệt độ bề mặt tăng.",
+    "Nhận ra mây phản xạ ánh sáng Mặt Trời (suất phản chiếu) làm giảm năng lượng được hấp thụ."
+  ],
+  "state": {
+    "co2": "Nồng độ CO₂ (ppm); 280 là thời tiền công nghiệp, khoảng 420 là hiện nay",
+    "cloud": "Lượng mây che phủ (%); suất phản chiếu α = 0,10 + 0,30 × mây",
+    "atmosphere": "true nếu có lớp khí nhà kính hấp thụ hồng ngoại; false là Trái Đất không có khí nhà kính",
+    "target": "Giới hạn mức tăng nhiệt độ so với thời tiền công nghiệp (°C): 1,5 hoặc 2",
+    "goalMet": "true nếu ở lần điều chỉnh gần nhất mức tăng nhiệt độ cân bằng không vượt quá giới hạn",
+    "temp": "Nhiệt độ mặt đất lúc này (K), tiến dần tới nhiệt độ cân bằng"
+  },
+  "events": {
+    "climate-result": {
+      "kind": "result",
+      "description": "Nhiệt độ cân bằng sau khi học sinh thả thanh trượt CO₂, mây hoặc đổi lựa chọn khí nhà kính, giới hạn",
+      "data": {
+        "co2": "Nồng độ CO₂ (ppm)",
+        "cloud": "Lượng mây (%)",
+        "atmosphere": "1 nếu có khí nhà kính, 0 nếu không",
+        "surfaceTemp": "Nhiệt độ bề mặt cân bằng T = Tₑ·(2/(2 − ε))^¼ (°C)",
+        "rise": "Mức tăng so với thời tiền công nghiệp (280 ppm, mây 67 %) (°C)"
+      }
+    },
+    "target-kept": {
+      "kind": "goal",
+      "description": "Học sinh đưa mức tăng nhiệt độ cân bằng về không vượt quá giới hạn đã chọn (khi vẫn có khí nhà kính)",
+      "data": {
+        "co2": "Nồng độ CO₂ (ppm)",
+        "cloud": "Lượng mây (%)",
+        "rise": "Mức tăng nhiệt độ (°C)",
+        "target": "Giới hạn đã chọn (°C)"
+      }
+    }
+  }
+}

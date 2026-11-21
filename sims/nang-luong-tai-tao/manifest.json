@@ -1,0 +1,48 @@
+{
+  "slug": "nang-luong-tai-tao",
+  "version": "1.0.0",
+  "title": "Năng lượng tái tạo: pin mặt trời và tua-bin gió",
+  "subject": "physics",
+  "grades": [9, 10],
+  "description": "Hai nguồn năng lượng tái tạo đặt cạnh nhau: pin mặt trời (diện tích, hiệu suất, góc tia nắng, số giờ nắng) và tua-bin gió (chiều dài cánh, tốc độ gió, hệ số công suất). Xem công suất, điện năng mỗi ngày, so sánh với nhu cầu điện của một hộ gia đình và quan sát công suất gió tỉ lệ với lập phương tốc độ gió.",
+  "learningGoals": [
+    "Tính công suất pin mặt trời P = η·G·A·cos θ và nhận ra công suất lớn nhất khi tia nắng vuông góc với tấm pin.",
+    "Tính công suất tua-bin gió P = ½ρAv³·Cp với A = πR²; tốc độ gió tăng gấp đôi thì công suất tăng gấp tám lần.",
+    "Biết hệ số công suất của tua-bin không vượt quá giới hạn Betz 16/27 ≈ 0,593.",
+    "Tính điện năng mỗi ngày E = P·t và so sánh với nhu cầu điện của hộ gia đình."
+  ],
+  "state": {
+    "area": "Diện tích tấm pin A (m²)",
+    "efficiency": "Hiệu suất pin η (%)",
+    "sunAngle": "Góc θ giữa tia nắng và pháp tuyến của tấm pin (độ)",
+    "sunHours": "Số giờ nắng đủ (G = 1000 W/m²) mỗi ngày (h)",
+    "blade": "Chiều dài cánh tua-bin R (m), diện tích quét A = πR²",
+    "windSpeed": "Tốc độ gió v (m/s)",
+    "cp": "Hệ số công suất Cp của tua-bin; mô hình không cho vượt 16/27",
+    "windHours": "Số giờ có gió với tốc độ v mỗi ngày (h)",
+    "need": "Nhu cầu điện của hộ gia đình (kWh/ngày): 5, 10, 15 hoặc 20",
+    "goalMet": "true nếu ở lần điều chỉnh gần nhất tổng điện năng đủ nhu cầu"
+  },
+  "events": {
+    "energy-output": {
+      "kind": "result",
+      "description": "Công suất và điện năng mỗi ngày sau khi học sinh thả một thanh trượt hoặc đổi nhu cầu",
+      "data": {
+        "solarPower": "Công suất pin mặt trời η·G·A·cos θ (W)",
+        "windPower": "Công suất tua-bin gió ½ρπR²v³·Cp (W)",
+        "solarKWh": "Điện năng pin mặt trời mỗi ngày (kWh)",
+        "windKWh": "Điện năng tua-bin gió mỗi ngày (kWh)",
+        "total": "Tổng điện năng mỗi ngày (kWh)",
+        "need": "Nhu cầu của hộ gia đình (kWh/ngày)"
+      }
+    },
+    "need-met": {
+      "kind": "goal",
+      "description": "Tổng điện năng mỗi ngày vừa đủ (hoặc vượt) nhu cầu của hộ gia đình",
+      "data": {
+        "total": "Tổng điện năng mỗi ngày (kWh)",
+        "need": "Nhu cầu của hộ gia đình (kWh/ngày)"
+      }
+    }
+  }
+}
