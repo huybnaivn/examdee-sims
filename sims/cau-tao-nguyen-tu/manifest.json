@@ -1,0 +1,42 @@
+{
+  "slug": "cau-tao-nguyen-tu",
+  "version": "1.0.0",
+  "title": "Cấu tạo nguyên tử",
+  "subject": "chemistry",
+  "grades": [7, 10],
+  "description": "Thêm bớt proton, neutron và electron để tạo nguyên tử hoặc ion của 20 nguyên tố đầu tiên (hydrogen đến calcium). Hình vẽ cho thấy hạt nhân và các lớp electron được điền theo thứ tự 2, 8, 8, 2; bên cạnh là tên và kí hiệu nguyên tố, số hiệu nguyên tử Z, số khối A, điện tích, kí hiệu nguyên tử và đồng vị đó có bền hay không. Chế độ thử thách yêu cầu tạo một nguyên tử hoặc ion cho trước. Mô hình lớp vỏ đơn giản, hình vẽ không theo tỉ lệ.",
+  "learningGoals": [
+    "Nêu được nguyên tử gồm hạt nhân (proton, neutron) và vỏ electron; số proton Z quyết định nguyên tố.",
+    "Tính số khối A = Z + N và viết kí hiệu nguyên tử với A và Z.",
+    "Xác định điện tích = Z − số electron, phân biệt nguyên tử trung hòa, cation và anion.",
+    "Sắp xếp electron vào các lớp theo thứ tự 2, 8, 8, 2 với 20 nguyên tố đầu tiên.",
+    "Nhận ra các đồng vị của cùng một nguyên tố khác nhau về số neutron và chỉ một số đồng vị là bền."
+  ],
+  "state": {
+    "protons": "Số proton Z (1–20)",
+    "neutrons": "Số neutron N (0–28)",
+    "electrons": "Số electron ở vỏ (0–20)",
+    "challenge": "true nếu đang bật chế độ thử thách",
+    "target": "Số thứ tự thử thách hiện tại (0–9): 0 ion ²³Na⁺, 1 nguyên tử ¹²C, 2 ion ¹⁶O²⁻, 3 nguyên tử ⁴He, 4 ion ²⁴Mg²⁺, 5 ion ³⁵Cl⁻, 6 nguyên tử ²H, 7 ion ²⁷Al³⁺, 8 nguyên tử ¹⁴C, 9 ion ⁴⁰Ca²⁺",
+    "solved": "true nếu thử thách hiện tại đã được hoàn thành"
+  },
+  "events": {
+    "particle-change": {
+      "kind": "action",
+      "description": "Học sinh thêm hoặc bớt một hạt proton, neutron hoặc electron",
+      "data": {
+        "particle": "Loại hạt vừa thay đổi: \"proton\", \"neutron\" hoặc \"electron\"",
+        "protons": "Số proton sau khi thay đổi",
+        "neutrons": "Số neutron sau khi thay đổi",
+        "electrons": "Số electron sau khi thay đổi"
+      }
+    },
+    "target-built": {
+      "kind": "goal",
+      "description": "Học sinh tạo đúng nguyên tử hoặc ion mà thử thách yêu cầu (mỗi thử thách báo một lần)",
+      "data": {
+        "target": "Mã thử thách: na-23-cation, c-12, o-16-anion, he-4, mg-24-cation, cl-35-anion, h-2, al-27-cation, c-14, ca-40-cation"
+      }
+    }
+  }
+}

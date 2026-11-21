@@ -1,0 +1,59 @@
+{
+  "slug": "chuyen-dong-thang",
+  "version": "1.0.0",
+  "title": "Chuyển động thẳng biến đổi đều",
+  "subject": "physics",
+  "grades": [10],
+  "description": "Một xe chuyển động thẳng trên trục Ox với tọa độ ban đầu, vận tốc ban đầu và gia tốc (dương hoặc âm) do học sinh chọn. Mô phỏng vẽ đồng thời đồ thị tọa độ – thời gian, vận tốc – thời gian và gia tốc – thời gian, tô diện tích dưới đồ thị v – t để thấy nó bằng độ dời. Có thể bật chế độ hãm phanh (xe dừng hẳn khi v = 0) và thêm xe thứ hai để giải bài toán hai xe gặp nhau.",
+  "learningGoals": [
+    "Vận dụng các công thức v = v₀ + a·t, x = x₀ + v₀·t + ½·a·t² và v² − v₀² = 2·a·Δx.",
+    "Phân biệt chuyển động nhanh dần (a cùng dấu v) và chậm dần (a ngược dấu v); xe đổi chiều chuyển động khi v = 0 nếu gia tốc vẫn giữ nguyên.",
+    "Đọc đồ thị: x – t là parabol, v – t là đường thẳng có hệ số góc a, diện tích dưới đồ thị v – t bằng độ dời.",
+    "Lập và giải phương trình x_A(t) = x_B(t) để tìm thời điểm và vị trí hai xe gặp nhau, kể cả trường hợp không gặp nhau."
+  ],
+  "state": {
+    "x0": "Tọa độ ban đầu của xe A (m)",
+    "v0": "Vận tốc ban đầu của xe A (m/s, dương theo chiều Ox)",
+    "a": "Gia tốc của xe A (m/s²)",
+    "brake": "true: xe hãm phanh, khi vận tốc giảm về 0 thì dừng hẳn (áp dụng cho cả hai xe); false: gia tốc giữ nguyên nên xe đổi chiều",
+    "twoCarts": "true nếu có thêm xe B",
+    "x0B": "Tọa độ ban đầu của xe B (m)",
+    "v0B": "Vận tốc ban đầu của xe B (m/s)",
+    "aB": "Gia tốc của xe B (m/s²)",
+    "time": "Thời gian từ lúc bắt đầu (s), từ 0 đến 20"
+  },
+  "events": {
+    "start": {
+      "kind": "action",
+      "description": "Học sinh cho xe chạy từ thời điểm t = 0",
+      "data": {
+        "x0": "Tọa độ ban đầu xe A (m)",
+        "v0": "Vận tốc ban đầu xe A (m/s)",
+        "a": "Gia tốc xe A (m/s²)",
+        "twoCarts": "1 nếu có xe B, 0 nếu không",
+        "x0B": "Tọa độ ban đầu xe B (m)",
+        "v0B": "Vận tốc ban đầu xe B (m/s)",
+        "aB": "Gia tốc xe B (m/s²)",
+        "brake": "1 nếu bật hãm phanh, 0 nếu không"
+      }
+    },
+    "turning-point": {
+      "kind": "result",
+      "description": "Một xe có vận tốc giảm về 0: dừng hẳn (hãm phanh) hoặc đổi chiều chuyển động",
+      "data": {
+        "cart": "Xe: 1 là A, 2 là B",
+        "time": "Thời điểm v = 0, t = −v₀/a (s)",
+        "position": "Tọa độ của xe lúc đó (m)",
+        "stays": "1 nếu xe dừng hẳn, 0 nếu xe đổi chiều"
+      }
+    },
+    "carts-meet": {
+      "kind": "result",
+      "description": "Hai xe gặp nhau (cùng tọa độ) lần đầu",
+      "data": {
+        "time": "Thời điểm gặp nhau (s)",
+        "position": "Tọa độ nơi gặp nhau (m)"
+      }
+    }
+  }
+}

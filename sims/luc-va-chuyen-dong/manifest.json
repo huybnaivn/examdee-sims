@@ -1,0 +1,39 @@
+{
+  "slug": "luc-va-chuyen-dong",
+  "version": "1.0.0",
+  "title": "Lực và chuyển động",
+  "subject": "physics",
+  "grades": [
+    10
+  ],
+  "description": "Kéo một vật trên mặt phẳng nằm ngang bằng một lực có thể điều chỉnh. Thay đổi lực kéo, khối lượng và hệ số ma sát để xem khi nào vật bắt đầu trượt, hợp lực và gia tốc thay đổi ra sao, vận tốc tăng thế nào theo thời gian.",
+  "learningGoals": [
+    "Nhận ra vật chỉ bắt đầu trượt khi lực kéo lớn hơn lực ma sát nghỉ cực đại μn·m·g.",
+    "Vận dụng định luật II Newton: a = (F − μt·m·g)/m khi vật trượt.",
+    "Phân biệt lực ma sát nghỉ (cân bằng với lực kéo) và lực ma sát trượt (có độ lớn không đổi).",
+    "Đọc đồ thị vận tốc – thời gian: hợp lực không đổi thì vận tốc thay đổi đều."
+  ],
+  "state": {
+    "force": "Lực kéo F theo phương ngang (N, dương hướng sang phải)",
+    "mass": "Khối lượng của vật (kg)",
+    "muS": "Hệ số ma sát nghỉ μn",
+    "muK": "Hệ số ma sát trượt μt (không lớn hơn μn)",
+    "x": "Tọa độ của vật (m)",
+    "v": "Vận tốc của vật (m/s, dương hướng sang phải)",
+    "time": "Thời gian đã trôi qua (s)"
+  },
+  "events": {
+    "start": {
+      "kind": "result",
+      "description": "Vật bắt đầu trượt từ trạng thái đứng yên; data.force là lực kéo (N), data.maxStatic là lực ma sát nghỉ cực đại (N)"
+    },
+    "stop": {
+      "kind": "result",
+      "description": "Vật đang trượt thì dừng lại; data.x là tọa độ lúc dừng (m), data.time là thời điểm dừng (s)"
+    },
+    "restart": {
+      "kind": "action",
+      "description": "Học sinh bấm nút đưa vật về vạch xuất phát"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "hap-dan-quy-dao",
+  "version": "1.0.0",
+  "title": "Lực hấp dẫn và quỹ đạo",
+  "subject": "physics",
+  "grades": [
+    10,
+    11
+  ],
+  "description": "Phóng một hành tinh quanh một ngôi sao đứng yên. Chọn khối lượng sao, khoảng cách ban đầu và tốc độ ban đầu (vuông góc với đường nối sao và hành tinh) để xem quỹ đạo là đường tròn, elip hay hành tinh thoát khỏi sao; quan sát vết quỹ đạo, vectơ vận tốc và vectơ lực hấp dẫn. Mô phỏng dùng đơn vị rút gọn: khoảng cách tính bằng đơn vị thiên văn (1 AU ≈ 1,496·10¹¹ m), thời gian tính bằng năm, khối lượng tính bằng khối lượng Mặt Trời (M☉), nên G = 4π² AU³/(M☉·năm²); tốc độ 1 AU/năm ≈ 4,74 km/s. Hành tinh ở cách sao 1 M☉ một khoảng 1 AU sẽ quay một vòng hết đúng 1 năm với tốc độ 2π AU/năm ≈ 29,8 km/s. Khối lượng hành tinh rất nhỏ so với sao và không ảnh hưởng đến quỹ đạo.",
+  "learningGoals": [
+    "Nhận ra lực hấp dẫn luôn hướng về ngôi sao và tỉ lệ nghịch với bình phương khoảng cách.",
+    "Kiểm chứng tốc độ của quỹ đạo tròn v = √(G·M/r), khi đó lực hấp dẫn đóng vai trò lực hướng tâm.",
+    "Dự đoán dạng quỹ đạo khi tốc độ ban đầu nhỏ hơn, bằng hoặc lớn hơn tốc độ quỹ đạo tròn, và khi vượt tốc độ thoát √2·v.",
+    "Quan sát hành tinh chuyển động nhanh hơn khi ở gần sao và chậm hơn khi ở xa sao.",
+    "Kiểm chứng định luật III Kepler: T² tỉ lệ với a³ và tỉ lệ nghịch với khối lượng sao."
+  ],
+  "state": {
+    "starMass": "Khối lượng ngôi sao (M☉, khối lượng Mặt Trời)",
+    "distance": "Khoảng cách ban đầu từ hành tinh đến sao (AU)",
+    "speed": "Tốc độ ban đầu của hành tinh, vuông góc với đường nối sao và hành tinh (AU/năm; 1 AU/năm ≈ 4,74 km/s)",
+    "x": "Tọa độ x hiện tại của hành tinh, sao ở gốc tọa độ (AU)",
+    "y": "Tọa độ y hiện tại của hành tinh (AU)",
+    "vx": "Thành phần vận tốc theo trục x (AU/năm)",
+    "vy": "Thành phần vận tốc theo trục y (AU/năm)",
+    "time": "Thời gian từ lúc phóng (năm)",
+    "orbits": "Số vòng quỹ đạo đã hoàn thành từ lúc phóng",
+    "measuredPeriod": "Chu kỳ đo được của vòng gần nhất (năm), 0 nếu chưa đủ một vòng",
+    "lastCross": "Thời điểm gần nhất hành tinh đi qua hướng phóng ban đầu (năm)",
+    "crashed": "true nếu hành tinh đã rơi vào sao (đến gần hơn 0,08 AU)",
+    "showVectors": "true nếu hiện vectơ vận tốc và lực hấp dẫn",
+    "showPredicted": "true nếu hiện quỹ đạo lý thuyết (nét đứt)"
+  },
+  "events": {
+    "preset-circular": {
+      "kind": "action",
+      "description": "Học sinh bấm nút đặt tốc độ ban đầu bằng tốc độ quỹ đạo tròn √(G·M/r)"
+    },
+    "preset-ellipse": {
+      "kind": "action",
+      "description": "Học sinh bấm nút đặt tốc độ ban đầu bằng 0,8 lần tốc độ quỹ đạo tròn (quỹ đạo elip)"
+    },
+    "orbit": {
+      "kind": "result",
+      "description": "Hành tinh vừa hoàn thành vòng quỹ đạo đầu tiên; data.period là chu kỳ đo được (năm), data.eccentricity là tâm sai"
+    },
+    "crash": {
+      "kind": "result",
+      "description": "Hành tinh rơi vào sao"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "slug": "so-nguyen",
+  "version": "1.0.0",
+  "title": "Cộng trừ số nguyên trên trục số",
+  "subject": "math",
+  "grades": [
+    6
+  ],
+  "description": "Chọn hai số nguyên từ −10 đến 10 và phép cộng hoặc trừ. Phép tính được vẽ thành các mũi tên trên trục số: bắt đầu từ số thứ nhất rồi đi thêm số thứ hai; phép trừ được đổi thành cộng với số đối. Có thể xem thêm các thẻ (+), (−) triệt tiêu nhau theo từng cặp, và luyện tập với các câu hỏi ngẫu nhiên.",
+  "learningGoals": [
+    "Biểu diễn phép cộng hai số nguyên bằng cách di chuyển trên trục số: cộng số dương đi sang phải, cộng số âm đi sang trái.",
+    "Hiểu quy tắc trừ số nguyên: a − b = a + (−b).",
+    "Giải thích kết quả phép cộng hai số nguyên khác dấu bằng các cặp thẻ (+) và (−) triệt tiêu nhau.",
+    "Tính nhẩm đúng tổng và hiệu của hai số nguyên."
+  ],
+  "state": {
+    "a": "Số thứ nhất a (số nguyên từ −10 đến 10)",
+    "b": "Số thứ hai b (số nguyên từ −10 đến 10)",
+    "op": "Phép tính: \"add\" (a + b) hoặc \"sub\" (a − b)",
+    "showCounters": "true nếu hiện các thẻ số (+) và (−)",
+    "practice": "true nếu đang ở chế độ luyện tập",
+    "qa": "Số thứ nhất của câu hỏi luyện tập",
+    "qb": "Số thứ hai của câu hỏi luyện tập",
+    "qop": "Phép tính của câu hỏi luyện tập: 1 là cộng, −1 là trừ",
+    "answer": "Câu trả lời học sinh đang chọn (−20 đến 20)",
+    "status": "Trạng thái câu hỏi: \"\" (chưa kiểm tra), \"right\" (đã trả lời đúng), \"wrong\" (lần kiểm tra gần nhất sai)",
+    "solved": "Số câu hỏi luyện tập đã trả lời đúng"
+  },
+  "events": {
+    "calculation": {
+      "kind": "result",
+      "description": "Học sinh vừa chọn xong một phép tính mới và xem kết quả trên trục số",
+      "data": {
+        "a": "Số thứ nhất",
+        "b": "Số thứ hai",
+        "operation": "1 là phép cộng, −1 là phép trừ",
+        "result": "Kết quả của phép tính"
+      }
+    },
+    "answered-correctly": {
+      "kind": "goal",
+      "description": "Học sinh trả lời đúng một câu hỏi luyện tập",
+      "data": {
+        "a": "Số thứ nhất của câu hỏi",
+        "b": "Số thứ hai của câu hỏi",
+        "operation": "1 là phép cộng, −1 là phép trừ",
+        "result": "Kết quả đúng",
+        "solved": "Tổng số câu đã trả lời đúng"
+      }
+    },
+    "wrong-answer": {
+      "kind": "action",
+      "description": "Học sinh bấm Kiểm tra với câu trả lời sai",
+      "data": {
+        "a": "Số thứ nhất của câu hỏi",
+        "b": "Số thứ hai của câu hỏi",
+        "operation": "1 là phép cộng, −1 là phép trừ",
+        "answer": "Câu trả lời sai đã chọn"
+      }
+    },
+    "new-question": {
+      "kind": "action",
+      "description": "Học sinh bấm Câu hỏi khác để nhận một câu hỏi luyện tập mới",
+      "data": {}
+    }
+  }
+}

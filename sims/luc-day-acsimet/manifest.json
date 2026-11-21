@@ -1,0 +1,44 @@
+{
+  "slug": "luc-day-acsimet",
+  "version": "1.0.0",
+  "title": "Lực đẩy Ác-si-mét",
+  "subject": "physics",
+  "grades": [8],
+  "description": "Thả một vật vào bình chất lỏng. Thay đổi khối lượng, thể tích của vật và loại chất lỏng (nước, dầu, nước muối, thủy ngân hoặc tự chọn khối lượng riêng) để xem vật nổi, lơ lửng hay chìm, phần thể tích chìm, trọng lượng, lực đẩy Ác-si-mét và mực chất lỏng dâng lên đúng bằng thể tích bị chiếm chỗ.",
+  "learningGoals": [
+    "Vận dụng công thức F_A = d·V, trong đó d = 10·D là trọng lượng riêng của chất lỏng, V là thể tích phần chất lỏng bị vật chiếm chỗ.",
+    "Nêu điều kiện vật nổi, lơ lửng, chìm bằng cách so sánh khối lượng riêng của vật với khối lượng riêng của chất lỏng.",
+    "Giải thích vì sao khi vật nổi thì F_A = P và phần thể tích chìm bằng D vật / D lỏng.",
+    "Nhận ra thể tích chất lỏng dâng lên bằng thể tích phần vật chìm trong chất lỏng."
+  ],
+  "state": {
+    "mass": "Khối lượng của vật (kg)",
+    "volume": "Thể tích của vật (dm³)",
+    "liquid": "Chất lỏng: \"water\" (nước, 1000 kg/m³), \"oil\" (dầu, 800), \"brine\" (nước muối, 1200), \"mercury\" (thủy ngân, 13600) hoặc \"custom\" (dùng customDensity)",
+    "customDensity": "Khối lượng riêng chất lỏng tự chọn (kg/m³), chỉ dùng khi liquid = \"custom\"",
+    "z": "Độ cao mặt đáy của vật so với đáy bình (m)",
+    "v": "Vận tốc của vật (m/s, dương khi đi lên)",
+    "settled": "true khi vật đã đứng yên ở vị trí cân bằng",
+    "quiet": "Thời gian vật gần như đứng yên (s), dùng để nhận biết lúc vật đã ổn định"
+  },
+  "events": {
+    "release": {
+      "kind": "action",
+      "description": "Học sinh kéo vật rồi thả tay, hoặc bấm nút nhấc vật lên rồi thả",
+      "data": {
+        "height": "Độ cao mặt đáy của vật so với đáy bình lúc thả (m)",
+        "submergedFraction": "Phần thể tích vật đang chìm lúc thả (0–1)"
+      }
+    },
+    "settled": {
+      "kind": "result",
+      "description": "Vật vừa đứng yên sau khi thả, hoặc sau khi đổi xong một thông số (thả thanh trượt, chọn chất lỏng); một lần cho mỗi lần thay đổi",
+      "data": {
+        "state": "Trạng thái: 1 = nổi, 0 = lơ lửng, −1 = chìm xuống đáy",
+        "submergedFraction": "Phần thể tích vật chìm trong chất lỏng (0–1)",
+        "buoyantForce": "Lực đẩy Ác-si-mét (N)",
+        "weight": "Trọng lượng của vật (N)"
+      }
+    }
+  }
+}

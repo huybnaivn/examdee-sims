@@ -1,0 +1,42 @@
+{
+  "slug": "dao-ham-tiep-tuyen",
+  "version": "1.0.0",
+  "title": "Đạo hàm và tiếp tuyến",
+  "subject": "math",
+  "grades": [
+    11,
+    12
+  ],
+  "description": "Chọn một hàm số (x², x³ − 3x, sin x, eˣ, 1/x, √x) rồi kéo điểm M trên đồ thị. Hình vẽ tiếp tuyến tại M và cát tuyến MN với N có hoành độ x₀ + h; khi h giảm về 0, hệ số góc của cát tuyến tiến tới f′(x₀). Có thể vẽ thêm đồ thị của f′ ở bên dưới để thấy tung độ của nó chính là hệ số góc của tiếp tuyến.",
+  "learningGoals": [
+    "Hiểu đạo hàm f′(x₀) là giới hạn của tỉ số [f(x₀ + h) − f(x₀)]/h khi h tiến về 0.",
+    "Nhận ra ý nghĩa hình học: f′(x₀) là hệ số góc của tiếp tuyến tại M(x₀; f(x₀)), phương trình y = f′(x₀)(x − x₀) + f(x₀).",
+    "Liên hệ dấu của f′ với chiều đi lên, đi xuống của đồ thị và tìm điểm có f′(x₀) = 0.",
+    "Nhận biết những điểm hàm số không xác định hoặc không có đạo hàm (1/x tại 0, √x tại x ≤ 0)."
+  ],
+  "state": {
+    "fn": "Hàm số: \"sq\" (x²), \"cubic\" (x³ − 3x), \"sin\" (sin x), \"exp\" (eˣ), \"inv\" (1/x), \"sqrt\" (√x)",
+    "x0": "Hoành độ x₀ của điểm M (từ −4 đến 4, bước 0,05)",
+    "h": "Khoảng cách h giữa hoành độ của N và M trên cát tuyến (từ 0,01 đến 2)",
+    "showDerivative": "true nếu vẽ đồ thị của đạo hàm f′ bên dưới đồ thị của f"
+  },
+  "events": {
+    "point-released": {
+      "kind": "result",
+      "description": "Học sinh vừa thả điểm M (kéo trên hình hoặc bằng thanh trượt x₀) tại một điểm hàm số có đạo hàm",
+      "data": {
+        "x": "Hoành độ x₀ của M",
+        "y": "Tung độ f(x₀)",
+        "slope": "Đạo hàm f′(x₀), cũng là hệ số góc của tiếp tuyến tại M"
+      }
+    },
+    "stationary-point": {
+      "kind": "goal",
+      "description": "Học sinh đặt M vào một điểm dừng: |f′(x₀)| ≤ 0,05 và f′ đổi dấu quanh đó",
+      "data": {
+        "x": "Hoành độ x₀ của điểm dừng",
+        "y": "Tung độ f(x₀)"
+      }
+    }
+  }
+}

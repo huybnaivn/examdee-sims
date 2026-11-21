@@ -1,0 +1,13 @@
+{
+  "name": "examdee-sims",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"sims/**/*.test.js\"",
+    "serve": "python3 -m http.server 5600",
+    "catalog": "node scripts/catalog.mjs",
+    "check": "node scripts/check.mjs",
+    "shot": "node scripts/shot.mjs",
+    "release": "node scripts/release.mjs"
+  }
+}

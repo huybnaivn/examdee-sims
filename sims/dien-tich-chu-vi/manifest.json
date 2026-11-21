@@ -1,0 +1,42 @@
+{
+  "slug": "dien-tich-chu-vi",
+  "version": "1.0.0",
+  "title": "Diện tích và chu vi hình chữ nhật",
+  "subject": "math",
+  "grades": [3, 4, 5, 6],
+  "description": "Một hình chữ nhật trên lưới ô vuông đơn vị (mỗi ô có cạnh 1 cm). Kéo góc hình hoặc dùng nút − + để đổi hai cạnh, đếm số ô vuông, xem diện tích S = a × b và chu vi P = (a + b) × 2. Phần thử thách yêu cầu tìm hình có diện tích cho trước với chu vi nhỏ nhất, hoặc chu vi cho trước với diện tích lớn nhất.",
+  "learningGoals": [
+    "Hiểu diện tích hình chữ nhật là số ô vuông đơn vị phủ kín hình: S = a × b.",
+    "Tính chu vi hình chữ nhật: P = (a + b) × 2, và phân biệt chu vi với diện tích.",
+    "Nhận ra các hình chữ nhật cùng diện tích có thể có chu vi khác nhau; hình càng gần hình vuông thì chu vi càng nhỏ.",
+    "Nhận ra trong các hình chữ nhật cùng chu vi, hình vuông có diện tích lớn nhất."
+  ],
+  "state": {
+    "a": "Độ dài cạnh ngang (cm, số nguyên từ 1 đến 12)",
+    "b": "Độ dài cạnh dọc (cm, số nguyên từ 1 đến 10)",
+    "challenge": "Thử thách đang chọn: \"free\" (tự do), \"a24\" và \"a36\" (diện tích 24 hoặc 36 cm², chu vi nhỏ nhất), \"p20\" và \"p22\" (chu vi 20 hoặc 22 cm, diện tích lớn nhất), \"a12p16\" (diện tích 12 cm² và chu vi 16 cm)",
+    "showCount": "true nếu đánh số từng ô vuông đơn vị trong hình",
+    "met": "true nếu hình hiện tại đang đạt mục tiêu của thử thách"
+  },
+  "events": {
+    "resize": {
+      "kind": "action",
+      "description": "Học sinh kéo góc hình chữ nhật trên lưới rồi thả, làm đổi kích thước hình",
+      "data": {
+        "width": "Cạnh ngang a (cm)",
+        "height": "Cạnh dọc b (cm)",
+        "area": "Diện tích (cm²)",
+        "perimeter": "Chu vi (cm)"
+      }
+    },
+    "target-met": {
+      "kind": "goal",
+      "description": "Hình chữ nhật vừa đạt mục tiêu của thử thách đang chọn (báo một lần mỗi lần đạt)",
+      "data": {
+        "target": "Mã thử thách: a24, a36, p20, p22 hoặc a12p16",
+        "width": "Cạnh ngang a (cm)",
+        "height": "Cạnh dọc b (cm)"
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "slug": "dong-vi",
+  "version": "1.0.0",
+  "title": "Đồng vị và nguyên tử khối trung bình",
+  "subject": "chemistry",
+  "grades": [10],
+  "description": "Chọn một nguyên tố có 2–3 đồng vị bền trong tự nhiên (hydrogen, boron, carbon, magnesium, chlorine, copper, bromine) để xem mẫu 100 nguyên tử tô màu theo đồng vị, biểu đồ % số nguyên tử theo khối lượng và nguyên tử khối trung bình Ā = Σ(khối lượng đồng vị × %)/100. Ở chế độ “tự pha”, học sinh kéo các thanh trượt (luôn có tổng 100 %) để pha một mẫu có nguyên tử khối trung bình bằng giá trị tự nhiên. Khối lượng đồng vị (amu) và % số nguyên tử là giá trị tham khảo quốc tế cho mẫu trên Trái Đất; số nguyên tử trong mẫu 100 nguyên tử được làm tròn theo phương pháp phần dư lớn nhất.",
+  "learningGoals": [
+    "Nêu được khái niệm đồng vị: các nguyên tử cùng số proton nhưng khác số neutron, nên khác số khối.",
+    "Tính nguyên tử khối trung bình từ khối lượng và tỉ lệ % số nguyên tử của các đồng vị: Ā = Σ(Aᵢ·xᵢ)/100.",
+    "Giải thích vì sao nguyên tử khối trung bình gần với khối lượng của đồng vị chiếm tỉ lệ lớn nhất.",
+    "Tính ngược tỉ lệ % của hai đồng vị khi biết nguyên tử khối trung bình."
+  ],
+  "state": {
+    "element": "Kí hiệu nguyên tố đang chọn: H, B, C, Mg, Cl, Cu hoặc Br",
+    "custom": "true ở chế độ tự pha (học sinh chọn %), false dùng % trong tự nhiên",
+    "p1": "% số nguyên tử của đồng vị nhẹ nhất trong mẫu tự pha (bước 0,5 %)",
+    "p2": "% của đồng vị thứ hai trong mẫu tự pha",
+    "p3": "% của đồng vị thứ ba trong mẫu tự pha; 0 với nguyên tố chỉ có hai đồng vị. p1 + p2 + p3 = 100",
+    "matched": "true khi mẫu tự pha đang có nguyên tử khối trung bình khớp giá trị tự nhiên (sai lệch ≤ 0,01 amu)"
+  },
+  "events": {
+    "mix-committed": {
+      "kind": "result",
+      "description": "Học sinh thả thanh trượt sau khi chọn % các đồng vị ở chế độ tự pha",
+      "data": {
+        "average": "Nguyên tử khối trung bình của mẫu tự pha (amu)",
+        "natural": "Nguyên tử khối trung bình tự nhiên của nguyên tố (amu)",
+        "p1": "% đồng vị thứ nhất (nhẹ nhất)",
+        "p2": "% đồng vị thứ hai",
+        "p3": "% đồng vị thứ ba; chỉ có với nguyên tố có ba đồng vị"
+      }
+    },
+    "mix-matched": {
+      "kind": "goal",
+      "description": "Mẫu tự pha vừa đạt nguyên tử khối trung bình bằng giá trị tự nhiên trong sai lệch 0,01 amu",
+      "data": {
+        "average": "Nguyên tử khối trung bình của mẫu tự pha (amu)",
+        "natural": "Nguyên tử khối trung bình tự nhiên (amu)",
+        "difference": "Chênh lệch average − natural (amu)"
+      }
+    }
+  }
+}

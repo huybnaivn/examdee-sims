@@ -1,0 +1,59 @@
+{
+  "slug": "cam-ung-dien-tu",
+  "version": "1.0.0",
+  "title": "Cảm ứng điện từ",
+  "subject": "physics",
+  "grades": [
+    11,
+    12
+  ],
+  "description": "Đưa một nam châm thẳng lại gần, ra xa hoặc xuyên qua cuộn dây nối với điện kế (kéo nam châm, dùng thanh trượt hoặc cho nam châm tự chạy với tốc độ không đổi). Thay đổi số vòng dây, độ mạnh và chiều các cực của nam châm để quan sát từ thông, suất điện động cảm ứng trên kim điện kế và đồ thị theo thời gian, cùng chiều dòng điện cảm ứng theo định luật Len-xơ. Mô hình: nam châm được coi là lưỡng cực từ điểm trên trục cuộn dây, từ thông qua mỗi vòng Φ(x) = Φ₀ / (1 + (x/a)²)^(3/2) với a = 4 cm.",
+  "learningGoals": [
+    "Dòng điện cảm ứng chỉ xuất hiện khi từ thông qua cuộn dây biến thiên; nam châm đứng yên thì e = 0.",
+    "Vận dụng định luật Fa-ra-đây: e = −N·ΔΦ/Δt; suất điện động tỉ lệ với số vòng dây và với tốc độ biến thiên từ thông (nam châm chuyển động càng nhanh thì e càng lớn).",
+    "Vận dụng định luật Len-xơ: từ trường của dòng điện cảm ứng chống lại sự biến thiên từ thông (ngược chiều từ trường nam châm khi từ thông tăng, cùng chiều khi từ thông giảm).",
+    "Đổi chiều chuyển động hoặc đổi cực nam châm thì dòng điện cảm ứng đổi chiều."
+  ],
+  "state": {
+    "x": "Vị trí mong muốn của tâm nam châm trên trục cuộn dây (cm, cuộn dây ở x = 0, dương về bên phải, từ −18 đến 18)",
+    "pos": "Vị trí thực của tâm nam châm (cm); bám theo x với vận tốc không quá 100 cm/s",
+    "turns": "Số vòng dây N",
+    "strength": "Độ mạnh nam châm Φ₀: từ thông qua mỗi vòng khi nam châm ở tâm cuộn dây (mWb)",
+    "flipped": "false: cực N ở bên phải (từ thông dương); true: cực S ở bên phải",
+    "speed": "Tốc độ của nam châm khi tự chạy qua cuộn dây (cm/s)",
+    "auto": "true nếu nam châm đang tự chạy với tốc độ không đổi về phía autoTo",
+    "autoTo": "Vị trí đích khi tự chạy (cm)",
+    "v": "Vận tốc hiện tại của nam châm (cm/s, dương sang phải)",
+    "emf": "Suất điện động cảm ứng e = −N·ΔΦ/Δt (V); e > 0 ứng với từ trường cảm ứng hướng sang phải",
+    "time": "Thời gian đã trôi qua (s)",
+    "side": "Phía xa cuộn dây (|x| ≥ 12 cm) mà nam châm vừa ở: −1 bên trái, 1 bên phải",
+    "peakEmf": "|e| lớn nhất kể từ khi nam châm rời phía đó (V)",
+    "peakSpeed": "Tốc độ lớn nhất kể từ khi nam châm rời phía đó (cm/s)",
+    "passes": "Số lần nam châm đã đi hết từ phía này sang phía kia của cuộn dây",
+    "lastPeakEmf": "|e| lớn nhất của lần đi qua gần nhất (V)",
+    "lastPeakSpeed": "Tốc độ lớn nhất của lần đi qua gần nhất (cm/s)"
+  },
+  "events": {
+    "magnet-launched": {
+      "kind": "action",
+      "description": "Học sinh bấm nút cho nam châm tự chạy qua cuộn dây với tốc độ không đổi",
+      "data": {}
+    },
+    "magnet-released": {
+      "kind": "action",
+      "description": "Học sinh kéo nam châm rồi thả",
+      "data": {
+        "position": "Vị trí thả (cm, cuộn dây ở 0)"
+      }
+    },
+    "pass-completed": {
+      "kind": "result",
+      "description": "Nam châm vừa đi hết từ phía này sang phía kia của cuộn dây",
+      "data": {
+        "peakEmf": "Độ lớn suất điện động cảm ứng cực đại trong lần đi qua (V)",
+        "turns": "Số vòng dây N",
+        "peakSpeed": "Tốc độ lớn nhất của nam châm trong lần đi qua (cm/s)"
+      }
+    }
+  }
+}

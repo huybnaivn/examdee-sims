@@ -1,0 +1,65 @@
+{
+  "slug": "di-truyen-quan-the",
+  "version": "1.0.0",
+  "title": "Di truyền quần thể Hardy – Weinberg",
+  "subject": "biology",
+  "grades": [12],
+  "description": "Một quần thể với một gene có hai allele A (tần số p) và a (tần số q = 1 − p). Học sinh chọn tần số allele A ban đầu, cấu trúc di truyền ban đầu (chỉ có đồng hợp, hoặc đã cân bằng) và bật hoặc tắt các nhân tố: giao phối ngẫu nhiên hay tự thụ phấn, chọn lọc chống lại kiểu gene aa (sức sống của aa là 1 − s), dòng gene (mỗi thế hệ một tỉ lệ m cá thể nhập cư có tần số allele A là pₘ), phiêu bạt di truyền (mỗi thế hệ chỉ có N cá thể, lấy mẫu ngẫu nhiên). Mỗi thế hệ lần lượt: chọn lọc, nhập cư, giao phối, lấy mẫu N cá thể con. Đồ thị cho p, q và tần số các kiểu gene AA, Aa, aa qua tối đa 200 thế hệ, so với dự đoán Hardy – Weinberg p², 2pq, q². Bộ sinh số ngẫu nhiên có hạt giống nên cùng thiết lập thì cùng kết quả.",
+  "learningGoals": [
+    "Tính được tần số allele và tần số kiểu gene của quần thể; kiểm tra quần thể có cân bằng di truyền (p² AA + 2pq Aa + q² aa = 1) hay không.",
+    "Nhận ra quần thể giao phối ngẫu nhiên đạt trạng thái cân bằng Hardy – Weinberg chỉ sau một thế hệ, và giữ nguyên tần số allele khi không có nhân tố tiến hoá.",
+    "So sánh quần thể tự thụ phấn (tỉ lệ dị hợp giảm một nửa mỗi thế hệ, tần số allele không đổi) với quần thể giao phối ngẫu nhiên.",
+    "Giải thích chọn lọc chống lại aa làm giảm dần tần số allele a theo q' = q(1 − sq)/(1 − sq²), nhưng không loại bỏ hết a vì a ẩn trong thể dị hợp.",
+    "Giải thích dòng gene và phiêu bạt di truyền làm thay đổi tần số allele; phiêu bạt mạnh hơn ở quần thể nhỏ và có thể làm một allele bị cố định hoặc mất hẳn."
+  ],
+  "state": {
+    "p0": "Tần số allele A ở thế hệ 0 (0,01 đến 0,99)",
+    "start": "Cấu trúc ban đầu: \"homo\" chỉ có đồng hợp (p₀ AA : q₀ aa), \"hw\" đã cân bằng (p₀² AA : 2p₀q₀ Aa : q₀² aa)",
+    "randomMating": "true: giao phối ngẫu nhiên; false: tự thụ phấn",
+    "selection": "true nếu có chọn lọc chống lại kiểu gene aa",
+    "sel": "Hệ số chọn lọc s đối với aa (0,05 đến 1); sức sống tương đối của aa là 1 − s",
+    "migration": "true nếu có dòng gene (nhập cư) mỗi thế hệ",
+    "m": "Tỉ lệ cá thể sinh sản là dân nhập cư mỗi thế hệ (0,01 đến 0,3)",
+    "pm": "Tần số allele A ở quần thể nhập cư (0 đến 1)",
+    "drift": "true nếu quần thể có kích thước hữu hạn N (có phiêu bạt di truyền); false: quần thể rất lớn, không lấy mẫu",
+    "N": "Số cá thể mỗi thế hệ khi có phiêu bạt di truyền (10 đến 10000)",
+    "seed": "Hạt giống của bộ sinh số ngẫu nhiên (số nguyên 32 bit); cùng seed và cùng thiết lập thì các thế hệ giống hệt nhau",
+    "generation": "Thế hệ hiện tại (0 đến 200); các thế hệ trước được tính lại từ seed"
+  },
+  "events": {
+    "generation-report": {
+      "kind": "result",
+      "description": "Cứ mỗi 10 thế hệ: tần số allele và tần số kiểu gene của quần thể",
+      "data": {
+        "generation": "Số thứ tự thế hệ",
+        "p": "Tần số allele A (0 đến 1)",
+        "AA": "Tần số kiểu gene AA (0 đến 1)",
+        "Aa": "Tần số kiểu gene Aa (0 đến 1)",
+        "aa": "Tần số kiểu gene aa (0 đến 1)"
+      }
+    },
+    "allele-fixed": {
+      "kind": "goal",
+      "description": "Một allele vừa bị cố định (allele kia mất hẳn khỏi quần thể)",
+      "data": {
+        "generation": "Thế hệ xảy ra cố định",
+        "p": "Tần số allele A: 1 nếu A cố định, 0 nếu A bị mất"
+      }
+    },
+    "next-generation": {
+      "kind": "action",
+      "description": "Học sinh bấm nút để chuyển sang thế hệ tiếp theo",
+      "data": {}
+    },
+    "restart-population": {
+      "kind": "action",
+      "description": "Học sinh đưa quần thể về thế hệ 0",
+      "data": {}
+    },
+    "new-sample": {
+      "kind": "action",
+      "description": "Học sinh chọn một mẫu ngẫu nhiên khác (seed mới) và bắt đầu lại từ thế hệ 0",
+      "data": {}
+    }
+  }
+}

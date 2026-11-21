@@ -1,0 +1,57 @@
+{
+  "slug": "chon-loc-tu-nhien",
+  "version": "1.0.0",
+  "title": "Chọn lọc tự nhiên",
+  "subject": "biology",
+  "grades": [12],
+  "description": "Một quần thể con mồi có màu lông di truyền với ba biến dị: sáng, trung bình và tối, sống trên nền môi trường do học sinh chọn. Mỗi thế hệ, kẻ săn mồi bắt con mồi; con nào khác màu nền càng nhiều càng dễ bị bắt. Những cá thể sống sót sinh sản tạo thế hệ sau, con thừa hưởng màu của bố mẹ và đôi khi bị đột biến sang màu khác. Điều chỉnh áp lực chọn lọc, tần số đột biến và số cá thể tối đa; quan sát các chấm trên nền và đồ thị tần số các biến dị qua các thế hệ.",
+  "learningGoals": [
+    "Giải thích chọn lọc tự nhiên: biến dị di truyền, sinh sản, và sự sống sót khác nhau của các kiểu hình làm thay đổi tần số kiểu hình trong quần thể qua các thế hệ.",
+    "Nhận ra màu ngụy trang (trùng với màu nền) là đặc điểm thích nghi; khi đổi màu nền, chiều hướng chọn lọc cũng đổi theo.",
+    "Thấy rằng không có chọn lọc thì tần số chỉ dao động ngẫu nhiên (biến động di truyền), không thay đổi có hướng.",
+    "Nhận ra vai trò của đột biến: tạo lại biến dị đã mất; không có đột biến thì biến dị đã mất không thể quay lại dù có lợi."
+  ],
+  "state": {
+    "background": "Màu nền môi trường: 0 sáng, 1 trung bình, 2 tối",
+    "selection": "Áp lực chọn lọc từ 0 đến 1; mỗi thế hệ con mồi bị ăn với xác suất 0,2 + 0,6 × selection × (độ lệch màu so với nền: 0; 0,5 hoặc 1)",
+    "mutation": "Xác suất một cá thể con đột biến sang một trong hai màu còn lại (0 đến 0,1)",
+    "cap": "Số cá thể tối đa môi trường nuôi được; thế hệ sau có tối đa gấp đôi số cá thể sống sót và không vượt quá giá trị này",
+    "seed": "Hạt giống của lần chạy hiện tại (số nguyên 32 bit); bấm \"Tạo quần thể mới\" để chuyển sang hạt giống khác",
+    "rng": "Trạng thái hiện tại của bộ sinh số ngẫu nhiên (số nguyên 32 bit); cùng trạng thái và cùng tham số thì các thế hệ sau giống hệt nhau",
+    "generation": "Số thế hệ đã trải qua",
+    "n0": "Số cá thể màu sáng",
+    "n1": "Số cá thể màu trung bình",
+    "n2": "Số cá thể màu tối"
+  },
+  "events": {
+    "next-generation": {
+      "kind": "action",
+      "description": "Học sinh bấm nút sang thế hệ tiếp theo",
+      "data": {}
+    },
+    "new-population": {
+      "kind": "action",
+      "description": "Học sinh tạo quần thể mới (ba màu bằng nhau, hạt giống ngẫu nhiên mới)",
+      "data": {}
+    },
+    "generation-report": {
+      "kind": "result",
+      "description": "Tần số ba biến dị màu, báo sau mỗi 10 thế hệ",
+      "data": {
+        "generation": "Số thế hệ",
+        "light": "Tần số màu sáng (0 đến 1)",
+        "medium": "Tần số màu trung bình (0 đến 1)",
+        "dark": "Tần số màu tối (0 đến 1)"
+      }
+    },
+    "variant-dominant": {
+      "kind": "goal",
+      "description": "Một biến dị màu vừa vượt quá 90 % quần thể",
+      "data": {
+        "generation": "Số thế hệ lúc đạt",
+        "variant": "Biến dị: 0 sáng, 1 trung bình, 2 tối",
+        "frequency": "Tần số của biến dị đó (0 đến 1)"
+      }
+    }
+  }
+}

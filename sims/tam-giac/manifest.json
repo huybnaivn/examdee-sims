@@ -1,0 +1,46 @@
+{
+  "slug": "tam-giac",
+  "version": "1.0.0",
+  "title": "Tam giác: góc, cạnh và diện tích",
+  "subject": "math",
+  "grades": [
+    7,
+    8,
+    9
+  ],
+  "description": "Kéo ba đỉnh A, B, C của tam giác trên lưới ô vuông. Hình vẽ cho biết độ dài ba cạnh, số đo ba góc và tổng của chúng, chu vi, diện tích, tên gọi của tam giác theo cạnh và theo góc. Khi tam giác vuông, ba hình vuông dựng trên ba cạnh minh họa định lí Pythagore. Có thể vẽ thêm ba đường trung tuyến với trọng tâm hoặc ba đường cao với trực tâm.",
+  "learningGoals": [
+    "Kiểm chứng tổng ba góc của một tam giác luôn bằng 180°.",
+    "Phân loại tam giác theo cạnh (đều, cân) và theo góc (vuông, nhọn, tù).",
+    "Tính chu vi và diện tích S = ½ · đáy · chiều cao; nhận ra diện tích không đổi khi đỉnh di chuyển song song với đáy.",
+    "Phát biểu và kiểm chứng định lí Pythagore: trong tam giác vuông, bình phương cạnh huyền bằng tổng bình phương hai cạnh góc vuông.",
+    "Nhận biết ba đường trung tuyến đồng quy tại trọng tâm, ba đường cao đồng quy tại trực tâm (nằm ngoài tam giác khi tam giác tù)."
+  ],
+  "state": {
+    "ax": "Hoành độ đỉnh A (đơn vị lưới, 0 đến 14)",
+    "ay": "Tung độ đỉnh A (đơn vị lưới, 0 đến 11)",
+    "bx": "Hoành độ đỉnh B (đơn vị lưới, 0 đến 14)",
+    "by": "Tung độ đỉnh B (đơn vị lưới, 0 đến 11)",
+    "cx": "Hoành độ đỉnh C (đơn vị lưới, 0 đến 14)",
+    "cy": "Tung độ đỉnh C (đơn vị lưới, 0 đến 11)",
+    "show": "Hình vẽ thêm: \"none\" (không), \"medians\" (ba đường trung tuyến và trọng tâm G) hoặc \"altitudes\" (ba đường cao và trực tâm H)"
+  },
+  "events": {
+    "vertex-dropped": {
+      "kind": "action",
+      "description": "Học sinh kéo một đỉnh rồi thả ra",
+      "data": {
+        "vertex": "Tên đỉnh vừa thả: \"A\", \"B\" hoặc \"C\"",
+        "x": "Hoành độ mới của đỉnh (đơn vị lưới)",
+        "y": "Tung độ mới của đỉnh (đơn vị lưới)"
+      }
+    },
+    "special-triangle": {
+      "kind": "goal",
+      "description": "Tam giác vừa trở thành một tam giác đặc biệt (do kéo đỉnh, bấm nút tọa độ hoặc nút dựng tam giác đều); không phát lại khi loại tam giác chưa đổi",
+      "data": {
+        "type": "Loại tam giác: \"right\" (vuông), \"isosceles\" (cân), \"right-isosceles\" (vuông cân) hoặc \"equilateral\" (đều)"
+      }
+    }
+  }
+}

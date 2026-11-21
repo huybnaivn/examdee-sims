@@ -1,0 +1,31 @@
+{
+  "slug": "dinh-luat-ohm",
+  "version": "1.0.0",
+  "title": "Định luật Ôm",
+  "subject": "physics",
+  "grades": [
+    9,
+    11
+  ],
+  "description": "Mạch điện gồm nguồn điện, một điện trở, ampe kế và vôn kế. Thay đổi hiệu điện thế và điện trở để xem cường độ dòng điện, công suất và điểm đo trên đồ thị I – U thay đổi thế nào.",
+  "learningGoals": [
+    "Phát biểu và kiểm chứng định luật Ôm: I = U / R.",
+    "Nhận ra đồ thị I – U của một điện trở là đường thẳng đi qua gốc tọa độ, điện trở càng lớn thì đường thẳng càng thoải.",
+    "Tính công suất điện P = U·I = U²/R.",
+    "Phân biệt chiều dòng điện quy ước với chiều dịch chuyển của electron trong dây dẫn."
+  ],
+  "state": {
+    "voltage": "Hiệu điện thế của nguồn, cũng là số chỉ vôn kế (V)",
+    "resistance": "Điện trở R (Ω)"
+  },
+  "events": {
+    "measure": {
+      "kind": "result",
+      "description": "Học sinh kéo điểm đo trên đồ thị I – U rồi thả",
+      "data": {
+        "voltage": "Hiệu điện thế (V)",
+        "current": "Cường độ dòng điện (A)"
+      }
+    }
+  }
+}

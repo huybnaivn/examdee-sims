@@ -1,0 +1,39 @@
+{
+  "slug": "dong-co-nhiet",
+  "version": "1.0.0",
+  "title": "Động cơ nhiệt và hiệu suất",
+  "subject": "physics",
+  "grades": [10, 12],
+  "description": "Khí lí tưởng trong xilanh có pit-tông chạy lặp lại chu trình Carnot hoặc chu trình hai đẳng tích, hai đẳng áp trên đồ thị p–V. Đổi nhiệt độ nguồn nóng, nguồn lạnh và khoảng thể tích để thấy nhiệt lượng nhận Q₁, nhiệt lượng tỏa Q₂, công A (diện tích phần tô) và hiệu suất H so với giới hạn 1 − T₂/T₁.",
+  "learningGoals": [
+    "Động cơ nhiệt nhận nhiệt lượng Q₁ từ nguồn nóng, sinh công A và tỏa nhiệt lượng Q₂ cho nguồn lạnh: A = Q₁ − Q₂.",
+    "Sau mỗi chu trình nội năng của khí không đổi (ΔU = 0); công khí sinh ra bằng diện tích hình giới hạn bởi chu trình trên đồ thị p–V.",
+    "Hiệu suất H = A/Q₁ luôn nhỏ hơn 1 và không vượt quá Hmax = 1 − T₂/T₁; chu trình Carnot đạt đúng giới hạn này.",
+    "Muốn tăng hiệu suất cần tăng T₁ hoặc giảm T₂."
+  ],
+  "state": {
+    "cycle": "Chu trình: \"carnot\" (2 đẳng nhiệt, 2 đoạn nhiệt) hoặc \"rect\" (2 đẳng tích, 2 đẳng áp, hình chữ nhật trên đồ thị p–V)",
+    "gas": "Chất khí: \"mono\" đơn nguyên tử (γ = 5/3) hoặc \"di\" lưỡng nguyên tử (γ = 7/5)",
+    "tHot": "Nhiệt độ nguồn nóng T₁ (K); với chu trình chữ nhật là nhiệt độ cao nhất của khí",
+    "tCold": "Nhiệt độ nguồn lạnh T₂ (K); với chu trình chữ nhật là nhiệt độ thấp nhất của khí",
+    "vMin": "Thể tích khí lúc bắt đầu dãn nở (L)",
+    "vMax": "Thể tích khí lúc ngừng nhận nhiệt (L); luôn lớn hơn vMin ít nhất 0,5 L",
+    "phase": "Vị trí hiện tại trong chu trình: số thứ tự quá trình (0–3) cộng phần đã đi được",
+    "cycles": "Số chu trình đã chạy xong kể từ lần đổi thông số gần nhất"
+  },
+  "events": {
+    "cycle-completed": {
+      "kind": "result",
+      "description": "Khí vừa chạy xong một chu trình",
+      "data": {
+        "work": "Công khí sinh ra trong một chu trình A = Q₁ − Q₂ (J)",
+        "heatIn": "Nhiệt lượng khí nhận Q₁ (J)",
+        "heatOut": "Nhiệt lượng khí tỏa ra Q₂ (J)",
+        "efficiency": "Hiệu suất H = A/Q₁ (0–1)",
+        "carnotLimit": "Hiệu suất cực đại 1 − T₂/T₁ (0–1)",
+        "tHot": "Nhiệt độ nguồn nóng T₁ (K)",
+        "tCold": "Nhiệt độ nguồn lạnh T₂ (K)"
+      }
+    }
+  }
+}

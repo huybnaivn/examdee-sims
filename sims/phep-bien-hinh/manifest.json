@@ -1,0 +1,73 @@
+{
+  "slug": "phep-bien-hinh",
+  "version": "1.0.0",
+  "title": "Phép tịnh tiến, đối xứng và quay",
+  "subject": "math",
+  "grades": [
+    11
+  ],
+  "description": "Một đa giác trên mặt phẳng tọa độ (tam giác, tứ giác hoặc ngũ giác, kéo được từng đỉnh) và ảnh của nó qua phép tịnh tiến theo vectơ, phép đối xứng trục (Ox, Oy, y = x, x = m, y = m), phép quay tâm O hoặc tâm I (90°, 180°, 270° hoặc góc tùy ý) và phép đối xứng tâm. Mỗi đỉnh được nối với ảnh của nó, tọa độ hình gốc và ảnh được liệt kê. Có thể thực hiện liên tiếp hai phép biến hình và xem phép hợp thành tương đương với phép nào.",
+  "learningGoals": [
+    "Tìm tọa độ ảnh của một điểm qua phép tịnh tiến, phép đối xứng trục, phép đối xứng tâm và phép quay.",
+    "Nhận ra các phép biến hình này bảo toàn khoảng cách, nên biến một hình thành hình bằng nó (cùng độ dài cạnh, cùng diện tích).",
+    "Nhận ra phép đối xứng trục đổi hướng đi của các đỉnh (ngược chiều), còn phép tịnh tiến và phép quay giữ nguyên.",
+    "Kiểm chứng: thực hiện liên tiếp hai phép đối xứng trục có trục song song là một phép tịnh tiến theo vectơ gấp đôi khoảng cách hai trục; phép quay 180° là phép đối xứng tâm; quay bốn lần 90° thì hình trở về chỗ cũ."
+  ],
+  "state": {
+    "preset": "Hình ban đầu: \"triangle\" (tam giác), \"quad\" (tứ giác), \"pentagon\" (ngũ giác)",
+    "points": "Tọa độ các đỉnh hình gốc theo thứ tự A, B, C, …: mảng 3 đến 5 cặp [x, y], số nguyên từ −8 đến 8",
+    "sel": "Chỉ số đỉnh đang chọn (0 là A)",
+    "vx": "Hoành độ của đỉnh đang chọn (bằng points[sel][0])",
+    "vy": "Tung độ của đỉnh đang chọn (bằng points[sel][1])",
+    "kind": "Phép biến hình thứ nhất: \"translate\" (tịnh tiến), \"reflect\" (đối xứng trục), \"rotate\" (quay), \"central\" (đối xứng tâm)",
+    "tx": "Hoành độ vectơ tịnh tiến v của phép thứ nhất",
+    "ty": "Tung độ vectơ tịnh tiến v của phép thứ nhất",
+    "axis": "Trục đối xứng của phép thứ nhất: \"ox\", \"oy\", \"yx\" (y = x), \"vertical\" (x = m), \"horizontal\" (y = m)",
+    "m": "Giá trị m của trục x = m hoặc y = m (phép thứ nhất)",
+    "center": "Tâm quay / tâm đối xứng của phép thứ nhất: \"origin\" (gốc O) hoặc \"point\" (điểm I)",
+    "cx": "Hoành độ điểm I (phép thứ nhất)",
+    "cy": "Tung độ điểm I (phép thứ nhất)",
+    "angle": "Góc quay của phép thứ nhất: 90, 180, 270 (độ), hoặc 0 để dùng góc tùy ý free",
+    "free": "Góc quay tùy ý của phép thứ nhất (độ, dương là ngược chiều kim đồng hồ)",
+    "compose": "true nếu thực hiện tiếp phép biến hình thứ hai lên ảnh của phép thứ nhất",
+    "kind2": "Phép biến hình thứ hai (cùng các giá trị như kind)",
+    "tx2": "Hoành độ vectơ tịnh tiến của phép thứ hai",
+    "ty2": "Tung độ vectơ tịnh tiến của phép thứ hai",
+    "axis2": "Trục đối xứng của phép thứ hai",
+    "m2": "Giá trị m của trục x = m hoặc y = m (phép thứ hai)",
+    "center2": "Tâm của phép thứ hai: \"origin\" hoặc \"point\"",
+    "cx2": "Hoành độ điểm I của phép thứ hai",
+    "cy2": "Tung độ điểm I của phép thứ hai",
+    "angle2": "Góc quay của phép thứ hai: 90, 180, 270 hoặc 0 (góc tùy ý)",
+    "free2": "Góc quay tùy ý của phép thứ hai (độ)"
+  },
+  "events": {
+    "vertex-moved": {
+      "kind": "action",
+      "description": "Học sinh thả một đỉnh của hình gốc ở vị trí mới (kéo trên hình hoặc thả thanh trượt tọa độ)",
+      "data": {
+        "vertex": "Số thứ tự đỉnh: 1 là A, 2 là B, …",
+        "x": "Hoành độ mới",
+        "y": "Tung độ mới"
+      }
+    },
+    "transform-changed": {
+      "kind": "action",
+      "description": "Học sinh đổi phép biến hình hoặc một thông số của nó (vectơ, trục, tâm, góc, bật/tắt phép thứ hai)",
+      "data": {
+        "code": "Mã phép thứ nhất: 1 tịnh tiến, 2 đối xứng trục Ox, 3 đối xứng trục Oy, 4 đối xứng qua y = x, 5 đối xứng qua x = m, 6 đối xứng qua y = m, 7 phép quay, 8 đối xứng tâm",
+        "code2": "Mã phép thứ hai theo cùng bảng, 0 nếu không thực hiện phép thứ hai"
+      }
+    },
+    "image": {
+      "kind": "result",
+      "description": "Ảnh của hình sau mỗi lần đổi hình, đổi đỉnh hoặc đổi phép biến hình: tọa độ ảnh của đỉnh A (ảnh cuối cùng khi thực hiện hai phép)",
+      "data": {
+        "x": "Hoành độ ảnh của đỉnh A",
+        "y": "Tung độ ảnh của đỉnh A",
+        "code": "Mã phép thứ nhất (1 tịnh tiến, 2 Ox, 3 Oy, 4 y = x, 5 x = m, 6 y = m, 7 quay, 8 đối xứng tâm)",
+        "code2": "Mã phép thứ hai, 0 nếu không có"
+      }
+    }
+  }
+}

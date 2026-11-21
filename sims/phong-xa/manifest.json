@@ -1,0 +1,41 @@
+{
+  "slug": "phong-xa",
+  "version": "1.0.0",
+  "title": "Phóng xạ và chu kì bán rã",
+  "subject": "physics",
+  "grades": [
+    12
+  ],
+  "description": "Một mẫu gồm N₀ hạt nhân phóng xạ, mỗi chấm là một hạt nhân phân rã ngẫu nhiên. Chọn chất phóng xạ (chu kì bán rã thật, thời gian được nén để dễ quan sát) hoặc tự chọn chu kì bán rã, rồi so sánh số hạt còn lại đếm được với đường lí thuyết N = N₀·2^(−t/T) và các mốc T, 2T, 3T…",
+  "learningGoals": [
+    "Nêu được ý nghĩa của chu kì bán rã: sau mỗi khoảng thời gian T, số hạt nhân còn lại giảm đi một nửa.",
+    "Vận dụng định luật phóng xạ N = N₀·2^(−t/T) = N₀·e^(−λt) với hằng số phóng xạ λ = ln2/T.",
+    "Nhận ra tính ngẫu nhiên của sự phân rã: mẫu càng nhiều hạt thì số đếm được càng sát đường lí thuyết.",
+    "Tính độ phóng xạ H = λN và thấy H giảm theo cùng quy luật với N."
+  ],
+  "state": {
+    "isotope": "Chất phóng xạ: \"I-131\" (T = 8,02 ngày), \"Rn-222\" (3,82 ngày), \"Po-210\" (138 ngày), \"Co-60\" (5,27 năm), \"C-14\" (5730 năm), \"U-238\" (4,47 tỉ năm) hoặc \"custom\" (tự chọn T)",
+    "customT": "Chu kì bán rã tự chọn (s), chỉ dùng khi isotope = \"custom\"",
+    "n0": "Số hạt nhân ban đầu N₀",
+    "seed": "Hạt giống của bộ sinh số ngẫu nhiên cho mẫu hiện tại; cùng seed và n0 thì mẫu phân rã giống hệt nhau",
+    "time": "Thời gian đã trôi t, tính theo đơn vị của chất phóng xạ (ngày, năm, tỉ năm; s nếu tự chọn). Với chất thật, một chu kì bán rã luôn ứng với 4 s trên màn hình; mẫu dừng ở t = 6T",
+    "showTheory": "true nếu hiện đường lí thuyết N = N₀·2^(−t/T)"
+  },
+  "events": {
+    "half-life-reached": {
+      "kind": "result",
+      "description": "Mẫu vừa đi qua một mốc chu kì bán rã (t = T, 2T, …, 6T)",
+      "data": {
+        "halfLives": "Số chu kì bán rã đã trôi qua k (1–6)",
+        "time": "Thời gian đã trôi t = k·T, theo đơn vị của chất phóng xạ (xem state.time)",
+        "remaining": "Số hạt nhân còn lại đếm được ở mốc đó",
+        "expected": "Số hạt nhân còn lại theo lí thuyết N₀/2^k"
+      }
+    },
+    "new-sample": {
+      "kind": "action",
+      "description": "Học sinh bấm nút lấy một mẫu mới và cho phân rã lại từ t = 0",
+      "data": {}
+    }
+  }
+}

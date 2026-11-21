@@ -1,0 +1,35 @@
+{
+  "slug": "don-bay",
+  "version": "1.0.0",
+  "title": "Đòn bẩy và mômen lực",
+  "subject": "physics",
+  "grades": [
+    8,
+    10
+  ],
+  "description": "Đặt hai vật lên hai bên của một đòn bẩy có trục quay ở chính giữa. Thay đổi khối lượng và khoảng cách từ mỗi vật đến trục quay để xem mômen lực của từng bên, tổng mômen và đòn bẩy nghiêng về bên nào hay nằm cân bằng. Lấy g = 10 m/s², bỏ qua khối lượng của thanh.",
+  "learningGoals": [
+    "Tính mômen lực M = F·d của trọng lực mỗi vật đối với trục quay.",
+    "Vận dụng quy tắc mômen: đòn bẩy cân bằng khi m₁·d₁ = m₂·d₂.",
+    "Dự đoán đòn bẩy nghiêng về bên có mômen lực lớn hơn.",
+    "Nhận ra vật nhẹ đặt xa trục quay có thể cân bằng với vật nặng đặt gần trục quay."
+  ],
+  "state": {
+    "m1": "Khối lượng vật bên trái (kg)",
+    "d1": "Khoảng cách từ vật bên trái đến trục quay (m)",
+    "m2": "Khối lượng vật bên phải (kg)",
+    "d2": "Khoảng cách từ vật bên phải đến trục quay (m)",
+    "angle": "Góc nghiêng hiện tại của thanh (rad, dương khi đầu bên phải hạ xuống; tối đa ±0,2 rad)",
+    "balanced": "true khi m₁·d₁ = m₂·d₂ và thanh đã nằm ngang"
+  },
+  "events": {
+    "place": {
+      "kind": "action",
+      "description": "Học sinh kéo một vật dọc theo thanh rồi thả; data.side là \"left\" hoặc \"right\", data.distance là khoảng cách mới đến trục quay (m)"
+    },
+    "balance": {
+      "kind": "goal",
+      "description": "Đòn bẩy vừa đạt cân bằng; data gồm m1, d1, m2, d2 và data.moment là mômen lực mỗi bên (N·m)"
+    }
+  }
+}

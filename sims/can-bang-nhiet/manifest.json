@@ -1,0 +1,49 @@
+{
+  "slug": "can-bang-nhiet",
+  "version": "1.0.0",
+  "title": "Phương trình cân bằng nhiệt",
+  "subject": "physics",
+  "grades": [8],
+  "description": "Cho hai vật có nhiệt độ khác nhau tiếp xúc trong bình cách nhiệt, ví dụ thả miếng kim loại nóng vào nước lạnh hoặc trộn hai lượng nước. Chọn chất (nước, nhôm, đồng, sắt, chì, dầu), khối lượng và nhiệt độ ban đầu của mỗi vật, rồi quan sát nhiệt độ hai vật tiến dần về nhiệt độ cân bằng và so sánh nhiệt lượng tỏa ra với nhiệt lượng thu vào.",
+  "learningGoals": [
+    "Nêu được nhiệt tự truyền từ vật có nhiệt độ cao hơn sang vật có nhiệt độ thấp hơn cho đến khi nhiệt độ hai vật bằng nhau.",
+    "Vận dụng công thức Q = m·c·Δt và phương trình cân bằng nhiệt Q tỏa = Q thu.",
+    "Tính được nhiệt độ cân bằng t = (m₁c₁t₁ + m₂c₂t₂)/(m₁c₁ + m₂c₂) và kiểm tra bằng thí nghiệm mô phỏng.",
+    "Giải thích vì sao vật có m·c lớn hơn thì nhiệt độ thay đổi ít hơn."
+  ],
+  "state": {
+    "m1": "Khối lượng vật 1 (kg)",
+    "t1": "Nhiệt độ ban đầu của vật 1 (°C)",
+    "mat1": "Chất làm vật 1: \"water\" (nước, c = 4200 J/kg·K), \"aluminium\" (nhôm, 880), \"copper\" (đồng, 380), \"iron\" (sắt, 460), \"lead\" (chì, 130), \"oil\" (dầu, 2000)",
+    "m2": "Khối lượng vật 2 (kg)",
+    "t2": "Nhiệt độ ban đầu của vật 2 (°C)",
+    "mat2": "Chất làm vật 2, cùng danh sách như mat1",
+    "time": "Thời gian từ lúc hai vật tiếp xúc (s, chỉ mang tính minh họa)",
+    "mixing": "true khi hai vật đang trao đổi nhiệt",
+    "done": "true khi hai vật đã cân bằng nhiệt"
+  },
+  "events": {
+    "mix-start": {
+      "kind": "action",
+      "description": "Học sinh cho hai vật tiếp xúc để bắt đầu trao đổi nhiệt",
+      "data": {
+        "m1": "Khối lượng vật 1 (kg)",
+        "c1": "Nhiệt dung riêng của vật 1 (J/kg·K)",
+        "t1": "Nhiệt độ ban đầu của vật 1 (°C)",
+        "m2": "Khối lượng vật 2 (kg)",
+        "c2": "Nhiệt dung riêng của vật 2 (J/kg·K)",
+        "t2": "Nhiệt độ ban đầu của vật 2 (°C)"
+      }
+    },
+    "equilibrium": {
+      "kind": "result",
+      "description": "Hai vật vừa đạt cân bằng nhiệt",
+      "data": {
+        "temperature": "Nhiệt độ cân bằng (°C)",
+        "heat": "Nhiệt lượng vật nóng tỏa ra, bằng nhiệt lượng vật lạnh thu vào (J)",
+        "t1": "Nhiệt độ ban đầu của vật 1 (°C)",
+        "t2": "Nhiệt độ ban đầu của vật 2 (°C)"
+      }
+    }
+  }
+}

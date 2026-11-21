@@ -1,0 +1,36 @@
+{
+  "slug": "dien-tro-day-dan",
+  "version": "1.0.0",
+  "title": "Điện trở của dây dẫn",
+  "subject": "physics",
+  "grades": [9, 11],
+  "description": "Một dây dẫn quấn trên bảng, mắc với nguồn điện và ampe kế. Thay đổi chiều dài, tiết diện và chất làm dây (đồng, nhôm, sắt, nicrom, constantan) để thấy điện trở R = ρ·l/S và cường độ dòng điện I = U/R thay đổi; có thể tính đến nhiệt độ của dây theo R = R₀(1 + αΔt).",
+  "learningGoals": [
+    "Điện trở của dây dẫn tỉ lệ thuận với chiều dài l và tỉ lệ nghịch với tiết diện S của dây.",
+    "Điện trở phụ thuộc chất làm dây qua điện trở suất ρ: R = ρ·l/S.",
+    "So sánh điện trở suất của đồng, nhôm, sắt, nicrom, constantan và giải thích vì sao dây nối làm bằng đồng còn dây nung làm bằng nicrom.",
+    "Điện trở của kim loại tăng khi nhiệt độ tăng: R = R₀(1 + αΔt); constantan gần như không đổi."
+  ],
+  "state": {
+    "material": "Chất làm dây: \"copper\" (đồng), \"aluminium\" (nhôm), \"iron\" (sắt), \"nichrome\" (nicrom), \"constantan\"",
+    "length": "Chiều dài dây l (m), mỗi lượt quấn trên bảng dài 1 m",
+    "area": "Tiết diện dây S (mm²)",
+    "voltage": "Hiệu điện thế của nguồn U (V)",
+    "useTemp": "true nếu tính đến nhiệt độ của dây; false thì dây ở 20 °C",
+    "temperature": "Nhiệt độ của dây t (°C), chỉ có tác dụng khi useTemp = true"
+  },
+  "events": {
+    "resistance-measured": {
+      "kind": "result",
+      "description": "Điện trở và số chỉ ampe kế sau khi học sinh đổi xong một thông số của dây hoặc nguồn",
+      "data": {
+        "resistance": "Điện trở của dây R (Ω), ở nhiệt độ t",
+        "current": "Cường độ dòng điện I = U/R (A)",
+        "material": "Chỉ số chất làm dây: 0 đồng, 1 nhôm, 2 sắt, 3 nicrom, 4 constantan",
+        "length": "Chiều dài dây l (m)",
+        "area": "Tiết diện dây S (mm²)",
+        "temperature": "Nhiệt độ của dây dùng để tính R (°C); 20 khi không tính đến nhiệt độ"
+      }
+    }
+  }
+}

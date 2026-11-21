@@ -1,0 +1,42 @@
+{
+  "slug": "bang-tuan-hoan",
+  "version": "1.0.0",
+  "title": "Xu hướng biến đổi trong bảng tuần hoàn",
+  "subject": "chemistry",
+  "grades": [10],
+  "description": "Bảng tuần hoàn 36 nguyên tố đầu tiên (hydrogen đến krypton). Chọn một tính chất (bán kính nguyên tử, độ âm điện Pauling, năng lượng ion hóa thứ nhất hoặc tính kim loại) để tô màu các ô theo giá trị, và chọn một chu kì hoặc một nhóm A để vẽ biểu đồ cột dọc theo chu kì hoặc nhóm đó. Bấm vào một ô để xem vị trí, cấu hình electron (kể cả hai ngoại lệ Cr và Cu) và các số liệu của nguyên tố. Bán kính là bán kính tính toán; khí hiếm không có độ âm điện; tính kim loại được tô theo loại nguyên tố và so sánh bằng độ âm điện.",
+  "learningGoals": [
+    "Viết cấu hình electron của nguyên tử có Z ≤ 36 theo thứ tự mức năng lượng 1s 2s 2p 3s 3p 4s 3d 4p, và nhận ra hai ngoại lệ Cr ([Ar]3d⁵4s¹) và Cu ([Ar]3d¹⁰4s¹).",
+    "Xác định chu kì (số lớp electron) và nhóm (số electron hóa trị, nhóm A hoặc B) từ số hiệu nguyên tử Z.",
+    "Nêu xu hướng trong các nhóm A: theo chiều tăng Z, trong một chu kì bán kính nguyên tử giảm, độ âm điện tăng; trong một nhóm bán kính tăng, độ âm điện giảm.",
+    "Liên hệ tính kim loại với bán kính, độ âm điện và năng lượng ion hóa; nhận ra các ngoại lệ trong dãy năng lượng ion hóa (Be > B, N > O)."
+  ],
+  "state": {
+    "prop": "Tính chất dùng để tô màu và vẽ biểu đồ: \"radius\" (bán kính nguyên tử, pm), \"en\" (độ âm điện Pauling), \"ie\" (năng lượng ion hóa thứ nhất, kJ/mol), \"metal\" (tính kim loại: tô theo loại nguyên tố, biểu đồ dùng độ âm điện)",
+    "line": "Dãy được vẽ biểu đồ: \"p1\"…\"p4\" là chu kì 1–4, \"g1\"…\"g8\" là nhóm IA…VIIIA",
+    "z": "Số hiệu nguyên tử Z của nguyên tố đang chọn (1–36)"
+  },
+  "events": {
+    "select-element": {
+      "kind": "action",
+      "description": "Học sinh chọn một nguyên tố (bấm vào ô, vào cột của biểu đồ hoặc kéo thanh trượt Z)",
+      "data": {
+        "z": "Số hiệu nguyên tử Z",
+        "period": "Chu kì của nguyên tố (1–4)",
+        "column": "Cột trong bảng tuần hoàn (1–18)"
+      }
+    },
+    "line-charted": {
+      "kind": "result",
+      "description": "Biểu đồ một tính chất dọc theo một chu kì hoặc một nhóm A vừa được vẽ (sau khi đổi tính chất hoặc dãy)",
+      "data": {
+        "property": "Chỉ số tính chất: 0 bán kính nguyên tử, 1 độ âm điện, 2 năng lượng ion hóa thứ nhất, 3 tính kim loại (giá trị là độ âm điện)",
+        "period": "Chu kì được vẽ (1–4), 0 nếu vẽ theo nhóm",
+        "group": "Số thứ tự nhóm A được vẽ (1–8 cho IA–VIIIA), 0 nếu vẽ theo chu kì",
+        "first": "Giá trị của nguyên tố đầu dãy có số liệu (pm, không đơn vị hoặc kJ/mol tùy tính chất)",
+        "last": "Giá trị của nguyên tố cuối dãy có số liệu (cùng đơn vị)",
+        "count": "Số nguyên tố trong dãy có số liệu"
+      }
+    }
+  }
+}

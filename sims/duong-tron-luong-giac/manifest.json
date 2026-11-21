@@ -1,0 +1,34 @@
+{
+  "slug": "duong-tron-luong-giac",
+  "version": "1.0.0",
+  "title": "Đường tròn lượng giác",
+  "subject": "math",
+  "grades": [
+    10,
+    11
+  ],
+  "description": "Kéo điểm M trên đường tròn đơn vị hoặc dùng thanh trượt để đặt góc α theo độ hoặc rađian. Mô phỏng vẽ sin α, cos α, tan α thành các đoạn thẳng có màu, cho giá trị đúng tại các góc đặc biệt và vẽ đồ thị y = sin x, y = cos x bên cạnh.",
+  "learningGoals": [
+    "Hiểu sin α và cos α là tung độ và hoành độ của điểm M trên đường tròn lượng giác, tan α nằm trên trục tang.",
+    "Đổi số đo góc giữa độ và rađian.",
+    "Ghi nhớ giá trị lượng giác của các góc đặc biệt và dấu của sin, cos, tan trong từng góc phần tư.",
+    "Kiểm chứng hệ thức sin²α + cos²α = 1 và nhận ra tan α không xác định khi cos α = 0."
+  ],
+  "state": {
+    "deg": "Số đo góc α tính bằng độ (số nguyên từ 0 đến 360), kể cả khi đang hiển thị theo rađian",
+    "unit": "Đơn vị hiển thị góc: \"deg\" (độ) hoặc \"rad\" (rađian)",
+    "showGraph": "Có vẽ đồ thị y = sin x và y = cos x bên cạnh đường tròn hay không"
+  },
+  "events": {
+    "trig-values": {
+      "kind": "result",
+      "description": "Giá trị lượng giác tại góc học sinh vừa chọn xong (thả thanh trượt hoặc kéo xong điểm M)",
+      "data": {
+        "deg": "Góc α (độ, 0–360)",
+        "sin": "sin α",
+        "cos": "cos α",
+        "tan": "tan α; không có khóa này khi tan không xác định (α = 90°, 270°)"
+      }
+    }
+  }
+}

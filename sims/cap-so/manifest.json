@@ -1,0 +1,39 @@
+{
+  "slug": "cap-so",
+  "version": "1.0.0",
+  "title": "Cấp số cộng và cấp số nhân",
+  "subject": "math",
+  "grades": [
+    11
+  ],
+  "description": "Chọn cấp số cộng hoặc cấp số nhân, số hạng đầu u₁, công sai d hoặc công bội q và số số hạng n. Các số hạng được vẽ thành điểm và cột, kèm công thức số hạng tổng quát và tổng n số hạng đầu đã thay số; với cấp số nhân có |q| < 1 có thêm tổng vô hạn. Có thể vẽ chồng cả hai loại dãy cùng u₁ để so sánh tăng đều (cộng) với tăng theo cấp số nhân.",
+  "learningGoals": [
+    "Tính số hạng tổng quát uₙ = u₁ + (n − 1)d của cấp số cộng và uₙ = u₁·qⁿ⁻¹ của cấp số nhân.",
+    "Tính tổng n số hạng đầu: Sₙ = n(u₁ + uₙ)/2 với cấp số cộng; Sₙ = u₁(1 − qⁿ)/(1 − q) khi q ≠ 1 và Sₙ = n·u₁ khi q = 1 với cấp số nhân.",
+    "Nhận ra công bội âm làm các số hạng đổi dấu xen kẽ, công bội có |q| < 1 làm các số hạng nhỏ dần và tổng tiến tới u₁/(1 − q).",
+    "Kiểm tra tính chất số hạng giữa: uₖ = (uₖ₋₁ + uₖ₊₁)/2 với cấp số cộng, uₖ² = uₖ₋₁·uₖ₊₁ với cấp số nhân.",
+    "So sánh sự tăng đều của cấp số cộng với sự tăng ngày càng nhanh của cấp số nhân."
+  ],
+  "state": {
+    "kind": "Loại dãy số: \"arith\" (cấp số cộng) hoặc \"geo\" (cấp số nhân)",
+    "u1": "Số hạng đầu u₁ (từ −10 đến 10, bước 0,5)",
+    "d": "Công sai d của cấp số cộng (từ −5 đến 5, bước 0,5)",
+    "q": "Công bội q của cấp số nhân (từ −3 đến 3, bước 0,1)",
+    "n": "Số số hạng n (từ 1 đến 20)",
+    "overlay": "true nếu vẽ thêm dãy loại kia (cùng u₁, dùng d hoặc q đang đặt) để so sánh"
+  },
+  "events": {
+    "sequence-computed": {
+      "kind": "result",
+      "description": "Học sinh vừa chốt một thiết lập; sim báo số hạng thứ n và tổng n số hạng đầu của dãy đang chọn",
+      "data": {
+        "type": "Loại dãy: 1 cấp số cộng, 2 cấp số nhân",
+        "u1": "Số hạng đầu u₁",
+        "common": "Công sai d (cấp số cộng) hoặc công bội q (cấp số nhân)",
+        "n": "Số số hạng n",
+        "un": "Số hạng thứ n, uₙ",
+        "sum": "Tổng n số hạng đầu, Sₙ"
+      }
+    }
+  }
+}

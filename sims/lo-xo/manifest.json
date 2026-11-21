@@ -1,0 +1,45 @@
+{
+  "slug": "lo-xo",
+  "version": "1.0.0",
+  "title": "Con lắc lò xo",
+  "subject": "physics",
+  "grades": [
+    11
+  ],
+  "description": "Kéo vật nặng treo dưới lò xo thẳng đứng rồi thả để quan sát dao động. Thay đổi khối lượng, độ cứng lò xo, lực cản và gia tốc trọng trường để xem vị trí cân bằng, chu kỳ và các dạng năng lượng thay đổi thế nào.",
+  "learningGoals": [
+    "Xác định độ dãn của lò xo ở vị trí cân bằng: Δl₀ = m·g/k.",
+    "Kiểm chứng công thức chu kỳ T = 2π√(m/k); chu kỳ không phụ thuộc biên độ và gia tốc trọng trường.",
+    "Mô tả sự chuyển hóa giữa động năng, thế năng đàn hồi và thế năng trọng trường; cơ năng bảo toàn khi không có lực cản.",
+    "Nhận biết dao động tắt dần khi có lực cản."
+  ],
+  "state": {
+    "mass": "Khối lượng vật nặng (kg)",
+    "k": "Độ cứng của lò xo (N/m)",
+    "damping": "Hệ số cản (N·s/m); lực cản = −hệ số cản × vận tốc",
+    "gravity": "Gia tốc trọng trường (m/s²)",
+    "x0": "Li độ lúc thả vật (m, tính từ vị trí cân bằng, dương hướng xuống)",
+    "y": "Độ dãn hiện tại của lò xo (m, dương khi lò xo dãn); li độ x = y − m·g/k",
+    "v": "Vận tốc của vật (m/s, dương hướng xuống)",
+    "time": "Thời gian từ lúc thả (s)",
+    "measuredPeriod": "Chu kỳ đo được (s), 0 nếu chưa đủ một dao động",
+    "lastCross": "Thời điểm gần nhất vật đi qua vị trí cân bằng theo chiều dương (s), −1 nếu chưa có",
+    "showEnergy": "Có hiện các cột năng lượng hay không"
+  },
+  "events": {
+    "release": {
+      "kind": "action",
+      "description": "Học sinh kéo vật rồi thả; data.displacement là li độ lúc thả (m, dương hướng xuống)"
+    },
+    "period-measured": {
+      "kind": "result",
+      "description": "Vật vừa hoàn thành dao động toàn phần đầu tiên sau khi thả và đo được chu kỳ (một lần cho mỗi lần thả)",
+      "data": {
+        "period": "Chu kỳ đo được (s)",
+        "theory": "Chu kỳ lý thuyết 2π√(m/k) (s)",
+        "mass": "Khối lượng vật nặng (kg)",
+        "k": "Độ cứng lò xo (N/m)"
+      }
+    }
+  }
+}

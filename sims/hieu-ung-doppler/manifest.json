@@ -1,0 +1,42 @@
+{
+  "slug": "hieu-ung-doppler",
+  "version": "1.0.0",
+  "title": "Hiệu ứng Đốp-ple",
+  "subject": "physics",
+  "grades": [
+    11,
+    12
+  ],
+  "description": "Một nguồn âm S và một người nghe N chuyển động thẳng đều trên cùng một đường thẳng trong không khí (v = 340 m/s). Quan sát các mặt sóng dồn lại phía trước nguồn và giãn ra phía sau, đọc tần số người nghe nhận được trước và sau khi nguồn đi qua, và nón Mach khi nguồn chuyển động nhanh hơn âm.",
+  "learningGoals": [
+    "Giải thích vì sao các mặt sóng dồn lại phía trước nguồn đang chuyển động và giãn ra phía sau nguồn.",
+    "Vận dụng công thức f′ = f·(v + vₙ)/(v − vₛ), với vₙ > 0 khi người nghe lại gần nguồn và vₛ > 0 khi nguồn lại gần người nghe.",
+    "Nhận ra âm nghe được cao hơn khi nguồn và người nghe lại gần nhau, trầm hơn khi ra xa nhau, và bằng f khi cả hai đứng yên.",
+    "Nhận biết nón Mach khi nguồn nhanh hơn âm, với sin θ = v/vₛ."
+  ],
+  "state": {
+    "frequency": "Tần số âm của nguồn f (Hz)",
+    "sourceVelocity": "Vận tốc của nguồn S (m/s), dương khi đi sang phải, âm khi đi sang trái; tốc độ âm v = 340 m/s",
+    "listenerVelocity": "Vận tốc của người nghe N (m/s), dương khi đi sang phải",
+    "sourceX": "Vị trí hiện tại của nguồn (m), cảnh vẽ từ −200 m đến 200 m",
+    "listenerX": "Vị trí hiện tại của người nghe (m)",
+    "time": "Thời gian kể từ lần chạy gần nhất (s, thời gian thực của chuyển động, chưa làm chậm)"
+  },
+  "events": {
+    "source-passed": {
+      "kind": "result",
+      "description": "Nguồn âm vừa đi qua người nghe; báo tần số người nghe nhận được trước và sau lúc đó",
+      "data": {
+        "before": "Tần số nghe được khi hai bên lại gần nhau (Hz); 0 nếu nguồn nhanh hơn âm nên âm chưa tới được",
+        "after": "Tần số nghe được khi hai bên ra xa nhau (Hz)",
+        "sourceFrequency": "Tần số của nguồn f (Hz)",
+        "sourceVelocity": "Vận tốc nguồn (m/s, dương sang phải)",
+        "listenerVelocity": "Vận tốc người nghe (m/s, dương sang phải)"
+      }
+    },
+    "restart-run": {
+      "kind": "action",
+      "description": "Học sinh đưa nguồn và người nghe về vị trí ban đầu để cho nguồn chạy qua lại từ đầu"
+    }
+  }
+}

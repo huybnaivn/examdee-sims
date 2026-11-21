@@ -1,0 +1,49 @@
+{
+  "slug": "tu-truong-dong-dien",
+  "version": "1.0.0",
+  "title": "Từ trường của dòng điện",
+  "subject": "physics",
+  "grades": [9, 11, 12],
+  "description": "Quan sát từ trường của dòng điện chạy trong dây dẫn thẳng dài (nhìn từ đầu dây), trong vòng dây tròn và trong ống dây. Thay đổi cường độ và chiều dòng điện, bán kính vòng dây, số vòng và chiều dài ống dây; xem đường sức từ, lưới kim nam châm thử định hướng theo từ trường và kéo đầu dò để đo cảm ứng từ B tại từng điểm.",
+  "learningGoals": [
+    "Mô tả đường sức từ của dòng điện thẳng (đường tròn đồng tâm), của vòng dây tròn và của ống dây (song song, cách đều trong lòng ống).",
+    "Xác định chiều đường sức từ bằng quy tắc nắm tay phải và nhận ra chiều từ trường đổi khi đổi chiều dòng điện.",
+    "Vận dụng B = 2·10⁻⁷·I/r cho dây dẫn thẳng dài, B = 2π·10⁻⁷·I/R tại tâm vòng dây, B = 4π·10⁻⁷·N·I/l trong lòng ống dây dài.",
+    "Nhận ra cảm ứng từ tỉ lệ thuận với cường độ dòng điện, giảm khi ra xa dây dẫn, và gần như đều trong lòng ống dây.",
+    "Xác định cực Bắc, cực Nam của vòng dây và ống dây có dòng điện."
+  ],
+  "state": {
+    "source": "Dây dẫn mang dòng điện: \"wire\" (dây thẳng dài, vuông góc mặt hình, nhìn từ đầu dây), \"loop\" (vòng dây tròn, trục nằm ngang trong mặt hình), \"solenoid\" (ống dây, trục nằm ngang, bán kính 3 cm)",
+    "current": "Cường độ dòng điện I (A)",
+    "reversed": "false: dòng điện trong dây thẳng hướng ra khỏi mặt hình, trong vòng dây và ống dây hướng ra ở phía trên (từ trường trong lòng hướng sang phải); true: ngược lại",
+    "radius": "Bán kính vòng dây R (m), chỉ dùng khi source = \"loop\"",
+    "turns": "Số vòng dây N của ống dây",
+    "length": "Chiều dài ống dây l (m)",
+    "probeU": "Vị trí ngang của đầu dò, theo tỉ lệ nửa bề rộng vùng quan sát (−1..1); nửa bề rộng là 10 cm (dây thẳng), 15 cm (vòng dây), 32 cm (ống dây)",
+    "probeV": "Vị trí dọc của đầu dò, theo tỉ lệ nửa chiều cao vùng quan sát (−1..1); nửa chiều cao bằng 0,62 nửa bề rộng",
+    "showLines": "Hiện đường sức từ",
+    "showCompass": "Hiện lưới kim nam châm thử"
+  },
+  "events": {
+    "probe-read": {
+      "kind": "result",
+      "description": "Học sinh thả đầu dò (kéo trên hình hoặc chỉnh thanh trượt vị trí) và đọc cảm ứng từ tại đó",
+      "data": {
+        "b": "Độ lớn cảm ứng từ tại đầu dò (µT)",
+        "angle": "Hướng của B, góc tính từ trục x nằm ngang hướng sang phải, ngược chiều kim đồng hồ (độ, −180..180)",
+        "x": "Tọa độ ngang của đầu dò so với tâm dây dẫn (cm)",
+        "y": "Tọa độ dọc của đầu dò so với tâm dây dẫn, hướng lên (cm)",
+        "current": "Cường độ dòng điện I (A)",
+        "formula": "Giá trị theo công thức SGK (µT): dây thẳng tại khoảng cách r của đầu dò; vòng dây tại tâm; ống dây dài trong lòng ống"
+      }
+    },
+    "flip": {
+      "kind": "action",
+      "description": "Học sinh đổi chiều dòng điện",
+      "data": {
+        "reversed": "1 nếu dòng điện đang ngược với chiều ban đầu, 0 nếu cùng chiều ban đầu",
+        "current": "Cường độ dòng điện I (A)"
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "slug": "dao-dong-dieu-hoa",
+  "version": "1.0.0",
+  "title": "Dao động điều hòa",
+  "subject": "physics",
+  "grades": [
+    11
+  ],
+  "description": "Điểm M chuyển động tròn đều trên đường tròn bán kính A; hình chiếu P của nó trên trục Ox dao động điều hòa. Thay đổi biên độ, tần số góc và pha ban đầu, bật tắt đồ thị li độ, vận tốc, gia tốc theo thời gian để so sánh pha của chúng.",
+  "learningGoals": [
+    "Liên hệ dao động điều hòa x = A·cos(ωt + φ) với hình chiếu của chuyển động tròn đều.",
+    "Nhận biết biên độ A, tần số góc ω, pha ban đầu φ và chu kỳ T = 2π/ω trên hình và trên đồ thị.",
+    "Viết được v = −Aω·sin(ωt + φ), a = −ω²x và các giá trị cực đại vₘₐₓ = Aω, aₘₐₓ = Aω².",
+    "Nhận ra vận tốc sớm pha π/2 so với li độ, gia tốc ngược pha với li độ."
+  ],
+  "state": {
+    "amplitude": "Biên độ A (cm)",
+    "omega": "Tần số góc ω (rad/s)",
+    "phaseDeg": "Pha ban đầu φ (độ, từ −180 đến 180)",
+    "time": "Thời gian t kể từ lúc bắt đầu (s); về 0 khi đổi A, ω hoặc φ",
+    "showX": "true nếu đang hiện đồ thị li độ x(t)",
+    "showV": "true nếu đang hiện đồ thị vận tốc v(t)",
+    "showA": "true nếu đang hiện đồ thị gia tốc a(t)"
+  },
+  "events": {
+    "period-completed": {
+      "kind": "result",
+      "description": "Vật vừa thực hiện xong một dao động toàn phần đầu tiên kể từ lúc bắt đầu (hoặc từ lần đổi thông số gần nhất)",
+      "data": {
+        "period": "Chu kỳ T = 2π/ω (s)",
+        "amplitude": "Biên độ A (cm)",
+        "vmax": "Tốc độ cực đại Aω (cm/s)",
+        "amax": "Gia tốc cực đại Aω² (cm/s²)"
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "phan-so",
+  "version": "1.0.0",
+  "title": "Phân số",
+  "subject": "math",
+  "grades": [
+    4,
+    5,
+    6
+  ],
+  "description": "Đặt tử số và mẫu số cho hai phân số A và B. Mỗi phân số được minh họa bằng hình tô màu và một điểm trên cùng một tia số; mô phỏng cho biết dấu so sánh, dạng tối giản, hỗn số và các phân số bằng nhau.",
+  "learningGoals": [
+    "Hiểu ý nghĩa của tử số và mẫu số qua hình được chia thành các phần bằng nhau.",
+    "So sánh hai phân số bằng tích chéo và bằng vị trí trên tia số.",
+    "Rút gọn phân số về dạng tối giản bằng cách chia cả tử và mẫu cho ước chung lớn nhất.",
+    "Viết phân số lớn hơn 1 dưới dạng hỗn số và nhận ra các phân số bằng nhau."
+  ],
+  "state": {
+    "n1": "Tử số của phân số A (số nguyên từ 0 đến 12)",
+    "d1": "Mẫu số của phân số A (số nguyên từ 1 đến 12, không bao giờ bằng 0)",
+    "n2": "Tử số của phân số B (số nguyên từ 0 đến 12)",
+    "d2": "Mẫu số của phân số B (số nguyên từ 1 đến 12, không bao giờ bằng 0)",
+    "shape": "Hình minh họa: \"circle\" (hình tròn) hoặc \"bar\" (băng giấy hình chữ nhật)"
+  },
+  "events": {
+    "comparison": {
+      "kind": "result",
+      "description": "Kết quả so sánh hai phân số sau khi học sinh đổi xong một tử số hoặc mẫu số",
+      "data": {
+        "n1": "Tử số của A",
+        "d1": "Mẫu số của A",
+        "n2": "Tử số của B",
+        "d2": "Mẫu số của B",
+        "comparison": "−1 nếu A < B, 0 nếu A = B, 1 nếu A > B"
+      }
+    },
+    "equal-fractions": {
+      "kind": "goal",
+      "description": "Học sinh vừa làm cho hai phân số bằng nhau dù mẫu số khác nhau; báo một lần cho đến khi hai phân số lại khác nhau",
+      "data": {
+        "n1": "Tử số của A",
+        "d1": "Mẫu số của A",
+        "n2": "Tử số của B",
+        "d2": "Mẫu số của B"
+      }
+    }
+  }
+}

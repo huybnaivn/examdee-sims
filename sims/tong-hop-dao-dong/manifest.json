@@ -1,0 +1,36 @@
+{
+  "slug": "tong-hop-dao-dong",
+  "version": "1.0.0",
+  "title": "Tổng hợp hai dao động điều hòa",
+  "subject": "physics",
+  "grades": [
+    11
+  ],
+  "description": "Hai dao động điều hòa cùng phương, cùng tần số được biểu diễn bằng hai vectơ quay; vectơ tổng cho biên độ và pha ban đầu của dao động tổng hợp. Thay đổi biên độ và pha ban đầu của từng dao động, quan sát giản đồ vectơ và ba đồ thị x₁, x₂, x theo thời gian, tìm các trường hợp cùng pha, ngược pha, vuông pha.",
+  "learningGoals": [
+    "Biểu diễn dao động điều hòa bằng vectơ quay và tổng hợp hai dao động bằng quy tắc hình bình hành.",
+    "Vận dụng A² = A₁² + A₂² + 2A₁A₂cos(φ₂ − φ₁) và tan φ = (A₁sin φ₁ + A₂sin φ₂)/(A₁cos φ₁ + A₂cos φ₂).",
+    "Nhận ra biên độ tổng hợp lớn nhất A₁ + A₂ khi cùng pha, nhỏ nhất |A₁ − A₂| khi ngược pha, bằng √(A₁² + A₂²) khi vuông pha.",
+    "Thấy được li độ tổng hợp tại mỗi thời điểm bằng tổng hai li độ thành phần."
+  ],
+  "state": {
+    "a1": "Biên độ A₁ của dao động thứ nhất (cm)",
+    "a2": "Biên độ A₂ của dao động thứ hai (cm)",
+    "phi1Deg": "Pha ban đầu φ₁ (độ, từ −180 đến 180)",
+    "phi2Deg": "Pha ban đầu φ₂ (độ, từ −180 đến 180)",
+    "time": "Thời gian t (s); hai dao động có cùng ω = π rad/s",
+    "showParts": "true nếu đồ thị đang hiện cả x₁ và x₂, false thì chỉ hiện x tổng hợp"
+  },
+  "events": {
+    "special-case": {
+      "kind": "goal",
+      "description": "Học sinh vừa chỉnh hai dao động về một trường hợp đặc biệt của độ lệch pha",
+      "data": {
+        "case": "Trường hợp: \"cung-pha\" (Δφ = 0), \"nguoc-pha\" (Δφ = ±π) hoặc \"vuong-pha\" (Δφ = ±π/2)",
+        "amplitude": "Biên độ dao động tổng hợp (cm)",
+        "a1": "Biên độ A₁ (cm)",
+        "a2": "Biên độ A₂ (cm)"
+      }
+    }
+  }
+}

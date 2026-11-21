@@ -1,0 +1,46 @@
+{
+  "slug": "tich-phan",
+  "version": "1.0.0",
+  "title": "Tích phân và diện tích hình thang cong",
+  "subject": "math",
+  "grades": [
+    12
+  ],
+  "description": "Chọn một hàm số (x/2 + 1, x², 4 − x², sin x, eˣ) và đoạn [a; b] (kéo hai đầu trên trục hoành). Chia đoạn thành n phần bằng nhau (n từ 1 đến 100) và xấp xỉ diện tích hình thang cong bằng các hình chữ nhật (lấy đầu trái, đầu phải hoặc trung điểm) hoặc các hình thang, rồi so sánh với tích phân tính bằng nguyên hàm F(b) − F(a). Phần nằm trên trục hoành tô màu xanh, phần dưới trục tô màu đỏ.",
+  "learningGoals": [
+    "Hiểu tích phân ∫ₐᵇ f(x)dx = F(b) − F(a) là diện tích có dấu: phần trên trục hoành mang dấu cộng, phần dưới mang dấu trừ.",
+    "Xấp xỉ diện tích hình thang cong bằng tổng diện tích các hình chữ nhật hoặc hình thang, và thấy sai số giảm khi số phần n tăng.",
+    "So sánh độ chính xác của các cách xấp xỉ; nhận ra cách trung điểm và hình thang cho đúng giá trị khi f là hàm bậc nhất.",
+    "Kiểm chứng tính chất ∫ₐᵇ f(x)dx = −∫ᵇₐ f(x)dx khi đổi chỗ hai cận."
+  ],
+  "state": {
+    "fn": "Hàm số: \"lin\" (x/2 + 1), \"sq\" (x²), \"cap\" (4 − x²), \"sin\" (sin x), \"exp\" (eˣ)",
+    "a": "Cận dưới a (từ −3 đến 3, bước 0,1)",
+    "b": "Cận trên b (từ −3 đến 3, bước 0,1; có thể nhỏ hơn a)",
+    "n": "Số phần bằng nhau chia đoạn [a; b] (từ 1 đến 100)",
+    "rule": "Cách xấp xỉ: \"left\" (hình chữ nhật, đầu trái), \"right\" (đầu phải), \"mid\" (trung điểm), \"trap\" (hình thang)"
+  },
+  "events": {
+    "integral-approximated": {
+      "kind": "result",
+      "description": "Học sinh vừa chốt một thiết lập (hàm số, a, b, n hoặc cách xấp xỉ); sim báo tổng xấp xỉ, tích phân và sai số",
+      "data": {
+        "a": "Cận dưới a",
+        "b": "Cận trên b",
+        "n": "Số phần",
+        "method": "Cách xấp xỉ: 1 đầu trái, 2 đầu phải, 3 trung điểm, 4 hình thang",
+        "approx": "Tổng xấp xỉ",
+        "exact": "Tích phân F(b) − F(a)",
+        "error": "Sai số tuyệt đối |tổng xấp xỉ − tích phân|"
+      }
+    },
+    "limit-dragged": {
+      "kind": "action",
+      "description": "Học sinh kéo một đầu của đoạn trên trục hoành rồi thả",
+      "data": {
+        "end": "Đầu được kéo: 1 là a, 2 là b",
+        "value": "Giá trị mới của đầu đó"
+      }
+    }
+  }
+}

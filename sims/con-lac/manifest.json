@@ -1,0 +1,45 @@
+{
+  "slug": "con-lac",
+  "version": "1.0.0",
+  "title": "Con lắc đơn",
+  "subject": "physics",
+  "grades": [
+    10,
+    11
+  ],
+  "description": "Kéo quả nặng rồi thả để quan sát dao động. Thay đổi chiều dài dây, khối lượng, gia tốc trọng trường và lực cản để xem chu kỳ và năng lượng thay đổi thế nào.",
+  "learningGoals": [
+    "Nhận ra chu kỳ phụ thuộc chiều dài dây và gia tốc trọng trường, không phụ thuộc khối lượng.",
+    "Kiểm chứng công thức T = 2π√(l/g) với góc lệch nhỏ.",
+    "Mô tả sự chuyển hóa giữa động năng và thế năng, và sự mất mát cơ năng khi có lực cản."
+  ],
+  "state": {
+    "length": "Chiều dài dây (m)",
+    "mass": "Khối lượng quả nặng (kg)",
+    "gravity": "Gia tốc trọng trường (m/s²)",
+    "damping": "Hệ số cản (1/s)",
+    "angle": "Góc lệch hiện tại (rad, dương về bên phải)",
+    "omega": "Tốc độ góc (rad/s)",
+    "time": "Thời gian từ lúc thả (s)",
+    "measuredPeriod": "Chu kỳ đo được (s), 0 nếu chưa đủ một dao động"
+  },
+  "events": {
+    "release": {
+      "kind": "action",
+      "description": "Học sinh kéo quả nặng và thả",
+      "data": {
+        "angle": "Góc thả (rad, dương về bên phải)"
+      }
+    },
+    "period-measured": {
+      "kind": "result",
+      "description": "Con lắc vừa hoàn thành một dao động và đo được chu kỳ",
+      "data": {
+        "period": "Chu kỳ đo được (s)",
+        "theory": "Chu kỳ lý thuyết góc nhỏ 2π√(l/g) (s)",
+        "length": "Chiều dài dây (m)",
+        "gravity": "Gia tốc trọng trường (m/s²)"
+      }
+    }
+  }
+}

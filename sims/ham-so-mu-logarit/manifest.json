@@ -1,0 +1,39 @@
+{
+  "slug": "ham-so-mu-logarit",
+  "version": "1.0.0",
+  "title": "Hàm số mũ và hàm số lôgarit",
+  "subject": "math",
+  "grades": [11],
+  "description": "Chọn cơ số a (0 < a ≠ 1) để vẽ đồ thị hàm số mũ y = aˣ và hàm số lôgarit y = logₐ x trên cùng mặt phẳng tọa độ, cùng đường thẳng y = x. Kéo điểm M trên đồ thị y = aˣ (hoặc M' trên đồ thị y = logₐ x) để thấy hai điểm luôn đối xứng qua y = x. Bảng bên cho tập xác định, tập giá trị, tính đơn điệu, hai điểm cố định (0; 1), (1; 0) và giá trị logₐ t, kể cả khi t ≤ 0 (không xác định).",
+  "learningGoals": [
+    "Nhận ra y = aˣ và y = logₐ x là hai hàm số ngược nhau: đồ thị đối xứng qua đường thẳng y = x, logₐ(aˣ) = x và a^(logₐ x) = x.",
+    "Nêu tập xác định, tập giá trị của hàm số mũ (ℝ; (0; +∞)) và hàm số lôgarit ((0; +∞); ℝ).",
+    "Liên hệ tính đơn điệu với cơ số: đồng biến khi a > 1, nghịch biến khi 0 < a < 1.",
+    "Nhận ra mọi đồ thị y = aˣ đi qua (0; 1), mọi đồ thị y = logₐ x đi qua (1; 0), và cơ số phải thỏa 0 < a ≠ 1."
+  ],
+  "state": {
+    "a": "Cơ số a (từ 0,1 đến 5, bước 0,1); a = 1 không hợp lệ, khi đó không vẽ đồ thị",
+    "x": "Hoành độ x₀ của điểm M(x₀; a^x₀) trên đồ thị y = aˣ (từ −3 đến 3); điểm đối xứng là M'(a^x₀; x₀) trên đồ thị y = logₐ x",
+    "t": "Số t dùng để tính logₐ t ở bảng bên (từ −2 đến 10); với t ≤ 0 lôgarit không xác định"
+  },
+  "events": {
+    "point-released": {
+      "kind": "result",
+      "description": "Học sinh thả điểm M (hoặc M') sau khi kéo, hoặc đổi xong hoành độ x₀",
+      "data": {
+        "a": "Cơ số a",
+        "x": "Hoành độ x₀ của M, cũng là logₐ của hoành độ M'",
+        "power": "a^x₀: tung độ của M, cũng là hoành độ của M'",
+        "curve": "Điểm vừa được kéo: 0 là M trên y = aˣ, 1 là M' trên y = logₐ x"
+      }
+    },
+    "base-set": {
+      "kind": "result",
+      "description": "Học sinh chọn xong một cơ số hợp lệ (không gửi khi a = 1)",
+      "data": {
+        "a": "Cơ số a",
+        "increasing": "1 nếu hai hàm số đồng biến (a > 1), 0 nếu nghịch biến (0 < a < 1)"
+      }
+    }
+  }
+}

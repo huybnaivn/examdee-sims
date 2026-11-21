@@ -1,0 +1,45 @@
+{
+  "slug": "song-dung",
+  "version": "1.0.0",
+  "title": "Sóng trên dây và sóng dừng",
+  "subject": "physics",
+  "grades": [
+    11,
+    12
+  ],
+  "description": "Một sợi dây đàn hồi dài 2 m được nguồn dao động kích thích ở đầu bên trái, đầu bên phải cố định hoặc tự do. Thay đổi tần số, biên độ, lực căng và lực cản để quan sát sóng truyền trên dây, sóng phản xạ và các nút, bụng của sóng dừng khi có cộng hưởng.",
+  "learningGoals": [
+    "Kiểm chứng tốc độ truyền sóng trên dây v = √(T/μ) và bước sóng λ = v/f.",
+    "Tìm các tần số cho sóng dừng: f = n·v/(2L) khi hai đầu cố định, f = (2n−1)·v/(4L) khi một đầu tự do.",
+    "Xác định vị trí các nút và bụng: hai nút liên tiếp cách nhau λ/2, nút và bụng liền kề cách nhau λ/4.",
+    "Giải thích vì sao đầu cố định là nút còn đầu tự do là bụng, và vai trò của lực cản đối với biên độ khi cộng hưởng."
+  ],
+  "state": {
+    "endType": "Đầu dây bên phải: fixed (cố định) hoặc free (tự do)",
+    "frequency": "Tần số của nguồn f (Hz, 0,1 đến 4)",
+    "amplitude": "Biên độ dao động của nguồn (cm)",
+    "tension": "Lực căng dây T (N); dây có μ = 0,2 kg/m và dài L = 2 m nên v = √(T/0,2)",
+    "damping": "Hệ số cản b (1/s) trong phương trình y_tt + b·y_t = v²·y_xx",
+    "phase": "Pha hiện tại của nguồn (rad)",
+    "showEnvelope": "Có hiện đường bao biên độ khi ổn định hay không"
+  },
+  "events": {
+    "next-harmonic": {
+      "kind": "action",
+      "description": "Học sinh bấm nút chuyển tần số nguồn tới tần số cộng hưởng kế tiếp"
+    },
+    "rest-string": {
+      "kind": "action",
+      "description": "Học sinh cho dây đứng yên rồi phát sóng lại từ đầu để xem sóng truyền đi và phản xạ"
+    },
+    "resonance": {
+      "kind": "goal",
+      "description": "Tần số nguồn vừa được đặt đúng một tần số cộng hưởng (sai lệch không quá 3 % khoảng cách giữa hai họa âm): trên dây có sóng dừng. Báo một lần cho mỗi lần đạt một họa âm mới",
+      "data": {
+        "harmonic": "Số thứ tự n của họa âm (bằng số bụng sóng)",
+        "frequency": "Tần số nguồn (Hz)",
+        "waveSpeed": "Tốc độ truyền sóng trên dây (m/s)"
+      }
+    }
+  }
+}

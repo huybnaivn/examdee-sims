@@ -1,0 +1,36 @@
+{
+  "slug": "khi-ly-tuong",
+  "version": "1.0.0",
+  "title": "Khí lý tưởng",
+  "subject": "physics",
+  "grades": [
+    12
+  ],
+  "description": "Các hạt khí chuyển động hỗn loạn trong xi lanh có pít-tông. Thay đổi số hạt, nhiệt độ, thể tích và chọn quá trình đẳng nhiệt, đẳng tích hoặc đẳng áp; so sánh áp suất tính theo phương trình trạng thái với áp suất đo từ va chạm của các hạt lên thành bình. Đơn vị quy ước (đv): mô hình hai chiều, bình cao 2 đơn vị dài nên thể tích V là diện tích hình chữ nhật chứa khí; mỗi hạt có khối lượng 1; nhiệt độ T tính bằng kelvin; hằng số Boltzmann quy ước k = 0,01; áp suất p = N·k·T/V là lực trên một đơn vị chiều dài thành bình. Vì mô hình hai chiều, động năng trung bình của mỗi hạt là k·T (trong không gian ba chiều là 3/2·k·T). Các hạt không va chạm với nhau và va chạm đàn hồi với thành bình.",
+  "learningGoals": [
+    "Vận dụng phương trình trạng thái p·V = N·k·T của khí lý tưởng.",
+    "Kiểm chứng các đẳng quá trình: đẳng nhiệt p·V = hằng số, đẳng tích p/T = hằng số, đẳng áp V/T = hằng số.",
+    "Giải thích áp suất chất khí bằng va chạm của các phân tử lên thành bình, và vì sao số đo dao động mạnh hơn khi có ít hạt.",
+    "Nhận ra động năng trung bình của phân tử tỉ lệ thuận với nhiệt độ tuyệt đối."
+  ],
+  "state": {
+    "n": "Số hạt khí N (10 đến 200)",
+    "temperature": "Nhiệt độ tuyệt đối T (K, 100 đến 600)",
+    "volume": "Thể tích V (đv, 2 đến 10)",
+    "mode": "Đại lượng được giữ không đổi: \"T\" đẳng nhiệt, \"V\" đẳng tích, \"P\" đẳng áp",
+    "lockedPressure": "Áp suất được giữ trong quá trình đẳng áp (đv); bằng N·k·T/V tại lúc chọn quá trình",
+    "measuredPressure": "Áp suất đo từ va chạm của các hạt lên thành bình, trung bình trong khoảng 2 s gần nhất (đv); 0 khi chưa chạy. Áp suất lý thuyết là n·0,01·temperature/volume"
+  },
+  "events": {
+    "state-changed": {
+      "kind": "result",
+      "description": "Trạng thái khí sau khi học sinh đổi xong số hạt, nhiệt độ hoặc thể tích (thả thanh trượt hoặc thả pít-tông); trong quá trình đẳng áp đại lượng còn lại đã tự điều chỉnh",
+      "data": {
+        "pressure": "Áp suất lý thuyết p = N·k·T/V (đv, k = 0,01)",
+        "volume": "Thể tích V (đv)",
+        "temperature": "Nhiệt độ tuyệt đối T (K)",
+        "n": "Số hạt khí N"
+      }
+    }
+  }
+}

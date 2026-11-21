@@ -1,0 +1,42 @@
+{
+  "slug": "dinh-luat-coulomb",
+  "version": "1.0.0",
+  "title": "Định luật Cu-lông",
+  "subject": "physics",
+  "grades": [
+    11
+  ],
+  "description": "Hai điện tích điểm đặt trên một đường thẳng trong chân không. Thay đổi dấu, độ lớn của từng điện tích và khoảng cách (kéo điện tích hoặc dùng thanh trượt) để quan sát vectơ lực tác dụng lên mỗi điện tích và độ lớn lực tương tác.",
+  "learningGoals": [
+    "Vận dụng định luật Cu-lông: F = k·|q₁·q₂| / r² với k = 9·10⁹ N·m²/C².",
+    "Nhận ra lực tỉ lệ nghịch với bình phương khoảng cách: khoảng cách tăng gấp đôi thì lực giảm 4 lần.",
+    "Hai điện tích cùng dấu thì đẩy nhau, trái dấu thì hút nhau.",
+    "Hai lực tác dụng lên hai điện tích cùng phương, ngược chiều và có độ lớn bằng nhau."
+  ],
+  "state": {
+    "q1": "Điện tích q₁ ở bên trái (µC, có dấu)",
+    "q2": "Điện tích q₂ ở bên phải (µC, có dấu)",
+    "distance": "Khoảng cách r giữa hai điện tích (cm)"
+  },
+  "events": {
+    "move": {
+      "kind": "action",
+      "description": "Học sinh kéo một điện tích rồi thả",
+      "data": {
+        "distance": "Khoảng cách mới (cm)",
+        "force": "Độ lớn lực (N)"
+      }
+    },
+    "force": {
+      "kind": "result",
+      "description": "Lực tương tác sau khi học sinh đổi xong điện tích hoặc khoảng cách (thả thanh trượt hoặc kéo xong)",
+      "data": {
+        "force": "Độ lớn lực tương tác F (N)",
+        "q1": "Điện tích q₁ (µC)",
+        "q2": "Điện tích q₂ (µC)",
+        "distance": "Khoảng cách r (cm)",
+        "sign": "1 nếu đẩy nhau (cùng dấu), −1 nếu hút nhau (trái dấu), 0 nếu không tương tác"
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "slug": "chuyen-dong-tron-deu",
+  "version": "1.0.0",
+  "title": "Chuyển động tròn đều",
+  "subject": "physics",
+  "grades": [
+    10
+  ],
+  "description": "Một vật buộc vào dây quay đều trên đường tròn. Chọn bán kính và một trong ba đại lượng chu kì, tần số hoặc tốc độ để xem các đại lượng còn lại thay đổi thế nào; quan sát vectơ vận tốc (tiếp tuyến) và vectơ gia tốc hướng tâm (hướng vào tâm). Đặt khối lượng để tính lực hướng tâm, rồi cắt dây để thấy vật bay đi theo phương tiếp tuyến.",
+  "learningGoals": [
+    "Liên hệ giữa các đại lượng: v = ω·r, T = 2π/ω, f = 1/T.",
+    "Vectơ vận tốc luôn tiếp tuyến với quỹ đạo, vuông góc với bán kính; vectơ gia tốc luôn hướng vào tâm, a_ht = v²/r = ω²·r.",
+    "Lực hướng tâm F_ht = m·a_ht = m·v²/r giữ cho vật chuyển động tròn.",
+    "Khi không còn lực hướng tâm (cắt dây), vật chuyển động thẳng đều theo phương tiếp tuyến."
+  ],
+  "state": {
+    "radius": "Bán kính quỹ đạo (m)",
+    "input": "Đại lượng cho trước: \"period\" (chu kì), \"frequency\" (tần số) hoặc \"speed\" (tốc độ)",
+    "period": "Chu kì T (s), dùng khi input = \"period\"",
+    "frequency": "Tần số f (Hz), dùng khi input = \"frequency\"",
+    "speed": "Tốc độ v (m/s), dùng khi input = \"speed\"",
+    "mass": "Khối lượng của vật (kg)",
+    "showVectors": "true nếu hiện vectơ vận tốc và gia tốc hướng tâm",
+    "angle": "Góc quay tính từ trục Ox, ngược chiều kim đồng hồ (rad, tăng dần qua 2π); đứng yên sau khi cắt dây",
+    "time": "Thời gian đã chạy (s)",
+    "cut": "true nếu dây đã bị cắt",
+    "flight": "Thời gian từ lúc cắt dây (s)"
+  },
+  "events": {
+    "revolution": {
+      "kind": "result",
+      "description": "Vật vừa quay xong một vòng",
+      "data": {
+        "count": "Số vòng đã quay từ lúc bắt đầu",
+        "period": "Chu kì (s)",
+        "speed": "Tốc độ (m/s)",
+        "acceleration": "Gia tốc hướng tâm (m/s²)"
+      }
+    },
+    "cut": {
+      "kind": "action",
+      "description": "Học sinh cắt dây",
+      "data": {
+        "angle": "Góc của vật trên đường tròn lúc cắt dây, tính từ trục Ox (rad, 0 đến 2π)",
+        "speed": "Tốc độ của vật lúc cắt dây (m/s)"
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "slug": "lang-kinh-tan-sac",
+  "version": "1.0.0",
+  "title": "Lăng kính và sự tán sắc ánh sáng",
+  "subject": "physics",
+  "grades": [
+    11,
+    12
+  ],
+  "description": "Chiếu một tia sáng đơn sắc hoặc một chùm ánh sáng trắng vào mặt bên của lăng kính thủy tinh crao đặt trong không khí. Đổi góc chiết quang A và góc tới i₁ để đo góc lệch D, tìm vị trí độ lệch cực tiểu và quan sát phản xạ toàn phần ở mặt bên thứ hai. Ánh sáng trắng bị tách thành bảy màu theo bảng chiết suất của thủy tinh crao (đỏ 656 nm: 1,5143 … tím 405 nm: 1,5302); độ tán sắc có thể vẽ phóng đại.",
+  "learningGoals": [
+    "Vận dụng các công thức lăng kính: sin i₁ = n·sin r₁, sin i₂ = n·sin r₂, r₁ + r₂ = A, D = i₁ + i₂ − A.",
+    "Nhận ra góc lệch cực tiểu khi i₁ = i₂ (tia trong lăng kính song song với đáy) và n = sin((Dmin + A)/2)/sin(A/2).",
+    "Giải thích hiện tượng tán sắc: chiết suất của thủy tinh tăng dần từ đỏ đến tím nên tia tím lệch nhiều nhất, tia đỏ lệch ít nhất.",
+    "Xác định khi nào không có tia ló: r₂ lớn hơn góc giới hạn igh = arcsin(1/n) thì tia bị phản xạ toàn phần ở mặt bên thứ hai."
+  ],
+  "state": {
+    "light": "Ánh sáng chiếu tới: \"white\" (ánh sáng trắng, vẽ bảy màu) hoặc \"mono\" (chỉ một màu là color)",
+    "color": "Màu đang đo (và là màu duy nhất khi light = \"mono\"): red, orange, yellow, green, blue, indigo, violet",
+    "apex": "Góc chiết quang A của lăng kính (độ, 20 đến 70)",
+    "incidence": "Góc tới i₁ ở mặt bên thứ nhất (độ, 0 đến 89)",
+    "exaggerate": "true nếu khi chiếu ánh sáng trắng, góc tách giữa các màu được vẽ phóng đại 6 lần (chỉ ảnh hưởng hình vẽ, không ảnh hưởng số đo)"
+  },
+  "events": {
+    "deviation-measured": {
+      "kind": "result",
+      "description": "Kết quả đường đi của màu đang đo sau khi học sinh đổi xong ánh sáng, màu, góc chiết quang hoặc góc tới",
+      "data": {
+        "apex": "Góc chiết quang A (độ)",
+        "incidence": "Góc tới i₁ (độ)",
+        "n": "Chiết suất của lăng kính với màu đang đo",
+        "deviation": "Góc lệch D = i₁ + i₂ − A (độ); không có khóa này khi không có tia ló",
+        "emergence": "Góc ló i₂ (độ); không có khóa này khi không có tia ló",
+        "emerges": "1 nếu có tia ló ra ở mặt bên thứ hai, 0 nếu bị phản xạ toàn phần"
+      }
+    },
+    "min-deviation": {
+      "kind": "goal",
+      "description": "Học sinh đặt được góc tới cho độ lệch cực tiểu của màu đang đo (|i₁ − i₂| không quá 1°); báo một lần cho đến khi rời khỏi vị trí đó",
+      "data": {
+        "apex": "Góc chiết quang A (độ)",
+        "incidence": "Góc tới i₁ (độ)",
+        "deviation": "Góc lệch đo được, xấp xỉ Dmin (độ)",
+        "n": "Chiết suất của lăng kính với màu đang đo"
+      }
+    }
+  }
+}

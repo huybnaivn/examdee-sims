@@ -1,0 +1,60 @@
+{
+  "slug": "chuan-do-acid-base",
+  "version": "1.0.0",
+  "title": "Chuẩn độ acid – base",
+  "subject": "chemistry",
+  "grades": [11],
+  "description": "Chuẩn độ dung dịch acid mạnh HCl (hoặc acid yếu CH₃COOH) trong bình tam giác bằng dung dịch NaOH từ burette. Chọn nồng độ, thể tích acid và nồng độ NaOH, nhỏ từng giọt hoặc từng mL, quan sát đường cong pH theo thể tích NaOH và màu của chất chỉ thị (phenolphthalein, methyl da cam, quỳ tím). Dừng lại đúng điểm tương đương rồi so với tính toán C₁V₁ = C₂V₂. pH được tính chính xác từ cân bằng điện tích ở 25 °C (Kw = 10⁻¹⁴, Kₐ của CH₃COOH = 1,75·10⁻⁵), coi hệ số hoạt độ bằng 1 và thể tích cộng được.",
+  "learningGoals": [
+    "Mô tả cách tiến hành chuẩn độ acid – base bằng burette và chất chỉ thị.",
+    "Tính thể tích tại điểm tương đương từ C₁V₁ = C₂V₂ và so sánh với thể tích đo được.",
+    "Đọc đường cong chuẩn độ: bước nhảy pH quanh điểm tương đương; pH tại điểm tương đương bằng 7 với acid mạnh – base mạnh và lớn hơn 7 với acid yếu – base mạnh.",
+    "Chọn chất chỉ thị có khoảng đổi màu nằm trong bước nhảy pH.",
+    "Nhận ra pH = pKₐ tại nửa điểm tương đương khi chuẩn độ acid yếu."
+  ],
+  "state": {
+    "acid": "Acid trong bình: \"strong\" (HCl) hoặc \"weak\" (CH₃COOH)",
+    "ca": "Nồng độ acid (mol/L), 0,05–0,15",
+    "va": "Thể tích acid trong bình (mL), 10–25",
+    "cb": "Nồng độ NaOH trong burette (mol/L), 0,1–0,2",
+    "indicator": "Chất chỉ thị: \"phenolphthalein\" (đổi màu pH 8,2–10), \"methylOrange\" (methyl da cam, pH 3,1–4,4), \"litmus\" (quỳ tím, pH 6–8)",
+    "showCurve": "true nếu hiện đường chuẩn độ lí thuyết (nét đứt)",
+    "added": "Thể tích NaOH đã nhỏ vào bình (mL), 0–50",
+    "ended": "true khi học sinh đã bấm kết thúc chuẩn độ"
+  },
+  "events": {
+    "add-titrant": {
+      "kind": "action",
+      "description": "Học sinh nhỏ thêm dung dịch NaOH từ burette",
+      "data": {
+        "amount": "Thể tích vừa thêm (mL): 0,05 (1 giọt), 0,5, 1 hoặc 5",
+        "volume": "Tổng thể tích NaOH đã thêm (mL)",
+        "pH": "pH của dung dịch trong bình sau khi thêm"
+      }
+    },
+    "refill": {
+      "kind": "action",
+      "description": "Học sinh làm lại thí nghiệm: bình acid mới, burette nạp đầy",
+      "data": {}
+    },
+    "titration-ended": {
+      "kind": "result",
+      "description": "Học sinh kết thúc chuẩn độ",
+      "data": {
+        "volumeAdded": "Tổng thể tích NaOH đã thêm (mL)",
+        "pH": "pH của dung dịch lúc kết thúc",
+        "equivalenceVolume": "Thể tích NaOH tại điểm tương đương theo C₁V₁ = C₂V₂ (mL)",
+        "error": "Sai số: thể tích đã thêm trừ thể tích tương đương (mL), dương là quá điểm tương đương"
+      }
+    },
+    "end-point-hit": {
+      "kind": "goal",
+      "description": "Học sinh kết thúc chuẩn độ trong khoảng ±0,05 mL (1 giọt) quanh điểm tương đương",
+      "data": {
+        "volumeAdded": "Tổng thể tích NaOH đã thêm (mL)",
+        "equivalenceVolume": "Thể tích NaOH tại điểm tương đương (mL)",
+        "error": "Sai số (mL)"
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "slug": "mach-noi-tiep-song-song",
+  "version": "1.0.0",
+  "title": "Mạch nối tiếp và song song",
+  "subject": "physics",
+  "grades": [
+    9,
+    11
+  ],
+  "description": "Mắc hai hoặc ba điện trở (bóng đèn) nối tiếp hoặc song song vào nguồn điện. Thay đổi hiệu điện thế, từng điện trở và đóng, ngắt các khóa K để so sánh điện trở tương đương, cường độ dòng điện, hiệu điện thế và công suất của từng điện trở; đèn sáng hơn khi công suất lớn hơn.",
+  "learningGoals": [
+    "Đoạn mạch nối tiếp: I = I₁ = I₂ = …, U = U₁ + U₂ + …, Rtđ = R₁ + R₂ + …",
+    "Đoạn mạch song song: U = U₁ = U₂ = …, I = I₁ + I₂ + …, 1/Rtđ = 1/R₁ + 1/R₂ + …",
+    "Giải thích vì sao ngắt một khóa trong mạch nối tiếp làm tất cả các đèn tắt, còn trong mạch song song chỉ nhánh đó tắt.",
+    "So sánh độ sáng (công suất P = U·I) của các đèn trong hai cách mắc."
+  ],
+  "state": {
+    "mode": "Cách mắc: \"series\" (nối tiếp) hoặc \"parallel\" (song song)",
+    "useR3": "true nếu mạch có điện trở thứ ba R₃; false thì chỉ có R₁ và R₂",
+    "voltage": "Hiệu điện thế của nguồn (V)",
+    "r1": "Điện trở R₁ (Ω)",
+    "r2": "Điện trở R₂ (Ω)",
+    "r3": "Điện trở R₃ (Ω), chỉ có tác dụng khi useR3 = true",
+    "k1": "Khóa K₁ (cạnh R₁): true là đóng, false là ngắt",
+    "k2": "Khóa K₂ (cạnh R₂): true là đóng, false là ngắt",
+    "k3": "Khóa K₃ (cạnh R₃): true là đóng, false là ngắt"
+  },
+  "events": {
+    "switch": {
+      "kind": "action",
+      "description": "Học sinh bấm vào một khóa trên hình",
+      "data": {
+        "index": "Số thứ tự khóa (1–3)",
+        "closed": "Trạng thái mới, true = đóng"
+      }
+    },
+    "circuit-solved": {
+      "kind": "result",
+      "description": "Kết quả của mạch sau khi học sinh đổi xong cách mắc, nguồn, một điện trở hoặc một khóa",
+      "data": {
+        "equivalentResistance": "Điện trở tương đương Rtđ (Ω); không có khóa này khi mạch hở",
+        "current": "Cường độ dòng điện mạch chính I (A)",
+        "power": "Công suất toàn mạch P = U·I (W)",
+        "voltage": "Hiệu điện thế nguồn U (V)",
+        "open": "1 nếu mạch hở (không có dòng điện), 0 nếu mạch kín"
+      }
+    }
+  }
+}

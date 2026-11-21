@@ -1,0 +1,37 @@
+{
+  "slug": "giao-thoa-song",
+  "version": "1.0.0",
+  "title": "Giao thoa sóng nước",
+  "subject": "physics",
+  "grades": [
+    11
+  ],
+  "description": "Hai nguồn sóng kết hợp S₁, S₂ trên mặt nước tạo ra hình ảnh giao thoa. Thay đổi khoảng cách hai nguồn, bước sóng và độ lệch pha, quan sát các đường cực đại, cực tiểu, rồi kéo điểm M để đo hiệu đường đi d₂ − d₁ và biên độ dao động tại đó.",
+  "learningGoals": [
+    "Mô tả hiện tượng giao thoa của hai sóng kết hợp trên mặt nước.",
+    "Vận dụng điều kiện cực đại d₂ − d₁ = kλ và cực tiểu d₂ − d₁ = (k + ½)λ với hai nguồn cùng pha.",
+    "Đếm số đường cực đại, cực tiểu trên đoạn nối hai nguồn theo S₁S₂ và λ.",
+    "Nhận ra hai điều kiện đổi chỗ cho nhau khi hai nguồn ngược pha.",
+    "Tính biên độ tại một điểm: A_M = 2A·|cos(π(d₂ − d₁)/λ)| với hai nguồn cùng pha."
+  ],
+  "state": {
+    "separation": "Khoảng cách hai nguồn S₁S₂ (cm); S₁ ở bên trái, S₂ ở bên phải, gốc tọa độ là trung điểm S₁S₂",
+    "wavelength": "Bước sóng λ (cm)",
+    "phaseDeg": "Độ lệch pha của nguồn S₂ so với S₁ (độ): 0 là cùng pha, 180 là ngược pha",
+    "probeX": "Hoành độ điểm M (cm), tính từ trung điểm S₁S₂, dương về phía S₂",
+    "probeY": "Tung độ điểm M (cm), dương về phía trên",
+    "showLines": "true nếu đang vẽ các đường cực đại và cực tiểu"
+  },
+  "events": {
+    "probe-released": {
+      "kind": "result",
+      "description": "Học sinh kéo điểm M trên mặt nước rồi thả; đây là số đo tại vị trí vừa thả",
+      "data": {
+        "pathDifference": "Hiệu đường đi (d₂ − d₁)/λ, tính theo số bước sóng",
+        "relativeAmplitude": "Biên độ dao động tại M chia cho biên độ A của mỗi nguồn (từ 0 đến 2)",
+        "classification": "1 nếu M nằm trên một cực đại, −1 nếu trên một cực tiểu, 0 nếu không phải cả hai (sai lệch cho phép 0,05λ)",
+        "order": "Bậc k của cực đại hoặc cực tiểu đó; 0 khi classification = 0"
+      }
+    }
+  }
+}

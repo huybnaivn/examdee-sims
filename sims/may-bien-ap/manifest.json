@@ -1,0 +1,50 @@
+{
+  "slug": "may-bien-ap",
+  "version": "1.0.0",
+  "title": "Máy biến áp và truyền tải điện năng",
+  "subject": "physics",
+  "grades": [9, 12],
+  "description": "Phần 1: máy biến áp lí tưởng; thay đổi điện áp sơ cấp, số vòng dây hai cuộn và điện trở tải để xem điện áp thứ cấp, cường độ dòng điện và công suất ở hai cuộn. Phần 2: nhà máy truyền đi công suất cố định 500 kW trên đường dây có điện trở R; thay đổi điện áp truyền tải và điện trở đường dây để thấy công suất hao phí và hiệu suất truyền tải thay đổi thế nào.",
+  "learningGoals": [
+    "Vận dụng U₁/U₂ = N₁/N₂ cho máy biến áp; phân biệt máy tăng áp (N₂ > N₁) và máy hạ áp (N₂ < N₁).",
+    "Với máy biến áp lí tưởng: U₁I₁ = U₂I₂, nên điện áp tăng bao nhiêu lần thì cường độ dòng điện giảm bấy nhiêu lần.",
+    "Tính công suất hao phí trên đường dây P_hp = R·P²/U² (cos φ = 1) và hiệu suất H = (P − P_hp)/P.",
+    "Giải thích vì sao phải tăng điện áp trước khi truyền tải: tăng U lên 10 lần thì P_hp giảm 100 lần."
+  ],
+  "state": {
+    "part": "Phần đang xem: \"transformer\" (máy biến áp) hoặc \"line\" (truyền tải điện năng); trên màn hình rộng cả hai phần cùng được vẽ",
+    "u1": "Điện áp hiệu dụng đặt vào cuộn sơ cấp U₁ (V)",
+    "n1": "Số vòng dây cuộn sơ cấp N₁",
+    "n2": "Số vòng dây cuộn thứ cấp N₂",
+    "load": "Điện trở tải mắc vào cuộn thứ cấp (Ω)",
+    "lineU": "Điện áp truyền tải ở đầu đường dây U (kV); công suất truyền đi cố định P = 500 kW",
+    "lineR": "Điện trở tổng của đường dây tải điện R (Ω)"
+  },
+  "events": {
+    "transformer-solved": {
+      "kind": "result",
+      "description": "Kết quả của máy biến áp sau khi học sinh đổi xong U₁, N₁, N₂ hoặc điện trở tải",
+      "data": {
+        "u1": "Điện áp sơ cấp U₁ (V)",
+        "n1": "Số vòng sơ cấp N₁",
+        "n2": "Số vòng thứ cấp N₂",
+        "ratio": "Tỉ số N₁/N₂ (= U₁/U₂); lớn hơn 1 là máy hạ áp, nhỏ hơn 1 là máy tăng áp",
+        "u2": "Điện áp thứ cấp U₂ (V)",
+        "i1": "Cường độ dòng điện sơ cấp I₁ (A)",
+        "i2": "Cường độ dòng điện thứ cấp I₂ (A)",
+        "power": "Công suất P₁ = P₂ (W)"
+      }
+    },
+    "transmission-solved": {
+      "kind": "result",
+      "description": "Kết quả truyền tải sau khi học sinh đổi xong điện áp truyền tải hoặc điện trở đường dây",
+      "data": {
+        "voltage": "Điện áp truyền tải U (kV)",
+        "lineResistance": "Điện trở đường dây R (Ω)",
+        "current": "Cường độ dòng điện trên dây I = P/U (A)",
+        "loss": "Công suất hao phí P_hp = R·P²/U² (W)",
+        "efficiency": "Hiệu suất truyền tải H (%)"
+      }
+    }
+  }
+}

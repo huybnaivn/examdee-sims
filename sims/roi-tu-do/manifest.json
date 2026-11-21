@@ -1,0 +1,50 @@
+{
+  "slug": "roi-tu-do",
+  "version": "1.0.0",
+  "title": "Sự rơi tự do",
+  "subject": "physics",
+  "grades": [
+    10
+  ],
+  "description": "Thả viên bi thép, quả bóng, lông chim hoặc tờ giấy từ một độ cao, trong không khí hoặc trong chân không, trên Trái Đất, Mặt Trăng hoặc nơi có g tự chọn. Có thể thả hai vật cạnh nhau. Quan sát các vết của vật sau những khoảng thời gian bằng nhau và đồ thị v–t, h–t. Mô hình: lực cản không khí tỉ lệ với v² (F = ½ρCAv², ρ = 1,2 kg/m³), bỏ qua lực đẩy Ác-si-mét; tờ giấy rơi nằm ngang.",
+  "learningGoals": [
+    "Trong chân không mọi vật rơi như nhau: t = √(2h/g), v = g·t, không phụ thuộc khối lượng.",
+    "Rơi tự do là chuyển động thẳng nhanh dần đều: quãng đường đi được trong các khoảng thời gian bằng nhau liên tiếp tỉ lệ 1 : 3 : 5 : 7…",
+    "Giải thích vì sao trong không khí lông chim và tờ giấy rơi chậm hơn viên bi: lực cản làm vật nhẹ, diện tích lớn sớm đạt tốc độ giới hạn.",
+    "Đọc đồ thị v–t và h–t của vật rơi; so sánh sự rơi trên Trái Đất và Mặt Trăng."
+  ],
+  "state": {
+    "height": "Độ cao thả vật (m)",
+    "object1": "Vật 1: \"steel\" (viên bi thép), \"ball\" (quả bóng), \"feather\" (lông chim) hoặc \"paper\" (tờ giấy)",
+    "medium": "Môi trường: \"air\" (không khí, có lực cản) hoặc \"vacuum\" (chân không)",
+    "place": "Nơi thả: \"earth\" (g = 9,81 m/s²), \"moon\" (g = 1,62 m/s²) hoặc \"custom\" (dùng gCustom)",
+    "gCustom": "Gia tốc rơi tự do tự chọn (m/s²), chỉ có tác dụng khi place = \"custom\"",
+    "two": "true nếu thả thêm vật 2 bên cạnh vật 1",
+    "object2": "Vật 2 (cùng các giá trị như object1), chỉ có tác dụng khi two = true",
+    "interval": "Khoảng thời gian giữa hai vết liên tiếp của vật (s)",
+    "time": "Thời gian từ lúc thả (s); 0 là vật còn ở độ cao thả, lớn hơn thời gian rơi là vật đã chạm đất"
+  },
+  "events": {
+    "release": {
+      "kind": "action",
+      "description": "Học sinh thả vật (bấm “Thả vật” hoặc “Chạy”)",
+      "data": {
+        "height": "Độ cao thả (m)",
+        "gravity": "Gia tốc rơi tự do (m/s²)",
+        "air": "1 nếu thả trong không khí, 0 nếu trong chân không",
+        "objects": "Số vật được thả (1 hoặc 2)"
+      }
+    },
+    "landed": {
+      "kind": "result",
+      "description": "Một vật vừa chạm đất (mỗi vật một sự kiện)",
+      "data": {
+        "object": "Số thứ tự vật (1 hoặc 2)",
+        "time": "Thời gian rơi (s)",
+        "speed": "Tốc độ khi chạm đất (m/s)",
+        "height": "Độ cao thả (m)",
+        "gravity": "Gia tốc rơi tự do (m/s²)"
+      }
+    }
+  }
+}

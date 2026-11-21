@@ -1,0 +1,49 @@
+{
+  "slug": "giao-thoa-y-ang",
+  "version": "1.0.0",
+  "title": "Giao thoa ánh sáng khe Y-âng",
+  "subject": "physics",
+  "grades": [
+    12
+  ],
+  "description": "Thí nghiệm Y-âng với ánh sáng đơn sắc: chọn bước sóng (màu vân đổi theo), khoảng cách hai khe a và khoảng cách từ hai khe đến màn D. Hệ vân trên màn được vẽ cạnh đồ thị cường độ sáng theo tọa độ x. Kéo vạch đo trên màn để đọc tọa độ x, biết đó là vân sáng bậc mấy hay vân tối thứ mấy, và đếm số vân sáng, vân tối trong vùng quan sát rộng L. Hình vẽ thí nghiệm không theo tỉ lệ; đồ thị bỏ qua sự giảm cường độ do nhiễu xạ ở mỗi khe.",
+  "learningGoals": [
+    "Tính khoảng vân i = λD/a và nhận ra i tỉ lệ thuận với λ và D, tỉ lệ nghịch với a.",
+    "Xác định vị trí vân sáng x = k·i và vân tối x = (k + ½)·i.",
+    "Giải thích vì sao hệ vân của ánh sáng đỏ thưa hơn của ánh sáng tím.",
+    "Đếm số vân sáng, vân tối trong một vùng giao thoa có bề rộng L đối xứng qua vân trung tâm.",
+    "Liên hệ cường độ sáng trên màn với hiệu đường đi: I ∝ cos²(π·a·x/(λD))."
+  ],
+  "state": {
+    "wavelength": "Bước sóng λ của ánh sáng đơn sắc (nm, 380 đến 760)",
+    "slits": "Khoảng cách hai khe a (mm)",
+    "distance": "Khoảng cách từ mặt phẳng hai khe đến màn D (m)",
+    "field": "Bề rộng vùng quan sát L trên màn, đối xứng qua vân sáng trung tâm (mm)",
+    "marker": "Tọa độ x của vạch đo trên màn (mm), tính từ vân sáng trung tâm, dương về phía trên; luôn nằm trong vùng quan sát"
+  },
+  "events": {
+    "marker-read": {
+      "kind": "result",
+      "description": "Học sinh kéo vạch đo trên màn rồi thả (hoặc đổi xong thanh trượt vị trí); đây là số đọc tại vị trí đó",
+      "data": {
+        "x": "Tọa độ vạch đo (mm)",
+        "ratio": "x/i, tọa độ tính theo số khoảng vân",
+        "order": "Bậc k của vân sáng (có dấu, 0 là vân trung tâm), hoặc số thứ tự ±n của vân tối thứ n (x = ±(n − ½)·i); 0 khi nằm giữa hai vân",
+        "kind": "1 vân sáng, −1 vân tối, 0 nằm giữa (cách tâm vân gần nhất quá 0,1·i)"
+      }
+    },
+    "fringe-spacing": {
+      "kind": "result",
+      "description": "Khoảng vân sau khi học sinh đổi xong bước sóng, a, D hoặc bề rộng vùng quan sát",
+      "data": {
+        "wavelength": "Bước sóng λ (nm)",
+        "slits": "Khoảng cách hai khe a (mm)",
+        "distance": "Khoảng cách hai khe đến màn D (m)",
+        "spacing": "Khoảng vân i = λD/a (mm)",
+        "field": "Bề rộng vùng quan sát L (mm)",
+        "bright": "Số vân sáng trong vùng quan sát",
+        "dark": "Số vân tối trong vùng quan sát"
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "can-bang-hoa-hoc",
+  "version": "1.0.0",
+  "title": "Cân bằng hóa học và nguyên lí Lơ Sa-tơ-li-ê",
+  "subject": "chemistry",
+  "grades": [11],
+  "description": "Chọn một phản ứng thuận nghịch của chất khí trong bình kín (N₂ + 3H₂ ⇌ 2NH₃ tỏa nhiệt; N₂O₄ ⇌ 2NO₂ thu nhiệt; H₂ + I₂ ⇌ 2HI), chọn lượng chất ban đầu và quan sát nồng độ tiến tới trạng thái cân bằng trên đồ thị. Sau đó thêm hoặc lấy bớt một chất, thay đổi thể tích bình (áp suất) hoặc nhiệt độ để thấy cân bằng chuyển dịch, so sánh thương số phản ứng Q với hằng số cân bằng Kc. Mô hình động học đơn giản: tốc độ thuận và nghịch theo định luật tác dụng khối lượng với bậc bằng hệ số tỉ lượng, tỉ số hằng số tốc độ bằng Kc; Kc phụ thuộc nhiệt độ theo phương trình van 't Hoff với ΔrH không đổi. Thời gian trên đồ thị là minh họa, chỉ vị trí cân bằng và chiều chuyển dịch mang ý nghĩa định lượng.",
+  "learningGoals": [
+    "Nhận biết trạng thái cân bằng hóa học: tốc độ phản ứng thuận bằng tốc độ phản ứng nghịch, nồng độ các chất không đổi.",
+    "Viết biểu thức hằng số cân bằng Kc và kiểm chứng tại cân bằng Q = Kc.",
+    "Vận dụng nguyên lí Lơ Sa-tơ-li-ê: tăng nồng độ chất phản ứng thì cân bằng chuyển dịch theo chiều thuận, tăng nồng độ sản phẩm thì theo chiều nghịch.",
+    "Tăng áp suất (nén bình) làm cân bằng chuyển dịch theo chiều làm giảm số mol khí; không ảnh hưởng khi số mol khí hai vế bằng nhau.",
+    "Tăng nhiệt độ làm cân bằng chuyển dịch theo chiều thu nhiệt: Kc của phản ứng tỏa nhiệt giảm, của phản ứng thu nhiệt tăng."
+  ],
+  "state": {
+    "reaction": "Phản ứng đang chọn: \"nh3\" (N₂ + 3H₂ ⇌ 2NH₃, ΔrH = −92 kJ), \"n2o4\" (N₂O₄ ⇌ 2NO₂, ΔrH = +58 kJ), \"hi\" (H₂ + I₂ ⇌ 2HI, ΔrH = −9,4 kJ)",
+    "init1": "Số mol chất thứ nhất trong phương trình lúc bắt đầu (mol), 0–6",
+    "init2": "Số mol chất thứ hai lúc bắt đầu (mol), 0–6",
+    "init3": "Số mol chất thứ ba lúc bắt đầu (mol), 0–6; không dùng với N₂O₄ ⇌ 2NO₂",
+    "volume": "Thể tích bình (L), 0,5–2",
+    "dT": "Độ lệch nhiệt độ so với nhiệt độ giữa của phản ứng (K), −50 đến 50; nhiệt độ giữa là 773 K cho NH₃, 348 K cho N₂O₄, 703 K cho HI",
+    "n1": "Số mol hiện tại của chất thứ nhất trong phương trình (mol)",
+    "n2": "Số mol hiện tại của chất thứ hai (mol)",
+    "n3": "Số mol hiện tại của chất thứ ba (mol); 0 với N₂O₄ ⇌ 2NO₂",
+    "time": "Thời gian mô phỏng từ lúc bắt đầu (s, thang minh họa)",
+    "xi": "Lượng phản ứng ròng từ lần tác động gần nhất (mol, dương là theo chiều thuận)",
+    "atEq": "true khi hệ đã đạt cân bằng sau lần tác động gần nhất",
+    "shift": "Chiều chuyển dịch của lần cân bằng gần nhất: 1 chiều thuận, −1 chiều nghịch, 0 không chuyển dịch",
+    "speed": "Tốc độ phát mô phỏng: 1 hoặc 4 lần"
+  },
+  "events": {
+    "disturbance": {
+      "kind": "action",
+      "description": "Học sinh tác động vào hệ: thêm hoặc lấy bớt một chất, đổi thể tích bình hoặc đổi nhiệt độ",
+      "data": {
+        "change": "Loại tác động: \"add\" (thêm chất), \"remove\" (lấy bớt chất), \"volume\" (đổi thể tích), \"temperature\" (đổi nhiệt độ)",
+        "species": "Chỉ với add/remove: thứ tự chất trong phương trình (1, 2, 3)",
+        "amount": "Chỉ với add/remove: số mol đã thêm (dương) hoặc lấy bớt (âm)",
+        "volume": "Thể tích bình sau tác động (L)",
+        "temperature": "Nhiệt độ sau tác động (K)",
+        "q": "Thương số phản ứng Q ngay sau tác động",
+        "kc": "Hằng số cân bằng Kc ở nhiệt độ sau tác động"
+      }
+    },
+    "equilibrium-reached": {
+      "kind": "result",
+      "description": "Hệ vừa đạt trạng thái cân bằng mới (lúc đầu hoặc sau một tác động)",
+      "data": {
+        "c1": "Nồng độ chất thứ nhất trong phương trình tại cân bằng (mol/L)",
+        "c2": "Nồng độ chất thứ hai (mol/L)",
+        "c3": "Nồng độ chất thứ ba (mol/L); không có với N₂O₄ ⇌ 2NO₂",
+        "kc": "Hằng số cân bằng Kc ở nhiệt độ hiện tại (đơn vị theo biểu thức Kc)",
+        "q": "Thương số phản ứng Q tại thời điểm đạt cân bằng (bằng Kc trong sai số 0,1 %); không có khi không chất nào phản ứng được",
+        "shift": "Chiều cân bằng đã chuyển dịch kể từ tác động gần nhất: 1 chiều thuận, −1 chiều nghịch, 0 không chuyển dịch",
+        "temperature": "Nhiệt độ (K)",
+        "volume": "Thể tích bình (L)",
+        "time": "Thời gian mô phỏng (s, thang minh họa)"
+      }
+    }
+  }
+}

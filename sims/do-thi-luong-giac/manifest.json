@@ -1,0 +1,36 @@
+{
+  "slug": "do-thi-luong-giac",
+  "version": "1.0.0",
+  "title": "Đồ thị hàm số lượng giác",
+  "subject": "math",
+  "grades": [
+    11
+  ],
+  "description": "Vẽ đồ thị y = a·sin(bx + c) + d (hoặc cos, tan) trên trục Ox chia theo bội của π. Thay đổi a, b, c, d để thấy biên độ, chu kì, độ dịch ngang, độ dịch dọc và tập giá trị thay đổi thế nào so với đồ thị hàm số gốc y = sin x, y = cos x hoặc y = tan x.",
+  "learningGoals": [
+    "Nhận ra |a| là biên độ và tập giá trị của y = a·sin(bx + c) + d là [d − |a|; d + |a|].",
+    "Tính chu kì T = 2π/|b| của hàm sin, cos và T = π/|b| của hàm tan.",
+    "Giải thích đồ thị dịch theo phương ngang một đoạn −c/b và theo phương dọc một đoạn d so với đồ thị y = a·sin bx.",
+    "Biết khi a = 0 hoặc b = 0 hàm số trở thành hàm hằng; hàm tan có các đường tiệm cận đứng và không có biên độ."
+  ],
+  "state": {
+    "fn": "Hàm số gốc: \"sin\", \"cos\" hoặc \"tan\"",
+    "a": "Hệ số a (−3 đến 3)",
+    "b": "Hệ số b (−3 đến 3); b = 0 thì hàm số là hàm hằng",
+    "c": "Hệ số c tính theo đơn vị π/12, số nguyên từ −12 đến 12 (c thực tế = giá trị × π/12 rad; ví dụ 4 nghĩa là π/3)",
+    "d": "Hệ số d (−2 đến 2)",
+    "showParent": "true nếu vẽ thêm đồ thị hàm số gốc y = sin x, cos x hoặc tan x bằng nét đứt"
+  },
+  "events": {
+    "curve-settled": {
+      "kind": "result",
+      "description": "Học sinh vừa điều chỉnh xong hàm số (thả thanh trượt hoặc chọn hàm số); các đặc trưng của đồ thị mới",
+      "data": {
+        "amplitude": "Biên độ |a|; 0 nếu là hàm tan (không có biên độ) hoặc hàm hằng",
+        "period": "Chu kì (rad): 2π/|b| với sin, cos; π/|b| với tan; 0 nếu là hàm hằng",
+        "phaseShift": "Độ dịch ngang −c/b (rad, âm là sang trái); 0 nếu b = 0",
+        "verticalShift": "Độ dịch dọc d"
+      }
+    }
+  }
+}

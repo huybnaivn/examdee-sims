@@ -1,0 +1,63 @@
+{
+  "slug": "thong-ke-mo-ta",
+  "version": "1.0.0",
+  "title": "Số trung bình, trung vị và mốt",
+  "subject": "math",
+  "grades": [
+    10
+  ],
+  "description": "Một mẫu số liệu gồm tối đa 20 điểm trên trục số từ 0 đến 20. Thêm, kéo hoặc xóa điểm để thấy số trung bình (điểm cân bằng của trục), trung vị, mốt, khoảng biến thiên, các tứ phân vị (biểu đồ hộp) và độ lệch chuẩn thay đổi. Mẫu có giá trị bất thường cho thấy số trung bình bị kéo lệch nhiều còn trung vị gần như đứng yên. Quy ước: Q₁, Q₃ là trung vị của nửa dưới và nửa trên (bỏ giá trị chính giữa khi n lẻ); độ lệch chuẩn chia cho n; mẫu mà mọi giá trị có tần số bằng nhau được coi là không có mốt; hai râu của biểu đồ hộp kéo dài đến giá trị nhỏ nhất và lớn nhất.",
+  "learningGoals": [
+    "Tính số trung bình, trung vị (n lẻ và n chẵn) và mốt của một mẫu số liệu.",
+    "Hiểu số trung bình là điểm cân bằng của mẫu và nhạy với giá trị bất thường, còn trung vị thì không.",
+    "Tìm các tứ phân vị Q₁, Q₂, Q₃ và đọc biểu đồ hộp.",
+    "Dùng khoảng biến thiên và độ lệch chuẩn để mô tả mức độ phân tán của số liệu."
+  ],
+  "state": {
+    "points": "Mảng các giá trị của mẫu số liệu: số nguyên từ 0 đến 20, tối đa 20 phần tử, theo thứ tự học sinh thêm vào",
+    "preset": "Mẫu có sẵn đang dùng: \"outlier\" (có giá trị bất thường), \"plain\" (không có), \"bimodal\" (hai mốt), \"nomode\" (không có mốt) hoặc \"custom\" (học sinh đã tự sửa)",
+    "newValue": "Giá trị (0 đến 20) dùng cho hai nút thêm điểm và xóa điểm",
+    "showBox": "true nếu vẽ biểu đồ hộp dưới trục số"
+  },
+  "events": {
+    "point-added": {
+      "kind": "action",
+      "description": "Học sinh thêm một điểm (bấm trên trục số hoặc bấm nút)",
+      "data": {
+        "value": "Giá trị của điểm vừa thêm"
+      }
+    },
+    "point-moved": {
+      "kind": "action",
+      "description": "Học sinh kéo một điểm sang giá trị khác rồi thả",
+      "data": {
+        "from": "Giá trị cũ",
+        "to": "Giá trị mới"
+      }
+    },
+    "point-removed": {
+      "kind": "action",
+      "description": "Học sinh xóa một điểm (kéo xuống dưới trục số hoặc bấm nút)",
+      "data": {
+        "value": "Giá trị của điểm vừa xóa"
+      }
+    },
+    "points-cleared": {
+      "kind": "action",
+      "description": "Học sinh bấm nút xóa tất cả các điểm",
+      "data": {
+        "count": "Số điểm đã bị xóa"
+      }
+    },
+    "stats-updated": {
+      "kind": "result",
+      "description": "Các số đặc trưng sau mỗi lần mẫu số liệu thay đổi (thêm, kéo, xóa điểm hoặc chọn mẫu có sẵn)",
+      "data": {
+        "count": "Số điểm n của mẫu",
+        "mean": "Số trung bình (không có khi count = 0)",
+        "median": "Trung vị (không có khi count = 0)",
+        "sd": "Độ lệch chuẩn, chia cho n (không có khi count = 0)"
+      }
+    }
+  }
+}

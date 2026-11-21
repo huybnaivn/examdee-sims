@@ -1,0 +1,44 @@
+{
+  "slug": "am-thanh",
+  "version": "1.0.0",
+  "title": "Sóng âm: độ cao và độ to",
+  "subject": "physics",
+  "grades": [
+    7,
+    11
+  ],
+  "description": "Một loa phát ra âm có tần số và biên độ điều chỉnh được, truyền trong không khí, nước hoặc thép. Quan sát các phần tử môi trường dao động dọc theo phương truyền sóng tạo thành các chỗ nén, chỗ dãn, đồ thị áp suất theo vị trí, bước sóng λ = v/f, cường độ âm và mức cường độ âm tính bằng dB. Phân loại hạ âm, âm nghe được và siêu âm. Có thể bấm nút để nghe âm thật qua loa máy tính (không tự phát).",
+  "learningGoals": [
+    "Nhận biết sóng âm là sóng dọc: các phần tử môi trường dao động quanh vị trí cân bằng theo phương truyền sóng, tạo thành chỗ nén và chỗ dãn.",
+    "Liên hệ độ cao của âm với tần số và độ to của âm với biên độ (cường độ âm).",
+    "Tính bước sóng λ = v/f và thấy tốc độ truyền âm khác nhau trong không khí, nước, thép.",
+    "Tính mức cường độ âm L = 10·lg(I/I₀) dB với I₀ = 10⁻¹² W/m²; cường độ âm tăng gấp đôi thì L tăng khoảng 3 dB, tăng 10 lần thì L tăng 10 dB.",
+    "Phân loại hạ âm (f < 16 Hz), âm nghe được (16 Hz đến 20 000 Hz) và siêu âm (f > 20 000 Hz)."
+  ],
+  "state": {
+    "logFrequency": "lg của tần số, lg(f/1 Hz), từ 0,5 đến 5; tần số f = 10^logFrequency làm tròn đến 2 chữ số có nghĩa (3,2 Hz đến 100 000 Hz)",
+    "amplitude": "Biên độ dao động A của nguồn, đơn vị tương đối từ 0,1 đến 10; cường độ âm tại chỗ nghe I = 10⁻⁶·A² W/m²",
+    "medium": "Môi trường truyền âm: air (không khí, v = 340 m/s), water (nước, v = 1500 m/s) hoặc steel (thép, v = 6000 m/s)"
+  },
+  "events": {
+    "sound-set": {
+      "kind": "result",
+      "description": "Học sinh vừa đặt xong tần số, biên độ hoặc môi trường; đây là đặc trưng của âm lúc đó",
+      "data": {
+        "frequency": "Tần số f (Hz)",
+        "wavelength": "Bước sóng λ = v/f (m)",
+        "level": "Mức cường độ âm L (dB)",
+        "soundClass": "Loại âm: 0 là hạ âm (f < 16 Hz), 1 là âm nghe được, 2 là siêu âm (f > 20 000 Hz)",
+        "speed": "Tốc độ truyền âm trong môi trường (m/s)"
+      }
+    },
+    "sound-on": {
+      "kind": "action",
+      "description": "Học sinh bấm nút phát âm thật qua loa máy tính (chỉ phát khi là âm nghe được)"
+    },
+    "sound-off": {
+      "kind": "action",
+      "description": "Học sinh tắt âm thanh"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "ti-so-phan-tram",
+  "version": "1.0.0",
+  "title": "Tỉ số phần trăm",
+  "subject": "math",
+  "grades": [
+    5,
+    6
+  ],
+  "description": "Lưới 100 ô vuông và sơ đồ đoạn thẳng cho ba dạng toán cơ bản về tỉ số phần trăm: tìm giá trị phần trăm của một số, tìm một số biết giá trị phần trăm của nó, tìm tỉ số phần trăm của hai số. Có thêm dạng tăng, giảm theo phần trăm. Mỗi tỉ số phần trăm được viết kèm phân số tối giản và số thập phân bằng nó.",
+  "learningGoals": [
+    "Hiểu 1% là một phần trăm của số được coi là 100%.",
+    "Tìm p% của số a: a × p : 100.",
+    "Tìm một số biết p% của nó bằng b: b × 100 : p.",
+    "Tìm tỉ số phần trăm của hai số b và a: b : a × 100%.",
+    "Viết một tỉ số phần trăm dưới dạng phân số tối giản và số thập phân.",
+    "Nhận ra tăng p% rồi giảm p% không trở về số ban đầu, vì hai lần lấy phần trăm của hai số khác nhau."
+  ],
+  "state": {
+    "type": "Dạng bài: \"part\" (tìm giá trị phần trăm của một số), \"whole\" (tìm một số biết giá trị phần trăm của nó), \"percent\" (tìm tỉ số phần trăm của hai số), \"change\" (tăng, giảm theo phần trăm)",
+    "whole": "Số a được coi là 100% (0 đến 200); không dùng khi type = \"whole\" vì đó là số cần tìm",
+    "percent": "Số phần trăm p (0 đến 100); không dùng khi type = \"percent\" vì đó là số cần tìm",
+    "part": "Giá trị phần trăm b (0 đến 200); chỉ dùng khi type = \"whole\" hoặc \"percent\"",
+    "change": "Kiểu thay đổi khi type = \"change\": \"up\" (tăng), \"down\" (giảm), \"updown\" (tăng rồi giảm cùng số phần trăm)"
+  },
+  "events": {
+    "percent-solved": {
+      "kind": "result",
+      "description": "Học sinh vừa chỉnh xong một bài trong ba dạng cơ bản và xem đại lượng thứ ba (không gửi khi phép tính phải chia cho 0)",
+      "data": {
+        "whole": "Số được coi là 100%",
+        "percent": "Tỉ số phần trăm (%)",
+        "part": "Giá trị phần trăm"
+      }
+    },
+    "percent-change": {
+      "kind": "result",
+      "description": "Học sinh vừa chỉnh xong một bài tăng, giảm theo phần trăm",
+      "data": {
+        "start": "Số ban đầu",
+        "percent": "Số phần trăm tăng, giảm (%)",
+        "final": "Số cuối cùng sau khi tăng, giảm",
+        "direction": "1 là tăng, −1 là giảm, 0 là tăng rồi giảm"
+      }
+    }
+  }
+}

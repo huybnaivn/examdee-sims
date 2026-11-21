@@ -1,0 +1,43 @@
+{
+  "slug": "xac-suat-co-dien",
+  "version": "1.0.0",
+  "title": "Xác suất của biến cố",
+  "subject": "math",
+  "grades": [10],
+  "description": "Thực hiện các phép thử ngẫu nhiên: tung một đồng xu, gieo một hoặc hai con xúc xắc, rút một thẻ từ hộp có số thẻ đỏ, xanh, vàng tùy chọn (rút xong trả thẻ lại hộp). Chọn một biến cố A (ví dụ \"tổng số chấm bằng 7\"), thực hiện 1, 10, 100 hoặc 1000 lần và so sánh tần suất của A với xác suất P(A) = n(A)/n(Ω) trên hai biểu đồ: tần suất từng kết quả cạnh xác suất lí thuyết, và tần suất của A theo số lần thử.",
+  "learningGoals": [
+    "Tính xác suất theo định nghĩa cổ điển P(A) = n(A)/n(Ω) bằng cách đếm các kết quả đồng khả năng.",
+    "Nhận ra trong phép gieo hai con xúc xắc, tổng 7 có nhiều kết quả thuận lợi nhất (6 trong 36).",
+    "Dùng quy tắc biến cố đối P(Ā) = 1 − P(A).",
+    "Nhận ra biến cố không thể có xác suất 0, biến cố chắc chắn có xác suất 1.",
+    "Thấy tần suất của A dao động mạnh khi số lần thử ít và ổn định gần P(A) khi số lần thử lớn."
+  ],
+  "state": {
+    "experiment": "Phép thử: \"coin\" (tung một đồng xu), \"die\" (gieo một con xúc xắc), \"dice\" (gieo hai con xúc xắc), \"cards\" (rút một thẻ từ hộp)",
+    "coinEvent": "Biến cố A khi tung đồng xu: \"heads\" (mặt ngửa), \"tails\" (mặt sấp)",
+    "dieEvent": "Biến cố A khi gieo một xúc xắc: \"even\" (số chấm chẵn), \"prime\" (số nguyên tố), \"div3\" (chia hết cho 3), \"six\" (mặt 6 chấm), \"le6\" (không vượt quá 6, chắc chắn), \"gt6\" (lớn hơn 6, không thể)",
+    "diceEvent": "Biến cố A khi gieo hai xúc xắc: \"sum7\", \"not7\" (tổng khác 7), \"sum2\", \"ge10\" (tổng ≥ 10), \"even\" (tổng chẵn), \"sum13\" (không thể)",
+    "cardEvent": "Biến cố A khi rút thẻ: \"red\", \"blue\", \"yellow\" (rút được thẻ màu đó), \"notRed\" (không phải màu đỏ)",
+    "red": "Số thẻ đỏ trong hộp (0 đến 10)",
+    "blue": "Số thẻ xanh trong hộp (0 đến 10)",
+    "yellow": "Số thẻ vàng trong hộp (0 đến 10); hộp luôn có ít nhất một thẻ",
+    "seed": "Trạng thái của bộ sinh số ngẫu nhiên (số nguyên không âm 32 bit); cùng seed thì các lần thử tiếp theo giống hệt nhau",
+    "counts": "Mảng số nguyên: số lần thử cho mỗi kết quả trên biểu đồ (S, N; mặt 1 đến 6; tổng 2 đến 12; đỏ, xanh, vàng)",
+    "history": "Mảng các cặp [N, m]: sau N lần thử biến cố A đã xảy ra m lần (để vẽ đường tần suất)",
+    "last1": "Kết quả của lần thử cuối (chỉ số mặt hoặc màu, với hai xúc xắc là mặt của con thứ nhất trừ 1); −1 nếu chưa thử",
+    "last2": "Mặt của con xúc xắc thứ hai trừ 1 ở lần thử cuối; −1 nếu không có"
+  },
+  "events": {
+    "trials-run": {
+      "kind": "result",
+      "description": "Học sinh vừa thực hiện xong một đợt phép thử; số liệu tính trên toàn bộ các lần thử từ lần xóa gần nhất",
+      "data": {
+        "batch": "Số lần thử của đợt vừa xong (1, 10, 100 hoặc 1000)",
+        "trials": "Tổng số lần thử N",
+        "hits": "Số lần biến cố A xảy ra",
+        "frequency": "Tần suất của A: hits / trials (từ 0 đến 1)",
+        "probability": "Xác suất lí thuyết P(A) = n(A)/n(Ω) (từ 0 đến 1)"
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "slug": "thau-kinh",
+  "version": "1.0.0",
+  "title": "Thấu kính mỏng",
+  "subject": "physics",
+  "grades": [
+    9,
+    11
+  ],
+  "description": "Đặt một vật sáng AB trước thấu kính hội tụ hoặc phân kì. Thay đổi tiêu cự, khoảng cách và chiều cao của vật để dựng ảnh bằng ba tia đặc biệt, rồi đọc vị trí, tính chất và số phóng đại của ảnh.",
+  "learningGoals": [
+    "Dựng ảnh của một vật qua thấu kính mỏng bằng ba tia đặc biệt.",
+    "Kiểm chứng công thức thấu kính 1/f = 1/d + 1/d′ và số phóng đại k = −d′/d.",
+    "Phân biệt ảnh thật và ảnh ảo, cùng chiều và ngược chiều, lớn hơn và nhỏ hơn vật.",
+    "Nhận ra thấu kính phân kì luôn cho ảnh ảo, cùng chiều, nhỏ hơn vật; thấu kính hội tụ cho ảnh ảo khi vật nằm trong khoảng tiêu cự."
+  ],
+  "state": {
+    "lensType": "Loại thấu kính: converging (hội tụ, f > 0) hoặc diverging (phân kì, f < 0)",
+    "focal": "Độ lớn tiêu cự |f| (cm, 5 đến 25)",
+    "distance": "Khoảng cách d từ vật đến thấu kính (cm, 2 đến 60)",
+    "height": "Chiều cao vật AB (cm, 1 đến 10)"
+  },
+  "events": {
+    "move-object": {
+      "kind": "action",
+      "description": "Học sinh kéo vật rồi thả; data.distance là khoảng cách vật d (cm), data.height là chiều cao vật (cm)"
+    },
+    "image": {
+      "kind": "result",
+      "description": "Ảnh thu được sau khi học sinh đổi xong loại thấu kính, tiêu cự hoặc vật (thả thanh trượt hoặc kéo xong)",
+      "data": {
+        "objectDistance": "Khoảng cách vật d (cm)",
+        "focalLength": "Tiêu cự f có dấu (cm; âm với thấu kính phân kì)",
+        "imageDistance": "Khoảng cách ảnh d′ (cm; dương: ảnh thật, âm: ảnh ảo); không có khóa này khi ảnh ở vô cực",
+        "magnification": "Số phóng đại k (dương: cùng chiều, âm: ngược chiều); không có khóa này khi ảnh ở vô cực",
+        "real": "1 nếu ảnh thật, 0 nếu ảnh ảo hoặc ở vô cực",
+        "atInfinity": "1 nếu vật ở tiêu điểm (ảnh ở vô cực), 0 nếu không"
+      }
+    }
+  }
+}

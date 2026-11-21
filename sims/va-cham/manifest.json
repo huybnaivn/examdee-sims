@@ -1,0 +1,48 @@
+{
+  "slug": "va-cham",
+  "version": "1.0.0",
+  "title": "Va chạm và bảo toàn động lượng",
+  "subject": "physics",
+  "grades": [
+    10
+  ],
+  "description": "Hai xe chạy trên đường ray thẳng không ma sát rồi va chạm trực diện. Đặt khối lượng, vận tốc ban đầu của từng xe (chiều dương hướng sang phải) và loại va chạm bằng hệ số hồi phục e, từ va chạm mềm (e = 0) đến va chạm đàn hồi (e = 1). So sánh động lượng và động năng của từng xe và của cả hệ trước và sau va chạm bằng biểu đồ cột và số đo.",
+  "learningGoals": [
+    "Tổng động lượng của hệ hai xe được bảo toàn trong mọi loại va chạm: m₁v₁ + m₂v₂ = m₁v₁′ + m₂v₂′.",
+    "Động năng chỉ được bảo toàn trong va chạm đàn hồi; va chạm mềm làm mất nhiều động năng nhất.",
+    "Sau va chạm mềm hai xe dính vào nhau và chuyển động với vận tốc v = (m₁v₁ + m₂v₂)/(m₁ + m₂).",
+    "Dự đoán kết quả các trường hợp đặc biệt: hai xe cùng khối lượng va chạm đàn hồi thì đổi vận tốc cho nhau; xe nặng va vào xe nhẹ đứng yên."
+  ],
+  "state": {
+    "m1": "Khối lượng xe 1, xe bên trái (kg)",
+    "v1": "Vận tốc ban đầu của xe 1 (m/s, dương là sang phải)",
+    "m2": "Khối lượng xe 2, xe bên phải (kg)",
+    "v2": "Vận tốc ban đầu của xe 2 (m/s, dương là sang phải)",
+    "restitution": "Hệ số hồi phục e: 1 là va chạm đàn hồi, 0 là va chạm mềm",
+    "time": "Thời gian từ lúc hai xe bắt đầu chạy (s); 0 là hai xe còn ở vị trí ban đầu"
+  },
+  "events": {
+    "run-start": {
+      "kind": "action",
+      "description": "Học sinh cho hai xe bắt đầu chạy (bấm “Bắt đầu chạy” hoặc “Chạy”)",
+      "data": {
+        "m1": "Khối lượng xe 1 (kg)",
+        "v1": "Vận tốc ban đầu của xe 1 (m/s)",
+        "m2": "Khối lượng xe 2 (kg)",
+        "v2": "Vận tốc ban đầu của xe 2 (m/s)",
+        "restitution": "Hệ số hồi phục e (0 đến 1)"
+      }
+    },
+    "collision": {
+      "kind": "result",
+      "description": "Hai xe vừa va chạm",
+      "data": {
+        "v1After": "Vận tốc xe 1 sau va chạm (m/s)",
+        "v2After": "Vận tốc xe 2 sau va chạm (m/s)",
+        "momentum": "Tổng động lượng của hệ (kg·m/s), trước và sau như nhau",
+        "energyLost": "Động năng mất đi trong va chạm (J)",
+        "restitution": "Hệ số hồi phục e (0 đến 1)"
+      }
+    }
+  }
+}

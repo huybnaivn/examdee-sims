@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Host demo</title>
+    <style>
+      body { margin: 0; font: 14px system-ui, sans-serif; display: grid; grid-template-columns: 1fr 360px; height: 100vh; }
+      iframe { border: 0; width: 100%; height: 100%; }
+      aside { border-left: 1px solid #ddd; padding: 12px; display: flex; flex-direction: column; gap: 8px; min-height: 0; }
+      pre { flex: 1; overflow: auto; background: #f4f6fa; margin: 0; padding: 8px; font-size: 11px; white-space: pre-wrap; }
+    </style>
+  </head>
+  <body>
+    <iframe id="frame" title="sim" sandbox="allow-scripts allow-same-origin" allow="fullscreen"></iframe>
+    <aside>
+      <div>
+        <button id="get">getState</button>
+        <button id="restore">setState (bản đã lưu)</button>
+        <button id="reset">reset</button>
+      </div>
+      <pre id="log"></pre>
+    </aside>
+    <script>
+      // Reference host. Usage: host-demo.html?sim=con-lac[&state={"length":2}][&readOnly=1]
+      // In production the sim is served from its own origin; here it shares this one.
+      const q = new URLSearchParams(location.search);
+      const frame = document.getElementById("frame");
+      const simUrl = new URL(`sims/${q.get("sim") || "con-lac"}/index.html`, location.href);
+      frame.src = simUrl;
+      let saved = null;
+      const log = (dir, m) => (document.getElementById("log").textContent += `${dir} ${JSON.stringify(m)}\n`);
+      const send = m => {
+        const msg = { source: "examdee-host", v: 1, ...m };
+        log("->", msg);
+        frame.contentWindow.postMessage(msg, simUrl.origin);
+      };
+      window.addEventListener("message", e => {
+        // Trust only our own iframe, on the origin we loaded it from.
+        if (e.source !== frame.contentWindow || e.origin !== simUrl.origin) return;
+        const m = e.data;
+        if (!m || m.source !== "examdee-sim") return;
+        log("<-", m);
+        if (m.type === "ready") {
+          send({ type: "init", config: { locale: "vi", state: q.has("state") ? JSON.parse(q.get("state")) : undefined, readOnly: q.has("readOnly") } });
+        }
+        if (m.type === "state") saved = m.state; // a real host would PUT this to the BE
+        if (m.type === "state" && q.has("probe") && !probed) probe();
+      });
+      // ?probe=1 (used by scripts/shot.mjs): operate one control and press reset, so the log
+      // shows whether the sim really reports learner actions. Works only same-origin, i.e. in dev.
+      let probed = false;
+      const probe = () => {
+        probed = true;
+        const doc = frame.contentDocument;
+        const range = doc.querySelector(".controls input[type=range]:not(:disabled)");
+        if (range) {
+          range.value = range.value === range.max ? range.min : range.max;
+          range.dispatchEvent(new Event("input", { bubbles: true }));
+          range.dispatchEvent(new Event("change", { bubbles: true }));
+        } else {
+          doc.querySelector(".controls input[type=checkbox]:not(:disabled), .controls button:not(:disabled)")?.click();
+        }
+        [...doc.querySelectorAll(".transport button")].at(-1).click();
+      };
+      document.getElementById("get").onclick = () => send({ type: "getState", requestId: crypto.randomUUID() });
+      document.getElementById("restore").onclick = () => saved && send({ type: "setState", state: saved });
+      document.getElementById("reset").onclick = () => send({ type: "reset" });
+    </script>
+  </body>
+</html>

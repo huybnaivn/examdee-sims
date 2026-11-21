@@ -1,0 +1,55 @@
+{
+  "slug": "duong-tron-toa-do",
+  "version": "1.0.0",
+  "title": "Phương trình đường tròn",
+  "subject": "math",
+  "grades": [10],
+  "description": "Một đường tròn (C) trên mặt phẳng tọa độ Oxy: kéo tâm I(a; b) và điểm M trên đường tròn, hoặc đặt a, b, R bằng thanh trượt, để xem phương trình (x − a)² + (y − b)² = R² và dạng khai triển x² + y² − 2ax − 2by + c = 0. Chế độ dạng khai triển cho chọn a, b, c và kiểm tra điều kiện a² + b² − c > 0. Chế độ có đường thẳng Δ: Ax + By + C = 0 cho thấy khoảng cách d(I, Δ), vị trí tương đối (cắt, tiếp xúc, không cắt) và tọa độ giao điểm.",
+  "learningGoals": [
+    "Viết phương trình đường tròn khi biết tâm và bán kính, và chuyển qua lại giữa hai dạng (x − a)² + (y − b)² = R² và x² + y² − 2ax − 2by + c = 0 với c = a² + b² − R².",
+    "Nhận biết phương trình x² + y² − 2ax − 2by + c = 0 là phương trình đường tròn khi và chỉ khi a² + b² − c > 0.",
+    "Tính khoảng cách từ tâm đến đường thẳng d(I, Δ) = |Aa + Bb + C|/√(A² + B²).",
+    "Xét vị trí tương đối của đường thẳng và đường tròn bằng cách so sánh d với R, và tìm giao điểm."
+  ],
+  "state": {
+    "mode": "Chế độ: \"circle\" (nhập tâm và bán kính), \"expanded\" (nhập a, b, c của dạng khai triển), \"line\" (thêm đường thẳng Δ)",
+    "a": "Hoành độ tâm I (từ −5 đến 5)",
+    "b": "Tung độ tâm I (từ −5 đến 5)",
+    "R": "Bán kính R (từ 0,5 đến 6); dùng ở chế độ \"circle\" và \"line\", ở chế độ \"expanded\" là bán kính lần gần nhất phương trình là đường tròn",
+    "c": "Hệ số tự do c của dạng khai triển (từ −40 đến 50); là dữ liệu nhập ở chế độ \"expanded\", ở chế độ khác bằng a² + b² − R²",
+    "phi": "Góc (rad) xác định vị trí điểm M trên đường tròn, dùng để kéo bán kính",
+    "A": "Hệ số của x trong Δ: Ax + By + C = 0 (số nguyên từ −5 đến 5)",
+    "B": "Hệ số của y trong Δ (số nguyên từ −5 đến 5); A và B không đồng thời bằng 0",
+    "C": "Hệ số tự do C của Δ (từ −30 đến 30); khi kéo Δ đến gần vị trí tiếp xúc, C được đặt đúng giá trị tiếp xúc"
+  },
+  "events": {
+    "circle-set": {
+      "kind": "result",
+      "description": "Học sinh đặt xong đường tròn (thả tâm I hoặc điểm M, hoặc thả thanh trượt a, b, R, c); không gửi khi phương trình khai triển không phải đường tròn",
+      "data": {
+        "a": "Hoành độ tâm I",
+        "b": "Tung độ tâm I",
+        "R": "Bán kính R",
+        "c": "Hệ số c = a² + b² − R² của dạng khai triển"
+      }
+    },
+    "line-checked": {
+      "kind": "result",
+      "description": "Học sinh đặt xong đường thẳng Δ (thả Δ sau khi kéo hoặc thả thanh trượt A, B, C)",
+      "data": {
+        "d": "Khoảng cách từ tâm I đến Δ",
+        "R": "Bán kính R",
+        "points": "Số giao điểm của Δ và (C): 2 (cắt), 1 (tiếp xúc), 0 (không cắt)"
+      }
+    },
+    "line-tangent": {
+      "kind": "goal",
+      "description": "Học sinh vừa làm cho Δ tiếp xúc với đường tròn (d = R); gửi một lần mỗi khi chuyển sang tiếp xúc",
+      "data": {
+        "x": "Hoành độ tiếp điểm H",
+        "y": "Tung độ tiếp điểm H",
+        "R": "Bán kính, cũng là d(I, Δ)"
+      }
+    }
+  }
+}

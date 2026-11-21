@@ -1,0 +1,45 @@
+{
+  "slug": "bao-toan-co-nang",
+  "version": "1.0.0",
+  "title": "Bảo toàn cơ năng",
+  "subject": "physics",
+  "grades": [
+    9,
+    10
+  ],
+  "description": "Thả một quả cầu nhỏ trượt trong máng cong hình parabol y = 0,25·x² (x, y tính bằng mét). Chọn độ cao thả, khối lượng, gia tốc trọng trường và bật hoặc tắt ma sát để theo dõi tốc độ, độ cao, động năng, thế năng, nhiệt năng và năng lượng toàn phần. Mốc thế năng ở đáy máng; quả cầu coi là chất điểm trượt không lăn.",
+  "learningGoals": [
+    "Mô tả sự chuyển hóa qua lại giữa động năng và thế năng khi vật chuyển động trong trọng trường.",
+    "Kiểm chứng định luật bảo toàn cơ năng khi không có ma sát: vật lên lại đúng độ cao ban đầu và tốc độ ở đáy máng là v = √(2gh).",
+    "Nhận ra tốc độ ở đáy máng không phụ thuộc khối lượng của vật.",
+    "Giải thích khi có ma sát cơ năng giảm dần và chuyển hóa thành nhiệt năng, còn năng lượng toàn phần được bảo toàn."
+  ],
+  "state": {
+    "releaseHeight": "Độ cao thả so với đáy máng (m)",
+    "mass": "Khối lượng quả cầu (kg)",
+    "gravity": "Gia tốc trọng trường (m/s²)",
+    "friction": "true nếu có ma sát giữa quả cầu và máng",
+    "mu": "Hệ số ma sát trượt (chỉ dùng khi friction = true)",
+    "x": "Tọa độ ngang của quả cầu so với đáy máng (m, dương về bên phải); độ cao hiện tại là 0,25·x²",
+    "v": "Vận tốc dọc theo máng (m/s, dương khi đi về bên phải)",
+    "heat": "Nhiệt năng sinh ra do ma sát kể từ lúc thả (J)",
+    "time": "Thời gian từ lúc thả (s)",
+    "showVectors": "true nếu hiện vectơ vận tốc"
+  },
+  "events": {
+    "release": {
+      "kind": "action",
+      "description": "Học sinh kéo quả cầu lên thành máng rồi thả; data.height là độ cao thả (m)"
+    },
+    "bottom-speed": {
+      "kind": "result",
+      "description": "Quả cầu vừa đi qua điểm thấp nhất của máng. Không ma sát: báo một lần cho mỗi lần thả; có ma sát: báo mỗi lần đi qua vì tốc độ giảm dần",
+      "data": {
+        "speed": "Tốc độ đo được ở đáy máng (m/s)",
+        "theory": "Tốc độ lý thuyết khi không ma sát √(2·g·h₀) (m/s)",
+        "releaseHeight": "Độ cao thả h₀ (m)",
+        "gravity": "Gia tốc trọng trường (m/s²)"
+      }
+    }
+  }
+}

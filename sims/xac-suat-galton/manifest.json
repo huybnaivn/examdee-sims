@@ -1,0 +1,43 @@
+{
+  "slug": "xac-suat-galton",
+  "version": "1.0.0",
+  "title": "Bảng Galton và phân phối nhị thức",
+  "subject": "math",
+  "grades": [11, 12],
+  "description": "Các viên bi rơi qua n hàng đinh; ở mỗi hàng viên bi rẽ phải với xác suất p rồi rơi vào ô ứng với số lần rẽ phải. Chọn số hàng đinh, xác suất p và thả 1, 10, 100 viên bi hoặc thả liên tục để so sánh biểu đồ tần suất thực nghiệm với phân phối nhị thức B(n; p), và so sánh trung bình, độ lệch chuẩn của mẫu với np và √(np(1 − p)).",
+  "learningGoals": [
+    "Hiểu số lần rẽ phải của một viên bi là biến ngẫu nhiên có phân phối nhị thức: P(X = k) = C(n, k)·p^k·(1 − p)^(n − k).",
+    "So sánh tần suất thực nghiệm với xác suất lí thuyết và thấy chúng càng gần nhau khi số viên bi càng lớn.",
+    "Kiểm chứng kì vọng np và độ lệch chuẩn √(np(1 − p)) bằng trung bình và độ lệch chuẩn của mẫu.",
+    "Nhận xét hình dạng phân phối: đối xứng khi p = 0,5, lệch về một phía khi p khác 0,5."
+  ],
+  "state": {
+    "rows": "Số hàng đinh n (1 đến 12), cũng là số phép thử của mỗi viên bi",
+    "p": "Xác suất viên bi rẽ phải ở mỗi hàng đinh (0 đến 1)",
+    "seed": "Trạng thái của bộ sinh số ngẫu nhiên (số nguyên không âm 32 bit); cùng seed thì các viên bi tiếp theo rơi giống hệt nhau",
+    "bins": "Mảng n + 1 số nguyên: bins[k] là số viên bi đã rẽ phải k lần (ô thứ k), tính cả viên đang rơi",
+    "pending": "Số viên bi còn chờ được thả trong đợt hiện tại",
+    "continuous": "true nếu đang thả liên tục",
+    "showTheory": "true nếu hiện đường phân phối nhị thức lí thuyết trên biểu đồ"
+  },
+  "events": {
+    "drop": {
+      "kind": "action",
+      "description": "Học sinh bấm nút thả một đợt viên bi",
+      "data": {
+        "count": "Số viên bi của đợt thả (1, 10 hoặc 100)"
+      }
+    },
+    "batch-done": {
+      "kind": "result",
+      "description": "Một đợt thả (hoặc lần thả liên tục) vừa kết thúc, mọi viên bi đã vào ô; số liệu tính trên toàn bộ các viên bi đang có trong các ô",
+      "data": {
+        "balls": "Tổng số viên bi N trong các ô",
+        "mean": "Trung bình mẫu của số lần rẽ phải (lần)",
+        "sd": "Độ lệch chuẩn mẫu, chia cho N (lần)",
+        "expectedMean": "Kì vọng lí thuyết np (lần)",
+        "expectedSd": "Độ lệch chuẩn lí thuyết √(np(1 − p)) (lần)"
+      }
+    }
+  }
+}

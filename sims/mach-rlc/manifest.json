@@ -1,0 +1,48 @@
+{
+  "slug": "mach-rlc",
+  "version": "1.0.0",
+  "title": "Mạch RLC nối tiếp",
+  "subject": "physics",
+  "grades": [12],
+  "description": "Nguồn điện xoay chiều có điện áp hiệu dụng U và tần số f đặt vào đoạn mạch gồm điện trở R, cuộn cảm thuần L và tụ điện C mắc nối tiếp (có thể bỏ L hoặc C). Quan sát cảm kháng, dung kháng, tổng trở, cường độ dòng điện, độ lệch pha, hệ số công suất, công suất, giản đồ Fre-nen và đồ thị u(t), i(t); tìm tần số cộng hưởng.",
+  "learningGoals": [
+    "Tính cảm kháng Z_L = ωL, dung kháng Z_C = 1/(ωC) và tổng trở Z = √(R² + (Z_L − Z_C)²).",
+    "Dùng giản đồ Fre-nen để xác định độ lệch pha tan φ = (Z_L − Z_C)/R giữa u và i.",
+    "Tính I = U/Z, hệ số công suất cos φ = R/Z và công suất P = UIcos φ = I²R.",
+    "Nhận biết hiện tượng cộng hưởng điện khi f = f₀ = 1/(2π√(LC)): Z = R, φ = 0, I lớn nhất.",
+    "Phân biệt mạch có tính cảm kháng (i trễ pha so với u) và tính dung kháng (i sớm pha so với u)."
+  ],
+  "state": {
+    "voltage": "Điện áp hiệu dụng của nguồn U (V)",
+    "frequency": "Tần số của nguồn f (Hz)",
+    "resistance": "Điện trở R (Ω)",
+    "inductance": "Độ tự cảm của cuộn cảm thuần L (H)",
+    "capacitance": "Điện dung của tụ điện C (µF)",
+    "useL": "true nếu mạch có cuộn cảm L; false thì L được thay bằng dây nối",
+    "useC": "true nếu mạch có tụ điện C; false thì C được thay bằng dây nối"
+  },
+  "events": {
+    "circuit-solved": {
+      "kind": "result",
+      "description": "Kết quả của mạch sau khi học sinh đổi xong một thông số (thả thanh trượt hoặc bật, tắt L, C)",
+      "data": {
+        "impedance": "Tổng trở Z (Ω)",
+        "current": "Cường độ dòng điện hiệu dụng I (A)",
+        "phase": "Độ lệch pha φ = φu − φi (độ); dương: i trễ pha, âm: i sớm pha",
+        "powerFactor": "Hệ số công suất cos φ",
+        "power": "Công suất tiêu thụ P (W)",
+        "frequency": "Tần số nguồn f (Hz)"
+      }
+    },
+    "resonance": {
+      "kind": "goal",
+      "description": "Học sinh chỉnh mạch đến cộng hưởng điện (f lệch f₀ không quá 1%)",
+      "data": {
+        "frequency": "Tần số nguồn f (Hz)",
+        "resonantFrequency": "Tần số cộng hưởng f₀ = 1/(2π√(LC)) (Hz)",
+        "current": "Cường độ dòng điện hiệu dụng I (A)",
+        "impedance": "Tổng trở Z (Ω)"
+      }
+    }
+  }
+}

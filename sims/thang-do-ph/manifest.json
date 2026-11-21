@@ -1,0 +1,36 @@
+{
+  "slug": "thang-do-ph",
+  "version": "1.0.0",
+  "title": "Thang pH",
+  "subject": "chemistry",
+  "grades": [
+    8,
+    11
+  ],
+  "description": "Chọn một dung dịch quen thuộc trong đời sống, thêm nước để pha loãng hoặc thêm dung dịch, rồi quan sát pH trên thang màu 0–14, nồng độ [H₃O⁺], [OH⁻] và môi trường acid, trung tính hay base. Mô hình coi chất tan như acid mạnh hoặc base mạnh ở 25 °C, nên pha loãng 10 lần làm pH thay đổi đúng 1 đơn vị cho đến khi tiến gần 7; acid yếu và dung dịch đệm ngoài thực tế thay đổi ít hơn.",
+  "learningGoals": [
+    "Dùng thang pH để nhận biết môi trường acid (pH < 7), trung tính (pH = 7) và base (pH > 7).",
+    "Vận dụng pH = −lg[H₃O⁺] và [H₃O⁺]·[OH⁻] = 10⁻¹⁴ ở 25 °C.",
+    "Giải thích vì sao pha loãng acid 10 lần thì pH tăng 1, pha loãng base 10 lần thì pH giảm 1, và pH chỉ tiến về 7 chứ không vượt qua 7."
+  ],
+  "state": {
+    "solution": "Mã dung dịch đang chọn (stomach, lemon, vinegar, soda, orange, coffee, rain, milk, water, blood, sea, baking, soap, ammonia, bleach, drain)",
+    "solutionVolume": "Thể tích dung dịch gốc trong cốc (mL), từ 0 đến 500",
+    "waterVolume": "Thể tích nước đã thêm vào cốc (mL), từ 0 đến 1000"
+  },
+  "events": {
+    "ph-measured": {
+      "kind": "result",
+      "description": "pH của dung dịch trong cốc sau khi học sinh đổi xong dung dịch, thể tích dung dịch hoặc lượng nước (không báo khi cốc rỗng)",
+      "data": {
+        "pH": "pH của dung dịch trong cốc",
+        "hydronium": "Nồng độ [H₃O⁺] (mol/L)",
+        "hydroxide": "Nồng độ [OH⁻] (mol/L)",
+        "medium": "−1 nếu môi trường acid, 0 nếu trung tính, 1 nếu base",
+        "solutionVolume": "Thể tích dung dịch gốc (mL)",
+        "waterVolume": "Thể tích nước đã thêm (mL)",
+        "dilution": "Số lần pha loãng (thể tích sau / thể tích dung dịch gốc); không có khóa này khi không có dung dịch gốc"
+      }
+    }
+  }
+}

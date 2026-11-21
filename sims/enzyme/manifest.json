@@ -1,0 +1,50 @@
+{
+  "slug": "enzyme",
+  "version": "1.0.0",
+  "title": "Hoạt tính của enzyme",
+  "subject": "biology",
+  "grades": [10],
+  "description": "Một cốc dung dịch chứa enzyme và cơ chất: mỗi phân tử enzyme gắn cơ chất vào trung tâm hoạt động rồi giải phóng sản phẩm. Học sinh chọn enzyme (amylase nước bọt, pH tối ưu 6,8; pepsin dạ dày, pH tối ưu 2; trypsin ruột non, pH tối ưu 8), chỉnh nhiệt độ, pH, nồng độ cơ chất ban đầu và lượng enzyme. Mô hình động học Michaelis – Menten: v = Vmax·[S]/(Km + [S]), với Vmax = 1 mmol/L/phút × lượng enzyme × hệ số nhiệt độ × hệ số pH × phần enzyme chưa biến tính. Hệ số nhiệt độ tăng gấp đôi khi tăng 10 °C cho đến nhiệt độ tối ưu 37 °C rồi giảm; trên 45 °C enzyme bị biến tính không thuận nghịch (đến 60 °C thì mất hết hoạt tính) và làm nguội không khôi phục được. Hệ số pH là đường chuông quanh pH tối ưu của từng enzyme. Đồ thị cho lượng sản phẩm theo thời gian và tốc độ phản ứng theo nồng độ cơ chất, nhiệt độ hoặc pH. Các hằng số Km và Vmax chỉ có tính minh hoạ.",
+  "learningGoals": [
+    "Trình bày được cơ chế tác động của enzyme: enzyme liên kết với cơ chất tại trung tâm hoạt động tạo phức hợp enzyme – cơ chất rồi giải phóng sản phẩm.",
+    "Giải thích ảnh hưởng của nồng độ cơ chất: tốc độ tăng rồi tiến tới Vmax khi enzyme bão hoà cơ chất; tại [S] = Km tốc độ bằng một nửa Vmax.",
+    "Nhận ra tốc độ phản ứng tỉ lệ thuận với nồng độ enzyme khi cơ chất dư.",
+    "Giải thích ảnh hưởng của nhiệt độ: mỗi enzyme có nhiệt độ tối ưu; nhiệt độ quá cao làm enzyme biến tính, mất hoạt tính không hồi phục.",
+    "Nhận ra mỗi enzyme có pH tối ưu riêng, phù hợp với nơi nó hoạt động trong ống tiêu hoá (pepsin ở dạ dày, trypsin ở ruột non, amylase ở khoang miệng)."
+  ],
+  "state": {
+    "enzyme": "Enzyme đang dùng: \"amylase\" (Km = 4 mmol/L, pH tối ưu 6,8), \"pepsin\" (Km = 2 mmol/L, pH tối ưu 2) hoặc \"trypsin\" (Km = 1 mmol/L, pH tối ưu 8)",
+    "temp": "Nhiệt độ của dung dịch, °C (0 đến 70)",
+    "pH": "pH của dung dịch (0 đến 14)",
+    "substrate": "Nồng độ cơ chất ban đầu [S]₀, mmol/L (0 đến 20)",
+    "amount": "Lượng enzyme, đơn vị (0 đến 5); 1 đơn vị ở điều kiện tối ưu có Vmax = 1 mmol/L/phút",
+    "active": "Phần enzyme chưa bị biến tính (0 đến 1); chỉ giảm khi đặt nhiệt độ trên 45 °C và không tăng lại khi làm nguội",
+    "time": "Thời gian từ lúc bắt đầu phản ứng, phút (0 đến 30)",
+    "S": "Nồng độ cơ chất còn lại, mmol/L; sản phẩm đã tạo = substrate − S",
+    "curve": "Đồ thị tốc độ đang hiển thị: \"substrate\" theo [S], \"temp\" theo nhiệt độ, \"pH\" theo pH"
+  },
+  "events": {
+    "rate-measured": {
+      "kind": "result",
+      "description": "Học sinh vừa chỉnh xong một điều kiện; tốc độ ban đầu của phản ứng ở điều kiện mới",
+      "data": {
+        "rate": "Tốc độ ban đầu v₀ = Vmax·[S]₀/(Km + [S]₀) (mmol/L/phút)",
+        "fraction": "v₀ / Vmax = [S]₀/(Km + [S]₀), phần enzyme đang gắn cơ chất (0 đến 1)",
+        "vmax": "Vmax ở điều kiện hiện tại (mmol/L/phút)"
+      }
+    },
+    "denatured": {
+      "kind": "action",
+      "description": "Học sinh đặt nhiệt độ trên 45 °C làm một phần enzyme bị biến tính không thuận nghịch",
+      "data": {
+        "temperature": "Nhiệt độ đã đặt (°C)",
+        "active": "Phần enzyme còn hoạt động sau khi biến tính (0 đến 1)"
+      }
+    },
+    "new-enzyme": {
+      "kind": "action",
+      "description": "Học sinh thay dung dịch enzyme đã bị biến tính bằng enzyme mới",
+      "data": {}
+    }
+  }
+}

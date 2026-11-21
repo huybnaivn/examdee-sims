@@ -1,0 +1,44 @@
+{
+  "slug": "the-tich-khoi",
+  "version": "1.0.0",
+  "title": "Thể tích và diện tích các khối",
+  "subject": "math",
+  "grades": [5, 7, 8, 9],
+  "description": "Một khối hình không gian vẽ phối cảnh, kéo để xoay: hình hộp chữ nhật, hình lập phương, hình lăng trụ đứng tam giác, hình chóp tứ giác đều, hình trụ, hình nón, hình cầu. Đổi kích thước bằng thanh trượt để xem thể tích, diện tích xung quanh, diện tích toàn phần; cạnh khuất vẽ nét đứt. Có thể trải phẳng khối thành hình khai triển.",
+  "learningGoals": [
+    "Tính thể tích, diện tích xung quanh và diện tích toàn phần của hình hộp chữ nhật, hình lập phương, hình lăng trụ đứng tam giác, hình chóp tứ giác đều.",
+    "Tính thể tích và diện tích của hình trụ, hình nón, hình cầu.",
+    "Nhận ra hình lập phương là hình hộp chữ nhật có ba kích thước bằng nhau, và thể tích hình nón bằng một phần ba thể tích hình trụ cùng đáy, cùng chiều cao.",
+    "Đọc hình biểu diễn không gian: cạnh khuất vẽ nét đứt; liên hệ diện tích xung quanh với hình khai triển."
+  ],
+  "state": {
+    "solid": "Khối đang xem: \"box\" (hình hộp chữ nhật), \"cube\" (hình lập phương), \"prism\" (lăng trụ đứng, đáy là tam giác vuông cạnh góc vuông a, b), \"pyramid\" (chóp tứ giác đều), \"cylinder\" (hình trụ), \"cone\" (hình nón), \"sphere\" (hình cầu)",
+    "a": "Chiều dài (hộp), cạnh (lập phương), cạnh góc vuông thứ nhất (lăng trụ) hoặc cạnh đáy (chóp), cm, từ 1 đến 10",
+    "b": "Chiều rộng (hộp) hoặc cạnh góc vuông thứ hai (lăng trụ), cm, từ 1 đến 10",
+    "h": "Chiều cao, cm, từ 1 đến 10 (không dùng cho hình lập phương và hình cầu)",
+    "r": "Bán kính đáy (trụ, nón) hoặc bán kính R (cầu), cm, từ 1 đến 10",
+    "yaw": "Góc xoay ngang của hình vẽ (độ, 0 đến 359)",
+    "pitch": "Góc nghiêng của hình vẽ (độ, −60 đến 60; dương là nhìn từ trên xuống)",
+    "showNet": "true nếu đang xem hình khai triển thay cho khối"
+  },
+  "events": {
+    "dimensions-set": {
+      "kind": "result",
+      "description": "Học sinh chọn khối hoặc thả thanh trượt kích thước; báo thể tích và diện tích của khối lúc đó",
+      "data": {
+        "solid": "Chỉ số khối: 0 hộp chữ nhật, 1 lập phương, 2 lăng trụ tam giác, 3 chóp tứ giác đều, 4 trụ, 5 nón, 6 cầu",
+        "volume": "Thể tích (cm³)",
+        "lateral": "Diện tích xung quanh (cm²); với hình cầu là diện tích mặt cầu",
+        "total": "Diện tích toàn phần (cm²); với hình cầu là diện tích mặt cầu"
+      }
+    },
+    "rotate": {
+      "kind": "action",
+      "description": "Học sinh kéo trên hình để xoay khối rồi thả tay",
+      "data": {
+        "yaw": "Góc xoay ngang sau khi thả (độ)",
+        "pitch": "Góc nghiêng sau khi thả (độ)"
+      }
+    }
+  }
+}

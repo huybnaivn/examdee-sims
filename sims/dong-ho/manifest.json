@@ -1,0 +1,53 @@
+{
+  "slug": "dong-ho",
+  "version": "1.0.0",
+  "title": "Xem đồng hồ",
+  "subject": "math",
+  "grades": [2, 3],
+  "description": "Đồng hồ kim có kim giờ và kim phút kéo được (kim phút quay qua số 12 thì kim giờ cũng nhích theo), kèm đồng hồ điện tử. Ba hoạt động: đọc giờ bằng lời (\"7 giờ 15 phút\", \"8 giờ kém 15 phút\"), quay kim đúng giờ cho trước, và tính thời gian đã trôi qua giữa hai thời điểm.",
+  "learningGoals": [
+    "Đọc giờ trên đồng hồ kim: kim ngắn chỉ giờ, kim dài chỉ phút; đọc giờ kém, giờ rưỡi.",
+    "Biết kim giờ nằm giữa hai số khi chưa tròn giờ, và kim giờ đi thêm một số khi kim phút quay một vòng.",
+    "Đổi giờ buổi chiều, buổi tối sang cách gọi 24 giờ (7 giờ tối là 19 giờ).",
+    "Tính khoảng thời gian giữa hai thời điểm, kể cả khi qua 12 giờ trưa hoặc nửa đêm."
+  ],
+  "state": {
+    "mode": "Hoạt động: \"read\" (đọc giờ), \"set\" (quay kim đúng giờ cho trước), \"elapsed\" (tính thời gian đã trôi qua)",
+    "hour": "Giờ đồng hồ đang chỉ, cách gọi 24 giờ (0 đến 23)",
+    "minute": "Phút đồng hồ đang chỉ (0 đến 59)",
+    "targetHour": "Giờ cần quay tới trong hoạt động \"set\" (1 đến 12)",
+    "targetMinute": "Phút cần quay tới trong hoạt động \"set\" (bội của 5)",
+    "solved": "true nếu kim đang chỉ đúng giờ cần quay tới",
+    "startHour": "Giờ bắt đầu trong hoạt động \"elapsed\" (0 đến 23)",
+    "startMinute": "Phút bắt đầu trong hoạt động \"elapsed\" (0 đến 59)"
+  },
+  "events": {
+    "time-set": {
+      "kind": "result",
+      "description": "Học sinh kéo kim giờ hoặc kim phút rồi thả tay; báo giờ đồng hồ đang chỉ",
+      "data": {
+        "hours": "Giờ (0 đến 23)",
+        "minutes": "Phút (0 đến 59)",
+        "elapsedMinutes": "Chỉ có trong hoạt động \"elapsed\": thời gian từ giờ bắt đầu đến giờ đang chỉ (phút)"
+      }
+    },
+    "target-reached": {
+      "kind": "goal",
+      "description": "Kim đồng hồ vừa chỉ đúng giờ cần quay tới (báo một lần cho mỗi giờ cần quay)",
+      "data": {
+        "hours": "Giờ cần quay tới (1 đến 12)",
+        "minutes": "Phút cần quay tới"
+      }
+    },
+    "new-target": {
+      "kind": "action",
+      "description": "Học sinh bấm \"Giờ khác\" để nhận một giờ mới cần quay kim tới",
+      "data": {}
+    },
+    "start-set": {
+      "kind": "action",
+      "description": "Học sinh lấy giờ đang chỉ trên đồng hồ làm giờ bắt đầu để tính thời gian",
+      "data": {}
+    }
+  }
+}

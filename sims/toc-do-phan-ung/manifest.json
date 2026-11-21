@@ -1,0 +1,66 @@
+{
+  "slug": "toc-do-phan-ung",
+  "version": "1.0.0",
+  "title": "Tốc độ phản ứng",
+  "subject": "chemistry",
+  "grades": [8, 10],
+  "description": "Các hạt của hai chất A và B chuyển động hỗn loạn trong một bình kín và phản ứng A + B → AB khi va chạm với năng lượng không nhỏ hơn năng lượng hoạt hóa Eₐ. Thay đổi nhiệt độ, nồng độ ban đầu của từng chất và thêm chất xúc tác (làm giảm Eₐ) để xem đồ thị nồng độ theo thời gian, tỉ lệ va chạm hiệu quả và tốc độ đầu đo được thay đổi thế nào. Mô hình minh họa hai chiều: số hạt ít (80 hạt ứng với 1 mol/L), Eₐ chỉ 5 kJ/mol (2,5 kJ/mol khi có xúc tác), nhỏ hơn thực tế rất nhiều; nhiệt độ được giữ không đổi. Vì số hạt ít nên mỗi lần chạy cho kết quả hơi khác nhau.",
+  "learningGoals": [
+    "Giải thích bằng thuyết va chạm: chỉ những va chạm có năng lượng đủ lớn (va chạm hiệu quả) mới gây ra phản ứng.",
+    "Nêu ảnh hưởng của nồng độ đến tốc độ phản ứng: nồng độ tăng thì số va chạm trong một đơn vị thời gian tăng.",
+    "Nêu ảnh hưởng của nhiệt độ: nhiệt độ tăng thì các hạt chuyển động nhanh hơn và tỉ lệ va chạm hiệu quả tăng.",
+    "Nêu vai trò của chất xúc tác: làm giảm năng lượng hoạt hóa nên tăng tỉ lệ va chạm hiệu quả, không làm thay đổi lượng sản phẩm.",
+    "Đọc đồ thị nồng độ – thời gian, nhận ra tốc độ giảm dần theo thời gian và phản ứng dừng khi một chất phản ứng hết."
+  ],
+  "state": {
+    "temperature": "Nhiệt độ (K), 250–600",
+    "concA": "Nồng độ ban đầu của A (mol/L), 0,2–1",
+    "concB": "Nồng độ ban đầu của B (mol/L), 0,2–1",
+    "catalyst": "true nếu có chất xúc tác (Eₐ = 2,5 kJ/mol thay vì 5 kJ/mol)",
+    "speed": "Tốc độ phát mô phỏng: 1, 4 hoặc 16 lần",
+    "seed": "Hạt giống của bộ sinh số ngẫu nhiên cho lần chạy này; cùng hạt giống và cùng thông số thì diễn biến giống hệt",
+    "rng": "Trạng thái hiện tại của bộ sinh số ngẫu nhiên (số nguyên không dấu 32 bit)",
+    "time": "Thời gian phản ứng (s); dừng lại khi phản ứng kết thúc",
+    "nA": "Số hạt A còn lại (80 hạt ứng với 1 mol/L)",
+    "nB": "Số hạt B còn lại",
+    "nAB": "Số hạt sản phẩm AB đã tạo thành",
+    "collisions": "Số va chạm giữa A và B từ đầu lần chạy",
+    "effective": "Số va chạm hiệu quả (có phản ứng) từ đầu lần chạy",
+    "halfTime": "Thời điểm một nửa chất thiếu đã phản ứng (s); 0 nếu chưa đạt",
+    "endTime": "Thời điểm một chất phản ứng hết (s); 0 nếu chưa kết thúc",
+    "initialRate": "Tốc độ đầu đo được: Δ[AB]/Δt tính đến khi 25 % chất thiếu đã phản ứng (mol/(L·s)); 0 nếu chưa đo xong"
+  },
+  "events": {
+    "rerun": {
+      "kind": "action",
+      "description": "Học sinh bấm chạy lại thí nghiệm với vị trí và vận tốc ban đầu khác của các hạt",
+      "data": {
+        "seed": "Hạt giống mới của bộ sinh số ngẫu nhiên"
+      }
+    },
+    "half-complete": {
+      "kind": "result",
+      "description": "Một nửa chất thiếu (chất hết trước) đã phản ứng",
+      "data": {
+        "time": "Thời gian từ đầu phản ứng (s)",
+        "temperature": "Nhiệt độ (K)",
+        "concA": "Nồng độ ban đầu của A (mol/L)",
+        "concB": "Nồng độ ban đầu của B (mol/L)",
+        "catalyst": "1 nếu có chất xúc tác, 0 nếu không",
+        "initialRate": "Tốc độ đầu đo được (mol/(L·s)), 0 nếu chưa đo xong"
+      }
+    },
+    "finished": {
+      "kind": "result",
+      "description": "Phản ứng kết thúc vì một chất phản ứng đã hết",
+      "data": {
+        "time": "Thời gian từ đầu phản ứng đến khi kết thúc (s)",
+        "temperature": "Nhiệt độ (K)",
+        "concA": "Nồng độ ban đầu của A (mol/L)",
+        "concB": "Nồng độ ban đầu của B (mol/L)",
+        "catalyst": "1 nếu có chất xúc tác, 0 nếu không",
+        "initialRate": "Tốc độ đầu đo được (mol/(L·s))"
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "khuc-xa-anh-sang",
+  "version": "1.0.0",
+  "title": "Khúc xạ ánh sáng",
+  "subject": "physics",
+  "grades": [
+    9,
+    11
+  ],
+  "description": "Chiếu một tia sáng tới mặt phân cách giữa hai môi trường trong suốt. Thay đổi góc tới và chiết suất của từng môi trường để quan sát tia phản xạ, tia khúc xạ và hiện tượng phản xạ toàn phần.",
+  "learningGoals": [
+    "Kiểm chứng định luật khúc xạ ánh sáng n₁·sin i = n₂·sin r.",
+    "Nhận ra góc phản xạ luôn bằng góc tới.",
+    "Giải thích vì sao tia sáng lệch gần hoặc xa pháp tuyến khi đi sang môi trường chiết quang hơn hoặc kém hơn.",
+    "Xác định điều kiện xảy ra phản xạ toàn phần và góc giới hạn sin i_gh = n₂/n₁."
+  ],
+  "state": {
+    "angle": "Góc tới i (độ, tính từ pháp tuyến, 0 đến 89)",
+    "n1": "Chiết suất n₁ của môi trường chứa tia tới (1 đến 2,5)",
+    "n2": "Chiết suất n₂ của môi trường chứa tia khúc xạ (1 đến 2,5)",
+    "medium1": "Chất của môi trường 1: air (không khí), water (nước), glass (thủy tinh), diamond (kim cương) hoặc custom (tùy chỉnh); luôn suy ra từ n1",
+    "medium2": "Chất của môi trường 2, cùng các giá trị như medium1; luôn suy ra từ n2"
+  },
+  "events": {
+    "aim": {
+      "kind": "action",
+      "description": "Học sinh kéo đèn chiếu để đổi góc tới rồi thả; data.angle là góc tới (độ)"
+    },
+    "refraction": {
+      "kind": "result",
+      "description": "Kết quả khúc xạ sau khi học sinh đổi xong góc tới hoặc môi trường",
+      "data": {
+        "incidence": "Góc tới i (độ)",
+        "refraction": "Góc khúc xạ r (độ); không có khóa này khi phản xạ toàn phần",
+        "totalReflection": "1 nếu xảy ra phản xạ toàn phần, 0 nếu không",
+        "n1": "Chiết suất môi trường chứa tia tới",
+        "n2": "Chiết suất môi trường chứa tia khúc xạ"
+      }
+    },
+    "critical-angle-found": {
+      "kind": "goal",
+      "description": "Học sinh đặt góc tới đúng bằng góc giới hạn phản xạ toàn phần (sai lệch không quá 0,5°, chỉ khi n₁ > n₂); báo một lần cho đến khi rời khỏi góc đó",
+      "data": {
+        "angle": "Góc tới đang đặt (độ)",
+        "critical": "Góc giới hạn i_gh = arcsin(n₂/n₁) (độ)",
+        "n1": "Chiết suất n₁",
+        "n2": "Chiết suất n₂"
+      }
+    }
+  }
+}

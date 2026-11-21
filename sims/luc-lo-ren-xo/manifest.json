@@ -1,0 +1,58 @@
+{
+  "slug": "luc-lo-ren-xo",
+  "version": "1.0.0",
+  "title": "Lực Lo-ren-xơ: hạt mang điện trong từ trường",
+  "subject": "physics",
+  "grades": [11, 12],
+  "description": "Phóng một hạt mang điện (electron, proton, hạt α hoặc hạt tùy chọn) với vận tốc vuông góc với từ trường đều có đường sức vuông góc với màn hình. Lực Lo-ren-xơ luôn vuông góc với vận tốc nên hạt chuyển động tròn đều. Thay đổi tốc độ, độ lớn và chiều của cảm ứng từ, dấu và độ lớn điện tích để so sánh bán kính quỹ đạo, chu kỳ, tần số và chiều quay; số đo sau một vòng được so với công thức.",
+  "learningGoals": [
+    "Xác định độ lớn f = |q|vB và chiều của lực Lo-ren-xơ (luôn vuông góc với vận tốc, hướng vào tâm quỹ đạo).",
+    "Vận dụng R = mv/(|q|B) và T = 2πm/(|q|B); nhận ra chu kỳ không phụ thuộc tốc độ của hạt.",
+    "Nhận biết chiều quay đổi ngược khi đổi dấu điện tích hoặc đổi chiều từ trường.",
+    "Giải thích vì sao lực Lo-ren-xơ không làm thay đổi tốc độ (không sinh công), và khi B = 0 hạt chuyển động thẳng đều."
+  ],
+  "state": {
+    "particle": "Hạt: \"electron\", \"proton\", \"alpha\" (hạt α) hoặc \"custom\" (dùng charge và mass)",
+    "charge": "Điện tích của hạt tùy chọn, theo đơn vị điện tích nguyên tố e = 1,602·10⁻¹⁹ C (−3 đến 3)",
+    "mass": "Khối lượng của hạt tùy chọn, theo đơn vị khối lượng nguyên tử u = 1,661·10⁻²⁷ kg",
+    "speed": "Tốc độ phóng hạt, theo đơn vị 10⁶ m/s",
+    "field": "Độ lớn cảm ứng từ B (mT)",
+    "fieldDir": "Chiều của từ trường: \"into\" (vào trong màn hình) hoặc \"out\" (ra ngoài màn hình)",
+    "launched": "true khi hạt đã được phóng",
+    "exited": "true khi hạt đã ra khỏi vùng quan sát",
+    "x": "Hoành độ của hạt so với điểm phóng (m), trục x hướng sang phải",
+    "y": "Tung độ của hạt so với điểm phóng (m), trục y hướng lên trên",
+    "vx": "Thành phần vận tốc theo x (m/s)",
+    "vy": "Thành phần vận tốc theo y (m/s)",
+    "time": "Thời gian chuyển động kể từ lúc phóng (s), thời gian thực của hạt (hình được làm chậm)",
+    "turned": "Góc vectơ vận tốc đã quay (rad), dương là ngược chiều kim đồng hồ",
+    "maxDist": "Khoảng cách xa nhất từ điểm phóng (m), sau nửa vòng bằng đường kính quỹ đạo",
+    "measuredPeriod": "Chu kỳ đo được sau vòng đầu tiên (s), 0 nếu chưa đủ một vòng",
+    "measuredRadius": "Bán kính đo được sau vòng đầu tiên (m), 0 nếu chưa đủ một vòng"
+  },
+  "events": {
+    "launch": {
+      "kind": "action",
+      "description": "Học sinh bấm “Phóng hạt”",
+      "data": {
+        "charge": "Điện tích của hạt (đơn vị e, có dấu)",
+        "mass": "Khối lượng của hạt (u)",
+        "speed": "Tốc độ phóng (m/s)",
+        "field": "Độ lớn cảm ứng từ B (T)",
+        "fieldOut": "1 nếu từ trường hướng ra ngoài màn hình, 0 nếu hướng vào trong"
+      }
+    },
+    "revolution": {
+      "kind": "result",
+      "description": "Hạt vừa đi hết vòng tròn đầu tiên; số đo được so với công thức",
+      "data": {
+        "radius": "Bán kính đo được trên quỹ đạo (m)",
+        "radiusTheory": "Bán kính theo công thức R = mv/(|q|B) (m)",
+        "period": "Chu kỳ đo được (s)",
+        "periodTheory": "Chu kỳ theo công thức T = 2πm/(|q|B) (s)",
+        "frequency": "Tần số đo được f = 1/T (Hz)",
+        "speed": "Tốc độ của hạt sau một vòng (m/s)"
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "slug": "mau-nguyen-tu-bo",
+  "version": "1.0.0",
+  "title": "Mẫu nguyên tử Bo và quang phổ hiđrô",
+  "subject": "physics",
+  "grades": [
+    12
+  ],
+  "description": "Sơ đồ mức năng lượng của nguyên tử hiđrô từ n = 1 đến n = 6. Chọn mức đầu và mức cuối (bấm vào mức trên hình hoặc dùng nút − +) để xem electron chuyển mức, phát xạ hoặc hấp thụ một photon. Màn hình cho biết năng lượng photon, bước sóng, dãy quang phổ (Lai-man, Ban-me, Pa-sen) và đặt vạch đó trên dải phổ có tô màu vùng nhìn thấy. Khoảng cách các mức và bán kính quỹ đạo vẽ không theo tỉ lệ.",
+  "learningGoals": [
+    "Phát biểu tiên đề Bo: nguyên tử chỉ tồn tại ở các trạng thái dừng có năng lượng Eₙ = −13,6/n² eV, electron chuyển động trên quỹ đạo dừng bán kính rₙ = n²r₀.",
+    "Tính năng lượng photon ε = |Eₙ − Eₘ| và bước sóng λ = hc/ε khi nguyên tử chuyển mức.",
+    "Phân biệt phát xạ (electron chuyển xuống mức thấp hơn) và hấp thụ (electron chuyển lên mức cao hơn).",
+    "Xếp các vạch vào dãy Lai-man (về n = 1, tử ngoại), Ban-me (về n = 2, có bốn vạch nhìn thấy đỏ, lam, chàm, tím gần 656, 486, 434, 410 nm) và Pa-sen (về n = 3, hồng ngoại)."
+  ],
+  "state": {
+    "from": "Mức năng lượng đầu n của electron (số nguyên 1 đến 6)",
+    "to": "Mức năng lượng cuối m của electron (số nguyên 1 đến 6); from > to là phát xạ, from < to là hấp thụ, bằng nhau là không chuyển mức"
+  },
+  "events": {
+    "pick-level": {
+      "kind": "action",
+      "description": "Học sinh bấm vào một mức năng lượng trên sơ đồ; electron bắt đầu chuyển từ mức đang ở tới mức đó",
+      "data": {
+        "from": "Mức electron đang ở",
+        "to": "Mức vừa bấm"
+      }
+    },
+    "transition": {
+      "kind": "result",
+      "description": "Electron vừa chuyển mức xong (sau khi bấm mức trên hình, đổi mức đầu hoặc mức cuối, hoặc bấm Chạy để phát lại)",
+      "data": {
+        "from": "Mức đầu n",
+        "to": "Mức cuối m",
+        "energy": "Năng lượng photon ε = |Eₙ − Eₘ| (eV)",
+        "wavelength": "Bước sóng photon λ = hc/ε (nm)",
+        "emission": "1 nếu phát xạ (electron xuống mức thấp hơn), 0 nếu hấp thụ"
+      }
+    }
+  }
+}

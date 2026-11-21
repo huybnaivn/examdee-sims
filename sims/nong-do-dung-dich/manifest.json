@@ -1,0 +1,60 @@
+{
+  "slug": "nong-do-dung-dich",
+  "version": "1.0.0",
+  "title": "Nồng độ dung dịch",
+  "subject": "chemistry",
+  "grades": [
+    8,
+    10
+  ],
+  "description": "Hòa tan một chất rắn vào nước ở 25 °C: chọn chất tan (NaCl, đường saccharose, CuSO₄, KMnO₄, NaOH), thay đổi khối lượng chất tan cho vào và thể tích nước, làm bay hơi hoặc thêm nước. Mô phỏng cho biết khối lượng chất tan và dung dịch, nồng độ phần trăm C% và nồng độ mol; màu dung dịch đậm dần theo nồng độ, và khi vượt quá độ tan thì dung dịch bão hòa, phần dư nằm ở đáy cốc. Quy ước: coi thể tích dung dịch bằng thể tích nước, khối lượng riêng của nước là 1 g/mL; độ tan là giá trị làm tròn của chất khan ở 25 °C.",
+  "learningGoals": [
+    "Tính nồng độ phần trăm C% = m_ct / m_dd · 100% và nồng độ mol C_M = n / V.",
+    "Giải thích vì sao khi pha loãng, lượng chất tan không đổi còn nồng độ giảm (C₁V₁ = C₂V₂).",
+    "Phân biệt dung dịch chưa bão hòa và dung dịch bão hòa; dùng độ tan để tính lượng chất tan tối đa trong một lượng nước.",
+    "Dự đoán hiện tượng chất tan kết tinh trở lại khi làm bay hơi nước của dung dịch bão hòa."
+  ],
+  "state": {
+    "solute": "Mã chất tan: nacl, saccharose, cuso4, kmno4 hoặc naoh",
+    "added": "Khối lượng chất tan đã cho vào cốc, gồm cả phần chưa tan (g), 0–300",
+    "water": "Thể tích nước trong cốc (mL), 20–500; 1 mL nước nặng 1 g",
+    "saturationReported": "Sự kiện saturated đã được báo trong phiên này hay không (chỉ báo một lần; Đặt lại cho phép báo lại)"
+  },
+  "events": {
+    "evaporate": {
+      "kind": "action",
+      "description": "Học sinh bấm nút làm bay hơi bớt nước",
+      "data": {
+        "water": "Thể tích nước sau khi bay hơi (mL)"
+      }
+    },
+    "add-water": {
+      "kind": "action",
+      "description": "Học sinh bấm nút thêm nước",
+      "data": {
+        "water": "Thể tích nước sau khi thêm (mL)"
+      }
+    },
+    "concentration": {
+      "kind": "result",
+      "description": "Nồng độ của dung dịch sau khi học sinh đổi xong chất tan, lượng chất tan hoặc lượng nước (thả thanh trượt, chọn chất, bấm nút)",
+      "data": {
+        "cPercent": "Nồng độ phần trăm C% (%)",
+        "cM": "Nồng độ mol (mol/L)",
+        "saturated": "1 nếu dung dịch bão hòa, 0 nếu chưa bão hòa",
+        "dissolved": "Khối lượng chất tan đã tan (g)",
+        "solid": "Khối lượng chất rắn không tan ở đáy cốc (g)",
+        "water": "Thể tích nước (mL)"
+      }
+    },
+    "saturated": {
+      "kind": "goal",
+      "description": "Dung dịch bão hòa lần đầu trong phiên (báo một lần; Đặt lại cho phép báo lại)",
+      "data": {
+        "solute": "Mã chất tan",
+        "added": "Khối lượng chất tan đã cho vào (g)",
+        "water": "Thể tích nước (mL)"
+      }
+    }
+  }
+}

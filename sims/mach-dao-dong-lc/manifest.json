@@ -1,0 +1,48 @@
+{
+  "slug": "mach-dao-dong-lc",
+  "version": "1.0.0",
+  "title": "Mạch dao động LC",
+  "subject": "physics",
+  "grades": [
+    12
+  ],
+  "description": "Tụ điện C được tích điện Q₀ rồi nối với cuộn cảm L (có thể thêm một điện trở nhỏ R). Quan sát điện tích trên hai bản tụ, dòng điện trong cuộn cảm, năng lượng điện trường và năng lượng từ trường chuyển hóa qua lại, cùng đồ thị q(t) và i(t). Đo chu kì và so sánh với T = 2π√(LC).",
+  "learningGoals": [
+    "Mô tả quá trình tụ điện phóng điện qua cuộn cảm và sự dao động của điện tích q và cường độ dòng điện i trong mạch LC.",
+    "Tính tần số góc ω = 1/√(LC), chu kì T = 2π√(LC) và cường độ dòng điện cực đại I₀ = ωQ₀.",
+    "Nhận ra i sớm pha π/2 so với q.",
+    "Giải thích sự chuyển hóa giữa năng lượng điện trường W_C = q²/(2C) và năng lượng từ trường W_L = Li²/2; năng lượng điện từ Q₀²/(2C) được bảo toàn khi R = 0.",
+    "Nhận biết dao động tắt dần khi mạch có điện trở."
+  ],
+  "state": {
+    "inductance": "Độ tự cảm L của cuộn cảm (mH)",
+    "capacitance": "Điện dung C của tụ điện (µF)",
+    "charge0": "Điện tích ban đầu Q₀ của tụ khi tích điện (µC)",
+    "resistance": "Điện trở R của mạch (Ω), 0 là mạch LC lí tưởng",
+    "q": "Điện tích hiện tại của bản A (C)",
+    "i": "Cường độ dòng điện hiện tại i = dq/dt (A), dương khi dòng điện chạy tới bản A",
+    "time": "Thời gian kể từ lúc tụ bắt đầu phóng điện (s, thời gian thực của mạch; hình được làm chậm để mỗi chu kì dài 3 s)",
+    "measuredPeriod": "Chu kì đo được giữa hai lần q đi qua 0 theo chiều tăng (s), 0 khi chưa đo được",
+    "lastCross": "Thời điểm gần nhất q đi qua 0 theo chiều tăng (s), −1 nếu chưa có"
+  },
+  "events": {
+    "period-measured": {
+      "kind": "result",
+      "description": "Mạch vừa thực hiện xong một dao động toàn phần và đo được chu kì",
+      "data": {
+        "period": "Chu kì đo được (s)",
+        "formulaPeriod": "Chu kì tính theo T = 2π√(LC) (s)",
+        "resistance": "Điện trở của mạch lúc đó (Ω)"
+      }
+    },
+    "recharge": {
+      "kind": "action",
+      "description": "Học sinh tích điện lại cho tụ đến Q₀ và cho mạch dao động lại từ đầu",
+      "data": {
+        "charge": "Điện tích ban đầu Q₀ (µC)",
+        "inductance": "Độ tự cảm L (mH)",
+        "capacitance": "Điện dung C (µF)"
+      }
+    }
+  }
+}

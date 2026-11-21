@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ExamDee Sims</title>
+    <style>
+      body { font: 15px system-ui, sans-serif; margin: 24px; color: #1f2a44; background: #f7f9fd; }
+      ul { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+      li { background: #fff; border: 1px solid #dfe5f0; border-radius: 12px; overflow: hidden; }
+      img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: left; display: block; }
+      div { padding: 10px 12px; }
+      small { color: #6b7890; }
+    </style>
+  </head>
+  <body>
+    <h1>ExamDee Sims</h1>
+    <ul id="list"></ul>
+    <script type="module">
+      // Dev gallery. Run `npm run catalog` after adding a sim.
+      const list = document.getElementById("list");
+      for (const sim of await (await fetch("catalog.json")).json()) {
+        const li = document.createElement("li");
+        const img = Object.assign(document.createElement("img"), { src: `sims/${sim.slug}/thumb.png`, alt: "" });
+        const div = document.createElement("div");
+        const a = Object.assign(document.createElement("a"), { href: `sims/${sim.slug}/index.html`, textContent: sim.title });
+        const host = Object.assign(document.createElement("a"), { href: `host-demo.html?sim=${sim.slug}`, textContent: "host demo" });
+        const meta = document.createElement("small");
+        meta.append(` · ${sim.subject} · lớp ${sim.grades.join(", ")} · `, host);
+        div.append(a, meta);
+        li.append(img, div);
+        list.append(li);
+      }
+    </script>
+  </body>
+</html>

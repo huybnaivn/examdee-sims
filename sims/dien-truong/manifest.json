@@ -1,0 +1,52 @@
+{
+  "slug": "dien-truong",
+  "version": "1.0.0",
+  "title": "Điện trường của điện tích điểm",
+  "subject": "physics",
+  "grades": [
+    11
+  ],
+  "description": "Đặt tối đa ba điện tích điểm trên mặt phẳng (trong chân không), chỉnh dấu, độ lớn và kéo chúng đến vị trí tùy ý. Lưới mũi tên cho biết hướng của điện trường; kéo điểm M để đọc vectơ cường độ điện trường E (độ lớn, hướng, các vectơ thành phần) và điện thế V tại đó.",
+  "learningGoals": [
+    "Vận dụng công thức cường độ điện trường của một điện tích điểm: E = k·|q| / r² với k = 9·10⁹ N·m²/C².",
+    "Vectơ E hướng ra xa điện tích dương và hướng về phía điện tích âm.",
+    "Nguyên lí chồng chất điện trường: E = E₁ + E₂ + E₃ (cộng vectơ), còn điện thế V = k·q / r được cộng đại số.",
+    "Tìm điểm có cường độ điện trường bằng 0, ví dụ trung điểm của đoạn nối hai điện tích bằng nhau cùng dấu.",
+    "Phân biệt cường độ điện trường và điện thế: có điểm V = 0 nhưng E ≠ 0 và ngược lại."
+  ],
+  "state": {
+    "charges": "Mảng đúng 3 phần tử { q, x, y }: điện tích q (nC, có dấu, từ −5 đến 5; q = 0 nghĩa là không có điện tích này), tọa độ x (cm, từ −8 đến 8) và y (cm, từ −6 đến 6; trục y hướng lên)",
+    "selected": "Chỉ số (0, 1, 2) của điện tích đang được chỉnh bằng thanh trượt",
+    "selQ": "Bản sao giá trị q của điện tích đang chỉnh (nC)",
+    "selX": "Bản sao tọa độ x của điện tích đang chỉnh (cm)",
+    "selY": "Bản sao tọa độ y của điện tích đang chỉnh (cm)",
+    "px": "Tọa độ x của điểm M (cm)",
+    "py": "Tọa độ y của điểm M (cm)",
+    "showGrid": "true nếu hiện lưới mũi tên chỉ hướng điện trường",
+    "showParts": "true nếu hiện các vectơ thành phần E₁, E₂, E₃ tại M"
+  },
+  "events": {
+    "charge-dropped": {
+      "kind": "action",
+      "description": "Học sinh kéo một điện tích rồi thả",
+      "data": {
+        "index": "Số thứ tự điện tích (1–3)",
+        "q": "Điện tích (nC, có dấu)",
+        "x": "Tọa độ x mới (cm)",
+        "y": "Tọa độ y mới (cm)"
+      }
+    },
+    "field-measured": {
+      "kind": "result",
+      "description": "Học sinh kéo điểm M rồi thả: điện trường và điện thế đo được tại M",
+      "data": {
+        "ex": "Thành phần Eₓ (V/m, dương sang phải)",
+        "ey": "Thành phần E_y (V/m, dương hướng lên)",
+        "magnitude": "Độ lớn cường độ điện trường E (V/m)",
+        "potential": "Điện thế V (V), mốc ở vô cực",
+        "x": "Tọa độ x của M (cm)",
+        "y": "Tọa độ y của M (cm)"
+      }
+    }
+  }
+}

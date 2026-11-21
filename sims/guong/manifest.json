@@ -1,0 +1,43 @@
+{
+  "slug": "guong",
+  "version": "1.0.0",
+  "title": "Gương phẳng và gương cầu",
+  "subject": "physics",
+  "grades": [
+    7,
+    11
+  ],
+  "description": "Đặt một vật sáng AB trước gương phẳng, gương cầu lõm hoặc gương cầu lồi. Kéo vật để đổi khoảng cách và chiều cao, đổi tiêu cự của gương cầu, quan sát các tia phản xạ dựng nên ảnh A′B′ rồi đọc vị trí, tính chất và số phóng đại của ảnh.",
+  "learningGoals": [
+    "Nhận ra ảnh qua gương phẳng là ảnh ảo, cùng chiều, bằng vật và cách gương một khoảng bằng khoảng cách từ vật đến gương.",
+    "Dựng ảnh qua gương cầu bằng các tia đặc biệt: tia song song với trục chính, tia tới đỉnh gương, tia qua tiêu điểm.",
+    "Kiểm chứng công thức gương cầu 1/f = 1/d + 1/d′ và số phóng đại k = −d′/d với quy ước dấu: gương lõm f > 0, gương lồi f < 0, ảnh thật d′ > 0, ảnh ảo d′ < 0.",
+    "Phân biệt các trường hợp của gương cầu lõm: vật ngoài tiêu điểm cho ảnh thật ngược chiều, vật trong khoảng tiêu cự cho ảnh ảo cùng chiều lớn hơn vật, vật ở tâm C cho ảnh thật bằng vật.",
+    "Nhận ra gương cầu lồi luôn cho ảnh ảo, cùng chiều, nhỏ hơn vật."
+  ],
+  "state": {
+    "mirrorType": "Loại gương: plane (gương phẳng), concave (gương cầu lõm, f > 0) hoặc convex (gương cầu lồi, f < 0)",
+    "focal": "Độ lớn tiêu cự |f| của gương cầu (cm, 5 đến 25); bán kính cong R = 2|f|; không dùng với gương phẳng",
+    "distance": "Khoảng cách d từ vật đến gương (cm, 2 đến 60)",
+    "height": "Chiều cao vật AB (cm, 1 đến 10)"
+  },
+  "events": {
+    "move-object": {
+      "kind": "action",
+      "description": "Học sinh kéo vật AB trên hình rồi thả",
+      "data": {
+        "distance": "Khoảng cách vật d (cm)",
+        "height": "Chiều cao vật AB (cm)"
+      }
+    },
+    "image-formed": {
+      "kind": "result",
+      "description": "Ảnh A′B′ ứng với cấu hình vừa chốt (sau khi thả vật hoặc thả một thanh trượt, đổi loại gương). Không phát khi vật nằm đúng tiêu điểm gương lõm vì ảnh ở vô cực",
+      "data": {
+        "imageDistance": "Khoảng cách ảnh d′ (cm); dương: ảnh thật ở trước gương, âm: ảnh ảo ở sau gương",
+        "magnification": "Số phóng đại k = −d′/d; dương: ảnh cùng chiều, âm: ảnh ngược chiều",
+        "real": "1 nếu ảnh thật, 0 nếu ảnh ảo"
+      }
+    }
+  }
+}

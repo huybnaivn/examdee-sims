@@ -1,0 +1,46 @@
+{
+  "slug": "day-hoat-dong-kim-loai",
+  "version": "1.0.0",
+  "title": "Dãy hoạt động hóa học của kim loại",
+  "subject": "chemistry",
+  "grades": [
+    9
+  ],
+  "description": "Thả một kim loại (K, Na, Mg, Al, Zn, Fe, Pb, Cu, Ag, Au) vào dung dịch HCl loãng, CuSO₄, AgNO₃, FeSO₄ hoặc nước. Quan sát có phản ứng hay không (khí thoát ra, kim loại bám lên thanh, kết tủa, đổi màu dung dịch), đọc phương trình hóa học đã cân bằng và lí do dựa vào dãy hoạt động hóa học. Chế độ luyện tập yêu cầu dự đoán trước khi thả.",
+  "learningGoals": [
+    "Nêu được dãy hoạt động hóa học K, Na, Mg, Al, Zn, Fe, Pb, (H), Cu, Ag, Au và ý nghĩa của nó.",
+    "Kim loại đứng trước H phản ứng với dung dịch HCl loãng giải phóng khí H₂; kim loại đứng sau H thì không.",
+    "Kim loại đứng trước (trừ K, Na) đẩy được kim loại đứng sau ra khỏi dung dịch muối.",
+    "K, Na phản ứng với nước ở nhiệt độ thường tạo dung dịch base và khí H₂; trong dung dịch muối chúng phản ứng với nước trước.",
+    "Viết được phương trình hóa học đã cân bằng cho các phản ứng trên."
+  ],
+  "state": {
+    "metal": "Chỉ số kim loại trong danh sách K, Na, Mg, Al, Zn, Fe, Pb, Cu, Ag, Au (0–9)",
+    "solution": "Chỉ số dung dịch: 0 HCl loãng, 1 CuSO₄, 2 AgNO₃, 3 FeSO₄, 4 nước",
+    "practice": "true khi bật chế độ luyện tập (dự đoán trước khi thả)",
+    "prediction": "Dự đoán của học sinh: \"none\" (chưa chọn), \"yes\" (có phản ứng), \"no\" (không phản ứng); trở về \"none\" sau mỗi lần thả trong chế độ luyện tập",
+    "dropped": "true khi kim loại đã được thả vào dung dịch",
+    "progress": "Tiến trình hoạt hình sau khi thả, từ 0 đến 1",
+    "verdict": "Kết quả dự đoán của lần thả gần nhất: 1 đúng, 0 sai, −1 không chấm"
+  },
+  "events": {
+    "metal-test": {
+      "kind": "result",
+      "description": "Học sinh thả kim loại vào dung dịch và thấy có hay không có phản ứng",
+      "data": {
+        "metal": "Chỉ số kim loại (0–9, theo thứ tự K, Na, Mg, Al, Zn, Fe, Pb, Cu, Ag, Au)",
+        "solution": "Chỉ số dung dịch (0 HCl, 1 CuSO₄, 2 AgNO₃, 3 FeSO₄, 4 nước)",
+        "reacted": "1 nếu có phản ứng, 0 nếu không"
+      }
+    },
+    "correct-prediction": {
+      "kind": "goal",
+      "description": "Trong chế độ luyện tập, học sinh dự đoán đúng có hay không có phản ứng trước khi thả",
+      "data": {
+        "metal": "Chỉ số kim loại (0–9)",
+        "solution": "Chỉ số dung dịch (0–4)",
+        "reacted": "1 nếu có phản ứng, 0 nếu không"
+      }
+    }
+  }
+}

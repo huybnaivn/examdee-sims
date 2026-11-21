@@ -1,0 +1,64 @@
+{
+  "slug": "mat-phang-nghieng",
+  "version": "1.0.0",
+  "title": "Mặt phẳng nghiêng",
+  "subject": "physics",
+  "grades": [
+    10
+  ],
+  "description": "Đặt một vật trên mặt phẳng nghiêng rồi thả. Thay đổi góc nghiêng, khối lượng, hệ số ma sát và gia tốc trọng trường để xem trọng lực được phân tích thành hai thành phần thế nào, khi nào vật đứng yên, khi nào vật trượt, trượt với gia tốc bao nhiêu và tới chân dốc sau bao lâu.",
+  "learningGoals": [
+    "Phân tích trọng lực thành hai thành phần Px = P·sin α (song song mặt nghiêng) và Py = P·cos α (vuông góc mặt nghiêng); phản lực N = P·cos α.",
+    "Nhận ra vật đứng yên khi tan α ≤ μn, lúc đó lực ma sát nghỉ cân bằng với Px.",
+    "Vận dụng định luật II Newton để tính gia tốc khi trượt: a = g(sin α − μt·cos α).",
+    "Kiểm chứng thời gian t = √(2s/a) và tốc độ v = √(2·a·s) ở chân dốc.",
+    "Nhận ra khi không có ma sát thì a = g·sin α, không phụ thuộc khối lượng."
+  ],
+  "state": {
+    "angle": "Góc nghiêng α của mặt phẳng so với phương ngang (độ)",
+    "mass": "Khối lượng của vật (kg)",
+    "muS": "Hệ số ma sát nghỉ μn",
+    "muK": "Hệ số ma sát trượt μt (không lớn hơn μn)",
+    "gravity": "Gia tốc trọng trường g (m/s²)",
+    "length": "Quãng đường s từ vạch xuất phát tới chân dốc, đo dọc mặt nghiêng (m)",
+    "pos": "Quãng đường vật đã trượt (m)",
+    "v": "Vận tốc của vật dọc mặt nghiêng, hướng xuống (m/s)",
+    "time": "Thời gian từ lúc thả (s)",
+    "released": "Đã thả vật hay chưa",
+    "done": "Lần thả đã kết thúc: vật tới chân dốc hoặc không trượt",
+    "showComponents": "Có vẽ hai thành phần Px, Py của trọng lực hay không"
+  },
+  "events": {
+    "release": {
+      "kind": "action",
+      "description": "Học sinh thả vật từ vạch xuất phát",
+      "data": {
+        "angle": "Góc nghiêng (độ)",
+        "mass": "Khối lượng (kg)",
+        "muS": "Hệ số ma sát nghỉ",
+        "muK": "Hệ số ma sát trượt",
+        "gravity": "Gia tốc trọng trường (m/s²)",
+        "length": "Quãng đường tới chân dốc (m)"
+      }
+    },
+    "reached-bottom": {
+      "kind": "result",
+      "description": "Vật trượt tới chân dốc",
+      "data": {
+        "time": "Thời gian trượt (s)",
+        "speed": "Tốc độ ở chân dốc (m/s)",
+        "acceleration": "Gia tốc khi trượt (m/s²)",
+        "distance": "Quãng đường đã trượt (m)"
+      }
+    },
+    "stayed-at-rest": {
+      "kind": "result",
+      "description": "Đã thả nhưng vật không trượt vì lực ma sát nghỉ giữ vật lại",
+      "data": {
+        "distance": "Quãng đường đã trượt (m), bằng 0",
+        "angle": "Góc nghiêng (độ)",
+        "muS": "Hệ số ma sát nghỉ"
+      }
+    }
+  }
+}

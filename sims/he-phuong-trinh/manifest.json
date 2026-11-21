@@ -1,0 +1,39 @@
+{
+  "slug": "he-phuong-trinh",
+  "version": "1.0.0",
+  "title": "Hệ hai phương trình bậc nhất hai ẩn",
+  "subject": "math",
+  "grades": [9, 10],
+  "description": "Hai phương trình a₁x + b₁y = c₁ và a₂x + b₂y = c₂ được vẽ thành hai đường thẳng d₁, d₂ trên mặt phẳng tọa độ. Đổi các hệ số để thấy hai đường thẳng cắt nhau, song song hoặc trùng nhau; mô phỏng đánh dấu giao điểm, tính các định thức D, Dx, Dy và kết luận hệ có nghiệm duy nhất, vô nghiệm hay vô số nghiệm.",
+  "learningGoals": [
+    "Hiểu nghiệm của hệ là tọa độ giao điểm của hai đường thẳng biểu diễn hai phương trình.",
+    "Nhận biết ba trường hợp: hai đường thẳng cắt nhau (nghiệm duy nhất), song song (vô nghiệm), trùng nhau (vô số nghiệm).",
+    "Dùng định thức: D ≠ 0 thì x = Dx/D, y = Dy/D; D = 0 và Dx ≠ 0 hoặc Dy ≠ 0 thì vô nghiệm; D = Dx = Dy = 0 thì vô số nghiệm.",
+    "Biết phương trình có b = 0 là đường thẳng song song hoặc trùng với trục Oy, có a = 0 là đường thẳng song song hoặc trùng với trục Ox."
+  ],
+  "state": {
+    "a1": "Hệ số a₁ của x trong phương trình thứ nhất (số nguyên từ −10 đến 10)",
+    "b1": "Hệ số b₁ của y trong phương trình thứ nhất (số nguyên từ −10 đến 10)",
+    "c1": "Hệ số tự do c₁ ở vế phải của phương trình thứ nhất (số nguyên từ −10 đến 10)",
+    "a2": "Hệ số a₂ của x trong phương trình thứ hai (số nguyên từ −10 đến 10)",
+    "b2": "Hệ số b₂ của y trong phương trình thứ hai (số nguyên từ −10 đến 10)",
+    "c2": "Hệ số tự do c₂ ở vế phải của phương trình thứ hai (số nguyên từ −10 đến 10)"
+  },
+  "events": {
+    "solved": {
+      "kind": "result",
+      "description": "Học sinh vừa đổi xong một hệ số (thả thanh trượt) và được một hệ mới có nghiệm duy nhất",
+      "data": {
+        "x": "Giá trị x của nghiệm (không có đơn vị)",
+        "y": "Giá trị y của nghiệm (không có đơn vị)"
+      }
+    },
+    "special-system": {
+      "kind": "goal",
+      "description": "Học sinh vừa tạo ra một hệ vô nghiệm hoặc vô số nghiệm (báo một lần khi hệ chuyển sang loại đó)",
+      "data": {
+        "solutions": "\"none\" nếu hệ vô nghiệm, \"infinite\" nếu hệ vô số nghiệm"
+      }
+    }
+  }
+}

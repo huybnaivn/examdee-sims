@@ -1,0 +1,44 @@
+{
+  "slug": "cong-vecto",
+  "version": "1.0.0",
+  "title": "Tổng hợp vectơ",
+  "subject": "math",
+  "grades": [
+    10
+  ],
+  "description": "Kéo hai vectơ a và b trên mặt phẳng tọa độ để xem vectơ tổng thay đổi thế nào, theo quy tắc hình bình hành hoặc quy tắc ba điểm.",
+  "learningGoals": [
+    "Dựng vectơ tổng bằng quy tắc hình bình hành và quy tắc ba điểm.",
+    "Tính tọa độ và độ dài của vectơ tổng từ tọa độ hai vectơ thành phần.",
+    "Nhận ra độ dài vectơ tổng phụ thuộc góc giữa hai vectơ."
+  ],
+  "state": {
+    "ax": "Hoành độ vectơ a",
+    "ay": "Tung độ vectơ a",
+    "bx": "Hoành độ vectơ b",
+    "by": "Tung độ vectơ b",
+    "method": "Quy tắc đang dùng: parallelogram (hình bình hành) hoặc tip-to-tail (ba điểm)",
+    "showComponents": "Có hiện thành phần của vectơ tổng không"
+  },
+  "events": {
+    "vector-set": {
+      "kind": "action",
+      "description": "Học sinh kéo xong một vectơ",
+      "data": {
+        "vector": "'a' hoặc 'b'",
+        "x": "Hoành độ mới",
+        "y": "Tung độ mới"
+      }
+    },
+    "resultant": {
+      "kind": "result",
+      "description": "Vectơ tổng a + b sau khi học sinh đặt xong một vectơ (thả thanh trượt hoặc kéo xong)",
+      "data": {
+        "x": "Hoành độ của a + b",
+        "y": "Tung độ của a + b",
+        "magnitude": "Độ dài |a + b|",
+        "direction": "Hướng của a + b (độ, ngược chiều kim đồng hồ từ trục Ox, 0–360)"
+      }
+    }
+  }
+}

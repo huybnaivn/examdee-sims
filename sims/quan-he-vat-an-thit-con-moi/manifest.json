@@ -1,0 +1,66 @@
+{
+  "slug": "quan-he-vat-an-thit-con-moi",
+  "version": "1.0.0",
+  "title": "Biến động số lượng: vật ăn thịt và con mồi",
+  "subject": "biology",
+  "grades": [
+    8,
+    12
+  ],
+  "description": "Quần thể thỏ (con mồi) và cáo (vật ăn thịt) biến động theo mô hình dR/dt = a·R·(1 − R/K) − b·R·F, dF/dt = e·b·R·F − d·F với e = 0,1 (ăn 10 con thỏ đủ nuôi thêm một con cáo). Đồ thị theo thời gian cho thấy số cáo lên xuống chậm hơn số thỏ; đồ thị pha cho thấy quỹ đạo quay quanh điểm cân bằng. Có thể bỏ giới hạn sức chứa để về mô hình cổ điển (dao động không tắt), và tạo sự kiện bất ngờ: săn bắt cáo, mùa đông khắc nghiệt. Quần thể còn dưới 1 con được coi là tuyệt chủng.",
+  "learningGoals": [
+    "Mô tả hiện tượng số lượng cá thể của quần thể con mồi và vật ăn thịt biến động theo chu kì, số vật ăn thịt đạt đỉnh sau con mồi.",
+    "Giải thích mối quan hệ khống chế sinh học: con mồi nhiều thì vật ăn thịt tăng, vật ăn thịt nhiều thì con mồi giảm.",
+    "Nhận ra sức chứa của môi trường làm dao động tắt dần về trạng thái cân bằng, và khi không có vật ăn thịt, con mồi tăng theo đường cong chữ S đến sức chứa.",
+    "Dự đoán ảnh hưởng của tác động một lần (săn bắt, thời tiết khắc nghiệt) lên cả hai quần thể."
+  ],
+  "state": {
+    "rabbits0": "Số thỏ ban đầu (con, 10 đến 1000)",
+    "foxes0": "Số cáo ban đầu (con, 0 đến 100)",
+    "birth": "Tỉ lệ sinh của thỏ a (1/năm)",
+    "predation": "Tỉ lệ bắt mồi b: phần số thỏ một con cáo bắt được trong một năm (1/năm)",
+    "death": "Tỉ lệ tử vong của cáo d (1/năm)",
+    "capacity": "true nếu môi trường có sức chứa K giới hạn số thỏ; false là mô hình cổ điển không giới hạn",
+    "K": "Sức chứa của môi trường đối với thỏ (con)",
+    "rabbits": "Số thỏ hiện tại (con)",
+    "foxes": "Số cáo hiện tại (con)",
+    "time": "Thời gian từ lúc bắt đầu (năm)",
+    "peaks": "Số lần số cáo đã đạt đỉnh",
+    "rising": "1 nếu số cáo đang tăng, 0 nếu đang giảm",
+    "low": "Số cáo thấp nhất kể từ đỉnh gần nhất (con), dùng để nhận ra đỉnh tiếp theo"
+  },
+  "events": {
+    "fox-peak": {
+      "kind": "result",
+      "description": "Số cáo vừa đạt một đỉnh (chuyển từ tăng sang giảm)",
+      "data": {
+        "time": "Thời điểm đạt đỉnh (năm)",
+        "rabbits": "Số thỏ lúc đó (con)",
+        "foxes": "Số cáo ở đỉnh (con)"
+      }
+    },
+    "hunt": {
+      "kind": "action",
+      "description": "Học sinh cho săn bắt: số cáo giảm một nửa",
+      "data": {
+        "time": "Thời điểm (năm)",
+        "before": "Số cáo trước khi săn (con)",
+        "after": "Số cáo sau khi săn (con)"
+      }
+    },
+    "harsh-winter": {
+      "kind": "action",
+      "description": "Học sinh tạo một mùa đông khắc nghiệt: 60% số thỏ chết",
+      "data": {
+        "time": "Thời điểm (năm)",
+        "before": "Số thỏ trước mùa đông (con)",
+        "after": "Số thỏ sau mùa đông (con)"
+      }
+    },
+    "restart": {
+      "kind": "action",
+      "description": "Học sinh bấm Bắt đầu lại: hai quần thể trở về số lượng ban đầu, thời gian về 0",
+      "data": {}
+    }
+  }
+}

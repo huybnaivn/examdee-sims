@@ -1,0 +1,44 @@
+{
+  "slug": "tu-dien",
+  "version": "1.0.0",
+  "title": "Tụ điện phẳng",
+  "subject": "physics",
+  "grades": [
+    11
+  ],
+  "description": "Tụ điện phẳng nối với nguồn điện qua khóa K. Thay đổi diện tích bản, khoảng cách hai bản, điện môi (không khí, giấy, mica, thủy tinh hoặc ε tùy chọn) và hiệu điện thế nguồn để quan sát điện dung, điện tích, cường độ điện trường giữa hai bản và năng lượng của tụ. Ngắt nguồn rồi thay đổi tụ để thấy điện tích được giữ nguyên còn hiệu điện thế thay đổi.",
+  "learningGoals": [
+    "Vận dụng công thức điện dung của tụ điện phẳng: C = ε·ε₀·S/d; khoảng cách d tăng gấp đôi thì C giảm một nửa.",
+    "Vận dụng Q = C·U, E = U/d và năng lượng của tụ W = C·U²/2 = Q²/(2C).",
+    "Tụ vẫn nối với nguồn: U không đổi, điện tích Q thay đổi theo C.",
+    "Tụ đã ngắt khỏi nguồn: Q không đổi, hiệu điện thế U = Q/C thay đổi theo C (kéo hai bản ra xa thì U và W tăng, E không đổi)."
+  ],
+  "state": {
+    "area": "Diện tích mỗi bản tụ S (cm²)",
+    "distance": "Khoảng cách giữa hai bản d (mm)",
+    "dielectric": "Điện môi giữa hai bản: \"air\" (không khí, ε = 1), \"paper\" (giấy, ε = 2), \"mica\" (ε = 6), \"glass\" (thủy tinh, ε = 7) hoặc \"custom\" (dùng epsCustom)",
+    "epsCustom": "Hằng số điện môi ε tùy chọn, chỉ có tác dụng khi dielectric = \"custom\"",
+    "voltage": "Hiệu điện thế của nguồn (V); là hiệu điện thế của tụ khi connected = true",
+    "connected": "true: tụ đang nối với nguồn (khóa K đóng); false: đã ngắt nguồn, điện tích được giữ nguyên",
+    "charge": "Điện tích tụ đang giữ khi đã ngắt nguồn (C, cu-lông); không dùng khi connected = true"
+  },
+  "events": {
+    "battery-toggled": {
+      "kind": "action",
+      "description": "Học sinh nối hoặc ngắt nguồn điện (ô chọn hoặc bấm vào khóa K trên hình)",
+      "data": {
+        "connected": "Trạng thái mới: true = đang nối với nguồn, false = đã ngắt"
+      }
+    },
+    "capacitor-state": {
+      "kind": "result",
+      "description": "Các đại lượng của tụ ngay sau khi nối hoặc ngắt nguồn",
+      "data": {
+        "capacitance": "Điện dung C (pF)",
+        "charge": "Điện tích Q (nC)",
+        "voltage": "Hiệu điện thế giữa hai bản U (V)",
+        "energy": "Năng lượng của tụ W (nJ)"
+      }
+    }
+  }
+}

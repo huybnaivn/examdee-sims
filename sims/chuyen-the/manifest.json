@@ -1,0 +1,54 @@
+{
+  "slug": "chuyen-the",
+  "version": "1.0.0",
+  "title": "Sự chuyển thể: đun nóng nước đá",
+  "subject": "physics",
+  "grades": [6, 10, 12],
+  "description": "Đun một khối nước đá có nhiệt độ ban đầu dưới 0 °C bằng bếp có công suất không đổi cho đến khi toàn bộ thành hơi nước. Đường biểu diễn nhiệt độ theo thời gian đi qua năm giai đoạn: đá nóng lên, nóng chảy ở 0 °C, nước nóng lên, sôi ở 100 °C, hơi nước nóng lên. Mô hình hạt cho thấy trạng thái của mẫu, bảng cho biết nhiệt lượng thu vào và thời gian của từng giai đoạn.",
+  "learningGoals": [
+    "Mô tả được năm giai đoạn trên đồ thị nhiệt độ – thời gian khi đun nóng nước đá đến khi thành hơi.",
+    "Nhận ra nhiệt độ không đổi trong suốt quá trình nóng chảy (0 °C) và quá trình sôi (100 °C) dù vẫn nhận nhiệt.",
+    "Tính nhiệt lượng Q = m·c·Δt cho giai đoạn một thể, Q = λ·m khi nóng chảy, Q = L·m khi hóa hơi.",
+    "Tính thời gian mỗi giai đoạn t = Q/P và thấy tổng nhiệt lượng bằng tổng nhiệt lượng các giai đoạn.",
+    "Giải thích sự chuyển thể bằng mô hình hạt: trật tự của các hạt và tốc độ chuyển động của chúng."
+  ],
+  "constants": {
+    "c_da": "Nhiệt dung riêng của nước đá: 2100 J/(kg·K)",
+    "c_nuoc": "Nhiệt dung riêng của nước: 4200 J/(kg·K)",
+    "c_hoi": "Nhiệt dung riêng của hơi nước (làm tròn): 2000 J/(kg·K)",
+    "lambda": "Nhiệt nóng chảy riêng của nước đá: 3,4·10⁵ J/kg",
+    "L": "Nhiệt hóa hơi riêng của nước ở 100 °C: 2,3·10⁶ J/kg",
+    "t_nong_chay": "Nhiệt độ nóng chảy của nước đá: 0 °C",
+    "t_soi": "Nhiệt độ sôi của nước ở áp suất tiêu chuẩn: 100 °C"
+  },
+  "state": {
+    "mass": "Khối lượng mẫu nước đá m (kg)",
+    "tStart": "Nhiệt độ ban đầu của nước đá (°C, dưới 0)",
+    "tEnd": "Nhiệt độ hơi nước khi kết thúc thí nghiệm (°C, trên 100)",
+    "power": "Công suất bếp P (W); bỏ qua hao phí, mẫu nhận toàn bộ nhiệt",
+    "time": "Thời gian đã đun (s)",
+    "stagesDone": "Số giai đoạn đã hoàn thành (0–5): 1 đá nóng lên, 2 nóng chảy, 3 nước nóng lên, 4 sôi, 5 hơi nước nóng lên"
+  },
+  "events": {
+    "stage-end": {
+      "kind": "result",
+      "description": "Một giai đoạn của quá trình đun vừa kết thúc",
+      "data": {
+        "stage": "Số thứ tự giai đoạn (1 đá nóng lên, 2 nóng chảy, 3 nước nóng lên, 4 sôi, 5 hơi nước nóng lên)",
+        "time": "Thời điểm kết thúc giai đoạn, tính từ lúc bắt đầu đun (s)",
+        "heat": "Nhiệt lượng mẫu thu vào trong giai đoạn này (J)",
+        "totalHeat": "Tổng nhiệt lượng đã thu vào từ lúc bắt đầu (J)",
+        "temperature": "Nhiệt độ của mẫu khi kết thúc giai đoạn (°C)"
+      }
+    },
+    "all-steam": {
+      "kind": "goal",
+      "description": "Toàn bộ mẫu đã hóa hơi (kết thúc quá trình sôi ở 100 °C)",
+      "data": {
+        "time": "Thời điểm toàn bộ nước hóa hơi (s)",
+        "heat": "Tổng nhiệt lượng đã thu vào đến lúc đó (J)",
+        "mass": "Khối lượng mẫu (kg)"
+      }
+    }
+  }
+}

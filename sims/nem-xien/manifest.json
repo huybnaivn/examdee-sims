@@ -1,0 +1,41 @@
+{
+  "slug": "nem-xien",
+  "version": "1.0.0",
+  "title": "Chuyển động ném xiên",
+  "subject": "physics",
+  "grades": [
+    10
+  ],
+  "description": "Ném một vật với vận tốc ban đầu, góc ném và độ cao tùy chọn rồi quan sát quỹ đạo, tầm xa, độ cao cực đại và thời gian bay. Có thể bật lực cản không khí để so sánh với trường hợp lý tưởng.",
+  "learningGoals": [
+    "Phân tích chuyển động ném xiên thành chuyển động thẳng đều theo phương ngang và chuyển động biến đổi đều theo phương thẳng đứng.",
+    "Kiểm chứng các công thức tầm xa L = v₀²·sin2α/g, độ cao cực đại H = v₀²·sin²α/(2g) và thời gian bay t = 2v₀·sinα/g khi ném từ mặt đất.",
+    "Nhận ra góc ném 45° cho tầm xa lớn nhất và hai góc ném phụ nhau cho cùng tầm xa khi ném từ mặt đất.",
+    "So sánh quỹ đạo khi có và không có lực cản không khí."
+  ],
+  "state": {
+    "speed": "Vận tốc ban đầu v₀ (m/s)",
+    "angle": "Góc ném α so với phương ngang (độ)",
+    "height": "Độ cao ban đầu h so với mặt đất (m)",
+    "gravity": "Gia tốc trọng trường (m/s²)",
+    "drag": "Có lực cản không khí hay không",
+    "showVectors": "Có hiện vectơ vận tốc và các thành phần hay không",
+    "phase": "Giai đoạn: ready (chưa ném), flying (đang bay), landed (đã chạm đất)",
+    "x": "Tọa độ ngang của vật (m); khi đã chạm đất là tầm xa",
+    "y": "Độ cao của vật (m)",
+    "vx": "Thành phần vận tốc theo phương ngang (m/s)",
+    "vy": "Thành phần vận tốc theo phương thẳng đứng (m/s, dương hướng lên)",
+    "time": "Thời gian từ lúc ném (s); khi đã chạm đất là thời gian bay",
+    "maxHeight": "Độ cao lớn nhất vật đã đạt được trong lần ném này (m)"
+  },
+  "events": {
+    "launch": {
+      "kind": "action",
+      "description": "Học sinh ném vật; data.speed (m/s), data.angle (độ), data.height (m)"
+    },
+    "land": {
+      "kind": "result",
+      "description": "Vật chạm đất; data.range là tầm xa (m), data.maxHeight là độ cao cực đại (m), data.time là thời gian bay (s)"
+    }
+  }
+}

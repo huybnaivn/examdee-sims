@@ -1,0 +1,39 @@
+{
+  "slug": "do-thi-ham-so",
+  "version": "1.0.0",
+  "title": "Đồ thị hàm số bậc nhất và bậc hai",
+  "subject": "math",
+  "grades": [
+    8,
+    9,
+    10
+  ],
+  "description": "Chọn hàm số y = ax + b hoặc y = ax² + bx + c rồi thay đổi các hệ số. Đồ thị được vẽ trên mặt phẳng tọa độ Oxy cùng với giao điểm với hai trục, các nghiệm, và với parabol là đỉnh, trục đối xứng và biệt thức Δ.",
+  "learningGoals": [
+    "Nhận ra ảnh hưởng của từng hệ số a, b, c đến hình dạng và vị trí của đồ thị.",
+    "Xác định giao điểm của đồ thị với trục Ox (nghiệm) và trục Oy.",
+    "Liên hệ dấu của Δ = b² − 4ac với số nghiệm của phương trình bậc hai.",
+    "Tìm tọa độ đỉnh I(−b/2a; −Δ/4a) và trục đối xứng x = −b/2a của parabol."
+  ],
+  "state": {
+    "kind": "Dạng hàm số: \"linear\" (y = ax + b) hoặc \"quadratic\" (y = ax² + bx + c)",
+    "a": "Hệ số a (từ −5 đến 5, bước 0,5). Khi a = 0 hàm bậc hai trở thành đường thẳng y = bx + c",
+    "b": "Hệ số b (từ −5 đến 5, bước 0,5)",
+    "c": "Hệ số c (từ −5 đến 5, bước 0,5); chỉ dùng cho hàm bậc hai"
+  },
+  "events": {
+    "graph-analyzed": {
+      "kind": "result",
+      "description": "Nghiệm và đỉnh của đồ thị sau khi học sinh đổi xong dạng hàm số hoặc một hệ số",
+      "data": {
+        "rootCount": "Số nghiệm phân biệt của y = 0 (0, 1 hoặc 2; nghiệm kép tính là 1)",
+        "allReal": "1 nếu mọi x đều là nghiệm (y = 0), 0 nếu không",
+        "root1": "Nghiệm nhỏ hơn (hoặc nghiệm duy nhất); không có khóa này khi vô nghiệm",
+        "root2": "Nghiệm lớn hơn; chỉ có khi có hai nghiệm phân biệt",
+        "vertexX": "Hoành độ đỉnh parabol; chỉ có với hàm bậc hai (a ≠ 0)",
+        "vertexY": "Tung độ đỉnh parabol; chỉ có với hàm bậc hai (a ≠ 0)",
+        "delta": "Biệt thức Δ = b² − 4ac; chỉ có với hàm bậc hai (a ≠ 0)"
+      }
+    }
+  }
+}

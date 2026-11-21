@@ -1,0 +1,29 @@
+{
+  "slug": "can-bang-phuong-trinh",
+  "version": "1.0.0",
+  "title": "Cân bằng phương trình hóa học",
+  "subject": "chemistry",
+  "grades": [
+    8,
+    9
+  ],
+  "description": "Chọn một phản ứng rồi tăng, giảm hệ số của từng chất. Hình vẽ phân tử và các thanh đếm số nguyên tử cho thấy mỗi nguyên tố ở hai vế đã bằng nhau hay chưa. Phương trình chỉ được coi là cân bằng khi các hệ số là bộ số nguyên nhỏ nhất.",
+  "learningGoals": [
+    "Đếm đúng số nguyên tử của mỗi nguyên tố từ công thức hóa học và hệ số.",
+    "Hiểu rằng cân bằng phương trình là làm cho số nguyên tử mỗi nguyên tố ở hai vế bằng nhau (bảo toàn nguyên tố), chỉ thay đổi hệ số chứ không thay đổi chỉ số.",
+    "Lập được phương trình hóa học với bộ hệ số nguyên tối giản."
+  ],
+  "state": {
+    "reaction": "Mã phản ứng đang chọn, ví dụ \"ch4-o2\" là CH₄ + O₂ → CO₂ + H₂O (h2-o2, n2-h2, ch4-o2, fe-o2, al-hcl, p-o2, al-o2, kclo3, na-h2o, zn-hcl, fe2o3-co, feoh3, c2h5oh-o2)",
+    "c1": "Hệ số của chất thứ nhất, đếm từ trái sang phải qua cả hai vế (số nguyên từ 1 đến 10)",
+    "c2": "Hệ số của chất thứ hai",
+    "c3": "Hệ số của chất thứ ba",
+    "c4": "Hệ số của chất thứ tư; bị bỏ qua nếu phản ứng chỉ có ba chất"
+  },
+  "events": {
+    "balanced": {
+      "kind": "goal",
+      "description": "Học sinh vừa cân bằng xong phương trình với bộ hệ số nguyên nhỏ nhất; data.reaction là mã phản ứng, data.coefficients là mảng hệ số theo thứ tự các chất"
+    }
+  }
+}

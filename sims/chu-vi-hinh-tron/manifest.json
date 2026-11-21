@@ -1,0 +1,46 @@
+{
+  "slug": "chu-vi-hinh-tron",
+  "version": "1.0.0",
+  "title": "Chu vi và diện tích hình tròn",
+  "subject": "math",
+  "grades": [5],
+  "description": "Lăn một hình tròn đúng một vòng trên đường thẳng để trải chu vi ra và so với đường kính: chu vi dài hơn 3 lần đường kính một chút (số π ≈ 3,14). Cắt hình tròn thành 4 đến 64 phần bằng nhau rồi ghép xen kẽ thành hình gần giống hình bình hành có đáy bằng nửa chu vi và chiều cao bằng bán kính, để tìm ra S = r × r × 3,14.",
+  "learningGoals": [
+    "Nhận ra chu vi hình tròn chia cho đường kính luôn được cùng một số, khoảng 3,14, với mọi bán kính.",
+    "Tính chu vi hình tròn: C = d × 3,14 hoặc C = r × 2 × 3,14.",
+    "Hiểu vì sao diện tích hình tròn là S = r × r × 3,14 qua cách cắt ghép thành hình gần giống hình bình hành.",
+    "Thấy cắt càng nhiều phần thì hình ghép càng gần hình bình hành có đáy nửa chu vi, chiều cao bán kính."
+  ],
+  "state": {
+    "mode": "Hoạt động: \"roll\" (lăn hình tròn để tìm chu vi) hoặc \"cut\" (cắt ghép để tìm diện tích)",
+    "radius": "Bán kính r (cm, từ 1 đến 5, bước 0,5)",
+    "roll": "Phần vòng đã lăn được (0 đến 1; 1 là đã lăn đúng một vòng)",
+    "sectors": "Số phần bằng nhau cắt ra từ hình tròn (số chẵn từ 4 đến 64)"
+  },
+  "events": {
+    "roll-start": {
+      "kind": "action",
+      "description": "Học sinh bấm \"Lăn một vòng\"",
+      "data": {}
+    },
+    "rolled": {
+      "kind": "result",
+      "description": "Hình tròn vừa lăn xong đúng một vòng; quãng đường lăn được là chu vi",
+      "data": {
+        "radius": "Bán kính r (cm)",
+        "circumference": "Chu vi đo được khi lăn, 2πr với π chính xác (cm)",
+        "ratio": "Tỉ số chu vi : đường kính (luôn bằng π ≈ 3,14159)"
+      }
+    },
+    "sectors-set": {
+      "kind": "result",
+      "description": "Học sinh thả thanh trượt số phần cắt (hoặc bán kính khi đang cắt ghép); báo diện tích hình ghép gần đúng và diện tích thật",
+      "data": {
+        "sectors": "Số phần cắt (4 đến 64)",
+        "radius": "Bán kính r (cm)",
+        "approxArea": "Diện tích hình bình hành mà hình ghép gần giống: đáy × chiều cao (cm²)",
+        "exactArea": "Diện tích hình tròn πr² với π chính xác (cm²)"
+      }
+    }
+  }
+}

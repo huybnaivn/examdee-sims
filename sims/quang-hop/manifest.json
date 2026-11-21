@@ -1,0 +1,32 @@
+{
+  "slug": "quang-hop",
+  "version": "1.0.0",
+  "title": "Các yếu tố ảnh hưởng đến quang hợp",
+  "subject": "biology",
+  "grades": [7, 11],
+  "description": "Một cành rong đuôi chó trong ống nghiệm chứa nước được chiếu sáng bằng đèn; khí O₂ do quang hợp thải ra thành các bọt khí, số bọt khí mỗi phút là tốc độ quang hợp. Học sinh chỉnh cường độ ánh sáng, nồng độ CO₂ (NaHCO₃ hoà trong nước), nhiệt độ và màu ánh sáng. Mô hình theo quy luật nhân tố giới hạn: mỗi yếu tố đặt một mức trần cho tốc độ và tốc độ quang hợp bằng mức trần thấp nhất. Trần do ánh sáng = 0,6 × cường độ (%) × hiệu quả của màu ánh sáng (đỏ 1,00; xanh tím 0,90; trắng 0,80; xanh lục 0,25, theo phổ hấp thụ của diệp lục); trần do CO₂ = 80 × nồng độ NaHCO₃ (%); trần do nhiệt độ = 70 × g(T), với g = 1 ở nhiệt độ tối ưu 30 °C, giảm chậm khi lạnh hơn và giảm nhanh khi nóng hơn. Đồ thị vẽ tốc độ quang hợp theo một yếu tố đã chọn khi giữ nguyên các yếu tố còn lại, kèm các đường trần của từng yếu tố. Các hằng số chỉ có tính minh hoạ.",
+  "learningGoals": [
+    "Trình bày được ảnh hưởng của ánh sáng, nồng độ CO₂ và nhiệt độ đến cường độ quang hợp.",
+    "Giải thích vì sao khi tăng cường độ ánh sáng thì tốc độ quang hợp tăng rồi đạt giá trị không đổi (do CO₂ hoặc nhiệt độ trở thành nhân tố giới hạn).",
+    "Nhận ra chỉ khi tăng nhân tố đang giới hạn thì tốc độ quang hợp mới tăng; tăng nhân tố khác không làm thay đổi tốc độ.",
+    "Nhận ra mỗi loài cây có nhiệt độ tối ưu cho quang hợp; quá nóng thì tốc độ giảm mạnh.",
+    "Giải thích vì sao ánh sáng đỏ và xanh tím hiệu quả cho quang hợp còn ánh sáng xanh lục kém hiệu quả nhất (diệp lục hấp thụ ít, phản xạ nhiều ánh sáng xanh lục)."
+  ],
+  "state": {
+    "light": "Cường độ ánh sáng của đèn, % so với cường độ tối đa (0 đến 100)",
+    "co2": "Nồng độ NaHCO₃ hoà trong nước để cung cấp CO₂, % (0 đến 1)",
+    "temp": "Nhiệt độ của nước, °C (0 đến 50)",
+    "colour": "Màu ánh sáng: \"white\" trắng, \"red\" đỏ, \"blue\" xanh tím, \"green\" xanh lục",
+    "plot": "Yếu tố trên trục hoành của đồ thị: \"light\", \"co2\" hoặc \"temp\""
+  },
+  "events": {
+    "rate-measured": {
+      "kind": "result",
+      "description": "Học sinh vừa chỉnh xong một điều kiện thí nghiệm; tốc độ quang hợp ở điều kiện mới",
+      "data": {
+        "rate": "Tốc độ quang hợp (bọt khí O₂/phút)",
+        "limiting": "Nhân tố giới hạn: 0 ánh sáng, 1 nồng độ CO₂, 2 nhiệt độ"
+      }
+    }
+  }
+}

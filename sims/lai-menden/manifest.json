@@ -1,0 +1,50 @@
+{
+  "slug": "lai-menden",
+  "version": "1.0.0",
+  "title": "Phép lai Men-đen",
+  "subject": "biology",
+  "grades": [9, 12],
+  "description": "Chọn kiểu gene của bố và mẹ cho một cặp gene (AA, Aa, aa) hoặc hai cặp gene phân li độc lập (AaBb, …), trội hoàn toàn hoặc trội không hoàn toàn ở gene A. Mô phỏng viết giao tử, lập sơ đồ lai (bảng Punnett), cho tỉ lệ kiểu gene và tỉ lệ kiểu hình lí thuyết; sau đó lai tạo một số cá thể con ngẫu nhiên và so sánh tỉ lệ kiểu hình quan sát được với tỉ lệ lí thuyết trên biểu đồ cột. Ví dụ ở cây đậu hà lan: gene A quy định màu hoa, gene B quy định chiều cao thân.",
+  "learningGoals": [
+    "Viết được các loại giao tử của một kiểu gene và lập sơ đồ lai cho phép lai một cặp và hai cặp tính trạng.",
+    "Giải thích tỉ lệ 1 : 2 : 1 về kiểu gene và 3 : 1 về kiểu hình của phép lai Aa × Aa; tỉ lệ 1 : 1 của phép lai phân tích Aa × aa.",
+    "Giải thích tỉ lệ kiểu hình 9 : 3 : 3 : 1 của phép lai AaBb × AaBb bằng quy luật phân li độc lập.",
+    "Phân biệt trội hoàn toàn với trội không hoàn toàn (tỉ lệ kiểu hình 1 : 2 : 1).",
+    "Nhận ra tỉ lệ quan sát chỉ xấp xỉ tỉ lệ lí thuyết và càng gần lí thuyết khi số cá thể con càng lớn."
+  ],
+  "state": {
+    "genes": "Số cặp gene xét: 1 (A, a) hoặc 2 (A, a và B, b phân li độc lập)",
+    "incomplete": "true nếu allele A trội không hoàn toàn so với a (Aa có kiểu hình trung gian); gene B luôn trội hoàn toàn",
+    "motherA": "Kiểu gene của mẹ ở cặp gene A: \"AA\", \"Aa\" hoặc \"aa\"",
+    "motherB": "Kiểu gene của mẹ ở cặp gene B: \"BB\", \"Bb\" hoặc \"bb\"; chỉ có tác dụng khi genes = 2",
+    "fatherA": "Kiểu gene của bố ở cặp gene A: \"AA\", \"Aa\" hoặc \"aa\"",
+    "fatherB": "Kiểu gene của bố ở cặp gene B: \"BB\", \"Bb\" hoặc \"bb\"; chỉ có tác dụng khi genes = 2",
+    "batch": "Số cá thể con tạo ra mỗi lần bấm nút lai (10 đến 1000)",
+    "seed": "Hạt giống của bộ sinh số ngẫu nhiên (số nguyên không âm 32 bit); cùng seed, cùng bố mẹ thì đời con giống hệt nhau",
+    "bred": "Tổng số cá thể con đã tạo với seed hiện tại (0 đến 10000); kiểu gene của từng cá thể được tính lại từ seed"
+  },
+  "events": {
+    "breed": {
+      "kind": "action",
+      "description": "Học sinh bấm nút lai tạo một đợt cá thể con",
+      "data": {
+        "count": "Số cá thể con của đợt lai"
+      }
+    },
+    "batch-result": {
+      "kind": "result",
+      "description": "Kết quả của một đợt lai: tỉ lệ kiểu hình trội quan sát được so với lí thuyết",
+      "data": {
+        "count": "Số cá thể con của đợt lai",
+        "observed": "Tỉ lệ cá thể của đợt này có kiểu hình trội ở mọi tính trạng đang xét (0 đến 1); khi trội không hoàn toàn thì chỉ tính kiểu gene AA",
+        "expected": "Tỉ lệ lí thuyết của kiểu hình đó (0 đến 1)",
+        "total": "Tổng số cá thể con đã tạo sau đợt này"
+      }
+    },
+    "clear-offspring": {
+      "kind": "action",
+      "description": "Học sinh xoá các cá thể con đã tạo để lai lại với mẫu ngẫu nhiên mới",
+      "data": {}
+    }
+  }
+}

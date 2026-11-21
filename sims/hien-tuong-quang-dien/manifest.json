@@ -1,0 +1,45 @@
+{
+  "slug": "hien-tuong-quang-dien",
+  "version": "1.0.0",
+  "title": "Hiện tượng quang điện",
+  "subject": "physics",
+  "grades": [
+    12
+  ],
+  "description": "Chiếu ánh sáng có bước sóng và cường độ thay đổi được vào catôt kim loại (Na, K, Cs, Zn, Cu) của một tế bào quang điện và đặt hiệu điện thế U_AK giữa anôt và catôt. Quan sát electron có bật ra hay không, động năng ban đầu cực đại, đường đặc trưng vôn–ampe với dòng bão hoà và hiệu điện thế hãm, và tìm giới hạn quang điện λ₀ của kim loại.",
+  "learningGoals": [
+    "Phát biểu định luật về giới hạn quang điện: electron chỉ bật ra khi hf > A, tức λ < λ₀ = hc/A, dù cường độ sáng mạnh đến đâu.",
+    "Vận dụng công thức Einstein hf = A + W_đmax để tính động năng ban đầu cực đại của electron quang điện.",
+    "Xác định hiệu điện thế hãm từ e·U_h = W_đmax và đọc nó trên đường đặc trưng vôn–ampe.",
+    "Nhận ra cường độ sáng chỉ làm thay đổi cường độ dòng quang điện bão hoà, không làm thay đổi W_đmax và U_h."
+  ],
+  "state": {
+    "metal": "Kim loại làm catôt: \"Na\" (A = 2,48 eV), \"K\" (2,26 eV), \"Cs\" (1,88 eV), \"Zn\" (3,55 eV), \"Cu\" (4,14 eV)",
+    "wavelength": "Bước sóng ánh sáng chiếu vào catôt (nm), 200–800",
+    "power": "Công suất chùm sáng tới catôt (mW), 0–5; mô hình lấy hiệu suất lượng tử 1 %",
+    "voltage": "Hiệu điện thế U_AK giữa anôt và catôt (V), âm là điện áp hãm",
+    "showThreshold": "true nếu học sinh bật hiển thị giới hạn quang điện λ₀",
+    "found": "Kí hiệu các kim loại mà học sinh đã tự tìm ra giới hạn quang điện, cách nhau bằng dấu phẩy (ví dụ \"Na,Cs\")"
+  },
+  "events": {
+    "measured": {
+      "kind": "result",
+      "description": "Học sinh vừa chỉnh xong kim loại, bước sóng, cường độ sáng hoặc hiệu điện thế",
+      "data": {
+        "wavelength": "Bước sóng ánh sáng (nm)",
+        "emitted": "1 nếu có electron bật ra khỏi catôt, 0 nếu không",
+        "kineticMax": "Động năng ban đầu cực đại W_đmax = hf − A (eV), 0 nếu không có electron bật ra",
+        "stoppingVoltage": "Hiệu điện thế hãm U_h (V), 0 nếu không có electron bật ra",
+        "current": "Cường độ dòng quang điện ở hiệu điện thế hiện tại (µA)"
+      }
+    },
+    "threshold-found": {
+      "kind": "goal",
+      "description": "Lần đầu học sinh đưa bước sóng tới cách giới hạn quang điện λ₀ của kim loại đang chọn không quá 5 nm, trong khi λ₀ chưa được hiển thị",
+      "data": {
+        "wavelength": "Bước sóng học sinh dừng lại (nm)",
+        "threshold": "Giới hạn quang điện λ₀ = hc/A của kim loại (nm)"
+      }
+    }
+  }
+}
