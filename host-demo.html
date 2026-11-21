@@ -53,13 +53,15 @@
       const probe = () => {
         probed = true;
         const doc = frame.contentDocument;
-        const range = doc.querySelector(".controls input[type=range]:not(:disabled)");
+        // Only controls the learner can actually see and use.
+        const usable = sel => [...doc.querySelectorAll(sel)].find(el => !el.disabled && el.offsetParent !== null);
+        const range = usable(".controls input[type=range]");
         if (range) {
           range.value = range.value === range.max ? range.min : range.max;
           range.dispatchEvent(new Event("input", { bubbles: true }));
           range.dispatchEvent(new Event("change", { bubbles: true }));
         } else {
-          doc.querySelector(".controls input[type=checkbox]:not(:disabled), .controls button:not(:disabled)")?.click();
+          usable(".controls input[type=checkbox], .controls button")?.click();
         }
         [...doc.querySelectorAll(".transport button")].at(-1).click();
       };
