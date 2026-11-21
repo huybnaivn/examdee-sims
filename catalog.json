@@ -1135,6 +1135,91 @@
     "thumbnailUrl": "/con-lac/1.0.0/thumb.png"
   },
   {
+    "slug": "cong-tru-phan-so",
+    "version": "1.0.0",
+    "title": "Cộng, trừ phân số",
+    "subject": "math",
+    "grades": [
+      4,
+      5,
+      6
+    ],
+    "description": "Cộng hoặc trừ hai phân số (hoặc hai hỗn số) được minh họa bằng băng giấy. Mô phỏng giải từng bước như trong sách giáo khoa: đổi hỗn số thành phân số, quy đồng mẫu số với mẫu số chung nhỏ nhất (các băng giấy được chia nhỏ thêm), cộng hoặc trừ hai tử số và giữ nguyên mẫu số, rút gọn bằng cách chia cả tử và mẫu cho ước chung lớn nhất, viết kết quả thành hỗn số. Hai phân số cùng mẫu số thì bỏ qua bước quy đồng. Tùy chọn lớp 6 cho phép kết quả âm. Chế độ luyện tập cho một phép tính ngẫu nhiên để học sinh tự viết kết quả.",
+    "learningGoals": [
+      "Cộng, trừ hai phân số cùng mẫu số: cộng (trừ) hai tử số và giữ nguyên mẫu số.",
+      "Quy đồng mẫu số hai phân số khác mẫu số bằng mẫu số chung nhỏ nhất (bội chung nhỏ nhất của hai mẫu số).",
+      "Rút gọn kết quả về phân số tối giản bằng cách chia cả tử số và mẫu số cho ước chung lớn nhất.",
+      "Đổi hỗn số thành phân số và viết phân số lớn hơn 1 thành hỗn số.",
+      "Lớp 6: trừ hai phân số khi số trừ lớn hơn số bị trừ và viết đúng kết quả âm."
+    ],
+    "state": {
+      "mode": "Hoạt động: \"explore\" (xem cách làm) hoặc \"practice\" (luyện tập: học sinh tự viết kết quả của phép tính đang hiện)",
+      "op": "Phép tính: \"+\" (cộng) hoặc \"-\" (trừ)",
+      "n1": "Tử số của phân số thứ nhất (số nguyên 0 đến 12; khi dùng hỗn số thì là tử số của phần phân số, luôn nhỏ hơn mẫu số)",
+      "d1": "Mẫu số của phân số thứ nhất (số nguyên 1 đến 12)",
+      "n2": "Tử số của phân số thứ hai (như n1)",
+      "d2": "Mẫu số của phân số thứ hai (số nguyên 1 đến 12)",
+      "w1": "Phần nguyên của hỗn số thứ nhất (0 đến 3), chỉ dùng khi mixed = true và đang xem cách làm",
+      "w2": "Phần nguyên của hỗn số thứ hai (0 đến 3), chỉ dùng khi mixed = true và đang xem cách làm",
+      "mixed": "true: hai số hạng là hỗn số và kết quả được viết thành hỗn số",
+      "negative": "true: cho phép kết quả âm (lớp 6); false: không trừ khi số trừ lớn hơn số bị trừ (lớp 4, 5) và bài luyện tập không có kết quả âm",
+      "stage": "Số bước giải đang hiện (0 = chỉ có đề bài; số lớn hơn số bước thì hiện tất cả)"
+    },
+    "events": {
+      "calculated": {
+        "kind": "result",
+        "description": "Một phép tính vừa được giải: khi học sinh đổi xong một số hạng, phép tính hoặc tùy chọn, hoặc mở đến bước cuối trong luyện tập. Không báo khi phép trừ cho kết quả âm mà chưa bật lớp 6",
+        "data": {
+          "operation": "1 là phép cộng, −1 là phép trừ",
+          "n1": "Tử số của số hạng thứ nhất viết dưới dạng phân số (hỗn số đã đổi ra phân số)",
+          "d1": "Mẫu số của số hạng thứ nhất",
+          "n2": "Tử số của số hạng thứ hai",
+          "d2": "Mẫu số của số hạng thứ hai",
+          "numerator": "Tử số của kết quả tối giản (âm nếu kết quả âm)",
+          "denominator": "Mẫu số của kết quả tối giản (luôn dương)"
+        }
+      },
+      "correct-answer": {
+        "kind": "goal",
+        "description": "Trong luyện tập, học sinh viết đúng kết quả dưới dạng phân số tối giản (trước khi mở lời giải); báo một lần cho mỗi bài",
+        "data": {
+          "operation": "1 là phép cộng, −1 là phép trừ",
+          "numerator": "Tử số của kết quả",
+          "denominator": "Mẫu số của kết quả",
+          "wrongTries": "Số lần trả lời chưa đúng trước đó ở bài này (kể cả đúng giá trị nhưng chưa rút gọn)"
+        }
+      },
+      "wrong-answer": {
+        "kind": "action",
+        "description": "Trong luyện tập, học sinh bấm Kiểm tra với một kết quả sai hoặc chưa tối giản",
+        "data": {
+          "numerator": "Tử số học sinh viết",
+          "denominator": "Mẫu số học sinh viết (1 nếu để trống)"
+        }
+      },
+      "new-problem": {
+        "kind": "action",
+        "description": "Trong luyện tập, học sinh lấy một phép tính mới",
+        "data": {}
+      },
+      "next-step": {
+        "kind": "action",
+        "description": "Học sinh mở bước giải tiếp theo",
+        "data": {
+          "stage": "Số thứ tự của bước vừa mở",
+          "steps": "Tổng số bước của phép tính này"
+        }
+      },
+      "restart-steps": {
+        "kind": "action",
+        "description": "Học sinh xem lại các bước giải từ đầu",
+        "data": {}
+      }
+    },
+    "url": "/cong-tru-phan-so/1.0.0/index.html",
+    "thumbnailUrl": "/cong-tru-phan-so/1.0.0/thumb.png"
+  },
+  {
     "slug": "cong-vecto",
     "version": "1.0.0",
     "title": "Tổng hợp vectơ",
@@ -2024,6 +2109,83 @@
     },
     "url": "/do-thi-luong-giac/1.0.0/index.html",
     "thumbnailUrl": "/do-thi-luong-giac/1.0.0/thumb.png"
+  },
+  {
+    "slug": "doi-don-vi-do",
+    "version": "1.0.0",
+    "title": "Đổi đơn vị đo",
+    "subject": "math",
+    "grades": [
+      3,
+      4,
+      5
+    ],
+    "description": "Đổi số đo độ dài (km, hm, dam, m, dm, cm, mm), khối lượng (tấn, tạ, yến, kg, hg, dag, g), diện tích (km², hm² hay ha, dam², m², dm², cm², mm²) và thời gian (ngày, giờ, phút, giây). Bảng đơn vị đo cho thấy các chữ số đứng yên còn dấu phẩy trượt sang cột đơn vị cần đổi, các chữ số 0 được viết thêm vào chỗ trống; với thời gian, số đo đi qua từng cột và được nhân (chia) cho 24 hoặc 60. Mỗi đại lượng có quy tắc riêng: độ dài, khối lượng gấp 10 lần, diện tích gấp 100 lần. Chế độ luyện tập cho câu đổi ngẫu nhiên để học sinh tự viết kết quả.",
+    "learningGoals": [
+      "Thuộc bảng đơn vị đo độ dài, khối lượng: mỗi đơn vị gấp 10 lần đơn vị bé hơn liền sau.",
+      "Thuộc bảng đơn vị đo diện tích: mỗi đơn vị gấp 100 lần đơn vị bé hơn liền sau; 1 ha = 1 hm² = 10 000 m², 1 km² = 100 ha.",
+      "Đổi số đo bằng cách dời dấu phẩy trong bảng đơn vị (mỗi đơn vị diện tích ứng với hai chữ số) và viết số thập phân với dấu phẩy.",
+      "Đổi đơn vị đo thời gian: 1 ngày = 24 giờ, 1 giờ = 60 phút, 1 phút = 60 giây.",
+      "Đổi từ đơn vị lớn sang đơn vị bé thì nhân, từ đơn vị bé sang đơn vị lớn thì chia."
+    ],
+    "state": {
+      "mode": "Hoạt động: \"explore\" (xem cách đổi) hoặc \"practice\" (luyện tập: học sinh tự viết kết quả của câu đang hiện)",
+      "qty": "Đại lượng: \"length\" (độ dài), \"mass\" (khối lượng), \"area\" (diện tích), \"time\" (thời gian)",
+      "num": "Các chữ số của số đo cần đổi (số nguyên 1 đến 999)",
+      "dec": "Số chữ số sau dấu phẩy (0 đến 2); số đo = num : 10^dec, ví dụ num 375 và dec 2 là 3,75",
+      "lenFrom": "Đơn vị độ dài cần đổi: km, hm, dam, m, dm, cm, mm",
+      "lenTo": "Đơn vị độ dài muốn đổi sang",
+      "massFrom": "Đơn vị khối lượng cần đổi: tấn, tạ, yến, kg, hg, dag, g",
+      "massTo": "Đơn vị khối lượng muốn đổi sang",
+      "areaFrom": "Đơn vị diện tích cần đổi: km², hm², ha, dam², m², dm², cm², mm² (ha cùng cột với hm²)",
+      "areaTo": "Đơn vị diện tích muốn đổi sang",
+      "timeFrom": "Đơn vị thời gian cần đổi: ngày, giờ, phút, giây",
+      "timeTo": "Đơn vị thời gian muốn đổi sang"
+    },
+    "events": {
+      "converted": {
+        "kind": "result",
+        "description": "Một phép đổi vừa được hiện: học sinh đổi xong số đo, đơn vị hoặc đại lượng, hay bấm đổi ngược lại",
+        "data": {
+          "quantity": "Đại lượng: 0 độ dài, 1 khối lượng, 2 diện tích, 3 thời gian",
+          "from": "Cột của đơn vị cần đổi trong bảng (0 là đơn vị lớn nhất: km, tấn, km², ngày; ha là cột 1)",
+          "to": "Cột của đơn vị đổi sang",
+          "value": "Số đo cần đổi",
+          "result": "Kết quả (có thể là số gần đúng khi đổi thời gian)"
+        }
+      },
+      "correct-answer": {
+        "kind": "goal",
+        "description": "Trong luyện tập, học sinh viết đúng kết quả; báo một lần cho mỗi câu",
+        "data": {
+          "quantity": "Đại lượng: 0 độ dài, 1 khối lượng, 2 diện tích, 3 thời gian",
+          "from": "Cột của đơn vị cần đổi",
+          "to": "Cột của đơn vị đổi sang",
+          "value": "Số đo cần đổi",
+          "result": "Kết quả đúng",
+          "wrongTries": "Số lần trả lời sai trước đó ở câu này"
+        }
+      },
+      "wrong-answer": {
+        "kind": "action",
+        "description": "Trong luyện tập, học sinh bấm Kiểm tra với một kết quả sai",
+        "data": {
+          "quantity": "Đại lượng",
+          "from": "Cột của đơn vị cần đổi",
+          "to": "Cột của đơn vị đổi sang",
+          "value": "Số đo cần đổi",
+          "result": "Kết quả đúng",
+          "answer": "Số học sinh viết"
+        }
+      },
+      "new-question": {
+        "kind": "action",
+        "description": "Trong luyện tập, học sinh lấy câu đổi mới",
+        "data": {}
+      }
+    },
+    "url": "/doi-don-vi-do/1.0.0/index.html",
+    "thumbnailUrl": "/doi-don-vi-do/1.0.0/thumb.png"
   },
   {
     "slug": "don-bay",
@@ -6081,6 +6243,84 @@
     },
     "url": "/tong-hop-dao-dong/1.0.0/index.html",
     "thumbnailUrl": "/tong-hop-dao-dong/1.0.0/thumb.png"
+  },
+  {
+    "slug": "truc-doi-xung",
+    "version": "1.0.0",
+    "title": "Hình có trục đối xứng",
+    "subject": "math",
+    "grades": [
+      3,
+      6
+    ],
+    "description": "Ba hoạt động trên lưới ô vuông 8 × 8 và các hình quen thuộc. Vẽ hình có trục đối xứng: học sinh tô các ô ở một bên trục (trục dọc, trục ngang hoặc trục chéo), mô phỏng vẽ phần đối xứng để được cả hình. Đếm số trục đối xứng: với chữ A, H, E, N, hình vuông, hình chữ nhật, tam giác đều, hình thang cân, hình thoi, lục giác đều, hình bình hành và hình tròn, học sinh chọn số trục đối xứng rồi xem các trục được vẽ ra. Vẽ hình có tâm đối xứng (lớp 6): mỗi ô được lấy đối xứng qua tâm O của lưới. Mô phỏng luôn cho biết hình em tô đối xứng qua trục nào, qua tâm hay không.",
+    "learningGoals": [
+      "Nhận biết trục đối xứng: gấp hình theo trục thì hai nửa chồng khít lên nhau; mỗi điểm và điểm đối xứng với nó cách đều trục.",
+      "Vẽ phần còn lại của một hình để được hình nhận một đường thẳng cho trước làm trục đối xứng.",
+      "Đếm số trục đối xứng của các hình quen thuộc: hình vuông 4, hình chữ nhật 2, tam giác đều 3, hình thang cân 1, hình thoi 2, lục giác đều 6, hình tròn vô số.",
+      "Lớp 6: nhận biết hình có tâm đối xứng (quay nửa vòng quanh tâm thì hình trùng với chính nó); hình đối xứng qua cả trục dọc và trục ngang thì có tâm đối xứng."
+    ],
+    "state": {
+      "mode": "Hoạt động: \"draw\" (vẽ hình có trục đối xứng), \"count\" (đếm số trục đối xứng của một hình), \"center\" (vẽ hình có tâm đối xứng)",
+      "axis": "Trục đối xứng khi vẽ: \"vertical\" (trục dọc ở giữa lưới), \"horizontal\" (trục ngang ở giữa lưới), \"diagonal\" (đường chéo từ góc trên bên trái)",
+      "cells": "Các ô học sinh đã tô: chuỗi 64 kí tự \"0\"/\"1\", lần lượt từng hàng từ trên xuống, mỗi hàng 8 ô từ trái sang phải",
+      "mirror": "true: đang hiện phần đối xứng của các ô đã tô",
+      "shape": "Hình đang hỏi khi đếm trục: letterA, letterH, letterE, letterN (chữ cái), square, rectangle, triangle (tam giác đều), trapezoid (hình thang cân), rhombus, hexagon (lục giác đều), parallelogram, circle"
+    },
+    "events": {
+      "cell-drawn": {
+        "kind": "action",
+        "description": "Học sinh tô hoặc xóa một ô trên lưới",
+        "data": {
+          "row": "Hàng của ô (0 là hàng trên cùng)",
+          "col": "Cột của ô (0 là cột bên trái)",
+          "on": "1 nếu ô được tô, 0 nếu ô bị xóa"
+        }
+      },
+      "reflected": {
+        "kind": "result",
+        "description": "Phần đối xứng của hình được vẽ ra (học sinh bấm vẽ hình đối xứng, hoặc đổi trục khi đang hiện hình đối xứng)",
+        "data": {
+          "cells": "Số ô học sinh đã tô",
+          "total": "Số ô của cả hình sau khi thêm phần đối xứng",
+          "axis": "1 trục dọc, 2 trục ngang, 3 trục chéo, 4 tâm O"
+        }
+      },
+      "correct-axis-count": {
+        "kind": "goal",
+        "description": "Học sinh chọn đúng số trục đối xứng của hình đang hỏi; báo một lần cho mỗi hình",
+        "data": {
+          "shape": "Số thứ tự của hình trong danh sách (0 chữ A, 1 chữ H, 2 chữ E, 3 chữ N, 4 hình vuông, 5 hình chữ nhật, 6 tam giác đều, 7 hình thang cân, 8 hình thoi, 9 lục giác đều, 10 hình bình hành, 11 hình tròn)",
+          "axes": "Số trục đối xứng (−1 là vô số)",
+          "wrongTries": "Số lần chọn sai trước đó ở hình này"
+        }
+      },
+      "wrong-axis-count": {
+        "kind": "action",
+        "description": "Học sinh chọn sai số trục đối xứng (mỗi đáp án sai chỉ bấm được một lần)",
+        "data": {
+          "shape": "Số thứ tự của hình",
+          "answer": "Số trục học sinh chọn (−1 là vô số)"
+        }
+      },
+      "mirror-hidden": {
+        "kind": "action",
+        "description": "Học sinh ẩn phần đối xứng để tô lại",
+        "data": {}
+      },
+      "cleared": {
+        "kind": "action",
+        "description": "Học sinh xóa hết các ô đã tô",
+        "data": {}
+      },
+      "next-shape": {
+        "kind": "action",
+        "description": "Học sinh chuyển sang hình tiếp theo khi đếm trục đối xứng",
+        "data": {}
+      }
+    },
+    "url": "/truc-doi-xung/1.0.0/index.html",
+    "thumbnailUrl": "/truc-doi-xung/1.0.0/thumb.png"
   },
   {
     "slug": "tu-dien",

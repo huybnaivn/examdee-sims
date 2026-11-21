@@ -1,0 +1,79 @@
+{
+  "slug": "cong-tru-phan-so",
+  "version": "1.0.0",
+  "title": "Cộng, trừ phân số",
+  "subject": "math",
+  "grades": [4, 5, 6],
+  "description": "Cộng hoặc trừ hai phân số (hoặc hai hỗn số) được minh họa bằng băng giấy. Mô phỏng giải từng bước như trong sách giáo khoa: đổi hỗn số thành phân số, quy đồng mẫu số với mẫu số chung nhỏ nhất (các băng giấy được chia nhỏ thêm), cộng hoặc trừ hai tử số và giữ nguyên mẫu số, rút gọn bằng cách chia cả tử và mẫu cho ước chung lớn nhất, viết kết quả thành hỗn số. Hai phân số cùng mẫu số thì bỏ qua bước quy đồng. Tùy chọn lớp 6 cho phép kết quả âm. Chế độ luyện tập cho một phép tính ngẫu nhiên để học sinh tự viết kết quả.",
+  "learningGoals": [
+    "Cộng, trừ hai phân số cùng mẫu số: cộng (trừ) hai tử số và giữ nguyên mẫu số.",
+    "Quy đồng mẫu số hai phân số khác mẫu số bằng mẫu số chung nhỏ nhất (bội chung nhỏ nhất của hai mẫu số).",
+    "Rút gọn kết quả về phân số tối giản bằng cách chia cả tử số và mẫu số cho ước chung lớn nhất.",
+    "Đổi hỗn số thành phân số và viết phân số lớn hơn 1 thành hỗn số.",
+    "Lớp 6: trừ hai phân số khi số trừ lớn hơn số bị trừ và viết đúng kết quả âm."
+  ],
+  "state": {
+    "mode": "Hoạt động: \"explore\" (xem cách làm) hoặc \"practice\" (luyện tập: học sinh tự viết kết quả của phép tính đang hiện)",
+    "op": "Phép tính: \"+\" (cộng) hoặc \"-\" (trừ)",
+    "n1": "Tử số của phân số thứ nhất (số nguyên 0 đến 12; khi dùng hỗn số thì là tử số của phần phân số, luôn nhỏ hơn mẫu số)",
+    "d1": "Mẫu số của phân số thứ nhất (số nguyên 1 đến 12)",
+    "n2": "Tử số của phân số thứ hai (như n1)",
+    "d2": "Mẫu số của phân số thứ hai (số nguyên 1 đến 12)",
+    "w1": "Phần nguyên của hỗn số thứ nhất (0 đến 3), chỉ dùng khi mixed = true và đang xem cách làm",
+    "w2": "Phần nguyên của hỗn số thứ hai (0 đến 3), chỉ dùng khi mixed = true và đang xem cách làm",
+    "mixed": "true: hai số hạng là hỗn số và kết quả được viết thành hỗn số",
+    "negative": "true: cho phép kết quả âm (lớp 6); false: không trừ khi số trừ lớn hơn số bị trừ (lớp 4, 5) và bài luyện tập không có kết quả âm",
+    "stage": "Số bước giải đang hiện (0 = chỉ có đề bài; số lớn hơn số bước thì hiện tất cả)"
+  },
+  "events": {
+    "calculated": {
+      "kind": "result",
+      "description": "Một phép tính vừa được giải: khi học sinh đổi xong một số hạng, phép tính hoặc tùy chọn, hoặc mở đến bước cuối trong luyện tập. Không báo khi phép trừ cho kết quả âm mà chưa bật lớp 6",
+      "data": {
+        "operation": "1 là phép cộng, −1 là phép trừ",
+        "n1": "Tử số của số hạng thứ nhất viết dưới dạng phân số (hỗn số đã đổi ra phân số)",
+        "d1": "Mẫu số của số hạng thứ nhất",
+        "n2": "Tử số của số hạng thứ hai",
+        "d2": "Mẫu số của số hạng thứ hai",
+        "numerator": "Tử số của kết quả tối giản (âm nếu kết quả âm)",
+        "denominator": "Mẫu số của kết quả tối giản (luôn dương)"
+      }
+    },
+    "correct-answer": {
+      "kind": "goal",
+      "description": "Trong luyện tập, học sinh viết đúng kết quả dưới dạng phân số tối giản (trước khi mở lời giải); báo một lần cho mỗi bài",
+      "data": {
+        "operation": "1 là phép cộng, −1 là phép trừ",
+        "numerator": "Tử số của kết quả",
+        "denominator": "Mẫu số của kết quả",
+        "wrongTries": "Số lần trả lời chưa đúng trước đó ở bài này (kể cả đúng giá trị nhưng chưa rút gọn)"
+      }
+    },
+    "wrong-answer": {
+      "kind": "action",
+      "description": "Trong luyện tập, học sinh bấm Kiểm tra với một kết quả sai hoặc chưa tối giản",
+      "data": {
+        "numerator": "Tử số học sinh viết",
+        "denominator": "Mẫu số học sinh viết (1 nếu để trống)"
+      }
+    },
+    "new-problem": {
+      "kind": "action",
+      "description": "Trong luyện tập, học sinh lấy một phép tính mới",
+      "data": {}
+    },
+    "next-step": {
+      "kind": "action",
+      "description": "Học sinh mở bước giải tiếp theo",
+      "data": {
+        "stage": "Số thứ tự của bước vừa mở",
+        "steps": "Tổng số bước của phép tính này"
+      }
+    },
+    "restart-steps": {
+      "kind": "action",
+      "description": "Học sinh xem lại các bước giải từ đầu",
+      "data": {}
+    }
+  }
+}

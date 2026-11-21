@@ -1,0 +1,71 @@
+{
+  "slug": "doi-don-vi-do",
+  "version": "1.0.0",
+  "title": "Đổi đơn vị đo",
+  "subject": "math",
+  "grades": [3, 4, 5],
+  "description": "Đổi số đo độ dài (km, hm, dam, m, dm, cm, mm), khối lượng (tấn, tạ, yến, kg, hg, dag, g), diện tích (km², hm² hay ha, dam², m², dm², cm², mm²) và thời gian (ngày, giờ, phút, giây). Bảng đơn vị đo cho thấy các chữ số đứng yên còn dấu phẩy trượt sang cột đơn vị cần đổi, các chữ số 0 được viết thêm vào chỗ trống; với thời gian, số đo đi qua từng cột và được nhân (chia) cho 24 hoặc 60. Mỗi đại lượng có quy tắc riêng: độ dài, khối lượng gấp 10 lần, diện tích gấp 100 lần. Chế độ luyện tập cho câu đổi ngẫu nhiên để học sinh tự viết kết quả.",
+  "learningGoals": [
+    "Thuộc bảng đơn vị đo độ dài, khối lượng: mỗi đơn vị gấp 10 lần đơn vị bé hơn liền sau.",
+    "Thuộc bảng đơn vị đo diện tích: mỗi đơn vị gấp 100 lần đơn vị bé hơn liền sau; 1 ha = 1 hm² = 10 000 m², 1 km² = 100 ha.",
+    "Đổi số đo bằng cách dời dấu phẩy trong bảng đơn vị (mỗi đơn vị diện tích ứng với hai chữ số) và viết số thập phân với dấu phẩy.",
+    "Đổi đơn vị đo thời gian: 1 ngày = 24 giờ, 1 giờ = 60 phút, 1 phút = 60 giây.",
+    "Đổi từ đơn vị lớn sang đơn vị bé thì nhân, từ đơn vị bé sang đơn vị lớn thì chia."
+  ],
+  "state": {
+    "mode": "Hoạt động: \"explore\" (xem cách đổi) hoặc \"practice\" (luyện tập: học sinh tự viết kết quả của câu đang hiện)",
+    "qty": "Đại lượng: \"length\" (độ dài), \"mass\" (khối lượng), \"area\" (diện tích), \"time\" (thời gian)",
+    "num": "Các chữ số của số đo cần đổi (số nguyên 1 đến 999)",
+    "dec": "Số chữ số sau dấu phẩy (0 đến 2); số đo = num : 10^dec, ví dụ num 375 và dec 2 là 3,75",
+    "lenFrom": "Đơn vị độ dài cần đổi: km, hm, dam, m, dm, cm, mm",
+    "lenTo": "Đơn vị độ dài muốn đổi sang",
+    "massFrom": "Đơn vị khối lượng cần đổi: tấn, tạ, yến, kg, hg, dag, g",
+    "massTo": "Đơn vị khối lượng muốn đổi sang",
+    "areaFrom": "Đơn vị diện tích cần đổi: km², hm², ha, dam², m², dm², cm², mm² (ha cùng cột với hm²)",
+    "areaTo": "Đơn vị diện tích muốn đổi sang",
+    "timeFrom": "Đơn vị thời gian cần đổi: ngày, giờ, phút, giây",
+    "timeTo": "Đơn vị thời gian muốn đổi sang"
+  },
+  "events": {
+    "converted": {
+      "kind": "result",
+      "description": "Một phép đổi vừa được hiện: học sinh đổi xong số đo, đơn vị hoặc đại lượng, hay bấm đổi ngược lại",
+      "data": {
+        "quantity": "Đại lượng: 0 độ dài, 1 khối lượng, 2 diện tích, 3 thời gian",
+        "from": "Cột của đơn vị cần đổi trong bảng (0 là đơn vị lớn nhất: km, tấn, km², ngày; ha là cột 1)",
+        "to": "Cột của đơn vị đổi sang",
+        "value": "Số đo cần đổi",
+        "result": "Kết quả (có thể là số gần đúng khi đổi thời gian)"
+      }
+    },
+    "correct-answer": {
+      "kind": "goal",
+      "description": "Trong luyện tập, học sinh viết đúng kết quả; báo một lần cho mỗi câu",
+      "data": {
+        "quantity": "Đại lượng: 0 độ dài, 1 khối lượng, 2 diện tích, 3 thời gian",
+        "from": "Cột của đơn vị cần đổi",
+        "to": "Cột của đơn vị đổi sang",
+        "value": "Số đo cần đổi",
+        "result": "Kết quả đúng",
+        "wrongTries": "Số lần trả lời sai trước đó ở câu này"
+      }
+    },
+    "wrong-answer": {
+      "kind": "action",
+      "description": "Trong luyện tập, học sinh bấm Kiểm tra với một kết quả sai",
+      "data": {
+        "quantity": "Đại lượng",
+        "from": "Cột của đơn vị cần đổi",
+        "to": "Cột của đơn vị đổi sang",
+        "value": "Số đo cần đổi",
+        "result": "Kết quả đúng",
+        "answer": "Số học sinh viết"
+      }
+    },
+    "new-question": {
+      "kind": "action",
+      "description": "Trong luyện tập, học sinh lấy câu đổi mới",
+      "data": {}
+    }
+  }
+}

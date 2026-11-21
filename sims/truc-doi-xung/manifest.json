@@ -1,0 +1,73 @@
+{
+  "slug": "truc-doi-xung",
+  "version": "1.0.0",
+  "title": "Hình có trục đối xứng",
+  "subject": "math",
+  "grades": [3, 6],
+  "description": "Ba hoạt động trên lưới ô vuông 8 × 8 và các hình quen thuộc. Vẽ hình có trục đối xứng: học sinh tô các ô ở một bên trục (trục dọc, trục ngang hoặc trục chéo), mô phỏng vẽ phần đối xứng để được cả hình. Đếm số trục đối xứng: với chữ A, H, E, N, hình vuông, hình chữ nhật, tam giác đều, hình thang cân, hình thoi, lục giác đều, hình bình hành và hình tròn, học sinh chọn số trục đối xứng rồi xem các trục được vẽ ra. Vẽ hình có tâm đối xứng (lớp 6): mỗi ô được lấy đối xứng qua tâm O của lưới. Mô phỏng luôn cho biết hình em tô đối xứng qua trục nào, qua tâm hay không.",
+  "learningGoals": [
+    "Nhận biết trục đối xứng: gấp hình theo trục thì hai nửa chồng khít lên nhau; mỗi điểm và điểm đối xứng với nó cách đều trục.",
+    "Vẽ phần còn lại của một hình để được hình nhận một đường thẳng cho trước làm trục đối xứng.",
+    "Đếm số trục đối xứng của các hình quen thuộc: hình vuông 4, hình chữ nhật 2, tam giác đều 3, hình thang cân 1, hình thoi 2, lục giác đều 6, hình tròn vô số.",
+    "Lớp 6: nhận biết hình có tâm đối xứng (quay nửa vòng quanh tâm thì hình trùng với chính nó); hình đối xứng qua cả trục dọc và trục ngang thì có tâm đối xứng."
+  ],
+  "state": {
+    "mode": "Hoạt động: \"draw\" (vẽ hình có trục đối xứng), \"count\" (đếm số trục đối xứng của một hình), \"center\" (vẽ hình có tâm đối xứng)",
+    "axis": "Trục đối xứng khi vẽ: \"vertical\" (trục dọc ở giữa lưới), \"horizontal\" (trục ngang ở giữa lưới), \"diagonal\" (đường chéo từ góc trên bên trái)",
+    "cells": "Các ô học sinh đã tô: chuỗi 64 kí tự \"0\"/\"1\", lần lượt từng hàng từ trên xuống, mỗi hàng 8 ô từ trái sang phải",
+    "mirror": "true: đang hiện phần đối xứng của các ô đã tô",
+    "shape": "Hình đang hỏi khi đếm trục: letterA, letterH, letterE, letterN (chữ cái), square, rectangle, triangle (tam giác đều), trapezoid (hình thang cân), rhombus, hexagon (lục giác đều), parallelogram, circle"
+  },
+  "events": {
+    "cell-drawn": {
+      "kind": "action",
+      "description": "Học sinh tô hoặc xóa một ô trên lưới",
+      "data": {
+        "row": "Hàng của ô (0 là hàng trên cùng)",
+        "col": "Cột của ô (0 là cột bên trái)",
+        "on": "1 nếu ô được tô, 0 nếu ô bị xóa"
+      }
+    },
+    "reflected": {
+      "kind": "result",
+      "description": "Phần đối xứng của hình được vẽ ra (học sinh bấm vẽ hình đối xứng, hoặc đổi trục khi đang hiện hình đối xứng)",
+      "data": {
+        "cells": "Số ô học sinh đã tô",
+        "total": "Số ô của cả hình sau khi thêm phần đối xứng",
+        "axis": "1 trục dọc, 2 trục ngang, 3 trục chéo, 4 tâm O"
+      }
+    },
+    "correct-axis-count": {
+      "kind": "goal",
+      "description": "Học sinh chọn đúng số trục đối xứng của hình đang hỏi; báo một lần cho mỗi hình",
+      "data": {
+        "shape": "Số thứ tự của hình trong danh sách (0 chữ A, 1 chữ H, 2 chữ E, 3 chữ N, 4 hình vuông, 5 hình chữ nhật, 6 tam giác đều, 7 hình thang cân, 8 hình thoi, 9 lục giác đều, 10 hình bình hành, 11 hình tròn)",
+        "axes": "Số trục đối xứng (−1 là vô số)",
+        "wrongTries": "Số lần chọn sai trước đó ở hình này"
+      }
+    },
+    "wrong-axis-count": {
+      "kind": "action",
+      "description": "Học sinh chọn sai số trục đối xứng (mỗi đáp án sai chỉ bấm được một lần)",
+      "data": {
+        "shape": "Số thứ tự của hình",
+        "answer": "Số trục học sinh chọn (−1 là vô số)"
+      }
+    },
+    "mirror-hidden": {
+      "kind": "action",
+      "description": "Học sinh ẩn phần đối xứng để tô lại",
+      "data": {}
+    },
+    "cleared": {
+      "kind": "action",
+      "description": "Học sinh xóa hết các ô đã tô",
+      "data": {}
+    },
+    "next-shape": {
+      "kind": "action",
+      "description": "Học sinh chuyển sang hình tiếp theo khi đếm trục đối xứng",
+      "data": {}
+    }
+  }
+}
