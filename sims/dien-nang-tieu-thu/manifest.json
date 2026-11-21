@@ -1,0 +1,66 @@
+{
+  "slug": "dien-nang-tieu-thu",
+  "version": "1.0.0",
+  "title": "Điện năng tiêu thụ và tiền điện",
+  "subject": "physics",
+  "grades": [9],
+  "description": "Một hộ gia đình có bóng đèn, quạt, tủ lạnh, điều hòa, nồi cơm điện và tivi. Học sinh đặt công suất và số giờ dùng mỗi ngày của từng đồ dùng; sim tính điện năng A = P·t theo kWh cho một ngày và một tháng (30 ngày), tiền điện theo biểu giá bậc thang sáu bậc và phần tiền của từng đồ dùng, chỉ ra đồ dùng tốn điện nhất, số tiền bớt được khi thay đèn sợi đốt bằng đèn LED hoặc giảm giờ dùng. Biểu giá chỉ để minh họa, có thể sửa, không phải giá chính thức và chưa gồm thuế VAT.",
+  "learningGoals": [
+    "Tính điện năng tiêu thụ A = P·t và đổi đơn vị: 1 kWh = 1000 W·h = 3,6·10⁶ J.",
+    "Nhận ra điện năng tỉ lệ với công suất và thời gian dùng; điện năng của cả nhà bằng tổng điện năng của các đồ dùng.",
+    "Tính tiền điện theo biểu giá bậc thang: mỗi phần điện năng trong một bậc được tính theo giá của bậc đó.",
+    "Đề xuất cách tiết kiệm điện (dùng đèn LED, giảm giờ dùng đồ dùng công suất lớn) và ước lượng số tiền tiết kiệm được."
+  ],
+  "state": {
+    "lampType": "Loại bóng đèn: \"incandescent\" (sợi đốt 60 W), \"compact\" (15 W), \"led\" (9 W)",
+    "lampCount": "Số bóng đèn",
+    "h_lamp": "Số giờ bật đèn mỗi ngày (h)",
+    "p_fan": "Công suất quạt điện (W)",
+    "h_fan": "Số giờ dùng quạt mỗi ngày (h)",
+    "p_fridge": "Công suất tủ lạnh khi máy nén chạy (W)",
+    "h_fridge": "Số giờ máy nén tủ lạnh chạy mỗi ngày (h)",
+    "p_ac": "Công suất điều hòa (W)",
+    "h_ac": "Số giờ dùng điều hòa mỗi ngày (h)",
+    "p_cooker": "Công suất nồi cơm điện (W)",
+    "h_cooker": "Số giờ dùng nồi cơm điện mỗi ngày (h)",
+    "p_tv": "Công suất tivi (W)",
+    "h_tv": "Số giờ xem tivi mỗi ngày (h)",
+    "t1": "Giá bậc 1, 0–50 kWh (đồng/kWh, minh họa)",
+    "t2": "Giá bậc 2, 51–100 kWh (đồng/kWh, minh họa)",
+    "t3": "Giá bậc 3, 101–200 kWh (đồng/kWh, minh họa)",
+    "t4": "Giá bậc 4, 201–300 kWh (đồng/kWh, minh họa)",
+    "t5": "Giá bậc 5, 301–400 kWh (đồng/kWh, minh họa)",
+    "t6": "Giá bậc 6, từ 401 kWh (đồng/kWh, minh họa)",
+    "editTariff": "true khi đang hiện các thanh trượt sửa biểu giá",
+    "target": "Mục tiêu giảm tiền điện so với tháng mốc (%)",
+    "refKwh": "Điện năng một tháng của tháng mốc (kWh); tiền điện mốc tính bằng biểu giá hiện tại",
+    "goalReached": "true khi đã đạt mục tiêu giảm tiền điện (để chỉ báo một lần)"
+  },
+  "events": {
+    "bill-computed": {
+      "kind": "result",
+      "description": "Học sinh chỉnh xong một đồ dùng, biểu giá hoặc mục tiêu; kết quả điện năng và tiền điện",
+      "data": {
+        "kwhMonth": "Điện năng tiêu thụ một tháng 30 ngày (kWh)",
+        "kwhDay": "Điện năng tiêu thụ một ngày (kWh)",
+        "bill": "Tiền điện một tháng theo biểu giá bậc thang (đồng, chưa VAT)",
+        "cutPercent": "Phần trăm tiền điện giảm so với tháng mốc (%), âm nếu tăng"
+      }
+    },
+    "bill-cut": {
+      "kind": "goal",
+      "description": "Tiền điện giảm được ít nhất bằng mục tiêu phần trăm so với tháng mốc",
+      "data": {
+        "percent": "Phần trăm tiền điện đã giảm (%)",
+        "bill": "Tiền điện một tháng hiện tại (đồng)",
+        "refBill": "Tiền điện của tháng mốc theo biểu giá hiện tại (đồng)",
+        "target": "Mục tiêu đặt ra (%)"
+      }
+    },
+    "reference-set": {
+      "kind": "action",
+      "description": "Học sinh lấy cách dùng điện hiện tại làm tháng mốc để so sánh",
+      "data": {}
+    }
+  }
+}

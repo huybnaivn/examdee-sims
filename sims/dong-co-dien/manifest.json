@@ -1,0 +1,51 @@
+{
+  "slug": "dong-co-dien",
+  "version": "1.0.0",
+  "title": "Động cơ điện một chiều",
+  "subject": "physics",
+  "grades": [9, 11],
+  "description": "Khung dây N vòng đặt trong từ trường đều của nam châm, nối với nguồn điện qua cổ góp và chổi quét, nhìn dọc theo trục quay. Lực từ F = N·B·I·l tác dụng lên hai cạnh khung theo quy tắc bàn tay trái tạo thành ngẫu lực có mômen M = N·B·I·S·sin θ (θ là góc giữa pháp tuyến của khung và B). Có cổ góp: dòng điện trong khung đổi chiều mỗi nửa vòng nên mômen không đổi chiều, khung quay liên tục theo một chiều. Không có cổ góp: khung dao động quanh vị trí cân bằng (mặt khung vuông góc với B) rồi dừng lại. Đảo chiều dòng điện hoặc từ trường thì khung quay ngược lại. Ma sát nhớt và bánh đà được chọn để chuyển động dễ quan sát; hình không theo tỉ lệ.",
+  "learningGoals": [
+    "Xác định chiều lực từ lên các cạnh của khung dây bằng quy tắc bàn tay trái.",
+    "Vận dụng F = B·I·l cho mỗi cạnh (N vòng: F = N·B·I·l) và nhận ra mômen lực M = N·B·I·S·sin θ lớn nhất khi mặt khung song song với đường sức từ, bằng 0 khi mặt khung vuông góc với đường sức từ.",
+    "Giải thích vai trò của cổ góp: đổi chiều dòng điện trong khung mỗi nửa vòng để khung quay liên tục theo một chiều; thiếu cổ góp, khung chỉ dao động rồi dừng ở vị trí cân bằng.",
+    "Nhận ra đảo chiều dòng điện hoặc đảo chiều từ trường thì động cơ quay ngược lại; tăng I, B hoặc N thì mômen lực và tốc độ quay tăng."
+  ],
+  "state": {
+    "current": "Cường độ dòng điện qua khung I (A), độ lớn",
+    "currentDir": "Chiều dòng điện (cực của nguồn): 1 hoặc −1",
+    "field": "Cảm ứng từ B (T), độ lớn",
+    "fieldDir": "Chiều từ trường: 1 khi cực Bắc (N) ở bên trái, −1 khi đổi cực nam châm",
+    "turns": "Số vòng dây N của khung",
+    "commutator": "true nếu có cổ góp; false thì khung nối cố định với nguồn (dòng điện trong khung không đổi chiều)",
+    "theta": "Góc θ giữa pháp tuyến của khung và vectơ B (rad), tăng ngược chiều kim đồng hồ",
+    "omega": "Tốc độ góc của khung (rad/s), dương khi quay ngược chiều kim đồng hồ",
+    "time": "Thời gian (s)",
+    "revStart": "Thời điểm bắt đầu vòng quay đang đo (s)",
+    "revAngle": "Góc đã quay trong vòng đang đo (rad)",
+    "revImpulse": "Tích phân mômen lực từ theo thời gian trong vòng đang đo (N·m·s)",
+    "lastPeriod": "Chu kỳ quay của vòng vừa hoàn thành (s), 0 nếu chưa có",
+    "lastTorque": "Mômen lực từ trung bình của vòng vừa hoàn thành (N·m, có dấu)"
+  },
+  "events": {
+    "revolution": {
+      "kind": "result",
+      "description": "Khung dây vừa quay hết một vòng",
+      "data": {
+        "period": "Thời gian quay một vòng T (s)",
+        "averageTorque": "Độ lớn mômen lực từ trung bình trong vòng đó (N·m)",
+        "speed": "Tốc độ quay trung bình 1/T (vòng/s)",
+        "direction": "1 nếu quay ngược chiều kim đồng hồ, −1 nếu cùng chiều kim đồng hồ"
+      }
+    },
+    "direction-flipped": {
+      "kind": "action",
+      "description": "Học sinh đảo chiều dòng điện hoặc đảo cực nam châm",
+      "data": {
+        "what": "1 = đảo chiều dòng điện, 2 = đảo chiều từ trường",
+        "currentDir": "Chiều dòng điện sau khi đảo (1 hoặc −1)",
+        "fieldDir": "Chiều từ trường sau khi đảo (1 hoặc −1)"
+      }
+    }
+  }
+}

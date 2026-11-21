@@ -1396,6 +1396,76 @@
     "thumbnailUrl": "/di-truyen-quan-the/1.0.0/thumb.png"
   },
   {
+    "slug": "dien-nang-tieu-thu",
+    "version": "1.0.0",
+    "title": "Điện năng tiêu thụ và tiền điện",
+    "subject": "physics",
+    "grades": [
+      9
+    ],
+    "description": "Một hộ gia đình có bóng đèn, quạt, tủ lạnh, điều hòa, nồi cơm điện và tivi. Học sinh đặt công suất và số giờ dùng mỗi ngày của từng đồ dùng; sim tính điện năng A = P·t theo kWh cho một ngày và một tháng (30 ngày), tiền điện theo biểu giá bậc thang sáu bậc và phần tiền của từng đồ dùng, chỉ ra đồ dùng tốn điện nhất, số tiền bớt được khi thay đèn sợi đốt bằng đèn LED hoặc giảm giờ dùng. Biểu giá chỉ để minh họa, có thể sửa, không phải giá chính thức và chưa gồm thuế VAT.",
+    "learningGoals": [
+      "Tính điện năng tiêu thụ A = P·t và đổi đơn vị: 1 kWh = 1000 W·h = 3,6·10⁶ J.",
+      "Nhận ra điện năng tỉ lệ với công suất và thời gian dùng; điện năng của cả nhà bằng tổng điện năng của các đồ dùng.",
+      "Tính tiền điện theo biểu giá bậc thang: mỗi phần điện năng trong một bậc được tính theo giá của bậc đó.",
+      "Đề xuất cách tiết kiệm điện (dùng đèn LED, giảm giờ dùng đồ dùng công suất lớn) và ước lượng số tiền tiết kiệm được."
+    ],
+    "state": {
+      "lampType": "Loại bóng đèn: \"incandescent\" (sợi đốt 60 W), \"compact\" (15 W), \"led\" (9 W)",
+      "lampCount": "Số bóng đèn",
+      "h_lamp": "Số giờ bật đèn mỗi ngày (h)",
+      "p_fan": "Công suất quạt điện (W)",
+      "h_fan": "Số giờ dùng quạt mỗi ngày (h)",
+      "p_fridge": "Công suất tủ lạnh khi máy nén chạy (W)",
+      "h_fridge": "Số giờ máy nén tủ lạnh chạy mỗi ngày (h)",
+      "p_ac": "Công suất điều hòa (W)",
+      "h_ac": "Số giờ dùng điều hòa mỗi ngày (h)",
+      "p_cooker": "Công suất nồi cơm điện (W)",
+      "h_cooker": "Số giờ dùng nồi cơm điện mỗi ngày (h)",
+      "p_tv": "Công suất tivi (W)",
+      "h_tv": "Số giờ xem tivi mỗi ngày (h)",
+      "t1": "Giá bậc 1, 0–50 kWh (đồng/kWh, minh họa)",
+      "t2": "Giá bậc 2, 51–100 kWh (đồng/kWh, minh họa)",
+      "t3": "Giá bậc 3, 101–200 kWh (đồng/kWh, minh họa)",
+      "t4": "Giá bậc 4, 201–300 kWh (đồng/kWh, minh họa)",
+      "t5": "Giá bậc 5, 301–400 kWh (đồng/kWh, minh họa)",
+      "t6": "Giá bậc 6, từ 401 kWh (đồng/kWh, minh họa)",
+      "editTariff": "true khi đang hiện các thanh trượt sửa biểu giá",
+      "target": "Mục tiêu giảm tiền điện so với tháng mốc (%)",
+      "refKwh": "Điện năng một tháng của tháng mốc (kWh); tiền điện mốc tính bằng biểu giá hiện tại",
+      "goalReached": "true khi đã đạt mục tiêu giảm tiền điện (để chỉ báo một lần)"
+    },
+    "events": {
+      "bill-computed": {
+        "kind": "result",
+        "description": "Học sinh chỉnh xong một đồ dùng, biểu giá hoặc mục tiêu; kết quả điện năng và tiền điện",
+        "data": {
+          "kwhMonth": "Điện năng tiêu thụ một tháng 30 ngày (kWh)",
+          "kwhDay": "Điện năng tiêu thụ một ngày (kWh)",
+          "bill": "Tiền điện một tháng theo biểu giá bậc thang (đồng, chưa VAT)",
+          "cutPercent": "Phần trăm tiền điện giảm so với tháng mốc (%), âm nếu tăng"
+        }
+      },
+      "bill-cut": {
+        "kind": "goal",
+        "description": "Tiền điện giảm được ít nhất bằng mục tiêu phần trăm so với tháng mốc",
+        "data": {
+          "percent": "Phần trăm tiền điện đã giảm (%)",
+          "bill": "Tiền điện một tháng hiện tại (đồng)",
+          "refBill": "Tiền điện của tháng mốc theo biểu giá hiện tại (đồng)",
+          "target": "Mục tiêu đặt ra (%)"
+        }
+      },
+      "reference-set": {
+        "kind": "action",
+        "description": "Học sinh lấy cách dùng điện hiện tại làm tháng mốc để so sánh",
+        "data": {}
+      }
+    },
+    "url": "/dien-nang-tieu-thu/1.0.0/index.html",
+    "thumbnailUrl": "/dien-nang-tieu-thu/1.0.0/thumb.png"
+  },
+  {
     "slug": "dien-phan",
     "version": "1.0.0",
     "title": "Điện phân dung dịch",
@@ -1772,6 +1842,55 @@
     "thumbnailUrl": "/dinh-ly-talet/1.0.0/thumb.png"
   },
   {
+    "slug": "diode-ban-dan",
+    "version": "1.0.0",
+    "title": "Điốt bán dẫn và chỉnh lưu",
+    "subject": "physics",
+    "grades": [
+      11,
+      12
+    ],
+    "description": "Mắc điốt nối tiếp điện trở R vào nguồn một chiều E có thể đổi chiều để dò đặc tuyến vôn – ampe: dòng điện thuận tăng rất nhanh khi hiệu điện thế vượt ngưỡng (khoảng 0,6–0,7 V với điốt silic), dòng điện ngược gần bằng 0. So sánh điện áp ngưỡng của điốt silic, gemani và LED các màu (bảng giá trị tiêu biểu, minh họa). Chuyển sang nguồn xoay chiều để xem chỉnh lưu nửa chu kỳ bằng một điốt và chỉnh lưu cả chu kỳ bằng cầu bốn điốt, cùng giá trị trung bình của điện áp ra. Mô hình: phương trình Shockley cho đặc tuyến; điốt dẫn có hiệu điện thế không đổi U_ng khi chỉnh lưu.",
+    "learningGoals": [
+      "Mô tả đặc tuyến vôn – ampe của điốt: dẫn điện theo một chiều khi phân cực thuận và vượt điện áp ngưỡng, gần như không dẫn khi phân cực ngược.",
+      "Nhận ra điện áp ngưỡng của điốt silic khoảng 0,6–0,7 V, của LED lớn hơn và tăng dần từ đỏ đến lam.",
+      "Giải thích chỉnh lưu nửa chu kỳ: điện áp ra bằng 0 trong nửa chu kỳ âm.",
+      "Giải thích chỉnh lưu cả chu kỳ bằng cầu bốn điốt: mỗi nửa chu kỳ có hai điốt dẫn, u_ra = |u| − 2U_ng, giá trị trung bình gần gấp đôi chỉnh lưu nửa chu kỳ."
+    ],
+    "state": {
+      "mode": "\"dc\": nguồn một chiều E nối tiếp R và điốt; \"ac\": nguồn xoay chiều và mạch chỉnh lưu",
+      "diode": "Loại điốt: \"si\", \"ge\", \"red\", \"yellow\", \"green\", \"blue\", \"white\" (LED theo màu)",
+      "emf": "Suất điện động nguồn một chiều E (V), âm khi đảo chiều (phân cực ngược)",
+      "resistance": "Điện trở R mắc nối tiếp với điốt (Ω)",
+      "rectifier": "\"half\": chỉnh lưu nửa chu kỳ (một điốt); \"full\": cầu bốn điốt",
+      "amplitude": "Biên độ U₀ của nguồn xoay chiều (V)",
+      "phase": "Thời điểm đang xét trong chu kỳ, t/T từ 0 đến 1"
+    },
+    "events": {
+      "sweep-point": {
+        "kind": "result",
+        "description": "Học sinh chỉnh xong nguồn E, điện trở R hoặc loại điốt; ghi một điểm trên đặc tuyến I–U",
+        "data": {
+          "voltage": "Hiệu điện thế trên điốt U_D (V)",
+          "current": "Cường độ dòng điện qua điốt I (mA)",
+          "conducting": "1 nếu điốt dẫn (I ≥ 1 mA), 0 nếu không",
+          "emf": "Suất điện động nguồn E (V)"
+        }
+      },
+      "rectifier-changed": {
+        "kind": "result",
+        "description": "Học sinh chuyển sang nguồn xoay chiều, đổi mạch chỉnh lưu, loại điốt hoặc biên độ nguồn",
+        "data": {
+          "mode": "1 = chỉnh lưu nửa chu kỳ, 2 = cầu bốn điốt (cả chu kỳ)",
+          "outputAverage": "Giá trị trung bình của điện áp ra trên tải (V)",
+          "amplitude": "Biên độ U₀ của nguồn (V)"
+        }
+      }
+    },
+    "url": "/diode-ban-dan/1.0.0/index.html",
+    "thumbnailUrl": "/diode-ban-dan/1.0.0/thumb.png"
+  },
+  {
     "slug": "do-thi-ham-so",
     "version": "1.0.0",
     "title": "Đồ thị hàm số bậc nhất và bậc hai",
@@ -1886,6 +2005,62 @@
     },
     "url": "/don-bay/1.0.0/index.html",
     "thumbnailUrl": "/don-bay/1.0.0/thumb.png"
+  },
+  {
+    "slug": "dong-co-dien",
+    "version": "1.0.0",
+    "title": "Động cơ điện một chiều",
+    "subject": "physics",
+    "grades": [
+      9,
+      11
+    ],
+    "description": "Khung dây N vòng đặt trong từ trường đều của nam châm, nối với nguồn điện qua cổ góp và chổi quét, nhìn dọc theo trục quay. Lực từ F = N·B·I·l tác dụng lên hai cạnh khung theo quy tắc bàn tay trái tạo thành ngẫu lực có mômen M = N·B·I·S·sin θ (θ là góc giữa pháp tuyến của khung và B). Có cổ góp: dòng điện trong khung đổi chiều mỗi nửa vòng nên mômen không đổi chiều, khung quay liên tục theo một chiều. Không có cổ góp: khung dao động quanh vị trí cân bằng (mặt khung vuông góc với B) rồi dừng lại. Đảo chiều dòng điện hoặc từ trường thì khung quay ngược lại. Ma sát nhớt và bánh đà được chọn để chuyển động dễ quan sát; hình không theo tỉ lệ.",
+    "learningGoals": [
+      "Xác định chiều lực từ lên các cạnh của khung dây bằng quy tắc bàn tay trái.",
+      "Vận dụng F = B·I·l cho mỗi cạnh (N vòng: F = N·B·I·l) và nhận ra mômen lực M = N·B·I·S·sin θ lớn nhất khi mặt khung song song với đường sức từ, bằng 0 khi mặt khung vuông góc với đường sức từ.",
+      "Giải thích vai trò của cổ góp: đổi chiều dòng điện trong khung mỗi nửa vòng để khung quay liên tục theo một chiều; thiếu cổ góp, khung chỉ dao động rồi dừng ở vị trí cân bằng.",
+      "Nhận ra đảo chiều dòng điện hoặc đảo chiều từ trường thì động cơ quay ngược lại; tăng I, B hoặc N thì mômen lực và tốc độ quay tăng."
+    ],
+    "state": {
+      "current": "Cường độ dòng điện qua khung I (A), độ lớn",
+      "currentDir": "Chiều dòng điện (cực của nguồn): 1 hoặc −1",
+      "field": "Cảm ứng từ B (T), độ lớn",
+      "fieldDir": "Chiều từ trường: 1 khi cực Bắc (N) ở bên trái, −1 khi đổi cực nam châm",
+      "turns": "Số vòng dây N của khung",
+      "commutator": "true nếu có cổ góp; false thì khung nối cố định với nguồn (dòng điện trong khung không đổi chiều)",
+      "theta": "Góc θ giữa pháp tuyến của khung và vectơ B (rad), tăng ngược chiều kim đồng hồ",
+      "omega": "Tốc độ góc của khung (rad/s), dương khi quay ngược chiều kim đồng hồ",
+      "time": "Thời gian (s)",
+      "revStart": "Thời điểm bắt đầu vòng quay đang đo (s)",
+      "revAngle": "Góc đã quay trong vòng đang đo (rad)",
+      "revImpulse": "Tích phân mômen lực từ theo thời gian trong vòng đang đo (N·m·s)",
+      "lastPeriod": "Chu kỳ quay của vòng vừa hoàn thành (s), 0 nếu chưa có",
+      "lastTorque": "Mômen lực từ trung bình của vòng vừa hoàn thành (N·m, có dấu)"
+    },
+    "events": {
+      "revolution": {
+        "kind": "result",
+        "description": "Khung dây vừa quay hết một vòng",
+        "data": {
+          "period": "Thời gian quay một vòng T (s)",
+          "averageTorque": "Độ lớn mômen lực từ trung bình trong vòng đó (N·m)",
+          "speed": "Tốc độ quay trung bình 1/T (vòng/s)",
+          "direction": "1 nếu quay ngược chiều kim đồng hồ, −1 nếu cùng chiều kim đồng hồ"
+        }
+      },
+      "direction-flipped": {
+        "kind": "action",
+        "description": "Học sinh đảo chiều dòng điện hoặc đảo cực nam châm",
+        "data": {
+          "what": "1 = đảo chiều dòng điện, 2 = đảo chiều từ trường",
+          "currentDir": "Chiều dòng điện sau khi đảo (1 hoặc −1)",
+          "fieldDir": "Chiều từ trường sau khi đảo (1 hoặc −1)"
+        }
+      }
+    },
+    "url": "/dong-co-dien/1.0.0/index.html",
+    "thumbnailUrl": "/dong-co-dien/1.0.0/thumb.png"
   },
   {
     "slug": "dong-co-nhiet",
