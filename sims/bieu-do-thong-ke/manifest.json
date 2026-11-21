@@ -1,0 +1,50 @@
+{
+  "slug": "bieu-do-thong-ke",
+  "version": "1.0.0",
+  "title": "Biểu đồ thống kê",
+  "subject": "math",
+  "grades": [6, 7, 8],
+  "description": "Một bảng số liệu nhỏ (tối đa 8 hạng mục) do học sinh tự sửa được biểu diễn cùng lúc bằng biểu đồ cột, biểu đồ hình quạt tròn (kèm tỉ lệ phần trăm và số đo góc ở tâm), biểu đồ đoạn thẳng và biểu đồ tranh (chọn biểu tượng và số đơn vị ứng với mỗi biểu tượng, có thể có một phần biểu tượng). Bấm vào một hạng mục trên một biểu đồ để tô đậm hạng mục đó trên mọi biểu đồ.",
+  "learningGoals": [
+    "Đọc và vẽ biểu đồ tranh, biểu đồ cột, biểu đồ hình quạt tròn và biểu đồ đoạn thẳng từ cùng một bảng số liệu.",
+    "Tính tỉ lệ phần trăm của mỗi hạng mục và số đo góc ở tâm của hình quạt: góc = tỉ lệ phần trăm · 360°.",
+    "Hiểu chiều cao cột tỉ lệ với số liệu, và trong biểu đồ tranh một phần biểu tượng ứng với phần lẻ của số liệu.",
+    "Chọn loại biểu đồ phù hợp: hình quạt tròn để so sánh các phần với tổng thể, đoạn thẳng để thấy xu hướng theo thời gian."
+  ],
+  "state": {
+    "dataset": "Bộ số liệu: \"the-thao\" (môn thể thao yêu thích của lớp 6A), \"sach\" (sách quyên góp của các lớp khối 6), \"nhiet-do\" (nhiệt độ trung bình các tháng), \"custom\" (học sinh đã sửa số liệu)",
+    "labels": "Mảng tên các hạng mục (tối đa 8, mỗi tên tối đa 20 kí tự)",
+    "values": "Mảng số liệu của các hạng mục, cùng thứ tự với labels (mỗi số từ 0 đến 1000, làm tròn đến 0,1)",
+    "chart": "Loại biểu đồ đang xem: \"all\" (cả bốn), \"bar\" (cột), \"pie\" (hình quạt tròn), \"line\" (đoạn thẳng), \"picto\" (tranh)",
+    "scale": "Số đơn vị ứng với mỗi biểu tượng của biểu đồ tranh (1, 2, 5, 10, 20, 50 hoặc 100)",
+    "icon": "Biểu tượng của biểu đồ tranh: \"person\", \"book\" hoặc \"star\"",
+    "selected": "Chỉ số (từ 0) của hạng mục đang được tô đậm trên mọi biểu đồ; −1 nếu không chọn"
+  },
+  "events": {
+    "data-changed": {
+      "kind": "action",
+      "description": "Học sinh sửa bảng số liệu: đổi tên hoặc giá trị, thêm hoặc xóa một hạng mục",
+      "data": {
+        "categories": "Số hạng mục sau khi sửa",
+        "total": "Tổng các số liệu sau khi sửa"
+      }
+    },
+    "chart-chosen": {
+      "kind": "result",
+      "description": "Học sinh chọn loại biểu đồ để biểu diễn bảng số liệu",
+      "data": {
+        "type": "Loại biểu đồ: 0 = cả bốn, 1 = cột, 2 = hình quạt tròn, 3 = đoạn thẳng, 4 = tranh",
+        "categories": "Số hạng mục",
+        "total": "Tổng các số liệu"
+      }
+    },
+    "category-selected": {
+      "kind": "action",
+      "description": "Học sinh bấm vào một hạng mục trên một biểu đồ để tô đậm nó",
+      "data": {
+        "index": "Chỉ số của hạng mục (từ 0)",
+        "value": "Số liệu của hạng mục đó"
+      }
+    }
+  }
+}

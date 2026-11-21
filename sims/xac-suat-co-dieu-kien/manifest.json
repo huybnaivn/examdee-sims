@@ -1,0 +1,35 @@
+{
+  "slug": "xac-suat-co-dieu-kien",
+  "version": "1.0.0",
+  "title": "Xác suất có điều kiện và công thức Bay-ét",
+  "subject": "math",
+  "grades": [12],
+  "description": "Phép thử hai giai đoạn: trước hết xảy ra B hoặc B̄, sau đó xảy ra A hoặc Ā (xét nghiệm bệnh, chọn hộp rồi lấy bi, sản phẩm của hai máy). Đổi P(B), P(A|B), P(A|B̄) trên sơ đồ cây để thấy xác suất của từng nhánh, công thức nhân xác suất, công thức xác suất toàn phần và công thức Bay-ét; lưới 1000 trường hợp cho thấy cùng kết quả bằng cách đếm.",
+  "learningGoals": [
+    "Đọc và lập sơ đồ cây; tổng xác suất các nhánh đi ra từ một điểm bằng 1.",
+    "Dùng công thức nhân P(A∩B) = P(B)·P(A|B).",
+    "Tính P(A) bằng công thức xác suất toàn phần P(A) = P(B)·P(A|B) + P(B̄)·P(A|B̄).",
+    "Tính P(B|A) bằng công thức Bay-ét P(B|A) = P(B)·P(A|B) / P(A) và hiểu vì sao xét nghiệm dương tính với bệnh hiếm vẫn có P(B|A) nhỏ.",
+    "Nhận ra A và B độc lập khi và chỉ khi P(A|B) = P(A|B̄), tức P(A∩B) = P(A)·P(B)."
+  ],
+  "state": {
+    "scenario": "Tình huống: \"benh\" (B: người được chọn mắc bệnh, A: xét nghiệm dương tính), \"hop\" (B: chọn hộp I, B̄: chọn hộp II, A: lấy được bi đỏ), \"may\" (B: sản phẩm do máy I sản xuất, B̄: máy II, A: sản phẩm là phế phẩm)",
+    "pB": "P(B), xác suất của nhánh B ở giai đoạn đầu (0 đến 1)",
+    "pAB": "P(A|B), xác suất của A khi đã xảy ra B (0 đến 1)",
+    "pANB": "P(A|B̄), xác suất của A khi đã xảy ra B̄ (0 đến 1)",
+    "view": "Cách hiển thị: \"both\" (sơ đồ cây và lưới 1000 trường hợp; màn hình hẹp chỉ hiện sơ đồ cây), \"tree\" (sơ đồ cây và công thức), \"grid\" (lưới 1000 trường hợp)"
+  },
+  "events": {
+    "probabilities-set": {
+      "kind": "result",
+      "description": "Học sinh chọn xong tình huống hoặc một xác suất trên nhánh; kèm xác suất toàn phần và kết quả Bay-ét",
+      "data": {
+        "pB": "P(B)",
+        "pAgivenB": "P(A|B)",
+        "pAgivenNotB": "P(A|B̄)",
+        "pA": "P(A) theo công thức xác suất toàn phần",
+        "pBgivenA": "P(B|A) theo công thức Bay-ét; không có khóa này khi P(A) = 0"
+      }
+    }
+  }
+}

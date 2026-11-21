@@ -1,0 +1,86 @@
+{
+  "slug": "uoc-boi-so-nguyen-to",
+  "version": "1.0.0",
+  "title": "Ước, bội, số nguyên tố, ƯCLN và BCNN",
+  "subject": "math",
+  "grades": [6],
+  "description": "Bốn hoạt động về số tự nhiên: xem sàng Ơ-ra-tô-xten gạch dần các bội của 2, 3, 5, 7 trên bảng 1 đến 100 để còn lại 25 số nguyên tố; phân tích một số ra thừa số nguyên tố bằng sơ đồ cây; tìm ƯCLN và BCNN của hai số bằng phân tích ra thừa số nguyên tố, bằng cách liệt kê ước và bội, hoặc bằng thuật toán Ơ-clít; và câu đố nhận biết số nguyên tố, hợp số.",
+  "learningGoals": [
+    "Nhận biết số nguyên tố (chỉ có hai ước 1 và chính nó) và hợp số (có nhiều hơn hai ước); số 0 và 1 không là số nguyên tố, cũng không là hợp số.",
+    "Dùng sàng Ơ-ra-tô-xten để tìm các số nguyên tố nhỏ hơn 100 và giải thích vì sao chỉ cần gạch bội của 2, 3, 5, 7.",
+    "Phân tích một số ra thừa số nguyên tố bằng sơ đồ cây và viết gọn dưới dạng lũy thừa.",
+    "Tìm ƯCLN (thừa số chung, số mũ nhỏ nhất) và BCNN (thừa số chung và riêng, số mũ lớn nhất); kiểm tra ƯCLN(a, b) · BCNN(a, b) = a · b.",
+    "Mở rộng: tìm ƯCLN bằng thuật toán Ơ-clít."
+  ],
+  "state": {
+    "mode": "Hoạt động: \"sieve\" (sàng Ơ-ra-tô-xten), \"factor\" (phân tích ra thừa số nguyên tố), \"gcd\" (tìm ƯCLN và BCNN), \"quiz\" (đố số nguyên tố hay hợp số)",
+    "sieveIndex": "Số bước sàng đã làm (0 đến 101): gạch số 1, khoanh từng số nguyên tố 2, 3, 5, 7, gạch từng bội chưa bị gạch, cuối cùng khoanh các số còn lại",
+    "speed": "Tốc độ của hoạt hình sàng (bước/giây)",
+    "n": "Số cần phân tích ra thừa số nguyên tố (2 đến 1000)",
+    "a": "Số thứ nhất khi tìm ƯCLN, BCNN (1 đến 300)",
+    "b": "Số thứ hai khi tìm ƯCLN, BCNN (1 đến 300)",
+    "method": "Cách tìm ƯCLN, BCNN: \"factors\" (phân tích ra thừa số nguyên tố), \"list\" (liệt kê ước và bội), \"euclid\" (thuật toán Ơ-clít)",
+    "quizN": "Số đang hỏi trong câu đố (1 đến 100)",
+    "quizScore": "Số câu trả lời đúng trong câu đố",
+    "quizTotal": "Số câu đã trả lời trong câu đố",
+    "quizLast": "Câu trả lời cho số đang hỏi: \"\" (chưa trả lời), \"prime\", \"composite\" hoặc \"neither\""
+  },
+  "events": {
+    "sieve-finished": {
+      "kind": "result",
+      "description": "Sàng Ơ-ra-tô-xten đã xong trên bảng 1 đến 100",
+      "data": {
+        "primes": "Số các số nguyên tố tìm được (25)",
+        "limit": "Số lớn nhất trên bảng (100)"
+      }
+    },
+    "sieve-restart": {
+      "kind": "action",
+      "description": "Học sinh bấm \"Sàng lại từ đầu\"",
+      "data": {}
+    },
+    "factorized": {
+      "kind": "result",
+      "description": "Học sinh chọn xong một số và xem nó được phân tích ra thừa số nguyên tố",
+      "data": {
+        "n": "Số được phân tích",
+        "distinctPrimes": "Số thừa số nguyên tố khác nhau",
+        "primeFactors": "Tổng số thừa số nguyên tố, tính cả lặp lại (tổng các số mũ)"
+      }
+    },
+    "gcd-lcm": {
+      "kind": "result",
+      "description": "Học sinh chọn xong a hoặc b; kèm ƯCLN và BCNN của hai số",
+      "data": {
+        "a": "Số thứ nhất",
+        "b": "Số thứ hai",
+        "gcd": "ƯCLN(a, b)",
+        "lcm": "BCNN(a, b)"
+      }
+    },
+    "quiz-answer": {
+      "kind": "action",
+      "description": "Học sinh trả lời một câu đố",
+      "data": {
+        "n": "Số được hỏi",
+        "answer": "Câu trả lời: 1 = số nguyên tố, 2 = hợp số, 0 = không phải cả hai",
+        "correct": "1 nếu đúng, 0 nếu sai"
+      }
+    },
+    "quiz-correct": {
+      "kind": "goal",
+      "description": "Học sinh xếp đúng một số là số nguyên tố, hợp số hay không phải cả hai",
+      "data": {
+        "n": "Số được hỏi",
+        "kind": "1 = số nguyên tố, 2 = hợp số, 0 = không phải cả hai",
+        "score": "Số câu đúng đến lúc này",
+        "total": "Số câu đã trả lời đến lúc này"
+      }
+    },
+    "quiz-next": {
+      "kind": "action",
+      "description": "Học sinh bấm \"Số khác\" để sang câu đố mới",
+      "data": {}
+    }
+  }
+}
