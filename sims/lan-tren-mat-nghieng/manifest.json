@@ -1,0 +1,47 @@
+{
+  "slug": "lan-tren-mat-nghieng",
+  "version": "1.0.0",
+  "title": "Vật lăn trên mặt phẳng nghiêng",
+  "subject": "physics",
+  "grades": [10, 12],
+  "description": "Thả cùng lúc từ đỉnh một mặt phẳng nghiêng bốn vật: khối hộp trượt không ma sát, quả cầu đặc, trụ đặc và trụ rỗng (vành) lăn không trượt. Thay đổi góc nghiêng, chiều dài dốc, khối lượng và bán kính để xem vật nào tới đích trước, thời gian của từng vật, và động năng được chia thành phần tịnh tiến và phần quay như thế nào.",
+  "learningGoals": [
+    "Vật lăn không trượt có momen quán tính I = k·mR² xuống dốc với gia tốc a = g·sin α/(1 + k), với k = 2/5 (cầu đặc), 1/2 (trụ đặc), 1 (trụ rỗng); khối hộp trượt không ma sát có a = g·sin α.",
+    "Sắp xếp thứ tự về đích: khối hộp, quả cầu đặc, trụ đặc, trụ rỗng; thời gian t = √(2L/a).",
+    "Nhận ra khối lượng và bán kính không làm thay đổi thời gian lăn xuống dốc; chỉ cách phân bố khối lượng (k) mới quan trọng.",
+    "Kiểm chứng bảo toàn cơ năng mgh = ½mv² + ½Iω² với v = ωR, và tỉ lệ động năng quay trong động năng là k/(1 + k)."
+  ],
+  "state": {
+    "angle": "Góc nghiêng α của mặt phẳng so với phương ngang (độ)",
+    "length": "Chiều dài dốc L từ vạch xuất phát tới đích, đo dọc mặt nghiêng (m)",
+    "mass": "Khối lượng của mỗi vật (kg), bốn vật như nhau",
+    "radius": "Bán kính R của các vật lăn (m), như nhau",
+    "time": "Thời gian từ lúc thả (s); 0 là các vật còn ở vạch xuất phát",
+    "done": "true khi cả bốn vật đã tới đích",
+    "slow": "true thì chuyển động được chiếu chậm 4 lần"
+  },
+  "events": {
+    "release": {
+      "kind": "action",
+      "description": "Học sinh thả cả bốn vật từ vạch xuất phát",
+      "data": {
+        "angle": "Góc nghiêng (độ)",
+        "length": "Chiều dài dốc (m)",
+        "mass": "Khối lượng mỗi vật (kg)",
+        "radius": "Bán kính vật lăn (m)"
+      }
+    },
+    "race-finished": {
+      "kind": "result",
+      "description": "Cả bốn vật đã tới chân dốc; thời gian của từng vật",
+      "data": {
+        "tBlock": "Thời gian của khối hộp trượt (s)",
+        "tSphere": "Thời gian của quả cầu đặc (s)",
+        "tCylinder": "Thời gian của trụ đặc (s)",
+        "tRing": "Thời gian của trụ rỗng (s)",
+        "angle": "Góc nghiêng (độ)",
+        "length": "Chiều dài dốc (m)"
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "slug": "ten-lua",
+  "version": "1.0.0",
+  "title": "Chuyển động bằng phản lực",
+  "subject": "physics",
+  "grades": [10],
+  "description": "Phóng một tên lửa phụt khí với tốc độ khí phụt và lưu lượng khí chọn trước, trong không gian không trọng lực hoặc từ mặt đất. Quan sát vận tốc tăng dần so với công thức Tsiolkovsky, động lượng của tên lửa và của khí phụt ra, lượng nhiên liệu còn lại, lực đẩy so với trọng lượng. Chế độ thứ hai là súng giật lùi khi bắn: bảo toàn động lượng m₁v₁ + m₂v₂ = 0.",
+  "learningGoals": [
+    "Giải thích chuyển động bằng phản lực bằng định luật bảo toàn động lượng: hệ ban đầu đứng yên thì m₁v₁ + m₂v₂ = 0, hai phần chuyển động ngược chiều nhau.",
+    "Tính vận tốc giật lùi của súng v₁ = −m₂v₂/m₁.",
+    "Vận dụng lực đẩy của tên lửa F = u·|Δm/Δt| và so sánh với trọng lượng: tên lửa chỉ rời bệ phóng khi F > P.",
+    "Kiểm chứng công thức Δv = u·ln(m₀/m) và thấy cách tính từng phần (phụt N lượt) tiến tới công thức khi N lớn.",
+    "Nhận ra tổng động lượng của tên lửa và khí phụt ra luôn bằng 0 khi không có ngoại lực."
+  ],
+  "state": {
+    "mode": "Thí nghiệm: \"rocket\" (tên lửa phụt khí) hoặc \"recoil\" (súng giật khi bắn)",
+    "dryMass": "Khối lượng vỏ tên lửa khi đã hết nhiên liệu (kg)",
+    "fuelMass": "Khối lượng nhiên liệu lúc phóng (kg); m₀ = vỏ + nhiên liệu",
+    "exhaustSpeed": "Tốc độ khí phụt u so với tên lửa (m/s)",
+    "massFlow": "Lưu lượng khí phụt μ = |Δm/Δt| (kg/s)",
+    "gravity": "true nếu phóng thẳng đứng từ mặt đất (g = 9,81 m/s²); false là trong không gian không trọng lực",
+    "bursts": "Số lượt N khi tính vận tốc bằng cách phụt hết nhiên liệu thành N phần bằng nhau",
+    "time": "Thời gian từ lúc phóng hoặc bắn (s)",
+    "v": "Vận tốc của tên lửa (m/s), chiều dương hướng lên / về phía trước",
+    "x": "Quãng đường tên lửa đã đi (m); với trọng lực là độ cao so với bệ phóng",
+    "pGas": "Tổng động lượng của khí đã phụt ra (kg·m/s)",
+    "launched": "Đã phóng tên lửa / đã bắn hay chưa",
+    "done": "Lần chạy đã kết thúc (tên lửa hết nhiên liệu, đạn đã bay ra)",
+    "gunMass": "Khối lượng súng m₁ (kg)",
+    "bulletMass": "Khối lượng đạn m₂ (g)",
+    "bulletSpeed": "Vận tốc đạn khi rời nòng v₂ (m/s)"
+  },
+  "events": {
+    "launch": {
+      "kind": "action",
+      "description": "Học sinh phóng tên lửa",
+      "data": {
+        "dryMass": "Khối lượng vỏ (kg)",
+        "fuelMass": "Khối lượng nhiên liệu (kg)",
+        "exhaustSpeed": "Tốc độ khí phụt (m/s)",
+        "massFlow": "Lưu lượng khí (kg/s)",
+        "gravity": "Gia tốc trọng trường (m/s²), 0 khi trong không gian"
+      }
+    },
+    "burnout": {
+      "kind": "result",
+      "description": "Tên lửa vừa dùng hết nhiên liệu",
+      "data": {
+        "finalSpeed": "Vận tốc tên lửa lúc hết nhiên liệu theo mô phỏng (m/s)",
+        "formulaSpeed": "Vận tốc theo công thức u·ln(m₀/m) khi không có trọng lực (m/s)",
+        "burnTime": "Thời gian phụt khí (s)",
+        "exhaustSpeed": "Tốc độ khí phụt (m/s)",
+        "massRatio": "Tỉ số khối lượng m₀/m",
+        "gravity": "Gia tốc trọng trường (m/s²), 0 khi trong không gian",
+        "height": "Quãng đường đã đi / độ cao lúc hết nhiên liệu (m)"
+      }
+    },
+    "fire": {
+      "kind": "action",
+      "description": "Học sinh bắn súng",
+      "data": {
+        "gunMass": "Khối lượng súng (kg)",
+        "bulletMass": "Khối lượng đạn (g)",
+        "bulletSpeed": "Vận tốc đạn (m/s)"
+      }
+    },
+    "recoil": {
+      "kind": "result",
+      "description": "Súng giật lùi khi đạn rời nòng",
+      "data": {
+        "gunSpeed": "Vận tốc giật lùi của súng (m/s, âm là ngược chiều đạn)",
+        "bulletSpeed": "Vận tốc đạn (m/s)",
+        "gunMomentum": "Động lượng của súng (kg·m/s)",
+        "bulletMomentum": "Động lượng của đạn (kg·m/s)",
+        "totalMomentum": "Tổng động lượng sau khi bắn (kg·m/s), bằng 0"
+      }
+    }
+  }
+}

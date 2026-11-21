@@ -1,0 +1,60 @@
+{
+  "slug": "may-nen-thuy-luc",
+  "version": "1.0.0",
+  "title": "Máy nén thủy lực và nguyên lí Pa-xcan",
+  "subject": "physics",
+  "grades": [8, 10],
+  "description": "Một máy nén (kích) thủy lực gồm pít-tông nhỏ và pít-tông lớn nối với nhau bằng chất lỏng. Chọn lực tay, tiết diện hai pít-tông và vật cần nâng (ô tô, thùng hàng, xe máy), rồi kéo hoặc ấn pít-tông nhỏ nhiều lần để nâng vật lên 4 cm. Quan sát áp suất truyền nguyên vẹn, lực nâng, quãng đường hai pít-tông dịch chuyển và công ở hai đầu.",
+  "learningGoals": [
+    "Phát biểu nguyên lí Pa-xcan: áp suất tác dụng lên chất lỏng được truyền nguyên vẹn theo mọi hướng, p = F₁/S₁ = F₂/S₂.",
+    "Vận dụng F₂/F₁ = S₂/S₁: pít-tông lớn hơn bao nhiêu lần thì lực nâng lớn hơn bấy nhiêu lần.",
+    "Giải thích vì sao vật chỉ được nâng khi F₁ ≥ P·S₁/S₂.",
+    "Kiểm chứng thể tích chất lỏng chuyển sang bằng nhau S₁h₁ = S₂h₂: được lợi bao nhiêu lần về lực thì thiệt bấy nhiêu lần về đường đi.",
+    "Nhận ra công của lực tay bằng công nâng vật (máy lí tưởng): F₁·h₁ = F₂·h₂."
+  ],
+  "state": {
+    "area1": "Tiết diện pít-tông nhỏ S₁ (cm²)",
+    "area2": "Tiết diện pít-tông lớn S₂ (cm²)",
+    "load": "Vật đặt trên pít-tông lớn: \"car\" (ô tô 1200 kg), \"crate\" (thùng hàng 400 kg) hoặc \"bike\" (xe máy 120 kg)",
+    "force1": "Lực tay F₁ ấn lên pít-tông nhỏ (N)",
+    "h1": "Độ dịch chuyển của pít-tông nhỏ trong lần ấn đang diễn ra (cm, tối đa 10 cm)",
+    "pumped": "Độ cao pít-tông lớn đã được nâng sau các lần ấn đã xong (cm)",
+    "strokes": "Số lần ấn pít-tông nhỏ đã xong",
+    "reached": "true khi vật đã được nâng tới độ cao 4 cm"
+  },
+  "events": {
+    "pump": {
+      "kind": "action",
+      "description": "Học sinh ấn pít-tông nhỏ một lần (kéo trên hình rồi thả, hoặc bấm nút)",
+      "data": {
+        "stroke": "Quãng đường pít-tông nhỏ đi trong lần ấn này (cm)",
+        "lift": "Độ cao vật sau lần ấn (cm)",
+        "force1": "Lực tay (N)"
+      }
+    },
+    "load-lifted": {
+      "kind": "result",
+      "description": "Vật vừa được nâng tới độ cao 4 cm",
+      "data": {
+        "force1": "Lực tay F₁ (N)",
+        "force2": "Lực nâng F₂ = p·S₂ (N)",
+        "weight": "Trọng lượng vật P (N)",
+        "area1": "Tiết diện pít-tông nhỏ S₁ (cm²)",
+        "area2": "Tiết diện pít-tông lớn S₂ (cm²)",
+        "distance1": "Tổng quãng đường pít-tông nhỏ đã đi h₁ (cm)",
+        "distance2": "Độ cao vật được nâng h₂ (cm)",
+        "pressure": "Áp suất chất lỏng p (Pa)",
+        "strokes": "Số lần ấn"
+      }
+    },
+    "car-lifted": {
+      "kind": "goal",
+      "description": "Học sinh nâng được ô tô lên 4 cm với lực tay không quá 200 N",
+      "data": {
+        "handForce": "Lực tay F₁ (N)",
+        "areaRatio": "Tỉ số S₂/S₁",
+        "mass": "Khối lượng ô tô (kg)"
+      }
+    }
+  }
+}
