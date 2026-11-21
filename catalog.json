@@ -4449,6 +4449,75 @@
     "thumbnailUrl": "/phep-bien-hinh/1.0.0/thumb.png"
   },
   {
+    "slug": "phien-ma-dich-ma",
+    "version": "1.0.0",
+    "title": "Phiên mã và dịch mã",
+    "subject": "biology",
+    "grades": [
+      12
+    ],
+    "description": "Chọn một gene có sẵn hoặc tự nhập mạch khuôn DNA (3'→5'). RNA polymerase phiên mã từng nucleotide theo nguyên tắc bổ sung (A→U, T→A, G→C, C→G) tạo mRNA (5'→3'); ribosome dịch mã từng codon từ bộ ba mở đầu AUG đầu tiên, tRNA có anticodon bổ sung mang amino acid đến theo bảng mã di truyền chuẩn, đến bộ ba kết thúc (UAA, UAG, UGA) thì dừng. Công cụ đột biến điểm (thay thế, thêm, mất một cặp nucleotide) cho thấy đột biến câm, sai nghĩa, vô nghĩa và dịch khung.",
+    "learningGoals": [
+      "Viết được trình tự mRNA từ mạch khuôn DNA theo nguyên tắc bổ sung A–U, T–A, G–C, C–G.",
+      "Dùng bảng mã di truyền (64 codon, bộ ba mở đầu AUG, ba bộ ba kết thúc UAA, UAG, UGA) để xác định chuỗi polypeptide; giải thích vai trò của khung đọc bắt đầu từ AUG.",
+      "Mô tả vai trò của mRNA, tRNA (anticodon) và ribosome trong dịch mã.",
+      "Phân biệt hậu quả của đột biến điểm: đột biến câm, sai nghĩa, vô nghĩa (thay thế) và đột biến dịch khung (thêm hoặc mất một cặp nucleotide)."
+    ],
+    "state": {
+      "preset": "Gene đang dùng: \"p1\" gene ngắn, \"p2\" đoạn đầu gene β-globin (rút gọn), \"p3\" có hai AUG lệch khung, \"custom\" tự nhập",
+      "template": "Mạch khuôn DNA hiện tại, viết 3'→5' từ trái sang phải (3 đến 36 chữ A, T, G, C)",
+      "original": "Mạch khuôn trước mọi đột biến (dùng cho nút Khôi phục gene gốc)",
+      "tx": "Số nucleotide đã được phiên mã (0 đến độ dài mạch khuôn)",
+      "tl": "Số codon đã được dịch mã, tính từ AUG đầu tiên (có thể lẻ khi ribosome đang di chuyển)",
+      "mutType": "Dạng đột biến sẽ gây: \"sub\" thay thế, \"ins\" thêm, \"del\" mất một cặp nucleotide",
+      "mutPos": "Vị trí (1 là nucleotide bên trái, đầu 3') trên mạch khuôn; với dạng thêm, nucleotide mới được thêm vào sau vị trí này",
+      "mutBase": "Nucleotide mới trên mạch khuôn cho dạng thay thế hoặc thêm (A, T, G, C)",
+      "target": "Thử thách: \"none\" không có, hoặc mã hậu quả cần tạo \"0\" câm, \"1\" sai nghĩa, \"2\" vô nghĩa, \"3\" dịch khung",
+      "showTable": "true khi đang xem bảng mã di truyền thay cho hình",
+      "lastType": "Dạng của đột biến vừa gây: 0 thay thế, 1 thêm, 2 mất; −1 nếu chưa có",
+      "lastEffect": "Hậu quả của đột biến vừa gây: 0 câm, 1 sai nghĩa, 2 vô nghĩa, 3 dịch khung, 4 đổi bộ ba mở đầu hoặc mất bộ ba kết thúc; −1 nếu chưa có"
+    },
+    "events": {
+      "translation-done": {
+        "kind": "result",
+        "description": "Dịch mã kết thúc (gặp bộ ba kết thúc hoặc hết mRNA, hoặc không có AUG)",
+        "data": {
+          "codons": "Số codon ribosome đã đọc, kể cả bộ ba kết thúc",
+          "aminoAcids": "Số amino acid trong chuỗi polypeptide",
+          "stopped": "1 nếu dừng ở bộ ba kết thúc, 0 nếu không"
+        }
+      },
+      "mutation-applied": {
+        "kind": "result",
+        "description": "Học sinh gây một đột biến điểm trên mạch khuôn",
+        "data": {
+          "type": "Dạng đột biến: 0 thay thế, 1 thêm, 2 mất một cặp nucleotide",
+          "effect": "Hậu quả: 0 câm, 1 sai nghĩa, 2 vô nghĩa, 3 dịch khung, 4 đổi bộ ba mở đầu hoặc mất bộ ba kết thúc",
+          "position": "Vị trí đột biến trên mạch khuôn (1 là đầu 3')"
+        }
+      },
+      "target-effect-made": {
+        "kind": "goal",
+        "description": "Học sinh tạo được đột biến có hậu quả đúng như yêu cầu của thử thách",
+        "data": {
+          "effect": "Mã hậu quả đã tạo: 0 câm, 1 sai nghĩa, 2 vô nghĩa, 3 dịch khung"
+        }
+      },
+      "restart-expression": {
+        "kind": "action",
+        "description": "Học sinh cho phiên mã và dịch mã chạy lại từ đầu",
+        "data": {}
+      },
+      "restore-gene": {
+        "kind": "action",
+        "description": "Học sinh khôi phục mạch khuôn về gene gốc trước đột biến",
+        "data": {}
+      }
+    },
+    "url": "/phien-ma-dich-ma/1.0.0/index.html",
+    "thumbnailUrl": "/phien-ma-dich-ma/1.0.0/thumb.png"
+  },
+  {
     "slug": "phong-xa",
     "version": "1.0.0",
     "title": "Phóng xạ và chu kì bán rã",
@@ -5144,6 +5213,52 @@
     "thumbnailUrl": "/tam-giac/1.0.0/thumb.png"
   },
   {
+    "slug": "tang-truong-quan-the",
+    "version": "1.0.0",
+    "title": "Tăng trưởng quần thể",
+    "subject": "biology",
+    "grades": [
+      12
+    ],
+    "description": "So sánh tăng trưởng theo tiềm năng sinh học (đường cong chữ J, N = N₀eʳᵗ) với tăng trưởng trong môi trường có giới hạn (đường cong chữ S, mô hình logistic dN/dt = rN(1 − N/K)). Học sinh đặt kích thước ban đầu N₀, tốc độ tăng trưởng nội tại r và sức chứa của môi trường K; đồ thị N(t) và đồ thị tốc độ tăng trưởng dN/dt theo N (parabol, cực đại rK/4 tại N = K/2). Có thể khai thác một lượng cố định H mỗi năm để thấy khai thác vượt rK/4 làm quần thể bị diệt vong.",
+    "learningGoals": [
+      "Phân biệt tăng trưởng theo tiềm năng sinh học (chữ J) và tăng trưởng trong môi trường có giới hạn (chữ S).",
+      "Giải thích vì sao quần thể tăng trưởng logistic tiến dần tới sức chứa K của môi trường.",
+      "Xác định quần thể tăng nhanh nhất khi N = K/2, với tốc độ tăng rK/4.",
+      "Vận dụng: khai thác mỗi năm không vượt quá rK/4 (sản lượng khai thác bền vững tối đa), nếu vượt quần thể sẽ bị diệt vong."
+    ],
+    "state": {
+      "N0": "Kích thước quần thể ban đầu N₀ (cá thể)",
+      "r": "Tốc độ tăng trưởng nội tại r (1/năm)",
+      "K": "Sức chứa của môi trường K (cá thể)",
+      "tMax": "Thời gian quan sát trên đồ thị (năm)",
+      "harvest": "true nếu quần thể (chữ S) bị khai thác một lượng cố định mỗi năm",
+      "H": "Lượng khai thác H (cá thể/năm), chỉ có tác dụng khi harvest = true"
+    },
+    "events": {
+      "growth-computed": {
+        "kind": "result",
+        "description": "Kết quả sau khi học sinh thay đổi xong một thông số",
+        "data": {
+          "timeToHalfK": "Thời gian quần thể chữ S (không khai thác) đạt K/2 (năm); 0 nếu N₀ ≥ K/2",
+          "finalN": "Kích thước quần thể chữ S cuối thời gian quan sát, có tính khai thác nếu bật (cá thể)",
+          "harvest": "Lượng khai thác H (cá thể/năm), 0 nếu không khai thác",
+          "msy": "Sản lượng khai thác bền vững tối đa rK/4 (cá thể/năm)"
+        }
+      },
+      "msy-found": {
+        "kind": "goal",
+        "description": "Học sinh đặt lượng khai thác bằng sản lượng bền vững tối đa rK/4 (sai số không quá 3 %)",
+        "data": {
+          "harvest": "Lượng khai thác học sinh chọn (cá thể/năm)",
+          "msy": "rK/4 (cá thể/năm)"
+        }
+      }
+    },
+    "url": "/tang-truong-quan-the/1.0.0/index.html",
+    "thumbnailUrl": "/tang-truong-quan-the/1.0.0/thumb.png"
+  },
+  {
     "slug": "thang-do-ph",
     "version": "1.0.0",
     "title": "Thang pH",
@@ -5274,6 +5389,75 @@
     },
     "url": "/the-tich-khoi/1.0.0/index.html",
     "thumbnailUrl": "/the-tich-khoi/1.0.0/thumb.png"
+  },
+  {
+    "slug": "thoat-hoi-nuoc",
+    "version": "1.0.0",
+    "title": "Thoát hơi nước ở thực vật",
+    "subject": "biology",
+    "grades": [
+      11
+    ],
+    "description": "Thí nghiệm đo tốc độ hút nước (bằng tốc độ thoát hơi nước) của một cành lá bằng ống mao dẫn: bọt khí trong ống chạy một đoạn x = E·t/S. Học sinh thay đổi cường độ ánh sáng, nhiệt độ, độ ẩm không khí, tốc độ gió và bôi vaseline lên mặt trên, mặt dưới hoặc cả hai mặt lá; hình phóng to lát cắt lá cho thấy khí khổng đóng mở và hơi nước thoát ra. Mô hình đơn giản: độ mở khí khổng a = L/(L + 25) theo ánh sáng (đóng hoàn toàn trong tối), chênh lệch hơi nước D = eₛ(T)·(1 − độ ẩm), độ dẫn lớp không khí sát lá tăng theo gió, mặt dưới có 75 % số khí khổng; bỏ qua thoát hơi nước qua cutin. Chế độ câu hỏi yêu cầu tìm thay đổi làm tốc độ tăng nhiều nhất.",
+    "learningGoals": [
+      "Mô tả cách đo tốc độ thoát hơi nước bằng ống mao dẫn và tính tốc độ từ quãng đường bọt khí: E = x·S/t.",
+      "Giải thích ảnh hưởng của ánh sáng, nhiệt độ, độ ẩm không khí và gió đến tốc độ thoát hơi nước.",
+      "Giải thích vì sao bôi vaseline mặt dưới lá làm giảm thoát hơi nước nhiều hơn bôi mặt trên (mặt dưới có nhiều khí khổng hơn).",
+      "Nhận ra thoát hơi nước chủ yếu qua khí khổng; khí khổng đóng khi không có ánh sáng."
+    ],
+    "state": {
+      "light": "Cường độ ánh sáng (% ánh sáng mặt trời toàn phần, 0 là tối)",
+      "temperature": "Nhiệt độ không khí (°C)",
+      "humidity": "Độ ẩm tương đối của không khí (%)",
+      "wind": "Tốc độ gió (m/s)",
+      "cover": "Bôi vaseline: \"none\" không bôi, \"upper\" mặt trên, \"lower\" mặt dưới, \"both\" cả hai mặt lá",
+      "period": "Thời gian đo đã chọn (phút)",
+      "t": "Thời gian đã đo, tính từ khi bọt khí ở vạch 0 (phút)",
+      "quiz": "true khi đang ở chế độ câu hỏi",
+      "qLight": "Câu hỏi: cường độ ánh sáng của điều kiện gốc (%)",
+      "qTemperature": "Câu hỏi: nhiệt độ của điều kiện gốc (°C)",
+      "qHumidity": "Câu hỏi: độ ẩm của điều kiện gốc (%)",
+      "qWind": "Câu hỏi: tốc độ gió của điều kiện gốc (m/s)",
+      "answer": "Câu trả lời đang chọn: \"light\" tăng ánh sáng 20 %, \"temperature\" tăng nhiệt độ 5 °C, \"humidity\" giảm độ ẩm 10 %, \"wind\" tăng gió 1 m/s"
+    },
+    "events": {
+      "measurement-done": {
+        "kind": "result",
+        "description": "Kết thúc một lần đo (hết thời gian đo hoặc bọt khí đến cuối thang chia)",
+        "data": {
+          "rate": "Tốc độ thoát hơi nước E (mm³/phút)",
+          "distance": "Quãng đường bọt khí đã đi (mm)",
+          "time": "Thời gian đo (phút)",
+          "light": "Cường độ ánh sáng (%)",
+          "temperature": "Nhiệt độ (°C)",
+          "humidity": "Độ ẩm không khí (%)",
+          "wind": "Tốc độ gió (m/s)",
+          "cover": "Bôi vaseline: 0 không bôi, 1 mặt trên, 2 mặt dưới, 3 cả hai mặt"
+        }
+      },
+      "quiz-answer": {
+        "kind": "action",
+        "description": "Học sinh bấm Kiểm tra câu trả lời trong chế độ câu hỏi",
+        "data": {
+          "factor": "Nhân tố đã chọn: 0 ánh sáng, 1 nhiệt độ, 2 độ ẩm, 3 gió",
+          "correct": "1 nếu đúng, 0 nếu sai"
+        }
+      },
+      "strongest-factor-found": {
+        "kind": "goal",
+        "description": "Học sinh chọn đúng thay đổi làm tốc độ thoát hơi nước tăng nhiều nhất",
+        "data": {
+          "factor": "Nhân tố: 0 ánh sáng, 1 nhiệt độ, 2 độ ẩm, 3 gió"
+        }
+      },
+      "new-question": {
+        "kind": "action",
+        "description": "Học sinh yêu cầu một câu hỏi mới (điều kiện gốc mới)",
+        "data": {}
+      }
+    },
+    "url": "/thoat-hoi-nuoc/1.0.0/index.html",
+    "thumbnailUrl": "/thoat-hoi-nuoc/1.0.0/thumb.png"
   },
   {
     "slug": "thong-ke-mo-ta",

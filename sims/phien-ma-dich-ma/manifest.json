@@ -1,0 +1,65 @@
+{
+  "slug": "phien-ma-dich-ma",
+  "version": "1.0.0",
+  "title": "Phiên mã và dịch mã",
+  "subject": "biology",
+  "grades": [12],
+  "description": "Chọn một gene có sẵn hoặc tự nhập mạch khuôn DNA (3'→5'). RNA polymerase phiên mã từng nucleotide theo nguyên tắc bổ sung (A→U, T→A, G→C, C→G) tạo mRNA (5'→3'); ribosome dịch mã từng codon từ bộ ba mở đầu AUG đầu tiên, tRNA có anticodon bổ sung mang amino acid đến theo bảng mã di truyền chuẩn, đến bộ ba kết thúc (UAA, UAG, UGA) thì dừng. Công cụ đột biến điểm (thay thế, thêm, mất một cặp nucleotide) cho thấy đột biến câm, sai nghĩa, vô nghĩa và dịch khung.",
+  "learningGoals": [
+    "Viết được trình tự mRNA từ mạch khuôn DNA theo nguyên tắc bổ sung A–U, T–A, G–C, C–G.",
+    "Dùng bảng mã di truyền (64 codon, bộ ba mở đầu AUG, ba bộ ba kết thúc UAA, UAG, UGA) để xác định chuỗi polypeptide; giải thích vai trò của khung đọc bắt đầu từ AUG.",
+    "Mô tả vai trò của mRNA, tRNA (anticodon) và ribosome trong dịch mã.",
+    "Phân biệt hậu quả của đột biến điểm: đột biến câm, sai nghĩa, vô nghĩa (thay thế) và đột biến dịch khung (thêm hoặc mất một cặp nucleotide)."
+  ],
+  "state": {
+    "preset": "Gene đang dùng: \"p1\" gene ngắn, \"p2\" đoạn đầu gene β-globin (rút gọn), \"p3\" có hai AUG lệch khung, \"custom\" tự nhập",
+    "template": "Mạch khuôn DNA hiện tại, viết 3'→5' từ trái sang phải (3 đến 36 chữ A, T, G, C)",
+    "original": "Mạch khuôn trước mọi đột biến (dùng cho nút Khôi phục gene gốc)",
+    "tx": "Số nucleotide đã được phiên mã (0 đến độ dài mạch khuôn)",
+    "tl": "Số codon đã được dịch mã, tính từ AUG đầu tiên (có thể lẻ khi ribosome đang di chuyển)",
+    "mutType": "Dạng đột biến sẽ gây: \"sub\" thay thế, \"ins\" thêm, \"del\" mất một cặp nucleotide",
+    "mutPos": "Vị trí (1 là nucleotide bên trái, đầu 3') trên mạch khuôn; với dạng thêm, nucleotide mới được thêm vào sau vị trí này",
+    "mutBase": "Nucleotide mới trên mạch khuôn cho dạng thay thế hoặc thêm (A, T, G, C)",
+    "target": "Thử thách: \"none\" không có, hoặc mã hậu quả cần tạo \"0\" câm, \"1\" sai nghĩa, \"2\" vô nghĩa, \"3\" dịch khung",
+    "showTable": "true khi đang xem bảng mã di truyền thay cho hình",
+    "lastType": "Dạng của đột biến vừa gây: 0 thay thế, 1 thêm, 2 mất; −1 nếu chưa có",
+    "lastEffect": "Hậu quả của đột biến vừa gây: 0 câm, 1 sai nghĩa, 2 vô nghĩa, 3 dịch khung, 4 đổi bộ ba mở đầu hoặc mất bộ ba kết thúc; −1 nếu chưa có"
+  },
+  "events": {
+    "translation-done": {
+      "kind": "result",
+      "description": "Dịch mã kết thúc (gặp bộ ba kết thúc hoặc hết mRNA, hoặc không có AUG)",
+      "data": {
+        "codons": "Số codon ribosome đã đọc, kể cả bộ ba kết thúc",
+        "aminoAcids": "Số amino acid trong chuỗi polypeptide",
+        "stopped": "1 nếu dừng ở bộ ba kết thúc, 0 nếu không"
+      }
+    },
+    "mutation-applied": {
+      "kind": "result",
+      "description": "Học sinh gây một đột biến điểm trên mạch khuôn",
+      "data": {
+        "type": "Dạng đột biến: 0 thay thế, 1 thêm, 2 mất một cặp nucleotide",
+        "effect": "Hậu quả: 0 câm, 1 sai nghĩa, 2 vô nghĩa, 3 dịch khung, 4 đổi bộ ba mở đầu hoặc mất bộ ba kết thúc",
+        "position": "Vị trí đột biến trên mạch khuôn (1 là đầu 3')"
+      }
+    },
+    "target-effect-made": {
+      "kind": "goal",
+      "description": "Học sinh tạo được đột biến có hậu quả đúng như yêu cầu của thử thách",
+      "data": {
+        "effect": "Mã hậu quả đã tạo: 0 câm, 1 sai nghĩa, 2 vô nghĩa, 3 dịch khung"
+      }
+    },
+    "restart-expression": {
+      "kind": "action",
+      "description": "Học sinh cho phiên mã và dịch mã chạy lại từ đầu",
+      "data": {}
+    },
+    "restore-gene": {
+      "kind": "action",
+      "description": "Học sinh khôi phục mạch khuôn về gene gốc trước đột biến",
+      "data": {}
+    }
+  }
+}

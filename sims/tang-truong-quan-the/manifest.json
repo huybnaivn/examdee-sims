@@ -1,0 +1,42 @@
+{
+  "slug": "tang-truong-quan-the",
+  "version": "1.0.0",
+  "title": "Tăng trưởng quần thể",
+  "subject": "biology",
+  "grades": [12],
+  "description": "So sánh tăng trưởng theo tiềm năng sinh học (đường cong chữ J, N = N₀eʳᵗ) với tăng trưởng trong môi trường có giới hạn (đường cong chữ S, mô hình logistic dN/dt = rN(1 − N/K)). Học sinh đặt kích thước ban đầu N₀, tốc độ tăng trưởng nội tại r và sức chứa của môi trường K; đồ thị N(t) và đồ thị tốc độ tăng trưởng dN/dt theo N (parabol, cực đại rK/4 tại N = K/2). Có thể khai thác một lượng cố định H mỗi năm để thấy khai thác vượt rK/4 làm quần thể bị diệt vong.",
+  "learningGoals": [
+    "Phân biệt tăng trưởng theo tiềm năng sinh học (chữ J) và tăng trưởng trong môi trường có giới hạn (chữ S).",
+    "Giải thích vì sao quần thể tăng trưởng logistic tiến dần tới sức chứa K của môi trường.",
+    "Xác định quần thể tăng nhanh nhất khi N = K/2, với tốc độ tăng rK/4.",
+    "Vận dụng: khai thác mỗi năm không vượt quá rK/4 (sản lượng khai thác bền vững tối đa), nếu vượt quần thể sẽ bị diệt vong."
+  ],
+  "state": {
+    "N0": "Kích thước quần thể ban đầu N₀ (cá thể)",
+    "r": "Tốc độ tăng trưởng nội tại r (1/năm)",
+    "K": "Sức chứa của môi trường K (cá thể)",
+    "tMax": "Thời gian quan sát trên đồ thị (năm)",
+    "harvest": "true nếu quần thể (chữ S) bị khai thác một lượng cố định mỗi năm",
+    "H": "Lượng khai thác H (cá thể/năm), chỉ có tác dụng khi harvest = true"
+  },
+  "events": {
+    "growth-computed": {
+      "kind": "result",
+      "description": "Kết quả sau khi học sinh thay đổi xong một thông số",
+      "data": {
+        "timeToHalfK": "Thời gian quần thể chữ S (không khai thác) đạt K/2 (năm); 0 nếu N₀ ≥ K/2",
+        "finalN": "Kích thước quần thể chữ S cuối thời gian quan sát, có tính khai thác nếu bật (cá thể)",
+        "harvest": "Lượng khai thác H (cá thể/năm), 0 nếu không khai thác",
+        "msy": "Sản lượng khai thác bền vững tối đa rK/4 (cá thể/năm)"
+      }
+    },
+    "msy-found": {
+      "kind": "goal",
+      "description": "Học sinh đặt lượng khai thác bằng sản lượng bền vững tối đa rK/4 (sai số không quá 3 %)",
+      "data": {
+        "harvest": "Lượng khai thác học sinh chọn (cá thể/năm)",
+        "msy": "rK/4 (cá thể/năm)"
+      }
+    }
+  }
+}

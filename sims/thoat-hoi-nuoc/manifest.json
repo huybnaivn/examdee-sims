@@ -1,0 +1,65 @@
+{
+  "slug": "thoat-hoi-nuoc",
+  "version": "1.0.0",
+  "title": "Thoát hơi nước ở thực vật",
+  "subject": "biology",
+  "grades": [11],
+  "description": "Thí nghiệm đo tốc độ hút nước (bằng tốc độ thoát hơi nước) của một cành lá bằng ống mao dẫn: bọt khí trong ống chạy một đoạn x = E·t/S. Học sinh thay đổi cường độ ánh sáng, nhiệt độ, độ ẩm không khí, tốc độ gió và bôi vaseline lên mặt trên, mặt dưới hoặc cả hai mặt lá; hình phóng to lát cắt lá cho thấy khí khổng đóng mở và hơi nước thoát ra. Mô hình đơn giản: độ mở khí khổng a = L/(L + 25) theo ánh sáng (đóng hoàn toàn trong tối), chênh lệch hơi nước D = eₛ(T)·(1 − độ ẩm), độ dẫn lớp không khí sát lá tăng theo gió, mặt dưới có 75 % số khí khổng; bỏ qua thoát hơi nước qua cutin. Chế độ câu hỏi yêu cầu tìm thay đổi làm tốc độ tăng nhiều nhất.",
+  "learningGoals": [
+    "Mô tả cách đo tốc độ thoát hơi nước bằng ống mao dẫn và tính tốc độ từ quãng đường bọt khí: E = x·S/t.",
+    "Giải thích ảnh hưởng của ánh sáng, nhiệt độ, độ ẩm không khí và gió đến tốc độ thoát hơi nước.",
+    "Giải thích vì sao bôi vaseline mặt dưới lá làm giảm thoát hơi nước nhiều hơn bôi mặt trên (mặt dưới có nhiều khí khổng hơn).",
+    "Nhận ra thoát hơi nước chủ yếu qua khí khổng; khí khổng đóng khi không có ánh sáng."
+  ],
+  "state": {
+    "light": "Cường độ ánh sáng (% ánh sáng mặt trời toàn phần, 0 là tối)",
+    "temperature": "Nhiệt độ không khí (°C)",
+    "humidity": "Độ ẩm tương đối của không khí (%)",
+    "wind": "Tốc độ gió (m/s)",
+    "cover": "Bôi vaseline: \"none\" không bôi, \"upper\" mặt trên, \"lower\" mặt dưới, \"both\" cả hai mặt lá",
+    "period": "Thời gian đo đã chọn (phút)",
+    "t": "Thời gian đã đo, tính từ khi bọt khí ở vạch 0 (phút)",
+    "quiz": "true khi đang ở chế độ câu hỏi",
+    "qLight": "Câu hỏi: cường độ ánh sáng của điều kiện gốc (%)",
+    "qTemperature": "Câu hỏi: nhiệt độ của điều kiện gốc (°C)",
+    "qHumidity": "Câu hỏi: độ ẩm của điều kiện gốc (%)",
+    "qWind": "Câu hỏi: tốc độ gió của điều kiện gốc (m/s)",
+    "answer": "Câu trả lời đang chọn: \"light\" tăng ánh sáng 20 %, \"temperature\" tăng nhiệt độ 5 °C, \"humidity\" giảm độ ẩm 10 %, \"wind\" tăng gió 1 m/s"
+  },
+  "events": {
+    "measurement-done": {
+      "kind": "result",
+      "description": "Kết thúc một lần đo (hết thời gian đo hoặc bọt khí đến cuối thang chia)",
+      "data": {
+        "rate": "Tốc độ thoát hơi nước E (mm³/phút)",
+        "distance": "Quãng đường bọt khí đã đi (mm)",
+        "time": "Thời gian đo (phút)",
+        "light": "Cường độ ánh sáng (%)",
+        "temperature": "Nhiệt độ (°C)",
+        "humidity": "Độ ẩm không khí (%)",
+        "wind": "Tốc độ gió (m/s)",
+        "cover": "Bôi vaseline: 0 không bôi, 1 mặt trên, 2 mặt dưới, 3 cả hai mặt"
+      }
+    },
+    "quiz-answer": {
+      "kind": "action",
+      "description": "Học sinh bấm Kiểm tra câu trả lời trong chế độ câu hỏi",
+      "data": {
+        "factor": "Nhân tố đã chọn: 0 ánh sáng, 1 nhiệt độ, 2 độ ẩm, 3 gió",
+        "correct": "1 nếu đúng, 0 nếu sai"
+      }
+    },
+    "strongest-factor-found": {
+      "kind": "goal",
+      "description": "Học sinh chọn đúng thay đổi làm tốc độ thoát hơi nước tăng nhiều nhất",
+      "data": {
+        "factor": "Nhân tố: 0 ánh sáng, 1 nhiệt độ, 2 độ ẩm, 3 gió"
+      }
+    },
+    "new-question": {
+      "kind": "action",
+      "description": "Học sinh yêu cầu một câu hỏi mới (điều kiện gốc mới)",
+      "data": {}
+    }
+  }
+}
