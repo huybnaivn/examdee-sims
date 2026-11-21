@@ -2486,6 +2486,53 @@
     "thumbnailUrl": "/khuc-xa-anh-sang/1.0.0/thumb.png"
   },
   {
+    "slug": "kinh-lup-kinh-hien-vi",
+    "version": "1.0.0",
+    "title": "Kính lúp, kính hiển vi và kính thiên văn",
+    "subject": "physics",
+    "grades": [
+      11
+    ],
+    "description": "Chọn kính lúp, kính hiển vi hoặc kính thiên văn; thay đổi tiêu cự các thấu kính và khoảng cách giữa chúng. Đường đi của tia sáng được vẽ qua từng thấu kính, cùng ảnh trung gian, ảnh cuối cùng và số bội giác. Nút \"Ngắm chừng ở vô cực\" đưa ảnh cuối ra vô cực.",
+    "learningGoals": [
+      "Dựng ảnh qua hệ hai thấu kính: ảnh của vật kính là vật của thị kính.",
+      "Kính lúp: vật đặt trong khoảng tiêu cự cho ảnh ảo; ngắm chừng ở vô cực G∞ = Đ/f với Đ = 25 cm.",
+      "Kính hiển vi: ảnh trung gian thật, ngược chiều, rất lớn; G∞ = δĐ/(f₁f₂) với δ = O₁O₂ − f₁ − f₂.",
+      "Kính thiên văn: ảnh trung gian nằm ở tiêu điểm ảnh của vật kính; ngắm chừng ở vô cực khi O₁O₂ = f₁ + f₂ và G∞ = f₁/f₂.",
+      "Nhận ra ảnh cuối cùng quan sát được luôn là ảnh ảo (hoặc ở vô cực)."
+    ],
+    "state": {
+      "instrument": "Dụng cụ: 0 kính lúp, 1 kính hiển vi, 2 kính thiên văn",
+      "magF": "Kính lúp: tiêu cự f (cm, 2 đến 10)",
+      "magD": "Kính lúp: khoảng cách vật đến kính d (cm, 1 đến 10)",
+      "micF1": "Kính hiển vi: tiêu cự vật kính f₁ (cm, 0,4 đến 2)",
+      "micF2": "Kính hiển vi: tiêu cự thị kính f₂ (cm, 1 đến 5)",
+      "micL": "Kính hiển vi: khoảng cách O₁O₂ giữa vật kính và thị kính (cm, 10 đến 25)",
+      "micD1": "Kính hiển vi: khoảng cách vật đến vật kính d₁ (cm, 0,4 đến 2,5)",
+      "telF1": "Kính thiên văn: tiêu cự vật kính f₁ (cm, 40 đến 120)",
+      "telF2": "Kính thiên văn: tiêu cự thị kính f₂ (cm, 2 đến 10)",
+      "telL": "Kính thiên văn: khoảng cách O₁O₂ (cm, 40 đến 130); vật ở rất xa"
+    },
+    "events": {
+      "settings": {
+        "kind": "result",
+        "description": "Học sinh chọn xong dụng cụ hoặc thông số (thả thanh trượt, đổi dụng cụ, bấm Ngắm chừng ở vô cực); số bội giác tính với mắt đặt sát kính cuối",
+        "data": {
+          "instrument": "Dụng cụ: 0 kính lúp, 1 kính hiển vi, 2 kính thiên văn",
+          "magnification": "Số bội giác G = α/α₀ với cách ngắm hiện tại; không có khóa này khi ảnh cuối là ảnh thật (mắt không quan sát được)",
+          "magnificationInfinity": "Số bội giác khi ngắm chừng ở vô cực theo công thức sách giáo khoa",
+          "atInfinity": "1 nếu ảnh cuối ở vô cực, 0 nếu không"
+        }
+      },
+      "focus-infinity": {
+        "kind": "action",
+        "description": "Học sinh bấm nút Ngắm chừng ở vô cực (vật hoặc ảnh trung gian được đưa về tiêu điểm vật của thị kính)"
+      }
+    },
+    "url": "/kinh-lup-kinh-hien-vi/1.0.0/index.html",
+    "thumbnailUrl": "/kinh-lup-kinh-hien-vi/1.0.0/thumb.png"
+  },
+  {
     "slug": "lai-menden",
     "version": "1.0.0",
     "title": "Phép lai Men-đen",
@@ -3044,6 +3091,52 @@
     },
     "url": "/mat-phang-nghieng/1.0.0/index.html",
     "thumbnailUrl": "/mat-phang-nghieng/1.0.0/thumb.png"
+  },
+  {
+    "slug": "mat-va-tat-khuc-xa",
+    "version": "1.0.0",
+    "title": "Mắt và các tật khúc xạ",
+    "subject": "physics",
+    "grades": [
+      9,
+      11
+    ],
+    "description": "Mô hình mắt rút gọn: thể thủy tinh cách màng lưới 1,5 cm và tự điều tiết. Chọn mắt thường, mắt cận thị hoặc mắt viễn thị, đặt vật ở các khoảng cách khác nhau, quan sát ảnh hiện trước, đúng hay sau màng lưới, rồi chọn độ tụ của kính (coi như sát mắt) để ảnh rõ.",
+    "learningGoals": [
+      "Áp dụng công thức thấu kính cho mắt: 1/f = 1/d + 1/OV, với OV không đổi; mắt điều tiết bằng cách thay đổi tiêu cự.",
+      "Hiểu độ tụ D = 1/f (f tính bằng mét, D tính bằng điốp).",
+      "Biết mắt thường nhìn rõ từ điểm cực cận 25 cm đến vô cực; mắt cận có điểm cực viễn gần, mắt viễn phải điều tiết cả khi nhìn vật ở xa.",
+      "Tính kính sửa tật: mắt cận đeo kính phân kì D = −1/OC_v; mắt viễn đeo kính hội tụ D = 1/Đ − 1/OC_c để nhìn rõ vật cách mắt Đ = 25 cm."
+    ],
+    "state": {
+      "eye": "Loại mắt: normal (mắt thường, OC_c = 25 cm, OC_v ở vô cực), myopia (cận thị), hyperopia (viễn thị)",
+      "farPoint": "Khoảng cực viễn OC_v của mắt cận (cm, 25 đến 200)",
+      "nearMyopia": "Khoảng cực cận OC_c của mắt cận (cm, 8 đến 20)",
+      "nearHyper": "Khoảng cực cận OC_c của mắt viễn (cm, 30 đến 150); mô hình giả sử biên độ điều tiết 4 dp nên điểm cực viễn là ảo, 1/OC_v = 1/OC_c − 4 dp",
+      "distance": "Khoảng cách từ vật đến mắt d (cm); 0 nghĩa là vật ở vô cực",
+      "lens": "Độ tụ của kính đeo sát mắt D_k (dp, −6 đến 6); 0 là không đeo kính"
+    },
+    "events": {
+      "lens-set": {
+        "kind": "result",
+        "description": "Học sinh chọn xong độ tụ của kính (thả thanh trượt)",
+        "data": {
+          "power": "Độ tụ của kính D_k (dp)",
+          "sharp": "1 nếu mắt nhìn rõ vật đang chọn khi đeo kính này, 0 nếu nhìn mờ",
+          "distance": "Khoảng cách vật đến mắt (cm); 0 là vô cực"
+        }
+      },
+      "lens-correct": {
+        "kind": "goal",
+        "description": "Độ tụ của kính vừa chọn khớp với kính sửa tật theo sách giáo khoa (sai lệch không quá 0,15 dp)",
+        "data": {
+          "power": "Độ tụ của kính đã chọn (dp)",
+          "target": "Độ tụ kính đúng (dp): −1/OC_v với mắt cận, 1/0,25 − 1/OC_c với mắt viễn, 0 với mắt thường"
+        }
+      }
+    },
+    "url": "/mat-va-tat-khuc-xa/1.0.0/index.html",
+    "thumbnailUrl": "/mat-va-tat-khuc-xa/1.0.0/thumb.png"
   },
   {
     "slug": "mau-nguyen-tu-bo",
@@ -3794,6 +3887,52 @@
     },
     "url": "/so-thap-phan/1.0.0/index.html",
     "thumbnailUrl": "/so-thap-phan/1.0.0/thumb.png"
+  },
+  {
+    "slug": "song-dien-tu",
+    "version": "1.0.0",
+    "title": "Thang sóng điện từ",
+    "subject": "physics",
+    "grades": [
+      11,
+      12
+    ],
+    "description": "Thang sóng điện từ từ 10³ Hz đến 10²³ Hz trên trục logarit, sóng vô tuyến ở bên trái. Kéo vạch đánh dấu để chọn bước sóng, tần số hoặc năng lượng phôtôn và đọc hai đại lượng còn lại, tên vùng, nguồn phát, ứng dụng, cùng hình sóng vẽ đúng tỉ lệ cạnh một vật quen thuộc.",
+    "learningGoals": [
+      "Sắp xếp các vùng sóng điện từ theo tần số và bước sóng: sóng vô tuyến, vi sóng, hồng ngoại, ánh sáng nhìn thấy, tử ngoại, tia X, tia gamma.",
+      "Vận dụng c = λf để đổi giữa bước sóng và tần số.",
+      "Tính năng lượng phôtôn ε = hf theo J và eV; nhận ra tần số càng lớn thì năng lượng phôtôn càng lớn.",
+      "Biết ánh sáng nhìn thấy chỉ là một khoảng hẹp từ 380 nm đến 760 nm, từ tím đến đỏ.",
+      "Nêu được nguồn phát và ứng dụng tiêu biểu của từng vùng."
+    ],
+    "state": {
+      "mode": "Đại lượng thanh trượt chọn: frequency (tần số), wavelength (bước sóng) hoặc energy (năng lượng phôtôn)",
+      "logF": "log₁₀ của tần số f tính bằng Hz (3 đến 23); là giá trị gốc, hai khóa sau được suy ra từ nó",
+      "logL": "log₁₀ của bước sóng λ tính bằng m, λ = c/f với c = 3·10⁸ m/s",
+      "logE": "log₁₀ của năng lượng phôtôn ε tính bằng eV, ε = hf với h = 6,626·10⁻³⁴ J·s, 1 eV = 1,6·10⁻¹⁹ J",
+      "found": "Mặt nạ bit các vùng học sinh đã thả vạch đánh dấu vào (bit 0 sóng vô tuyến … bit 6 tia gamma); 127 là đủ cả bảy vùng"
+    },
+    "events": {
+      "marker-set": {
+        "kind": "result",
+        "description": "Học sinh thả vạch đánh dấu (kéo trên thang hoặc thả thanh trượt)",
+        "data": {
+          "wavelength": "Bước sóng λ (m)",
+          "frequency": "Tần số f (Hz)",
+          "energy": "Năng lượng phôtôn ε (eV)",
+          "region": "Chỉ số vùng: 0 sóng vô tuyến (λ ≥ 1 m), 1 vi sóng (1 mm đến 1 m), 2 hồng ngoại (760 nm đến 1 mm), 3 ánh sáng nhìn thấy (380 nm đến 760 nm), 4 tử ngoại (10 nm đến 380 nm), 5 tia X (10 pm đến 10 nm), 6 tia gamma (dưới 10 pm)"
+        }
+      },
+      "all-regions": {
+        "kind": "goal",
+        "description": "Học sinh đã thả vạch đánh dấu vào đủ cả bảy vùng của thang sóng điện từ",
+        "data": {
+          "regions": "Số vùng (7)"
+        }
+      }
+    },
+    "url": "/song-dien-tu/1.0.0/index.html",
+    "thumbnailUrl": "/song-dien-tu/1.0.0/thumb.png"
   },
   {
     "slug": "song-dung",

@@ -1,0 +1,45 @@
+{
+  "slug": "kinh-lup-kinh-hien-vi",
+  "version": "1.0.0",
+  "title": "Kính lúp, kính hiển vi và kính thiên văn",
+  "subject": "physics",
+  "grades": [
+    11
+  ],
+  "description": "Chọn kính lúp, kính hiển vi hoặc kính thiên văn; thay đổi tiêu cự các thấu kính và khoảng cách giữa chúng. Đường đi của tia sáng được vẽ qua từng thấu kính, cùng ảnh trung gian, ảnh cuối cùng và số bội giác. Nút \"Ngắm chừng ở vô cực\" đưa ảnh cuối ra vô cực.",
+  "learningGoals": [
+    "Dựng ảnh qua hệ hai thấu kính: ảnh của vật kính là vật của thị kính.",
+    "Kính lúp: vật đặt trong khoảng tiêu cự cho ảnh ảo; ngắm chừng ở vô cực G∞ = Đ/f với Đ = 25 cm.",
+    "Kính hiển vi: ảnh trung gian thật, ngược chiều, rất lớn; G∞ = δĐ/(f₁f₂) với δ = O₁O₂ − f₁ − f₂.",
+    "Kính thiên văn: ảnh trung gian nằm ở tiêu điểm ảnh của vật kính; ngắm chừng ở vô cực khi O₁O₂ = f₁ + f₂ và G∞ = f₁/f₂.",
+    "Nhận ra ảnh cuối cùng quan sát được luôn là ảnh ảo (hoặc ở vô cực)."
+  ],
+  "state": {
+    "instrument": "Dụng cụ: 0 kính lúp, 1 kính hiển vi, 2 kính thiên văn",
+    "magF": "Kính lúp: tiêu cự f (cm, 2 đến 10)",
+    "magD": "Kính lúp: khoảng cách vật đến kính d (cm, 1 đến 10)",
+    "micF1": "Kính hiển vi: tiêu cự vật kính f₁ (cm, 0,4 đến 2)",
+    "micF2": "Kính hiển vi: tiêu cự thị kính f₂ (cm, 1 đến 5)",
+    "micL": "Kính hiển vi: khoảng cách O₁O₂ giữa vật kính và thị kính (cm, 10 đến 25)",
+    "micD1": "Kính hiển vi: khoảng cách vật đến vật kính d₁ (cm, 0,4 đến 2,5)",
+    "telF1": "Kính thiên văn: tiêu cự vật kính f₁ (cm, 40 đến 120)",
+    "telF2": "Kính thiên văn: tiêu cự thị kính f₂ (cm, 2 đến 10)",
+    "telL": "Kính thiên văn: khoảng cách O₁O₂ (cm, 40 đến 130); vật ở rất xa"
+  },
+  "events": {
+    "settings": {
+      "kind": "result",
+      "description": "Học sinh chọn xong dụng cụ hoặc thông số (thả thanh trượt, đổi dụng cụ, bấm Ngắm chừng ở vô cực); số bội giác tính với mắt đặt sát kính cuối",
+      "data": {
+        "instrument": "Dụng cụ: 0 kính lúp, 1 kính hiển vi, 2 kính thiên văn",
+        "magnification": "Số bội giác G = α/α₀ với cách ngắm hiện tại; không có khóa này khi ảnh cuối là ảnh thật (mắt không quan sát được)",
+        "magnificationInfinity": "Số bội giác khi ngắm chừng ở vô cực theo công thức sách giáo khoa",
+        "atInfinity": "1 nếu ảnh cuối ở vô cực, 0 nếu không"
+      }
+    },
+    "focus-infinity": {
+      "kind": "action",
+      "description": "Học sinh bấm nút Ngắm chừng ở vô cực (vật hoặc ảnh trung gian được đưa về tiêu điểm vật của thị kính)"
+    }
+  }
+}

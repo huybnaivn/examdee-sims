@@ -1,0 +1,44 @@
+{
+  "slug": "song-dien-tu",
+  "version": "1.0.0",
+  "title": "Thang sóng điện từ",
+  "subject": "physics",
+  "grades": [
+    11,
+    12
+  ],
+  "description": "Thang sóng điện từ từ 10³ Hz đến 10²³ Hz trên trục logarit, sóng vô tuyến ở bên trái. Kéo vạch đánh dấu để chọn bước sóng, tần số hoặc năng lượng phôtôn và đọc hai đại lượng còn lại, tên vùng, nguồn phát, ứng dụng, cùng hình sóng vẽ đúng tỉ lệ cạnh một vật quen thuộc.",
+  "learningGoals": [
+    "Sắp xếp các vùng sóng điện từ theo tần số và bước sóng: sóng vô tuyến, vi sóng, hồng ngoại, ánh sáng nhìn thấy, tử ngoại, tia X, tia gamma.",
+    "Vận dụng c = λf để đổi giữa bước sóng và tần số.",
+    "Tính năng lượng phôtôn ε = hf theo J và eV; nhận ra tần số càng lớn thì năng lượng phôtôn càng lớn.",
+    "Biết ánh sáng nhìn thấy chỉ là một khoảng hẹp từ 380 nm đến 760 nm, từ tím đến đỏ.",
+    "Nêu được nguồn phát và ứng dụng tiêu biểu của từng vùng."
+  ],
+  "state": {
+    "mode": "Đại lượng thanh trượt chọn: frequency (tần số), wavelength (bước sóng) hoặc energy (năng lượng phôtôn)",
+    "logF": "log₁₀ của tần số f tính bằng Hz (3 đến 23); là giá trị gốc, hai khóa sau được suy ra từ nó",
+    "logL": "log₁₀ của bước sóng λ tính bằng m, λ = c/f với c = 3·10⁸ m/s",
+    "logE": "log₁₀ của năng lượng phôtôn ε tính bằng eV, ε = hf với h = 6,626·10⁻³⁴ J·s, 1 eV = 1,6·10⁻¹⁹ J",
+    "found": "Mặt nạ bit các vùng học sinh đã thả vạch đánh dấu vào (bit 0 sóng vô tuyến … bit 6 tia gamma); 127 là đủ cả bảy vùng"
+  },
+  "events": {
+    "marker-set": {
+      "kind": "result",
+      "description": "Học sinh thả vạch đánh dấu (kéo trên thang hoặc thả thanh trượt)",
+      "data": {
+        "wavelength": "Bước sóng λ (m)",
+        "frequency": "Tần số f (Hz)",
+        "energy": "Năng lượng phôtôn ε (eV)",
+        "region": "Chỉ số vùng: 0 sóng vô tuyến (λ ≥ 1 m), 1 vi sóng (1 mm đến 1 m), 2 hồng ngoại (760 nm đến 1 mm), 3 ánh sáng nhìn thấy (380 nm đến 760 nm), 4 tử ngoại (10 nm đến 380 nm), 5 tia X (10 pm đến 10 nm), 6 tia gamma (dưới 10 pm)"
+      }
+    },
+    "all-regions": {
+      "kind": "goal",
+      "description": "Học sinh đã thả vạch đánh dấu vào đủ cả bảy vùng của thang sóng điện từ",
+      "data": {
+        "regions": "Số vùng (7)"
+      }
+    }
+  }
+}

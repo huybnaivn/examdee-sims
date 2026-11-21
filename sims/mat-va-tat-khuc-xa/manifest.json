@@ -1,0 +1,44 @@
+{
+  "slug": "mat-va-tat-khuc-xa",
+  "version": "1.0.0",
+  "title": "Mắt và các tật khúc xạ",
+  "subject": "physics",
+  "grades": [
+    9,
+    11
+  ],
+  "description": "Mô hình mắt rút gọn: thể thủy tinh cách màng lưới 1,5 cm và tự điều tiết. Chọn mắt thường, mắt cận thị hoặc mắt viễn thị, đặt vật ở các khoảng cách khác nhau, quan sát ảnh hiện trước, đúng hay sau màng lưới, rồi chọn độ tụ của kính (coi như sát mắt) để ảnh rõ.",
+  "learningGoals": [
+    "Áp dụng công thức thấu kính cho mắt: 1/f = 1/d + 1/OV, với OV không đổi; mắt điều tiết bằng cách thay đổi tiêu cự.",
+    "Hiểu độ tụ D = 1/f (f tính bằng mét, D tính bằng điốp).",
+    "Biết mắt thường nhìn rõ từ điểm cực cận 25 cm đến vô cực; mắt cận có điểm cực viễn gần, mắt viễn phải điều tiết cả khi nhìn vật ở xa.",
+    "Tính kính sửa tật: mắt cận đeo kính phân kì D = −1/OC_v; mắt viễn đeo kính hội tụ D = 1/Đ − 1/OC_c để nhìn rõ vật cách mắt Đ = 25 cm."
+  ],
+  "state": {
+    "eye": "Loại mắt: normal (mắt thường, OC_c = 25 cm, OC_v ở vô cực), myopia (cận thị), hyperopia (viễn thị)",
+    "farPoint": "Khoảng cực viễn OC_v của mắt cận (cm, 25 đến 200)",
+    "nearMyopia": "Khoảng cực cận OC_c của mắt cận (cm, 8 đến 20)",
+    "nearHyper": "Khoảng cực cận OC_c của mắt viễn (cm, 30 đến 150); mô hình giả sử biên độ điều tiết 4 dp nên điểm cực viễn là ảo, 1/OC_v = 1/OC_c − 4 dp",
+    "distance": "Khoảng cách từ vật đến mắt d (cm); 0 nghĩa là vật ở vô cực",
+    "lens": "Độ tụ của kính đeo sát mắt D_k (dp, −6 đến 6); 0 là không đeo kính"
+  },
+  "events": {
+    "lens-set": {
+      "kind": "result",
+      "description": "Học sinh chọn xong độ tụ của kính (thả thanh trượt)",
+      "data": {
+        "power": "Độ tụ của kính D_k (dp)",
+        "sharp": "1 nếu mắt nhìn rõ vật đang chọn khi đeo kính này, 0 nếu nhìn mờ",
+        "distance": "Khoảng cách vật đến mắt (cm); 0 là vô cực"
+      }
+    },
+    "lens-correct": {
+      "kind": "goal",
+      "description": "Độ tụ của kính vừa chọn khớp với kính sửa tật theo sách giáo khoa (sai lệch không quá 0,15 dp)",
+      "data": {
+        "power": "Độ tụ của kính đã chọn (dp)",
+        "target": "Độ tụ kính đúng (dp): −1/OC_v với mắt cận, 1/0,25 − 1/OC_c với mắt viễn, 0 với mắt thường"
+      }
+    }
+  }
+}
