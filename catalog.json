@@ -2855,6 +2855,76 @@
     "thumbnailUrl": "/dong-ho/1.0.0/thumb.png"
   },
   {
+    "slug": "dong-phan-ankan",
+    "version": "1.0.0",
+    "title": "Đồng phân và danh pháp alkane",
+    "subject": "chemistry",
+    "grades": [
+      11
+    ],
+    "description": "Vẽ mạch carbon của alkane CₙH₂ₙ₊₂ (n = 1 đến 7) trên một lưới: kéo để nối thêm carbon, chạm để xóa. Sim kiểm tra mạch có liền và hở không, carbon có vượt quá hóa trị IV không, đếm số nguyên tử H trên mỗi carbon, tìm mạch chính dài nhất, đánh số và gọi tên theo IUPAC. Chọn một giá trị n rồi tìm đủ các đồng phân cấu tạo của nó; vẽ lại một đồng phân đã có (dù ở vị trí hay hướng khác) sẽ được nhận ra là trùng. Lưới chỉ là sơ đồ phẳng, góc liên kết thật khoảng 109,5°.",
+    "learningGoals": [
+      "Viết được các đồng phân cấu tạo mạch carbon của alkane có từ 4 đến 7 nguyên tử C (2, 3, 5 và 9 đồng phân).",
+      "Gọi tên alkane theo IUPAC: chọn mạch chính dài nhất (nhiều nhánh nhất nếu bằng nhau), đánh số sao cho các nhánh có chỉ số nhỏ nhất, gọi tên nhánh theo thứ tự chữ cái với tiền tố di-, tri-.",
+      "Giải thích vì sao alkane có công thức CₙH₂ₙ₊₂: mạch hở, chỉ có liên kết đơn, mỗi carbon tạo 4 liên kết.",
+      "Nhận ra hai cách vẽ khác nhau có thể là cùng một chất."
+    ],
+    "state": {
+      "atoms": "Danh sách nguyên tử carbon, mỗi phần tử là [cột, hàng] trên lưới 9 × 5 (cột 0–8, hàng 0–4), tối đa 7 phần tử",
+      "bonds": "Danh sách liên kết đơn C–C, mỗi phần tử là [i, j] (chỉ số trong atoms); chỉ nối hai ô kề nhau, kể cả ô chéo",
+      "target": "Số nguyên tử C (n, 1–7) của nhóm đồng phân đang tìm",
+      "found": "Số thứ tự các đồng phân của CₙH₂ₙ₊₂ (n = target) học sinh đã vẽ được; thứ tự theo danh sách trong sim: mạch chính dài nhất trước, cùng độ dài thì theo tên (1 là mạch không nhánh)",
+      "showAll": "true thì hiện tên mọi đồng phân của n đang chọn, kể cả chưa tìm"
+    },
+    "events": {
+      "carbon-add": {
+        "kind": "action",
+        "description": "Học sinh thêm một nguyên tử carbon lên lưới",
+        "data": {
+          "n": "Số nguyên tử C trên lưới sau khi thêm"
+        }
+      },
+      "carbon-remove": {
+        "kind": "action",
+        "description": "Học sinh xóa một nguyên tử carbon (cùng các liên kết của nó)",
+        "data": {
+          "n": "Số nguyên tử C trên lưới sau khi xóa"
+        }
+      },
+      "bond-remove": {
+        "kind": "action",
+        "description": "Học sinh bỏ một liên kết C–C",
+        "data": {
+          "n": "Số nguyên tử C trên lưới",
+          "bonds": "Số liên kết C–C còn lại"
+        }
+      },
+      "clear": {
+        "kind": "action",
+        "description": "Học sinh xóa toàn bộ lưới",
+        "data": {}
+      },
+      "named": {
+        "kind": "result",
+        "description": "Sau một thao tác, mạch carbon là một alkane hợp lệ và được gọi tên",
+        "data": {
+          "n": "Số nguyên tử C",
+          "isomer": "Số thứ tự đồng phân trong danh sách đồng phân của CₙH₂ₙ₊₂ (1 = mạch không nhánh; ví dụ n = 5: 1 pentane, 2 2-methylbutane, 3 2,2-dimethylpropane)"
+        }
+      },
+      "all-isomers": {
+        "kind": "goal",
+        "description": "Học sinh đã vẽ đủ mọi đồng phân cấu tạo của CₙH₂ₙ₊₂ với n đang chọn",
+        "data": {
+          "n": "Số nguyên tử C",
+          "count": "Số đồng phân (1, 1, 1, 2, 3, 5, 9 với n = 1…7)"
+        }
+      }
+    },
+    "url": "/dong-phan-ankan/1.0.0/index.html",
+    "thumbnailUrl": "/dong-phan-ankan/1.0.0/thumb.png"
+  },
+  {
     "slug": "dong-vi",
     "version": "1.0.0",
     "title": "Đồng vị và nguyên tử khối trung bình",
@@ -4912,6 +4982,66 @@
     "thumbnailUrl": "/mol/1.0.0/thumb.png"
   },
   {
+    "slug": "nang-luong-phan-ung",
+    "version": "1.0.0",
+    "title": "Enthalpy và sơ đồ năng lượng phản ứng",
+    "subject": "chemistry",
+    "grades": [
+      10
+    ],
+    "description": "Chọn một phản ứng (đốt cháy methane, đốt cháy hydrogen, tổng hợp ammonia, hydrogen tác dụng với chlorine, nhiệt phân đá vôi, hòa tan ammonium nitrate) để xem sơ đồ năng lượng có “đồi” năng lượng hoạt hóa, tính biến thiên enthalpy chuẩn ΔrH°₂₉₈ từ enthalpy tạo thành chuẩn ΔfH° và ước tính từ năng lượng liên kết (với phản ứng chỉ có chất khí). Thay đổi lượng chất đầu để thấy nhiệt lượng tỉ lệ với số mol; thêm chất xúc tác thì Eₐ giảm còn ΔrH° không đổi. Chế độ đố vui ẩn kết quả để học sinh tự tính và phân loại tỏa nhiệt, thu nhiệt. Sơ đồ không theo tỉ lệ, giá trị Eₐ chỉ để minh họa.",
+    "learningGoals": [
+      "Tính ΔrH°₂₉₈ = ΣΔfH°(sản phẩm) − ΣΔfH°(chất đầu), nhớ ΔfH° của đơn chất bền bằng 0.",
+      "Ước tính ΔrH ≈ ΣEb(chất đầu) − ΣEb(sản phẩm) cho phản ứng của các chất khí.",
+      "Phân loại phản ứng tỏa nhiệt (ΔrH° < 0) và thu nhiệt (ΔrH° > 0); đọc sơ đồ năng lượng.",
+      "Tính nhiệt lượng tỏa ra hoặc thu vào theo lượng chất phản ứng.",
+      "Nêu vai trò của chất xúc tác: làm giảm năng lượng hoạt hóa, không làm thay đổi ΔrH°."
+    ],
+    "state": {
+      "reaction": "Phản ứng đang chọn: \"ch4\", \"h2o\", \"nh3\", \"hcl\", \"caco3\" hoặc \"nh4no3\"",
+      "amount": "Số mol của chất đầu thứ nhất trong phương trình (CH₄, H₂, N₂, H₂, CaCO₃ hoặc NH₄NO₃), 0,1–10 mol",
+      "catalyst": "true thì vẽ thêm đường đi có chất xúc tác (Eₐ thấp hơn)",
+      "showBonds": "true thì hiện phép ước tính ΔrH theo năng lượng liên kết",
+      "quiz": "true khi đang ở chế độ đố vui (ẩn ΔrH° cho đến khi học sinh trả lời)"
+    },
+    "events": {
+      "reaction-committed": {
+        "kind": "result",
+        "description": "Học sinh chọn xong phản ứng hoặc lượng chất",
+        "data": {
+          "reaction": "Số thứ tự phản ứng: 1 đốt CH₄, 2 đốt H₂, 3 tổng hợp NH₃, 4 H₂ + Cl₂, 5 nhiệt phân CaCO₃, 6 hòa tan NH₄NO₃",
+          "amount": "Số mol chất đầu thứ nhất (mol)",
+          "deltaH": "Nhiệt phản ứng ứng với lượng chất đó (kJ), âm là tỏa nhiệt",
+          "exo": "1 nếu tỏa nhiệt, 0 nếu thu nhiệt"
+        }
+      },
+      "answer": {
+        "kind": "action",
+        "description": "Học sinh trả lời câu đố tỏa nhiệt hay thu nhiệt",
+        "data": {
+          "reaction": "Số thứ tự phản ứng",
+          "exo": "1 nếu chọn tỏa nhiệt, 0 nếu chọn thu nhiệt",
+          "correct": "1 nếu đúng, 0 nếu sai"
+        }
+      },
+      "new-question": {
+        "kind": "action",
+        "description": "Học sinh chuyển sang câu đố khác",
+        "data": {}
+      },
+      "classified": {
+        "kind": "goal",
+        "description": "Học sinh phân loại đúng phản ứng tỏa nhiệt hay thu nhiệt trong chế độ đố vui",
+        "data": {
+          "reaction": "Số thứ tự phản ứng",
+          "exo": "1 nếu phản ứng tỏa nhiệt, 0 nếu thu nhiệt"
+        }
+      }
+    },
+    "url": "/nang-luong-phan-ung/1.0.0/index.html",
+    "thumbnailUrl": "/nang-luong-phan-ung/1.0.0/thumb.png"
+  },
+  {
     "slug": "nang-luong-tai-tao",
     "version": "1.0.0",
     "title": "Năng lượng tái tạo: pin mặt trời và tua-bin gió",
@@ -5767,6 +5897,64 @@
     },
     "url": "/pin-dien-hoa/1.0.0/index.html",
     "thumbnailUrl": "/pin-dien-hoa/1.0.0/thumb.png"
+  },
+  {
+    "slug": "polime",
+    "version": "1.0.0",
+    "title": "Polime và phản ứng trùng hợp",
+    "subject": "chemistry",
+    "grades": [
+      12
+    ],
+    "description": "Chọn một monomer (ethylene, propylene, vinyl chloride, styrene, caprolactam, buta-1,3-diene) hoặc cặp hexamethylenediamine + adipic acid và xem các phân tử nối với nhau thành mạch polime. Sim cho phương trình phản ứng, mắt xích, loại phản ứng (trùng hợp hay trùng ngưng, nylon-6,6 tách ra 2n phân tử H₂O) và tính phân tử khối polime M = n · M mắt xích theo hệ số polime hóa n. Chế độ bài tập cho phân tử khối của polime và yêu cầu tìm n. Nguyên tử khối: C = 12, H = 1, O = 16, N = 14, Cl = 35,5; bỏ qua nhóm ở hai đầu mạch; hình chỉ vẽ 8 monomer, không theo tỉ lệ.",
+    "learningGoals": [
+      "Viết phương trình trùng hợp tạo PE, PP, PVC, PS, cao su buna và trùng hợp mở vòng caprolactam tạo capron (nylon-6).",
+      "Viết phương trình trùng ngưng tạo nylon-6,6 từ hexamethylenediamine và adipic acid, có tách ra H₂O.",
+      "Phân biệt phản ứng trùng hợp và trùng ngưng; xác định mắt xích của polime.",
+      "Tính phân tử khối polime M = n · M mắt xích và tính hệ số polime hóa n = M : M mắt xích."
+    ],
+    "state": {
+      "polymer": "Polime đang chọn: \"pe\", \"pp\", \"pvc\", \"ps\", \"capron\", \"buna\" hoặc \"nylon66\"",
+      "n": "Hệ số polime hóa n (số mắt xích), 100–20 000, bước 100",
+      "quiz": "true khi đang làm bài tập tìm n từ phân tử khối",
+      "targetN": "Đáp án n của bài tập đang hiện (bội của 100, 500–20 000); phân tử khối cho trong đề là targetN · M mắt xích",
+      "progress": "Tiến trình hình động nối monomer (0–9,5); 8 là mạch đã nối xong"
+    },
+    "events": {
+      "polymer-committed": {
+        "kind": "result",
+        "description": "Học sinh chọn xong polime hoặc hệ số polime hóa n",
+        "data": {
+          "polymer": "Số thứ tự polime: 1 PE, 2 PP, 3 PVC, 4 PS, 5 capron, 6 cao su buna, 7 nylon-6,6",
+          "n": "Hệ số polime hóa (số mắt xích)",
+          "molarMass": "Phân tử khối polime M = n · M mắt xích (g/mol)"
+        }
+      },
+      "new-problem": {
+        "kind": "action",
+        "description": "Học sinh yêu cầu một bài tập tìm n mới",
+        "data": {}
+      },
+      "answer-checked": {
+        "kind": "action",
+        "description": "Học sinh bấm kiểm tra giá trị n đã chọn trong bài tập",
+        "data": {
+          "n": "Giá trị n học sinh chọn",
+          "correct": "1 nếu đúng, 0 nếu sai"
+        }
+      },
+      "n-found": {
+        "kind": "goal",
+        "description": "Học sinh tính đúng hệ số polime hóa n từ phân tử khối cho trong đề",
+        "data": {
+          "polymer": "Số thứ tự polime (như trong polymer-committed)",
+          "n": "Hệ số polime hóa tìm được",
+          "molarMass": "Phân tử khối polime cho trong đề (g/mol)"
+        }
+      }
+    },
+    "url": "/polime/1.0.0/index.html",
+    "thumbnailUrl": "/polime/1.0.0/thumb.png"
   },
   {
     "slug": "quan-he-vat-an-thit-con-moi",

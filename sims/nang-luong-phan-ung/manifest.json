@@ -1,0 +1,49 @@
+{
+  "slug": "nang-luong-phan-ung",
+  "version": "1.0.0",
+  "title": "Enthalpy và sơ đồ năng lượng phản ứng",
+  "subject": "chemistry",
+  "grades": [10],
+  "description": "Chọn một phản ứng (đốt cháy methane, đốt cháy hydrogen, tổng hợp ammonia, hydrogen tác dụng với chlorine, nhiệt phân đá vôi, hòa tan ammonium nitrate) để xem sơ đồ năng lượng có “đồi” năng lượng hoạt hóa, tính biến thiên enthalpy chuẩn ΔrH°₂₉₈ từ enthalpy tạo thành chuẩn ΔfH° và ước tính từ năng lượng liên kết (với phản ứng chỉ có chất khí). Thay đổi lượng chất đầu để thấy nhiệt lượng tỉ lệ với số mol; thêm chất xúc tác thì Eₐ giảm còn ΔrH° không đổi. Chế độ đố vui ẩn kết quả để học sinh tự tính và phân loại tỏa nhiệt, thu nhiệt. Sơ đồ không theo tỉ lệ, giá trị Eₐ chỉ để minh họa.",
+  "learningGoals": [
+    "Tính ΔrH°₂₉₈ = ΣΔfH°(sản phẩm) − ΣΔfH°(chất đầu), nhớ ΔfH° của đơn chất bền bằng 0.",
+    "Ước tính ΔrH ≈ ΣEb(chất đầu) − ΣEb(sản phẩm) cho phản ứng của các chất khí.",
+    "Phân loại phản ứng tỏa nhiệt (ΔrH° < 0) và thu nhiệt (ΔrH° > 0); đọc sơ đồ năng lượng.",
+    "Tính nhiệt lượng tỏa ra hoặc thu vào theo lượng chất phản ứng.",
+    "Nêu vai trò của chất xúc tác: làm giảm năng lượng hoạt hóa, không làm thay đổi ΔrH°."
+  ],
+  "state": {
+    "reaction": "Phản ứng đang chọn: \"ch4\", \"h2o\", \"nh3\", \"hcl\", \"caco3\" hoặc \"nh4no3\"",
+    "amount": "Số mol của chất đầu thứ nhất trong phương trình (CH₄, H₂, N₂, H₂, CaCO₃ hoặc NH₄NO₃), 0,1–10 mol",
+    "catalyst": "true thì vẽ thêm đường đi có chất xúc tác (Eₐ thấp hơn)",
+    "showBonds": "true thì hiện phép ước tính ΔrH theo năng lượng liên kết",
+    "quiz": "true khi đang ở chế độ đố vui (ẩn ΔrH° cho đến khi học sinh trả lời)"
+  },
+  "events": {
+    "reaction-committed": {
+      "kind": "result",
+      "description": "Học sinh chọn xong phản ứng hoặc lượng chất",
+      "data": {
+        "reaction": "Số thứ tự phản ứng: 1 đốt CH₄, 2 đốt H₂, 3 tổng hợp NH₃, 4 H₂ + Cl₂, 5 nhiệt phân CaCO₃, 6 hòa tan NH₄NO₃",
+        "amount": "Số mol chất đầu thứ nhất (mol)",
+        "deltaH": "Nhiệt phản ứng ứng với lượng chất đó (kJ), âm là tỏa nhiệt",
+        "exo": "1 nếu tỏa nhiệt, 0 nếu thu nhiệt"
+      }
+    },
+    "answer": {
+      "kind": "action",
+      "description": "Học sinh trả lời câu đố tỏa nhiệt hay thu nhiệt",
+      "data": { "reaction": "Số thứ tự phản ứng", "exo": "1 nếu chọn tỏa nhiệt, 0 nếu chọn thu nhiệt", "correct": "1 nếu đúng, 0 nếu sai" }
+    },
+    "new-question": {
+      "kind": "action",
+      "description": "Học sinh chuyển sang câu đố khác",
+      "data": {}
+    },
+    "classified": {
+      "kind": "goal",
+      "description": "Học sinh phân loại đúng phản ứng tỏa nhiệt hay thu nhiệt trong chế độ đố vui",
+      "data": { "reaction": "Số thứ tự phản ứng", "exo": "1 nếu phản ứng tỏa nhiệt, 0 nếu thu nhiệt" }
+    }
+  }
+}
