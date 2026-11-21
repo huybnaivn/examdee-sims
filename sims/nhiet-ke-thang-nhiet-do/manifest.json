@@ -1,0 +1,58 @@
+{
+  "slug": "nhiet-ke-thang-nhiet-do",
+  "version": "1.0.0",
+  "title": "Nhiệt kế và thang nhiệt độ",
+  "subject": "physics",
+  "grades": [6],
+  "description": "Một nhiệt kế chất lỏng có ba thang Celsius, Fahrenheit và Kelvin đặt cạnh nhau. Chọn tình huống (nước đá đang tan, cơ thể người, ngày hè, nước sôi) hoặc tự chọn nhiệt độ để đọc trên ba thang và xem cách đổi: t(°F) = 1,8·t(°C) + 32, T(K) = t(°C) + 273. Chế độ đố: đọc nhiệt kế theo vạch chia nhỏ nhất với mắt đặt ngang mức chất lỏng.",
+  "learningGoals": [
+    "Nêu hai mốc của thang Celsius: nước đá đang tan 0 °C, nước đang sôi 100 °C (ở áp suất thường).",
+    "Đổi nhiệt độ giữa các thang: t(°F) = 1,8·t(°C) + 32 và T(K) = t(°C) + 273 (chính xác là 273,15).",
+    "Đọc nhiệt kế đúng cách: đặt mắt ngang mức chất lỏng, đọc theo vạch chia gần nhất với độ chia nhỏ nhất.",
+    "Ước lượng nhiệt độ của một số trường hợp quen thuộc (cơ thể người khoảng 37 °C)."
+  ],
+  "state": {
+    "mode": "Chế độ: \"explore\" (khám phá ba thang nhiệt độ) hoặc \"quiz\" (đố đọc nhiệt kế)",
+    "situation": "Tình huống ở chế độ khám phá: \"ice\" (nước đá đang tan, 0 °C), \"body\" (cơ thể người, 37 °C), \"summer\" (ngày hè nóng, 35 °C), \"boil\" (nước đang sôi, 100 °C), \"custom\" (tự chọn bằng thanh trượt)",
+    "tempC": "Nhiệt độ nhiệt kế chỉ ở chế độ khám phá (°C), từ −20 đến 110 °C",
+    "quizT": "Nhiệt độ nhiệt kế chỉ ở chế độ đố (°C, số nguyên từ −10 đến 100); độ chia nhỏ nhất 1 °C",
+    "answer": "Số học sinh đọc được ở chế độ đố (°C)",
+    "eye": "Vị trí đặt mắt khi đọc: \"level\" (ngang mức chất lỏng, đúng cách), \"above\" (cao hơn, đọc ra thấp hơn 2 °C), \"below\" (thấp hơn, đọc ra cao hơn 2 °C); độ lệch là mô hình minh họa",
+    "feedback": "Kết quả lần kiểm tra gần nhất: \"\" (chưa kiểm tra), \"ok\" (đúng), \"eye\" (đặt mắt sai), \"value\" (đọc sai số)"
+  },
+  "events": {
+    "temperature-shown": {
+      "kind": "result",
+      "description": "Học sinh chọn xong một tình huống hoặc một nhiệt độ ở chế độ khám phá; nhiệt độ trên ba thang",
+      "data": {
+        "celsius": "Nhiệt độ (°C)",
+        "fahrenheit": "Nhiệt độ (°F) = 1,8·t + 32",
+        "kelvin": "Nhiệt độ (K) = t + 273"
+      }
+    },
+    "reading-checked": {
+      "kind": "action",
+      "description": "Học sinh bấm Kiểm tra số đọc ở chế độ đố",
+      "data": {
+        "answer": "Số học sinh đọc (°C)",
+        "truth": "Nhiệt độ thật nhiệt kế chỉ (°C)",
+        "eyeLevel": "1 nếu mắt đặt ngang mức chất lỏng, 0 nếu không",
+        "correct": "1 nếu đọc đúng và đặt mắt đúng, 0 nếu không"
+      }
+    },
+    "correct-reading": {
+      "kind": "goal",
+      "description": "Học sinh đọc đúng nhiệt kế với mắt đặt ngang mức chất lỏng",
+      "data": {
+        "celsius": "Nhiệt độ đọc được (°C)",
+        "fahrenheit": "Nhiệt độ đó theo °F",
+        "kelvin": "Nhiệt độ đó theo K"
+      }
+    },
+    "quiz-new": {
+      "kind": "action",
+      "description": "Học sinh bấm Câu mới để nhiệt kế chỉ một nhiệt độ khác",
+      "data": {}
+    }
+  }
+}

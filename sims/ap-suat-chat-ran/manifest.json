@@ -1,0 +1,41 @@
+{
+  "slug": "ap-suat-chat-ran",
+  "version": "1.0.0",
+  "title": "Áp suất trên bề mặt",
+  "subject": "physics",
+  "grades": [8],
+  "description": "Đặt một viên gạch lên cát mềm bằng mặt lớn, mặt vừa hoặc mặt nhỏ, hoặc cho một người đứng trên cát bằng hai bàn chân, bằng đôi ván trượt hay trên một mũi đinh. Sim cho thấy áp lực F, diện tích bị ép S, áp suất p = F/S và độ lún của cát tăng theo áp suất.",
+  "learningGoals": [
+    "Tính áp suất p = F/S, đổi diện tích từ cm² sang m² và dùng đơn vị N/m² = Pa.",
+    "Nhận ra cùng một áp lực, diện tích bị ép càng nhỏ thì áp suất càng lớn: tỉ số áp suất bằng nghịch đảo tỉ số diện tích.",
+    "Giải thích vì sao ván trượt giúp không bị lún, còn mũi đinh nhọn dễ đâm sâu vào vật.",
+    "Tìm cách đặt vật để áp suất lên mặt cát lớn nhất."
+  ],
+  "state": {
+    "object": "Vật đặt trên cát: \"brick\" (viên gạch 20 cm × 10 cm × 5 cm) hoặc \"person\" (người đứng)",
+    "face": "Mặt gạch tiếp xúc với cát: \"large\" (20 cm × 10 cm = 200 cm²), \"medium\" (20 cm × 5 cm = 100 cm²), \"small\" (10 cm × 5 cm = 50 cm²)",
+    "support": "Người đứng trên: \"feet\" (hai bàn chân, 300 cm²), \"skis\" (đôi ván trượt, 2560 cm²), \"nail\" (tấm ván tựa trên một mũi đinh, 1 mm² = 0,01 cm²)",
+    "brickMass": "Khối lượng viên gạch (kg); áp lực F = 10·m (N)",
+    "personMass": "Khối lượng người (kg); áp lực F = 10·m (N)"
+  },
+  "events": {
+    "pressure-measured": {
+      "kind": "result",
+      "description": "Học sinh vừa chọn xong vật, mặt tiếp xúc (hoặc cách đứng) hoặc khối lượng; đây là áp suất lên mặt cát ở cách đặt đó. Độ lún theo mô hình đơn giản d = 6·(1 − e^(−p/10000)) cm, chỉ để thấy độ lún tăng theo áp suất.",
+      "data": {
+        "force": "Áp lực F = 10·m (N)",
+        "area": "Diện tích bị ép S (m²)",
+        "pressure": "Áp suất p = F/S (Pa)",
+        "depth": "Độ lún của cát (cm), theo mô hình"
+      }
+    },
+    "max-pressure-found": {
+      "kind": "goal",
+      "description": "Học sinh chọn được mặt tiếp xúc (hoặc cách đứng) cho áp suất lớn nhất: mặt có diện tích nhỏ nhất",
+      "data": {
+        "pressure": "Áp suất lớn nhất (Pa)",
+        "area": "Diện tích bị ép (m²)"
+      }
+    }
+  }
+}

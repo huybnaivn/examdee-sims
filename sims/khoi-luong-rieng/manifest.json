@@ -1,0 +1,49 @@
+{
+  "slug": "khoi-luong-rieng",
+  "version": "1.0.0",
+  "title": "Khối lượng riêng",
+  "subject": "physics",
+  "grades": [6, 8],
+  "description": "Chọn một trong chín vật được sơn cùng màu (làm bằng sắt, nhôm, đá, nhựa hoặc gỗ, có nhiều kích thước). Cân vật để biết khối lượng, đo thể tích bằng bình chia độ (V = V₂ − V₁) hoặc bằng bình tràn, tính khối lượng riêng D = m/V rồi đối chiếu bảng khối lượng riêng để nhận biết chất làm vật. Bảng kết quả cho thấy các vật cùng chất, khác kích thước có cùng khối lượng riêng.",
+  "learningGoals": [
+    "Đo khối lượng bằng cân và đo thể tích vật rắn không thấm nước bằng bình chia độ hoặc bình tràn.",
+    "Tính khối lượng riêng D = m/V và đổi đơn vị: 1 g/cm³ = 1000 kg/m³, 1 mL = 1 cm³.",
+    "Dùng bảng khối lượng riêng để nhận biết chất làm vật.",
+    "Nhận ra khối lượng riêng là đặc trưng của chất: vật cùng chất, khác kích thước có cùng D; vật cùng khối lượng có thể khác chất."
+  ],
+  "state": {
+    "object": "Vật đang đo, \"A\" đến \"I\". A, B: sắt (10 và 25 cm³); C, D: nhôm (20 và 40 cm³); E, F: đá (15 và 30 cm³); G: nhựa (30 cm³); H, I: gỗ (25 và 50 cm³). Học sinh không được thấy chất làm vật.",
+    "method": "Cách đo thể tích: \"cylinder\" (bình chia độ GHĐ 100 mL, ĐCNN 1 mL, có sẵn 50 mL nước; V = V₂ − V₁) hoặc \"overflow\" (bình tràn, nước tràn ra được hứng vào bình chia độ)",
+    "stage": "Bước đo của vật hiện tại: 0 chưa đo, 1 đã cân, 2 đã đo cả thể tích",
+    "measured": "Các vật đã đo xong, dạng bit: bit thứ i (0 = A, …, 8 = I) bằng 1 nếu vật đó đã đo xong",
+    "guess": "Chất học sinh đoán: \"sat\" (sắt), \"nhom\" (nhôm), \"da\" (đá), \"nhua\" (nhựa), \"go\" (gỗ)",
+    "checked": "true nếu học sinh đã bấm Kiểm tra cho lựa chọn hiện tại"
+  },
+  "events": {
+    "object-weighed": {
+      "kind": "action",
+      "description": "Học sinh đặt vật lên cân",
+      "data": { "mass": "Khối lượng cân chỉ (g)" }
+    },
+    "density-measured": {
+      "kind": "result",
+      "description": "Học sinh đo xong thể tích của vật đã cân; khối lượng riêng tính được",
+      "data": {
+        "mass": "Khối lượng m (g)",
+        "volume": "Thể tích V (cm³)",
+        "density": "Khối lượng riêng D = m/V (g/cm³)",
+        "densityKg": "Khối lượng riêng D (kg/m³)"
+      }
+    },
+    "material-guessed": {
+      "kind": "action",
+      "description": "Học sinh bấm Kiểm tra chất mình đoán",
+      "data": { "correct": "1 nếu đoán đúng, 0 nếu sai" }
+    },
+    "material-identified": {
+      "kind": "goal",
+      "description": "Học sinh nhận biết đúng chất làm vật từ khối lượng riêng đo được",
+      "data": { "density": "Khối lượng riêng đo được (kg/m³)" }
+    }
+  }
+}

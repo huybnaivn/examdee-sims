@@ -86,6 +86,51 @@
     "thumbnailUrl": "/ap-suat-chat-long/1.0.0/thumb.png"
   },
   {
+    "slug": "ap-suat-chat-ran",
+    "version": "1.0.0",
+    "title": "Áp suất trên bề mặt",
+    "subject": "physics",
+    "grades": [
+      8
+    ],
+    "description": "Đặt một viên gạch lên cát mềm bằng mặt lớn, mặt vừa hoặc mặt nhỏ, hoặc cho một người đứng trên cát bằng hai bàn chân, bằng đôi ván trượt hay trên một mũi đinh. Sim cho thấy áp lực F, diện tích bị ép S, áp suất p = F/S và độ lún của cát tăng theo áp suất.",
+    "learningGoals": [
+      "Tính áp suất p = F/S, đổi diện tích từ cm² sang m² và dùng đơn vị N/m² = Pa.",
+      "Nhận ra cùng một áp lực, diện tích bị ép càng nhỏ thì áp suất càng lớn: tỉ số áp suất bằng nghịch đảo tỉ số diện tích.",
+      "Giải thích vì sao ván trượt giúp không bị lún, còn mũi đinh nhọn dễ đâm sâu vào vật.",
+      "Tìm cách đặt vật để áp suất lên mặt cát lớn nhất."
+    ],
+    "state": {
+      "object": "Vật đặt trên cát: \"brick\" (viên gạch 20 cm × 10 cm × 5 cm) hoặc \"person\" (người đứng)",
+      "face": "Mặt gạch tiếp xúc với cát: \"large\" (20 cm × 10 cm = 200 cm²), \"medium\" (20 cm × 5 cm = 100 cm²), \"small\" (10 cm × 5 cm = 50 cm²)",
+      "support": "Người đứng trên: \"feet\" (hai bàn chân, 300 cm²), \"skis\" (đôi ván trượt, 2560 cm²), \"nail\" (tấm ván tựa trên một mũi đinh, 1 mm² = 0,01 cm²)",
+      "brickMass": "Khối lượng viên gạch (kg); áp lực F = 10·m (N)",
+      "personMass": "Khối lượng người (kg); áp lực F = 10·m (N)"
+    },
+    "events": {
+      "pressure-measured": {
+        "kind": "result",
+        "description": "Học sinh vừa chọn xong vật, mặt tiếp xúc (hoặc cách đứng) hoặc khối lượng; đây là áp suất lên mặt cát ở cách đặt đó. Độ lún theo mô hình đơn giản d = 6·(1 − e^(−p/10000)) cm, chỉ để thấy độ lún tăng theo áp suất.",
+        "data": {
+          "force": "Áp lực F = 10·m (N)",
+          "area": "Diện tích bị ép S (m²)",
+          "pressure": "Áp suất p = F/S (Pa)",
+          "depth": "Độ lún của cát (cm), theo mô hình"
+        }
+      },
+      "max-pressure-found": {
+        "kind": "goal",
+        "description": "Học sinh chọn được mặt tiếp xúc (hoặc cách đứng) cho áp suất lớn nhất: mặt có diện tích nhỏ nhất",
+        "data": {
+          "pressure": "Áp suất lớn nhất (Pa)",
+          "area": "Diện tích bị ép (m²)"
+        }
+      }
+    },
+    "url": "/ap-suat-chat-ran/1.0.0/index.html",
+    "thumbnailUrl": "/ap-suat-chat-ran/1.0.0/thumb.png"
+  },
+  {
     "slug": "bang-nhan",
     "version": "1.0.0",
     "title": "Phép nhân bằng mảng",
@@ -3369,6 +3414,66 @@
     "thumbnailUrl": "/khi-ly-tuong/1.0.0/thumb.png"
   },
   {
+    "slug": "khoi-luong-rieng",
+    "version": "1.0.0",
+    "title": "Khối lượng riêng",
+    "subject": "physics",
+    "grades": [
+      6,
+      8
+    ],
+    "description": "Chọn một trong chín vật được sơn cùng màu (làm bằng sắt, nhôm, đá, nhựa hoặc gỗ, có nhiều kích thước). Cân vật để biết khối lượng, đo thể tích bằng bình chia độ (V = V₂ − V₁) hoặc bằng bình tràn, tính khối lượng riêng D = m/V rồi đối chiếu bảng khối lượng riêng để nhận biết chất làm vật. Bảng kết quả cho thấy các vật cùng chất, khác kích thước có cùng khối lượng riêng.",
+    "learningGoals": [
+      "Đo khối lượng bằng cân và đo thể tích vật rắn không thấm nước bằng bình chia độ hoặc bình tràn.",
+      "Tính khối lượng riêng D = m/V và đổi đơn vị: 1 g/cm³ = 1000 kg/m³, 1 mL = 1 cm³.",
+      "Dùng bảng khối lượng riêng để nhận biết chất làm vật.",
+      "Nhận ra khối lượng riêng là đặc trưng của chất: vật cùng chất, khác kích thước có cùng D; vật cùng khối lượng có thể khác chất."
+    ],
+    "state": {
+      "object": "Vật đang đo, \"A\" đến \"I\". A, B: sắt (10 và 25 cm³); C, D: nhôm (20 và 40 cm³); E, F: đá (15 và 30 cm³); G: nhựa (30 cm³); H, I: gỗ (25 và 50 cm³). Học sinh không được thấy chất làm vật.",
+      "method": "Cách đo thể tích: \"cylinder\" (bình chia độ GHĐ 100 mL, ĐCNN 1 mL, có sẵn 50 mL nước; V = V₂ − V₁) hoặc \"overflow\" (bình tràn, nước tràn ra được hứng vào bình chia độ)",
+      "stage": "Bước đo của vật hiện tại: 0 chưa đo, 1 đã cân, 2 đã đo cả thể tích",
+      "measured": "Các vật đã đo xong, dạng bit: bit thứ i (0 = A, …, 8 = I) bằng 1 nếu vật đó đã đo xong",
+      "guess": "Chất học sinh đoán: \"sat\" (sắt), \"nhom\" (nhôm), \"da\" (đá), \"nhua\" (nhựa), \"go\" (gỗ)",
+      "checked": "true nếu học sinh đã bấm Kiểm tra cho lựa chọn hiện tại"
+    },
+    "events": {
+      "object-weighed": {
+        "kind": "action",
+        "description": "Học sinh đặt vật lên cân",
+        "data": {
+          "mass": "Khối lượng cân chỉ (g)"
+        }
+      },
+      "density-measured": {
+        "kind": "result",
+        "description": "Học sinh đo xong thể tích của vật đã cân; khối lượng riêng tính được",
+        "data": {
+          "mass": "Khối lượng m (g)",
+          "volume": "Thể tích V (cm³)",
+          "density": "Khối lượng riêng D = m/V (g/cm³)",
+          "densityKg": "Khối lượng riêng D (kg/m³)"
+        }
+      },
+      "material-guessed": {
+        "kind": "action",
+        "description": "Học sinh bấm Kiểm tra chất mình đoán",
+        "data": {
+          "correct": "1 nếu đoán đúng, 0 nếu sai"
+        }
+      },
+      "material-identified": {
+        "kind": "goal",
+        "description": "Học sinh nhận biết đúng chất làm vật từ khối lượng riêng đo được",
+        "data": {
+          "density": "Khối lượng riêng đo được (kg/m³)"
+        }
+      }
+    },
+    "url": "/khoi-luong-rieng/1.0.0/index.html",
+    "thumbnailUrl": "/khoi-luong-rieng/1.0.0/thumb.png"
+  },
+  {
     "slug": "khuc-xa-anh-sang",
     "version": "1.0.0",
     "title": "Khúc xạ ánh sáng",
@@ -4686,6 +4791,68 @@
     },
     "url": "/nhi-thuc-newton/1.0.0/index.html",
     "thumbnailUrl": "/nhi-thuc-newton/1.0.0/thumb.png"
+  },
+  {
+    "slug": "nhiet-ke-thang-nhiet-do",
+    "version": "1.0.0",
+    "title": "Nhiệt kế và thang nhiệt độ",
+    "subject": "physics",
+    "grades": [
+      6
+    ],
+    "description": "Một nhiệt kế chất lỏng có ba thang Celsius, Fahrenheit và Kelvin đặt cạnh nhau. Chọn tình huống (nước đá đang tan, cơ thể người, ngày hè, nước sôi) hoặc tự chọn nhiệt độ để đọc trên ba thang và xem cách đổi: t(°F) = 1,8·t(°C) + 32, T(K) = t(°C) + 273. Chế độ đố: đọc nhiệt kế theo vạch chia nhỏ nhất với mắt đặt ngang mức chất lỏng.",
+    "learningGoals": [
+      "Nêu hai mốc của thang Celsius: nước đá đang tan 0 °C, nước đang sôi 100 °C (ở áp suất thường).",
+      "Đổi nhiệt độ giữa các thang: t(°F) = 1,8·t(°C) + 32 và T(K) = t(°C) + 273 (chính xác là 273,15).",
+      "Đọc nhiệt kế đúng cách: đặt mắt ngang mức chất lỏng, đọc theo vạch chia gần nhất với độ chia nhỏ nhất.",
+      "Ước lượng nhiệt độ của một số trường hợp quen thuộc (cơ thể người khoảng 37 °C)."
+    ],
+    "state": {
+      "mode": "Chế độ: \"explore\" (khám phá ba thang nhiệt độ) hoặc \"quiz\" (đố đọc nhiệt kế)",
+      "situation": "Tình huống ở chế độ khám phá: \"ice\" (nước đá đang tan, 0 °C), \"body\" (cơ thể người, 37 °C), \"summer\" (ngày hè nóng, 35 °C), \"boil\" (nước đang sôi, 100 °C), \"custom\" (tự chọn bằng thanh trượt)",
+      "tempC": "Nhiệt độ nhiệt kế chỉ ở chế độ khám phá (°C), từ −20 đến 110 °C",
+      "quizT": "Nhiệt độ nhiệt kế chỉ ở chế độ đố (°C, số nguyên từ −10 đến 100); độ chia nhỏ nhất 1 °C",
+      "answer": "Số học sinh đọc được ở chế độ đố (°C)",
+      "eye": "Vị trí đặt mắt khi đọc: \"level\" (ngang mức chất lỏng, đúng cách), \"above\" (cao hơn, đọc ra thấp hơn 2 °C), \"below\" (thấp hơn, đọc ra cao hơn 2 °C); độ lệch là mô hình minh họa",
+      "feedback": "Kết quả lần kiểm tra gần nhất: \"\" (chưa kiểm tra), \"ok\" (đúng), \"eye\" (đặt mắt sai), \"value\" (đọc sai số)"
+    },
+    "events": {
+      "temperature-shown": {
+        "kind": "result",
+        "description": "Học sinh chọn xong một tình huống hoặc một nhiệt độ ở chế độ khám phá; nhiệt độ trên ba thang",
+        "data": {
+          "celsius": "Nhiệt độ (°C)",
+          "fahrenheit": "Nhiệt độ (°F) = 1,8·t + 32",
+          "kelvin": "Nhiệt độ (K) = t + 273"
+        }
+      },
+      "reading-checked": {
+        "kind": "action",
+        "description": "Học sinh bấm Kiểm tra số đọc ở chế độ đố",
+        "data": {
+          "answer": "Số học sinh đọc (°C)",
+          "truth": "Nhiệt độ thật nhiệt kế chỉ (°C)",
+          "eyeLevel": "1 nếu mắt đặt ngang mức chất lỏng, 0 nếu không",
+          "correct": "1 nếu đọc đúng và đặt mắt đúng, 0 nếu không"
+        }
+      },
+      "correct-reading": {
+        "kind": "goal",
+        "description": "Học sinh đọc đúng nhiệt kế với mắt đặt ngang mức chất lỏng",
+        "data": {
+          "celsius": "Nhiệt độ đọc được (°C)",
+          "fahrenheit": "Nhiệt độ đó theo °F",
+          "kelvin": "Nhiệt độ đó theo K"
+        }
+      },
+      "quiz-new": {
+        "kind": "action",
+        "description": "Học sinh bấm Câu mới để nhiệt kế chỉ một nhiệt độ khác",
+        "data": {}
+      }
+    },
+    "url": "/nhiet-ke-thang-nhiet-do/1.0.0/index.html",
+    "thumbnailUrl": "/nhiet-ke-thang-nhiet-do/1.0.0/thumb.png"
   },
   {
     "slug": "nong-do-dung-dich",
