@@ -1,0 +1,35 @@
+{
+  "slug": "khao-sat-ham-so",
+  "version": "1.0.0",
+  "title": "Khảo sát hàm số bậc ba",
+  "subject": "math",
+  "grades": [
+    12
+  ],
+  "description": "Chỉnh các hệ số của hàm số y = ax³ + bx² + cx + d và quan sát đồ thị cùng đồ thị đạo hàm y′ ngay bên dưới (vùng y′ > 0 tô xanh, y′ < 0 tô đỏ). Sim đánh dấu điểm cực đại, cực tiểu, điểm uốn, các giao điểm với trục hoành và lập bảng biến thiên ngay trên hình. Khi a = 0 hàm số trở thành hàm bậc hai, bậc nhất hoặc hằng và sim xử lý đúng từng trường hợp.",
+  "learningGoals": [
+    "Tìm điểm tới hạn từ phương trình y′ = 3ax² + 2bx + c = 0 và phân biệt ba trường hợp theo Δ′ = b² − 3ac: hai cực trị, nghiệm kép (không có cực trị), vô nghiệm.",
+    "Xác định cực đại, cực tiểu bằng dấu của y″ hoặc sự đổi dấu của y′.",
+    "Tìm điểm uốn tại x = −b/(3a), là trung điểm của hai điểm cực trị (nếu có).",
+    "Lập bảng biến thiên: dấu của y′ trên từng khoảng, chiều biến thiên và giới hạn ở vô cực.",
+    "Đếm số nghiệm thực của phương trình ax³ + bx² + cx + d = 0 qua số giao điểm của đồ thị với trục hoành."
+  ],
+  "state": {
+    "a": "Hệ số a của x³ (từ −3 đến 3, bước 0,1); a = 0 cho hàm bậc hai",
+    "b": "Hệ số b của x² (từ −5 đến 5, bước 0,1)",
+    "c": "Hệ số c của x (từ −6 đến 6, bước 0,1)",
+    "d": "Hệ số tự do d (từ −6 đến 6, bước 0,1)"
+  },
+  "events": {
+    "function-surveyed": {
+      "kind": "result",
+      "description": "Học sinh vừa chốt một hệ số (thả thanh trượt); sim báo kết quả khảo sát hàm số hiện tại",
+      "data": {
+        "extrema": "Số điểm cực trị (0, 1 hoặc 2)",
+        "inflection": "Hoành độ điểm uốn x = −b/(3a); không có khi a = 0",
+        "roots": "Số nghiệm thực phân biệt của y = 0 (số giao điểm với trục hoành); −1 nếu y ≡ 0 (vô số nghiệm)",
+        "degree": "Bậc thực sự của hàm số sau khi bỏ các hệ số bậc cao bằng 0 (0 đến 3)"
+      }
+    }
+  }
+}

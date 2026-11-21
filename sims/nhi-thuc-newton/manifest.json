@@ -1,0 +1,53 @@
+{
+  "slug": "nhi-thuc-newton",
+  "version": "1.0.0",
+  "title": "Nhị thức Niu-tơn và tam giác Pa-xcan",
+  "subject": "math",
+  "grades": [
+    10,
+    11
+  ],
+  "description": "Khai triển (a + b)ⁿ với n từ 0 đến 12: mỗi số hạng hiện kèm hệ số Cₙᵏ, hàng tương ứng của tam giác Pa-xcan được tô sáng, và với n = 2, 3 có mô hình hình vuông, hình lập phương cạnh a + b được chia thành các mảnh a², ab, b² hay a³, a²b, ab², b³. Học sinh tìm hệ số của số hạng được yêu cầu bằng cách bấm vào số hạng đó; có thể thay số cho a, b để kiểm tra khai triển.",
+  "learningGoals": [
+    "Viết khai triển (a + b)ⁿ = Cₙ⁰aⁿ + Cₙ¹aⁿ⁻¹b + … + Cₙⁿbⁿ và số hạng tổng quát Tₖ₊₁ = Cₙᵏaⁿ⁻ᵏbᵏ.",
+    "Đọc các hệ số trên hàng thứ n của tam giác Pa-xcan và giải thích quy tắc Cₙᵏ = Cₙ₋₁ᵏ⁻¹ + Cₙ₋₁ᵏ.",
+    "Tìm hệ số của số hạng chứa aᵖbᵠ với p + q = n.",
+    "Nhận ra tổng các hệ số bằng 2ⁿ (thay a = b = 1) và tổng đan dấu bằng 0 khi n ≥ 1 (thay a = 1, b = −1).",
+    "Hình dung (a + b)² và (a + b)³ bằng diện tích hình vuông và thể tích hình lập phương."
+  ],
+  "state": {
+    "n": "Số mũ n (từ 0 đến 12)",
+    "target": "Số mũ của b trong số hạng cần tìm hệ số (từ 0 đến n); số hạng đó chứa aⁿ⁻ᵗᵃʳᵍᵉᵗbᵗᵃʳᵍᵉᵗ",
+    "pick": "Chỉ số k của số hạng học sinh đang chọn (số hạng Tₖ₊₁, từ 0 đến n)",
+    "numeric": "true nếu thay số cho a và b",
+    "a": "Giá trị của a khi thay số (từ −3 đến 3, bước 0,5)",
+    "b": "Giá trị của b khi thay số (từ −3 đến 3, bước 0,5)"
+  },
+  "events": {
+    "expanded": {
+      "kind": "result",
+      "description": "Học sinh vừa chốt số mũ n; sim báo n và tổng các hệ số của khai triển",
+      "data": {
+        "n": "Số mũ n",
+        "sum": "Tổng các hệ số Cₙ⁰ + … + Cₙⁿ = 2ⁿ"
+      }
+    },
+    "term-picked": {
+      "kind": "action",
+      "description": "Học sinh bấm vào một số hạng trong khai triển hoặc trên hàng n của tam giác Pa-xcan",
+      "data": {
+        "n": "Số mũ n",
+        "k": "Chỉ số k của số hạng được chọn (số mũ của b)"
+      }
+    },
+    "coefficient-found": {
+      "kind": "goal",
+      "description": "Học sinh chọn đúng số hạng chứa lũy thừa được yêu cầu",
+      "data": {
+        "n": "Số mũ n",
+        "k": "Số mũ của b trong số hạng cần tìm",
+        "coefficient": "Hệ số tìm được Cₙᵏ"
+      }
+    }
+  }
+}

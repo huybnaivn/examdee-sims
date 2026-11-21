@@ -1,0 +1,51 @@
+{
+  "slug": "gioi-han-day-so",
+  "version": "1.0.0",
+  "title": "Giới hạn của dãy số",
+  "subject": "math",
+  "grades": [
+    11
+  ],
+  "description": "Chọn một dãy số (1/n, (−1)ⁿ/n, (n + 1)/n, qⁿ, (1 + 1/n)ⁿ hoặc thương hai đa thức tự chọn) và vẽ các số hạng của nó. Học sinh dự đoán giới hạn L và chọn ε: hình vẽ dải (L − ε; L + ε), tô xanh các số hạng nằm trong dải, đỏ các số hạng ngoài dải, và chỉ ra chỉ số N kể từ đó mọi số hạng đều nằm trong dải (nếu có).",
+  "learningGoals": [
+    "Hiểu định nghĩa giới hạn của dãy số: với mọi ε > 0, kể từ một chỉ số N nào đó mọi số hạng đều thỏa mãn |uₙ − L| < ε.",
+    "Nhận biết các giới hạn cơ bản: lim 1/n = 0, lim (−1)ⁿ/n = 0, lim (n + 1)/n = 1, lim qⁿ = 0 khi |q| < 1, lim (1 + 1/n)ⁿ = e.",
+    "Thấy rằng qⁿ không có giới hạn hữu hạn khi |q| > 1 hoặc q = −1.",
+    "Tìm giới hạn của thương hai đa thức theo bậc và hệ số cao nhất của tử và mẫu.",
+    "Thấy rằng ε càng nhỏ thì N càng lớn, ví dụ với 1/n thì N = ⌊1/ε⌋ + 1."
+  ],
+  "state": {
+    "seq": "Dãy số: \"inv\" (1/n), \"alt\" ((−1)ⁿ/n), \"ratio\" ((n + 1)/n), \"geo\" (qⁿ), \"e\" ((1 + 1/n)ⁿ), \"poly\" (thương hai đa thức tự chọn)",
+    "q": "Công bội q của dãy qⁿ (từ −1,5 đến 1,5, bước 0,05)",
+    "p2": "Hệ số của n² ở tử số (số nguyên từ −5 đến 5)",
+    "p1": "Hệ số của n ở tử số",
+    "p0": "Hệ số tự do ở tử số",
+    "r2": "Hệ số của n² ở mẫu số (số nguyên từ −5 đến 5)",
+    "r1": "Hệ số của n ở mẫu số",
+    "r0": "Hệ số tự do ở mẫu số",
+    "guess": "Giới hạn L học sinh dự đoán (từ −5 đến 5, bước 0,01), là tâm của dải",
+    "eps": "Bán kính ε của dải (L − ε; L + ε) (từ 0,01 đến 1)",
+    "nShow": "Số số hạng được vẽ (từ 10 đến 200)",
+    "showLimit": "true nếu hiện giới hạn đúng của dãy"
+  },
+  "events": {
+    "epsilon-set": {
+      "kind": "result",
+      "description": "Học sinh vừa chốt ε (thả thanh trượt); sim báo chỉ số N kể từ đó mọi số hạng nằm trong dải (L − ε; L + ε)",
+      "data": {
+        "epsilon": "Giá trị ε",
+        "guess": "Giới hạn dự đoán L (tâm của dải)",
+        "found": "1 nếu có N, 0 nếu không có (dải không chứa giới hạn của dãy)",
+        "N": "Chỉ số N nhỏ nhất sao cho |uₙ − L| < ε với mọi n ≥ N; không có khi found = 0"
+      }
+    },
+    "limit-guessed": {
+      "kind": "goal",
+      "description": "Học sinh chốt giới hạn dự đoán L đúng bằng giới hạn hữu hạn của dãy (sai lệch không quá 0,005)",
+      "data": {
+        "limit": "Giới hạn đúng của dãy",
+        "guess": "Giá trị L học sinh chọn"
+      }
+    }
+  }
+}

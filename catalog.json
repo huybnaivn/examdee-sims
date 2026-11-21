@@ -2191,6 +2191,59 @@
     "thumbnailUrl": "/giao-thoa-y-ang/1.0.0/thumb.png"
   },
   {
+    "slug": "gioi-han-day-so",
+    "version": "1.0.0",
+    "title": "Giới hạn của dãy số",
+    "subject": "math",
+    "grades": [
+      11
+    ],
+    "description": "Chọn một dãy số (1/n, (−1)ⁿ/n, (n + 1)/n, qⁿ, (1 + 1/n)ⁿ hoặc thương hai đa thức tự chọn) và vẽ các số hạng của nó. Học sinh dự đoán giới hạn L và chọn ε: hình vẽ dải (L − ε; L + ε), tô xanh các số hạng nằm trong dải, đỏ các số hạng ngoài dải, và chỉ ra chỉ số N kể từ đó mọi số hạng đều nằm trong dải (nếu có).",
+    "learningGoals": [
+      "Hiểu định nghĩa giới hạn của dãy số: với mọi ε > 0, kể từ một chỉ số N nào đó mọi số hạng đều thỏa mãn |uₙ − L| < ε.",
+      "Nhận biết các giới hạn cơ bản: lim 1/n = 0, lim (−1)ⁿ/n = 0, lim (n + 1)/n = 1, lim qⁿ = 0 khi |q| < 1, lim (1 + 1/n)ⁿ = e.",
+      "Thấy rằng qⁿ không có giới hạn hữu hạn khi |q| > 1 hoặc q = −1.",
+      "Tìm giới hạn của thương hai đa thức theo bậc và hệ số cao nhất của tử và mẫu.",
+      "Thấy rằng ε càng nhỏ thì N càng lớn, ví dụ với 1/n thì N = ⌊1/ε⌋ + 1."
+    ],
+    "state": {
+      "seq": "Dãy số: \"inv\" (1/n), \"alt\" ((−1)ⁿ/n), \"ratio\" ((n + 1)/n), \"geo\" (qⁿ), \"e\" ((1 + 1/n)ⁿ), \"poly\" (thương hai đa thức tự chọn)",
+      "q": "Công bội q của dãy qⁿ (từ −1,5 đến 1,5, bước 0,05)",
+      "p2": "Hệ số của n² ở tử số (số nguyên từ −5 đến 5)",
+      "p1": "Hệ số của n ở tử số",
+      "p0": "Hệ số tự do ở tử số",
+      "r2": "Hệ số của n² ở mẫu số (số nguyên từ −5 đến 5)",
+      "r1": "Hệ số của n ở mẫu số",
+      "r0": "Hệ số tự do ở mẫu số",
+      "guess": "Giới hạn L học sinh dự đoán (từ −5 đến 5, bước 0,01), là tâm của dải",
+      "eps": "Bán kính ε của dải (L − ε; L + ε) (từ 0,01 đến 1)",
+      "nShow": "Số số hạng được vẽ (từ 10 đến 200)",
+      "showLimit": "true nếu hiện giới hạn đúng của dãy"
+    },
+    "events": {
+      "epsilon-set": {
+        "kind": "result",
+        "description": "Học sinh vừa chốt ε (thả thanh trượt); sim báo chỉ số N kể từ đó mọi số hạng nằm trong dải (L − ε; L + ε)",
+        "data": {
+          "epsilon": "Giá trị ε",
+          "guess": "Giới hạn dự đoán L (tâm của dải)",
+          "found": "1 nếu có N, 0 nếu không có (dải không chứa giới hạn của dãy)",
+          "N": "Chỉ số N nhỏ nhất sao cho |uₙ − L| < ε với mọi n ≥ N; không có khi found = 0"
+        }
+      },
+      "limit-guessed": {
+        "kind": "goal",
+        "description": "Học sinh chốt giới hạn dự đoán L đúng bằng giới hạn hữu hạn của dãy (sai lệch không quá 0,005)",
+        "data": {
+          "limit": "Giới hạn đúng của dãy",
+          "guess": "Giá trị L học sinh chọn"
+        }
+      }
+    },
+    "url": "/gioi-han-day-so/1.0.0/index.html",
+    "thumbnailUrl": "/gioi-han-day-so/1.0.0/thumb.png"
+  },
+  {
     "slug": "goc-noi-tiep",
     "version": "1.0.0",
     "title": "Góc nội tiếp và góc ở tâm",
@@ -2521,6 +2574,43 @@
     },
     "url": "/hieu-ung-doppler/1.0.0/index.html",
     "thumbnailUrl": "/hieu-ung-doppler/1.0.0/thumb.png"
+  },
+  {
+    "slug": "khao-sat-ham-so",
+    "version": "1.0.0",
+    "title": "Khảo sát hàm số bậc ba",
+    "subject": "math",
+    "grades": [
+      12
+    ],
+    "description": "Chỉnh các hệ số của hàm số y = ax³ + bx² + cx + d và quan sát đồ thị cùng đồ thị đạo hàm y′ ngay bên dưới (vùng y′ > 0 tô xanh, y′ < 0 tô đỏ). Sim đánh dấu điểm cực đại, cực tiểu, điểm uốn, các giao điểm với trục hoành và lập bảng biến thiên ngay trên hình. Khi a = 0 hàm số trở thành hàm bậc hai, bậc nhất hoặc hằng và sim xử lý đúng từng trường hợp.",
+    "learningGoals": [
+      "Tìm điểm tới hạn từ phương trình y′ = 3ax² + 2bx + c = 0 và phân biệt ba trường hợp theo Δ′ = b² − 3ac: hai cực trị, nghiệm kép (không có cực trị), vô nghiệm.",
+      "Xác định cực đại, cực tiểu bằng dấu của y″ hoặc sự đổi dấu của y′.",
+      "Tìm điểm uốn tại x = −b/(3a), là trung điểm của hai điểm cực trị (nếu có).",
+      "Lập bảng biến thiên: dấu của y′ trên từng khoảng, chiều biến thiên và giới hạn ở vô cực.",
+      "Đếm số nghiệm thực của phương trình ax³ + bx² + cx + d = 0 qua số giao điểm của đồ thị với trục hoành."
+    ],
+    "state": {
+      "a": "Hệ số a của x³ (từ −3 đến 3, bước 0,1); a = 0 cho hàm bậc hai",
+      "b": "Hệ số b của x² (từ −5 đến 5, bước 0,1)",
+      "c": "Hệ số c của x (từ −6 đến 6, bước 0,1)",
+      "d": "Hệ số tự do d (từ −6 đến 6, bước 0,1)"
+    },
+    "events": {
+      "function-surveyed": {
+        "kind": "result",
+        "description": "Học sinh vừa chốt một hệ số (thả thanh trượt); sim báo kết quả khảo sát hàm số hiện tại",
+        "data": {
+          "extrema": "Số điểm cực trị (0, 1 hoặc 2)",
+          "inflection": "Hoành độ điểm uốn x = −b/(3a); không có khi a = 0",
+          "roots": "Số nghiệm thực phân biệt của y = 0 (số giao điểm với trục hoành); −1 nếu y ≡ 0 (vô số nghiệm)",
+          "degree": "Bậc thực sự của hàm số sau khi bỏ các hệ số bậc cao bằng 0 (0 đến 3)"
+        }
+      }
+    },
+    "url": "/khao-sat-ham-so/1.0.0/index.html",
+    "thumbnailUrl": "/khao-sat-ham-so/1.0.0/thumb.png"
   },
   {
     "slug": "khi-ly-tuong",
@@ -3545,6 +3635,61 @@
     },
     "url": "/nguyen-phan-giam-phan/1.0.0/index.html",
     "thumbnailUrl": "/nguyen-phan-giam-phan/1.0.0/thumb.png"
+  },
+  {
+    "slug": "nhi-thuc-newton",
+    "version": "1.0.0",
+    "title": "Nhị thức Niu-tơn và tam giác Pa-xcan",
+    "subject": "math",
+    "grades": [
+      10,
+      11
+    ],
+    "description": "Khai triển (a + b)ⁿ với n từ 0 đến 12: mỗi số hạng hiện kèm hệ số Cₙᵏ, hàng tương ứng của tam giác Pa-xcan được tô sáng, và với n = 2, 3 có mô hình hình vuông, hình lập phương cạnh a + b được chia thành các mảnh a², ab, b² hay a³, a²b, ab², b³. Học sinh tìm hệ số của số hạng được yêu cầu bằng cách bấm vào số hạng đó; có thể thay số cho a, b để kiểm tra khai triển.",
+    "learningGoals": [
+      "Viết khai triển (a + b)ⁿ = Cₙ⁰aⁿ + Cₙ¹aⁿ⁻¹b + … + Cₙⁿbⁿ và số hạng tổng quát Tₖ₊₁ = Cₙᵏaⁿ⁻ᵏbᵏ.",
+      "Đọc các hệ số trên hàng thứ n của tam giác Pa-xcan và giải thích quy tắc Cₙᵏ = Cₙ₋₁ᵏ⁻¹ + Cₙ₋₁ᵏ.",
+      "Tìm hệ số của số hạng chứa aᵖbᵠ với p + q = n.",
+      "Nhận ra tổng các hệ số bằng 2ⁿ (thay a = b = 1) và tổng đan dấu bằng 0 khi n ≥ 1 (thay a = 1, b = −1).",
+      "Hình dung (a + b)² và (a + b)³ bằng diện tích hình vuông và thể tích hình lập phương."
+    ],
+    "state": {
+      "n": "Số mũ n (từ 0 đến 12)",
+      "target": "Số mũ của b trong số hạng cần tìm hệ số (từ 0 đến n); số hạng đó chứa aⁿ⁻ᵗᵃʳᵍᵉᵗbᵗᵃʳᵍᵉᵗ",
+      "pick": "Chỉ số k của số hạng học sinh đang chọn (số hạng Tₖ₊₁, từ 0 đến n)",
+      "numeric": "true nếu thay số cho a và b",
+      "a": "Giá trị của a khi thay số (từ −3 đến 3, bước 0,5)",
+      "b": "Giá trị của b khi thay số (từ −3 đến 3, bước 0,5)"
+    },
+    "events": {
+      "expanded": {
+        "kind": "result",
+        "description": "Học sinh vừa chốt số mũ n; sim báo n và tổng các hệ số của khai triển",
+        "data": {
+          "n": "Số mũ n",
+          "sum": "Tổng các hệ số Cₙ⁰ + … + Cₙⁿ = 2ⁿ"
+        }
+      },
+      "term-picked": {
+        "kind": "action",
+        "description": "Học sinh bấm vào một số hạng trong khai triển hoặc trên hàng n của tam giác Pa-xcan",
+        "data": {
+          "n": "Số mũ n",
+          "k": "Chỉ số k của số hạng được chọn (số mũ của b)"
+        }
+      },
+      "coefficient-found": {
+        "kind": "goal",
+        "description": "Học sinh chọn đúng số hạng chứa lũy thừa được yêu cầu",
+        "data": {
+          "n": "Số mũ n",
+          "k": "Số mũ của b trong số hạng cần tìm",
+          "coefficient": "Hệ số tìm được Cₙᵏ"
+        }
+      }
+    },
+    "url": "/nhi-thuc-newton/1.0.0/index.html",
+    "thumbnailUrl": "/nhi-thuc-newton/1.0.0/thumb.png"
   },
   {
     "slug": "nong-do-dung-dich",
