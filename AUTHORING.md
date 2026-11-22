@@ -30,6 +30,7 @@ mount({
   step,                                // (state, dt, api) => void, optional; dt is 1/120 s
   timeScale,                           // (state) => number, optional playback speed
   autoplay,                            // start running, optional
+  transport: false,                    // always-live scene: hide Chạy/Bước, step() runs all the time
   draw,                                // (ctx, state, view) => void; view = { w, h } in CSS px
   controls: [
     { type: "heading", label },

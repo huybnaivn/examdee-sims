@@ -218,7 +218,9 @@ export function mount(def) {
   // transport
   const transport = el("div", "transport");
   let playBtn = null;
-  if (def.step) {
+  // transport: false = a scene that is always live (drag-and-drop toys): no Chạy/Bước buttons.
+  const always = def.transport === false && !!def.step;
+  if (def.step && !always) {
     playBtn = el("button", "primary");
     playBtn.type = "button";
     playBtn.addEventListener("click", () => {
@@ -244,7 +246,7 @@ export function mount(def) {
   panel.append(transport);
 
   function setRunning(value) {
-    running = value && !!def.step;
+    running = (value || always) && !!def.step;
     if (playBtn) playBtn.textContent = running ? "❚❚ Dừng" : "▶ Chạy";
     last = 0;
     dirty = true;
@@ -291,6 +293,7 @@ export function mount(def) {
       Object.assign(input, { type: "range", min: c.min, max: c.max, step: c.step ?? 1 });
       const show = () => {
         input.value = state[c.key];
+        input.style.setProperty("--fill", `${((state[c.key] - c.min) / (c.max - c.min || 1)) * 100}%`);
         out.textContent = c.format
           ? c.format(state[c.key], state)
           : `${fmt(state[c.key], c.digits ?? 2)}${c.unit ? " " + c.unit : ""}`;

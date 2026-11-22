@@ -4,38 +4,56 @@
   "title": "Áp suất trên bề mặt",
   "subject": "physics",
   "grades": [8],
-  "description": "Đặt một viên gạch lên cát mềm bằng mặt lớn, mặt vừa hoặc mặt nhỏ, hoặc cho một người đứng trên cát bằng hai bàn chân, bằng đôi ván trượt hay trên một mũi đinh. Sim cho thấy áp lực F, diện tích bị ép S, áp suất p = F/S và độ lún của cát tăng theo áp suất.",
+  "description": "Kéo viên gạch, bạn nhỏ, chú voi hay xe tăng thả xuống cát, tuyết, bùn hoặc bê tông, mỗi bên một nhân vật, rồi so sánh ai lún sâu hơn. Xoay viên gạch, chồng thêm gạch, đổi giày cho bạn nhỏ (giày thể thao, gót nhọn, cà kheo, ván trượt) để thấy áp suất p = F/S phụ thuộc cả áp lực lẫn diện tích bị ép. Lấy g = 10 N/kg. Hình không theo tỉ lệ; độ lún chỉ minh họa theo thang lôgarit của áp suất, không phải định luật vật lí.",
   "learningGoals": [
-    "Tính áp suất p = F/S, đổi diện tích từ cm² sang m² và dùng đơn vị N/m² = Pa.",
-    "Nhận ra cùng một áp lực, diện tích bị ép càng nhỏ thì áp suất càng lớn: tỉ số áp suất bằng nghịch đảo tỉ số diện tích.",
-    "Giải thích vì sao ván trượt giúp không bị lún, còn mũi đinh nhọn dễ đâm sâu vào vật.",
-    "Tìm cách đặt vật để áp suất lên mặt cát lớn nhất."
+    "Tính áp suất p = F/S và đổi đơn vị cm² sang m², Pa sang kPa và MPa.",
+    "Giải thích vì sao vật nhẹ có thể lún sâu hơn vật nặng khi diện tích bị ép nhỏ.",
+    "Nêu cách tăng, giảm áp suất trong thực tế: gót nhọn, ván trượt tuyết, bánh xích xe tăng."
   ],
   "state": {
-    "object": "Vật đặt trên cát: \"brick\" (viên gạch 20 cm × 10 cm × 5 cm) hoặc \"person\" (người đứng)",
-    "face": "Mặt gạch tiếp xúc với cát: \"large\" (20 cm × 10 cm = 200 cm²), \"medium\" (20 cm × 5 cm = 100 cm²), \"small\" (10 cm × 5 cm = 50 cm²)",
-    "support": "Người đứng trên: \"feet\" (hai bàn chân, 300 cm²), \"skis\" (đôi ván trượt, 2560 cm²), \"nail\" (tấm ván tựa trên một mũi đinh, 1 mm² = 0,01 cm²)",
-    "brickMass": "Khối lượng viên gạch (kg); áp lực F = 10·m (N)",
-    "personMass": "Khối lượng người (kg); áp lực F = 10·m (N)"
+    "ground": "Mặt đất: sand (cát), snow (tuyết), mud (bùn), concrete (bê tông, không lún)",
+    "slotA": "Nhân vật đứng bên trái: brick, kid, elephant, tank hoặc none",
+    "slotB": "Nhân vật đứng bên phải: brick, kid, elephant, tank hoặc none",
+    "brickFace": "Cách đặt viên gạch: large (mặt 20 × 10 cm), medium (20 × 5 cm), small (10 × 5 cm)",
+    "brickCount": "Số viên gạch chồng lên nhau (1–3)",
+    "brickMass": "Khối lượng mỗi viên gạch (kg)",
+    "kidMass": "Khối lượng bạn nhỏ (kg)",
+    "kidShoes": "Bạn nhỏ đi gì: feet (giày thể thao, 300 cm²), heels (gót nhọn, 2 cm²), stilts (cà kheo, 20 cm²), skis (ván trượt, 2560 cm²)",
+    "elephantMass": "Khối lượng chú voi (kg); bốn chân, mỗi chân 1000 cm²",
+    "guess": "Dự đoán của học sinh bên nào lún sâu hơn: A (trái), B (phải), equal, none",
+    "challenge": "Thử thách đang chọn: none, kid-beats-elephant, equal-different, brick-max"
   },
   "events": {
+    "placed": {
+      "kind": "action",
+      "description": "Học sinh kéo một nhân vật thả xuống đất, hoặc nhấc nó về kệ",
+      "data": { "slot": "1 = bên trái, 2 = bên phải", "object": "0 = nhấc đi, 1 gạch, 2 bạn nhỏ, 3 voi, 4 xe tăng" }
+    },
+    "object-tapped": {
+      "kind": "action",
+      "description": "Học sinh chạm vào viên gạch để xoay, hoặc vào bạn nhỏ để đổi giày",
+      "data": { "object": "1 gạch, 2 bạn nhỏ" }
+    },
+    "cleared": { "kind": "action", "description": "Học sinh bấm dọn sạch mặt đất", "data": {} },
     "pressure-measured": {
       "kind": "result",
-      "description": "Học sinh vừa chọn xong vật, mặt tiếp xúc (hoặc cách đứng) hoặc khối lượng; đây là áp suất lên mặt cát ở cách đặt đó. Độ lún theo mô hình đơn giản d = 6·(1 − e^(−p/10000)) cm, chỉ để thấy độ lún tăng theo áp suất.",
-      "data": {
-        "force": "Áp lực F = 10·m (N)",
-        "area": "Diện tích bị ép S (m²)",
-        "pressure": "Áp suất p = F/S (Pa)",
-        "depth": "Độ lún của cát (cm), theo mô hình"
-      }
+      "description": "Một nhân vật vừa lún xong; áp suất của nó lên mặt đất",
+      "data": { "slot": "1 trái, 2 phải", "object": "1 gạch, 2 bạn nhỏ, 3 voi, 4 xe tăng", "force": "Áp lực F (N)", "area": "Diện tích bị ép S (m²)", "pressure": "Áp suất p (Pa)" }
     },
-    "max-pressure-found": {
+    "compared": {
+      "kind": "result",
+      "description": "Cả hai bên đã lún xong: so sánh áp suất hai bên",
+      "data": { "pressureA": "Áp suất bên trái (Pa)", "pressureB": "Áp suất bên phải (Pa)", "ratio": "Tỉ số áp suất lớn / nhỏ", "deeper": "1 trái lún sâu hơn, 2 phải, 0 bằng nhau (lệch dưới 5 %)" }
+    },
+    "prediction-correct": {
       "kind": "goal",
-      "description": "Học sinh chọn được mặt tiếp xúc (hoặc cách đứng) cho áp suất lớn nhất: mặt có diện tích nhỏ nhất",
-      "data": {
-        "pressure": "Áp suất lớn nhất (Pa)",
-        "area": "Diện tích bị ép (m²)"
-      }
+      "description": "Học sinh đoán đúng bên nào lún sâu hơn trước khi thả nhân vật",
+      "data": { "deeper": "1 trái, 2 phải, 0 bằng nhau", "ratio": "Tỉ số áp suất" }
+    },
+    "challenge-done": {
+      "kind": "goal",
+      "description": "Học sinh hoàn thành thử thách đang chọn (mỗi thử thách báo một lần)",
+      "data": { "challenge": "1 bạn nhỏ lún sâu hơn voi, 2 nặng khác nhau mà lún bằng nhau, 3 chồng gạch lún sâu nhất" }
     }
   }
 }
