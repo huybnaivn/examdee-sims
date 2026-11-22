@@ -362,7 +362,7 @@ export function mount(def) {
       row.append(el("span", "", L(c.label)), minus, out, plus);
       controls.append(row);
       syncers.push(() => {
-        out.textContent = fmt(state[c.key], c.digits ?? 0);
+        out.textContent = c.format ? c.format(state[c.key], state) : fmt(state[c.key], c.digits ?? 0);
         minus.disabled = state[c.key] <= c.min;
         plus.disabled = state[c.key] >= c.max;
       });

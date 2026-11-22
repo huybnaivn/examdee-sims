@@ -40,7 +40,7 @@ mount({
     { type: "stepper", key, label, min, max, step },           // − value + buttons
     { type: "custom", render(container, api) /* may return sync() */ },
     // any control may also take: visible(state) => bool, disabled(state) => bool
-    // sliders may take: format(value, state) => "text shown beside the label"
+    // sliders and steppers may take: format(value, state) => "text shown beside the label"
     // any keyed control may take onCommit(state, api): called once when the adjustment is finished
     // (slider released), where onChange is called on every tick while dragging
   ],
