@@ -1,0 +1,63 @@
+{
+  "slug": "dot-bien-nhiem-sac-the",
+  "version": "1.0.0",
+  "title": "Đột biến nhiễm sắc thể",
+  "subject": "biology",
+  "grades": [12],
+  "description": "Hai phần. Đột biến cấu trúc: chọn một đoạn gene trên nhiễm sắc thể rồi gây mất đoạn, lặp đoạn, đảo đoạn hoặc chuyển đoạn sang một NST không tương đồng, và so sánh trình tự gene với NST ban đầu. Đột biến số lượng: chọn loài rồi tạo thể một (2n − 1), thể ba (2n + 1), thể tam bội (3n), thể tứ bội (4n); xem số NST và ví dụ như hội chứng Down (thể ba NST 21, 47 NST). Có thử thách tạo lại một bộ NST cho trước.",
+  "learningGoals": [
+    "Phân biệt bốn dạng đột biến cấu trúc NST qua sự thay đổi số lượng và trật tự gene: mất đoạn, lặp đoạn, đảo đoạn, chuyển đoạn.",
+    "Đảo đoạn không làm thay đổi số gene, mất đoạn làm mất gene, lặp đoạn làm tăng số bản sao của gene, chuyển đoạn làm gene đổi nhóm liên kết.",
+    "Phân biệt lệch bội (2n − 1, 2n + 1) với đa bội (3n, 4n) và tính số NST của mỗi dạng.",
+    "Nêu ví dụ: hội chứng Down là thể ba NST số 21 (47 NST), hội chứng Turner chỉ có một NST X (45 NST), dưa hấu tam bội không hạt."
+  ],
+  "state": {
+    "view": "Phần đang xem: \"structure\" (đột biến cấu trúc) hoặc \"number\" (đột biến số lượng)",
+    "chr1": "Trình tự gene hiện tại của NST 1, mỗi chữ cái là một gene, dấu chấm là tâm động (ban đầu \"ABCDE.FGH\")",
+    "chr2": "Trình tự gene hiện tại của NST 2, không tương đồng với NST 1 (ban đầu \"MNOPQ.R\")",
+    "segStart": "Gene đầu tiên của đoạn được chọn trên NST 1 (đếm từ 1)",
+    "segLen": "Số gene của đoạn được chọn",
+    "lastType": "Dạng đột biến cấu trúc vừa gây ra: 0 chưa có, 1 mất đoạn, 2 lặp đoạn, 3 đảo đoạn, 4 chuyển đoạn",
+    "lastSeg": "Các gene của đoạn mà đột biến cấu trúc gần nhất tác động",
+    "species": "Loài: \"human\" (người, 2n = 46), \"fly\" (ruồi giấm, 2n = 8), \"watermelon\" (dưa hấu, 2n = 22), \"datura\" (cà độc dược, 2n = 24)",
+    "numType": "Bộ NST: \"2n\", \"2n-1\" (thể một), \"2n+1\" (thể ba), \"3n\" (tam bội), \"4n\" (tứ bội)",
+    "pair": "Số thứ tự cặp NST bị lệch bội (chỉ dùng cho thể một và thể ba); ở người cặp 23 là NST giới tính",
+    "target": "Thử thách đang chọn: 0 không có, 1 hội chứng Down, 2 hội chứng Turner, 3 dưa hấu tam bội, 4 cà độc dược tứ bội",
+    "solved": "Mã thử thách đang được đáp ứng; 0 nếu chưa đạt"
+  },
+  "events": {
+    "mutate": {
+      "kind": "action",
+      "description": "Học sinh gây một đột biến: bấm một dạng đột biến cấu trúc, hoặc chọn một dạng đột biến số lượng hay cặp NST bị lệch bội",
+      "data": {
+        "typeCode": "Dạng đột biến: 0 bình thường (2n), 1 mất đoạn, 2 lặp đoạn, 3 đảo đoạn, 4 chuyển đoạn, 5 thể một, 6 thể ba, 7 tam bội, 8 tứ bội",
+        "start": "Chỉ với đột biến cấu trúc: gene đầu tiên của đoạn (đếm từ 1)",
+        "length": "Chỉ với đột biến cấu trúc: số gene của đoạn",
+        "pair": "Chỉ với đột biến số lượng: cặp NST bị lệch bội, 0 nếu không phải lệch bội"
+      }
+    },
+    "restore": {
+      "kind": "action",
+      "description": "Học sinh đưa hai NST về trình tự gene ban đầu",
+      "data": {}
+    },
+    "karyotype": {
+      "kind": "result",
+      "description": "Kết quả sau một đột biến hoặc sau khi đổi loài",
+      "data": {
+        "chromosomeCount": "Số NST trong tế bào (theo loài và dạng đột biến số lượng đang chọn; đột biến cấu trúc không làm đổi số này)",
+        "typeCode": "Dạng đột biến vừa gây ra, mã như ở sự kiện mutate",
+        "genes1": "Số gene trên NST 1 sau đột biến",
+        "genes2": "Số gene trên NST 2 sau đột biến"
+      }
+    },
+    "target-reached": {
+      "kind": "goal",
+      "description": "Học sinh tạo đúng bộ NST của thử thách",
+      "data": {
+        "target": "Mã thử thách (1 Down, 2 Turner, 3 dưa hấu tam bội, 4 cà độc dược tứ bội)",
+        "chromosomeCount": "Số NST của bộ NST đạt được"
+      }
+    }
+  }
+}

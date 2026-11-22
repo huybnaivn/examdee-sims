@@ -1,0 +1,71 @@
+{
+  "slug": "bien-thai-dong-vat",
+  "version": "1.0.0",
+  "title": "Sinh trưởng và phát triển ở động vật",
+  "subject": "biology",
+  "grades": [11],
+  "description": "Học sinh xếp các giai đoạn trong vòng đời của bướm, châu chấu và người lên một dòng thời gian theo đúng thứ tự, rồi phân loại kiểu phát triển của từng loài: biến thái hoàn toàn, biến thái không hoàn toàn hay không qua biến thái. Phần thứ hai là mô hình ngưỡng đơn giản về hai hormone ecdysone và juvenile điều hòa lột xác ở côn trùng: thay đổi nồng độ để xem sâu lột xác thành sâu lớn hơn, hóa nhộng, hay nhộng hóa bướm.",
+  "learningGoals": [
+    "Trình bày đúng thứ tự các giai đoạn phát triển của bướm (trứng, sâu bướm, nhộng, bướm), châu chấu (trứng, ấu trùng, trưởng thành) và người.",
+    "Phân biệt phát triển qua biến thái hoàn toàn, biến thái không hoàn toàn và không qua biến thái.",
+    "Nêu vai trò của ecdysone (gây lột xác, kích thích sâu thành nhộng và bướm) và juvenile (duy trì dạng ấu trùng, ức chế biến đổi sâu thành nhộng và bướm)."
+  ],
+  "state": {
+    "view": "Phần đang xem: \"cycle\" (vòng đời và phân loại) hoặc \"hormone\" (hormone lột xác)",
+    "animal": "Loài đang xếp vòng đời: \"butterfly\" (bướm), \"grasshopper\" (châu chấu), \"human\" (người)",
+    "card": "Số thứ tự của thẻ đang được chọn bằng nút − / + (đếm từ 1, theo số ghi trên thẻ)",
+    "placedButterfly": "Các giai đoạn của bướm đã xếp, theo thứ tự xếp; mỗi chữ số là chỉ số giai đoạn thật (0 trứng, 1 sâu bướm, 2 nhộng, 3 bướm); \"0123\" là đúng",
+    "placedGrasshopper": "Tương tự cho châu chấu (0 trứng, 1 ấu trùng, 2 trưởng thành); \"012\" là đúng",
+    "placedHuman": "Tương tự cho người (0 hợp tử, 1 phôi, 2 thai nhi, 3 trẻ em, 4 người lớn); \"01234\" là đúng",
+    "classButterfly": "Kiểu phát triển học sinh chọn cho bướm: \"\" (chưa chọn), \"complete\" (biến thái hoàn toàn), \"incomplete\" (không hoàn toàn), \"none\" (không qua biến thái)",
+    "classGrasshopper": "Kiểu phát triển học sinh chọn cho châu chấu (giá trị như trên)",
+    "classHuman": "Kiểu phát triển học sinh chọn cho người (giá trị như trên)",
+    "classified": "true nếu cả ba loài đang được phân loại đúng",
+    "insectStage": "Giai đoạn của côn trùng trong mô hình hormone: \"larva\" (sâu bướm) hoặc \"pupa\" (nhộng)",
+    "ecdysone": "Nồng độ ecdysone (% mức cao nhất)",
+    "juvenile": "Nồng độ hormone juvenile (% mức cao nhất)"
+  },
+  "events": {
+    "place-stage": {
+      "kind": "action",
+      "description": "Học sinh đặt một thẻ giai đoạn vào ô trống kế tiếp của dòng thời gian",
+      "data": {
+        "animal": "Loài: 1 bướm, 2 châu chấu, 3 người",
+        "stage": "Thứ tự thật của giai đoạn trên thẻ (đếm từ 1)",
+        "position": "Vị trí trên dòng thời gian mà thẻ được đặt vào (đếm từ 1)",
+        "correct": "1 nếu thẻ nằm đúng vị trí, 0 nếu sai"
+      }
+    },
+    "timeline-cleared": {
+      "kind": "action",
+      "description": "Học sinh gỡ hết thẻ của loài đang xem để xếp lại",
+      "data": {}
+    },
+    "cycle-completed": {
+      "kind": "result",
+      "description": "Học sinh đã xếp hết các giai đoạn của một loài",
+      "data": {
+        "animal": "Loài: 1 bướm, 2 châu chấu, 3 người",
+        "correct": "1 nếu toàn bộ thứ tự đúng, 0 nếu sai",
+        "stages": "Số giai đoạn của vòng đời"
+      }
+    },
+    "all-classified": {
+      "kind": "goal",
+      "description": "Học sinh phân loại đúng kiểu phát triển của cả ba loài",
+      "data": {
+        "animals": "Số loài đã phân loại đúng (3)"
+      }
+    },
+    "moult-outcome": {
+      "kind": "result",
+      "description": "Kết quả của mô hình hormone sau khi học sinh chỉnh xong nồng độ hoặc đổi giai đoạn",
+      "data": {
+        "stage": "Giai đoạn hiện tại: 1 sâu bướm, 2 nhộng",
+        "ecdysone": "Nồng độ ecdysone (%)",
+        "juvenile": "Nồng độ juvenile (%)",
+        "outcome": "0 không biến đổi, 1 lột xác thành sâu lớn hơn, 2 hóa nhộng, 3 hóa bướm"
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "slug": "truyen-nhiet",
+  "version": "1.0.0",
+  "title": "Dẫn nhiệt, đối lưu và bức xạ nhiệt",
+  "subject": "physics",
+  "grades": [8],
+  "description": "Ba thí nghiệm về các cách truyền nhiệt. Dẫn nhiệt: bốn thanh đồng, nhôm, sắt, thủy tinh được nung một đầu, đinh gắn bằng sáp lần lượt rơi; học sinh dự đoán thứ tự trước khi chạy. Đối lưu: cốc nước được đun ở đáy (hoặc ở phía trên) với hạt thuốc tím cho thấy dòng nước chuyển động. Bức xạ nhiệt: một vật đen và một vật trắng giống nhau được chiếu sáng, vật đen hấp thụ nhiều hơn và nóng lên nhanh hơn. Mô hình dẫn nhiệt một chiều bỏ qua tỏa nhiệt ra không khí; hình dạng dòng đối lưu được vẽ theo quy ước.",
+  "learningGoals": [
+    "Chất rắn dẫn nhiệt tốt, kim loại dẫn nhiệt tốt nhất; so sánh đồng, nhôm, sắt và thủy tinh.",
+    "Giải thích dòng đối lưu: phần chất lỏng nóng hơn nở ra, nhẹ hơn nên đi lên, phần lạnh hơn chìm xuống; đun ở phía trên thì không có đối lưu.",
+    "Vật có bề mặt sẫm màu hấp thụ bức xạ nhiệt nhiều hơn vật có bề mặt trắng, nhẵn.",
+    "Nhiệt độ của vật ngừng tăng khi công suất hấp thụ bằng công suất tỏa ra môi trường."
+  ],
+  "state": {
+    "mode": "Thí nghiệm đang xem: \"conduction\" (dẫn nhiệt), \"convection\" (đối lưu) hoặc \"radiation\" (bức xạ nhiệt)",
+    "speed": "Tốc độ mô phỏng (1, 10 hoặc 100 lần thời gian thực); không áp dụng cho đối lưu",
+    "time": "Thời gian từ lúc bật nguồn nhiệt (s)",
+    "reported": "true nếu kết quả của lần chạy này đã được ghi",
+    "distance": "Khoảng cách từ đầu được nung đến chỗ gắn sáp (cm)",
+    "prediction": "Dự đoán thứ tự sáp rơi: chuỗi chỉ số chất theo thứ tự đã chọn (0 đồng, 1 nhôm, 2 sắt, 3 thủy tinh), ví dụ \"0123\"; rỗng nếu chưa đoán",
+    "heater": "Vị trí đun cốc nước: \"left\" (đáy, bên trái), \"center\" (đáy, giữa) hoặc \"top\" (phía trên)",
+    "deltaT": "Độ chênh nhiệt độ giữa nước ở chỗ đun và nước xung quanh (°C)",
+    "mx": "Hoành độ hạt thuốc tím, tính theo phần chiều rộng cốc (0–1, từ trái sang)",
+    "my": "Tung độ hạt thuốc tím, tính theo phần chiều sâu nước (0–1, từ đáy lên)",
+    "loopAngle": "Góc hạt thuốc tím đã quay quanh tâm vòng đối lưu (rad)",
+    "loopTime": "Thời gian hạt thuốc tím đi hết vòng đầu tiên (s); 0 nếu chưa xong",
+    "irradiance": "Cường độ chiếu sáng lên hai vật (W/m²)",
+    "tBlack": "Nhiệt độ vật đen (°C)",
+    "tWhite": "Nhiệt độ vật trắng (°C)"
+  },
+  "events": {
+    "predict": {
+      "kind": "action",
+      "description": "Học sinh chọn một thanh vào dự đoán thứ tự sáp rơi (bấm trên hình hoặc bấm nút)",
+      "data": {
+        "material": "Chất được chọn: 0 đồng, 1 nhôm, 2 sắt, 3 thủy tinh",
+        "position": "Vị trí trong dự đoán (1 = rơi đầu tiên … 4 = rơi cuối cùng)"
+      }
+    },
+    "prediction-cleared": {
+      "kind": "action",
+      "description": "Học sinh xóa dự đoán để chọn lại",
+      "data": {}
+    },
+    "restart": {
+      "kind": "action",
+      "description": "Học sinh làm lại thí nghiệm đang xem từ đầu",
+      "data": {}
+    },
+    "conduction-done": {
+      "kind": "result",
+      "description": "Thí nghiệm dẫn nhiệt đã cho biết thứ tự rơi (ba đinh sáp đã rơi)",
+      "data": {
+        "distance": "Khoảng cách từ đầu nung đến sáp (cm)",
+        "copper": "Thời điểm sáp trên thanh đồng rơi (s)",
+        "aluminium": "Thời điểm sáp trên thanh nhôm rơi (s)",
+        "iron": "Thời điểm sáp trên thanh sắt rơi (s)",
+        "glass": "Thời điểm sáp trên thanh thủy tinh rơi theo mô hình (s)",
+        "predicted": "1 nếu học sinh đã dự đoán đủ bốn thanh trước khi chạy, 0 nếu không",
+        "correct": "1 nếu dự đoán đúng thứ tự, 0 nếu sai hoặc chưa dự đoán"
+      }
+    },
+    "order-predicted": {
+      "kind": "goal",
+      "description": "Học sinh dự đoán đúng thứ tự sáp rơi: đồng, nhôm, sắt, thủy tinh (được thí nghiệm xác nhận)",
+      "data": {
+        "distance": "Khoảng cách từ đầu nung đến sáp (cm)"
+      }
+    },
+    "convection-done": {
+      "kind": "result",
+      "description": "Hạt thuốc tím đi hết một vòng đối lưu, hoặc sau 15 s đun ở phía trên mà không có dòng đối lưu",
+      "data": {
+        "deltaT": "Độ chênh nhiệt độ của nước ở chỗ đun (°C)",
+        "speed": "Tốc độ dòng đối lưu theo mô hình (cm/s)",
+        "loopTime": "Thời gian đi hết một vòng (s); 0 nếu không có đối lưu",
+        "circulating": "1 nếu có dòng đối lưu, 0 nếu không"
+      }
+    },
+    "radiation-done": {
+      "kind": "result",
+      "description": "Nhiệt độ hai vật sau 5 phút chiếu sáng",
+      "data": {
+        "irradiance": "Cường độ chiếu sáng (W/m²)",
+        "blackTemperature": "Nhiệt độ vật đen (°C)",
+        "whiteTemperature": "Nhiệt độ vật trắng (°C)",
+        "time": "Thời gian chiếu sáng (s)"
+      }
+    }
+  }
+}

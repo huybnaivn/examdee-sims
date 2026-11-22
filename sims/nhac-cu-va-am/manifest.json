@@ -1,0 +1,50 @@
+{
+  "slug": "nhac-cu-va-am",
+  "version": "1.0.0",
+  "title": "Nhạc cụ: dây đàn và ống sáo",
+  "subject": "physics",
+  "grades": [7, 11],
+  "description": "Một dây đàn thép hai đầu cố định và một ống sáo (hai đầu hở hoặc một đầu kín). Thay đổi chiều dài, lực căng, đường kính dây hoặc chiều dài cột khí để xem tần số âm cơ bản, các họa âm dưới dạng hình ảnh sóng dừng và nốt nhạc gần nhất (La4 = 440 Hz). Có thể bấm nút để nghe âm và thử lên dây đúng một nốt cho trước. Âm trong không khí truyền với tốc độ 340 m/s, bỏ qua hiệu chỉnh đầu ống.",
+  "learningGoals": [
+    "Dây càng ngắn, càng căng, càng mảnh thì âm phát ra càng cao: f = (k/2L)·√(T/μ).",
+    "Giảm chiều dài dây hoặc cột khí còn một nửa thì tần số tăng gấp đôi (cao hơn một quãng tám).",
+    "Ống hai đầu hở: f = k·v/(2L); ống một đầu kín: f = m·v/(4L) với m lẻ, nên chỉ có các họa âm bậc lẻ.",
+    "Nhận ra vị trí nút và bụng của sóng dừng trên dây và trong cột khí.",
+    "Liên hệ tần số với tên nốt nhạc và độ lệch tính bằng cent."
+  ],
+  "state": {
+    "instrument": "Nhạc cụ: \"string\" (dây đàn), \"open\" (ống hai đầu hở) hoặc \"closed\" (ống một đầu kín, một đầu hở)",
+    "length": "Chiều dài phần dây dao động (m)",
+    "tension": "Lực căng dây (N)",
+    "diameter": "Đường kính dây thép (mm)",
+    "pipeLength": "Chiều dài cột khí trong ống (m)",
+    "harmonic": "Sóng dừng đang được vẽ: thứ k trong các sóng dừng có thể có (1 = âm cơ bản)",
+    "target": "Nốt cần lên, tính theo số MIDI (La4 = 69); 0 nếu không yêu cầu",
+    "tunedNote": "Nốt cần lên đã đạt (số MIDI) khi âm cơ bản đang lệch không quá 5 cent so với nó; 0 nếu chưa đạt"
+  },
+  "events": {
+    "pitch-set": {
+      "kind": "result",
+      "description": "Học sinh vừa chỉnh xong nhạc cụ (đổi nhạc cụ, chiều dài, lực căng hoặc đường kính)",
+      "data": {
+        "frequency": "Tần số âm cơ bản (Hz)",
+        "note": "Nốt gần nhất, số MIDI (La4 = 69)",
+        "cents": "Độ lệch so với nốt gần nhất (cent, dương là cao hơn)"
+      }
+    },
+    "tuned": {
+      "kind": "goal",
+      "description": "Âm cơ bản đúng nốt cần lên, lệch không quá 5 cent",
+      "data": {
+        "note": "Nốt cần lên, số MIDI",
+        "frequency": "Tần số âm cơ bản đạt được (Hz)",
+        "cents": "Độ lệch so với nốt cần lên (cent)"
+      }
+    },
+    "listen": {
+      "kind": "action",
+      "description": "Học sinh bấm nút nghe âm đang được tạo ra",
+      "data": {}
+    }
+  }
+}
