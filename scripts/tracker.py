@@ -12,6 +12,7 @@ for c in json.load(open(root / "catalog.json")):
     if c.get("review"):
         row["r"] = int(c["review"].get("round", 1))
         row["c"] = str(c["review"].get("note", ""))
+        row["e"] = 1  # published beside the tracker page, so it can be viewed inside it
     if c.get("status") == "approved":
         row["a"] = 1
     sims.append(row)
