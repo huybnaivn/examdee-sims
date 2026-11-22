@@ -1,0 +1,76 @@
+{
+  "slug": "so-huu-ti-truc-so",
+  "version": "1.0.0",
+  "title": "Số hữu tỉ trên trục số",
+  "subject": "math",
+  "grades": [
+    7
+  ],
+  "description": "Biểu diễn số hữu tỉ a/b trên trục số bằng cách chia mỗi đoạn đơn vị thành b phần bằng nhau rồi đếm a phần kể từ 0. Xem số đó viết dưới dạng phân số tối giản, số thập phân hữu hạn hoặc vô hạn tuần hoàn (chu kì viết trong ngoặc), số đối và giá trị tuyệt đối là khoảng cách đến điểm 0. So sánh hai số hữu tỉ bằng cách quy đồng mẫu dương và luyện sắp xếp một bộ số theo thứ tự tăng dần.",
+  "learningGoals": [
+    "Biểu diễn được số hữu tỉ trên trục số bằng cách chia đoạn đơn vị thành các phần bằng nhau.",
+    "So sánh và sắp xếp được các số hữu tỉ; trên trục số, số bé hơn nằm bên trái.",
+    "Nhận biết phân số tối giản mẫu dương viết được thành số thập phân hữu hạn khi mẫu không có ước nguyên tố khác 2 và 5, ngược lại là số thập phân vô hạn tuần hoàn.",
+    "Viết được số thập phân vô hạn tuần hoàn với chu kì và đổi ngược lại thành phân số.",
+    "Hiểu số đối và giá trị tuyệt đối của một số hữu tỉ là khoảng cách từ điểm biểu diễn đến điểm 0."
+  ],
+  "state": {
+    "mode": "Hoạt động: \"explore\" (biểu diễn một số), \"compare\" (so sánh hai số), \"order\" (luyện sắp xếp)",
+    "num": "Tử số a của số thứ nhất (số nguyên từ −12 đến 12)",
+    "den": "Mẫu số b của số thứ nhất (từ 1 đến 12), cũng là số phần chia mỗi đoạn đơn vị",
+    "num2": "Tử số c của số thứ hai (từ −12 đến 12), dùng khi so sánh",
+    "den2": "Mẫu số d của số thứ hai (từ 1 đến 12), dùng khi so sánh",
+    "showOpposite": "true nếu hiện số đối và giá trị tuyệt đối",
+    "setIndex": "Thứ tự của bộ số đang luyện sắp xếp (bắt đầu từ 0)",
+    "order": "Thứ tự các thẻ từ trái sang phải, chuỗi bốn chữ số là chỉ số thẻ trong bộ số, ví dụ \"2031\"",
+    "pick": "Vị trí thẻ đang chọn (1 đến 4, tính từ trái)",
+    "status": "Trạng thái bài sắp xếp: \"\" (chưa kiểm tra), \"right\" (đã đúng), \"wrong\" (lần kiểm tra gần nhất sai)",
+    "solved": "Số bộ số đã sắp xếp đúng"
+  },
+  "events": {
+    "number-placed": {
+      "kind": "result",
+      "description": "Học sinh vừa đặt một số lên trục số (thả điểm đang kéo hoặc chọn xong tử số, mẫu số)",
+      "data": {
+        "value": "Giá trị của số hữu tỉ vừa đặt",
+        "position": "Vị trí của điểm tính bằng số phần bằng nhau kể từ 0 (bằng tử số; âm là bên trái điểm 0)",
+        "parts": "Số phần bằng nhau mà mỗi đoạn đơn vị được chia (bằng mẫu số)"
+      }
+    },
+    "compared": {
+      "kind": "result",
+      "description": "Ở hoạt động so sánh, học sinh vừa chọn xong hai số và xem kết quả so sánh",
+      "data": {
+        "first": "Giá trị số thứ nhất",
+        "second": "Giá trị số thứ hai",
+        "sign": "−1 nếu số thứ nhất bé hơn, 0 nếu bằng nhau, 1 nếu lớn hơn"
+      }
+    },
+    "card-moved": {
+      "kind": "action",
+      "description": "Học sinh đổi chỗ hai thẻ số khi sắp xếp",
+      "data": {
+        "from": "Vị trí cũ của thẻ (1 đến 4)",
+        "to": "Vị trí mới của thẻ (1 đến 4)"
+      }
+    },
+    "ordered": {
+      "kind": "goal",
+      "description": "Học sinh sắp xếp đúng cả bộ số theo thứ tự tăng dần",
+      "data": {
+        "count": "Số thẻ trong bộ số",
+        "solved": "Tổng số bộ số đã sắp xếp đúng"
+      }
+    },
+    "wrong-order": {
+      "kind": "action",
+      "description": "Học sinh bấm Kiểm tra khi thứ tự còn sai",
+      "data": {}
+    },
+    "new-set": {
+      "kind": "action",
+      "description": "Học sinh bấm Bộ số khác để nhận một bộ số mới",
+      "data": {}
+    }
+  }
+}

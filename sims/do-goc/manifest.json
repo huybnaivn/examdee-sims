@@ -1,0 +1,80 @@
+{
+  "slug": "do-goc",
+  "version": "1.0.0",
+  "title": "Góc và thước đo góc",
+  "subject": "math",
+  "grades": [
+    4,
+    6
+  ],
+  "description": "Kéo hai cạnh Ox, Oy để tạo góc, rồi di chuyển và xoay thước đo góc: đặt tâm thước vào đỉnh O, cho một cạnh đi qua vạch 0 và đọc số đo trên thang trong hoặc thang ngoài tùy vạch 0 nằm ở đâu. Góc được gọi tên là góc nhọn, góc vuông, góc tù hay góc bẹt. Có hai bài luyện tập: đọc số đo của một góc cho sẵn và vẽ một góc có số đo cho trước.",
+  "learningGoals": [
+    "Nhận biết góc, đỉnh và hai cạnh của góc.",
+    "Đặt thước đo góc đúng cách: tâm thước trùng đỉnh góc, một cạnh đi qua vạch 0.",
+    "Đọc đúng thang đo: cạnh góc đi qua vạch 0 của thang nào thì đọc số đo trên thang đó.",
+    "Phân loại góc nhọn (bé hơn 90°), góc vuông (90°), góc tù (lớn hơn 90°, bé hơn 180°), góc bẹt (180°).",
+    "Vẽ được góc có số đo cho trước bằng thước đo góc."
+  ],
+  "state": {
+    "mode": "Hoạt động: \"measure\" (đo góc tự do), \"read\" (luyện đọc số đo), \"draw\" (luyện vẽ góc cho trước)",
+    "dir1": "Hướng của cạnh Ox (độ, ngược chiều kim đồng hồ tính từ hướng sang phải, 0 đến 359)",
+    "dir2": "Hướng của cạnh Oy (độ, 0 đến 359)",
+    "px": "Vị trí tâm thước theo chiều ngang so với đỉnh O (đơn vị là độ dài cạnh góc, −1 đến 1, dương là bên phải)",
+    "py": "Vị trí tâm thước theo chiều dọc so với đỉnh O (đơn vị là độ dài cạnh góc, −1 đến 1, dương là phía trên)",
+    "rot": "Góc xoay của thước (độ): hướng của nửa vạch gốc mang vạch 0 của thang trong",
+    "showMeasure": "true nếu hiện số đo và tên loại góc (chỉ dùng khi đo tự do)",
+    "qIndex": "Thứ tự câu hỏi luyện tập (bắt đầu từ 0)",
+    "answer": "Số đo học sinh đọc được khi luyện đọc (độ, 0 đến 180)",
+    "status": "Trạng thái câu luyện tập: \"\" (chưa kiểm tra), \"right\" (đã đúng), \"wrong\" (lần kiểm tra gần nhất sai)",
+    "solved": "Số câu luyện tập đã làm đúng"
+  },
+  "events": {
+    "angle-set": {
+      "kind": "result",
+      "description": "Học sinh vừa thả một cạnh của góc (hoặc chọn xong hướng cạnh bằng thanh trượt)",
+      "data": {
+        "angle": "Số đo góc xOy (độ, 0 đến 180)",
+        "type": "Loại góc: 0 góc không, 1 góc nhọn, 2 góc vuông, 3 góc tù, 4 góc bẹt"
+      }
+    },
+    "protractor-placed": {
+      "kind": "action",
+      "description": "Học sinh vừa đặt hoặc xoay thước đo góc",
+      "data": {
+        "centered": "1 nếu tâm thước trùng đỉnh O, 0 nếu chưa",
+        "aligned": "1 nếu thước đã đặt đúng để đọc (tâm trùng đỉnh, một cạnh qua vạch 0), 0 nếu chưa"
+      }
+    },
+    "reading-correct": {
+      "kind": "goal",
+      "description": "Học sinh đọc đúng số đo góc trong bài luyện tập (sai lệch không quá 1°)",
+      "data": {
+        "angle": "Số đo đúng của góc (độ)",
+        "answer": "Số đo học sinh trả lời (độ)",
+        "solved": "Tổng số câu luyện tập đã làm đúng"
+      }
+    },
+    "drawing-correct": {
+      "kind": "goal",
+      "description": "Học sinh vẽ đúng góc có số đo cho trước (sai lệch không quá 1°)",
+      "data": {
+        "target": "Số đo cần vẽ (độ)",
+        "angle": "Số đo góc học sinh đã vẽ (độ)",
+        "solved": "Tổng số câu luyện tập đã làm đúng"
+      }
+    },
+    "wrong-answer": {
+      "kind": "action",
+      "description": "Học sinh bấm Kiểm tra khi câu trả lời hoặc góc đã vẽ còn sai",
+      "data": {
+        "target": "Số đo đúng hoặc số đo cần vẽ (độ)",
+        "value": "Số đo học sinh trả lời hoặc đã vẽ (độ)"
+      }
+    },
+    "new-question": {
+      "kind": "action",
+      "description": "Học sinh bấm Câu khác để nhận câu luyện tập mới",
+      "data": {}
+    }
+  }
+}

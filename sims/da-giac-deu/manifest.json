@@ -1,0 +1,56 @@
+{
+  "slug": "da-giac-deu",
+  "version": "1.0.0",
+  "title": "Tam giác đều, hình vuông, lục giác đều",
+  "subject": "math",
+  "grades": [
+    6
+  ],
+  "description": "Xem từng bước dựng tam giác đều, hình vuông và lục giác đều bằng thước và compa trên giấy kẻ ô 1 cm; lục giác đều được chia thành sáu tam giác đều. Khi dựng xong, hình cho biết số đo mỗi góc, chu vi và diện tích. Ở hoạt động lát mặt phẳng, học sinh ghép các hình bằng nhau quanh một điểm để thấy tam giác đều, hình vuông, lục giác đều ghép vừa khít 360°, còn ngũ giác đều thì hở hoặc chồng lên nhau.",
+  "learningGoals": [
+    "Nhận biết tam giác đều, hình vuông, lục giác đều: các cạnh bằng nhau, các góc bằng nhau (60°, 90°, 120°).",
+    "Vẽ được tam giác đều, hình vuông, lục giác đều bằng thước và compa.",
+    "Nhận ra lục giác đều gồm sáu tam giác đều ghép lại.",
+    "Tính chu vi (số cạnh nhân độ dài cạnh) và diện tích của các hình này.",
+    "Giải thích vì sao chỉ tam giác đều, hình vuông, lục giác đều lát kín mặt phẳng: tổng các góc quanh một điểm phải bằng 360°."
+  ],
+  "state": {
+    "mode": "Hoạt động: \"build\" (dựng hình) hoặc \"tile\" (lát mặt phẳng)",
+    "n": "Số cạnh của hình đang dựng: 3, 4 hoặc 6",
+    "a": "Độ dài cạnh của hình đang dựng (cm, 2 đến 6)",
+    "progress": "Tiến trình dựng hình, từ 0 đến 4 (mỗi đơn vị là một bước; 4 là đã dựng xong)",
+    "tile": "Số cạnh của hình dùng để ghép quanh một điểm: 3, 4, 5 hoặc 6",
+    "around": "Số hình ghép quanh một điểm (1 đến 6)",
+    "pick3": "true nếu học sinh chọn tam giác đều là hình lát kín mặt phẳng",
+    "pick4": "true nếu học sinh chọn hình vuông là hình lát kín mặt phẳng",
+    "pick5": "true nếu học sinh chọn ngũ giác đều là hình lát kín mặt phẳng",
+    "pick6": "true nếu học sinh chọn lục giác đều là hình lát kín mặt phẳng",
+    "status": "Trạng thái câu hỏi lát mặt phẳng: \"\" (chưa kiểm tra), \"right\" (đã đúng), \"wrong\" (lần kiểm tra gần nhất sai)"
+  },
+  "events": {
+    "polygon-built": {
+      "kind": "result",
+      "description": "Một hình vừa được dựng xong (hoạt hình chạy hết, hoặc học sinh đổi hình hay độ dài cạnh khi hình đã dựng xong)",
+      "data": {
+        "n": "Số cạnh của hình (3, 4 hoặc 6)",
+        "side": "Độ dài cạnh (cm)",
+        "perimeter": "Chu vi (cm)",
+        "area": "Diện tích (cm²)"
+      }
+    },
+    "tiling-identified": {
+      "kind": "goal",
+      "description": "Học sinh chọn đúng tất cả các hình lát kín mặt phẳng: tam giác đều, hình vuông, lục giác đều",
+      "data": {
+        "count": "Số hình đã chọn (3)"
+      }
+    },
+    "wrong-answer": {
+      "kind": "action",
+      "description": "Học sinh bấm Kiểm tra khi chọn chưa đúng các hình lát kín mặt phẳng",
+      "data": {
+        "picked": "Số hình đã chọn"
+      }
+    }
+  }
+}

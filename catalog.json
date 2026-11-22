@@ -2427,6 +2427,64 @@
     "thumbnailUrl": "/cung-quat-tron/1.0.0/thumb.png"
   },
   {
+    "slug": "da-giac-deu",
+    "version": "1.0.0",
+    "title": "Tam giác đều, hình vuông, lục giác đều",
+    "subject": "math",
+    "grades": [
+      6
+    ],
+    "description": "Xem từng bước dựng tam giác đều, hình vuông và lục giác đều bằng thước và compa trên giấy kẻ ô 1 cm; lục giác đều được chia thành sáu tam giác đều. Khi dựng xong, hình cho biết số đo mỗi góc, chu vi và diện tích. Ở hoạt động lát mặt phẳng, học sinh ghép các hình bằng nhau quanh một điểm để thấy tam giác đều, hình vuông, lục giác đều ghép vừa khít 360°, còn ngũ giác đều thì hở hoặc chồng lên nhau.",
+    "learningGoals": [
+      "Nhận biết tam giác đều, hình vuông, lục giác đều: các cạnh bằng nhau, các góc bằng nhau (60°, 90°, 120°).",
+      "Vẽ được tam giác đều, hình vuông, lục giác đều bằng thước và compa.",
+      "Nhận ra lục giác đều gồm sáu tam giác đều ghép lại.",
+      "Tính chu vi (số cạnh nhân độ dài cạnh) và diện tích của các hình này.",
+      "Giải thích vì sao chỉ tam giác đều, hình vuông, lục giác đều lát kín mặt phẳng: tổng các góc quanh một điểm phải bằng 360°."
+    ],
+    "state": {
+      "mode": "Hoạt động: \"build\" (dựng hình) hoặc \"tile\" (lát mặt phẳng)",
+      "n": "Số cạnh của hình đang dựng: 3, 4 hoặc 6",
+      "a": "Độ dài cạnh của hình đang dựng (cm, 2 đến 6)",
+      "progress": "Tiến trình dựng hình, từ 0 đến 4 (mỗi đơn vị là một bước; 4 là đã dựng xong)",
+      "tile": "Số cạnh của hình dùng để ghép quanh một điểm: 3, 4, 5 hoặc 6",
+      "around": "Số hình ghép quanh một điểm (1 đến 6)",
+      "pick3": "true nếu học sinh chọn tam giác đều là hình lát kín mặt phẳng",
+      "pick4": "true nếu học sinh chọn hình vuông là hình lát kín mặt phẳng",
+      "pick5": "true nếu học sinh chọn ngũ giác đều là hình lát kín mặt phẳng",
+      "pick6": "true nếu học sinh chọn lục giác đều là hình lát kín mặt phẳng",
+      "status": "Trạng thái câu hỏi lát mặt phẳng: \"\" (chưa kiểm tra), \"right\" (đã đúng), \"wrong\" (lần kiểm tra gần nhất sai)"
+    },
+    "events": {
+      "polygon-built": {
+        "kind": "result",
+        "description": "Một hình vừa được dựng xong (hoạt hình chạy hết, hoặc học sinh đổi hình hay độ dài cạnh khi hình đã dựng xong)",
+        "data": {
+          "n": "Số cạnh của hình (3, 4 hoặc 6)",
+          "side": "Độ dài cạnh (cm)",
+          "perimeter": "Chu vi (cm)",
+          "area": "Diện tích (cm²)"
+        }
+      },
+      "tiling-identified": {
+        "kind": "goal",
+        "description": "Học sinh chọn đúng tất cả các hình lát kín mặt phẳng: tam giác đều, hình vuông, lục giác đều",
+        "data": {
+          "count": "Số hình đã chọn (3)"
+        }
+      },
+      "wrong-answer": {
+        "kind": "action",
+        "description": "Học sinh bấm Kiểm tra khi chọn chưa đúng các hình lát kín mặt phẳng",
+        "data": {
+          "picked": "Số hình đã chọn"
+        }
+      }
+    },
+    "url": "/da-giac-deu/1.0.0/index.html",
+    "thumbnailUrl": "/da-giac-deu/1.0.0/thumb.png"
+  },
+  {
     "slug": "dao-dong-cuong-buc",
     "version": "1.0.0",
     "title": "Dao động tắt dần, duy trì và cưỡng bức",
@@ -3428,6 +3486,88 @@
     },
     "url": "/diode-ban-dan/1.0.0/index.html",
     "thumbnailUrl": "/diode-ban-dan/1.0.0/thumb.png"
+  },
+  {
+    "slug": "do-goc",
+    "version": "1.0.0",
+    "title": "Góc và thước đo góc",
+    "subject": "math",
+    "grades": [
+      4,
+      6
+    ],
+    "description": "Kéo hai cạnh Ox, Oy để tạo góc, rồi di chuyển và xoay thước đo góc: đặt tâm thước vào đỉnh O, cho một cạnh đi qua vạch 0 và đọc số đo trên thang trong hoặc thang ngoài tùy vạch 0 nằm ở đâu. Góc được gọi tên là góc nhọn, góc vuông, góc tù hay góc bẹt. Có hai bài luyện tập: đọc số đo của một góc cho sẵn và vẽ một góc có số đo cho trước.",
+    "learningGoals": [
+      "Nhận biết góc, đỉnh và hai cạnh của góc.",
+      "Đặt thước đo góc đúng cách: tâm thước trùng đỉnh góc, một cạnh đi qua vạch 0.",
+      "Đọc đúng thang đo: cạnh góc đi qua vạch 0 của thang nào thì đọc số đo trên thang đó.",
+      "Phân loại góc nhọn (bé hơn 90°), góc vuông (90°), góc tù (lớn hơn 90°, bé hơn 180°), góc bẹt (180°).",
+      "Vẽ được góc có số đo cho trước bằng thước đo góc."
+    ],
+    "state": {
+      "mode": "Hoạt động: \"measure\" (đo góc tự do), \"read\" (luyện đọc số đo), \"draw\" (luyện vẽ góc cho trước)",
+      "dir1": "Hướng của cạnh Ox (độ, ngược chiều kim đồng hồ tính từ hướng sang phải, 0 đến 359)",
+      "dir2": "Hướng của cạnh Oy (độ, 0 đến 359)",
+      "px": "Vị trí tâm thước theo chiều ngang so với đỉnh O (đơn vị là độ dài cạnh góc, −1 đến 1, dương là bên phải)",
+      "py": "Vị trí tâm thước theo chiều dọc so với đỉnh O (đơn vị là độ dài cạnh góc, −1 đến 1, dương là phía trên)",
+      "rot": "Góc xoay của thước (độ): hướng của nửa vạch gốc mang vạch 0 của thang trong",
+      "showMeasure": "true nếu hiện số đo và tên loại góc (chỉ dùng khi đo tự do)",
+      "qIndex": "Thứ tự câu hỏi luyện tập (bắt đầu từ 0)",
+      "answer": "Số đo học sinh đọc được khi luyện đọc (độ, 0 đến 180)",
+      "status": "Trạng thái câu luyện tập: \"\" (chưa kiểm tra), \"right\" (đã đúng), \"wrong\" (lần kiểm tra gần nhất sai)",
+      "solved": "Số câu luyện tập đã làm đúng"
+    },
+    "events": {
+      "angle-set": {
+        "kind": "result",
+        "description": "Học sinh vừa thả một cạnh của góc (hoặc chọn xong hướng cạnh bằng thanh trượt)",
+        "data": {
+          "angle": "Số đo góc xOy (độ, 0 đến 180)",
+          "type": "Loại góc: 0 góc không, 1 góc nhọn, 2 góc vuông, 3 góc tù, 4 góc bẹt"
+        }
+      },
+      "protractor-placed": {
+        "kind": "action",
+        "description": "Học sinh vừa đặt hoặc xoay thước đo góc",
+        "data": {
+          "centered": "1 nếu tâm thước trùng đỉnh O, 0 nếu chưa",
+          "aligned": "1 nếu thước đã đặt đúng để đọc (tâm trùng đỉnh, một cạnh qua vạch 0), 0 nếu chưa"
+        }
+      },
+      "reading-correct": {
+        "kind": "goal",
+        "description": "Học sinh đọc đúng số đo góc trong bài luyện tập (sai lệch không quá 1°)",
+        "data": {
+          "angle": "Số đo đúng của góc (độ)",
+          "answer": "Số đo học sinh trả lời (độ)",
+          "solved": "Tổng số câu luyện tập đã làm đúng"
+        }
+      },
+      "drawing-correct": {
+        "kind": "goal",
+        "description": "Học sinh vẽ đúng góc có số đo cho trước (sai lệch không quá 1°)",
+        "data": {
+          "target": "Số đo cần vẽ (độ)",
+          "angle": "Số đo góc học sinh đã vẽ (độ)",
+          "solved": "Tổng số câu luyện tập đã làm đúng"
+        }
+      },
+      "wrong-answer": {
+        "kind": "action",
+        "description": "Học sinh bấm Kiểm tra khi câu trả lời hoặc góc đã vẽ còn sai",
+        "data": {
+          "target": "Số đo đúng hoặc số đo cần vẽ (độ)",
+          "value": "Số đo học sinh trả lời hoặc đã vẽ (độ)"
+        }
+      },
+      "new-question": {
+        "kind": "action",
+        "description": "Học sinh bấm Câu khác để nhận câu luyện tập mới",
+        "data": {}
+      }
+    },
+    "url": "/do-goc/1.0.0/index.html",
+    "thumbnailUrl": "/do-goc/1.0.0/thumb.png"
   },
   {
     "slug": "do-thi-ham-so",
@@ -9117,6 +9257,84 @@
     "thumbnailUrl": "/rong-roc/1.0.0/thumb.png"
   },
   {
+    "slug": "so-huu-ti-truc-so",
+    "version": "1.0.0",
+    "title": "Số hữu tỉ trên trục số",
+    "subject": "math",
+    "grades": [
+      7
+    ],
+    "description": "Biểu diễn số hữu tỉ a/b trên trục số bằng cách chia mỗi đoạn đơn vị thành b phần bằng nhau rồi đếm a phần kể từ 0. Xem số đó viết dưới dạng phân số tối giản, số thập phân hữu hạn hoặc vô hạn tuần hoàn (chu kì viết trong ngoặc), số đối và giá trị tuyệt đối là khoảng cách đến điểm 0. So sánh hai số hữu tỉ bằng cách quy đồng mẫu dương và luyện sắp xếp một bộ số theo thứ tự tăng dần.",
+    "learningGoals": [
+      "Biểu diễn được số hữu tỉ trên trục số bằng cách chia đoạn đơn vị thành các phần bằng nhau.",
+      "So sánh và sắp xếp được các số hữu tỉ; trên trục số, số bé hơn nằm bên trái.",
+      "Nhận biết phân số tối giản mẫu dương viết được thành số thập phân hữu hạn khi mẫu không có ước nguyên tố khác 2 và 5, ngược lại là số thập phân vô hạn tuần hoàn.",
+      "Viết được số thập phân vô hạn tuần hoàn với chu kì và đổi ngược lại thành phân số.",
+      "Hiểu số đối và giá trị tuyệt đối của một số hữu tỉ là khoảng cách từ điểm biểu diễn đến điểm 0."
+    ],
+    "state": {
+      "mode": "Hoạt động: \"explore\" (biểu diễn một số), \"compare\" (so sánh hai số), \"order\" (luyện sắp xếp)",
+      "num": "Tử số a của số thứ nhất (số nguyên từ −12 đến 12)",
+      "den": "Mẫu số b của số thứ nhất (từ 1 đến 12), cũng là số phần chia mỗi đoạn đơn vị",
+      "num2": "Tử số c của số thứ hai (từ −12 đến 12), dùng khi so sánh",
+      "den2": "Mẫu số d của số thứ hai (từ 1 đến 12), dùng khi so sánh",
+      "showOpposite": "true nếu hiện số đối và giá trị tuyệt đối",
+      "setIndex": "Thứ tự của bộ số đang luyện sắp xếp (bắt đầu từ 0)",
+      "order": "Thứ tự các thẻ từ trái sang phải, chuỗi bốn chữ số là chỉ số thẻ trong bộ số, ví dụ \"2031\"",
+      "pick": "Vị trí thẻ đang chọn (1 đến 4, tính từ trái)",
+      "status": "Trạng thái bài sắp xếp: \"\" (chưa kiểm tra), \"right\" (đã đúng), \"wrong\" (lần kiểm tra gần nhất sai)",
+      "solved": "Số bộ số đã sắp xếp đúng"
+    },
+    "events": {
+      "number-placed": {
+        "kind": "result",
+        "description": "Học sinh vừa đặt một số lên trục số (thả điểm đang kéo hoặc chọn xong tử số, mẫu số)",
+        "data": {
+          "value": "Giá trị của số hữu tỉ vừa đặt",
+          "position": "Vị trí của điểm tính bằng số phần bằng nhau kể từ 0 (bằng tử số; âm là bên trái điểm 0)",
+          "parts": "Số phần bằng nhau mà mỗi đoạn đơn vị được chia (bằng mẫu số)"
+        }
+      },
+      "compared": {
+        "kind": "result",
+        "description": "Ở hoạt động so sánh, học sinh vừa chọn xong hai số và xem kết quả so sánh",
+        "data": {
+          "first": "Giá trị số thứ nhất",
+          "second": "Giá trị số thứ hai",
+          "sign": "−1 nếu số thứ nhất bé hơn, 0 nếu bằng nhau, 1 nếu lớn hơn"
+        }
+      },
+      "card-moved": {
+        "kind": "action",
+        "description": "Học sinh đổi chỗ hai thẻ số khi sắp xếp",
+        "data": {
+          "from": "Vị trí cũ của thẻ (1 đến 4)",
+          "to": "Vị trí mới của thẻ (1 đến 4)"
+        }
+      },
+      "ordered": {
+        "kind": "goal",
+        "description": "Học sinh sắp xếp đúng cả bộ số theo thứ tự tăng dần",
+        "data": {
+          "count": "Số thẻ trong bộ số",
+          "solved": "Tổng số bộ số đã sắp xếp đúng"
+        }
+      },
+      "wrong-order": {
+        "kind": "action",
+        "description": "Học sinh bấm Kiểm tra khi thứ tự còn sai",
+        "data": {}
+      },
+      "new-set": {
+        "kind": "action",
+        "description": "Học sinh bấm Bộ số khác để nhận một bộ số mới",
+        "data": {}
+      }
+    },
+    "url": "/so-huu-ti-truc-so/1.0.0/index.html",
+    "thumbnailUrl": "/so-huu-ti-truc-so/1.0.0/thumb.png"
+  },
+  {
     "slug": "so-nguyen",
     "version": "1.0.0",
     "title": "Cộng trừ số nguyên trên trục số",
@@ -10115,6 +10333,80 @@
     },
     "url": "/thong-ke-mo-ta/1.0.0/index.html",
     "thumbnailUrl": "/thong-ke-mo-ta/1.0.0/thumb.png"
+  },
+  {
+    "slug": "ti-le-ban-do",
+    "version": "1.0.0",
+    "title": "Tỉ lệ bản đồ",
+    "subject": "math",
+    "grades": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "description": "Bản đồ một thị trấn tưởng tượng (1000 m × 500 m) có ghi tỉ lệ và thước tỉ lệ. Học sinh kéo hai đầu thước để đo độ dài trên bản đồ, rồi nhân với mẫu số của tỉ lệ và đổi đơn vị để được khoảng cách thực tế. Đổi tỉ lệ (1 : 5 000 đến 1 : 25 000) thì bản đồ to ra hoặc nhỏ lại nhưng khoảng cách thực tế không đổi. Phần luyện tập có các bài toán theo cả hai chiều: từ bản đồ ra thực tế và từ thực tế ra bản đồ.",
+    "learningGoals": [
+      "Hiểu tỉ lệ bản đồ 1 : N nghĩa là 1 cm trên bản đồ ứng với N cm ngoài thực tế.",
+      "Tính khoảng cách thực tế: độ dài trên bản đồ nhân với mẫu số của tỉ lệ, rồi đổi đơn vị (100 cm = 1 m).",
+      "Tính độ dài trên bản đồ: đổi khoảng cách thực tế ra cm rồi chia cho mẫu số của tỉ lệ.",
+      "Nhận ra mẫu số của tỉ lệ càng lớn thì bản đồ càng nhỏ, còn khoảng cách thực tế không thay đổi.",
+      "Dùng thước tỉ lệ để ước lượng nhanh khoảng cách."
+    ],
+    "state": {
+      "mode": "Hoạt động: \"measure\" (đo trên bản đồ) hoặc \"practice\" (luyện tập)",
+      "scale": "Mẫu số N của tỉ lệ bản đồ 1 : N (5000, 10000, 20000 hoặc 25000)",
+      "from": "Địa điểm đặt đầu thước A: \"school\", \"post\", \"market\", \"home\", \"park\", \"hospital\" hoặc \"free\" (điểm tự chọn)",
+      "to": "Địa điểm đặt đầu thước B, cùng các giá trị như from",
+      "ax": "Vị trí thực của đầu thước A theo hướng đông (m, tính từ mép tây của thị trấn, 0 đến 1000)",
+      "ay": "Vị trí thực của đầu thước A theo hướng nam (m, tính từ mép bắc, 0 đến 500)",
+      "bx": "Vị trí thực của đầu thước B theo hướng đông (m, 0 đến 1000)",
+      "by": "Vị trí thực của đầu thước B theo hướng nam (m, 0 đến 500)",
+      "showGrid": "true nếu hiện lưới ô vuông 100 m × 100 m trên bản đồ",
+      "qIndex": "Thứ tự bài toán luyện tập (bắt đầu từ 0)",
+      "answerM": "Đáp số của học sinh cho bài hỏi khoảng cách thực tế (m)",
+      "answerCm": "Đáp số của học sinh cho bài hỏi độ dài trên bản đồ (cm)",
+      "status": "Trạng thái bài luyện tập: \"\" (chưa kiểm tra), \"right\" (đã đúng), \"wrong\" (lần kiểm tra gần nhất sai)",
+      "solved": "Số bài luyện tập đã làm đúng"
+    },
+    "events": {
+      "measured": {
+        "kind": "result",
+        "description": "Học sinh vừa đo xong một khoảng cách trên bản đồ (thả đầu thước, chọn địa điểm cho đầu thước hoặc đổi tỉ lệ)",
+        "data": {
+          "mapLength": "Độ dài đọc được trên thước, làm tròn đến mm (cm)",
+          "realDistance": "Khoảng cách thực tế tính từ số đo đó (m)",
+          "scale": "Mẫu số N của tỉ lệ bản đồ 1 : N"
+        }
+      },
+      "conversion-correct": {
+        "kind": "goal",
+        "description": "Học sinh giải đúng một bài toán tỉ lệ bản đồ",
+        "data": {
+          "direction": "1: từ độ dài trên bản đồ tính khoảng cách thực tế; 2: từ khoảng cách thực tế tính độ dài trên bản đồ",
+          "answer": "Đáp số đúng học sinh đã chọn (m nếu direction = 1, cm nếu direction = 2)",
+          "scale": "Mẫu số N của tỉ lệ bản đồ 1 : N",
+          "solved": "Tổng số bài đã làm đúng"
+        }
+      },
+      "wrong-answer": {
+        "kind": "action",
+        "description": "Học sinh bấm Kiểm tra với đáp số sai",
+        "data": {
+          "direction": "1: hỏi khoảng cách thực tế; 2: hỏi độ dài trên bản đồ",
+          "answer": "Đáp số học sinh đã chọn (m hoặc cm)",
+          "expected": "Đáp số đúng (m hoặc cm)",
+          "scale": "Mẫu số N của tỉ lệ bản đồ 1 : N"
+        }
+      },
+      "new-question": {
+        "kind": "action",
+        "description": "Học sinh bấm Câu khác để nhận bài toán mới",
+        "data": {}
+      }
+    },
+    "url": "/ti-le-ban-do/1.0.0/index.html",
+    "thumbnailUrl": "/ti-le-ban-do/1.0.0/thumb.png"
   },
   {
     "slug": "ti-le-thuan-nghich",
