@@ -1,0 +1,59 @@
+{
+  "slug": "dien-tich-da-giac",
+  "version": "1.0.0",
+  "title": "Diện tích tam giác, hình bình hành, hình thang",
+  "subject": "math",
+  "grades": [5, 6],
+  "description": "Một hình bình hành, tam giác hoặc hình thang trên lưới ô vuông cạnh 1 cm, đáy AB nằm ngang và đỉnh A cố định. Kéo các đỉnh B, C, D (hoặc dùng thanh trượt) để đổi đáy, chiều cao và độ lệch của đỉnh trên; đường cao luôn được kẻ vuông góc với đáy, kể cả khi chân đường cao nằm ngoài đáy (khi đó đáy được kéo dài). Bấm “Cắt và ghép”: hình bình hành được cắt dọc theo đường cao và ghép thành hình chữ nhật cùng đáy, cùng chiều cao; tam giác (hình thang) được ghép với một hình bằng nó, quay nửa vòng quanh trung điểm cạnh BC, thành hình bình hành đáy a (đáy a + b) rồi thành hình chữ nhật, nên diện tích bằng một nửa hình chữ nhật. Có thể đếm ô vuông đơn vị (ô nguyên và ô bị cắt) để kiểm tra. Phần thử thách yêu cầu tạo hình có diện tích cho trước.",
+  "learningGoals": [
+    "Giải thích công thức diện tích hình bình hành S = a × h bằng cách cắt ghép thành hình chữ nhật.",
+    "Giải thích công thức diện tích tam giác S = a × h : 2 và hình thang S = (a + b) × h : 2: hai hình bằng nhau ghép thành một hình bình hành.",
+    "Xác định đúng đáy và chiều cao tương ứng; chiều cao đo vuông góc với đáy, có thể nằm ngoài hình.",
+    "Kiểm tra diện tích bằng cách đếm ô vuông đơn vị; cắt ghép không làm thay đổi diện tích."
+  ],
+  "state": {
+    "shape": "Hình đang xét: \"parallelogram\" (hình bình hành ABCD), \"triangle\" (tam giác ABC) hoặc \"trapezoid\" (hình thang ABCD, đáy AB và DC)",
+    "a": "Đáy a = AB (cm, nguyên, 1 đến 8); A ở gốc lưới, B ở (a; 0)",
+    "b": "Đáy nhỏ b = DC của hình thang (cm, nguyên, 1 đến 6); không dùng cho hai hình kia",
+    "h": "Chiều cao h (cm, nguyên, 0 đến 6); h = 0 là hình suy biến, diện tích 0",
+    "s": "Độ lệch ngang của đỉnh trên D (đỉnh C với tam giác) so với A (cm, nguyên, −3 đến 8); chân đường cao nằm ngoài đáy khi s < 0 hoặc s > a",
+    "t": "Tiến trình cắt ghép, từ 0 (hình ban đầu) đến 1 (đã thành hình chữ nhật)",
+    "target": "Diện tích học sinh được yêu cầu tạo trong phần thử thách (cm²)",
+    "showCells": "true nếu tô các ô vuông đơn vị: ô nằm trọn trong hình và ô bị cạnh hình cắt"
+  },
+  "events": {
+    "vertex-moved": {
+      "kind": "action",
+      "description": "Học sinh kéo một đỉnh của hình rồi thả tay",
+      "data": {
+        "vertex": "Tên đỉnh: \"B\", \"C\" hoặc \"D\"",
+        "x": "Hoành độ mới của đỉnh trên lưới (cm)",
+        "y": "Tung độ mới của đỉnh trên lưới (cm)"
+      }
+    },
+    "cut-rearrange": {
+      "kind": "action",
+      "description": "Học sinh bấm “Cắt và ghép” để xem hình được cắt ghép thành hình chữ nhật",
+      "data": {}
+    },
+    "shape-measured": {
+      "kind": "result",
+      "description": "Đáy, chiều cao và diện tích sau khi học sinh đổi xong hình (thả đỉnh, thả thanh trượt hoặc chọn hình khác)",
+      "data": {
+        "shape": "Mã hình: 1 tam giác, 2 hình bình hành, 3 hình thang",
+        "base": "Đáy a (cm)",
+        "top": "Đáy nhỏ b (cm), chỉ có với hình thang",
+        "height": "Chiều cao h (cm)",
+        "area": "Diện tích (cm²)"
+      }
+    },
+    "target-area": {
+      "kind": "goal",
+      "description": "Hình vừa có đúng diện tích thử thách yêu cầu; báo một lần cho đến khi diện tích đổi khác",
+      "data": {
+        "shape": "Mã hình: 1 tam giác, 2 hình bình hành, 3 hình thang",
+        "area": "Diện tích (cm²)"
+      }
+    }
+  }
+}

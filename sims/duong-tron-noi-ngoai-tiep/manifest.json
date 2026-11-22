@@ -1,0 +1,52 @@
+{
+  "slug": "duong-tron-noi-ngoai-tiep",
+  "version": "1.0.0",
+  "title": "Đường tròn ngoại tiếp và nội tiếp tam giác",
+  "subject": "math",
+  "grades": [9],
+  "description": "Kéo ba đỉnh A, B, C của tam giác trên lưới (các đỉnh dừng ở nửa đơn vị) hoặc chỉnh tọa độ bằng thanh trượt. Ba đường trung trực cắt nhau tại tâm O của đường tròn ngoại tiếp (O; R), ba đường phân giác trong cắt nhau tại tâm I của đường tròn nội tiếp (I; r). Hình vẽ cho biết R = abc/(4S), r = S/p và vị trí của O: trong tam giác (tam giác nhọn), là trung điểm cạnh huyền (tam giác vuông) hoặc ngoài tam giác (tam giác tù). Bảng số liệu kiểm tra hệ thức Euler OI² = R² − 2Rr.",
+  "learningGoals": [
+    "Xác định tâm đường tròn ngoại tiếp là giao điểm ba đường trung trực, cách đều ba đỉnh.",
+    "Xác định tâm đường tròn nội tiếp là giao điểm ba đường phân giác trong, cách đều ba cạnh.",
+    "Nhận biết vị trí tâm đường tròn ngoại tiếp theo loại tam giác; tam giác vuông có tâm là trung điểm cạnh huyền, R bằng nửa cạnh huyền.",
+    "Tính R = abc/(4S) và r = S/p với a, b, c là độ dài ba cạnh, S là diện tích, p là nửa chu vi."
+  ],
+  "state": {
+    "ax": "Hoành độ đỉnh A (đơn vị lưới, bội của 0,5, từ −7 đến 7)",
+    "ay": "Tung độ đỉnh A (đơn vị lưới, bội của 0,5, từ −6 đến 5)",
+    "bx": "Hoành độ đỉnh B",
+    "by": "Tung độ đỉnh B",
+    "cx": "Hoành độ đỉnh C",
+    "cy": "Tung độ đỉnh C",
+    "showCircum": "true nếu vẽ ba đường trung trực, tâm O và đường tròn ngoại tiếp",
+    "showIn": "true nếu vẽ ba đường phân giác, tâm I và đường tròn nội tiếp"
+  },
+  "events": {
+    "vertex-moved": {
+      "kind": "action",
+      "description": "Học sinh kéo một đỉnh của tam giác rồi thả tay",
+      "data": {
+        "vertex": "Tên đỉnh: \"A\", \"B\" hoặc \"C\"",
+        "x": "Hoành độ mới (đơn vị lưới)",
+        "y": "Tung độ mới (đơn vị lưới)"
+      }
+    },
+    "circles-measured": {
+      "kind": "result",
+      "description": "Bán kính hai đường tròn và vị trí tâm O sau khi học sinh đổi xong một đỉnh (thả đỉnh hoặc thả thanh trượt); không báo khi ba điểm thẳng hàng",
+      "data": {
+        "R": "Bán kính đường tròn ngoại tiếp (đơn vị lưới)",
+        "r": "Bán kính đường tròn nội tiếp (đơn vị lưới)",
+        "position": "Vị trí tâm O: 0 trong tam giác (nhọn), 1 trên một cạnh (vuông), 2 ngoài tam giác (tù)"
+      }
+    },
+    "circumcentre-on-side": {
+      "kind": "goal",
+      "description": "Học sinh vừa tạo tam giác có tâm đường tròn ngoại tiếp nằm trên một cạnh, tức tam giác vuông; báo một lần cho đến khi tam giác không còn vuông",
+      "data": {
+        "R": "Bán kính đường tròn ngoại tiếp (đơn vị lưới)",
+        "hypotenuse": "Độ dài cạnh huyền, bằng 2R (đơn vị lưới)"
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "slug": "thong-ke-ghep-nhom",
+  "version": "1.0.0",
+  "title": "Mẫu số liệu ghép nhóm",
+  "subject": "math",
+  "grades": [11],
+  "description": "Mẫu số liệu gốc là chiều cao (cm, làm tròn đến 1 cm) của 40 học sinh, sinh từ một số hạt giống nên cùng hạt giống luôn cho cùng mẫu. Số liệu được ghép thành các nhóm [a; a + h) có cùng độ dài h (chỉnh được từ 3 đến 10 cm), nhóm đầu bắt đầu từ bội của h ngay dưới giá trị nhỏ nhất. Sim vẽ biểu đồ tần số dạng cột liền nhau, bảng tần số ghép nhóm và các giá trị ước lượng theo công thức của sách giáo khoa: số trung bình (dùng giá trị đại diện là trung điểm nhóm), trung vị, tứ phân vị Q₁, Q₃ (nội suy trong nhóm chứa), mốt (trong nhóm chứa mốt), đặt cạnh các giá trị tính đúng từ số liệu gốc (Q₁, Q₃ của số liệu gốc là trung vị nửa dưới và nửa trên). Học sinh bấm vào cột để chọn nhóm chứa mốt; giá trị mốt ước lượng chỉ hiện khi chọn đúng.",
+  "learningGoals": [
+    "Lập bảng tần số ghép nhóm từ mẫu số liệu gốc với độ dài nhóm cho trước; tổng các tần số bằng cỡ mẫu.",
+    "Ước lượng số trung bình của mẫu ghép nhóm bằng giá trị đại diện (trung điểm) của mỗi nhóm.",
+    "Xác định nhóm chứa trung vị, tứ phân vị và tính chúng bằng công thức nội suy.",
+    "Xác định nhóm chứa mốt và ước lượng mốt.",
+    "Hiểu rằng các số đặc trưng của mẫu ghép nhóm chỉ là giá trị xấp xỉ, thay đổi theo cách ghép nhóm, còn số liệu gốc không đổi."
+  ],
+  "state": {
+    "seed": "Hạt giống sinh mẫu số liệu (số nguyên 1 đến 999); cùng hạt giống cho cùng 40 chiều cao",
+    "width": "Độ dài mỗi nhóm h (cm, nguyên, 3 đến 10)",
+    "pick": "Nhóm học sinh chọn là nhóm chứa mốt, đánh số từ 1 theo thứ tự tăng dần; 0 là chưa chọn"
+  },
+  "events": {
+    "new-sample": {
+      "kind": "action",
+      "description": "Học sinh bấm “Mẫu số liệu khác” để sinh một mẫu 40 chiều cao mới",
+      "data": {}
+    },
+    "class-picked": {
+      "kind": "action",
+      "description": "Học sinh bấm vào một cột của biểu đồ để chọn nhóm chứa mốt",
+      "data": {
+        "classIndex": "Số thứ tự nhóm được chọn (từ 1)",
+        "correct": "1 nếu nhóm đó có tần số lớn nhất, 0 nếu không"
+      }
+    },
+    "grouped-estimates": {
+      "kind": "result",
+      "description": "Các giá trị ước lượng sau khi học sinh chốt độ dài nhóm (thả thanh trượt) hoặc đổi mẫu số liệu",
+      "data": {
+        "classes": "Số nhóm k",
+        "width": "Độ dài nhóm h (cm)",
+        "mean": "Số trung bình ước lượng từ mẫu ghép nhóm (cm)",
+        "median": "Trung vị ước lượng từ mẫu ghép nhóm (cm)"
+      }
+    },
+    "modal-class": {
+      "kind": "goal",
+      "description": "Học sinh chọn đúng nhóm chứa mốt (nhóm có tần số lớn nhất); báo một lần cho mỗi lần chọn đúng",
+      "data": {
+        "classIndex": "Số thứ tự nhóm chứa mốt (từ 1)",
+        "lower": "Đầu mút trái của nhóm chứa mốt (cm)",
+        "mode": "Mốt ước lượng (cm)"
+      }
+    }
+  }
+}

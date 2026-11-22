@@ -2170,6 +2170,70 @@
     "thumbnailUrl": "/dien-tich-chu-vi/1.0.0/thumb.png"
   },
   {
+    "slug": "dien-tich-da-giac",
+    "version": "1.0.0",
+    "title": "Diện tích tam giác, hình bình hành, hình thang",
+    "subject": "math",
+    "grades": [
+      5,
+      6
+    ],
+    "description": "Một hình bình hành, tam giác hoặc hình thang trên lưới ô vuông cạnh 1 cm, đáy AB nằm ngang và đỉnh A cố định. Kéo các đỉnh B, C, D (hoặc dùng thanh trượt) để đổi đáy, chiều cao và độ lệch của đỉnh trên; đường cao luôn được kẻ vuông góc với đáy, kể cả khi chân đường cao nằm ngoài đáy (khi đó đáy được kéo dài). Bấm “Cắt và ghép”: hình bình hành được cắt dọc theo đường cao và ghép thành hình chữ nhật cùng đáy, cùng chiều cao; tam giác (hình thang) được ghép với một hình bằng nó, quay nửa vòng quanh trung điểm cạnh BC, thành hình bình hành đáy a (đáy a + b) rồi thành hình chữ nhật, nên diện tích bằng một nửa hình chữ nhật. Có thể đếm ô vuông đơn vị (ô nguyên và ô bị cắt) để kiểm tra. Phần thử thách yêu cầu tạo hình có diện tích cho trước.",
+    "learningGoals": [
+      "Giải thích công thức diện tích hình bình hành S = a × h bằng cách cắt ghép thành hình chữ nhật.",
+      "Giải thích công thức diện tích tam giác S = a × h : 2 và hình thang S = (a + b) × h : 2: hai hình bằng nhau ghép thành một hình bình hành.",
+      "Xác định đúng đáy và chiều cao tương ứng; chiều cao đo vuông góc với đáy, có thể nằm ngoài hình.",
+      "Kiểm tra diện tích bằng cách đếm ô vuông đơn vị; cắt ghép không làm thay đổi diện tích."
+    ],
+    "state": {
+      "shape": "Hình đang xét: \"parallelogram\" (hình bình hành ABCD), \"triangle\" (tam giác ABC) hoặc \"trapezoid\" (hình thang ABCD, đáy AB và DC)",
+      "a": "Đáy a = AB (cm, nguyên, 1 đến 8); A ở gốc lưới, B ở (a; 0)",
+      "b": "Đáy nhỏ b = DC của hình thang (cm, nguyên, 1 đến 6); không dùng cho hai hình kia",
+      "h": "Chiều cao h (cm, nguyên, 0 đến 6); h = 0 là hình suy biến, diện tích 0",
+      "s": "Độ lệch ngang của đỉnh trên D (đỉnh C với tam giác) so với A (cm, nguyên, −3 đến 8); chân đường cao nằm ngoài đáy khi s < 0 hoặc s > a",
+      "t": "Tiến trình cắt ghép, từ 0 (hình ban đầu) đến 1 (đã thành hình chữ nhật)",
+      "target": "Diện tích học sinh được yêu cầu tạo trong phần thử thách (cm²)",
+      "showCells": "true nếu tô các ô vuông đơn vị: ô nằm trọn trong hình và ô bị cạnh hình cắt"
+    },
+    "events": {
+      "vertex-moved": {
+        "kind": "action",
+        "description": "Học sinh kéo một đỉnh của hình rồi thả tay",
+        "data": {
+          "vertex": "Tên đỉnh: \"B\", \"C\" hoặc \"D\"",
+          "x": "Hoành độ mới của đỉnh trên lưới (cm)",
+          "y": "Tung độ mới của đỉnh trên lưới (cm)"
+        }
+      },
+      "cut-rearrange": {
+        "kind": "action",
+        "description": "Học sinh bấm “Cắt và ghép” để xem hình được cắt ghép thành hình chữ nhật",
+        "data": {}
+      },
+      "shape-measured": {
+        "kind": "result",
+        "description": "Đáy, chiều cao và diện tích sau khi học sinh đổi xong hình (thả đỉnh, thả thanh trượt hoặc chọn hình khác)",
+        "data": {
+          "shape": "Mã hình: 1 tam giác, 2 hình bình hành, 3 hình thang",
+          "base": "Đáy a (cm)",
+          "top": "Đáy nhỏ b (cm), chỉ có với hình thang",
+          "height": "Chiều cao h (cm)",
+          "area": "Diện tích (cm²)"
+        }
+      },
+      "target-area": {
+        "kind": "goal",
+        "description": "Hình vừa có đúng diện tích thử thách yêu cầu; báo một lần cho đến khi diện tích đổi khác",
+        "data": {
+          "shape": "Mã hình: 1 tam giác, 2 hình bình hành, 3 hình thang",
+          "area": "Diện tích (cm²)"
+        }
+      }
+    },
+    "url": "/dien-tich-da-giac/1.0.0/index.html",
+    "thumbnailUrl": "/dien-tich-da-giac/1.0.0/thumb.png"
+  },
+  {
     "slug": "dien-tro-day-dan",
     "version": "1.0.0",
     "title": "Điện trở của dây dẫn",
@@ -3007,6 +3071,62 @@
     },
     "url": "/duong-tron-luong-giac/1.0.0/index.html",
     "thumbnailUrl": "/duong-tron-luong-giac/1.0.0/thumb.png"
+  },
+  {
+    "slug": "duong-tron-noi-ngoai-tiep",
+    "version": "1.0.0",
+    "title": "Đường tròn ngoại tiếp và nội tiếp tam giác",
+    "subject": "math",
+    "grades": [
+      9
+    ],
+    "description": "Kéo ba đỉnh A, B, C của tam giác trên lưới (các đỉnh dừng ở nửa đơn vị) hoặc chỉnh tọa độ bằng thanh trượt. Ba đường trung trực cắt nhau tại tâm O của đường tròn ngoại tiếp (O; R), ba đường phân giác trong cắt nhau tại tâm I của đường tròn nội tiếp (I; r). Hình vẽ cho biết R = abc/(4S), r = S/p và vị trí của O: trong tam giác (tam giác nhọn), là trung điểm cạnh huyền (tam giác vuông) hoặc ngoài tam giác (tam giác tù). Bảng số liệu kiểm tra hệ thức Euler OI² = R² − 2Rr.",
+    "learningGoals": [
+      "Xác định tâm đường tròn ngoại tiếp là giao điểm ba đường trung trực, cách đều ba đỉnh.",
+      "Xác định tâm đường tròn nội tiếp là giao điểm ba đường phân giác trong, cách đều ba cạnh.",
+      "Nhận biết vị trí tâm đường tròn ngoại tiếp theo loại tam giác; tam giác vuông có tâm là trung điểm cạnh huyền, R bằng nửa cạnh huyền.",
+      "Tính R = abc/(4S) và r = S/p với a, b, c là độ dài ba cạnh, S là diện tích, p là nửa chu vi."
+    ],
+    "state": {
+      "ax": "Hoành độ đỉnh A (đơn vị lưới, bội của 0,5, từ −7 đến 7)",
+      "ay": "Tung độ đỉnh A (đơn vị lưới, bội của 0,5, từ −6 đến 5)",
+      "bx": "Hoành độ đỉnh B",
+      "by": "Tung độ đỉnh B",
+      "cx": "Hoành độ đỉnh C",
+      "cy": "Tung độ đỉnh C",
+      "showCircum": "true nếu vẽ ba đường trung trực, tâm O và đường tròn ngoại tiếp",
+      "showIn": "true nếu vẽ ba đường phân giác, tâm I và đường tròn nội tiếp"
+    },
+    "events": {
+      "vertex-moved": {
+        "kind": "action",
+        "description": "Học sinh kéo một đỉnh của tam giác rồi thả tay",
+        "data": {
+          "vertex": "Tên đỉnh: \"A\", \"B\" hoặc \"C\"",
+          "x": "Hoành độ mới (đơn vị lưới)",
+          "y": "Tung độ mới (đơn vị lưới)"
+        }
+      },
+      "circles-measured": {
+        "kind": "result",
+        "description": "Bán kính hai đường tròn và vị trí tâm O sau khi học sinh đổi xong một đỉnh (thả đỉnh hoặc thả thanh trượt); không báo khi ba điểm thẳng hàng",
+        "data": {
+          "R": "Bán kính đường tròn ngoại tiếp (đơn vị lưới)",
+          "r": "Bán kính đường tròn nội tiếp (đơn vị lưới)",
+          "position": "Vị trí tâm O: 0 trong tam giác (nhọn), 1 trên một cạnh (vuông), 2 ngoài tam giác (tù)"
+        }
+      },
+      "circumcentre-on-side": {
+        "kind": "goal",
+        "description": "Học sinh vừa tạo tam giác có tâm đường tròn ngoại tiếp nằm trên một cạnh, tức tam giác vuông; báo một lần cho đến khi tam giác không còn vuông",
+        "data": {
+          "R": "Bán kính đường tròn ngoại tiếp (đơn vị lưới)",
+          "hypotenuse": "Độ dài cạnh huyền, bằng 2R (đơn vị lưới)"
+        }
+      }
+    },
+    "url": "/duong-tron-noi-ngoai-tiep/1.0.0/index.html",
+    "thumbnailUrl": "/duong-tron-noi-ngoai-tiep/1.0.0/thumb.png"
   },
   {
     "slug": "duong-tron-toa-do",
@@ -6810,6 +6930,64 @@
     },
     "url": "/thoat-hoi-nuoc/1.0.0/index.html",
     "thumbnailUrl": "/thoat-hoi-nuoc/1.0.0/thumb.png"
+  },
+  {
+    "slug": "thong-ke-ghep-nhom",
+    "version": "1.0.0",
+    "title": "Mẫu số liệu ghép nhóm",
+    "subject": "math",
+    "grades": [
+      11
+    ],
+    "description": "Mẫu số liệu gốc là chiều cao (cm, làm tròn đến 1 cm) của 40 học sinh, sinh từ một số hạt giống nên cùng hạt giống luôn cho cùng mẫu. Số liệu được ghép thành các nhóm [a; a + h) có cùng độ dài h (chỉnh được từ 3 đến 10 cm), nhóm đầu bắt đầu từ bội của h ngay dưới giá trị nhỏ nhất. Sim vẽ biểu đồ tần số dạng cột liền nhau, bảng tần số ghép nhóm và các giá trị ước lượng theo công thức của sách giáo khoa: số trung bình (dùng giá trị đại diện là trung điểm nhóm), trung vị, tứ phân vị Q₁, Q₃ (nội suy trong nhóm chứa), mốt (trong nhóm chứa mốt), đặt cạnh các giá trị tính đúng từ số liệu gốc (Q₁, Q₃ của số liệu gốc là trung vị nửa dưới và nửa trên). Học sinh bấm vào cột để chọn nhóm chứa mốt; giá trị mốt ước lượng chỉ hiện khi chọn đúng.",
+    "learningGoals": [
+      "Lập bảng tần số ghép nhóm từ mẫu số liệu gốc với độ dài nhóm cho trước; tổng các tần số bằng cỡ mẫu.",
+      "Ước lượng số trung bình của mẫu ghép nhóm bằng giá trị đại diện (trung điểm) của mỗi nhóm.",
+      "Xác định nhóm chứa trung vị, tứ phân vị và tính chúng bằng công thức nội suy.",
+      "Xác định nhóm chứa mốt và ước lượng mốt.",
+      "Hiểu rằng các số đặc trưng của mẫu ghép nhóm chỉ là giá trị xấp xỉ, thay đổi theo cách ghép nhóm, còn số liệu gốc không đổi."
+    ],
+    "state": {
+      "seed": "Hạt giống sinh mẫu số liệu (số nguyên 1 đến 999); cùng hạt giống cho cùng 40 chiều cao",
+      "width": "Độ dài mỗi nhóm h (cm, nguyên, 3 đến 10)",
+      "pick": "Nhóm học sinh chọn là nhóm chứa mốt, đánh số từ 1 theo thứ tự tăng dần; 0 là chưa chọn"
+    },
+    "events": {
+      "new-sample": {
+        "kind": "action",
+        "description": "Học sinh bấm “Mẫu số liệu khác” để sinh một mẫu 40 chiều cao mới",
+        "data": {}
+      },
+      "class-picked": {
+        "kind": "action",
+        "description": "Học sinh bấm vào một cột của biểu đồ để chọn nhóm chứa mốt",
+        "data": {
+          "classIndex": "Số thứ tự nhóm được chọn (từ 1)",
+          "correct": "1 nếu nhóm đó có tần số lớn nhất, 0 nếu không"
+        }
+      },
+      "grouped-estimates": {
+        "kind": "result",
+        "description": "Các giá trị ước lượng sau khi học sinh chốt độ dài nhóm (thả thanh trượt) hoặc đổi mẫu số liệu",
+        "data": {
+          "classes": "Số nhóm k",
+          "width": "Độ dài nhóm h (cm)",
+          "mean": "Số trung bình ước lượng từ mẫu ghép nhóm (cm)",
+          "median": "Trung vị ước lượng từ mẫu ghép nhóm (cm)"
+        }
+      },
+      "modal-class": {
+        "kind": "goal",
+        "description": "Học sinh chọn đúng nhóm chứa mốt (nhóm có tần số lớn nhất); báo một lần cho mỗi lần chọn đúng",
+        "data": {
+          "classIndex": "Số thứ tự nhóm chứa mốt (từ 1)",
+          "lower": "Đầu mút trái của nhóm chứa mốt (cm)",
+          "mode": "Mốt ước lượng (cm)"
+        }
+      }
+    },
+    "url": "/thong-ke-ghep-nhom/1.0.0/index.html",
+    "thumbnailUrl": "/thong-ke-ghep-nhom/1.0.0/thumb.png"
   },
   {
     "slug": "thong-ke-mo-ta",
