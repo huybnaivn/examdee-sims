@@ -21,7 +21,7 @@
       const list = document.getElementById("list");
       for (const sim of await (await fetch("catalog.json")).json()) {
         const li = document.createElement("li");
-        const img = Object.assign(document.createElement("img"), { src: `sims/${sim.slug}/thumb.png`, alt: "" });
+        const img = Object.assign(document.createElement("img"), { loading: "lazy", decoding: "async", width: 600, height: 375, src: `sims/${sim.slug}/thumb.png`, alt: "" });
         const div = document.createElement("div");
         const a = Object.assign(document.createElement("a"), { href: `sims/${sim.slug}/index.html`, textContent: sim.title });
         const host = Object.assign(document.createElement("a"), { href: `host-demo.html?sim=${sim.slug}`, textContent: "host demo" });

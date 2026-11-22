@@ -46,6 +46,8 @@ if (import.meta.filename === process.argv[1]) {
     const error = stdout.match(/data-error="([^"]*)"/)?.[1];
     const mounted = stdout.includes('class="sim"');
     await run(CHROME, [...flags, `--screenshot=${join(root, "sims", slug, "thumb.png")}`, url]);
+    // Catalogue thumbnails are shown small; 600 px wide keeps the gallery light (sips is macOS-only).
+    await run("sips", ["-Z", "600", join(root, "sims", slug, "thumb.png")]).catch(() => {});
     // Inside the reference host the sim must answer init with its state.
     const host = await run(CHROME, [...flags, "--dump-dom", `${base}/host-demo.html?sim=${slug}&probe=1`], { maxBuffer: 1 << 26 });
     const bridged = host.stdout.includes('"type":"state"');
