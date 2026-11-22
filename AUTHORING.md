@@ -14,6 +14,24 @@ Each sim is a folder `sims/<slug>/` with five files. `sims/con-lac/` is the refe
 
 Every manifest has `"status"`: `"needs-rework"` or `"approved"`. Passing the automated checks does not make a sim good; only a person who has used it marks it `"approved"`. The gallery shows the status, and the backend seed skips everything that is not approved. As of 22/11/2026 the product owner marked all sims `needs-rework`: they must be engaging (direct manipulation in the scene, a purpose a learner grasps in seconds, things to customise) and good-looking, not a formula with a picture. `sims/ap-suat-chat-ran/` is the pilot for that bar and is itself awaiting approval.
 
+## Curriculum link
+
+Every sim must belong to, or at least clearly relate to, the Vietnamese school programme. Record it in the manifest:
+
+```json
+"curriculum": {
+  "programme": "Chương trình giáo dục phổ thông 2018",
+  "subject": "Khoa học tự nhiên", "grade": 8,
+  "topic": "Khối lượng riêng và áp suất",
+  "content": "Áp suất trên một bề mặt",
+  "requirements": ["yêu cầu cần đạt mà sim phục vụ, viết như trong chương trình"],
+  "verified": false,
+  "note": "nguồn, và điều gì chưa đối chiếu"
+}
+```
+
+Set `"verified": true` only after someone has checked the topic and requirements against the official programme text or the textbook. Do not invent lesson numbers for a textbook series; leave them out until checked. `npm run check` requires `curriculum` on every approved sim.
+
 ## Rules
 
 1. **Original work only.** Write from the science and the Vietnamese curriculum. Do not open, copy or port any third-party simulation's code, art, text or layout, and do not name any third-party product.

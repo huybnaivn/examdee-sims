@@ -24,6 +24,10 @@ for (const slug of (await readdir(join(root, "sims"))).sort()) {
   }
   // Review status. Only "approved" sims may be seeded into the product catalogue.
   if (!["needs-rework", "approved"].includes(manifest.status)) fail(slug, 'manifest.status must be "needs-rework" or "approved"');
+  // Every approved sim must say where it belongs in the Vietnamese school programme.
+  const k = manifest.curriculum;
+  if (manifest.status === "approved" && !k) fail(slug, "an approved sim needs manifest.curriculum");
+  if (k) for (const key of ["programme", "subject", "grade", "topic", "content", "requirements"]) if (k[key] == null) fail(slug, `manifest.curriculum.${key} is missing`);
   if (!code.includes(`version: "${manifest.version}"`)) fail(slug, "sim.js version differs from manifest.version");
   for (const [name, e] of Object.entries(declared)) {
     if (BUILT_IN.includes(name)) fail(slug, `"${name}" is a kit event, do not redeclare it`);

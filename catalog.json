@@ -50,58 +50,92 @@
     "slug": "an-mon-kim-loai",
     "version": "1.0.0",
     "status": "needs-rework",
-    "title": "Ăn mòn kim loại và chống ăn mòn",
+    "title": "Phòng thí nghiệm ăn mòn kim loại",
     "subject": "chemistry",
     "grades": [
       12
     ],
-    "description": "Bảy ống nghiệm đựng đinh sắt trong các điều kiện khác nhau: nước cất đun sôi phủ dầu, không khí khô có chất hút ẩm, nước máy, nước muối, đinh nối với kẽm, đinh nối với đồng, đinh sơn phủ. Dự đoán thứ tự gỉ, cho thời gian trôi 10 ngày và so sánh. Giải thích ăn mòn hóa học, ăn mòn điện hóa và bảo vệ bằng kim loại hi sinh. Tốc độ gỉ là thang tương đối định tính, chỉ thứ tự là có căn cứ.",
+    "curriculum": {
+      "programme": "Chương trình giáo dục phổ thông 2018",
+      "subject": "Hóa học",
+      "grade": 12,
+      "topic": "Đại cương về kim loại",
+      "content": "Sự ăn mòn kim loại và các phương pháp chống ăn mòn",
+      "requirements": [
+        "Nêu được khái niệm ăn mòn kim loại từ sự biến đổi của một số kim loại, hợp kim trong tự nhiên.",
+        "Trình bày được các dạng ăn mòn kim loại và các phương pháp chống ăn mòn kim loại.",
+        "Thực hiện được (hoặc quan sát) thí nghiệm ăn mòn điện hóa đối với sắt và thí nghiệm bảo vệ sắt bằng phương pháp điện hóa, mô tả và giải thích hiện tượng."
+      ],
+      "verified": false,
+      "note": "Chủ đề và yêu cầu cần đạt ghi theo trí nhớ về chương trình 2018, chưa đối chiếu văn bản gốc; chưa gắn số bài của từng bộ sách."
+    },
+    "description": "Ba lọ thủy tinh, mỗi lọ một đinh sắt. Học sinh tự pha thí nghiệm: kéo nước cất đun sôi, nước máy, nước muối, giấm, lớp dầu, chất hút ẩm, sơn, thanh kẽm, dây đồng thả vào từng lọ, rồi tua nhanh 30 ngày để xem đinh nào gỉ, gỉ nhanh hay chậm và vì sao. Tốc độ ăn mòn là thang minh họa định tính: chỉ đúng về thứ tự nhanh – chậm, không phải số đo thật.",
     "learningGoals": [
-      "Sắt bị gỉ khi có đồng thời nước và oxygen; thiếu một trong hai thì hầu như không gỉ.",
-      "Dung dịch chất điện li (nước muối) làm ăn mòn điện hóa xảy ra nhanh hơn.",
-      "Phân biệt ăn mòn hóa học và ăn mòn điện hóa; nêu điều kiện xảy ra ăn mòn điện hóa.",
-      "Khi Fe tiếp xúc kim loại kém hoạt động hơn (Cu), Fe là anode và bị ăn mòn nhanh hơn; khi tiếp xúc kim loại hoạt động hơn (Zn), Zn bị ăn mòn và Fe được bảo vệ.",
-      "Nêu các cách chống ăn mòn: bảo vệ bề mặt (sơn, mạ, bôi dầu) và phương pháp điện hóa."
+      "Nêu được sắt chỉ gỉ khi có đủ nước và oxygen chạm tới bề mặt sắt.",
+      "So sánh tốc độ ăn mòn trong nước máy, nước muối, acid và không khí ẩm.",
+      "Giải thích ăn mòn điện hóa: sắt nối với đồng gỉ nhanh hơn, nối với kẽm thì kẽm bị ăn mòn thay.",
+      "Đề xuất cách chống ăn mòn: sơn phủ, giữ khô, cách li oxygen, dùng kim loại hi sinh."
     ],
     "state": {
-      "day": "Thời gian kể từ khi đặt đinh vào ống (ngày, 0–10)",
-      "focus": "Ống đang xem giải thích (0–6 theo thứ tự: dầu, khô, nước máy, nước muối, Fe–Zn, Fe–Cu, sơn)",
-      "showTheory": "true khi hiện so sánh ăn mòn hóa học và ăn mòn điện hóa",
-      "p1": "Ống dự đoán gỉ nhanh nhất (0–6, −1 chưa chọn)",
-      "p2": "Ống dự đoán gỉ nhanh thứ hai (0–6, −1 chưa chọn)",
-      "p3": "Ống dự đoán gỉ nhanh thứ ba (0–6, −1 chưa chọn)",
-      "reported": "true khi lượt quan sát này đã đến ngày cuối và đã gửi kết quả",
-      "verdict": "Kết quả dự đoán: 1 đúng, 0 sai, −1 chưa chấm"
+      "l1, l2, l3": "Chất lỏng trong lọ 1, 2, 3: none (không có nước), boiled (nước cất đun sôi), tap (nước máy), salt (nước muối), vinegar (giấm)",
+      "o1, o2, o3": "Lọ có lớp dầu phủ mặt nước không",
+      "d1, d2, d3": "Lọ có chất hút ẩm CaCl₂ khan không (chỉ có tác dụng khi không có nước)",
+      "c1, c2, c3": "Đinh trong lọ có được sơn chống gỉ không",
+      "p1, p2, p3": "Kim loại nối với đinh: none, Zn (thanh kẽm), Cu (dây đồng)",
+      "day": "Số ngày đã trôi qua (0–30)",
+      "speed": "Tốc độ tua: số ngày mỗi giây",
+      "done": "Lượt chạy đã tới ngày 30 và đã báo kết quả",
+      "sel": "Lọ đang chọn để chỉnh bằng bảng điều khiển (1–3)",
+      "pick": "Vật đang chọn trong bảng điều khiển",
+      "guess": "Lọ học sinh đoán sẽ bị ăn mòn nhiều nhất (0 = chưa đoán)",
+      "mission": "Nhiệm vụ đang chọn: none, keep-shiny, sacrifice, fastest"
     },
     "events": {
-      "rust-ranking": {
-        "kind": "result",
-        "description": "Thời gian đã trôi đến ngày cuối; mức gỉ của từng ống và thứ tự gỉ",
+      "jar-changed": {
+        "kind": "action",
+        "description": "Học sinh cho một vật vào lọ hoặc lấy ra (kéo thả, chạm nhãn, hoặc dùng bảng điều khiển)",
         "data": {
-          "day": "Số ngày quan sát",
-          "rust1": "Phần trăm bề mặt đinh bị gỉ ở ống 1 (dầu) (%)",
-          "rust2": "Ống 2 (không khí khô) (%)",
-          "rust3": "Ống 3 (nước máy) (%)",
-          "rust4": "Ống 4 (nước muối) (%)",
-          "rust5": "Ống 5 (Fe nối Zn) (%)",
-          "rust6": "Ống 6 (Fe nối Cu) (%)",
-          "rust7": "Ống 7 (sơn phủ) (%)",
-          "zinc": "Phần trăm thanh kẽm ở ống 5 bị ăn mòn (%)",
-          "first": "Số thứ tự ống gỉ nhiều nhất (1–7)",
-          "second": "Ống gỉ nhiều thứ hai (1–7)",
-          "third": "Ống gỉ nhiều thứ ba (1–7)",
-          "predicted": "1 dự đoán đúng, 0 sai, −1 chưa dự đoán đủ"
+          "jar": "Lọ 1–3",
+          "item": "1 nước đun sôi, 2 nước máy, 3 nước muối, 4 giấm, 5 dầu, 6 chất hút ẩm, 7 sơn, 8 kẽm, 9 đồng",
+          "added": "1 cho vào, 0 lấy ra"
         }
       },
-      "ranking-predicted": {
-        "kind": "goal",
-        "description": "Học sinh dự đoán đúng ba ống gỉ nhanh nhất theo đúng thứ tự trước khi quan sát",
+      "restarted": {
+        "kind": "action",
+        "description": "Học sinh bấm làm lại từ ngày 0",
+        "data": {}
+      },
+      "run-finished": {
+        "kind": "result",
+        "description": "Đã tua hết 30 ngày: mức ăn mòn của đinh và của thanh kẽm trong từng lọ",
         "data": {
-          "first": "Ống dự đoán gỉ nhanh nhất (1–7)",
-          "second": "Ống thứ hai (1–7)",
-          "third": "Ống thứ ba (1–7)"
+          "corrosion1": "Đinh lọ 1 bị ăn mòn (%)",
+          "corrosion2": "Đinh lọ 2 (%)",
+          "corrosion3": "Đinh lọ 3 (%)",
+          "zinc1": "Thanh kẽm lọ 1 bị ăn mòn (%)",
+          "zinc2": "Lọ 2 (%)",
+          "zinc3": "Lọ 3 (%)",
+          "most": "Lọ bị ăn mòn nhiều nhất, 0 nếu đồng hạng"
+        }
+      },
+      "prediction-correct": {
+        "kind": "goal",
+        "description": "Học sinh đoán đúng lọ bị ăn mòn nhiều nhất trước khi chạy hết 30 ngày",
+        "data": {
+          "jar": "Lọ đoán đúng"
+        }
+      },
+      "mission-done": {
+        "kind": "goal",
+        "description": "Học sinh hoàn thành nhiệm vụ đang chọn (mỗi nhiệm vụ báo một lần)",
+        "data": {
+          "mission": "1 đinh sáng bóng trong nước muối, 2 kim loại khác bị ăn mòn thay sắt, 3 ăn mòn nhanh nhất"
         }
       }
+    },
+    "review": {
+      "round": 1,
+      "note": "Làm lại từ đầu thành phòng thí nghiệm tự pha: 3 lọ, kéo 9 thứ (4 loại nước, dầu, chất hút ẩm, sơn, kẽm, đồng) thả vào từng lọ, chạm nhãn để lấy ra; tua nhanh 30 ngày thấy gỉ lan trên đinh, nước ngả màu, kẽm mòn dần, sủi bọt trong giấm; mỗi lọ có lời giải thích; đoán trước và 3 nhiệm vụ. Bản cũ là 7 ống cố định, không chỉnh được gì."
     },
     "url": "/an-mon-kim-loai/1.0.0/index.html",
     "thumbnailUrl": "/an-mon-kim-loai/1.0.0/thumb.png"
@@ -156,6 +190,20 @@
     "grades": [
       8
     ],
+    "curriculum": {
+      "programme": "Chương trình giáo dục phổ thông 2018",
+      "subject": "Khoa học tự nhiên",
+      "grade": 8,
+      "topic": "Khối lượng riêng và áp suất",
+      "content": "Áp suất trên một bề mặt",
+      "requirements": [
+        "Dùng dụng cụ thực hành, khẳng định được: áp suất sinh ra khi có áp lực tác dụng lên một diện tích bề mặt, áp suất = áp lực / diện tích bề mặt.",
+        "Liệt kê được một số đơn vị đo áp suất thông dụng.",
+        "Thảo luận được công dụng của việc tăng, giảm áp suất qua một số hiện tượng thực tế."
+      ],
+      "verified": false,
+      "note": "Chủ đề và yêu cầu cần đạt ghi theo trí nhớ về chương trình 2018, chưa đối chiếu văn bản gốc; chưa gắn số bài của từng bộ sách."
+    },
     "description": "Kéo viên gạch, bạn nhỏ, chú voi hay xe tăng thả xuống cát, tuyết, bùn hoặc bê tông, mỗi bên một nhân vật, rồi so sánh ai lún sâu hơn. Xoay viên gạch, chồng thêm gạch, đổi giày cho bạn nhỏ (giày thể thao, gót nhọn, cà kheo, ván trượt) để thấy áp suất p = F/S phụ thuộc cả áp lực lẫn diện tích bị ép. Lấy g = 10 N/kg. Hình không theo tỉ lệ; độ lún chỉ minh họa theo thang lôgarit của áp suất, không phải định luật vật lí.",
     "learningGoals": [
       "Tính áp suất p = F/S và đổi đơn vị cm² sang m², Pa sang kPa và MPa.",

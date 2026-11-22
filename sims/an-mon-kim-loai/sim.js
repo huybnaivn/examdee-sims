@@ -1,252 +1,456 @@
-import { mount, COLORS, label, fmt } from "../../kit/v1/kit.js";
-import { TUBES, DAYS, TOP3, E0, initialState, step, rust, zincLoss, ranks, predictionComplete, predictionCorrect } from "./model.js";
+import { mount, fmt, clamp } from "../../kit/v1/kit.js";
+import {
+  DAYS, JARS, LIQUIDS, ITEMS, ITEM_ORDER, MISSIONS,
+  initialState, jar, corrosion, zincLoss, reason, add, remove, has, contents, restart, step, winner, missionMet,
+} from "./model.js";
 
-const FONT = `system-ui, -apple-system, "Segoe UI", sans-serif`;
-const RUST = "#9a4a1c";
-const IRON = "#8d939c";
-
-const rnd = (i, k) => {
-  const x = Math.sin(i * 127.1 + k * 311.7) * 43758.5453;
-  return x - Math.floor(x);
+const FONT = 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif';
+const LIQUID_COLOR = { boiled: "#dcefff", tap: "#c6e4ff", salt: "#bfe0ee", vinegar: "#f4e9a4" };
+const CHIP = {
+  boiled: "#7fb8ee", tap: "#4a9be8", salt: "#5fb3c9", vinegar: "#d6bd3a",
+  oil: "#e0a528", dry: "#9aa3b2", coat: "#3d7be0", Zn: "#8a94a6", Cu: "#c97b3d",
 };
+const SHORT = {
+  boiled: "Nước đun sôi", tap: "Nước máy", salt: "Nước muối", vinegar: "Giấm",
+  oil: "Lớp dầu", dry: "Chất hút ẩm", coat: "Sơn", Zn: "Thanh kẽm", Cu: "Dây đồng",
+};
+const rr = (ctx, x, y, w, h, r) => { ctx.beginPath(); ctx.roundRect(x, y, w, h, r); };
+const rnd = (a, b) => { const v = Math.sin(a * 12.9898 + b * 78.233) * 43758.5453; return v - Math.floor(v); };
+const mix = (c1, c2, t) => {
+  const p = c => [1, 3, 5].map(i => parseInt(c.slice(i, i + 2), 16));
+  const [a, b] = [p(c1), p(c2)];
+  return `rgb(${a.map((v, i) => Math.round(v + (b[i] - v) * t)).join(",")})`;
+};
+const pct = v => `${fmt(v * 100, v > 0 && v < 0.1 ? 1 : 0)} %`;
 
-function wrap(ctx, text, maxW, size, bold) {
-  ctx.font = `${bold ? "600 " : ""}${size}px ${FONT}`;
-  const lines = [];
-  let line = "";
-  for (const word of text.split(" ")) {
-    const next = line ? `${line} ${word}` : word;
-    if (line && ctx.measureText(next).width > maxW) {
-      lines.push(line);
-      line = word;
-    } else line = next;
-  }
-  if (line) lines.push(line);
-  return lines;
-}
-
-const NOTES = [
-  "Nước cất đun sôi đã đuổi hết oxygen hòa tan, lớp dầu ngăn không khí: không có oxygen nên đinh không gỉ.",
-  "CaCl₂ khan hút hết hơi nước: không có nước nên ở nhiệt độ thường đinh hầu như không bị gỉ.",
-  "Có cả nước và oxygen: ăn mòn điện hóa giữa sắt và tạp chất carbon trong đinh. Gỉ sắt có thành phần chính Fe₂O₃·nH₂O.",
-  "Dung dịch NaCl dẫn điện tốt hơn nước máy nên ăn mòn điện hóa xảy ra nhanh hơn.",
-  `Zn hoạt động hơn Fe (E° = ${fmt(E0.Zn, 3)} V < ${fmt(E0.Fe, 2)} V): Zn là anode, bị ăn mòn (Zn → Zn²⁺ + 2e); Fe là cathode nên được bảo vệ. Đây là bảo vệ bằng phương pháp điện hóa, Zn là kim loại hi sinh.`,
-  `Fe hoạt động hơn Cu (E° = ${fmt(E0.Fe, 2)} V < +${fmt(E0.Cu, 2)} V): Fe là anode, bị ăn mòn (Fe → Fe²⁺ + 2e); ở cathode Cu: O₂ + 2H₂O + 4e → 4OH⁻. Đinh gỉ nhanh nhất.`,
-  "Lớp sơn cách li sắt với nước và oxygen nên đinh không gỉ (bảo vệ bề mặt).",
-];
-const THEORY = [
-  "Ăn mòn hóa học: kim loại phản ứng trực tiếp với chất oxi hóa trong môi trường, electron chuyển thẳng sang chất oxi hóa, không phát sinh dòng điện (ví dụ 3Fe + 2O₂ → Fe₃O₄ khi nung nóng).",
-  "Ăn mòn điện hóa: hai điện cực khác bản chất tiếp xúc nhau và cùng nhúng trong dung dịch chất điện li; kim loại hoạt động hơn là anode, bị oxi hóa; có dòng electron từ anode sang cathode.",
-];
-
-function geom(view) {
+/** Everything that has a position: shelf chips, jars, the tags under each jar. */
+function layout(s, view) {
   const small = view.w < 560 || view.h < 430;
-  const pad = small ? 8 : 20;
-  const head = small ? 22 : 40; // top line
-  const textH = Math.round(Math.min(view.h * (small ? 0.36 : 0.32), small ? 120 : 170));
-  const slot = (view.w - 2 * pad) / TUBES.length;
-  const tw = Math.min(slot * 0.62, 50);
-  const top = head + (small ? 14 : 22); // number labels sit above the tubes
-  const bottom = view.h - textH - (small ? 16 : 22); // short names sit under the tubes
-  return { small, pad, head, textH, slot, tw, top, bottom };
+  const gap = small ? 5 : 8;
+  const perRow = view.w < 430 ? 3 : 5;
+  const rows = Math.ceil(ITEM_ORDER.length / perRow);
+  const chipH = small ? 24 : 32;
+  const chipW = (view.w - gap * (perRow + 1)) / perRow;
+  const chips = ITEM_ORDER.map((item, k) => ({
+    item, x: gap + (k % perRow) * (chipW + gap), y: gap + Math.floor(k / perRow) * (chipH + gap), w: chipW, h: chipH,
+  }));
+  const shelfH = rows * (chipH + gap) + gap;
+  const timeH = small ? 24 : 34;
+  const footer = small ? 56 : 128;
+  const top = shelfH + timeH + (small ? 36 : 64);
+  const jh = clamp(view.h - top - footer - 8, 70, 380);
+  const jw = Math.min(jh * 0.7, (view.w - 16) / 3 - 10, 190);
+  const tagH = small ? 16 : 22;
+  const jars = JARS.map(i => {
+    const cx = (view.w * (i - 0.5)) / 3;
+    const x = cx - jw / 2;
+    let tx = 0, ty = 0;
+    const colW = Math.min(view.w / 3 - 8, 250);
+    const tags = contents(s, i).map(item => {
+      const w = Math.min(colW, SHORT[item].length * (small ? 5.6 : 7.2) + (small ? 22 : 30));
+      if (tx + w > colW - 16 && tx > 0) { tx = 0; ty += tagH + 4; }
+      const t = { item, jar: i, x: cx - colW / 2 + 8 + tx, y: top + jh + (small ? 26 : 44) + ty, w, h: tagH };
+      tx += w + 4;
+      return t;
+    });
+    return { i, cx, x, y: top, w: jw, h: jh, tags, colW };
+  });
+  return { small, chips, shelfH, timeH, top, jh, jw, jars, tagH };
 }
 
-function drawTube(ctx, s, g, i) {
-  const t = TUBES[i];
-  const cx = g.pad + g.slot * (i + 0.5);
-  const { tw, top, bottom } = g;
-  const x0 = cx - tw / 2;
-  const level = t.water ? top + (bottom - top) * 0.3 : bottom; // liquid surface
-  const r = rust(i, s.day);
+const jarAt = (L, p) => L.jars.find(j => Math.abs(p.x - j.cx) < j.colW / 2 && p.y > L.shelfH);
 
-  if (i === s.focus) {
-    ctx.fillStyle = "#e7efff";
-    ctx.beginPath();
-    ctx.roundRect(cx - g.slot / 2 + 2, top - (g.small ? 14 : 22), g.slot - 4, bottom - top + (g.small ? 30 : 44), 8);
-    ctx.fill();
-  }
-
-  // glass with a round bottom
-  const tube = () => {
-    ctx.beginPath();
-    ctx.moveTo(x0, top);
-    ctx.lineTo(x0, bottom - tw / 2);
-    ctx.arc(cx, bottom - tw / 2, tw / 2, Math.PI, 0, true);
-    ctx.lineTo(x0 + tw, top);
-  };
-  ctx.save();
-  tube();
-  ctx.closePath();
-  ctx.clip();
-  if (t.water) {
-    ctx.fillStyle = t.salt ? "rgba(190, 215, 235, 0.65)" : "rgba(205, 225, 245, 0.6)";
-    ctx.fillRect(x0, level, tw, bottom - level + 1);
-    if (!t.oxygen) {
-      ctx.fillStyle = "rgba(240, 200, 60, 0.75)"; // oil layer
-      ctx.fillRect(x0, level - 10, tw, 10);
-    }
+function drawIcon(ctx, item, x, y, r) {
+  ctx.fillStyle = CHIP[item];
+  if (item in LIQUIDS || item === "oil") {
+    ctx.beginPath(); ctx.moveTo(x, y - r); ctx.bezierCurveTo(x + r * 1.1, y, x + r * 0.9, y + r, x, y + r); ctx.bezierCurveTo(x - r * 0.9, y + r, x - r * 1.1, y, x, y - r); ctx.fill();
+  } else if (item === "dry") {
+    for (const [dx, dy] of [[-0.5, 0.3], [0.5, 0.3], [0, -0.4]]) { ctx.beginPath(); ctx.arc(x + dx * r, y + dy * r, r * 0.42, 0, Math.PI * 2); ctx.fill(); }
+  } else if (item === "coat") {
+    rr(ctx, x - r * 0.8, y - r * 0.9, r * 1.6, r * 0.9, 2); ctx.fill();
+    ctx.fillStyle = "#7a5a3a"; ctx.fillRect(x - r * 0.18, y, r * 0.36, r);
+  } else if (item === "Zn") {
+    rr(ctx, x - r * 0.35, y - r, r * 0.7, r * 2, 2); ctx.fill();
   } else {
-    for (let k = 0; k < 30; k++) {
-      ctx.fillStyle = "#f2f2ee";
-      ctx.strokeStyle = "#b9bcc4";
-      ctx.lineWidth = 0.6;
-      ctx.beginPath();
-      ctx.arc(x0 + 3 + rnd(k, 1) * (tw - 6), bottom - 3 - rnd(k, 2) * tw * 0.7, 2.6, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.stroke();
+    ctx.strokeStyle = CHIP.Cu; ctx.lineWidth = 2.2; ctx.beginPath();
+    for (let k = 0; k <= 12; k++) ctx.lineTo(x + Math.sin(k * 1.6) * r * 0.8, y - r + (k / 12) * r * 2);
+    ctx.stroke();
+  }
+}
+
+function drawJar(ctx, s, g, L, clock, hot) {
+  const j = jar(s, g.i);
+  const c = corrosion(j, s.day);
+  const z = zincLoss(j, s.day);
+  const { x, y, w, h, cx } = g;
+  const wall = Math.max(3, w * 0.035);
+  const inX = x + wall, inW = w - 2 * wall, bottom = y + h - wall;
+  const surface = y + h * 0.36;
+  const wet = j.liquid !== "none";
+
+  // back of the glass
+  ctx.fillStyle = "rgba(255,255,255,.55)";
+  rr(ctx, x, y, w, h, [6, 6, w * 0.16, w * 0.16]); ctx.fill();
+
+  ctx.save();
+  rr(ctx, inX, y, inW, h - wall, [0, 0, w * 0.13, w * 0.13]); ctx.clip();
+  if (wet) {
+    const tint = Math.min(1, c * 0.75) * (j.liquid === "vinegar" ? 0.5 : 1);
+    const liq = ctx.createLinearGradient(0, surface, 0, bottom);
+    liq.addColorStop(0, mix(LIQUID_COLOR[j.liquid], "#d9903f", tint * 0.7));
+    liq.addColorStop(1, mix(LIQUID_COLOR[j.liquid], "#b5651d", tint));
+    ctx.fillStyle = liq;
+    ctx.fillRect(inX, surface, inW, bottom - surface);
+    if (j.liquid === "salt") {
+      ctx.fillStyle = "rgba(255,255,255,.9)";
+      for (let k = 0; k < 14; k++) ctx.fillRect(inX + rnd(k, 3) * (inW - 4), bottom - 3 - rnd(k, 4) * 5, 3, 3);
+    }
+    // rust flakes settling at the bottom
+    ctx.fillStyle = "#9a4a16";
+    for (let k = 0; k < Math.round(c * 26); k++) { ctx.beginPath(); ctx.arc(inX + rnd(k, g.i + 9) * inW, bottom - 2 - rnd(k, 5) * 6, 1.6 + rnd(k, 6) * 1.6, 0, Math.PI * 2); ctx.fill(); }
+    if (j.oil) {
+      const oil = ctx.createLinearGradient(0, surface - 9, 0, surface + 2);
+      oil.addColorStop(0, "#f5c453"); oil.addColorStop(1, "#dba520");
+      ctx.fillStyle = oil;
+      ctx.fillRect(inX, surface - Math.max(6, h * 0.05), inW, Math.max(6, h * 0.05));
+    }
+    ctx.fillStyle = "rgba(255,255,255,.55)";
+    ctx.fillRect(inX, (j.oil ? surface - Math.max(6, h * 0.05) : surface) - 1, inW, 2);
+  } else if (j.dry) {
+    for (let k = 0; k < 16; k++) {
+      ctx.fillStyle = k % 3 ? "#f3f5f9" : "#dfe4ec";
+      ctx.beginPath(); ctx.arc(inX + 6 + rnd(k, 1) * (inW - 12), bottom - 4 - rnd(k, 2) * h * 0.07, Math.max(3, w * 0.035), 0, Math.PI * 2); ctx.fill();
     }
   }
-  // rust flakes settled on the bottom
-  if (r > 0) {
-    ctx.fillStyle = RUST;
-    for (let k = 0; k < Math.round(24 * r); k++) {
+
+  // the nail: head up, point down
+  const nw = Math.max(5, w * 0.075);
+  const nTop = y + h * 0.14, nBot = bottom - h * 0.09;
+  const body = ctx.createLinearGradient(cx - nw / 2, 0, cx + nw / 2, 0);
+  if (j.coat) { body.addColorStop(0, "#2f6fed"); body.addColorStop(0.5, "#6ea0ff"); body.addColorStop(1, "#2459d6"); }
+  else { body.addColorStop(0, "#7c8696"); body.addColorStop(0.45, "#e3e8ef"); body.addColorStop(1, "#8b95a5"); }
+  ctx.fillStyle = body;
+  ctx.beginPath();
+  ctx.moveTo(cx - nw / 2, nTop); ctx.lineTo(cx + nw / 2, nTop); ctx.lineTo(cx + nw / 2, nBot - nw * 1.4); ctx.lineTo(cx, nBot); ctx.lineTo(cx - nw / 2, nBot - nw * 1.4);
+  ctx.closePath(); ctx.fill();
+  rr(ctx, cx - nw * 1.25, nTop - nw * 0.55, nw * 2.5, nw * 0.6, 2); ctx.fill();
+  ctx.fillStyle = "#33415f"; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.font = `700 ${Math.max(9, w * 0.07)}px ${FONT}`;
+  ctx.fillText("Fe", cx - nw * 2.6, nTop - nw * 0.2);
+  // rust on the part water (or moist air) reaches
+  if (c > 0) {
+    const from = wet ? (j.oil ? surface - 4 : surface - nw) : nTop;
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(cx - nw / 2, from); ctx.lineTo(cx + nw / 2, from); ctx.lineTo(cx + nw / 2, nBot - nw * 1.4); ctx.lineTo(cx, nBot); ctx.lineTo(cx - nw / 2, nBot - nw * 1.4);
+    ctx.closePath(); ctx.clip();
+    ctx.fillStyle = `rgba(150,72,22,${Math.min(0.9, c * 1.1)})`;
+    ctx.fillRect(cx - nw, from, nw * 2, nBot - from);
+    for (let k = 0; k < Math.round(c * 70); k++) {
+      ctx.fillStyle = ["#b5541a", "#8c3d12", "#d1762c"][k % 3];
       ctx.beginPath();
-      ctx.arc(x0 + 3 + rnd(k, 3) * (tw - 6), bottom - 2 - rnd(k, 4) * tw * 0.3, 1.4, 0, Math.PI * 2);
+      ctx.ellipse(cx - nw / 2 + rnd(k, g.i) * nw, from + rnd(k, g.i + 4) * (nBot - from), 1.6 + rnd(k, 7) * 2.2, 1.2 + rnd(k, 8) * 1.8, 0, 0, Math.PI * 2);
       ctx.fill();
+    }
+    ctx.restore();
+    // rust swelling beyond the nail's outline once it is far gone
+    ctx.fillStyle = "#a6501a";
+    for (let k = 0; k < Math.round(Math.max(0, c - 0.35) * 26); k++) {
+      const side = k % 2 ? 1 : -1;
+      ctx.beginPath(); ctx.arc(cx + side * (nw / 2 + rnd(k, 11) * 2), from + rnd(k, g.i + 12) * (nBot - nw * 1.6 - from), 1.4 + rnd(k, 13) * 2, 0, Math.PI * 2); ctx.fill();
+    }
+  }
+  // partner metal, wired to the nail head
+  if (j.partner !== "none") {
+    const px = cx + inW * 0.27;
+    ctx.strokeStyle = "#3b4252"; ctx.lineWidth = 1.6;
+    ctx.beginPath(); ctx.moveTo(cx, nTop - nw * 0.5); ctx.quadraticCurveTo((cx + px) / 2, nTop - nw * 2.6, px, nTop + 2); ctx.stroke();
+    if (j.partner === "Zn") {
+      const full = nBot - nTop - nw * 2, left = full * (1 - z * 0.85), bw = Math.max(9, w * 0.13) * (1 - z * 0.35);
+      const zg = ctx.createLinearGradient(px - bw / 2, 0, px + bw / 2, 0);
+      zg.addColorStop(0, "#7d8fb0"); zg.addColorStop(0.5, "#c9d6ec"); zg.addColorStop(1, "#7d8fb0");
+      ctx.fillStyle = zg;
+      rr(ctx, px - bw / 2, nTop, bw, left, 1); ctx.fill();
+      ctx.fillStyle = "#33415f"; ctx.textAlign = "center"; ctx.font = `700 ${Math.max(9, w * 0.07)}px ${FONT}`;
+      ctx.fillText("Zn", px, nTop - nw * 1.9);
+      ctx.fillStyle = "rgba(60,70,90,.45)";
+      for (let k = 0; k < Math.round(z * 18); k++) { ctx.beginPath(); ctx.arc(px - bw / 2 + rnd(k, 21) * bw, nTop + rnd(k, 22) * left, 1.2 + rnd(k, 23), 0, Math.PI * 2); ctx.fill(); }
+    } else {
+      ctx.strokeStyle = "#c97b3d"; ctx.lineWidth = Math.max(2, w * 0.018);
+      ctx.beginPath();
+      const span = nBot - nTop - nw * 2;
+      for (let k = 0; k <= 40; k++) ctx.lineTo(px + Math.sin(k * 0.9) * Math.max(4, w * 0.04), nTop + (k / 40) * span);
+      ctx.stroke();
+      ctx.fillStyle = "#8a4a1c"; ctx.textAlign = "center"; ctx.font = `700 ${Math.max(9, w * 0.07)}px ${FONT}`;
+      ctx.fillText("Cu", px, nTop - nw * 1.9);
+    }
+  }
+  // bubbles: hydrogen in acid, and from zinc as it dissolves
+  const fizz = wet && s.day > 0 && s.day < DAYS && (j.liquid === "vinegar" && !j.coat ? 1 : z > 0 && z < 0.98 ? 0.6 : 0);
+  if (fizz) {
+    ctx.strokeStyle = "rgba(255,255,255,.95)"; ctx.lineWidth = 1.2;
+    const bx = j.liquid === "vinegar" && j.partner !== "Zn" ? cx : cx + inW * 0.27;
+    for (let k = 0; k < 9 * fizz; k++) {
+      const t = (clock * 0.6 + rnd(k, 31)) % 1;
+      ctx.beginPath(); ctx.arc(bx + (rnd(k, 32) - 0.5) * nw * 3, nBot - t * (nBot - surface), 1.5 + rnd(k, 33) * 2, 0, Math.PI * 2); ctx.stroke();
     }
   }
   ctx.restore();
 
-  // the nail, moved left when a second metal shares the tube
-  const nw = Math.max(3, tw * 0.15);
-  const nx = t.partner ? cx - tw * 0.18 : cx;
-  const ny0 = top + (bottom - top) * 0.08;
-  const ny1 = t.water ? bottom - tw * 0.45 : bottom - tw * 0.95;
-  ctx.fillStyle = t.coated ? "#3f8f5a" : IRON;
-  ctx.fillRect(nx - nw / 2, ny0, nw, ny1 - ny0);
-  ctx.beginPath();
-  ctx.moveTo(nx - nw / 2, ny1);
-  ctx.lineTo(nx, ny1 + nw * 1.6);
-  ctx.lineTo(nx + nw / 2, ny1);
-  ctx.fill();
-  ctx.fillRect(nx - nw * 1.3, ny0 - 3, nw * 2.6, 3);
-  if (r > 0) {
-    const wet = Math.max(level, ny0);
-    ctx.fillStyle = RUST;
-    ctx.globalAlpha = 0.85 * r;
-    ctx.fillRect(nx - nw / 2, wet, nw, ny1 - wet);
-    ctx.globalAlpha = 1;
-    for (let k = 0; k < Math.round(40 * r); k++) {
-      ctx.beginPath();
-      ctx.arc(nx - nw / 2 - 1 + rnd(k, 5) * (nw + 2), wet + rnd(k, 6) * (ny1 - wet), 1 + rnd(k, 7) * 1.4, 0, Math.PI * 2);
-      ctx.fill();
-    }
-  }
-
-  if (t.partner) {
-    const px = cx + tw * 0.2;
-    const pw = t.partner === "Zn" ? Math.max(3, tw * 0.22) * (1 - 0.7 * zincLoss(i, s.day)) : Math.max(2, tw * 0.08);
-    ctx.fillStyle = t.partner === "Zn" ? "#9fb3c8" : "#c0703a";
-    ctx.fillRect(px - pw / 2, ny0 + 6, pw, ny1 - ny0 - 6);
-    ctx.strokeStyle = COLORS.ink; // the wire joining the two metals
-    ctx.lineWidth = 1.5;
-    ctx.beginPath();
-    ctx.moveTo(nx, ny0 + 4);
-    ctx.lineTo(nx, ny0 - 4);
-    ctx.lineTo(px, ny0 - 4);
-    ctx.lineTo(px, ny0 + 6);
-    ctx.stroke();
-    if (!g.small || tw > 30) label(ctx, t.partner, px, (level + ny1) / 2, { size: 10, align: "center", bold: true, color: COLORS.ink });
-  }
-
-  ctx.strokeStyle = COLORS.ink;
-  ctx.lineWidth = 2;
-  tube();
-  ctx.stroke();
-  if (!t.water) {
-    ctx.fillStyle = "#b07a4a"; // stopper keeps moist air out
-    ctx.fillRect(x0 - 2, top - 6, tw + 4, 10);
-  }
-
-  label(ctx, String(i + 1), cx, top - (g.small ? 7 : 11), { size: g.small ? 11 : 14, bold: true, align: "center", color: i === s.focus ? COLORS.blue : COLORS.ink });
-  label(ctx, t.short, cx, bottom + (g.small ? 8 : 12), { size: g.small ? 10 : 13, align: "center", color: COLORS.muted });
+  // the glass itself
+  ctx.strokeStyle = hot ? "#2f6fed" : "rgba(120,140,170,.75)";
+  ctx.lineWidth = hot ? wall + 1.5 : wall;
+  rr(ctx, x + wall / 2, y, w - wall, h - wall / 2, [4, 4, w * 0.15, w * 0.15]); ctx.stroke();
+  ctx.strokeStyle = "rgba(255,255,255,.8)"; ctx.lineWidth = Math.max(2, w * 0.022); ctx.lineCap = "round";
+  ctx.beginPath(); ctx.moveTo(x + w * 0.16, y + h * 0.1); ctx.lineTo(x + w * 0.16, y + h * 0.7); ctx.stroke();
+  ctx.fillStyle = "rgba(120,140,170,.75)";
+  rr(ctx, x - wall, y - wall * 1.2, w + wall * 2, wall * 2.2, wall); ctx.fill();
 }
 
-function drawText(ctx, s, g, view) {
-  const size = g.small ? 11 : 14;
-  const lh = g.small ? 14 : 20;
-  const w = view.w - 2 * g.pad;
-  const out = [];
-  const push = (text, bold, color, sz = size) => wrap(ctx, text, w, sz, bold).forEach(t => out.push([t, bold, color, sz]));
-  const i = s.focus;
-  const z = TUBES[i].partner === "Zn" ? ` · thanh kẽm hao mòn ${fmt(100 * zincLoss(i, s.day), 0)}%` : "";
-  push(`Ống ${i + 1}: ${TUBES[i].name}`, true, COLORS.ink);
-  push(`Bề mặt đinh bị gỉ: ${fmt(100 * rust(i, s.day), 0)}%${z}`, false, COLORS.ink);
-  if (s.reported) {
-    const r = ranks();
-    const order = TUBES.map((_, k) => k).filter(k => r[k] < 4).sort((a, b) => r[a] - r[b]);
-    const none = TUBES.map((_, k) => k).filter(k => r[k] >= 4);
-    push(`Thứ tự gỉ: ống ${order.map(k => k + 1).join(" > ")}; ống ${none.map(k => k + 1).join(", ")} không gỉ.`, true, COLORS.orange);
-    if (s.verdict >= 0) push(s.verdict ? "Dự đoán của em đúng ✓" : `Dự đoán chưa đúng. Đúng là ${TOP3.map(k => k + 1).join(" > ")}.`, true, s.verdict ? COLORS.green : COLORS.red);
+function wrap(ctx, text, x, y, maxW, lineH, maxLines) {
+  const words = text.split(" ");
+  let line = "", n = 0;
+  for (const word of words) {
+    const tryLine = line ? `${line} ${word}` : word;
+    if (ctx.measureText(tryLine).width > maxW && line) {
+      if (++n === maxLines) { ctx.fillText(`${line}…`, x, y); return; }
+      ctx.fillText(line, x, y); y += lineH; line = word;
+    } else line = tryLine;
   }
-  if (s.showTheory) THEORY.forEach(t => push(t, false, COLORS.muted));
-  else push(NOTES[i], false, COLORS.muted);
-  const y0 = view.h - g.textH + lh / 2;
-  const max = Math.floor(g.textH / lh);
-  out.slice(0, max).forEach(([t, bold, color, sz], k) => label(ctx, t, g.pad, y0 + k * lh, { size: sz, bold, color }));
+  if (line) ctx.fillText(line, x, y);
 }
 
-// Called once when time reaches the last day: the rust ranking, and the prediction judged.
-function finish(s, api) {
-  if (s.reported) return;
-  s.reported = true;
-  s.verdict = predictionComplete(s) ? Number(predictionCorrect(s)) : -1;
-  const data = { day: s.day };
-  TUBES.forEach((_, i) => (data[`rust${i + 1}`] = Math.round(1000 * rust(i, s.day)) / 10));
-  data.zinc = Math.round(1000 * zincLoss(4, s.day)) / 10;
-  [data.first, data.second, data.third] = TOP3.map(k => k + 1);
-  data.predicted = s.verdict;
-  api.emit("rust-ranking", data, "result");
-  if (s.verdict === 1) api.emit("ranking-predicted", { first: s.p1 + 1, second: s.p2 + 1, third: s.p3 + 1 }, "goal");
+function changed(s, api, i, item, added) {
+  s._verdict = ""; s._msg = ""; s._armed = s.guess !== 0;
+  api.pause();
+  api.sync();
+  api.emit("jar-changed", { jar: i, item: ITEM_ORDER.indexOf(item) + 1, added: added ? 1 : 0 }, "action");
 }
 
-const reopen = s => {
-  if (s.day < DAYS) {
-    s.reported = false;
-    s.verdict = -1;
+function finished(s, api) {
+  const cs = JARS.map(i => corrosion(jar(s, i), DAYS));
+  const zs = JARS.map(i => zincLoss(jar(s, i), DAYS));
+  const top = winner(s);
+  api.pause();
+  api.emit(
+    "run-finished",
+    { corrosion1: cs[0] * 100, corrosion2: cs[1] * 100, corrosion3: cs[2] * 100, zinc1: zs[0] * 100, zinc2: zs[1] * 100, zinc3: zs[2] * 100, most: top },
+    "result"
+  );
+  if (s.guess !== 0 && s._armed !== false) {
+    s._armed = false;
+    s._verdict = top !== 0 && s.guess === top ? "right" : "wrong";
+    if (s._verdict === "right") api.emit("prediction-correct", { jar: top }, "goal");
   }
-};
-
-const tubeOptions = [{ value: -1, label: "— chọn —" }, ...TUBES.map((t, i) => ({ value: i, label: `Ống ${i + 1} (${t.short})` }))];
-const locked = s => s.day > 0;
+  s._won ??= {};
+  if (s.mission !== "none" && !s._won[s.mission] && missionMet(s, s.mission)) {
+    s._won[s.mission] = true;
+    api.emit("mission-done", { mission: Object.keys(MISSIONS).indexOf(s.mission) }, "goal");
+  }
+}
 
 mount({
   slug: "an-mon-kim-loai",
   version: "1.0.0",
-  title: "Ăn mòn kim loại và chống ăn mòn",
-  hint: "Dự đoán ba ống có đinh gỉ nhiều nhất (trước khi bắt đầu), rồi bấm Chạy để thời gian trôi đến ngày 10.",
+  title: "Phòng thí nghiệm ăn mòn kim loại",
+  hint: "Kéo nước, dầu, sơn, kẽm, đồng trên kệ thả vào từng lọ có đinh sắt, rồi bấm Chạy để tua nhanh 30 ngày. Chạm vào nhãn dưới lọ để lấy vật đó ra.",
   initialState,
+  autoplay: true,
+  timeScale: s => s.speed,
   step(s, dt, api) {
-    if (s.day >= DAYS) {
-      s.day = 0; // pressing Chạy after a finished run starts a new one
-      reopen(s);
+    s._clock = (s._clock ?? 0) + dt / Math.max(0.5, s.speed);
+    if (s.done) {
+      // A finished run restored from the host stays finished; pressing Chạy again starts over.
+      if (!s._sawDone) { s._sawDone = true; api.pause(); return; }
+      restart(s);
     }
-    if (step(s, dt)) {
-      api.pause();
-      finish(s, api);
-    }
+    if (step(s, dt)) { s._sawDone = true; finished(s, api); }
   },
   controls: [
-    { type: "heading", label: "Thời gian" },
-    { type: "slider", key: "day", label: "Số ngày", min: 0, max: DAYS, step: 0.1, unit: "ngày", digits: 1, onChange: reopen, onCommit: (s, api) => s.day >= DAYS && finish(s, api) },
-    { type: "heading", label: "Quan sát" },
-    { type: "select", key: "focus", label: "Xem giải thích ống", options: TUBES.map((t, i) => ({ value: i, label: `Ống ${i + 1}: ${t.name}` })) },
-    { type: "checkbox", key: "showTheory", label: "So sánh ăn mòn hóa học và ăn mòn điện hóa" },
-    { type: "heading", label: "Dự đoán (khi số ngày = 0)" },
-    { type: "select", key: "p1", label: "Gỉ nhanh nhất", options: tubeOptions, disabled: locked, onChange: reopen },
-    { type: "select", key: "p2", label: "Gỉ nhanh thứ hai", options: tubeOptions, disabled: locked, onChange: reopen },
-    { type: "select", key: "p3", label: "Gỉ nhanh thứ ba", options: tubeOptions, disabled: locked, onChange: reopen },
+    {
+      type: "select", key: "speed", label: "Tốc độ tua thời gian",
+      options: [{ value: 1, label: "Chậm (1 ngày mỗi giây)" }, { value: 2.5, label: "Vừa (2,5 ngày mỗi giây)" }, { value: 6, label: "Nhanh (6 ngày mỗi giây)" }],
+    },
+    {
+      type: "button", label: "Làm lại từ ngày 0",
+      action(s, api) { restart(s); s._verdict = ""; api.emit("restarted", {}, "action"); },
+    },
+    { type: "heading", label: "Thử sức" },
+    {
+      type: "select", key: "guess", label: "Em đoán: lọ nào bị ăn mòn nhiều nhất?",
+      options: [{ value: 0, label: "(chưa đoán)" }, ...JARS.map(i => ({ value: i, label: `Lọ ${i}` }))],
+      onChange: s => { s._armed = s.guess !== 0 && !s.done; s._verdict = ""; },
+    },
+    { type: "select", key: "mission", label: "Nhiệm vụ", options: Object.entries(MISSIONS).map(([value, label]) => ({ value, label })) },
+    { type: "heading", label: "Chỉnh lọ không cần kéo thả" },
+    { type: "select", key: "sel", label: "Lọ", options: JARS.map(i => ({ value: i, label: `Lọ ${i}` })) },
+    { type: "select", key: "pick", label: "Vật", options: ITEM_ORDER.map(item => ({ value: item, label: ITEMS[item] })) },
+    {
+      type: "button", label: "Cho vào lọ, hoặc lấy ra nếu đã có",
+      action(s, api) {
+        if (has(s, s.sel, s.pick)) { remove(s, s.sel, s.pick); changed(s, api, s.sel, s.pick, false); }
+        else {
+          const msg = add(s, s.sel, s.pick);
+          if (msg) { s._msg = msg; return; }
+          changed(s, api, s.sel, s.pick, true);
+        }
+      },
+    },
   ],
   readouts: [
-    { label: "Thời gian", value: s => `${fmt(s.day, 1)} / ${DAYS} ngày` },
-    { label: "Dự đoán", value: s => (predictionComplete(s) ? [s.p1, s.p2, s.p3].map(p => p + 1).join(" > ") : "chưa đủ") },
-    { label: "Kết quả dự đoán", value: s => (s.verdict === 1 ? "đúng" : s.verdict === 0 ? "chưa đúng" : "–") },
+    { label: "Ngày", value: s => `${fmt(s.day, 0)} / ${DAYS}` },
+    ...JARS.map(i => ({ label: `Lọ ${i}: sắt bị ăn mòn`, value: s => pct(corrosion(jar(s, i), s.day)) })),
   ],
+  pointer: {
+    down(p, s, api, view) {
+      const L = layout(s, view);
+      const chip = L.chips.find(c => p.x >= c.x && p.x <= c.x + c.w && p.y >= c.y && p.y <= c.y + c.h);
+      if (chip) { s._drag = { item: chip.item, x: p.x, y: p.y }; return true; }
+      for (const g of L.jars) {
+        const tag = g.tags.find(t => p.x >= t.x && p.x <= t.x + t.w && p.y >= t.y - 3 && p.y <= t.y + t.h + 3);
+        if (tag) { remove(s, tag.jar, tag.item); changed(s, api, tag.jar, tag.item, false); return true; }
+      }
+      const g = jarAt(L, p);
+      if (g && p.y < g.y + g.h + 8) { s.sel = g.i; api.sync(); api.emit("param", { key: "sel", value: g.i }, "param"); return true; }
+      return false;
+    },
+    move(p, s) { if (s._drag) { s._drag.x = p.x; s._drag.y = p.y; } },
+    up(p, s, api, view) {
+      const d = s._drag;
+      s._drag = null;
+      if (!d) return;
+      const g = jarAt(layout(s, view), p);
+      if (!g) return;
+      const msg = add(s, g.i, d.item);
+      if (msg) { s._msg = msg; return; }
+      s.sel = g.i;
+      changed(s, api, g.i, d.item, true);
+    },
+  },
   draw(ctx, s, view) {
-    const g = geom(view);
-    label(ctx, `Ngày ${fmt(s.day, 1)} / ${DAYS}`, g.pad, g.head / 2 + 2, { size: g.small ? 12 : 16, bold: true });
-    label(ctx, g.small ? "Tốc độ gỉ minh họa định tính" : "Tốc độ gỉ tương đối, minh họa định tính; thời gian rút gọn", view.w - g.pad, g.head / 2 + 2, { size: g.small ? 10 : 12, align: "right", color: COLORS.muted });
-    TUBES.forEach((_, i) => drawTube(ctx, s, g, i));
-    drawText(ctx, s, g, view);
+    const L = layout(s, view);
+    const clock = s._clock ?? 0;
+    ctx.textBaseline = "middle";
+
+    // lab wall and bench
+    const wall = ctx.createLinearGradient(0, 0, 0, view.h);
+    wall.addColorStop(0, "#eaf2fb"); wall.addColorStop(1, "#f7f3ea");
+    ctx.fillStyle = wall; ctx.fillRect(0, 0, view.w, view.h);
+    const bench = L.top + L.jh - 4;
+    const wood = ctx.createLinearGradient(0, bench, 0, view.h);
+    wood.addColorStop(0, "#d8b98a"); wood.addColorStop(0.08, "#c9a36d"); wood.addColorStop(1, "#e9dcc4");
+    ctx.fillStyle = wood; ctx.fillRect(0, bench, view.w, view.h - bench);
+    ctx.fillStyle = "rgba(120,85,40,.25)"; ctx.fillRect(0, bench, view.w, 3);
+
+    // shelf of things to drag
+    ctx.fillStyle = "rgba(255,255,255,.8)"; ctx.fillRect(0, 0, view.w, L.shelfH);
+    ctx.fillStyle = "#c9a36d"; ctx.fillRect(0, L.shelfH - 3, view.w, 3);
+    for (const c of L.chips) {
+      const lifted = s._drag?.item === c.item;
+      ctx.globalAlpha = lifted ? 0.35 : 1;
+      ctx.fillStyle = "#fff"; ctx.strokeStyle = CHIP[c.item]; ctx.lineWidth = 1.6;
+      rr(ctx, c.x, c.y, c.w, c.h, c.h / 2); ctx.fill(); ctx.stroke();
+      drawIcon(ctx, c.item, c.x + c.h * 0.55, c.y + c.h / 2, c.h * 0.26);
+      ctx.fillStyle = "#1f2a44"; ctx.textAlign = "left";
+      let size = L.small ? 10.5 : 13;
+      ctx.font = `600 ${size}px ${FONT}`;
+      while (ctx.measureText(SHORT[c.item]).width > c.w - c.h * 1.1 - 6 && size > 8) ctx.font = `600 ${--size}px ${FONT}`;
+      ctx.fillText(SHORT[c.item], c.x + c.h * 1.02, c.y + c.h / 2 + 0.5);
+      ctx.globalAlpha = 1;
+    }
+
+    // time bar
+    const tb = { x: 12, y: L.shelfH + 8, w: view.w - 24, h: L.timeH - 10 };
+    ctx.fillStyle = "rgba(31,42,68,.10)"; rr(ctx, tb.x, tb.y, tb.w, tb.h, tb.h / 2); ctx.fill();
+    const grad = ctx.createLinearGradient(tb.x, 0, tb.x + tb.w, 0);
+    grad.addColorStop(0, "#7fb8ee"); grad.addColorStop(1, "#2f6fed");
+    ctx.fillStyle = grad; rr(ctx, tb.x, tb.y, Math.max(tb.h, (tb.w * s.day) / DAYS), tb.h, tb.h / 2); ctx.fill();
+    ctx.fillStyle = "#1f2a44"; ctx.textAlign = "center"; ctx.font = `700 ${L.small ? 11 : 14}px ${FONT}`;
+    ctx.fillText(`Ngày ${fmt(s.day, 0)} / ${DAYS}`, view.w / 2, tb.y + tb.h / 2 + 0.5);
+
+    // headline
+    const top = winner(s);
+    let line = s.done
+      ? top ? `Sau ${DAYS} ngày: đinh ở lọ ${top} bị ăn mòn nhiều nhất` : `Sau ${DAYS} ngày: không có lọ nào đứng đầu một mình`
+      : s.day === 0 ? "Chọn vật cho từng lọ, rồi bấm Chạy để xem 30 ngày trôi qua" : "Thời gian đang trôi… quan sát đinh sắt trong từng lọ";
+    let color = s.done ? "#b4232a" : "#1f2a44";
+    if (s._msg) { line = s._msg; color = "#b45309"; }
+    else if (s._verdict === "right") line += ". ✓ Em đoán đúng!";
+    else if (s._verdict === "wrong") line += ". Em đoán chưa đúng.";
+    else if (s.done && s.mission !== "none") line += s._won?.[s.mission] ? ". ✓ Hoàn thành nhiệm vụ!" : ". Nhiệm vụ chưa đạt.";
+    else if (!s.done && s.mission !== "none" && s.day === 0) line = `Nhiệm vụ: ${MISSIONS[s.mission]}`;
+    ctx.textAlign = "center";
+    let size = L.small ? 12 : 17;
+    ctx.font = `700 ${size}px ${FONT}`;
+    while (ctx.measureText(line).width > view.w - 16 && size > 9) ctx.font = `700 ${--size}px ${FONT}`;
+    ctx.fillStyle = color;
+    ctx.fillText(line, view.w / 2, L.shelfH + L.timeH + (L.small ? 9 : 18));
+
+    // the three jars
+    const hot = s._drag ? jarAt(L, s._drag) : null;
+    const ranked = JARS.map(i => corrosion(jar(s, i), DAYS)).map((c, _, all) => (c > 0 ? 1 + all.filter(o => o > c).length : 0));
+    for (const g of L.jars) {
+      const j = jar(s, g.i);
+      const c = corrosion(j, s.day);
+      ctx.fillStyle = "rgba(60,45,20,.16)";
+      ctx.beginPath(); ctx.ellipse(g.cx, g.y + g.h + 1, g.w * 0.56, 6, 0, 0, Math.PI * 2); ctx.fill();
+      drawJar(ctx, s, g, L, clock, hot === g);
+      // jar number
+      ctx.fillStyle = s.sel === g.i ? "#2f6fed" : "#64718a";
+      ctx.textAlign = "center"; ctx.font = `700 ${L.small ? 11 : 14}px ${FONT}`;
+      ctx.fillText(`Lọ ${g.i}`, g.cx, g.y - (L.small ? 11 : 16));
+      if (s.done && ranked[g.i - 1] > 0) {
+        const rx = g.x + g.w - 2, ry = g.y + 12;
+        ctx.fillStyle = ["#e5484d", "#f08c2e", "#c9a227"][ranked[g.i - 1] - 1] ?? "#8a94a6";
+        ctx.beginPath(); ctx.arc(rx, ry, L.small ? 9 : 13, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = "#fff"; ctx.font = `700 ${L.small ? 10 : 13}px ${FONT}`;
+        ctx.fillText(String(ranked[g.i - 1]), rx, ry + 0.5);
+      }
+      // a plate under the jar: corrosion meter, what is inside, and why
+      ctx.save();
+      ctx.shadowColor = "rgba(31,42,68,.14)"; ctx.shadowBlur = 10; ctx.shadowOffsetY = 2;
+      ctx.fillStyle = "rgba(255,255,255,.93)";
+      rr(ctx, g.cx - g.colW / 2, g.y + g.h + 6, g.colW, view.h - (g.y + g.h + 6) - (L.small ? 14 : 22), 12); ctx.fill();
+      ctx.restore();
+      const mw = g.colW - 20, mx = g.cx - mw / 2, my = g.y + g.h + (L.small ? 17 : 28);
+      ctx.fillStyle = "rgba(31,42,68,.12)"; rr(ctx, mx, my, mw, 7, 3.5); ctx.fill();
+      if (c > 0) { ctx.fillStyle = mix("#f5c518", "#a6401a", c); rr(ctx, mx, my, Math.max(7, mw * c), 7, 3.5); ctx.fill(); }
+      ctx.fillStyle = c > 0.02 ? "#a6401a" : "#1f9d6b";
+      ctx.font = `700 ${L.small ? 10 : 13}px ${FONT}`; ctx.textAlign = "right";
+      ctx.fillText(c > 0.005 ? `đinh bị ăn mòn ${pct(c)}` : "đinh sáng bóng", mx + mw, my - (L.small ? 6 : 9));
+      // tags: what is in the jar (tap to take out)
+      for (const t of g.tags) {
+        ctx.fillStyle = "#fff"; ctx.strokeStyle = CHIP[t.item]; ctx.lineWidth = 1.3;
+        rr(ctx, t.x, t.y, t.w, t.h, t.h / 2); ctx.fill(); ctx.stroke();
+        ctx.fillStyle = "#1f2a44"; ctx.textAlign = "left"; ctx.font = `600 ${L.small ? 9 : 11.5}px ${FONT}`;
+        ctx.fillText(SHORT[t.item], t.x + 8, t.y + t.h / 2 + 0.5);
+        ctx.fillStyle = "#8a94a6"; ctx.textAlign = "right"; ctx.fillText("✕", t.x + t.w - 7, t.y + t.h / 2 + 0.5);
+      }
+      if (!g.tags.length) {
+        ctx.fillStyle = "#8a94a6"; ctx.textAlign = "center"; ctx.font = `${L.small ? 9 : 11.5}px ${FONT}`;
+        ctx.fillText("chỉ có không khí ẩm", g.cx, L.top + L.jh + (L.small ? 34 : 55));
+      }
+      if (!L.small) {
+        const rows = g.tags.length ? Math.round((g.tags.at(-1).y - g.tags[0].y) / (L.tagH + 4)) + 1 : 1;
+        ctx.fillStyle = "#3d4b6b"; ctx.textAlign = "center"; ctx.font = `12px ${FONT}`;
+        wrap(ctx, reason(j), g.cx, L.top + L.jh + 44 + rows * (L.tagH + 4) + 12, g.colW - 20, 15, 3);
+      }
+    }
+
+    // the item being dragged
+    if (s._drag) {
+      const d = s._drag;
+      ctx.globalAlpha = 0.95;
+      ctx.fillStyle = "#fff"; ctx.strokeStyle = CHIP[d.item]; ctx.lineWidth = 2;
+      const w = SHORT[d.item].length * 7.6 + 44;
+      rr(ctx, d.x - w / 2, d.y - 17, w, 34, 17); ctx.fill(); ctx.stroke();
+      drawIcon(ctx, d.item, d.x - w / 2 + 19, d.y, 9);
+      ctx.fillStyle = "#1f2a44"; ctx.textAlign = "left"; ctx.font = `600 13px ${FONT}`;
+      ctx.fillText(SHORT[d.item], d.x - w / 2 + 35, d.y + 0.5);
+      ctx.globalAlpha = 1;
+    }
+
+    ctx.textAlign = "right"; ctx.textBaseline = "alphabetic"; ctx.font = `${L.small ? 8.5 : 11}px ${FONT}`;
+    ctx.fillStyle = "#7c879b";
+    ctx.fillText("Tốc độ ăn mòn chỉ minh họa đúng thứ tự nhanh – chậm, không phải số đo thật.", view.w - 8, view.h - 5);
   },
 });

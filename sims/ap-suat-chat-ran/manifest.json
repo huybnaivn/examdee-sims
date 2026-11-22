@@ -7,6 +7,20 @@
   "grades": [
     8
   ],
+  "curriculum": {
+    "programme": "Chương trình giáo dục phổ thông 2018",
+    "subject": "Khoa học tự nhiên",
+    "grade": 8,
+    "topic": "Khối lượng riêng và áp suất",
+    "content": "Áp suất trên một bề mặt",
+    "requirements": [
+      "Dùng dụng cụ thực hành, khẳng định được: áp suất sinh ra khi có áp lực tác dụng lên một diện tích bề mặt, áp suất = áp lực / diện tích bề mặt.",
+      "Liệt kê được một số đơn vị đo áp suất thông dụng.",
+      "Thảo luận được công dụng của việc tăng, giảm áp suất qua một số hiện tượng thực tế."
+    ],
+    "verified": false,
+    "note": "Chủ đề và yêu cầu cần đạt ghi theo trí nhớ về chương trình 2018, chưa đối chiếu văn bản gốc; chưa gắn số bài của từng bộ sách."
+  },
   "description": "Kéo viên gạch, bạn nhỏ, chú voi hay xe tăng thả xuống cát, tuyết, bùn hoặc bê tông, mỗi bên một nhân vật, rồi so sánh ai lún sâu hơn. Xoay viên gạch, chồng thêm gạch, đổi giày cho bạn nhỏ (giày thể thao, gót nhọn, cà kheo, ván trượt) để thấy áp suất p = F/S phụ thuộc cả áp lực lẫn diện tích bị ép. Lấy g = 10 N/kg. Hình không theo tỉ lệ; độ lún chỉ minh họa theo thang lôgarit của áp suất, không phải định luật vật lí.",
   "learningGoals": [
     "Tính áp suất p = F/S và đổi đơn vị cm² sang m², Pa sang kPa và MPa.",
