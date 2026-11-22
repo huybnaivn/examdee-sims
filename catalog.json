@@ -4220,6 +4220,83 @@
     "thumbnailUrl": "/he-mat-troi/1.0.0/thumb.png"
   },
   {
+    "slug": "he-mien-dich",
+    "version": "1.0.0",
+    "title": "Hệ miễn dịch và vaccine",
+    "subject": "biology",
+    "grades": [
+      8,
+      11
+    ],
+    "description": "Hai phần. (1) Đồ thị nồng độ kháng thể trong máu theo thời gian (100 ngày) sau mỗi lần cơ thể tiếp xúc với kháng nguyên, do tiêm vaccine hoặc do nhiễm mầm bệnh; học sinh thêm tối đa 4 lần tiếp xúc. Mô hình minh hoạ (đơn vị tương đối U, không phải số liệu của một bệnh cụ thể): đáp ứng miễn dịch nguyên phát (chưa có tế bào nhớ) bắt đầu sau 7 ngày, đạt đỉnh 1 U vào ngày thứ 14 sau khi tiếp xúc rồi giảm dần; đáp ứng thứ phát (đã có tế bào nhớ từ lần tiếp xúc trước ít nhất 7 ngày) bắt đầu sau 2 ngày, đạt đỉnh 10 U vào ngày thứ 5 và giảm chậm hơn. Nồng độ trên đồ thị là tổng của các đáp ứng. Mầm bệnh gây bệnh từ ngày thứ 3 sau khi nhiễm cho đến khi kháng thể đạt mức đủ bảo vệ 0,5 U; nếu kháng thể đạt mức này sớm hơn thì không bị bệnh. Vaccine không gây bệnh nhưng vẫn tạo tế bào nhớ. (2) Miễn dịch cộng đồng: lưới 40 × 40 người, mỗi người tiếp xúc với 8 người xung quanh; một tỉ lệ người đã tiêm vaccine (coi như miễn dịch hoàn toàn), 4 người đầu tiên mang bệnh. Người bệnh lây trong 5 ngày, mỗi ngày lây cho mỗi người chưa tiêm ở ô bên cạnh với xác suất 10 %. Dịch được coi là bị chặn khi không quá 2 % số người từng nhiễm; với mô hình này dịch thường bị chặn khi khoảng 45 % đến 60 % số người đã tiêm, tuỳ cộng đồng (hạt giống). Cùng hạt giống thì kết quả lặp lại y hệt, và tăng tỉ lệ tiêm không bao giờ làm tăng số người nhiễm.",
+    "learningGoals": [
+      "So sánh đáp ứng miễn dịch nguyên phát và thứ phát: nhờ tế bào nhớ, lần sau kháng thể được tạo ra nhanh hơn và nhiều hơn.",
+      "Giải thích cơ chế phòng bệnh của vaccine: tạo tế bào nhớ mà không phải mắc bệnh, nên khi nhiễm mầm bệnh thật cơ thể đáp ứng kịp thời.",
+      "Nhận ra tỉ lệ tiêm vaccine càng cao thì dịch lây lan càng ít, và khi đủ cao thì cả người chưa tiêm cũng được bảo vệ (miễn dịch cộng đồng).",
+      "Tìm bằng thực nghiệm tỉ lệ tiêm vaccine thấp nhất đủ để chặn một ổ dịch trong mô hình."
+    ],
+    "state": {
+      "view": "Phần đang xem: antibody (kháng thể sau mỗi lần tiếp xúc kháng nguyên) hoặc herd (miễn dịch cộng đồng)",
+      "exposures": "Danh sách các lần tiếp xúc kháng nguyên, tối đa 4, xếp theo ngày; mỗi phần tử là { t: ngày (0 đến 100), kind: \"vaccine\" hoặc \"pathogen\" (mầm bệnh) }",
+      "exposeDay": "Ngày của lần tiếp xúc sắp thêm (0 đến 90)",
+      "exposeKind": "Cách tiếp xúc sắp thêm: vaccine hoặc pathogen (nhiễm mầm bệnh)",
+      "time": "Ngày đang hiển thị trên đồ thị kháng thể (0 đến 100); 100 là toàn bộ đồ thị",
+      "coverage": "Tỉ lệ người đã tiêm vaccine trong cộng đồng (%, 0 đến 100, bước 5)",
+      "seed": "Hạt giống của cộng đồng (số nguyên 32 bit): quyết định ai được tiêm, ca bệnh đầu tiên và các lần lây",
+      "day": "Ngày đang hiển thị của đợt dịch; lớn hơn ngày dịch dừng nghĩa là xem kết quả cuối cùng"
+    },
+    "events": {
+      "expose": {
+        "kind": "action",
+        "description": "Học sinh thêm một lần tiêm vaccine hoặc nhiễm mầm bệnh vào đồ thị",
+        "data": {}
+      },
+      "clear-exposures": {
+        "kind": "action",
+        "description": "Học sinh xoá hết các lần tiếp xúc kháng nguyên",
+        "data": {}
+      },
+      "new-population": {
+        "kind": "action",
+        "description": "Học sinh đổi sang một cộng đồng khác (hạt giống mới)",
+        "data": {}
+      },
+      "immune-response": {
+        "kind": "result",
+        "description": "Đáp ứng miễn dịch của lần tiếp xúc kháng nguyên vừa thêm",
+        "data": {
+          "day": "Ngày tiếp xúc",
+          "vaccine": "1 nếu là tiêm vaccine, 0 nếu là nhiễm mầm bệnh",
+          "secondary": "1 nếu là đáp ứng thứ phát (đã có tế bào nhớ), 0 nếu là nguyên phát",
+          "peak": "Nồng độ kháng thể vào ngày đáp ứng này đạt đỉnh (U)",
+          "timeToPeak": "Số ngày từ lúc tiếp xúc đến lúc đạt đỉnh",
+          "illnessDays": "Số ngày bị bệnh do lần tiếp xúc này (0 nếu là vaccine hoặc kháng thể tạo ra kịp thời)"
+        }
+      },
+      "spread-finished": {
+        "kind": "result",
+        "description": "Một đợt dịch trong cộng đồng vừa chạy xong",
+        "data": {
+          "coverage": "Tỉ lệ người đã tiêm vaccine (%)",
+          "infectedFraction": "Tỉ lệ người từng nhiễm trong cả đợt dịch (0 đến 1)",
+          "infected": "Số người từng nhiễm (trong 1600 người)",
+          "days": "Số ngày đến khi dịch dừng"
+        }
+      },
+      "outbreak-stopped": {
+        "kind": "goal",
+        "description": "Học sinh chọn được tỉ lệ tiêm vaccine chặn được ổ dịch (không quá 2 % số người từng nhiễm)",
+        "data": {
+          "coverage": "Tỉ lệ người đã tiêm vaccine (%)",
+          "infectedFraction": "Tỉ lệ người từng nhiễm (0 đến 1)",
+          "minimal": "1 nếu đây là tỉ lệ thấp nhất (theo bước 5 %) chặn được ổ dịch của cộng đồng này, 0 nếu thấp hơn vẫn chặn được"
+        }
+      }
+    },
+    "url": "/he-mien-dich/1.0.0/index.html",
+    "thumbnailUrl": "/he-mien-dich/1.0.0/thumb.png"
+  },
+  {
     "slug": "he-phuong-trinh",
     "version": "1.0.0",
     "title": "Hệ hai phương trình bậc nhất hai ẩn",
@@ -4645,6 +4722,78 @@
     },
     "url": "/khuc-xa-anh-sang/1.0.0/index.html",
     "thumbnailUrl": "/khuc-xa-anh-sang/1.0.0/thumb.png"
+  },
+  {
+    "slug": "khuech-tan-tham-thau",
+    "version": "1.0.0",
+    "title": "Khuếch tán và thẩm thấu",
+    "subject": "biology",
+    "grades": [
+      8,
+      10
+    ],
+    "description": "Hai thí nghiệm. (1) Hai ngăn dung dịch cách nhau bởi một màng: học sinh chọn màng thấm (cho cả nước và chất tan đi qua) hoặc màng bán thấm (chỉ cho nước đi qua) và số hạt chất tan mỗi bên. Các hạt chất tan chuyển động hỗn loạn; qua màng thấm, chất tan khuếch tán từ nơi nồng độ cao sang nơi nồng độ thấp cho đến khi nồng độ hai bên bằng nhau. Qua màng bán thấm, nước thẩm thấu sang bên có nồng độ chất tan cao hơn, làm mực chất lỏng bên đó dâng lên, đến khi áp suất của cột chất lỏng cao hơn cân bằng với chênh lệch nồng độ. Mô hình minh hoạ: mỗi ngăn ban đầu 10 mL, nồng độ C = số hạt / thể tích; dòng nước từ trái sang phải J = 0,15·[(C phải − C trái) − 0,2·(V phải − V trái)] mL/s. (2) Một tế bào (hồng cầu hoặc tế bào thực vật, nồng độ chất tan bên trong 0,9 %) đặt trong dung dịch có nồng độ tuỳ chọn: môi trường đẳng trương thì tế bào giữ nguyên; nhược trương thì nước đi vào, hồng cầu trương lên và vỡ khi thể tích đạt 1,8 lần ban đầu (nồng độ ngoài từ 0,5 % trở xuống), còn tế bào thực vật trương nước nhưng thành tế bào giữ cho không vỡ; ưu trương thì nước đi ra, hồng cầu teo lại, tế bào thực vật co nguyên sinh. Học sinh dự đoán kết quả trước khi chạy.",
+    "learningGoals": [
+      "Phân biệt khuếch tán (chất tan đi từ nơi nồng độ cao đến nơi nồng độ thấp) với thẩm thấu (nước đi qua màng bán thấm sang nơi có nồng độ chất tan cao hơn).",
+      "Nhận ra khuếch tán qua màng thấm dừng lại khi nồng độ hai bên bằng nhau; các hạt vẫn chuyển động nhưng số hạt qua lại hai chiều như nhau.",
+      "Xác định môi trường đẳng trương, nhược trương, ưu trương so với tế bào và dự đoán chiều di chuyển của nước.",
+      "Giải thích vì sao hồng cầu vỡ trong nước cất còn tế bào thực vật thì không, và hiện tượng co nguyên sinh ở tế bào thực vật trong môi trường ưu trương."
+    ],
+    "state": {
+      "scene": "Thí nghiệm: membrane (hai dung dịch ngăn bởi một màng) hoặc cell (tế bào trong dung dịch)",
+      "membrane": "Loại màng: semi (bán thấm, chỉ cho nước qua) hoặc permeable (cho cả nước và chất tan qua)",
+      "left0": "Số hạt chất tan bên trái lúc đầu (0 đến 60)",
+      "right0": "Số hạt chất tan bên phải lúc đầu (0 đến 60)",
+      "cell": "Loại tế bào: rbc (hồng cầu) hoặc plant (tế bào thực vật)",
+      "outside": "Nồng độ chất tan của dung dịch bên ngoài tế bào (%, 0 đến 3); bên trong tế bào lúc đầu là 0,9 %",
+      "prediction": "Dự đoán của học sinh về tế bào: same (không đổi), swell (trương nước không vỡ), burst (trương rồi vỡ), shrink (mất nước, co lại); rỗng nếu chưa dự đoán",
+      "seed": "Hạt giống của bộ sinh số ngẫu nhiên (số nguyên 32 bit); mỗi lần bắt đầu lại, thí nghiệm màng chạy từ hạt giống này",
+      "rng": "Trạng thái hiện tại của bộ sinh số ngẫu nhiên (số nguyên 32 bit)",
+      "time": "Thời gian đã trôi qua trong thí nghiệm hiện tại (s)",
+      "nL": "Số hạt chất tan bên trái hiện tại",
+      "nR": "Số hạt chất tan bên phải hiện tại",
+      "vL": "Thể tích dung dịch bên trái (mL); tổng hai bên luôn là 20 mL",
+      "vR": "Thể tích dung dịch bên phải (mL)",
+      "equilibrium": "true khi thí nghiệm màng đã đạt cân bằng",
+      "eqTime": "Thời điểm đạt cân bằng (s), 0 nếu chưa đạt",
+      "volume": "Thể tích tế bào so với ban đầu (với tế bào thực vật là thể tích phần nguyên sinh chất); 1 là ban đầu",
+      "burst": "true nếu hồng cầu đã vỡ",
+      "cellDone": "true khi tế bào đã ổn định hoặc đã vỡ"
+    },
+    "events": {
+      "equilibrium": {
+        "kind": "result",
+        "description": "Thí nghiệm màng vừa đạt cân bằng: nước ngừng di chuyển và, với màng thấm, nồng độ hai bên xấp xỉ bằng nhau",
+        "data": {
+          "time": "Thời gian đến lúc cân bằng (s)",
+          "cLeft": "Nồng độ bên trái lúc cân bằng (hạt/mL)",
+          "cRight": "Nồng độ bên phải lúc cân bằng (hạt/mL)",
+          "vLeft": "Thể tích bên trái (mL)",
+          "vRight": "Thể tích bên phải (mL)"
+        }
+      },
+      "cell-settled": {
+        "kind": "result",
+        "description": "Tế bào vừa ổn định (hoặc hồng cầu vừa vỡ) trong dung dịch đã chọn",
+        "data": {
+          "time": "Thời gian đến lúc ổn định (s)",
+          "inside": "Nồng độ chất tan trong tế bào lúc cuối (%)",
+          "outside": "Nồng độ dung dịch bên ngoài (%)",
+          "volume": "Thể tích tế bào so với ban đầu",
+          "burst": "1 nếu hồng cầu vỡ, 0 nếu không"
+        }
+      },
+      "prediction-correct": {
+        "kind": "goal",
+        "description": "Dự đoán của học sinh về tế bào trùng với kết quả thí nghiệm",
+        "data": {
+          "outside": "Nồng độ dung dịch bên ngoài (%)",
+          "plant": "1 nếu là tế bào thực vật, 0 nếu là hồng cầu"
+        }
+      }
+    },
+    "url": "/khuech-tan-tham-thau/1.0.0/index.html",
+    "thumbnailUrl": "/khuech-tan-tham-thau/1.0.0/thumb.png"
   },
   {
     "slug": "kim-loai-kiem-nuoc",
@@ -5151,6 +5300,72 @@
     },
     "url": "/luc-lo-ren-xo/1.0.0/index.html",
     "thumbnailUrl": "/luc-lo-ren-xo/1.0.0/thumb.png"
+  },
+  {
+    "slug": "luc-ma-sat",
+    "version": "1.0.0",
+    "title": "Lực ma sát",
+    "subject": "physics",
+    "grades": [
+      6
+    ],
+    "description": "Dùng lực kế kéo một khối gỗ theo phương ngang trên mặt kính, mặt gỗ, thảm hoặc giấy nhám; khối gỗ đặt mặt rộng, mặt hẹp hoặc đặt trên các con lăn. Tay kéo mạnh dần (2 N mỗi giây): khi khối gỗ còn đứng yên, lực ma sát nghỉ bằng đúng lực kéo; khi lực kéo vượt quá lực ma sát nghỉ cực đại μn·N thì khối gỗ chuyển động, sau đó được kéo đều nên số chỉ lực kế bằng lực ma sát trượt μt·N (hoặc lực ma sát lăn μl·N khi đặt trên con lăn). Áp lực N = P = 10·m. Hệ số dùng trong mô hình (giá trị điển hình, làm tròn) theo thứ tự μn; μt; μl: mặt kính 0,25; 0,2; 0,005; mặt gỗ 0,45; 0,35; 0,01; thảm 0,6; 0,5; 0,04; giấy nhám 0,8; 0,65; 0,03. Đồ thị cho thấy số chỉ lực kế theo thời gian. Học sinh đo rồi xếp các mặt theo lực ma sát trượt từ nhỏ đến lớn.",
+    "learningGoals": [
+      "Nhận biết lực ma sát nghỉ, lực ma sát trượt và lực ma sát lăn; lực ma sát nghỉ cân bằng với lực kéo khi vật còn đứng yên.",
+      "Nhận ra lực ma sát trượt phụ thuộc vào tính chất của mặt tiếp xúc (càng nhám càng lớn) và tăng tỉ lệ với áp lực, nhưng không phụ thuộc diện tích mặt tiếp xúc.",
+      "Thấy lực ma sát lăn nhỏ hơn lực ma sát trượt rất nhiều, giải thích vì sao dùng con lăn, bánh xe để di chuyển vật nặng.",
+      "Đọc đồ thị lực kéo theo thời gian: lực tăng đến lực ma sát nghỉ cực đại rồi giảm về lực ma sát trượt."
+    ],
+    "state": {
+      "surface": "Mặt tiếp xúc: kinh (mặt kính), go (mặt gỗ), tham (thảm), giay (giấy nhám)",
+      "support": "Cách đặt khối gỗ: wide (mặt rộng tiếp xúc), narrow (mặt hẹp tiếp xúc), rollers (đặt trên các con lăn)",
+      "mass": "Khối lượng khối gỗ (kg, 0,1 đến 1)",
+      "time": "Thời gian từ lúc bắt đầu kéo (s); 0 là chưa kéo, lớn nhất là lúc kéo xong đoạn đường 0,4 m",
+      "fKinh": "Lực ma sát trượt đo được gần nhất trên mặt kính (N), 0 nếu chưa đo",
+      "fGo": "Lực ma sát trượt đo được gần nhất trên mặt gỗ (N), 0 nếu chưa đo",
+      "fTham": "Lực ma sát trượt đo được gần nhất trên thảm (N), 0 nếu chưa đo",
+      "fGiay": "Lực ma sát trượt đo được gần nhất trên giấy nhám (N), 0 nếu chưa đo",
+      "rank1": "Mặt học sinh xếp có lực ma sát trượt nhỏ nhất (mã như surface, rỗng nếu chưa chọn)",
+      "rank2": "Mặt xếp thứ hai",
+      "rank3": "Mặt xếp thứ ba",
+      "rank4": "Mặt học sinh xếp có lực ma sát trượt lớn nhất",
+      "verdict": "Kết quả lần kiểm tra xếp hạng gần nhất: right, wrong, hoặc rỗng nếu chưa kiểm tra"
+    },
+    "events": {
+      "start-moving": {
+        "kind": "result",
+        "description": "Lực kéo vừa vượt quá giới hạn và khối gỗ bắt đầu chuyển động",
+        "data": {
+          "maxStatic": "Lực kéo lớn nhất mà khối gỗ còn đứng yên: lực ma sát nghỉ cực đại (N); khi đặt trên con lăn là lực ma sát lăn",
+          "moving": "Lực ma sát khi chuyển động: ma sát trượt, hoặc ma sát lăn khi đặt trên con lăn (N)",
+          "mass": "Khối lượng khối gỗ (kg)",
+          "normal": "Áp lực lên mặt tiếp xúc (N)",
+          "rollers": "1 nếu khối gỗ đặt trên con lăn, 0 nếu trượt"
+        }
+      },
+      "pull-again": {
+        "kind": "action",
+        "description": "Học sinh bấm nút kéo lại từ đầu",
+        "data": {}
+      },
+      "rank-check": {
+        "kind": "action",
+        "description": "Học sinh bấm kiểm tra thứ tự xếp các mặt theo lực ma sát trượt",
+        "data": {
+          "correct": "1 nếu xếp đúng, 0 nếu sai",
+          "measured": "Số mặt đã đo lực ma sát trượt (0 đến 4)"
+        }
+      },
+      "surfaces-ranked": {
+        "kind": "goal",
+        "description": "Học sinh xếp đúng bốn mặt theo lực ma sát trượt từ nhỏ đến lớn: kính, gỗ, thảm, giấy nhám",
+        "data": {
+          "measured": "Số mặt đã đo lực ma sát trượt trước khi xếp (0 đến 4)"
+        }
+      }
+    },
+    "url": "/luc-ma-sat/1.0.0/index.html",
+    "thumbnailUrl": "/luc-ma-sat/1.0.0/thumb.png"
   },
   {
     "slug": "luc-va-chuyen-dong",

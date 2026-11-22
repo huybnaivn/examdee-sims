@@ -1,0 +1,67 @@
+{
+  "slug": "khuech-tan-tham-thau",
+  "version": "1.0.0",
+  "title": "Khuếch tán và thẩm thấu",
+  "subject": "biology",
+  "grades": [8, 10],
+  "description": "Hai thí nghiệm. (1) Hai ngăn dung dịch cách nhau bởi một màng: học sinh chọn màng thấm (cho cả nước và chất tan đi qua) hoặc màng bán thấm (chỉ cho nước đi qua) và số hạt chất tan mỗi bên. Các hạt chất tan chuyển động hỗn loạn; qua màng thấm, chất tan khuếch tán từ nơi nồng độ cao sang nơi nồng độ thấp cho đến khi nồng độ hai bên bằng nhau. Qua màng bán thấm, nước thẩm thấu sang bên có nồng độ chất tan cao hơn, làm mực chất lỏng bên đó dâng lên, đến khi áp suất của cột chất lỏng cao hơn cân bằng với chênh lệch nồng độ. Mô hình minh hoạ: mỗi ngăn ban đầu 10 mL, nồng độ C = số hạt / thể tích; dòng nước từ trái sang phải J = 0,15·[(C phải − C trái) − 0,2·(V phải − V trái)] mL/s. (2) Một tế bào (hồng cầu hoặc tế bào thực vật, nồng độ chất tan bên trong 0,9 %) đặt trong dung dịch có nồng độ tuỳ chọn: môi trường đẳng trương thì tế bào giữ nguyên; nhược trương thì nước đi vào, hồng cầu trương lên và vỡ khi thể tích đạt 1,8 lần ban đầu (nồng độ ngoài từ 0,5 % trở xuống), còn tế bào thực vật trương nước nhưng thành tế bào giữ cho không vỡ; ưu trương thì nước đi ra, hồng cầu teo lại, tế bào thực vật co nguyên sinh. Học sinh dự đoán kết quả trước khi chạy.",
+  "learningGoals": [
+    "Phân biệt khuếch tán (chất tan đi từ nơi nồng độ cao đến nơi nồng độ thấp) với thẩm thấu (nước đi qua màng bán thấm sang nơi có nồng độ chất tan cao hơn).",
+    "Nhận ra khuếch tán qua màng thấm dừng lại khi nồng độ hai bên bằng nhau; các hạt vẫn chuyển động nhưng số hạt qua lại hai chiều như nhau.",
+    "Xác định môi trường đẳng trương, nhược trương, ưu trương so với tế bào và dự đoán chiều di chuyển của nước.",
+    "Giải thích vì sao hồng cầu vỡ trong nước cất còn tế bào thực vật thì không, và hiện tượng co nguyên sinh ở tế bào thực vật trong môi trường ưu trương."
+  ],
+  "state": {
+    "scene": "Thí nghiệm: membrane (hai dung dịch ngăn bởi một màng) hoặc cell (tế bào trong dung dịch)",
+    "membrane": "Loại màng: semi (bán thấm, chỉ cho nước qua) hoặc permeable (cho cả nước và chất tan qua)",
+    "left0": "Số hạt chất tan bên trái lúc đầu (0 đến 60)",
+    "right0": "Số hạt chất tan bên phải lúc đầu (0 đến 60)",
+    "cell": "Loại tế bào: rbc (hồng cầu) hoặc plant (tế bào thực vật)",
+    "outside": "Nồng độ chất tan của dung dịch bên ngoài tế bào (%, 0 đến 3); bên trong tế bào lúc đầu là 0,9 %",
+    "prediction": "Dự đoán của học sinh về tế bào: same (không đổi), swell (trương nước không vỡ), burst (trương rồi vỡ), shrink (mất nước, co lại); rỗng nếu chưa dự đoán",
+    "seed": "Hạt giống của bộ sinh số ngẫu nhiên (số nguyên 32 bit); mỗi lần bắt đầu lại, thí nghiệm màng chạy từ hạt giống này",
+    "rng": "Trạng thái hiện tại của bộ sinh số ngẫu nhiên (số nguyên 32 bit)",
+    "time": "Thời gian đã trôi qua trong thí nghiệm hiện tại (s)",
+    "nL": "Số hạt chất tan bên trái hiện tại",
+    "nR": "Số hạt chất tan bên phải hiện tại",
+    "vL": "Thể tích dung dịch bên trái (mL); tổng hai bên luôn là 20 mL",
+    "vR": "Thể tích dung dịch bên phải (mL)",
+    "equilibrium": "true khi thí nghiệm màng đã đạt cân bằng",
+    "eqTime": "Thời điểm đạt cân bằng (s), 0 nếu chưa đạt",
+    "volume": "Thể tích tế bào so với ban đầu (với tế bào thực vật là thể tích phần nguyên sinh chất); 1 là ban đầu",
+    "burst": "true nếu hồng cầu đã vỡ",
+    "cellDone": "true khi tế bào đã ổn định hoặc đã vỡ"
+  },
+  "events": {
+    "equilibrium": {
+      "kind": "result",
+      "description": "Thí nghiệm màng vừa đạt cân bằng: nước ngừng di chuyển và, với màng thấm, nồng độ hai bên xấp xỉ bằng nhau",
+      "data": {
+        "time": "Thời gian đến lúc cân bằng (s)",
+        "cLeft": "Nồng độ bên trái lúc cân bằng (hạt/mL)",
+        "cRight": "Nồng độ bên phải lúc cân bằng (hạt/mL)",
+        "vLeft": "Thể tích bên trái (mL)",
+        "vRight": "Thể tích bên phải (mL)"
+      }
+    },
+    "cell-settled": {
+      "kind": "result",
+      "description": "Tế bào vừa ổn định (hoặc hồng cầu vừa vỡ) trong dung dịch đã chọn",
+      "data": {
+        "time": "Thời gian đến lúc ổn định (s)",
+        "inside": "Nồng độ chất tan trong tế bào lúc cuối (%)",
+        "outside": "Nồng độ dung dịch bên ngoài (%)",
+        "volume": "Thể tích tế bào so với ban đầu",
+        "burst": "1 nếu hồng cầu vỡ, 0 nếu không"
+      }
+    },
+    "prediction-correct": {
+      "kind": "goal",
+      "description": "Dự đoán của học sinh về tế bào trùng với kết quả thí nghiệm",
+      "data": {
+        "outside": "Nồng độ dung dịch bên ngoài (%)",
+        "plant": "1 nếu là tế bào thực vật, 0 nếu là hồng cầu"
+      }
+    }
+  }
+}

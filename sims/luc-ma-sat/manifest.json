@@ -1,0 +1,62 @@
+{
+  "slug": "luc-ma-sat",
+  "version": "1.0.0",
+  "title": "Lực ma sát",
+  "subject": "physics",
+  "grades": [6],
+  "description": "Dùng lực kế kéo một khối gỗ theo phương ngang trên mặt kính, mặt gỗ, thảm hoặc giấy nhám; khối gỗ đặt mặt rộng, mặt hẹp hoặc đặt trên các con lăn. Tay kéo mạnh dần (2 N mỗi giây): khi khối gỗ còn đứng yên, lực ma sát nghỉ bằng đúng lực kéo; khi lực kéo vượt quá lực ma sát nghỉ cực đại μn·N thì khối gỗ chuyển động, sau đó được kéo đều nên số chỉ lực kế bằng lực ma sát trượt μt·N (hoặc lực ma sát lăn μl·N khi đặt trên con lăn). Áp lực N = P = 10·m. Hệ số dùng trong mô hình (giá trị điển hình, làm tròn) theo thứ tự μn; μt; μl: mặt kính 0,25; 0,2; 0,005; mặt gỗ 0,45; 0,35; 0,01; thảm 0,6; 0,5; 0,04; giấy nhám 0,8; 0,65; 0,03. Đồ thị cho thấy số chỉ lực kế theo thời gian. Học sinh đo rồi xếp các mặt theo lực ma sát trượt từ nhỏ đến lớn.",
+  "learningGoals": [
+    "Nhận biết lực ma sát nghỉ, lực ma sát trượt và lực ma sát lăn; lực ma sát nghỉ cân bằng với lực kéo khi vật còn đứng yên.",
+    "Nhận ra lực ma sát trượt phụ thuộc vào tính chất của mặt tiếp xúc (càng nhám càng lớn) và tăng tỉ lệ với áp lực, nhưng không phụ thuộc diện tích mặt tiếp xúc.",
+    "Thấy lực ma sát lăn nhỏ hơn lực ma sát trượt rất nhiều, giải thích vì sao dùng con lăn, bánh xe để di chuyển vật nặng.",
+    "Đọc đồ thị lực kéo theo thời gian: lực tăng đến lực ma sát nghỉ cực đại rồi giảm về lực ma sát trượt."
+  ],
+  "state": {
+    "surface": "Mặt tiếp xúc: kinh (mặt kính), go (mặt gỗ), tham (thảm), giay (giấy nhám)",
+    "support": "Cách đặt khối gỗ: wide (mặt rộng tiếp xúc), narrow (mặt hẹp tiếp xúc), rollers (đặt trên các con lăn)",
+    "mass": "Khối lượng khối gỗ (kg, 0,1 đến 1)",
+    "time": "Thời gian từ lúc bắt đầu kéo (s); 0 là chưa kéo, lớn nhất là lúc kéo xong đoạn đường 0,4 m",
+    "fKinh": "Lực ma sát trượt đo được gần nhất trên mặt kính (N), 0 nếu chưa đo",
+    "fGo": "Lực ma sát trượt đo được gần nhất trên mặt gỗ (N), 0 nếu chưa đo",
+    "fTham": "Lực ma sát trượt đo được gần nhất trên thảm (N), 0 nếu chưa đo",
+    "fGiay": "Lực ma sát trượt đo được gần nhất trên giấy nhám (N), 0 nếu chưa đo",
+    "rank1": "Mặt học sinh xếp có lực ma sát trượt nhỏ nhất (mã như surface, rỗng nếu chưa chọn)",
+    "rank2": "Mặt xếp thứ hai",
+    "rank3": "Mặt xếp thứ ba",
+    "rank4": "Mặt học sinh xếp có lực ma sát trượt lớn nhất",
+    "verdict": "Kết quả lần kiểm tra xếp hạng gần nhất: right, wrong, hoặc rỗng nếu chưa kiểm tra"
+  },
+  "events": {
+    "start-moving": {
+      "kind": "result",
+      "description": "Lực kéo vừa vượt quá giới hạn và khối gỗ bắt đầu chuyển động",
+      "data": {
+        "maxStatic": "Lực kéo lớn nhất mà khối gỗ còn đứng yên: lực ma sát nghỉ cực đại (N); khi đặt trên con lăn là lực ma sát lăn",
+        "moving": "Lực ma sát khi chuyển động: ma sát trượt, hoặc ma sát lăn khi đặt trên con lăn (N)",
+        "mass": "Khối lượng khối gỗ (kg)",
+        "normal": "Áp lực lên mặt tiếp xúc (N)",
+        "rollers": "1 nếu khối gỗ đặt trên con lăn, 0 nếu trượt"
+      }
+    },
+    "pull-again": {
+      "kind": "action",
+      "description": "Học sinh bấm nút kéo lại từ đầu",
+      "data": {}
+    },
+    "rank-check": {
+      "kind": "action",
+      "description": "Học sinh bấm kiểm tra thứ tự xếp các mặt theo lực ma sát trượt",
+      "data": {
+        "correct": "1 nếu xếp đúng, 0 nếu sai",
+        "measured": "Số mặt đã đo lực ma sát trượt (0 đến 4)"
+      }
+    },
+    "surfaces-ranked": {
+      "kind": "goal",
+      "description": "Học sinh xếp đúng bốn mặt theo lực ma sát trượt từ nhỏ đến lớn: kính, gỗ, thảm, giấy nhám",
+      "data": {
+        "measured": "Số mặt đã đo lực ma sát trượt trước khi xếp (0 đến 4)"
+      }
+    }
+  }
+}

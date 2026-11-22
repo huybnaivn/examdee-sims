@@ -1,0 +1,72 @@
+{
+  "slug": "he-mien-dich",
+  "version": "1.0.0",
+  "title": "Hệ miễn dịch và vaccine",
+  "subject": "biology",
+  "grades": [8, 11],
+  "description": "Hai phần. (1) Đồ thị nồng độ kháng thể trong máu theo thời gian (100 ngày) sau mỗi lần cơ thể tiếp xúc với kháng nguyên, do tiêm vaccine hoặc do nhiễm mầm bệnh; học sinh thêm tối đa 4 lần tiếp xúc. Mô hình minh hoạ (đơn vị tương đối U, không phải số liệu của một bệnh cụ thể): đáp ứng miễn dịch nguyên phát (chưa có tế bào nhớ) bắt đầu sau 7 ngày, đạt đỉnh 1 U vào ngày thứ 14 sau khi tiếp xúc rồi giảm dần; đáp ứng thứ phát (đã có tế bào nhớ từ lần tiếp xúc trước ít nhất 7 ngày) bắt đầu sau 2 ngày, đạt đỉnh 10 U vào ngày thứ 5 và giảm chậm hơn. Nồng độ trên đồ thị là tổng của các đáp ứng. Mầm bệnh gây bệnh từ ngày thứ 3 sau khi nhiễm cho đến khi kháng thể đạt mức đủ bảo vệ 0,5 U; nếu kháng thể đạt mức này sớm hơn thì không bị bệnh. Vaccine không gây bệnh nhưng vẫn tạo tế bào nhớ. (2) Miễn dịch cộng đồng: lưới 40 × 40 người, mỗi người tiếp xúc với 8 người xung quanh; một tỉ lệ người đã tiêm vaccine (coi như miễn dịch hoàn toàn), 4 người đầu tiên mang bệnh. Người bệnh lây trong 5 ngày, mỗi ngày lây cho mỗi người chưa tiêm ở ô bên cạnh với xác suất 10 %. Dịch được coi là bị chặn khi không quá 2 % số người từng nhiễm; với mô hình này dịch thường bị chặn khi khoảng 45 % đến 60 % số người đã tiêm, tuỳ cộng đồng (hạt giống). Cùng hạt giống thì kết quả lặp lại y hệt, và tăng tỉ lệ tiêm không bao giờ làm tăng số người nhiễm.",
+  "learningGoals": [
+    "So sánh đáp ứng miễn dịch nguyên phát và thứ phát: nhờ tế bào nhớ, lần sau kháng thể được tạo ra nhanh hơn và nhiều hơn.",
+    "Giải thích cơ chế phòng bệnh của vaccine: tạo tế bào nhớ mà không phải mắc bệnh, nên khi nhiễm mầm bệnh thật cơ thể đáp ứng kịp thời.",
+    "Nhận ra tỉ lệ tiêm vaccine càng cao thì dịch lây lan càng ít, và khi đủ cao thì cả người chưa tiêm cũng được bảo vệ (miễn dịch cộng đồng).",
+    "Tìm bằng thực nghiệm tỉ lệ tiêm vaccine thấp nhất đủ để chặn một ổ dịch trong mô hình."
+  ],
+  "state": {
+    "view": "Phần đang xem: antibody (kháng thể sau mỗi lần tiếp xúc kháng nguyên) hoặc herd (miễn dịch cộng đồng)",
+    "exposures": "Danh sách các lần tiếp xúc kháng nguyên, tối đa 4, xếp theo ngày; mỗi phần tử là { t: ngày (0 đến 100), kind: \"vaccine\" hoặc \"pathogen\" (mầm bệnh) }",
+    "exposeDay": "Ngày của lần tiếp xúc sắp thêm (0 đến 90)",
+    "exposeKind": "Cách tiếp xúc sắp thêm: vaccine hoặc pathogen (nhiễm mầm bệnh)",
+    "time": "Ngày đang hiển thị trên đồ thị kháng thể (0 đến 100); 100 là toàn bộ đồ thị",
+    "coverage": "Tỉ lệ người đã tiêm vaccine trong cộng đồng (%, 0 đến 100, bước 5)",
+    "seed": "Hạt giống của cộng đồng (số nguyên 32 bit): quyết định ai được tiêm, ca bệnh đầu tiên và các lần lây",
+    "day": "Ngày đang hiển thị của đợt dịch; lớn hơn ngày dịch dừng nghĩa là xem kết quả cuối cùng"
+  },
+  "events": {
+    "expose": {
+      "kind": "action",
+      "description": "Học sinh thêm một lần tiêm vaccine hoặc nhiễm mầm bệnh vào đồ thị",
+      "data": {}
+    },
+    "clear-exposures": {
+      "kind": "action",
+      "description": "Học sinh xoá hết các lần tiếp xúc kháng nguyên",
+      "data": {}
+    },
+    "new-population": {
+      "kind": "action",
+      "description": "Học sinh đổi sang một cộng đồng khác (hạt giống mới)",
+      "data": {}
+    },
+    "immune-response": {
+      "kind": "result",
+      "description": "Đáp ứng miễn dịch của lần tiếp xúc kháng nguyên vừa thêm",
+      "data": {
+        "day": "Ngày tiếp xúc",
+        "vaccine": "1 nếu là tiêm vaccine, 0 nếu là nhiễm mầm bệnh",
+        "secondary": "1 nếu là đáp ứng thứ phát (đã có tế bào nhớ), 0 nếu là nguyên phát",
+        "peak": "Nồng độ kháng thể vào ngày đáp ứng này đạt đỉnh (U)",
+        "timeToPeak": "Số ngày từ lúc tiếp xúc đến lúc đạt đỉnh",
+        "illnessDays": "Số ngày bị bệnh do lần tiếp xúc này (0 nếu là vaccine hoặc kháng thể tạo ra kịp thời)"
+      }
+    },
+    "spread-finished": {
+      "kind": "result",
+      "description": "Một đợt dịch trong cộng đồng vừa chạy xong",
+      "data": {
+        "coverage": "Tỉ lệ người đã tiêm vaccine (%)",
+        "infectedFraction": "Tỉ lệ người từng nhiễm trong cả đợt dịch (0 đến 1)",
+        "infected": "Số người từng nhiễm (trong 1600 người)",
+        "days": "Số ngày đến khi dịch dừng"
+      }
+    },
+    "outbreak-stopped": {
+      "kind": "goal",
+      "description": "Học sinh chọn được tỉ lệ tiêm vaccine chặn được ổ dịch (không quá 2 % số người từng nhiễm)",
+      "data": {
+        "coverage": "Tỉ lệ người đã tiêm vaccine (%)",
+        "infectedFraction": "Tỉ lệ người từng nhiễm (0 đến 1)",
+        "minimal": "1 nếu đây là tỉ lệ thấp nhất (theo bước 5 %) chặn được ổ dịch của cộng đồng này, 0 nếu thấp hơn vẫn chặn được"
+      }
+    }
+  }
+}
