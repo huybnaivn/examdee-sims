@@ -1,9 +1,12 @@
 {
   "slug": "chon-loc-tu-nhien",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Chọn lọc tự nhiên",
   "subject": "biology",
-  "grades": [12],
+  "grades": [
+    12
+  ],
   "description": "Một quần thể con mồi có màu lông di truyền với ba biến dị: sáng, trung bình và tối, sống trên nền môi trường do học sinh chọn. Mỗi thế hệ, kẻ săn mồi bắt con mồi; con nào khác màu nền càng nhiều càng dễ bị bắt. Những cá thể sống sót sinh sản tạo thế hệ sau, con thừa hưởng màu của bố mẹ và đôi khi bị đột biến sang màu khác. Điều chỉnh áp lực chọn lọc, tần số đột biến và số cá thể tối đa; quan sát các chấm trên nền và đồ thị tần số các biến dị qua các thế hệ.",
   "learningGoals": [
     "Giải thích chọn lọc tự nhiên: biến dị di truyền, sinh sản, và sự sống sót khác nhau của các kiểu hình làm thay đổi tần số kiểu hình trong quần thể qua các thế hệ.",

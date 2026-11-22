@@ -1,9 +1,13 @@
 {
   "slug": "truc-doi-xung",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Hình có trục đối xứng",
   "subject": "math",
-  "grades": [3, 6],
+  "grades": [
+    3,
+    6
+  ],
   "description": "Ba hoạt động trên lưới ô vuông 8 × 8 và các hình quen thuộc. Vẽ hình có trục đối xứng: học sinh tô các ô ở một bên trục (trục dọc, trục ngang hoặc trục chéo), mô phỏng vẽ phần đối xứng để được cả hình. Đếm số trục đối xứng: với chữ A, H, E, N, hình vuông, hình chữ nhật, tam giác đều, hình thang cân, hình thoi, lục giác đều, hình bình hành và hình tròn, học sinh chọn số trục đối xứng rồi xem các trục được vẽ ra. Vẽ hình có tâm đối xứng (lớp 6): mỗi ô được lấy đối xứng qua tâm O của lưới. Mô phỏng luôn cho biết hình em tô đối xứng qua trục nào, qua tâm hay không.",
   "learningGoals": [
     "Nhận biết trục đối xứng: gấp hình theo trục thì hai nửa chồng khít lên nhau; mỗi điểm và điểm đối xứng với nó cách đều trục.",

@@ -1,6 +1,7 @@
 {
   "slug": "phong-xa",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Phóng xạ và chu kì bán rã",
   "subject": "physics",
   "grades": [

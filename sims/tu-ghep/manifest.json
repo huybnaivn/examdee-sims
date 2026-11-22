@@ -1,6 +1,7 @@
 {
   "slug": "tu-ghep",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Ghép tụ điện nối tiếp và song song",
   "subject": "physics",
   "grades": [

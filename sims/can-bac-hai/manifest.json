@@ -1,9 +1,14 @@
 {
   "slug": "can-bac-hai",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Căn bậc hai và số vô tỉ",
   "subject": "math",
-  "grades": [7, 8, 9],
+  "grades": [
+    7,
+    8,
+    9
+  ],
   "description": "Hình vuông có diện tích S thì cạnh là √S. Với số chính phương, cạnh là số tự nhiên; với số khác, √S nằm giữa hai số tự nhiên liên tiếp và được kẹp dần giữa hai số thập phân bằng cách thử cạnh x hoặc chia đôi khoảng (so sánh x² với S), cho đến hai chữ số thập phân. Xem √2 là cạnh của hình vuông diện tích 2 (đường chéo hình vuông cạnh 1) và đặt nó lên trục số bằng compa; đưa thừa số ra ngoài dấu căn √(a²b) = a√b.",
   "learningGoals": [
     "Hiểu căn bậc hai số học của số không âm S là số không âm có bình phương bằng S, là cạnh của hình vuông có diện tích S; số âm không có căn bậc hai.",

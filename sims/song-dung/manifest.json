@@ -1,6 +1,7 @@
 {
   "slug": "song-dung",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Sóng trên dây và sóng dừng",
   "subject": "physics",
   "grades": [

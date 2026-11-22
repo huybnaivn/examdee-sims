@@ -1,9 +1,13 @@
 {
   "slug": "rong-roc",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Ròng rọc và máy cơ đơn giản",
   "subject": "physics",
-  "grades": [8, 10],
+  "grades": [
+    8,
+    10
+  ],
   "description": "Nâng một vật bằng ròng rọc cố định, một ròng rọc động hoặc palăng có 2 hay 3 ròng rọc động. Kéo đầu dây (kéo trên hình, dùng thanh trượt hoặc nhấn Chạy) để thấy vật đi lên; so sánh lực kéo với trọng lượng, chiều dài dây phải kéo với độ cao của vật, công toàn phần với công có ích. Có thể thêm khối lượng của ròng rọc động và ma sát ở trục để thấy hiệu suất giảm.",
   "learningGoals": [
     "Ròng rọc cố định chỉ đổi hướng lực: F = P, s = h.",

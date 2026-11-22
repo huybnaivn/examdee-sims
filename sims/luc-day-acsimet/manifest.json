@@ -1,9 +1,12 @@
 {
   "slug": "luc-day-acsimet",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Lực đẩy Ác-si-mét",
   "subject": "physics",
-  "grades": [8],
+  "grades": [
+    8
+  ],
   "description": "Thả một vật vào bình chất lỏng. Thay đổi khối lượng, thể tích của vật và loại chất lỏng (nước, dầu, nước muối, thủy ngân hoặc tự chọn khối lượng riêng) để xem vật nổi, lơ lửng hay chìm, phần thể tích chìm, trọng lượng, lực đẩy Ác-si-mét và mực chất lỏng dâng lên đúng bằng thể tích bị chiếm chỗ.",
   "learningGoals": [
     "Vận dụng công thức F_A = d·V, trong đó d = 10·D là trọng lượng riêng của chất lỏng, V là thể tích phần chất lỏng bị vật chiếm chỗ.",

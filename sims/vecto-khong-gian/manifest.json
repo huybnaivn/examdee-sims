@@ -1,9 +1,12 @@
 {
   "slug": "vecto-khong-gian",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Vectơ và tọa độ trong không gian Oxyz",
   "subject": "math",
-  "grades": [12],
+  "grades": [
+    12
+  ],
   "description": "Hệ trục tọa độ Oxyz xoay được, với hai vectơ a và b chung gốc O chỉnh bằng thanh trượt tọa độ. Sim vẽ tổng a + b theo quy tắc hình bình hành, hiệu a − b, tính tích vô hướng, độ dài và góc giữa hai vectơ theo biểu thức tọa độ; phần mở rộng vẽ tích có hướng [a, b] vuông góc với cả hai vectơ. Có thể hiện điểm A (đầu mút của a) cùng hình chiếu vuông góc của nó trên ba mặt phẳng tọa độ.",
   "learningGoals": [
     "Đọc tọa độ của vectơ và của điểm trong không gian Oxyz; hình chiếu của A(x; y; z) trên (Oxy), (Oyz), (Oxz) lần lượt là (x; y; 0), (0; y; z), (x; 0; z).",

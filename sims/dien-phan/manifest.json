@@ -1,9 +1,12 @@
 {
   "slug": "dien-phan",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Điện phân dung dịch",
   "subject": "chemistry",
-  "grades": [12],
+  "grades": [
+    12
+  ],
   "description": "Điện phân 200 mL dung dịch CuSO₄ (điện cực trơ hoặc anode bằng đồng) hoặc dung dịch NaCl (có hoặc không có màng ngăn). Đặt nồng độ, cường độ dòng điện và thời gian rồi chạy: các ion di chuyển về điện cực trái dấu, đồng bám vào cathode, khí thoát ra thành bọt, màu xanh của dung dịch nhạt dần khi Cu²⁺ bị điện phân. Sim tính điện lượng Q = I·t, khối lượng kim loại theo m = A·I·t/(n·F) với F = 96 485 C/mol và thể tích khí ở điều kiện chuẩn (25 °C, 1 bar) theo V = n × 24,79 L/mol; khi ion điện phân trước đã hết thì đến lượt nước. Không có màng ngăn thì Cl₂ được coi là phản ứng hết với NaOH tạo nước Javel. Hình minh họa, không theo tỉ lệ.",
   "learningGoals": [
     "Xác định chất bị khử ở cathode và chất bị oxi hóa ở anode: Cu²⁺ bị khử trước nước; Na⁺ không bị khử trong dung dịch, nước bị khử thay; Cl⁻ bị oxi hóa trước nước; SO₄²⁻ không bị oxi hóa, nước bị oxi hóa thay.",

@@ -1,9 +1,12 @@
 {
   "slug": "ti-so-luong-giac",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Tỉ số lượng giác của góc nhọn",
   "subject": "math",
-  "grades": [9],
+  "grades": [
+    9
+  ],
   "description": "Tam giác ABC vuông tại A với góc nhọn B = α. Kéo đỉnh C để đổi góc, kéo đỉnh B để phóng to, thu nhỏ tam giác. Cạnh đối, cạnh kề, cạnh huyền được tô màu theo góc đang xét; sin, cos, tan, cot được tính từ độ dài các cạnh. Tam giác đồng dạng nhỏ hơn cho cùng tỉ số. Xét góc C = 90° − α để thấy quan hệ giữa hai góc phụ nhau, và làm nhiệm vụ tìm góc khi biết một tỉ số lượng giác.",
   "learningGoals": [
     "Xác định cạnh đối, cạnh kề, cạnh huyền đối với một góc nhọn và viết sin α = đối/huyền, cos α = kề/huyền, tan α = đối/kề, cot α = kề/đối.",

@@ -1,9 +1,14 @@
 {
   "slug": "nhan-chia-phan-so",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Nhân, chia phân số",
   "subject": "math",
-  "grades": [4, 5, 6],
+  "grades": [
+    4,
+    5,
+    6
+  ],
   "description": "Chọn hai phân số (tử số 0 đến 10, mẫu số 1 đến 10) và phép nhân hoặc phép chia. Phép nhân được vẽ bằng mô hình diện tích: mỗi hình vuông đơn vị chia thành các cột theo mẫu số thứ nhất và các hàng theo mẫu số thứ hai, phần chồng lên nhau được tô đậm và có số ô bằng tử nhân tử trên tổng số ô bằng mẫu nhân mẫu; khi phân số lớn hơn 1, hình chữ nhật kéo sang hình vuông đơn vị bên cạnh. Phép chia được vẽ bằng băng giấy: số chia đặt nối tiếp nhau dọc theo số bị chia để đếm xem chứa được bao nhiêu lần, rồi dẫn đến quy tắc nhân với phân số đảo ngược. Kết quả được rút gọn về phân số tối giản và có thể viết thành hỗn số. Phép chia cho 0 không được thực hiện. Chế độ luyện tập cho chọn kết quả đúng trong sáu đáp án.",
   "learningGoals": [
     "Hiểu quy tắc nhân hai phân số: lấy tử số nhân tử số, mẫu số nhân mẫu số, qua mô hình diện tích.",

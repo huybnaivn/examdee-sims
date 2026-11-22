@@ -1,9 +1,12 @@
 {
   "slug": "ten-lua",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Chuyển động bằng phản lực",
   "subject": "physics",
-  "grades": [10],
+  "grades": [
+    10
+  ],
   "description": "Phóng một tên lửa phụt khí với tốc độ khí phụt và lưu lượng khí chọn trước, trong không gian không trọng lực hoặc từ mặt đất. Quan sát vận tốc tăng dần so với công thức Tsiolkovsky, động lượng của tên lửa và của khí phụt ra, lượng nhiên liệu còn lại, lực đẩy so với trọng lượng. Chế độ thứ hai là súng giật lùi khi bắn: bảo toàn động lượng m₁v₁ + m₂v₂ = 0.",
   "learningGoals": [
     "Giải thích chuyển động bằng phản lực bằng định luật bảo toàn động lượng: hệ ban đầu đứng yên thì m₁v₁ + m₂v₂ = 0, hai phần chuyển động ngược chiều nhau.",

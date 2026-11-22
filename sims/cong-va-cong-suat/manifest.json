@@ -1,9 +1,13 @@
 {
   "slug": "cong-va-cong-suat",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Công và công suất",
   "subject": "physics",
-  "grades": [8, 10],
+  "grades": [
+    8,
+    10
+  ],
   "description": "Hai máy (người, tời điện, động cơ 1 mã lực, cần cẩu hoặc động cơ tự chọn công suất) cùng nâng một vật lên cao hoặc cùng kéo một thùng trên sàn với góc α tùy chọn. Quan sát lực, độ dịch chuyển, góc giữa chúng, công A = F·s·cosα của từng lực (kể cả công bằng 0 và công âm), thời gian mỗi máy cần và công suất P = A/t; hiệu suất H cho biết công có ích chỉ là một phần của công toàn phần. Đặt thời hạn và chọn máy 1 sao cho làm xong kịp.",
   "learningGoals": [
     "Tính công cơ học A = F·s·cosα; nhận ra công bằng 0 khi lực vuông góc với độ dịch chuyển (α = 90°) và công âm khi α > 90° (lực ma sát, trọng lực khi nâng vật).",

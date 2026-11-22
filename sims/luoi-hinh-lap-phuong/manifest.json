@@ -1,9 +1,13 @@
 {
   "slug": "luoi-hinh-lap-phuong",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Hình khai triển của hình lập phương",
   "subject": "math",
-  "grades": [6, 7],
+  "grades": [
+    6,
+    7
+  ],
   "description": "Gấp một hình khai triển thành hình lập phương rồi mở ra, có hoạt hình và xoay được; hai mặt đối diện tô cùng màu. Xem đủ 11 hình khai triển khác nhau của hình lập phương. Ở phần thử thách, học sinh tự xếp sáu ô vuông trên lưới, sim kiểm tra xem có gấp được thành hình lập phương không, chỉ ra các mặt đối diện hoặc lí do không gấp được.",
   "learningGoals": [
     "Nhận biết hình khai triển của hình lập phương: sáu hình vuông bằng nhau, gấp theo cạnh chung thành sáu mặt.",

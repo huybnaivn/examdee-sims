@@ -1,9 +1,12 @@
 {
   "slug": "bong-toi-nhat-thuc",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Bóng tối, nhật thực và nguyệt thực",
   "subject": "physics",
-  "grades": [7],
+  "grades": [
+    7
+  ],
   "description": "Phần 1: một nguồn sáng hẹp hoặc rộng (bóng đèn) chiếu vào vật cản đặt trước màn chắn. Kéo nguồn sáng và vật cản để thấy vùng bóng tối và bóng nửa tối trên màn thay đổi; các tia sáng đi qua mép vật cho biết ranh giới các vùng. Phần 2: Mặt Trời, Trái Đất và Mặt Trăng (không đúng tỉ lệ); kéo Mặt Trăng trên quỹ đạo để tạo nhật thực và nguyệt thực toàn phần hoặc một phần.",
   "learningGoals": [
     "Ánh sáng truyền theo đường thẳng nên sau vật cản có vùng không nhận được ánh sáng.",
@@ -34,17 +37,23 @@
     "moon-moved": {
       "kind": "action",
       "description": "Học sinh kéo và thả Mặt Trăng trên quỹ đạo",
-      "data": { "moonAngle": "Vị trí Mặt Trăng (độ)" }
+      "data": {
+        "moonAngle": "Vị trí Mặt Trăng (độ)"
+      }
     },
     "total-solar-eclipse": {
       "kind": "goal",
       "description": "Học sinh đặt Mặt Trăng sao cho có nhật thực toàn phần (vùng bóng tối của Mặt Trăng rơi lên Trái Đất)",
-      "data": { "moonAngle": "Vị trí Mặt Trăng (độ)" }
+      "data": {
+        "moonAngle": "Vị trí Mặt Trăng (độ)"
+      }
     },
     "total-lunar-eclipse": {
       "kind": "goal",
       "description": "Học sinh đặt Mặt Trăng sao cho có nguyệt thực toàn phần (Mặt Trăng nằm hẳn trong bóng tối của Trái Đất)",
-      "data": { "moonAngle": "Vị trí Mặt Trăng (độ)" }
+      "data": {
+        "moonAngle": "Vị trí Mặt Trăng (độ)"
+      }
     }
   }
 }

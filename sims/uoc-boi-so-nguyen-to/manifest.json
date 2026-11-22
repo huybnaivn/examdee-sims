@@ -1,9 +1,12 @@
 {
   "slug": "uoc-boi-so-nguyen-to",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Ước, bội, số nguyên tố, ƯCLN và BCNN",
   "subject": "math",
-  "grades": [6],
+  "grades": [
+    6
+  ],
   "description": "Bốn hoạt động về số tự nhiên: xem sàng Ơ-ra-tô-xten gạch dần các bội của 2, 3, 5, 7 trên bảng 1 đến 100 để còn lại 25 số nguyên tố; phân tích một số ra thừa số nguyên tố bằng sơ đồ cây; tìm ƯCLN và BCNN của hai số bằng phân tích ra thừa số nguyên tố, bằng cách liệt kê ước và bội, hoặc bằng thuật toán Ơ-clít; và câu đố nhận biết số nguyên tố, hợp số.",
   "learningGoals": [
     "Nhận biết số nguyên tố (chỉ có hai ước 1 và chính nó) và hợp số (có nhiều hơn hai ước); số 0 và 1 không là số nguyên tố, cũng không là hợp số.",

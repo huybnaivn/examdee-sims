@@ -1,9 +1,13 @@
 {
   "slug": "nguyen-phan-giam-phan",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Nguyên phân và giảm phân",
   "subject": "biology",
-  "grades": [9, 10],
+  "grades": [
+    9,
+    10
+  ],
   "description": "Một tế bào có bộ NST 2n = 4, 6 hoặc 8 (mỗi cặp NST tương đồng một màu, đậm là NST từ mẹ, nhạt là NST từ bố) đi qua từng kì của nguyên phân (6 bước, gồm kì trung gian trước và sau khi NST nhân đôi) hoặc giảm phân (10 bước). Có thể bấm từng bước hoặc cho chạy. Số NST, trạng thái đơn/kép, số chromatid và số tâm động trong mỗi tế bào được đếm trên chính các tế bào vẽ trong hình (NST đơn tính 0 chromatid). Ở kì giữa I, mỗi cặp NST kép tương đồng xếp ngẫu nhiên về một phía; có thể bật trao đổi chéo ở cặp NST lớn nhất. Nguyên phân tạo 2 tế bào con có 2n NST; giảm phân tạo 4 tế bào con có n NST, với 2ⁿ loại giao tử khi không có trao đổi chéo. Chế độ câu hỏi: học sinh nhập số NST mỗi tế bào bằng nút − / + và chọn đơn hay kép.",
   "learningGoals": [
     "Mô tả diễn biến của NST qua các kì của nguyên phân và giảm phân.",

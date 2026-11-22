@@ -1,9 +1,13 @@
 {
   "slug": "lap-mach-dien",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Lắp mạch điện đơn giản",
   "subject": "physics",
-  "grades": [7, 9],
+  "grades": [
+    7,
+    9
+  ],
   "description": "Lắp mạch điện trên một lưới bằng pin, công tắc, bóng đèn, ampe kế, vôn kế và dây nối. Mô phỏng giải mạch (các đèn mắc nối tiếp, song song hoặc hỗn hợp), cho biết đèn nào sáng và sáng mạnh hay yếu, số chỉ của ampe kế và vôn kế, và cảnh báo khi đoản mạch, khi ampe kế mắc song song hoặc vôn kế mắc nối tiếp. Có các nhiệm vụ lắp mạch theo yêu cầu.",
   "learningGoals": [
     "Mạch điện kín gồm nguồn điện, dây nối, công tắc và vật tiêu thụ điện; khi công tắc mở thì mạch hở và không có dòng điện.",
@@ -31,7 +35,9 @@
     "preset": {
       "kind": "action",
       "description": "Học sinh chọn một mạch mẫu hoặc xóa hết lưới",
-      "data": { "parts": "Số linh kiện trên lưới" }
+      "data": {
+        "parts": "Số linh kiện trên lưới"
+      }
     },
     "circuit-closed": {
       "kind": "result",
@@ -46,7 +52,9 @@
     "task-done": {
       "kind": "goal",
       "description": "Học sinh lắp đúng mạch theo nhiệm vụ đang chọn",
-      "data": { "task": "Số thứ tự nhiệm vụ: 1 pin–công tắc–một đèn, 2 hai đèn nối tiếp, 3 hai đèn song song, 4 đo I và U của đèn, 5 mạch hỗn hợp" }
+      "data": {
+        "task": "Số thứ tự nhiệm vụ: 1 pin–công tắc–một đèn, 2 hai đèn nối tiếp, 3 hai đèn song song, 4 đo I và U của đèn, 5 mạch hỗn hợp"
+      }
     }
   }
 }

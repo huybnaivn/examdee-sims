@@ -1,9 +1,13 @@
 {
   "slug": "nhac-cu-va-am",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Nhạc cụ: dây đàn và ống sáo",
   "subject": "physics",
-  "grades": [7, 11],
+  "grades": [
+    7,
+    11
+  ],
   "description": "Một dây đàn thép hai đầu cố định và một ống sáo (hai đầu hở hoặc một đầu kín). Thay đổi chiều dài, lực căng, đường kính dây hoặc chiều dài cột khí để xem tần số âm cơ bản, các họa âm dưới dạng hình ảnh sóng dừng và nốt nhạc gần nhất (La4 = 440 Hz). Có thể bấm nút để nghe âm và thử lên dây đúng một nốt cho trước. Âm trong không khí truyền với tốc độ 340 m/s, bỏ qua hiệu chỉnh đầu ống.",
   "learningGoals": [
     "Dây càng ngắn, càng căng, càng mảnh thì âm phát ra càng cao: f = (k/2L)·√(T/μ).",

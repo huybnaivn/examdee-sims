@@ -1,6 +1,7 @@
 {
   "slug": "nhan-biet-chat",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Nhận biết dung dịch bằng thuốc thử",
   "subject": "chemistry",
   "grades": [

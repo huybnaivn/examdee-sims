@@ -1,9 +1,13 @@
 {
   "slug": "dien-tro-day-dan",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Điện trở của dây dẫn",
   "subject": "physics",
-  "grades": [9, 11],
+  "grades": [
+    9,
+    11
+  ],
   "description": "Một dây dẫn quấn trên bảng, mắc với nguồn điện và ampe kế. Thay đổi chiều dài, tiết diện và chất làm dây (đồng, nhôm, sắt, nicrom, constantan) để thấy điện trở R = ρ·l/S và cường độ dòng điện I = U/R thay đổi; có thể tính đến nhiệt độ của dây theo R = R₀(1 + αΔt).",
   "learningGoals": [
     "Điện trở của dây dẫn tỉ lệ thuận với chiều dài l và tỉ lệ nghịch với tiết diện S của dây.",

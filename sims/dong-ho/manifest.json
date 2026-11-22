@@ -1,9 +1,13 @@
 {
   "slug": "dong-ho",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Xem đồng hồ",
   "subject": "math",
-  "grades": [2, 3],
+  "grades": [
+    2,
+    3
+  ],
   "description": "Đồng hồ kim có kim giờ và kim phút kéo được (kim phút quay qua số 12 thì kim giờ cũng nhích theo), kèm đồng hồ điện tử. Ba hoạt động: đọc giờ bằng lời (\"7 giờ 15 phút\", \"8 giờ kém 15 phút\"), quay kim đúng giờ cho trước, và tính thời gian đã trôi qua giữa hai thời điểm.",
   "learningGoals": [
     "Đọc giờ trên đồng hồ kim: kim ngắn chỉ giờ, kim dài chỉ phút; đọc giờ kém, giờ rưỡi.",

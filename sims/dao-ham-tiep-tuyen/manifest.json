@@ -1,6 +1,7 @@
 {
   "slug": "dao-ham-tiep-tuyen",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Đạo hàm và tiếp tuyến",
   "subject": "math",
   "grades": [

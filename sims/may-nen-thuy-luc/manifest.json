@@ -1,9 +1,13 @@
 {
   "slug": "may-nen-thuy-luc",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Máy nén thủy lực và nguyên lí Pa-xcan",
   "subject": "physics",
-  "grades": [8, 10],
+  "grades": [
+    8,
+    10
+  ],
   "description": "Một máy nén (kích) thủy lực gồm pít-tông nhỏ và pít-tông lớn nối với nhau bằng chất lỏng. Chọn lực tay, tiết diện hai pít-tông và vật cần nâng (ô tô, thùng hàng, xe máy), rồi kéo hoặc ấn pít-tông nhỏ nhiều lần để nâng vật lên 4 cm. Quan sát áp suất truyền nguyên vẹn, lực nâng, quãng đường hai pít-tông dịch chuyển và công ở hai đầu.",
   "learningGoals": [
     "Phát biểu nguyên lí Pa-xcan: áp suất tác dụng lên chất lỏng được truyền nguyên vẹn theo mọi hướng, p = F₁/S₁ = F₂/S₂.",

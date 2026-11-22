@@ -1,9 +1,13 @@
 {
   "slug": "he-phuong-trinh",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Hệ hai phương trình bậc nhất hai ẩn",
   "subject": "math",
-  "grades": [9, 10],
+  "grades": [
+    9,
+    10
+  ],
   "description": "Hai phương trình a₁x + b₁y = c₁ và a₂x + b₂y = c₂ được vẽ thành hai đường thẳng d₁, d₂ trên mặt phẳng tọa độ. Đổi các hệ số để thấy hai đường thẳng cắt nhau, song song hoặc trùng nhau; mô phỏng đánh dấu giao điểm, tính các định thức D, Dx, Dy và kết luận hệ có nghiệm duy nhất, vô nghiệm hay vô số nghiệm.",
   "learningGoals": [
     "Hiểu nghiệm của hệ là tọa độ giao điểm của hai đường thẳng biểu diễn hai phương trình.",

@@ -1,6 +1,7 @@
 {
   "slug": "do-goc",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Góc và thước đo góc",
   "subject": "math",
   "grades": [

@@ -1,9 +1,13 @@
 {
   "slug": "khoi-luong-rieng",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Khối lượng riêng",
   "subject": "physics",
-  "grades": [6, 8],
+  "grades": [
+    6,
+    8
+  ],
   "description": "Chọn một trong chín vật được sơn cùng màu (làm bằng sắt, nhôm, đá, nhựa hoặc gỗ, có nhiều kích thước). Cân vật để biết khối lượng, đo thể tích bằng bình chia độ (V = V₂ − V₁) hoặc bằng bình tràn, tính khối lượng riêng D = m/V rồi đối chiếu bảng khối lượng riêng để nhận biết chất làm vật. Bảng kết quả cho thấy các vật cùng chất, khác kích thước có cùng khối lượng riêng.",
   "learningGoals": [
     "Đo khối lượng bằng cân và đo thể tích vật rắn không thấm nước bằng bình chia độ hoặc bình tràn.",
@@ -23,7 +27,9 @@
     "object-weighed": {
       "kind": "action",
       "description": "Học sinh đặt vật lên cân",
-      "data": { "mass": "Khối lượng cân chỉ (g)" }
+      "data": {
+        "mass": "Khối lượng cân chỉ (g)"
+      }
     },
     "density-measured": {
       "kind": "result",
@@ -38,12 +44,16 @@
     "material-guessed": {
       "kind": "action",
       "description": "Học sinh bấm Kiểm tra chất mình đoán",
-      "data": { "correct": "1 nếu đoán đúng, 0 nếu sai" }
+      "data": {
+        "correct": "1 nếu đoán đúng, 0 nếu sai"
+      }
     },
     "material-identified": {
       "kind": "goal",
       "description": "Học sinh nhận biết đúng chất làm vật từ khối lượng riêng đo được",
-      "data": { "density": "Khối lượng riêng đo được (kg/m³)" }
+      "data": {
+        "density": "Khối lượng riêng đo được (kg/m³)"
+      }
     }
   }
 }

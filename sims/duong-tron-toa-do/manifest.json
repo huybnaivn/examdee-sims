@@ -1,9 +1,12 @@
 {
   "slug": "duong-tron-toa-do",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Phương trình đường tròn",
   "subject": "math",
-  "grades": [10],
+  "grades": [
+    10
+  ],
   "description": "Một đường tròn (C) trên mặt phẳng tọa độ Oxy: kéo tâm I(a; b) và điểm M trên đường tròn, hoặc đặt a, b, R bằng thanh trượt, để xem phương trình (x − a)² + (y − b)² = R² và dạng khai triển x² + y² − 2ax − 2by + c = 0. Chế độ dạng khai triển cho chọn a, b, c và kiểm tra điều kiện a² + b² − c > 0. Chế độ có đường thẳng Δ: Ax + By + C = 0 cho thấy khoảng cách d(I, Δ), vị trí tương đối (cắt, tiếp xúc, không cắt) và tọa độ giao điểm.",
   "learningGoals": [
     "Viết phương trình đường tròn khi biết tâm và bán kính, và chuyển qua lại giữa hai dạng (x − a)² + (y − b)² = R² và x² + y² − 2ax − 2by + c = 0 với c = a² + b² − R².",

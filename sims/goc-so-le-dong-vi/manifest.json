@@ -1,9 +1,12 @@
 {
   "slug": "goc-so-le-dong-vi",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Hai đường thẳng song song và các góc tạo bởi một đường cắt",
   "subject": "math",
-  "grades": [7],
+  "grades": [
+    7
+  ],
   "description": "Đường thẳng c cắt hai đường thẳng a, b tại A và B, tạo thành tám góc A₁…A₄, B₁…B₄. Kéo để xoay a hoặc b quanh giao điểm (hoặc dùng thanh trượt A₁, B₁), chọn một cặp góc so le trong, đồng vị, trong cùng phía, đối đỉnh hay kề bù để tô màu và xem số đo. Khi a // b, các góc so le trong bằng nhau, các góc đồng vị bằng nhau, hai góc trong cùng phía bù nhau; ngược lại, nếu có một cặp như vậy thì a // b. Khi kéo gần song song (trong 2°), đường thẳng tự hút vào vị trí song song.",
   "learningGoals": [
     "Nhận biết các cặp góc so le trong, đồng vị, trong cùng phía tạo bởi một đường thẳng cắt hai đường thẳng.",

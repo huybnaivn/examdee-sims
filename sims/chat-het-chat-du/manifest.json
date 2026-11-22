@@ -1,9 +1,13 @@
 {
   "slug": "chat-het-chat-du",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Chất hết, chất dư và hiệu suất",
   "subject": "chemistry",
-  "grades": [8, 10],
+  "grades": [
+    8,
+    10
+  ],
   "description": "Chọn một phản ứng, đặt lượng hai chất tham gia (theo mol hoặc theo gam) và hiệu suất phản ứng. Hình phân tử trước và sau phản ứng cho thấy chất nào hết, chất nào dư; sim tính lượng chất dư, lượng sản phẩm theo lí thuyết và thực tế, và kiểm tra định luật bảo toàn khối lượng.",
   "learningGoals": [
     "Xác định chất hết, chất dư bằng cách so sánh tỉ lệ số mol : hệ số của các chất tham gia.",

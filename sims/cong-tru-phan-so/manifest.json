@@ -1,9 +1,14 @@
 {
   "slug": "cong-tru-phan-so",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Cộng, trừ phân số",
   "subject": "math",
-  "grades": [4, 5, 6],
+  "grades": [
+    4,
+    5,
+    6
+  ],
   "description": "Cộng hoặc trừ hai phân số (hoặc hai hỗn số) được minh họa bằng băng giấy. Mô phỏng giải từng bước như trong sách giáo khoa: đổi hỗn số thành phân số, quy đồng mẫu số với mẫu số chung nhỏ nhất (các băng giấy được chia nhỏ thêm), cộng hoặc trừ hai tử số và giữ nguyên mẫu số, rút gọn bằng cách chia cả tử và mẫu cho ước chung lớn nhất, viết kết quả thành hỗn số. Hai phân số cùng mẫu số thì bỏ qua bước quy đồng. Tùy chọn lớp 6 cho phép kết quả âm. Chế độ luyện tập cho một phép tính ngẫu nhiên để học sinh tự viết kết quả.",
   "learningGoals": [
     "Cộng, trừ hai phân số cùng mẫu số: cộng (trừ) hai tử số và giữ nguyên mẫu số.",

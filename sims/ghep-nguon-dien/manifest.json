@@ -1,6 +1,7 @@
 {
   "slug": "ghep-nguon-dien",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Ghép nguồn điện và định luật Ôm cho toàn mạch",
   "subject": "physics",
   "grades": [

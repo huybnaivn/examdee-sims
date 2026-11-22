@@ -10,6 +10,10 @@ Each sim is a folder `sims/<slug>/` with five files. `sims/con-lac/` is the refe
 | `index.html` | Copy from `con-lac`, change `<title>`. |
 | `manifest.json` | Catalogue entry: slug, version, title, subject, grades, description, learningGoals, and a description of every `state` key and custom `event` (the AI tutor reads these). |
 
+## Review status
+
+Every manifest has `"status"`: `"needs-rework"` or `"approved"`. Passing the automated checks does not make a sim good; only a person who has used it marks it `"approved"`. The gallery shows the status, and the backend seed skips everything that is not approved. As of 22/11/2026 the product owner marked all sims `needs-rework`: they must be engaging (direct manipulation in the scene, a purpose a learner grasps in seconds, things to customise) and good-looking, not a formula with a picture. `sims/ap-suat-chat-ran/` is the pilot for that bar and is itself awaiting approval.
+
 ## Rules
 
 1. **Original work only.** Write from the science and the Vietnamese curriculum. Do not open, copy or port any third-party simulation's code, art, text or layout, and do not name any third-party product.

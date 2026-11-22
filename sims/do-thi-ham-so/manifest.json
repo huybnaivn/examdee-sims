@@ -1,6 +1,7 @@
 {
   "slug": "do-thi-ham-so",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Đồ thị hàm số bậc nhất và bậc hai",
   "subject": "math",
   "grades": [

@@ -1,6 +1,7 @@
 {
   "slug": "khao-sat-ham-so",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Khảo sát hàm số bậc ba",
   "subject": "math",
   "grades": [

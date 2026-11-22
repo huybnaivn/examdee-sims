@@ -1,9 +1,14 @@
 {
   "slug": "bieu-do-thong-ke",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Biểu đồ thống kê",
   "subject": "math",
-  "grades": [6, 7, 8],
+  "grades": [
+    6,
+    7,
+    8
+  ],
   "description": "Một bảng số liệu nhỏ (tối đa 8 hạng mục) do học sinh tự sửa được biểu diễn cùng lúc bằng biểu đồ cột, biểu đồ hình quạt tròn (kèm tỉ lệ phần trăm và số đo góc ở tâm), biểu đồ đoạn thẳng và biểu đồ tranh (chọn biểu tượng và số đơn vị ứng với mỗi biểu tượng, có thể có một phần biểu tượng). Bấm vào một hạng mục trên một biểu đồ để tô đậm hạng mục đó trên mọi biểu đồ.",
   "learningGoals": [
     "Đọc và vẽ biểu đồ tranh, biểu đồ cột, biểu đồ hình quạt tròn và biểu đồ đoạn thẳng từ cùng một bảng số liệu.",

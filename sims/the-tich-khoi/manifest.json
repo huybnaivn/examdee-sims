@@ -1,9 +1,15 @@
 {
   "slug": "the-tich-khoi",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Thể tích và diện tích các khối",
   "subject": "math",
-  "grades": [5, 7, 8, 9],
+  "grades": [
+    5,
+    7,
+    8,
+    9
+  ],
   "description": "Một khối hình không gian vẽ phối cảnh, kéo để xoay: hình hộp chữ nhật, hình lập phương, hình lăng trụ đứng tam giác, hình chóp tứ giác đều, hình trụ, hình nón, hình cầu. Đổi kích thước bằng thanh trượt để xem thể tích, diện tích xung quanh, diện tích toàn phần; cạnh khuất vẽ nét đứt. Có thể trải phẳng khối thành hình khai triển.",
   "learningGoals": [
     "Tính thể tích, diện tích xung quanh và diện tích toàn phần của hình hộp chữ nhật, hình lập phương, hình lăng trụ đứng tam giác, hình chóp tứ giác đều.",

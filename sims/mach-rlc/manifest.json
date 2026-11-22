@@ -1,9 +1,12 @@
 {
   "slug": "mach-rlc",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Mạch RLC nối tiếp",
   "subject": "physics",
-  "grades": [12],
+  "grades": [
+    12
+  ],
   "description": "Nguồn điện xoay chiều có điện áp hiệu dụng U và tần số f đặt vào đoạn mạch gồm điện trở R, cuộn cảm thuần L và tụ điện C mắc nối tiếp (có thể bỏ L hoặc C). Quan sát cảm kháng, dung kháng, tổng trở, cường độ dòng điện, độ lệch pha, hệ số công suất, công suất, giản đồ Fre-nen và đồ thị u(t), i(t); tìm tần số cộng hưởng.",
   "learningGoals": [
     "Tính cảm kháng Z_L = ωL, dung kháng Z_C = 1/(ωC) và tổng trở Z = √(R² + (Z_L − Z_C)²).",

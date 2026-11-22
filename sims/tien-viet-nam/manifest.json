@@ -1,9 +1,13 @@
 {
   "slug": "tien-viet-nam",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Tiền Việt Nam: tính tiền và trả lại",
   "subject": "math",
-  "grades": [2, 3],
+  "grades": [
+    2,
+    3
+  ],
   "description": "Một cửa hàng nhỏ có tám món hàng gắn thẻ giá (3.000 đến 120.000 đồng) và chín loại tờ tiền từ 1.000 đến 500.000 đồng, vẽ giản lược thành hình chữ nhật màu chỉ ghi mệnh giá. Học sinh chọn hàng, bấm vào tờ tiền để trả; đưa thiếu tiền thì cửa hàng không nhận. Sau khi trả, học sinh tự tính tiền trả lại (tiền đưa trừ tổng tiền hàng) và xếp các tờ tiền cho đúng số đó. Hoạt động thứ hai: lấy đúng một số tiền bằng ít tờ tiền nhất (luôn lấy tờ lớn nhất có thể trước).",
   "learningGoals": [
     "Nhận biết các mệnh giá tiền Việt Nam từ 1.000 đồng đến 500.000 đồng và đọc, viết số tiền có dấu chấm tách nghìn.",

@@ -1,9 +1,13 @@
 {
   "slug": "pha-mat-trang",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Các pha của Mặt Trăng",
   "subject": "physics",
-  "grades": [6, 6],
+  "grades": [
+    6,
+    6
+  ],
   "description": "Hình nhìn từ trên cực Bắc xuống cho thấy ánh sáng Mặt Trời, Trái Đất và Mặt Trăng trên quỹ đạo; bên cạnh là hình dạng Mặt Trăng nhìn từ Trái Đất (Bắc bán cầu). Kéo Mặt Trăng hoặc cho chạy theo ngày. Góc θ = 360°·ngày/29,5 tính từ trăng mới; phần đĩa được chiếu sáng là (1 − cos θ)/2. Tám pha theo sách KHTN 6, mỗi pha ứng với 45°: không trăng, lưỡi liềm, bán nguyệt, khuyết đầu tháng, trăng tròn, khuyết, bán nguyệt, lưỡi liềm cuối tháng. Ngày âm lịch: mùng 1 lúc trăng mới, trăng tròn vào khoảng ngày 15. Trăng đầu tháng sáng ở bên phải, cuối tháng sáng ở bên trái. Kích thước và khoảng cách không theo tỉ lệ. Có chế độ câu hỏi: đặt Mặt Trăng để thấy pha được hỏi.",
   "learningGoals": [
     "Giải thích được Mặt Trăng luôn được Mặt Trời chiếu sáng một nửa, nhưng phần nhìn thấy từ Trái Đất thay đổi theo vị trí của Mặt Trăng trên quỹ đạo.",

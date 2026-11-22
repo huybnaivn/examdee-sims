@@ -1,9 +1,12 @@
 {
   "slug": "dien-nang-tieu-thu",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Điện năng tiêu thụ và tiền điện",
   "subject": "physics",
-  "grades": [9],
+  "grades": [
+    9
+  ],
   "description": "Một hộ gia đình có bóng đèn, quạt, tủ lạnh, điều hòa, nồi cơm điện và tivi. Học sinh đặt công suất và số giờ dùng mỗi ngày của từng đồ dùng; sim tính điện năng A = P·t theo kWh cho một ngày và một tháng (30 ngày), tiền điện theo biểu giá bậc thang sáu bậc và phần tiền của từng đồ dùng, chỉ ra đồ dùng tốn điện nhất, số tiền bớt được khi thay đèn sợi đốt bằng đèn LED hoặc giảm giờ dùng. Biểu giá chỉ để minh họa, có thể sửa, không phải giá chính thức và chưa gồm thuế VAT.",
   "learningGoals": [
     "Tính điện năng tiêu thụ A = P·t và đổi đơn vị: 1 kWh = 1000 W·h = 3,6·10⁶ J.",

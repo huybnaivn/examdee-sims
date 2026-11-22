@@ -1,9 +1,12 @@
 {
   "slug": "tai-ban-adn",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Tái bản DNA",
   "subject": "biology",
-  "grades": [12],
+  "grades": [
+    12
+  ],
   "description": "Một đoạn DNA mạch kép ngắn (6 đến 16 cặp nucleotide) được vẽ duỗi thẳng. Helicase mở dần chạc tái bản từ trái sang phải, phá vỡ liên kết hydro giữa hai mạch; các nucleotide tự do bắt cặp với từng mạch khuôn theo nguyên tắc bổ sung (A–T bằng 2 liên kết hydro, G–C bằng 3 liên kết hydro). Trên mạch khuôn 3′ → 5′, mạch mới được tổng hợp liên tục cùng chiều tháo xoắn (mạch dẫn đầu); trên mạch khuôn 5′ → 3′, mạch mới được tổng hợp gián đoạn thành các đoạn Okazaki (mỗi đoạn 4 nucleotide trong mô hình) ngược chiều tháo xoắn, sau đó ligase nối lại. Kết quả là hai phân tử con giống phân tử mẹ, mỗi phân tử có một mạch cũ và một mạch mới (bán bảo toàn); mạch của phân tử ban đầu tô xanh, mạch mới tô cam. Sau mỗi lượt tái bản, sơ đồ bên dưới vẽ tất cả 2ᵏ phân tử với màu của từng mạch: chỉ có 2 phân tử còn mang mạch ban đầu. Mô phỏng đếm số nucleotide tự do đã dùng N(2ᵏ − 1) và số liên kết hydro H = 2A + 3G. Học sinh dự đoán số phân tử còn mạch ban đầu sau n lượt rồi kiểm tra. Sơ đồ phẳng, không theo tỉ lệ, bỏ qua đoạn mồi; đoạn Okazaki thật dài hàng trăm đến hàng nghìn nucleotide.",
   "learningGoals": [
     "Trình bày được nguyên tắc bổ sung trong tái bản DNA: A liên kết với T bằng 2 liên kết hydro, G liên kết với C bằng 3 liên kết hydro.",

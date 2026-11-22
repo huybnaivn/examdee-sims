@@ -1,6 +1,7 @@
 {
   "slug": "ti-so-phan-tram",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Tỉ số phần trăm",
   "subject": "math",
   "grades": [

@@ -1,9 +1,12 @@
 {
   "slug": "phan-xa-am-tieng-vang",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Phản xạ âm, tiếng vang và đo độ sâu",
   "subject": "physics",
-  "grades": [7],
+  "grades": [
+    7
+  ],
   "description": "Một người hét về phía bức tường ở khoảng cách thay đổi được. Quan sát âm truyền tới tường, phản xạ trở lại và thời gian đi về t = 2d/v; khi t ≥ 1/15 s thì nghe được tiếng vang riêng. Đổi mặt phản xạ (tường bê tông, vách gỗ, rèm xốp) để thấy vật cứng, nhẵn phản xạ âm tốt còn vật mềm, xốp hấp thụ âm. Cảnh thứ hai: tàu biển phát sóng siêu âm, đo thời gian đi và về rồi tính độ sâu đáy biển h = v·t/2.",
   "learningGoals": [
     "Âm gặp vật cản thì bị phản xạ; âm phản xạ trở về sau thời gian t = 2d/v.",
@@ -27,12 +30,16 @@
     "shout": {
       "kind": "action",
       "description": "Học sinh cho người hét một tiếng về phía tường",
-      "data": { "distance": "Khoảng cách đến tường (m)" }
+      "data": {
+        "distance": "Khoảng cách đến tường (m)"
+      }
     },
     "move-wall": {
       "kind": "action",
       "description": "Học sinh kéo bức tường đến khoảng cách mới",
-      "data": { "distance": "Khoảng cách mới đến tường (m)" }
+      "data": {
+        "distance": "Khoảng cách mới đến tường (m)"
+      }
     },
     "echo": {
       "kind": "result",
@@ -52,7 +59,9 @@
     "sonar-echo": {
       "kind": "result",
       "description": "Siêu âm phản xạ từ đáy biển vừa trở về máy thu trên tàu",
-      "data": { "delay": "Thời gian từ lúc phát đến lúc thu t (s)" }
+      "data": {
+        "delay": "Thời gian từ lúc phát đến lúc thu t (s)"
+      }
     },
     "depth-answer": {
       "kind": "result",
@@ -74,7 +83,9 @@
     "new-sea": {
       "kind": "action",
       "description": "Học sinh chuyển sang một vùng biển khác (độ sâu mới được giấu)",
-      "data": { "seed": "Số hiệu vùng biển mới" }
+      "data": {
+        "seed": "Số hiệu vùng biển mới"
+      }
     }
   }
 }

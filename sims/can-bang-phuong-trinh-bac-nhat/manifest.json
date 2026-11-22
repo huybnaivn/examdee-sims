@@ -1,9 +1,14 @@
 {
   "slug": "can-bang-phuong-trinh-bac-nhat",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Giải phương trình bậc nhất bằng cân thăng bằng",
   "subject": "math",
-  "grades": [6, 7, 8],
+  "grades": [
+    6,
+    7,
+    8
+  ],
   "description": "Phương trình ax + b = cx + d được đặt lên một chiếc cân: hộp x và quả cân 1 đứng trên đĩa, số hạng âm là bóng bay kéo lên. Học sinh thêm, bớt hoặc chia thành các phần bằng nhau ở cả hai đĩa để cân luôn thăng bằng, cho đến khi một đĩa chỉ còn một hộp x. Mỗi bước được viết lại thành phương trình tương đương. Thử làm ở một đĩa thì cân bị lệch và thao tác bị từ chối. Có cả đề vô nghiệm và đề có vô số nghiệm.",
   "learningGoals": [
     "Hiểu quy tắc chuyển vế và quy tắc nhân (chia) như việc làm giống nhau ở hai đĩa cân: phương trình mới tương đương phương trình cũ.",
@@ -55,7 +60,9 @@
     "solved-minimum": {
       "kind": "goal",
       "description": "Học sinh giải xong với số bước ít nhất",
-      "data": { "steps": "Số bước" }
+      "data": {
+        "steps": "Số bước"
+      }
     }
   }
 }

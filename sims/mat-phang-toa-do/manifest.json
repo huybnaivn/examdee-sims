@@ -1,9 +1,12 @@
 {
   "slug": "mat-phang-toa-do",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Mặt phẳng tọa độ",
   "subject": "math",
-  "grades": [7],
+  "grades": [
+    7
+  ],
   "description": "Mặt phẳng tọa độ Oxy với lưới ô vuông. Đặt điểm M bằng cách bấm, kéo trên lưới hoặc dùng thanh trượt hoành độ, tung độ; đọc tọa độ qua hai đường vuông góc hạ xuống hai trục, xem M thuộc góc phần tư nào (điểm trên trục không thuộc góc phần tư nào) và các điểm đối xứng với M qua Ox, Oy, O. Trò chơi tìm kho báu: đưa M tới đúng điểm có tọa độ cho trước.",
   "learningGoals": [
     "Xác định tọa độ (x; y) của một điểm trên mặt phẳng tọa độ: hoành độ viết trước, tung độ viết sau.",

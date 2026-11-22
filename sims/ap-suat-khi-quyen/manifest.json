@@ -1,9 +1,13 @@
 {
   "slug": "ap-suat-khi-quyen",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Áp suất khí quyển",
   "subject": "physics",
-  "grades": [8, 10],
+  "grades": [
+    8,
+    10
+  ],
   "description": "Thí nghiệm Torricelli: ống thủy ngân dài 1 m úp ngược trong chậu, cột thủy ngân cao khoảng 76 cm ở mực nước biển. Đổi độ cao để thấy áp suất khí quyển và cột thủy ngân giảm (mô hình khí quyển chuẩn), nghiêng ống hoặc đổi tiết diện ống để thấy độ cao thẳng đứng của cột không đổi. Hai thí nghiệm quen thuộc: cốc nước úp ngược có tờ giấy và hộp sữa giấy bị bẹp khi hút bớt không khí. Đổi đơn vị Pa, mmHg, atm, hPa.",
   "learningGoals": [
     "Giải thích thí nghiệm Torricelli và tính áp suất khí quyển p = ρ·g·h từ cột thủy ngân (76 cmHg ≈ 1,013·10⁵ Pa).",

@@ -1,9 +1,14 @@
 {
   "slug": "chuyen-the",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Sự chuyển thể: đun nóng nước đá",
   "subject": "physics",
-  "grades": [6, 10, 12],
+  "grades": [
+    6,
+    10,
+    12
+  ],
   "description": "Đun một khối nước đá có nhiệt độ ban đầu dưới 0 °C bằng bếp có công suất không đổi cho đến khi toàn bộ thành hơi nước. Đường biểu diễn nhiệt độ theo thời gian đi qua năm giai đoạn: đá nóng lên, nóng chảy ở 0 °C, nước nóng lên, sôi ở 100 °C, hơi nước nóng lên. Mô hình hạt cho thấy trạng thái của mẫu, bảng cho biết nhiệt lượng thu vào và thời gian của từng giai đoạn.",
   "learningGoals": [
     "Mô tả được năm giai đoạn trên đồ thị nhiệt độ – thời gian khi đun nóng nước đá đến khi thành hơi.",

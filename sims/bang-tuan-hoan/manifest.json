@@ -1,9 +1,12 @@
 {
   "slug": "bang-tuan-hoan",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Xu hướng biến đổi trong bảng tuần hoàn",
   "subject": "chemistry",
-  "grades": [10],
+  "grades": [
+    10
+  ],
   "description": "Bảng tuần hoàn 36 nguyên tố đầu tiên (hydrogen đến krypton). Chọn một tính chất (bán kính nguyên tử, độ âm điện Pauling, năng lượng ion hóa thứ nhất hoặc tính kim loại) để tô màu các ô theo giá trị, và chọn một chu kì hoặc một nhóm A để vẽ biểu đồ cột dọc theo chu kì hoặc nhóm đó. Bấm vào một ô để xem vị trí, cấu hình electron (kể cả hai ngoại lệ Cr và Cu) và các số liệu của nguyên tố. Bán kính là bán kính tính toán; khí hiếm không có độ âm điện; tính kim loại được tô theo loại nguyên tố và so sánh bằng độ âm điện.",
   "learningGoals": [
     "Viết cấu hình electron của nguyên tử có Z ≤ 36 theo thứ tự mức năng lượng 1s 2s 2p 3s 3p 4s 3d 4p, và nhận ra hai ngoại lệ Cr ([Ar]3d⁵4s¹) và Cu ([Ar]3d¹⁰4s¹).",

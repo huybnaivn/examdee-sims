@@ -1,9 +1,13 @@
 {
   "slug": "mol",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Mol và các đại lượng liên quan",
   "subject": "chemistry",
-  "grades": [8, 10],
+  "grades": [
+    8,
+    10
+  ],
   "description": "Chọn một chất và nhập một trong bốn đại lượng: khối lượng, lượng chất (mol), số hạt hoặc thể tích khí ở điều kiện chuẩn (chỉ với chất khí). Các đại lượng còn lại được tính theo chuỗi m ⇄ n ⇄ N và n ⇄ V, kèm phép tính từng bước và hình minh họa số hạt theo tỉ lệ thu nhỏ.",
   "learningGoals": [
     "Tính khối lượng mol M từ công thức hóa học (kể cả nhóm nguyên tử trong ngoặc) và khối lượng nguyên tử.",

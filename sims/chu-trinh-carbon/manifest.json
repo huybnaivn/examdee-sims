@@ -1,9 +1,13 @@
 {
   "slug": "chu-trinh-carbon",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Chu trình carbon",
   "subject": "biology",
-  "grades": [8, 12],
+  "grades": [
+    8,
+    12
+  ],
   "description": "Sáu kho chứa carbon (khí quyển, thực vật, động vật, đất, đại dương, nhiên liệu hóa thạch) nối với nhau bằng các dòng carbon: quang hợp, hô hấp, ăn, xác và chất thải, phân giải, trao đổi với đại dương, đốt cháy. Học sinh chọn mức đốt nhiên liệu hóa thạch và tỉ lệ rừng bị phá rồi chạy mô hình hộp trong 100 năm, quan sát lượng carbon ở từng kho và đồ thị CO₂ khí quyển (ppm). Mô hình đơn giản hóa: năm 0 là trạng thái cân bằng trước thời kì công nghiệp (280 ppm; 1 ppm ≈ 2,13 GtC); mỗi dòng tỉ lệ với kho mà nó đi ra; quang hợp = 120·(1 − d)·f(A) với d là phần rừng bị phá và f là hệ số bão hòa theo CO₂; đại dương thoát ra 90 + 0,27·(O − O₀) GtC/năm. Tổng carbon của sáu kho không đổi.",
   "learningGoals": [
     "Mô tả chu trình carbon: carbon đi từ khí quyển vào sinh vật qua quang hợp và trở lại qua hô hấp, phân giải và đốt cháy.",

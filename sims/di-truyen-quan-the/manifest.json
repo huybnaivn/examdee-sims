@@ -1,9 +1,12 @@
 {
   "slug": "di-truyen-quan-the",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Di truyền quần thể Hardy – Weinberg",
   "subject": "biology",
-  "grades": [12],
+  "grades": [
+    12
+  ],
   "description": "Một quần thể với một gene có hai allele A (tần số p) và a (tần số q = 1 − p). Học sinh chọn tần số allele A ban đầu, cấu trúc di truyền ban đầu (chỉ có đồng hợp, hoặc đã cân bằng) và bật hoặc tắt các nhân tố: giao phối ngẫu nhiên hay tự thụ phấn, chọn lọc chống lại kiểu gene aa (sức sống của aa là 1 − s), dòng gene (mỗi thế hệ một tỉ lệ m cá thể nhập cư có tần số allele A là pₘ), phiêu bạt di truyền (mỗi thế hệ chỉ có N cá thể, lấy mẫu ngẫu nhiên). Mỗi thế hệ lần lượt: chọn lọc, nhập cư, giao phối, lấy mẫu N cá thể con. Đồ thị cho p, q và tần số các kiểu gene AA, Aa, aa qua tối đa 200 thế hệ, so với dự đoán Hardy – Weinberg p², 2pq, q². Bộ sinh số ngẫu nhiên có hạt giống nên cùng thiết lập thì cùng kết quả.",
   "learningGoals": [
     "Tính được tần số allele và tần số kiểu gene của quần thể; kiểm tra quần thể có cân bằng di truyền (p² AA + 2pq Aa + q² aa = 1) hay không.",

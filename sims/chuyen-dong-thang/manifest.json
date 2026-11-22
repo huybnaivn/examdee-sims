@@ -1,9 +1,12 @@
 {
   "slug": "chuyen-dong-thang",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Chuyển động thẳng biến đổi đều",
   "subject": "physics",
-  "grades": [10],
+  "grades": [
+    10
+  ],
   "description": "Một xe chuyển động thẳng trên trục Ox với tọa độ ban đầu, vận tốc ban đầu và gia tốc (dương hoặc âm) do học sinh chọn. Mô phỏng vẽ đồng thời đồ thị tọa độ – thời gian, vận tốc – thời gian và gia tốc – thời gian, tô diện tích dưới đồ thị v – t để thấy nó bằng độ dời. Có thể bật chế độ hãm phanh (xe dừng hẳn khi v = 0) và thêm xe thứ hai để giải bài toán hai xe gặp nhau.",
   "learningGoals": [
     "Vận dụng các công thức v = v₀ + a·t, x = x₀ + v₀·t + ½·a·t² và v² − v₀² = 2·a·Δx.",

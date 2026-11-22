@@ -1,9 +1,12 @@
 {
   "slug": "ap-suat-chat-ran",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Áp suất trên bề mặt",
   "subject": "physics",
-  "grades": [8],
+  "grades": [
+    8
+  ],
   "description": "Kéo viên gạch, bạn nhỏ, chú voi hay xe tăng thả xuống cát, tuyết, bùn hoặc bê tông, mỗi bên một nhân vật, rồi so sánh ai lún sâu hơn. Xoay viên gạch, chồng thêm gạch, đổi giày cho bạn nhỏ (giày thể thao, gót nhọn, cà kheo, ván trượt) để thấy áp suất p = F/S phụ thuộc cả áp lực lẫn diện tích bị ép. Lấy g = 10 N/kg. Hình không theo tỉ lệ; độ lún chỉ minh họa theo thang lôgarit của áp suất, không phải định luật vật lí.",
   "learningGoals": [
     "Tính áp suất p = F/S và đổi đơn vị cm² sang m², Pa sang kPa và MPa.",
@@ -27,33 +30,58 @@
     "placed": {
       "kind": "action",
       "description": "Học sinh kéo một nhân vật thả xuống đất, hoặc nhấc nó về kệ",
-      "data": { "slot": "1 = bên trái, 2 = bên phải", "object": "0 = nhấc đi, 1 gạch, 2 bạn nhỏ, 3 voi, 4 xe tăng" }
+      "data": {
+        "slot": "1 = bên trái, 2 = bên phải",
+        "object": "0 = nhấc đi, 1 gạch, 2 bạn nhỏ, 3 voi, 4 xe tăng"
+      }
     },
     "object-tapped": {
       "kind": "action",
       "description": "Học sinh chạm vào viên gạch để xoay, hoặc vào bạn nhỏ để đổi giày",
-      "data": { "object": "1 gạch, 2 bạn nhỏ" }
+      "data": {
+        "object": "1 gạch, 2 bạn nhỏ"
+      }
     },
-    "cleared": { "kind": "action", "description": "Học sinh bấm dọn sạch mặt đất", "data": {} },
+    "cleared": {
+      "kind": "action",
+      "description": "Học sinh bấm dọn sạch mặt đất",
+      "data": {}
+    },
     "pressure-measured": {
       "kind": "result",
       "description": "Một nhân vật vừa lún xong; áp suất của nó lên mặt đất",
-      "data": { "slot": "1 trái, 2 phải", "object": "1 gạch, 2 bạn nhỏ, 3 voi, 4 xe tăng", "force": "Áp lực F (N)", "area": "Diện tích bị ép S (m²)", "pressure": "Áp suất p (Pa)" }
+      "data": {
+        "slot": "1 trái, 2 phải",
+        "object": "1 gạch, 2 bạn nhỏ, 3 voi, 4 xe tăng",
+        "force": "Áp lực F (N)",
+        "area": "Diện tích bị ép S (m²)",
+        "pressure": "Áp suất p (Pa)"
+      }
     },
     "compared": {
       "kind": "result",
       "description": "Cả hai bên đã lún xong: so sánh áp suất hai bên",
-      "data": { "pressureA": "Áp suất bên trái (Pa)", "pressureB": "Áp suất bên phải (Pa)", "ratio": "Tỉ số áp suất lớn / nhỏ", "deeper": "1 trái lún sâu hơn, 2 phải, 0 bằng nhau (lệch dưới 5 %)" }
+      "data": {
+        "pressureA": "Áp suất bên trái (Pa)",
+        "pressureB": "Áp suất bên phải (Pa)",
+        "ratio": "Tỉ số áp suất lớn / nhỏ",
+        "deeper": "1 trái lún sâu hơn, 2 phải, 0 bằng nhau (lệch dưới 5 %)"
+      }
     },
     "prediction-correct": {
       "kind": "goal",
       "description": "Học sinh đoán đúng bên nào lún sâu hơn trước khi thả nhân vật",
-      "data": { "deeper": "1 trái, 2 phải, 0 bằng nhau", "ratio": "Tỉ số áp suất" }
+      "data": {
+        "deeper": "1 trái, 2 phải, 0 bằng nhau",
+        "ratio": "Tỉ số áp suất"
+      }
     },
     "challenge-done": {
       "kind": "goal",
       "description": "Học sinh hoàn thành thử thách đang chọn (mỗi thử thách báo một lần)",
-      "data": { "challenge": "1 bạn nhỏ lún sâu hơn voi, 2 nặng khác nhau mà lún bằng nhau, 3 chồng gạch lún sâu nhất" }
+      "data": {
+        "challenge": "1 bạn nhỏ lún sâu hơn voi, 2 nặng khác nhau mà lún bằng nhau, 3 chồng gạch lún sâu nhất"
+      }
     }
   }
 }

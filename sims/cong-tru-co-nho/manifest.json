@@ -1,9 +1,14 @@
 {
   "slug": "cong-tru-co-nho",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Cộng, trừ có nhớ theo cột dọc",
   "subject": "math",
-  "grades": [2, 3, 4],
+  "grades": [
+    2,
+    3,
+    4
+  ],
   "description": "Đặt tính rồi tính hai số tự nhiên đến bốn chữ số. Phép tính viết theo cột dọc, bên cạnh là các khối đơn vị, chục, trăm, nghìn. Bấm từng bước để tính từng cột từ phải sang trái: khi cộng, đủ 10 khối thì gộp thành 1 khối của hàng bên trái (nhớ 1); khi trừ, không đủ để trừ thì đổi 1 khối của hàng bên trái thành 10 khối. Mỗi bước có lời đọc như trong sách giáo khoa (8 cộng 7 bằng 15, viết 5, nhớ 1). Ở chế độ luyện tập, học sinh tự bấm chữ số của từng cột. Phép trừ có số bị trừ bé hơn số trừ không được thực hiện ở mức này.",
   "learningGoals": [
     "Đặt tính thẳng cột và tính từ phải sang trái, từ hàng đơn vị.",

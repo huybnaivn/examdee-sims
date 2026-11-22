@@ -1,9 +1,12 @@
 {
   "slug": "khoa-luong-phan",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Khóa lưỡng phân phân loại sinh vật",
   "subject": "biology",
-  "grades": [6],
+  "grades": [
+    6
+  ],
   "description": "Tám con vật (cá chép, ếch đồng, rắn, bồ câu, mèo, dơi, bướm, cua đồng) và bảy đặc điểm có/không (xương sống, chân, cánh, lông vũ, lông mao, vảy, thở bằng mang). Ở chế độ dùng khóa có sẵn, học sinh chọn một con vật rồi trả lời Có hoặc Không cho từng câu hỏi để đi dọc khóa lưỡng phân đến tên con vật; câu trả lời sai không được đi tiếp và được đếm lại. Khóa có sẵn: xương sống? → (có) lông mao? → cánh? (dơi / mèo); (không lông mao) lông vũ? (bồ câu) → chân? (ếch đồng) → mang? (cá chép / rắn); (không xương sống) cánh? (bướm / cua đồng). Ở chế độ tự xây dựng, học sinh lần lượt chọn một đặc điểm để tách nhóm còn nhiều con vật đầu tiên thành hai nhóm; mô phỏng đánh dấu đỏ câu hỏi không tách được nhóm (mọi con vật trả lời giống nhau) và công nhận khóa hợp lệ khi mỗi con vật nằm ở một nhánh riêng và không có câu hỏi thừa. Độ sâu của khóa là số câu hỏi nhiều nhất cần trả lời để định danh một con vật. Có thể xem bảng đặc điểm thay cho sơ đồ khóa.",
   "learningGoals": [
     "Nêu được nguyên tắc của khóa lưỡng phân: mỗi bước dùng một đặc điểm để tách một nhóm sinh vật thành hai nhóm đối lập.",

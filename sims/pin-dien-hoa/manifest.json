@@ -1,9 +1,12 @@
 {
   "slug": "pin-dien-hoa",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Pin điện hóa",
   "subject": "chemistry",
-  "grades": [12],
+  "grades": [
+    12
+  ],
   "description": "Lắp pin điện hóa từ hai điện cực kim loại (Mg, Zn, Fe, Cu, Ag), mỗi điện cực nhúng trong dung dịch muối 1 M của chính nó, nối bằng cầu muối KNO₃ và mạch ngoài có điện trở R và vôn kế. Sim xác định anode (kim loại có thế điện cực chuẩn âm hơn) và cathode, tính E°pin = E°catot − E°anot, viết các nửa phản ứng và phản ứng chung, vẽ chiều electron ở mạch ngoài và sự di chuyển của K⁺, NO₃⁻ trong cầu muối. Khi cho pin hoạt động qua R trong thời gian t: I = E°pin/R, Q = I·t, n(e) = Q/F; anode mòn đi, cathode dày lên theo bảo toàn electron. Thế điện cực chuẩn dùng: Mg −2,37; Zn −0,763; Fe −0,440; Cu +0,340; Ag +0,799 V. Bỏ qua điện trở trong và sự thay đổi nồng độ. Hình không theo tỉ lệ.",
   "learningGoals": [
     "Xác định anode (cực âm, kim loại có E° nhỏ hơn bị oxi hóa) và cathode (cực dương, ion kim loại có E° lớn hơn bị khử) của pin điện hóa.",

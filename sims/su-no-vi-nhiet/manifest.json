@@ -1,9 +1,13 @@
 {
   "slug": "su-no-vi-nhiet",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Sự nở vì nhiệt",
   "subject": "physics",
-  "grades": [6, 10],
+  "grades": [
+    6,
+    10
+  ],
   "description": "Nung nóng hoặc làm lạnh một thanh, một tấm phẳng, một khối lập phương (thép, nhôm, đồng, thủy tinh) hoặc chất lỏng trong bình (nước, rượu etanol). Chọn kích thước ban đầu, nhiệt độ ban đầu và độ tăng nhiệt độ để thấy độ nở được vẽ phóng đại cùng công thức Δl = α·l₀·Δt, ΔS ≈ 2α·S₀·Δt, ΔV ≈ 3α·V₀·Δt (β ≈ 3α với chất rắn) và ΔV = β·V₀·Δt với chất lỏng. Hệ số nở dài dùng: thép 11·10⁻⁶, nhôm 24·10⁻⁶, đồng 17·10⁻⁶, thủy tinh 9·10⁻⁶ K⁻¹; rượu β = 1,1·10⁻³ K⁻¹. Thể tích nước được tính từ bảng khối lượng riêng nên thấy được nước co lại khi nóng từ 0 °C đến 4 °C. Khung ví dụ thực tế: khe hở giữa hai thanh ray thép 12,5 m (khe 6 mm lúc lắp), băng kép đồng – thép cong về phía kim loại nở ít hơn, đồ thị thể tích 1 g nước từ 0 đến 12 °C. Bỏ qua sự nở của bình. Hình không theo tỉ lệ.",
   "learningGoals": [
     "Nhận biết chất rắn, chất lỏng nở ra khi nóng lên và co lại khi lạnh đi; các chất khác nhau nở vì nhiệt khác nhau; chất lỏng nở vì nhiệt nhiều hơn chất rắn.",

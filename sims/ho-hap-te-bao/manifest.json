@@ -1,9 +1,12 @@
 {
   "slug": "ho-hap-te-bao",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Hô hấp tế bào",
   "subject": "biology",
-  "grades": [10],
+  "grades": [
+    10
+  ],
   "description": "Sơ đồ phân giải một phân tử glucose qua các giai đoạn đường phân (tế bào chất), oxi hoá pyruvic acid và chu trình Krebs (chất nền ti thể), chuỗi truyền electron (màng trong ti thể), với số ATP, NADH, FADH₂, CO₂ của từng giai đoạn. Số ATP theo cách tính trong sách giáo khoa: đường phân 2, chu trình Krebs 2, chuỗi truyền electron 10 NADH × 3 + 2 FADH₂ × 2 = 34, tổng 38 ATP (số đo thực tế khoảng 30–32 ATP). Học sinh giảm nồng độ O₂: không có O₂ nhận electron cuối cùng thì chuỗi truyền electron dừng, tế bào lên men (lên men lactic: pyruvic acid → lactic acid; lên men rượu: pyruvic acid → ethanol + CO₂) và chỉ thu được 2 ATP của đường phân. Mô hình minh hoạ: phần glucose được hô hấp hiếu khí bằng min(1, O₂/25 %), phần còn lại lên men. Có thử thách xếp bốn giai đoạn theo đúng thứ tự.",
   "learningGoals": [
     "Trình bày được các giai đoạn của hô hấp tế bào (đường phân, oxi hoá pyruvic acid và chu trình Krebs, chuỗi truyền electron), nơi diễn ra và sản phẩm của từng giai đoạn.",

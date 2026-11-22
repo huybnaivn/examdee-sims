@@ -1,9 +1,12 @@
 {
   "slug": "chuan-do-acid-base",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Chuẩn độ acid – base",
   "subject": "chemistry",
-  "grades": [11],
+  "grades": [
+    11
+  ],
   "description": "Chuẩn độ dung dịch acid mạnh HCl (hoặc acid yếu CH₃COOH) trong bình tam giác bằng dung dịch NaOH từ burette. Chọn nồng độ, thể tích acid và nồng độ NaOH, nhỏ từng giọt hoặc từng mL, quan sát đường cong pH theo thể tích NaOH và màu của chất chỉ thị (phenolphthalein, methyl da cam, quỳ tím). Dừng lại đúng điểm tương đương rồi so với tính toán C₁V₁ = C₂V₂. pH được tính chính xác từ cân bằng điện tích ở 25 °C (Kw = 10⁻¹⁴, Kₐ của CH₃COOH = 1,75·10⁻⁵), coi hệ số hoạt độ bằng 1 và thể tích cộng được.",
   "learningGoals": [
     "Mô tả cách tiến hành chuẩn độ acid – base bằng burette và chất chỉ thị.",

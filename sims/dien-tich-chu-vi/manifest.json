@@ -1,9 +1,15 @@
 {
   "slug": "dien-tich-chu-vi",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Diện tích và chu vi hình chữ nhật",
   "subject": "math",
-  "grades": [3, 4, 5, 6],
+  "grades": [
+    3,
+    4,
+    5,
+    6
+  ],
   "description": "Một hình chữ nhật trên lưới ô vuông đơn vị (mỗi ô có cạnh 1 cm). Kéo góc hình hoặc dùng nút − + để đổi hai cạnh, đếm số ô vuông, xem diện tích S = a × b và chu vi P = (a + b) × 2. Phần thử thách yêu cầu tìm hình có diện tích cho trước với chu vi nhỏ nhất, hoặc chu vi cho trước với diện tích lớn nhất.",
   "learningGoals": [
     "Hiểu diện tích hình chữ nhật là số ô vuông đơn vị phủ kín hình: S = a × b.",

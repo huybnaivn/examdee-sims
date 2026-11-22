@@ -1,9 +1,12 @@
 {
   "slug": "trong-luong-khoi-luong",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Khối lượng và trọng lượng",
   "subject": "physics",
-  "grades": [6],
+  "grades": [
+    6
+  ],
   "description": "Đem một phi hành gia, thùng dụng cụ, hòn đá hoặc quả cân đi cân bằng lực kế và cân đòn trên Trái Đất, Mặt Trăng, Sao Hỏa, Sao Mộc và trên trạm vũ trụ đang bay quanh Trái Đất. Cân đòn luôn chỉ cùng một khối lượng, còn số chỉ lực kế (trọng lượng P = m·g) thay đổi theo nơi cân; trên Trái Đất có thể lấy tròn P = 10·m như sách giáo khoa. Có thể che số chỉ lực kế để tự dự đoán rồi kiểm tra.",
   "learningGoals": [
     "Phân biệt khối lượng (lượng chất của vật, đo bằng cân, đơn vị kg) với trọng lượng (độ lớn lực hút tác dụng lên vật, đo bằng lực kế, đơn vị N).",

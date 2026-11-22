@@ -1,9 +1,13 @@
 {
   "slug": "dong-co-dien",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Động cơ điện một chiều",
   "subject": "physics",
-  "grades": [9, 11],
+  "grades": [
+    9,
+    11
+  ],
   "description": "Khung dây N vòng đặt trong từ trường đều của nam châm, nối với nguồn điện qua cổ góp và chổi quét, nhìn dọc theo trục quay. Lực từ F = N·B·I·l tác dụng lên hai cạnh khung theo quy tắc bàn tay trái tạo thành ngẫu lực có mômen M = N·B·I·S·sin θ (θ là góc giữa pháp tuyến của khung và B). Có cổ góp: dòng điện trong khung đổi chiều mỗi nửa vòng nên mômen không đổi chiều, khung quay liên tục theo một chiều. Không có cổ góp: khung dao động quanh vị trí cân bằng (mặt khung vuông góc với B) rồi dừng lại. Đảo chiều dòng điện hoặc từ trường thì khung quay ngược lại. Ma sát nhớt và bánh đà được chọn để chuyển động dễ quan sát; hình không theo tỉ lệ.",
   "learningGoals": [
     "Xác định chiều lực từ lên các cạnh của khung dây bằng quy tắc bàn tay trái.",

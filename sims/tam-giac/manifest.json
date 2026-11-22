@@ -1,6 +1,7 @@
 {
   "slug": "tam-giac",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Tam giác: góc, cạnh và diện tích",
   "subject": "math",
   "grades": [

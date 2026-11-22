@@ -1,9 +1,12 @@
 {
   "slug": "chu-vi-hinh-tron",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Chu vi và diện tích hình tròn",
   "subject": "math",
-  "grades": [5],
+  "grades": [
+    5
+  ],
   "description": "Lăn một hình tròn đúng một vòng trên đường thẳng để trải chu vi ra và so với đường kính: chu vi dài hơn 3 lần đường kính một chút (số π ≈ 3,14). Cắt hình tròn thành 4 đến 64 phần bằng nhau rồi ghép xen kẽ thành hình gần giống hình bình hành có đáy bằng nửa chu vi và chiều cao bằng bán kính, để tìm ra S = r × r × 3,14.",
   "learningGoals": [
     "Nhận ra chu vi hình tròn chia cho đường kính luôn được cùng một số, khoảng 3,14, với mọi bán kính.",

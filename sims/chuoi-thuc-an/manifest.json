@@ -1,9 +1,13 @@
 {
   "slug": "chuoi-thuc-an",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Chuỗi, lưới thức ăn và tháp năng lượng",
   "subject": "biology",
-  "grades": [8, 12],
+  "grades": [
+    8,
+    12
+  ],
   "description": "Nối các sinh vật (cỏ, châu chấu, thỏ, chuột, ếch, rắn, cú, vi khuẩn phân giải) bằng mũi tên từ sinh vật bị ăn đến sinh vật ăn nó để tạo chuỗi và lưới thức ăn. Mỗi mũi tên được kiểm tra: mũi tên tạo vòng khép kín bị từ chối trước, sau đó đến mũi tên không đúng với thức ăn của loài. Bậc dinh dưỡng của một loài là độ dài chuỗi dài nhất từ sinh vật sản xuất đến nó (sinh vật sản xuất là bậc 1; vi khuẩn phân giải không tính bậc). Tháp năng lượng: bậc k nhận E₀·eᵏ⁻¹ với E₀ = 10 000 kJ và hiệu suất sinh thái e từ 5 % đến 20 %. Loại bỏ một loài thì các loài chỉ ăn loài đó (trực tiếp hoặc gián tiếp) cũng chết theo.",
   "learningGoals": [
     "Phân biệt sinh vật sản xuất, sinh vật tiêu thụ và sinh vật phân giải; viết được chuỗi thức ăn bằng mũi tên chỉ chiều của dòng năng lượng.",
@@ -23,7 +27,10 @@
     "link-added": {
       "kind": "action",
       "description": "Học sinh thêm một mũi tên hợp lệ vào lưới thức ăn",
-      "data": { "from": "Mã loài bị ăn", "to": "Mã loài ăn nó" }
+      "data": {
+        "from": "Mã loài bị ăn",
+        "to": "Mã loài ăn nó"
+      }
     },
     "link-rejected": {
       "kind": "action",
@@ -37,12 +44,18 @@
     "link-removed": {
       "kind": "action",
       "description": "Học sinh xoá một mũi tên",
-      "data": { "from": "Mã loài bị ăn", "to": "Mã loài ăn nó" }
+      "data": {
+        "from": "Mã loài bị ăn",
+        "to": "Mã loài ăn nó"
+      }
     },
     "species-removed": {
       "kind": "action",
       "description": "Học sinh loại bỏ một loài khỏi quần xã",
-      "data": { "species": "Mã loài bị loại bỏ", "collapsed": "Số loài khác chết theo vì mất hết nguồn thức ăn" }
+      "data": {
+        "species": "Mã loài bị loại bỏ",
+        "collapsed": "Số loài khác chết theo vì mất hết nguồn thức ăn"
+      }
     },
     "species-restored": {
       "kind": "action",
@@ -61,7 +74,9 @@
     "chain-complete": {
       "kind": "goal",
       "description": "Một mũi tên mới làm chuỗi thức ăn dài nhất (từ sinh vật sản xuất) dài thêm và đạt từ 3 bậc dinh dưỡng trở lên",
-      "data": { "levels": "Số bậc dinh dưỡng của chuỗi dài nhất" }
+      "data": {
+        "levels": "Số bậc dinh dưỡng của chuỗi dài nhất"
+      }
     }
   }
 }

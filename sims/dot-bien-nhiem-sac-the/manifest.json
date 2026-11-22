@@ -1,9 +1,12 @@
 {
   "slug": "dot-bien-nhiem-sac-the",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Đột biến nhiễm sắc thể",
   "subject": "biology",
-  "grades": [12],
+  "grades": [
+    12
+  ],
   "description": "Hai phần. Đột biến cấu trúc: chọn một đoạn gene trên nhiễm sắc thể rồi gây mất đoạn, lặp đoạn, đảo đoạn hoặc chuyển đoạn sang một NST không tương đồng, và so sánh trình tự gene với NST ban đầu. Đột biến số lượng: chọn loài rồi tạo thể một (2n − 1), thể ba (2n + 1), thể tam bội (3n), thể tứ bội (4n); xem số NST và ví dụ như hội chứng Down (thể ba NST 21, 47 NST). Có thử thách tạo lại một bộ NST cho trước.",
   "learningGoals": [
     "Phân biệt bốn dạng đột biến cấu trúc NST qua sự thay đổi số lượng và trật tự gene: mất đoạn, lặp đoạn, đảo đoạn, chuyển đoạn.",

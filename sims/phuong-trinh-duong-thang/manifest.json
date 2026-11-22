@@ -1,6 +1,7 @@
 {
   "slug": "phuong-trinh-duong-thang",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Phương trình đường thẳng",
   "subject": "math",
   "grades": [

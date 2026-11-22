@@ -1,9 +1,12 @@
 {
   "slug": "nang-luong-phan-ung",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Enthalpy và sơ đồ năng lượng phản ứng",
   "subject": "chemistry",
-  "grades": [10],
+  "grades": [
+    10
+  ],
   "description": "Chọn một phản ứng (đốt cháy methane, đốt cháy hydrogen, tổng hợp ammonia, hydrogen tác dụng với chlorine, nhiệt phân đá vôi, hòa tan ammonium nitrate) để xem sơ đồ năng lượng có “đồi” năng lượng hoạt hóa, tính biến thiên enthalpy chuẩn ΔrH°₂₉₈ từ enthalpy tạo thành chuẩn ΔfH° và ước tính từ năng lượng liên kết (với phản ứng chỉ có chất khí). Thay đổi lượng chất đầu để thấy nhiệt lượng tỉ lệ với số mol; thêm chất xúc tác thì Eₐ giảm còn ΔrH° không đổi. Chế độ đố vui ẩn kết quả để học sinh tự tính và phân loại tỏa nhiệt, thu nhiệt. Sơ đồ không theo tỉ lệ, giá trị Eₐ chỉ để minh họa.",
   "learningGoals": [
     "Tính ΔrH°₂₉₈ = ΣΔfH°(sản phẩm) − ΣΔfH°(chất đầu), nhớ ΔfH° của đơn chất bền bằng 0.",
@@ -33,7 +36,11 @@
     "answer": {
       "kind": "action",
       "description": "Học sinh trả lời câu đố tỏa nhiệt hay thu nhiệt",
-      "data": { "reaction": "Số thứ tự phản ứng", "exo": "1 nếu chọn tỏa nhiệt, 0 nếu chọn thu nhiệt", "correct": "1 nếu đúng, 0 nếu sai" }
+      "data": {
+        "reaction": "Số thứ tự phản ứng",
+        "exo": "1 nếu chọn tỏa nhiệt, 0 nếu chọn thu nhiệt",
+        "correct": "1 nếu đúng, 0 nếu sai"
+      }
     },
     "new-question": {
       "kind": "action",
@@ -43,7 +50,10 @@
     "classified": {
       "kind": "goal",
       "description": "Học sinh phân loại đúng phản ứng tỏa nhiệt hay thu nhiệt trong chế độ đố vui",
-      "data": { "reaction": "Số thứ tự phản ứng", "exo": "1 nếu phản ứng tỏa nhiệt, 0 nếu thu nhiệt" }
+      "data": {
+        "reaction": "Số thứ tự phản ứng",
+        "exo": "1 nếu phản ứng tỏa nhiệt, 0 nếu thu nhiệt"
+      }
     }
   }
 }

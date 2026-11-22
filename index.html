@@ -11,15 +11,23 @@
       img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: left; display: block; }
       div { padding: 10px 12px; }
       small { color: #6b7890; }
+      li { position: relative; }
+      .badge { position: absolute; top: 8px; left: 8px; padding: 3px 9px; border-radius: 999px; font-size: 12px; font-weight: 700; color: #fff; background: #c2410c; }
+      .badge.approved { background: #15803d; }
+      #count { color: #6b7890; margin: -8px 0 16px; }
     </style>
   </head>
   <body>
     <h1>ExamDee Sims</h1>
+    <p id="count"></p>
     <ul id="list"></ul>
     <script type="module">
       // Dev gallery. Run `npm run catalog` after adding a sim.
       const list = document.getElementById("list");
-      for (const sim of await (await fetch("catalog.json")).json()) {
+      const sims = await (await fetch("catalog.json")).json();
+      const approved = sims.filter(sim => sim.status === "approved").length;
+      document.getElementById("count").textContent = `${sims.length} sim · ${approved} đã duyệt · ${sims.length - approved} chưa đạt, cần làm lại`;
+      for (const sim of sims) {
         const li = document.createElement("li");
         const img = Object.assign(document.createElement("img"), { loading: "lazy", decoding: "async", width: 600, height: 375, src: `sims/${sim.slug}/thumb.png`, alt: "" });
         const div = document.createElement("div");
@@ -27,6 +35,11 @@
         const host = Object.assign(document.createElement("a"), { href: `host-demo.html?sim=${sim.slug}`, textContent: "host demo" });
         const meta = document.createElement("small");
         meta.append(` · ${sim.subject} · lớp ${sim.grades.join(", ")} · `, host);
+        const badge = Object.assign(document.createElement("span"), {
+          className: `badge ${sim.status}`,
+          textContent: sim.status === "approved" ? "Đã duyệt" : "Chưa đạt",
+        });
+        li.append(badge);
         div.append(a, meta);
         li.append(img, div);
         list.append(li);

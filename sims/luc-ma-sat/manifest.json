@@ -1,9 +1,12 @@
 {
   "slug": "luc-ma-sat",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Lực ma sát",
   "subject": "physics",
-  "grades": [6],
+  "grades": [
+    6
+  ],
   "description": "Dùng lực kế kéo một khối gỗ theo phương ngang trên mặt kính, mặt gỗ, thảm hoặc giấy nhám; khối gỗ đặt mặt rộng, mặt hẹp hoặc đặt trên các con lăn. Tay kéo mạnh dần (2 N mỗi giây): khi khối gỗ còn đứng yên, lực ma sát nghỉ bằng đúng lực kéo; khi lực kéo vượt quá lực ma sát nghỉ cực đại μn·N thì khối gỗ chuyển động, sau đó được kéo đều nên số chỉ lực kế bằng lực ma sát trượt μt·N (hoặc lực ma sát lăn μl·N khi đặt trên con lăn). Áp lực N = P = 10·m. Hệ số dùng trong mô hình (giá trị điển hình, làm tròn) theo thứ tự μn; μt; μl: mặt kính 0,25; 0,2; 0,005; mặt gỗ 0,45; 0,35; 0,01; thảm 0,6; 0,5; 0,04; giấy nhám 0,8; 0,65; 0,03. Đồ thị cho thấy số chỉ lực kế theo thời gian. Học sinh đo rồi xếp các mặt theo lực ma sát trượt từ nhỏ đến lớn.",
   "learningGoals": [
     "Nhận biết lực ma sát nghỉ, lực ma sát trượt và lực ma sát lăn; lực ma sát nghỉ cân bằng với lực kéo khi vật còn đứng yên.",

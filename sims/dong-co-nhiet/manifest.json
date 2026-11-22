@@ -1,9 +1,13 @@
 {
   "slug": "dong-co-nhiet",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Động cơ nhiệt và hiệu suất",
   "subject": "physics",
-  "grades": [10, 12],
+  "grades": [
+    10,
+    12
+  ],
   "description": "Khí lí tưởng trong xilanh có pit-tông chạy lặp lại chu trình Carnot hoặc chu trình hai đẳng tích, hai đẳng áp trên đồ thị p–V. Đổi nhiệt độ nguồn nóng, nguồn lạnh và khoảng thể tích để thấy nhiệt lượng nhận Q₁, nhiệt lượng tỏa Q₂, công A (diện tích phần tô) và hiệu suất H so với giới hạn 1 − T₂/T₁.",
   "learningGoals": [
     "Động cơ nhiệt nhận nhiệt lượng Q₁ từ nguồn nóng, sinh công A và tỏa nhiệt lượng Q₂ cho nguồn lạnh: A = Q₁ − Q₂.",

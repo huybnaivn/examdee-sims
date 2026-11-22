@@ -1,9 +1,12 @@
 {
   "slug": "xac-suat-co-dieu-kien",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Xác suất có điều kiện và công thức Bay-ét",
   "subject": "math",
-  "grades": [12],
+  "grades": [
+    12
+  ],
   "description": "Phép thử hai giai đoạn: trước hết xảy ra B hoặc B̄, sau đó xảy ra A hoặc Ā (xét nghiệm bệnh, chọn hộp rồi lấy bi, sản phẩm của hai máy). Đổi P(B), P(A|B), P(A|B̄) trên sơ đồ cây để thấy xác suất của từng nhánh, công thức nhân xác suất, công thức xác suất toàn phần và công thức Bay-ét; lưới 1000 trường hợp cho thấy cùng kết quả bằng cách đếm.",
   "learningGoals": [
     "Đọc và lập sơ đồ cây; tổng xác suất các nhánh đi ra từ một điểm bằng 1.",

@@ -1,6 +1,7 @@
 {
   "slug": "phan-so",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Phân số",
   "subject": "math",
   "grades": [

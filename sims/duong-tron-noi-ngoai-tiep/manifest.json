@@ -1,9 +1,12 @@
 {
   "slug": "duong-tron-noi-ngoai-tiep",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Đường tròn ngoại tiếp và nội tiếp tam giác",
   "subject": "math",
-  "grades": [9],
+  "grades": [
+    9
+  ],
   "description": "Kéo ba đỉnh A, B, C của tam giác trên lưới (các đỉnh dừng ở nửa đơn vị) hoặc chỉnh tọa độ bằng thanh trượt. Ba đường trung trực cắt nhau tại tâm O của đường tròn ngoại tiếp (O; R), ba đường phân giác trong cắt nhau tại tâm I của đường tròn nội tiếp (I; r). Hình vẽ cho biết R = abc/(4S), r = S/p và vị trí của O: trong tam giác (tam giác nhọn), là trung điểm cạnh huyền (tam giác vuông) hoặc ngoài tam giác (tam giác tù). Bảng số liệu kiểm tra hệ thức Euler OI² = R² − 2Rr.",
   "learningGoals": [
     "Xác định tâm đường tròn ngoại tiếp là giao điểm ba đường trung trực, cách đều ba đỉnh.",

@@ -1,9 +1,12 @@
 {
   "slug": "xac-suat-co-dien",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Xác suất của biến cố",
   "subject": "math",
-  "grades": [10],
+  "grades": [
+    10
+  ],
   "description": "Thực hiện các phép thử ngẫu nhiên: tung một đồng xu, gieo một hoặc hai con xúc xắc, rút một thẻ từ hộp có số thẻ đỏ, xanh, vàng tùy chọn (rút xong trả thẻ lại hộp). Chọn một biến cố A (ví dụ \"tổng số chấm bằng 7\"), thực hiện 1, 10, 100 hoặc 1000 lần và so sánh tần suất của A với xác suất P(A) = n(A)/n(Ω) trên hai biểu đồ: tần suất từng kết quả cạnh xác suất lí thuyết, và tần suất của A theo số lần thử.",
   "learningGoals": [
     "Tính xác suất theo định nghĩa cổ điển P(A) = n(A)/n(Ω) bằng cách đếm các kết quả đồng khả năng.",

@@ -1,9 +1,13 @@
 {
   "slug": "tap-hop-ven",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Tập hợp và biểu đồ Ven",
   "subject": "math",
-  "grades": [6, 10],
+  "grades": [
+    6,
+    10
+  ],
   "description": "Biểu đồ Ven của hai hoặc ba tập hợp A, B, C trong tập hợp U. Các phần tử (số hoặc chữ cái, tối đa 12) lấy từ bộ có sẵn (bội của 2, 3, 4 trong các số từ 1 đến 12; ước của 12, 18, 30; chữ cái của các từ TOAN, TIN, NAM) hoặc do học sinh tự kéo vào từng vùng. Bấm một phép toán để tô vùng của hợp, giao, hiệu, phần bù trên biểu đồ và liệt kê kết quả trong dấu ngoặc nhọn. Mô phỏng đếm số phần tử theo công thức n(A ∪ B) = n(A) + n(B) − n(A ∩ B) (và công thức tương ứng cho ba tập hợp), báo khi có tập hợp rỗng, tập hợp con hoặc hai tập hợp không giao nhau. Hoạt động bài toán khảo sát cho một đề bài có lời văn (ví dụ số học sinh thích bóng đá, cầu lông, cả hai) để học sinh tìm số còn thiếu bằng biểu đồ Ven.",
   "learningGoals": [
     "Biểu diễn tập hợp bằng biểu đồ Ven; xác định một phần tử thuộc hay không thuộc một tập hợp.",
@@ -42,12 +46,16 @@
     "element-added": {
       "kind": "action",
       "description": "Học sinh thêm một phần tử mới vào U",
-      "data": { "count": "Số phần tử sau khi thêm" }
+      "data": {
+        "count": "Số phần tử sau khi thêm"
+      }
     },
     "element-removed": {
       "kind": "action",
       "description": "Học sinh xoá phần tử đang chọn",
-      "data": { "count": "Số phần tử còn lại" }
+      "data": {
+        "count": "Số phần tử còn lại"
+      }
     },
     "operation-shown": {
       "kind": "result",

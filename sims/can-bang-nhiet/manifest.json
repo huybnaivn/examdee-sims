@@ -1,9 +1,12 @@
 {
   "slug": "can-bang-nhiet",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Phương trình cân bằng nhiệt",
   "subject": "physics",
-  "grades": [8],
+  "grades": [
+    8
+  ],
   "description": "Cho hai vật có nhiệt độ khác nhau tiếp xúc trong bình cách nhiệt, ví dụ thả miếng kim loại nóng vào nước lạnh hoặc trộn hai lượng nước. Chọn chất (nước, nhôm, đồng, sắt, chì, dầu), khối lượng và nhiệt độ ban đầu của mỗi vật, rồi quan sát nhiệt độ hai vật tiến dần về nhiệt độ cân bằng và so sánh nhiệt lượng tỏa ra với nhiệt lượng thu vào.",
   "learningGoals": [
     "Nêu được nhiệt tự truyền từ vật có nhiệt độ cao hơn sang vật có nhiệt độ thấp hơn cho đến khi nhiệt độ hai vật bằng nhau.",

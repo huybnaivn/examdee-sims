@@ -1,9 +1,12 @@
 {
   "slug": "nhiet-ke-thang-nhiet-do",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Nhiệt kế và thang nhiệt độ",
   "subject": "physics",
-  "grades": [6],
+  "grades": [
+    6
+  ],
   "description": "Một nhiệt kế chất lỏng có ba thang Celsius, Fahrenheit và Kelvin đặt cạnh nhau. Chọn tình huống (nước đá đang tan, cơ thể người, ngày hè, nước sôi) hoặc tự chọn nhiệt độ để đọc trên ba thang và xem cách đổi: t(°F) = 1,8·t(°C) + 32, T(K) = t(°C) + 273. Chế độ đố: đọc nhiệt kế theo vạch chia nhỏ nhất với mắt đặt ngang mức chất lỏng.",
   "learningGoals": [
     "Nêu hai mốc của thang Celsius: nước đá đang tan 0 °C, nước đang sôi 100 °C (ở áp suất thường).",

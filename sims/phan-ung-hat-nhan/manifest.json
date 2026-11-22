@@ -1,9 +1,12 @@
 {
   "slug": "phan-ung-hat-nhan",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Phản ứng hạt nhân, phân hạch và nhiệt hạch",
   "subject": "physics",
-  "grades": [12],
+  "grades": [
+    12
+  ],
   "description": "Lập phương trình phản ứng hạt nhân bằng cách chọn các hạt, kiểm tra định luật bảo toàn số khối và điện tích, tìm hạt còn thiếu và tính năng lượng tỏa ra hay thu vào từ độ hụt khối. Xem đường cong năng lượng liên kết riêng theo số khối và điều khiển hệ số nhân neutron của phản ứng phân hạch dây chuyền ²³⁵U.",
   "learningGoals": [
     "Vận dụng định luật bảo toàn số khối và bảo toàn điện tích để hoàn thành phương trình phản ứng hạt nhân.",

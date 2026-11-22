@@ -1,9 +1,13 @@
 {
   "slug": "bien-tro",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Biến trở và mạch chia điện áp",
   "subject": "physics",
-  "grades": [9, 11],
+  "grades": [
+    9,
+    11
+  ],
   "description": "Biến trở con chạy mắc nối tiếp với bóng đèn 6 V – 3 W: kéo con chạy dọc cuộn dây để đổi chiều dài phần dây có dòng điện, quan sát điện trở biến trở, cường độ dòng điện và độ sáng của đèn; tìm vị trí để đèn sáng đúng định mức. Chế độ thứ hai dùng biến trở làm chiết áp chia điện áp: U_ra = U·R₂/(R₁ + R₂) khi không tải; mắc thêm tải thì U_ra giảm.",
   "learningGoals": [
     "Nhận ra điện trở của biến trở tỉ lệ thuận với chiều dài phần cuộn dây có dòng điện chạy qua.",

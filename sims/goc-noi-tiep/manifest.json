@@ -1,9 +1,12 @@
 {
   "slug": "goc-noi-tiep",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Góc nội tiếp và góc ở tâm",
   "subject": "math",
-  "grades": [9],
+  "grades": [
+    9
+  ],
   "description": "Kéo các điểm A, B, C (và D) trên đường tròn tâm O; các điểm luôn nằm trên đường tròn và dừng ở số đo nguyên độ. Hình vẽ cho thấy góc nội tiếp ACB, góc ở tâm AOB và cung AB bị chắn với số đo trực tiếp. Có thể vẽ thêm góc nội tiếp thứ hai ADB (cùng chắn cung AB hoặc tạo thành tứ giác nội tiếp ACBD) và góc tạo bởi tia tiếp tuyến Ax với dây cung AB. Khi kéo A hoặc B gần đầu kia của đường kính (trong khoảng 2°), điểm tự hút vào để AB là đường kính.",
   "learningGoals": [
     "Nhận biết góc nội tiếp, góc ở tâm và cung bị chắn; số đo góc ở tâm bằng số đo cung bị chắn.",

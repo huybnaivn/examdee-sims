@@ -1,9 +1,12 @@
 {
   "slug": "polime",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Polime và phản ứng trùng hợp",
   "subject": "chemistry",
-  "grades": [12],
+  "grades": [
+    12
+  ],
   "description": "Chọn một monomer (ethylene, propylene, vinyl chloride, styrene, caprolactam, buta-1,3-diene) hoặc cặp hexamethylenediamine + adipic acid và xem các phân tử nối với nhau thành mạch polime. Sim cho phương trình phản ứng, mắt xích, loại phản ứng (trùng hợp hay trùng ngưng, nylon-6,6 tách ra 2n phân tử H₂O) và tính phân tử khối polime M = n · M mắt xích theo hệ số polime hóa n. Chế độ bài tập cho phân tử khối của polime và yêu cầu tìm n. Nguyên tử khối: C = 12, H = 1, O = 16, N = 14, Cl = 35,5; bỏ qua nhóm ở hai đầu mạch; hình chỉ vẽ 8 monomer, không theo tỉ lệ.",
   "learningGoals": [
     "Viết phương trình trùng hợp tạo PE, PP, PVC, PS, cao su buna và trùng hợp mở vòng caprolactam tạo capron (nylon-6).",
@@ -36,7 +39,10 @@
     "answer-checked": {
       "kind": "action",
       "description": "Học sinh bấm kiểm tra giá trị n đã chọn trong bài tập",
-      "data": { "n": "Giá trị n học sinh chọn", "correct": "1 nếu đúng, 0 nếu sai" }
+      "data": {
+        "n": "Giá trị n học sinh chọn",
+        "correct": "1 nếu đúng, 0 nếu sai"
+      }
     },
     "n-found": {
       "kind": "goal",

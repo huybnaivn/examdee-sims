@@ -1,9 +1,12 @@
 {
   "slug": "cam-ung-thuc-vat",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Cảm ứng ở thực vật",
   "subject": "biology",
-  "grades": [11],
+  "grades": [
+    11
+  ],
   "description": "Một cây mầm trong chậu (vẽ cắt dọc để thấy rễ) sinh trưởng trong 72 giờ dưới tác động của ánh sáng và trọng lực. Học sinh chọn chiếu sáng từ một phía (đổi hướng nguồn sáng) hoặc sáng đều, xoay chậu (đặt đứng, nằm ngang, lộn ngược) hoặc đặt chậu nằm ngang trên máy hồi chuyển (clinostat), và làm thí nghiệm với đỉnh ngọn: để nguyên, chụp mũ không trong suốt, chụp mũ trong suốt, quấn băng không trong suốt phía dưới đỉnh, cắt bỏ đỉnh. Trước khi chạy một thí nghiệm mới, học sinh có thể dự đoán ngọn cây sẽ mọc thế nào. Hình phóng to đỉnh ngọn cho thấy tỉ lệ auxin ở hai phía. Mô hình sinh trưởng đơn giản theo giả thuyết auxin phân bố không đều: đỉnh ngọn tạo auxin và tiếp nhận ánh sáng; kích thích từ một phía làm auxin lệch sang phía khuất sáng và sang mặt dưới, với độ chênh giữa hai phía = 0,2 × sin(góc nghiêng của cơ quan so với phương thẳng đứng) − 0,3 × sin(góc giữa hướng sáng và hướng ngọn) (số hạng ánh sáng chỉ có ở ngọn), nghĩa là ánh sáng hoàn toàn từ một bên cho tỉ lệ 65% : 35%, cơ quan nằm ngang cho 60% : 40%. Ở thân, phía nhiều auxin dài nhanh hơn nên ngọn cong về phía sáng và cong lên (hướng sáng dương, hướng trọng lực âm); ở rễ, auxin nồng độ cao ức chế nên rễ cong xuống (hướng trọng lực dương). Tốc độ uốn cong = 30° mỗi giờ × độ chênh auxin; ngọn dài thêm 0,06 cm/giờ, rễ 0,04 cm/giờ. Cắt đỉnh thì ngọn ngừng dài và không uốn cong; che kín đỉnh thì không hướng sáng nhưng vẫn hướng trọng lực; trên máy hồi chuyển mọi phía nhận kích thích như nhau nên ngọn và rễ mọc thẳng. Không mô phỏng tính hướng sáng âm yếu của rễ. Các hằng số chỉ có tính minh hoạ, hình không theo tỉ lệ.",
   "learningGoals": [
     "Nêu được khái niệm hướng động; phân biệt hướng sáng dương của thân với hướng trọng lực dương của rễ và hướng trọng lực âm của thân.",

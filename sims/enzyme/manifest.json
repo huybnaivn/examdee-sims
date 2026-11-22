@@ -1,9 +1,12 @@
 {
   "slug": "enzyme",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Hoạt tính của enzyme",
   "subject": "biology",
-  "grades": [10],
+  "grades": [
+    10
+  ],
   "description": "Một cốc dung dịch chứa enzyme và cơ chất: mỗi phân tử enzyme gắn cơ chất vào trung tâm hoạt động rồi giải phóng sản phẩm. Học sinh chọn enzyme (amylase nước bọt, pH tối ưu 6,8; pepsin dạ dày, pH tối ưu 2; trypsin ruột non, pH tối ưu 8), chỉnh nhiệt độ, pH, nồng độ cơ chất ban đầu và lượng enzyme. Mô hình động học Michaelis – Menten: v = Vmax·[S]/(Km + [S]), với Vmax = 1 mmol/L/phút × lượng enzyme × hệ số nhiệt độ × hệ số pH × phần enzyme chưa biến tính. Hệ số nhiệt độ tăng gấp đôi khi tăng 10 °C cho đến nhiệt độ tối ưu 37 °C rồi giảm; trên 45 °C enzyme bị biến tính không thuận nghịch (đến 60 °C thì mất hết hoạt tính) và làm nguội không khôi phục được. Hệ số pH là đường chuông quanh pH tối ưu của từng enzyme. Đồ thị cho lượng sản phẩm theo thời gian và tốc độ phản ứng theo nồng độ cơ chất, nhiệt độ hoặc pH. Các hằng số Km và Vmax chỉ có tính minh hoạ.",
   "learningGoals": [
     "Trình bày được cơ chế tác động của enzyme: enzyme liên kết với cơ chất tại trung tâm hoạt động tạo phức hợp enzyme – cơ chất rồi giải phóng sản phẩm.",

@@ -1,9 +1,13 @@
 {
   "slug": "phan-loai-oxide",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Oxide: phân loại và tính chất",
   "subject": "chemistry",
-  "grades": [8, 10],
+  "grades": [
+    8,
+    10
+  ],
   "description": "Cho lần lượt 11 oxide (CaO, Na₂O, CuO, Fe₂O₃, CO₂, SO₂, P₂O₅, Al₂O₃, ZnO, CO, NO) vào nước có quỳ tím, dung dịch HCl và dung dịch NaOH; quan sát hiện tượng, đọc phương trình hóa học rồi xếp mỗi oxide vào loại oxide base, oxide acid, oxide lưỡng tính hoặc oxide trung tính. Có phần luyện gọi tên oxide theo danh pháp của chương trình 2018.",
   "learningGoals": [
     "Phân loại oxide thành oxide base, oxide acid, oxide lưỡng tính và oxide trung tính dựa vào khả năng phản ứng với acid và base.",

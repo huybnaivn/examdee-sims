@@ -1,9 +1,13 @@
 {
   "slug": "dun-nuoc-hieu-suat",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Nhiệt lượng và hiệu suất đun nước",
   "subject": "physics",
-  "grades": [8, 9],
+  "grades": [
+    8,
+    9
+  ],
   "description": "Đun sôi nước bằng ấm điện hoặc bếp gas. Chọn khối lượng nước, nhiệt độ ban đầu, công suất và hiệu suất của thiết bị rồi quan sát nhiệt độ tăng đến 100 °C. Mô phỏng tính nhiệt lượng nước thu vào Q = m·c·Δt, năng lượng thiết bị cung cấp, phần hao phí, thời gian đun, chi phí theo giá minh họa và so sánh hai thiết bị. Học sinh có thể dự đoán thời gian đun sôi trước khi chạy.",
   "learningGoals": [
     "Tính nhiệt lượng nước thu vào để nóng lên: Q = m·c·Δt với c = 4200 J/(kg·K).",

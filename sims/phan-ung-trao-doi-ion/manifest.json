@@ -1,6 +1,7 @@
 {
   "slug": "phan-ung-trao-doi-ion",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Phản ứng trao đổi ion trong dung dịch",
   "subject": "chemistry",
   "grades": [

@@ -2,6 +2,7 @@
   {
     "slug": "am-thanh",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Sóng âm: độ cao và độ to",
     "subject": "physics",
     "grades": [
@@ -48,6 +49,7 @@
   {
     "slug": "an-mon-kim-loai",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Ăn mòn kim loại và chống ăn mòn",
     "subject": "chemistry",
     "grades": [
@@ -107,6 +109,7 @@
   {
     "slug": "ap-suat-chat-long",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Áp suất chất lỏng",
     "subject": "physics",
     "grades": [
@@ -147,42 +150,86 @@
   {
     "slug": "ap-suat-chat-ran",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Áp suất trên bề mặt",
     "subject": "physics",
     "grades": [
       8
     ],
-    "description": "Đặt một viên gạch lên cát mềm bằng mặt lớn, mặt vừa hoặc mặt nhỏ, hoặc cho một người đứng trên cát bằng hai bàn chân, bằng đôi ván trượt hay trên một mũi đinh. Sim cho thấy áp lực F, diện tích bị ép S, áp suất p = F/S và độ lún của cát tăng theo áp suất.",
+    "description": "Kéo viên gạch, bạn nhỏ, chú voi hay xe tăng thả xuống cát, tuyết, bùn hoặc bê tông, mỗi bên một nhân vật, rồi so sánh ai lún sâu hơn. Xoay viên gạch, chồng thêm gạch, đổi giày cho bạn nhỏ (giày thể thao, gót nhọn, cà kheo, ván trượt) để thấy áp suất p = F/S phụ thuộc cả áp lực lẫn diện tích bị ép. Lấy g = 10 N/kg. Hình không theo tỉ lệ; độ lún chỉ minh họa theo thang lôgarit của áp suất, không phải định luật vật lí.",
     "learningGoals": [
-      "Tính áp suất p = F/S, đổi diện tích từ cm² sang m² và dùng đơn vị N/m² = Pa.",
-      "Nhận ra cùng một áp lực, diện tích bị ép càng nhỏ thì áp suất càng lớn: tỉ số áp suất bằng nghịch đảo tỉ số diện tích.",
-      "Giải thích vì sao ván trượt giúp không bị lún, còn mũi đinh nhọn dễ đâm sâu vào vật.",
-      "Tìm cách đặt vật để áp suất lên mặt cát lớn nhất."
+      "Tính áp suất p = F/S và đổi đơn vị cm² sang m², Pa sang kPa và MPa.",
+      "Giải thích vì sao vật nhẹ có thể lún sâu hơn vật nặng khi diện tích bị ép nhỏ.",
+      "Nêu cách tăng, giảm áp suất trong thực tế: gót nhọn, ván trượt tuyết, bánh xích xe tăng."
     ],
     "state": {
-      "object": "Vật đặt trên cát: \"brick\" (viên gạch 20 cm × 10 cm × 5 cm) hoặc \"person\" (người đứng)",
-      "face": "Mặt gạch tiếp xúc với cát: \"large\" (20 cm × 10 cm = 200 cm²), \"medium\" (20 cm × 5 cm = 100 cm²), \"small\" (10 cm × 5 cm = 50 cm²)",
-      "support": "Người đứng trên: \"feet\" (hai bàn chân, 300 cm²), \"skis\" (đôi ván trượt, 2560 cm²), \"nail\" (tấm ván tựa trên một mũi đinh, 1 mm² = 0,01 cm²)",
-      "brickMass": "Khối lượng viên gạch (kg); áp lực F = 10·m (N)",
-      "personMass": "Khối lượng người (kg); áp lực F = 10·m (N)"
+      "ground": "Mặt đất: sand (cát), snow (tuyết), mud (bùn), concrete (bê tông, không lún)",
+      "slotA": "Nhân vật đứng bên trái: brick, kid, elephant, tank hoặc none",
+      "slotB": "Nhân vật đứng bên phải: brick, kid, elephant, tank hoặc none",
+      "brickFace": "Cách đặt viên gạch: large (mặt 20 × 10 cm), medium (20 × 5 cm), small (10 × 5 cm)",
+      "brickCount": "Số viên gạch chồng lên nhau (1–3)",
+      "brickMass": "Khối lượng mỗi viên gạch (kg)",
+      "kidMass": "Khối lượng bạn nhỏ (kg)",
+      "kidShoes": "Bạn nhỏ đi gì: feet (giày thể thao, 300 cm²), heels (gót nhọn, 2 cm²), stilts (cà kheo, 20 cm²), skis (ván trượt, 2560 cm²)",
+      "elephantMass": "Khối lượng chú voi (kg); bốn chân, mỗi chân 1000 cm²",
+      "guess": "Dự đoán của học sinh bên nào lún sâu hơn: A (trái), B (phải), equal, none",
+      "challenge": "Thử thách đang chọn: none, kid-beats-elephant, equal-different, brick-max"
     },
     "events": {
-      "pressure-measured": {
-        "kind": "result",
-        "description": "Học sinh vừa chọn xong vật, mặt tiếp xúc (hoặc cách đứng) hoặc khối lượng; đây là áp suất lên mặt cát ở cách đặt đó. Độ lún theo mô hình đơn giản d = 6·(1 − e^(−p/10000)) cm, chỉ để thấy độ lún tăng theo áp suất.",
+      "placed": {
+        "kind": "action",
+        "description": "Học sinh kéo một nhân vật thả xuống đất, hoặc nhấc nó về kệ",
         "data": {
-          "force": "Áp lực F = 10·m (N)",
-          "area": "Diện tích bị ép S (m²)",
-          "pressure": "Áp suất p = F/S (Pa)",
-          "depth": "Độ lún của cát (cm), theo mô hình"
+          "slot": "1 = bên trái, 2 = bên phải",
+          "object": "0 = nhấc đi, 1 gạch, 2 bạn nhỏ, 3 voi, 4 xe tăng"
         }
       },
-      "max-pressure-found": {
-        "kind": "goal",
-        "description": "Học sinh chọn được mặt tiếp xúc (hoặc cách đứng) cho áp suất lớn nhất: mặt có diện tích nhỏ nhất",
+      "object-tapped": {
+        "kind": "action",
+        "description": "Học sinh chạm vào viên gạch để xoay, hoặc vào bạn nhỏ để đổi giày",
         "data": {
-          "pressure": "Áp suất lớn nhất (Pa)",
-          "area": "Diện tích bị ép (m²)"
+          "object": "1 gạch, 2 bạn nhỏ"
+        }
+      },
+      "cleared": {
+        "kind": "action",
+        "description": "Học sinh bấm dọn sạch mặt đất",
+        "data": {}
+      },
+      "pressure-measured": {
+        "kind": "result",
+        "description": "Một nhân vật vừa lún xong; áp suất của nó lên mặt đất",
+        "data": {
+          "slot": "1 trái, 2 phải",
+          "object": "1 gạch, 2 bạn nhỏ, 3 voi, 4 xe tăng",
+          "force": "Áp lực F (N)",
+          "area": "Diện tích bị ép S (m²)",
+          "pressure": "Áp suất p (Pa)"
+        }
+      },
+      "compared": {
+        "kind": "result",
+        "description": "Cả hai bên đã lún xong: so sánh áp suất hai bên",
+        "data": {
+          "pressureA": "Áp suất bên trái (Pa)",
+          "pressureB": "Áp suất bên phải (Pa)",
+          "ratio": "Tỉ số áp suất lớn / nhỏ",
+          "deeper": "1 trái lún sâu hơn, 2 phải, 0 bằng nhau (lệch dưới 5 %)"
+        }
+      },
+      "prediction-correct": {
+        "kind": "goal",
+        "description": "Học sinh đoán đúng bên nào lún sâu hơn trước khi thả nhân vật",
+        "data": {
+          "deeper": "1 trái, 2 phải, 0 bằng nhau",
+          "ratio": "Tỉ số áp suất"
+        }
+      },
+      "challenge-done": {
+        "kind": "goal",
+        "description": "Học sinh hoàn thành thử thách đang chọn (mỗi thử thách báo một lần)",
+        "data": {
+          "challenge": "1 bạn nhỏ lún sâu hơn voi, 2 nặng khác nhau mà lún bằng nhau, 3 chồng gạch lún sâu nhất"
         }
       }
     },
@@ -192,6 +239,7 @@
   {
     "slug": "ap-suat-khi-quyen",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Áp suất khí quyển",
     "subject": "physics",
     "grades": [
@@ -239,6 +287,7 @@
   {
     "slug": "ba-duong-conic",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Ba đường conic: elip, hypebol, parabol",
     "subject": "math",
     "grades": [
@@ -315,6 +364,7 @@
   {
     "slug": "ban-mat-song-song",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Khúc xạ qua bản mặt song song và lăng kính phản xạ toàn phần",
     "subject": "physics",
     "grades": [
@@ -391,6 +441,7 @@
   {
     "slug": "bang-nhan",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Phép nhân bằng mảng",
     "subject": "math",
     "grades": [
@@ -446,6 +497,7 @@
   {
     "slug": "bang-tuan-hoan",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Xu hướng biến đổi trong bảng tuần hoàn",
     "subject": "chemistry",
     "grades": [
@@ -492,6 +544,7 @@
   {
     "slug": "bao-toan-co-nang",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Bảo toàn cơ năng",
     "subject": "physics",
     "grades": [
@@ -539,6 +592,7 @@
   {
     "slug": "bat-phuong-trinh-hai-an",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Bất phương trình bậc nhất hai ẩn và hệ",
     "subject": "math",
     "grades": [
@@ -607,6 +661,7 @@
   {
     "slug": "bien-thai-dong-vat",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Sinh trưởng và phát triển ở động vật",
     "subject": "biology",
     "grades": [
@@ -682,6 +737,7 @@
   {
     "slug": "bien-tro",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Biến trở và mạch chia điện áp",
     "subject": "physics",
     "grades": [
@@ -736,6 +792,7 @@
   {
     "slug": "bieu-do-thong-ke",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Biểu đồ thống kê",
     "subject": "math",
     "grades": [
@@ -792,6 +849,7 @@
   {
     "slug": "bong-toi-nhat-thuc",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Bóng tối, nhật thực và nguyệt thực",
     "subject": "physics",
     "grades": [
@@ -852,6 +910,7 @@
   {
     "slug": "cach-tu-nhieu-xa",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Nhiễu xạ ánh sáng và cách tử",
     "subject": "physics",
     "grades": [
@@ -929,6 +988,7 @@
   {
     "slug": "cam-ung-dien-tu",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Cảm ứng điện từ",
     "subject": "physics",
     "grades": [
@@ -990,6 +1050,7 @@
   {
     "slug": "cam-ung-thuc-vat",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Cảm ứng ở thực vật",
     "subject": "biology",
     "grades": [
@@ -1041,6 +1102,7 @@
   {
     "slug": "can-bac-hai",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Căn bậc hai và số vô tỉ",
     "subject": "math",
     "grades": [
@@ -1105,6 +1167,7 @@
   {
     "slug": "can-bang-duong-huyet",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Cân bằng nội môi: điều hòa đường huyết",
     "subject": "biology",
     "grades": [
@@ -1183,6 +1246,7 @@
   {
     "slug": "can-bang-hoa-hoc",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Cân bằng hóa học và nguyên lí Lơ Sa-tơ-li-ê",
     "subject": "chemistry",
     "grades": [
@@ -1248,6 +1312,7 @@
   {
     "slug": "can-bang-nhiet",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Phương trình cân bằng nhiệt",
     "subject": "physics",
     "grades": [
@@ -1301,6 +1366,7 @@
   {
     "slug": "can-bang-oxi-hoa-khu",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Cân bằng phản ứng oxi hóa – khử",
     "subject": "chemistry",
     "grades": [
@@ -1368,6 +1434,7 @@
   {
     "slug": "can-bang-phuong-trinh",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Cân bằng phương trình hóa học",
     "subject": "chemistry",
     "grades": [
@@ -1399,6 +1466,7 @@
   {
     "slug": "can-bang-phuong-trinh-bac-nhat",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Giải phương trình bậc nhất bằng cân thăng bằng",
     "subject": "math",
     "grades": [
@@ -1468,6 +1536,7 @@
   {
     "slug": "cap-so",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Cấp số cộng và cấp số nhân",
     "subject": "math",
     "grades": [
@@ -1509,6 +1578,7 @@
   {
     "slug": "cau-hinh-electron",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Cấu hình electron và ô orbital",
     "subject": "chemistry",
     "grades": [
@@ -1569,6 +1639,7 @@
   {
     "slug": "cau-tao-nguyen-tu",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Cấu tạo nguyên tử",
     "subject": "chemistry",
     "grades": [
@@ -1616,6 +1687,7 @@
   {
     "slug": "cau-truc-te-bao",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Cấu trúc tế bào",
     "subject": "biology",
     "grades": [
@@ -1693,6 +1765,7 @@
   {
     "slug": "chat-dien-li",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Chất điện li và độ dẫn điện",
     "subject": "chemistry",
     "grades": [
@@ -1728,6 +1801,7 @@
   {
     "slug": "chat-het-chat-du",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Chất hết, chất dư và hiệu suất",
     "subject": "chemistry",
     "grades": [
@@ -1769,6 +1843,7 @@
   {
     "slug": "chon-loc-tu-nhien",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Chọn lọc tự nhiên",
     "subject": "biology",
     "grades": [
@@ -1830,6 +1905,7 @@
   {
     "slug": "chu-trinh-carbon",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Chu trình carbon",
     "subject": "biology",
     "grades": [
@@ -1876,6 +1952,7 @@
   {
     "slug": "chu-vi-hinh-tron",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Chu vi và diện tích hình tròn",
     "subject": "math",
     "grades": [
@@ -1926,6 +2003,7 @@
   {
     "slug": "chuan-do-acid-base",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Chuẩn độ acid – base",
     "subject": "chemistry",
     "grades": [
@@ -1990,6 +2068,7 @@
   {
     "slug": "chuoi-thuc-an",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Chuỗi, lưới thức ăn và tháp năng lượng",
     "subject": "biology",
     "grades": [
@@ -2073,6 +2152,7 @@
   {
     "slug": "chuyen-dong-thang",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Chuyển động thẳng biến đổi đều",
     "subject": "physics",
     "grades": [
@@ -2136,6 +2216,7 @@
   {
     "slug": "chuyen-dong-tron-deu",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Chuyển động tròn đều",
     "subject": "physics",
     "grades": [
@@ -2187,6 +2268,7 @@
   {
     "slug": "chuyen-the",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Sự chuyển thể: đun nóng nước đá",
     "subject": "physics",
     "grades": [
@@ -2247,6 +2329,7 @@
   {
     "slug": "con-lac",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Con lắc đơn",
     "subject": "physics",
     "grades": [
@@ -2294,6 +2377,7 @@
   {
     "slug": "cong-tru-co-nho",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Cộng, trừ có nhớ theo cột dọc",
     "subject": "math",
     "grades": [
@@ -2368,6 +2452,7 @@
   {
     "slug": "cong-tru-phan-so",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Cộng, trừ phân số",
     "subject": "math",
     "grades": [
@@ -2453,6 +2538,7 @@
   {
     "slug": "cong-va-cong-suat",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Công và công suất",
     "subject": "physics",
     "grades": [
@@ -2508,6 +2594,7 @@
   {
     "slug": "cong-van-toc",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tính tương đối của chuyển động và công thức cộng vận tốc",
     "subject": "physics",
     "grades": [
@@ -2571,6 +2658,7 @@
   {
     "slug": "cong-vecto",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tổng hợp vectơ",
     "subject": "math",
     "grades": [
@@ -2617,6 +2705,7 @@
   {
     "slug": "cung-phan-xa",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Cung phản xạ và thời gian phản xạ",
     "subject": "biology",
     "grades": [
@@ -2726,6 +2815,7 @@
   {
     "slug": "cung-quat-tron",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Độ dài cung tròn và diện tích hình quạt",
     "subject": "math",
     "grades": [
@@ -2797,6 +2887,7 @@
   {
     "slug": "da-giac-deu",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tam giác đều, hình vuông, lục giác đều",
     "subject": "math",
     "grades": [
@@ -2855,6 +2946,7 @@
   {
     "slug": "dao-dong-cuong-buc",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Dao động tắt dần, duy trì và cưỡng bức",
     "subject": "physics",
     "grades": [
@@ -2926,6 +3018,7 @@
   {
     "slug": "dao-dong-dieu-hoa",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Dao động điều hòa",
     "subject": "physics",
     "grades": [
@@ -2965,6 +3058,7 @@
   {
     "slug": "dao-ham-tiep-tuyen",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Đạo hàm và tiếp tuyến",
     "subject": "math",
     "grades": [
@@ -3009,6 +3103,7 @@
   {
     "slug": "dau-tam-thuc-bac-hai",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Dấu của tam thức bậc hai và bất phương trình bậc hai",
     "subject": "math",
     "grades": [
@@ -3066,6 +3161,7 @@
   {
     "slug": "day-hoat-dong-kim-loai",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Dãy hoạt động hóa học của kim loại",
     "subject": "chemistry",
     "grades": [
@@ -3114,6 +3210,7 @@
   {
     "slug": "di-truyen-lien-ket-gioi-tinh",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Di truyền liên kết với giới tính",
     "subject": "biology",
     "grades": [
@@ -3191,6 +3288,7 @@
   {
     "slug": "di-truyen-quan-the",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Di truyền quần thể Hardy – Weinberg",
     "subject": "biology",
     "grades": [
@@ -3260,6 +3358,7 @@
   {
     "slug": "diem-duong-thang-doan-thang",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Điểm, đường thẳng, tia và đoạn thẳng",
     "subject": "math",
     "grades": [
@@ -3356,6 +3455,7 @@
   {
     "slug": "dien-nang-tieu-thu",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Điện năng tiêu thụ và tiền điện",
     "subject": "physics",
     "grades": [
@@ -3426,6 +3526,7 @@
   {
     "slug": "dien-phan",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Điện phân dung dịch",
     "subject": "chemistry",
     "grades": [
@@ -3468,6 +3569,7 @@
   {
     "slug": "dien-tich-chu-vi",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Diện tích và chu vi hình chữ nhật",
     "subject": "math",
     "grades": [
@@ -3517,6 +3619,7 @@
   {
     "slug": "dien-tich-da-giac",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Diện tích tam giác, hình bình hành, hình thang",
     "subject": "math",
     "grades": [
@@ -3581,6 +3684,7 @@
   {
     "slug": "dien-tro-day-dan",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Điện trở của dây dẫn",
     "subject": "physics",
     "grades": [
@@ -3622,6 +3726,7 @@
   {
     "slug": "dien-truong",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Điện trường của điện tích điểm",
     "subject": "physics",
     "grades": [
@@ -3676,6 +3781,7 @@
   {
     "slug": "dinh-luat-coulomb",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Định luật Cu-lông",
     "subject": "physics",
     "grades": [
@@ -3720,6 +3826,7 @@
   {
     "slug": "dinh-luat-kepler",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Các định luật Kê-ple",
     "subject": "physics",
     "grades": [
@@ -3780,6 +3887,7 @@
   {
     "slug": "dinh-luat-ohm",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Định luật Ôm",
     "subject": "physics",
     "grades": [
@@ -3813,6 +3921,7 @@
   {
     "slug": "dinh-ly-talet",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Định lí Ta-lét và tam giác đồng dạng",
     "subject": "math",
     "grades": [
@@ -3866,6 +3975,7 @@
   {
     "slug": "diode-ban-dan",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Điốt bán dẫn và chỉnh lưu",
     "subject": "physics",
     "grades": [
@@ -3915,6 +4025,7 @@
   {
     "slug": "do-goc",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Góc và thước đo góc",
     "subject": "math",
     "grades": [
@@ -3997,6 +4108,7 @@
   {
     "slug": "do-tan-ket-tinh",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Độ tan và sự kết tinh",
     "subject": "chemistry",
     "grades": [
@@ -4059,6 +4171,7 @@
   {
     "slug": "do-thi-ham-so",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Đồ thị hàm số bậc nhất và bậc hai",
     "subject": "math",
     "grades": [
@@ -4100,6 +4213,7 @@
   {
     "slug": "do-thi-luong-giac",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Đồ thị hàm số lượng giác",
     "subject": "math",
     "grades": [
@@ -4138,6 +4252,7 @@
   {
     "slug": "doc-ampe-ke-von-ke",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Đọc ampe kế và vôn kế",
     "subject": "physics",
     "grades": [
@@ -4203,6 +4318,7 @@
   {
     "slug": "doi-don-vi-do",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Đổi đơn vị đo",
     "subject": "math",
     "grades": [
@@ -4280,6 +4396,7 @@
   {
     "slug": "don-bay",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Đòn bẩy và mômen lực",
     "subject": "physics",
     "grades": [
@@ -4317,6 +4434,7 @@
   {
     "slug": "dong-co-dien",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Động cơ điện một chiều",
     "subject": "physics",
     "grades": [
@@ -4373,6 +4491,7 @@
   {
     "slug": "dong-co-nhiet",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Động cơ nhiệt và hiệu suất",
     "subject": "physics",
     "grades": [
@@ -4417,6 +4536,7 @@
   {
     "slug": "dong-ho",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Xem đồng hồ",
     "subject": "math",
     "grades": [
@@ -4475,6 +4595,7 @@
   {
     "slug": "dong-phan-ankan",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Đồng phân và danh pháp alkane",
     "subject": "chemistry",
     "grades": [
@@ -4545,6 +4666,7 @@
   {
     "slug": "dong-vi",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Đồng vị và nguyên tử khối trung bình",
     "subject": "chemistry",
     "grades": [
@@ -4593,6 +4715,7 @@
   {
     "slug": "dot-bien-nhiem-sac-the",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Đột biến nhiễm sắc thể",
     "subject": "biology",
     "grades": [
@@ -4660,6 +4783,7 @@
   {
     "slug": "dun-nuoc-hieu-suat",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Nhiệt lượng và hiệu suất đun nước",
     "subject": "physics",
     "grades": [
@@ -4709,6 +4833,7 @@
   {
     "slug": "duong-tron-luong-giac",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Đường tròn lượng giác",
     "subject": "math",
     "grades": [
@@ -4745,6 +4870,7 @@
   {
     "slug": "duong-tron-noi-ngoai-tiep",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Đường tròn ngoại tiếp và nội tiếp tam giác",
     "subject": "math",
     "grades": [
@@ -4801,6 +4927,7 @@
   {
     "slug": "duong-tron-toa-do",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Phương trình đường tròn",
     "subject": "math",
     "grades": [
@@ -4860,6 +4987,7 @@
   {
     "slug": "enzyme",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Hoạt tính của enzyme",
     "subject": "biology",
     "grades": [
@@ -4914,6 +5042,7 @@
   {
     "slug": "ghep-nguon-dien",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Ghép nguồn điện và định luật Ôm cho toàn mạch",
     "subject": "physics",
     "grades": [
@@ -4966,6 +5095,7 @@
   {
     "slug": "giai-tam-giac",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Định lí côsin, định lí sin và giải tam giác",
     "subject": "math",
     "grades": [
@@ -5011,6 +5141,7 @@
   {
     "slug": "giao-thoa-song",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Giao thoa sóng nước",
     "subject": "physics",
     "grades": [
@@ -5050,6 +5181,7 @@
   {
     "slug": "giao-thoa-y-ang",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Giao thoa ánh sáng khe Y-âng",
     "subject": "physics",
     "grades": [
@@ -5101,6 +5233,7 @@
   {
     "slug": "gioi-han-day-so",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Giới hạn của dãy số",
     "subject": "math",
     "grades": [
@@ -5154,6 +5287,7 @@
   {
     "slug": "goc-noi-tiep",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Góc nội tiếp và góc ở tâm",
     "subject": "math",
     "grades": [
@@ -5209,6 +5343,7 @@
   {
     "slug": "goc-so-le-dong-vi",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Hai đường thẳng song song và các góc tạo bởi một đường cắt",
     "subject": "math",
     "grades": [
@@ -5263,6 +5398,7 @@
   {
     "slug": "guong",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Gương phẳng và gương cầu",
     "subject": "physics",
     "grades": [
@@ -5308,6 +5444,7 @@
   {
     "slug": "halogen",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tính chất của nhóm halogen",
     "subject": "chemistry",
     "grades": [
@@ -5361,6 +5498,7 @@
   {
     "slug": "ham-so-bac-nhat",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Hệ số góc và vị trí hai đường thẳng",
     "subject": "math",
     "grades": [
@@ -5414,6 +5552,7 @@
   {
     "slug": "ham-so-mu-logarit",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Hàm số mũ và hàm số lôgarit",
     "subject": "math",
     "grades": [
@@ -5457,6 +5596,7 @@
   {
     "slug": "hang-dang-thuc",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Hằng đẳng thức đáng nhớ",
     "subject": "math",
     "grades": [
@@ -5511,6 +5651,7 @@
   {
     "slug": "hap-dan-quy-dao",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Lực hấp dẫn và quỹ đạo",
     "subject": "physics",
     "grades": [
@@ -5565,6 +5706,7 @@
   {
     "slug": "hat-trong-dien-truong",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Chuyển động của hạt mang điện trong điện trường đều",
     "subject": "physics",
     "grades": [
@@ -5635,6 +5777,7 @@
   {
     "slug": "he-mat-troi",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Hệ Mặt Trời",
     "subject": "physics",
     "grades": [
@@ -5704,6 +5847,7 @@
   {
     "slug": "he-mien-dich",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Hệ miễn dịch và vaccine",
     "subject": "biology",
     "grades": [
@@ -5781,6 +5925,7 @@
   {
     "slug": "he-phuong-trinh",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Hệ hai phương trình bậc nhất hai ẩn",
     "subject": "math",
     "grades": [
@@ -5825,6 +5970,7 @@
   {
     "slug": "hien-tuong-quang-dien",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Hiện tượng quang điện",
     "subject": "physics",
     "grades": [
@@ -5872,6 +6018,7 @@
   {
     "slug": "hieu-ung-doppler",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Hiệu ứng Đốp-ple",
     "subject": "physics",
     "grades": [
@@ -5916,6 +6063,7 @@
   {
     "slug": "hieu-ung-nha-kinh",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Hiệu ứng nhà kính",
     "subject": "physics",
     "grades": [
@@ -5967,6 +6115,7 @@
   {
     "slug": "ho-hap-te-bao",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Hô hấp tế bào",
     "subject": "biology",
     "grades": [
@@ -6020,6 +6169,7 @@
   {
     "slug": "khao-sat-ham-so",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Khảo sát hàm số bậc ba",
     "subject": "math",
     "grades": [
@@ -6057,6 +6207,7 @@
   {
     "slug": "khi-ly-tuong",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Khí lý tưởng",
     "subject": "physics",
     "grades": [
@@ -6095,6 +6246,7 @@
   {
     "slug": "khoa-luong-phan",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Khóa lưỡng phân phân loại sinh vật",
     "subject": "biology",
     "grades": [
@@ -6176,6 +6328,7 @@
   {
     "slug": "khoi-luong-rieng",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Khối lượng riêng",
     "subject": "physics",
     "grades": [
@@ -6236,6 +6389,7 @@
   {
     "slug": "khuc-xa-anh-sang",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Khúc xạ ánh sáng",
     "subject": "physics",
     "grades": [
@@ -6289,6 +6443,7 @@
   {
     "slug": "khuech-tan-tham-thau",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Khuếch tán và thẩm thấu",
     "subject": "biology",
     "grades": [
@@ -6361,6 +6516,7 @@
   {
     "slug": "kim-loai-kiem-nuoc",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Kim loại kiềm tác dụng với nước",
     "subject": "chemistry",
     "grades": [
@@ -6407,6 +6563,7 @@
   {
     "slug": "kinh-lup-kinh-hien-vi",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Kính lúp, kính hiển vi và kính thiên văn",
     "subject": "physics",
     "grades": [
@@ -6454,6 +6611,7 @@
   {
     "slug": "lai-menden",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Phép lai Men-đen",
     "subject": "biology",
     "grades": [
@@ -6509,6 +6667,7 @@
   {
     "slug": "lam-tron-so",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Làm tròn số và ước lượng",
     "subject": "math",
     "grades": [
@@ -6596,6 +6755,7 @@
   {
     "slug": "lan-tren-mat-nghieng",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Vật lăn trên mặt phẳng nghiêng",
     "subject": "physics",
     "grades": [
@@ -6648,6 +6808,7 @@
   {
     "slug": "lang-kinh-tan-sac",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Lăng kính và sự tán sắc ánh sáng",
     "subject": "physics",
     "grades": [
@@ -6698,6 +6859,7 @@
   {
     "slug": "lap-mach-dien",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Lắp mạch điện đơn giản",
     "subject": "physics",
     "grades": [
@@ -6759,6 +6921,7 @@
   {
     "slug": "lien-ket-hoa-hoc",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Liên kết ion và liên kết cộng hóa trị",
     "subject": "chemistry",
     "grades": [
@@ -6796,6 +6959,7 @@
   {
     "slug": "lo-xo",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Con lắc lò xo",
     "subject": "physics",
     "grades": [
@@ -6843,6 +7007,7 @@
   {
     "slug": "luc-dan-hoi",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Lực đàn hồi và định luật Húc",
     "subject": "physics",
     "grades": [
@@ -6897,6 +7062,7 @@
   {
     "slug": "luc-day-acsimet",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Lực đẩy Ác-si-mét",
     "subject": "physics",
     "grades": [
@@ -6945,6 +7111,7 @@
   {
     "slug": "luc-huong-tam-thuc-te",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Lực hướng tâm trong thực tế",
     "subject": "physics",
     "grades": [
@@ -6996,6 +7163,7 @@
   {
     "slug": "luc-lo-ren-xo",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Lực Lo-ren-xơ: hạt mang điện trong từ trường",
     "subject": "physics",
     "grades": [
@@ -7059,6 +7227,7 @@
   {
     "slug": "luc-ma-sat",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Lực ma sát",
     "subject": "physics",
     "grades": [
@@ -7125,6 +7294,7 @@
   {
     "slug": "luc-va-chuyen-dong",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Lực và chuyển động",
     "subject": "physics",
     "grades": [
@@ -7166,6 +7336,7 @@
   {
     "slug": "luoi-hinh-lap-phuong",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Hình khai triển của hình lập phương",
     "subject": "math",
     "grades": [
@@ -7255,6 +7426,7 @@
   {
     "slug": "mach-dao-dong-lc",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Mạch dao động LC",
     "subject": "physics",
     "grades": [
@@ -7305,6 +7477,7 @@
   {
     "slug": "mach-noi-tiep-song-song",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Mạch nối tiếp và song song",
     "subject": "physics",
     "grades": [
@@ -7356,6 +7529,7 @@
   {
     "slug": "mach-rlc",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Mạch RLC nối tiếp",
     "subject": "physics",
     "grades": [
@@ -7408,6 +7582,7 @@
   {
     "slug": "mat-phang-nghieng",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Mặt phẳng nghiêng",
     "subject": "physics",
     "grades": [
@@ -7474,6 +7649,7 @@
   {
     "slug": "mat-phang-toa-do",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Mặt phẳng tọa độ",
     "subject": "math",
     "grades": [
@@ -7525,6 +7701,7 @@
   {
     "slug": "mat-va-tat-khuc-xa",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Mắt và các tật khúc xạ",
     "subject": "physics",
     "grades": [
@@ -7571,6 +7748,7 @@
   {
     "slug": "mau-nguyen-tu-bo",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Mẫu nguyên tử Bo và quang phổ hiđrô",
     "subject": "physics",
     "grades": [
@@ -7614,6 +7792,7 @@
   {
     "slug": "may-bien-ap",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Máy biến áp và truyền tải điện năng",
     "subject": "physics",
     "grades": [
@@ -7669,6 +7848,7 @@
   {
     "slug": "may-nen-thuy-luc",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Máy nén thủy lực và nguyên lí Pa-xcan",
     "subject": "physics",
     "grades": [
@@ -7734,6 +7914,7 @@
   {
     "slug": "may-phat-dien",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Máy phát điện xoay chiều",
     "subject": "physics",
     "grades": [
@@ -7776,6 +7957,7 @@
   {
     "slug": "mol",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Mol và các đại lượng liên quan",
     "subject": "chemistry",
     "grades": [
@@ -7815,6 +7997,7 @@
   {
     "slug": "nam-cham-tu-pho",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Nam châm và từ phổ",
     "subject": "physics",
     "grades": [
@@ -7889,6 +8072,7 @@
   {
     "slug": "nang-luong-phan-ung",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Enthalpy và sơ đồ năng lượng phản ứng",
     "subject": "chemistry",
     "grades": [
@@ -7949,6 +8133,7 @@
   {
     "slug": "nang-luong-tai-tao",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Năng lượng tái tạo: pin mặt trời và tua-bin gió",
     "subject": "physics",
     "grades": [
@@ -8002,6 +8187,7 @@
   {
     "slug": "nem-ngang",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Chuyển động ném ngang",
     "subject": "physics",
     "grades": [
@@ -8067,6 +8253,7 @@
   {
     "slug": "nem-thang-dung",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Chuyển động ném thẳng đứng",
     "subject": "physics",
     "grades": [
@@ -8133,6 +8320,7 @@
   {
     "slug": "nem-xien",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Chuyển động ném xiên",
     "subject": "physics",
     "grades": [
@@ -8176,6 +8364,7 @@
   {
     "slug": "ngay-dem-va-mua",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Ngày, đêm và các mùa trên Trái Đất",
     "subject": "physics",
     "grades": [
@@ -8219,6 +8408,7 @@
   {
     "slug": "nguyen-phan-giam-phan",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Nguyên phân và giảm phân",
     "subject": "biology",
     "grades": [
@@ -8277,6 +8467,7 @@
   {
     "slug": "nhac-cu-va-am",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Nhạc cụ: dây đàn và ống sáo",
     "subject": "physics",
     "grades": [
@@ -8332,6 +8523,7 @@
   {
     "slug": "nhan-biet-chat",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Nhận biết dung dịch bằng thuốc thử",
     "subject": "chemistry",
     "grades": [
@@ -8401,6 +8593,7 @@
   {
     "slug": "nhan-chia-phan-so",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Nhân, chia phân số",
     "subject": "math",
     "grades": [
@@ -8465,6 +8658,7 @@
   {
     "slug": "nhi-thuc-newton",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Nhị thức Niu-tơn và tam giác Pa-xcan",
     "subject": "math",
     "grades": [
@@ -8520,6 +8714,7 @@
   {
     "slug": "nhiem-dien",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Sự nhiễm điện do cọ xát",
     "subject": "physics",
     "grades": [
@@ -8610,6 +8805,7 @@
   {
     "slug": "nhien-lieu",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Nhiên liệu và sự đốt cháy",
     "subject": "chemistry",
     "grades": [
@@ -8663,6 +8859,7 @@
   {
     "slug": "nhiet-ke-thang-nhiet-do",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Nhiệt kế và thang nhiệt độ",
     "subject": "physics",
     "grades": [
@@ -8725,6 +8922,7 @@
   {
     "slug": "nong-do-dung-dich",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Nồng độ dung dịch",
     "subject": "chemistry",
     "grades": [
@@ -8787,6 +8985,7 @@
   {
     "slug": "pha-mat-trang",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Các pha của Mặt Trăng",
     "subject": "physics",
     "grades": [
@@ -8839,6 +9038,7 @@
   {
     "slug": "phan-loai-chat",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Chất tinh khiết, hỗn hợp, đơn chất và hợp chất",
     "subject": "chemistry",
     "grades": [
@@ -8896,6 +9096,7 @@
   {
     "slug": "phan-loai-oxide",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Oxide: phân loại và tính chất",
     "subject": "chemistry",
     "grades": [
@@ -8962,6 +9163,7 @@
   {
     "slug": "phan-so",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Phân số",
     "subject": "math",
     "grades": [
@@ -9012,6 +9214,7 @@
   {
     "slug": "phan-ung-hat-nhan",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Phản ứng hạt nhân, phân hạch và nhiệt hạch",
     "subject": "physics",
     "grades": [
@@ -9088,6 +9291,7 @@
   {
     "slug": "phan-ung-trao-doi-ion",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Phản ứng trao đổi ion trong dung dịch",
     "subject": "chemistry",
     "grades": [
@@ -9147,6 +9351,7 @@
   {
     "slug": "phan-xa-am-tieng-vang",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Phản xạ âm, tiếng vang và đo độ sâu",
     "subject": "physics",
     "grades": [
@@ -9239,6 +9444,7 @@
   {
     "slug": "phep-bien-hinh",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Phép tịnh tiến, đối xứng và quay",
     "subject": "math",
     "grades": [
@@ -9314,6 +9520,7 @@
   {
     "slug": "phep-chia-co-du",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Phép chia hết và phép chia có dư",
     "subject": "math",
     "grades": [
@@ -9392,6 +9599,7 @@
   {
     "slug": "phien-ma-dich-ma",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Phiên mã và dịch mã",
     "subject": "biology",
     "grades": [
@@ -9461,6 +9669,7 @@
   {
     "slug": "phong-xa",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Phóng xạ và chu kì bán rã",
     "subject": "physics",
     "grades": [
@@ -9504,6 +9713,7 @@
   {
     "slug": "phuong-trinh-bac-hai-viet",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Phương trình bậc hai và hệ thức Vi-ét",
     "subject": "math",
     "grades": [
@@ -9564,6 +9774,7 @@
   {
     "slug": "phuong-trinh-duong-thang",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Phương trình đường thẳng",
     "subject": "math",
     "grades": [
@@ -9643,6 +9854,7 @@
   {
     "slug": "phuong-trinh-luong-giac",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Phương trình lượng giác cơ bản",
     "subject": "math",
     "grades": [
@@ -9707,6 +9919,7 @@
   {
     "slug": "pin-dien-hoa",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Pin điện hóa",
     "subject": "chemistry",
     "grades": [
@@ -9755,6 +9968,7 @@
   {
     "slug": "polime",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Polime và phản ứng trùng hợp",
     "subject": "chemistry",
     "grades": [
@@ -9813,6 +10027,7 @@
   {
     "slug": "quan-he-vat-an-thit-con-moi",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Biến động số lượng: vật ăn thịt và con mồi",
     "subject": "biology",
     "grades": [
@@ -9881,6 +10096,7 @@
   {
     "slug": "quan-he-vuong-goc-khong-gian",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Đường thẳng vuông góc với mặt phẳng và góc trong không gian",
     "subject": "math",
     "grades": [
@@ -9945,6 +10161,7 @@
   {
     "slug": "quang-hop",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Các yếu tố ảnh hưởng đến quang hợp",
     "subject": "biology",
     "grades": [
@@ -9982,6 +10199,7 @@
   {
     "slug": "quang-pho-vach",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Quang phổ liên tục, quang phổ vạch phát xạ và hấp thụ",
     "subject": "physics",
     "grades": [
@@ -10047,6 +10265,7 @@
   {
     "slug": "roi-tu-do",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Sự rơi tự do",
     "subject": "physics",
     "grades": [
@@ -10099,6 +10318,7 @@
   {
     "slug": "rong-roc",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Ròng rọc và máy cơ đơn giản",
     "subject": "physics",
     "grades": [
@@ -10148,6 +10368,7 @@
   {
     "slug": "so-huu-ti-truc-so",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Số hữu tỉ trên trục số",
     "subject": "math",
     "grades": [
@@ -10226,6 +10447,7 @@
   {
     "slug": "so-nguyen",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Cộng trừ số nguyên trên trục số",
     "subject": "math",
     "grades": [
@@ -10295,6 +10517,7 @@
   {
     "slug": "so-thap-phan",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Giá trị theo vị trí và số thập phân",
     "subject": "math",
     "grades": [
@@ -10360,6 +10583,7 @@
   {
     "slug": "song-dien-tu",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Thang sóng điện từ",
     "subject": "physics",
     "grades": [
@@ -10406,6 +10630,7 @@
   {
     "slug": "song-dung",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Sóng trên dây và sóng dừng",
     "subject": "physics",
     "grades": [
@@ -10453,6 +10678,7 @@
   {
     "slug": "su-no-vi-nhiet",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Sự nở vì nhiệt",
     "subject": "physics",
     "grades": [
@@ -10497,6 +10723,7 @@
   {
     "slug": "tach-chat",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tách chất ra khỏi hỗn hợp",
     "subject": "chemistry",
     "grades": [
@@ -10568,6 +10795,7 @@
   {
     "slug": "tai-ban-adn",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tái bản DNA",
     "subject": "biology",
     "grades": [
@@ -10633,6 +10861,7 @@
   {
     "slug": "tam-giac",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tam giác: góc, cạnh và diện tích",
     "subject": "math",
     "grades": [
@@ -10681,6 +10910,7 @@
   {
     "slug": "tang-truong-quan-the",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tăng trưởng quần thể",
     "subject": "biology",
     "grades": [
@@ -10727,6 +10957,7 @@
   {
     "slug": "tap-hop-ven",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tập hợp và biểu đồ Ven",
     "subject": "math",
     "grades": [
@@ -10819,6 +11050,7 @@
   {
     "slug": "ten-lua",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Chuyển động bằng phản lực",
     "subject": "physics",
     "grades": [
@@ -10902,6 +11134,7 @@
   {
     "slug": "thang-do-ph",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Thang pH",
     "subject": "chemistry",
     "grades": [
@@ -10940,6 +11173,7 @@
   {
     "slug": "thau-kinh",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Thấu kính mỏng",
     "subject": "physics",
     "grades": [
@@ -10983,6 +11217,7 @@
   {
     "slug": "the-tich-khoi",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Thể tích và diện tích các khối",
     "subject": "math",
     "grades": [
@@ -11034,6 +11269,7 @@
   {
     "slug": "thoat-hoi-nuoc",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Thoát hơi nước ở thực vật",
     "subject": "biology",
     "grades": [
@@ -11103,6 +11339,7 @@
   {
     "slug": "thong-ke-ghep-nhom",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Mẫu số liệu ghép nhóm",
     "subject": "math",
     "grades": [
@@ -11161,6 +11398,7 @@
   {
     "slug": "thong-ke-mo-ta",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Số trung bình, trung vị và mốt",
     "subject": "math",
     "grades": [
@@ -11226,6 +11464,7 @@
   {
     "slug": "ti-le-ban-do",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tỉ lệ bản đồ",
     "subject": "math",
     "grades": [
@@ -11300,6 +11539,7 @@
   {
     "slug": "ti-le-thuan-nghich",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Đại lượng tỉ lệ thuận và tỉ lệ nghịch",
     "subject": "math",
     "grades": [
@@ -11356,6 +11596,7 @@
   {
     "slug": "ti-so-luong-giac",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tỉ số lượng giác của góc nhọn",
     "subject": "math",
     "grades": [
@@ -11412,6 +11653,7 @@
   {
     "slug": "ti-so-phan-tram",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tỉ số phần trăm",
     "subject": "math",
     "grades": [
@@ -11461,6 +11703,7 @@
   {
     "slug": "tich-phan",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tích phân và diện tích hình thang cong",
     "subject": "math",
     "grades": [
@@ -11509,6 +11752,7 @@
   {
     "slug": "tich-vo-huong",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tích vô hướng của hai vectơ",
     "subject": "math",
     "grades": [
@@ -11568,6 +11812,7 @@
   {
     "slug": "tien-viet-nam",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tiền Việt Nam: tính tiền và trả lại",
     "subject": "math",
     "grades": [
@@ -11704,6 +11949,7 @@
   {
     "slug": "tieu-hoa",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Hệ tiêu hóa ở người",
     "subject": "biology",
     "grades": [
@@ -11775,6 +12021,7 @@
   {
     "slug": "tinh-chat-acid",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tính chất hóa học của acid và base",
     "subject": "chemistry",
     "grades": [
@@ -11817,6 +12064,7 @@
   {
     "slug": "to-hop",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Hoán vị, chỉnh hợp và tổ hợp",
     "subject": "math",
     "grades": [
@@ -11854,6 +12102,7 @@
   {
     "slug": "toc-do-chuyen-dong",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tốc độ và đồ thị quãng đường – thời gian",
     "subject": "physics",
     "grades": [
@@ -11908,6 +12157,7 @@
   {
     "slug": "toc-do-phan-ung",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tốc độ phản ứng",
     "subject": "chemistry",
     "grades": [
@@ -11979,6 +12229,7 @@
   {
     "slug": "tong-hop-dao-dong",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tổng hợp hai dao động điều hòa",
     "subject": "physics",
     "grades": [
@@ -12017,6 +12268,7 @@
   {
     "slug": "tong-hop-luc",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tổng hợp lực và cân bằng của chất điểm",
     "subject": "physics",
     "grades": [
@@ -12081,6 +12333,7 @@
   {
     "slug": "trong-luong-khoi-luong",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Khối lượng và trọng lượng",
     "subject": "physics",
     "grades": [
@@ -12138,6 +12391,7 @@
   {
     "slug": "trong-tam-can-bang",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Trọng tâm và các dạng cân bằng",
     "subject": "physics",
     "grades": [
@@ -12240,6 +12494,7 @@
   {
     "slug": "truc-doi-xung",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Hình có trục đối xứng",
     "subject": "math",
     "grades": [
@@ -12318,6 +12573,7 @@
   {
     "slug": "truyen-nhiet",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Dẫn nhiệt, đối lưu và bức xạ nhiệt",
     "subject": "physics",
     "grades": [
@@ -12413,6 +12669,7 @@
   {
     "slug": "tu-dien",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tụ điện phẳng",
     "subject": "physics",
     "grades": [
@@ -12459,6 +12716,7 @@
   {
     "slug": "tu-ghep",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Ghép tụ điện nối tiếp và song song",
     "subject": "physics",
     "grades": [
@@ -12508,6 +12766,7 @@
   {
     "slug": "tu-truong-dong-dien",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Từ trường của dòng điện",
     "subject": "physics",
     "grades": [
@@ -12563,6 +12822,7 @@
   {
     "slug": "tuan-hoan-mau",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Tim và hệ tuần hoàn",
     "subject": "biology",
     "grades": [
@@ -12628,6 +12888,7 @@
   {
     "slug": "uoc-boi-so-nguyen-to",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Ước, bội, số nguyên tố, ƯCLN và BCNN",
     "subject": "math",
     "grades": [
@@ -12718,6 +12979,7 @@
   {
     "slug": "va-cham",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Va chạm và bảo toàn động lượng",
     "subject": "physics",
     "grades": [
@@ -12768,6 +13030,7 @@
   {
     "slug": "va-cham-hai-chieu",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Va chạm trên mặt phẳng",
     "subject": "physics",
     "grades": [
@@ -12845,6 +13108,7 @@
   {
     "slug": "vecto-khong-gian",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Vectơ và tọa độ trong không gian Oxyz",
     "subject": "math",
     "grades": [
@@ -12909,6 +13173,7 @@
   {
     "slug": "xac-suat-co-dien",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Xác suất của biến cố",
     "subject": "math",
     "grades": [
@@ -12956,6 +13221,7 @@
   {
     "slug": "xac-suat-co-dieu-kien",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Xác suất có điều kiện và công thức Bay-ét",
     "subject": "math",
     "grades": [
@@ -12995,6 +13261,7 @@
   {
     "slug": "xac-suat-galton",
     "version": "1.0.0",
+    "status": "needs-rework",
     "title": "Bảng Galton và phân phối nhị thức",
     "subject": "math",
     "grades": [

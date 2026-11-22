@@ -1,6 +1,7 @@
 {
   "slug": "dien-truong",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Điện trường của điện tích điểm",
   "subject": "physics",
   "grades": [

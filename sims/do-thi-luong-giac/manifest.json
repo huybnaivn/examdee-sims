@@ -1,6 +1,7 @@
 {
   "slug": "do-thi-luong-giac",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Đồ thị hàm số lượng giác",
   "subject": "math",
   "grades": [

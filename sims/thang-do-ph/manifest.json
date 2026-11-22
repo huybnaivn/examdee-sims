@@ -1,6 +1,7 @@
 {
   "slug": "thang-do-ph",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Thang pH",
   "subject": "chemistry",
   "grades": [

@@ -1,9 +1,12 @@
 {
   "slug": "cung-quat-tron",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Độ dài cung tròn và diện tích hình quạt",
   "subject": "math",
-  "grades": [9],
+  "grades": [
+    9
+  ],
   "description": "Đường tròn tâm O bán kính R với cung AB có số đo n° kéo được bằng điểm B hoặc thanh trượt. Sim tô cung và hình quạt tròn, tính độ dài cung l = πRn/180 và diện tích hình quạt S = πR²n/360 = lR/2, so với chu vi và diện tích cả hình tròn. Chế độ hình vành khuyên có hai bán kính R và r với S = π(R² − r²). Thử thách yêu cầu tạo hình quạt có diện tích cho trước.",
   "learningGoals": [
     "Tính độ dài cung tròn n° của đường tròn bán kính R: l = πRn/180.",

@@ -1,9 +1,13 @@
 {
   "slug": "cau-tao-nguyen-tu",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Cấu tạo nguyên tử",
   "subject": "chemistry",
-  "grades": [7, 10],
+  "grades": [
+    7,
+    10
+  ],
   "description": "Thêm bớt proton, neutron và electron để tạo nguyên tử hoặc ion của 20 nguyên tố đầu tiên (hydrogen đến calcium). Hình vẽ cho thấy hạt nhân và các lớp electron được điền theo thứ tự 2, 8, 8, 2; bên cạnh là tên và kí hiệu nguyên tố, số hiệu nguyên tử Z, số khối A, điện tích, kí hiệu nguyên tử và đồng vị đó có bền hay không. Chế độ thử thách yêu cầu tạo một nguyên tử hoặc ion cho trước. Mô hình lớp vỏ đơn giản, hình vẽ không theo tỉ lệ.",
   "learningGoals": [
     "Nêu được nguyên tử gồm hạt nhân (proton, neutron) và vỏ electron; số proton Z quyết định nguyên tố.",

@@ -1,9 +1,12 @@
 {
   "slug": "cach-tu-nhieu-xa",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Nhiễu xạ ánh sáng và cách tử",
   "subject": "physics",
-  "grades": [12],
+  "grades": [
+    12
+  ],
   "description": "Chiếu ánh sáng đơn sắc có bước sóng thay đổi được, hoặc ánh sáng trắng, vuông góc qua một khe hẹp hoặc một cách tử nhiễu xạ và quan sát hình ảnh trên màn cách 1 m. Với một khe: vân trung tâm rộng ra khi khe hẹp lại. Với cách tử: các vân sáng chính thỏa mãn d·sinθ = k·λ, ánh sáng trắng cho các dải quang phổ có màu tím gần vân trung tâm nhất, và số bậc quan sát được bị giới hạn. Có nhiệm vụ đo bước sóng chưa biết bằng con trỏ trên màn. Nội dung mở rộng, nâng cao của lớp 12.",
   "learningGoals": [
     "Vận dụng công thức cách tử d·sinθ = k·λ để tìm góc lệch và vị trí x = L·tanθ của vân sáng chính bậc k; với góc nhỏ x ≈ k·λ·L/d.",

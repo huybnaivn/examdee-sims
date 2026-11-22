@@ -1,9 +1,12 @@
 {
   "slug": "bien-thai-dong-vat",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Sinh trưởng và phát triển ở động vật",
   "subject": "biology",
-  "grades": [11],
+  "grades": [
+    11
+  ],
   "description": "Học sinh xếp các giai đoạn trong vòng đời của bướm, châu chấu và người lên một dòng thời gian theo đúng thứ tự, rồi phân loại kiểu phát triển của từng loài: biến thái hoàn toàn, biến thái không hoàn toàn hay không qua biến thái. Phần thứ hai là mô hình ngưỡng đơn giản về hai hormone ecdysone và juvenile điều hòa lột xác ở côn trùng: thay đổi nồng độ để xem sâu lột xác thành sâu lớn hơn, hóa nhộng, hay nhộng hóa bướm.",
   "learningGoals": [
     "Trình bày đúng thứ tự các giai đoạn phát triển của bướm (trứng, sâu bướm, nhộng, bướm), châu chấu (trứng, ấu trùng, trưởng thành) và người.",

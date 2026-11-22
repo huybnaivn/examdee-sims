@@ -22,6 +22,8 @@ for (const slug of (await readdir(join(root, "sims"))).sort()) {
   for (const key of ["slug", "version", "title", "subject", "grades", "description", "learningGoals", "state"]) {
     if (manifest[key] == null) fail(slug, `manifest.${key} is missing`);
   }
+  // Review status. Only "approved" sims may be seeded into the product catalogue.
+  if (!["needs-rework", "approved"].includes(manifest.status)) fail(slug, 'manifest.status must be "needs-rework" or "approved"');
   if (!code.includes(`version: "${manifest.version}"`)) fail(slug, "sim.js version differs from manifest.version");
   for (const [name, e] of Object.entries(declared)) {
     if (BUILT_IN.includes(name)) fail(slug, `"${name}" is a kit event, do not redeclare it`);

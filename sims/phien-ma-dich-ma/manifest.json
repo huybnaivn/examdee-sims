@@ -1,9 +1,12 @@
 {
   "slug": "phien-ma-dich-ma",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Phiên mã và dịch mã",
   "subject": "biology",
-  "grades": [12],
+  "grades": [
+    12
+  ],
   "description": "Chọn một gene có sẵn hoặc tự nhập mạch khuôn DNA (3'→5'). RNA polymerase phiên mã từng nucleotide theo nguyên tắc bổ sung (A→U, T→A, G→C, C→G) tạo mRNA (5'→3'); ribosome dịch mã từng codon từ bộ ba mở đầu AUG đầu tiên, tRNA có anticodon bổ sung mang amino acid đến theo bảng mã di truyền chuẩn, đến bộ ba kết thúc (UAA, UAG, UGA) thì dừng. Công cụ đột biến điểm (thay thế, thêm, mất một cặp nucleotide) cho thấy đột biến câm, sai nghĩa, vô nghĩa và dịch khung.",
   "learningGoals": [
     "Viết được trình tự mRNA từ mạch khuôn DNA theo nguyên tắc bổ sung A–U, T–A, G–C, C–G.",

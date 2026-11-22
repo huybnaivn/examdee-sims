@@ -1,9 +1,13 @@
 {
   "slug": "luc-lo-ren-xo",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Lực Lo-ren-xơ: hạt mang điện trong từ trường",
   "subject": "physics",
-  "grades": [11, 12],
+  "grades": [
+    11,
+    12
+  ],
   "description": "Phóng một hạt mang điện (electron, proton, hạt α hoặc hạt tùy chọn) với vận tốc vuông góc với từ trường đều có đường sức vuông góc với màn hình. Lực Lo-ren-xơ luôn vuông góc với vận tốc nên hạt chuyển động tròn đều. Thay đổi tốc độ, độ lớn và chiều của cảm ứng từ, dấu và độ lớn điện tích để so sánh bán kính quỹ đạo, chu kỳ, tần số và chiều quay; số đo sau một vòng được so với công thức.",
   "learningGoals": [
     "Xác định độ lớn f = |q|vB và chiều của lực Lo-ren-xơ (luôn vuông góc với vận tốc, hướng vào tâm quỹ đạo).",

@@ -1,9 +1,13 @@
 {
   "slug": "ngay-dem-va-mua",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Ngày, đêm và các mùa trên Trái Đất",
   "subject": "physics",
-  "grades": [6, 10],
+  "grades": [
+    6,
+    10
+  ],
   "description": "Trái Đất có trục nghiêng chuyển động quanh Mặt Trời. Kéo Trái Đất trên quỹ đạo hoặc cho chạy để đổi ngày, xem nửa được chiếu sáng của Trái Đất, chọn vĩ độ (Hà Nội, TP Hồ Chí Minh, Xích đạo, Vòng cực) để thấy thời gian ban ngày và độ cao Mặt Trời lúc trưa thay đổi trong năm; các ngày Xuân phân, Hạ chí, Thu phân, Đông chí được đánh dấu.",
   "learningGoals": [
     "Giải thích hiện tượng ngày, đêm dài ngắn khác nhau theo mùa và theo vĩ độ do trục Trái Đất nghiêng và giữ nguyên phương khi chuyển động quanh Mặt Trời.",

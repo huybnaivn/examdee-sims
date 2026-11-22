@@ -1,9 +1,13 @@
 {
   "slug": "he-mien-dich",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Hệ miễn dịch và vaccine",
   "subject": "biology",
-  "grades": [8, 11],
+  "grades": [
+    8,
+    11
+  ],
   "description": "Hai phần. (1) Đồ thị nồng độ kháng thể trong máu theo thời gian (100 ngày) sau mỗi lần cơ thể tiếp xúc với kháng nguyên, do tiêm vaccine hoặc do nhiễm mầm bệnh; học sinh thêm tối đa 4 lần tiếp xúc. Mô hình minh hoạ (đơn vị tương đối U, không phải số liệu của một bệnh cụ thể): đáp ứng miễn dịch nguyên phát (chưa có tế bào nhớ) bắt đầu sau 7 ngày, đạt đỉnh 1 U vào ngày thứ 14 sau khi tiếp xúc rồi giảm dần; đáp ứng thứ phát (đã có tế bào nhớ từ lần tiếp xúc trước ít nhất 7 ngày) bắt đầu sau 2 ngày, đạt đỉnh 10 U vào ngày thứ 5 và giảm chậm hơn. Nồng độ trên đồ thị là tổng của các đáp ứng. Mầm bệnh gây bệnh từ ngày thứ 3 sau khi nhiễm cho đến khi kháng thể đạt mức đủ bảo vệ 0,5 U; nếu kháng thể đạt mức này sớm hơn thì không bị bệnh. Vaccine không gây bệnh nhưng vẫn tạo tế bào nhớ. (2) Miễn dịch cộng đồng: lưới 40 × 40 người, mỗi người tiếp xúc với 8 người xung quanh; một tỉ lệ người đã tiêm vaccine (coi như miễn dịch hoàn toàn), 4 người đầu tiên mang bệnh. Người bệnh lây trong 5 ngày, mỗi ngày lây cho mỗi người chưa tiêm ở ô bên cạnh với xác suất 10 %. Dịch được coi là bị chặn khi không quá 2 % số người từng nhiễm; với mô hình này dịch thường bị chặn khi khoảng 45 % đến 60 % số người đã tiêm, tuỳ cộng đồng (hạt giống). Cùng hạt giống thì kết quả lặp lại y hệt, và tăng tỉ lệ tiêm không bao giờ làm tăng số người nhiễm.",
   "learningGoals": [
     "So sánh đáp ứng miễn dịch nguyên phát và thứ phát: nhờ tế bào nhớ, lần sau kháng thể được tạo ra nhanh hơn và nhiều hơn.",

@@ -1,6 +1,7 @@
 {
   "slug": "dau-tam-thuc-bac-hai",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Dấu của tam thức bậc hai và bất phương trình bậc hai",
   "subject": "math",
   "grades": [

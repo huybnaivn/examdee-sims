@@ -1,9 +1,12 @@
 {
   "slug": "di-truyen-lien-ket-gioi-tinh",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Di truyền liên kết với giới tính",
   "subject": "biology",
-  "grades": [12],
+  "grades": [
+    12
+  ],
   "description": "Tính trạng do allele lặn a nằm trên nhiễm sắc thể X (không có allele tương ứng trên Y) quy định, ví dụ bệnh mù màu đỏ – lục hoặc bệnh máu khó đông ở người. Chọn kiểu gene của mẹ (XᴬXᴬ, XᴬXᵃ, XᵃXᵃ) và của bố (XᴬY, XᵃY) để xem giao tử, bảng Punnett, tỉ lệ kiểu gene và tỉ lệ con bị bệnh riêng ở con gái và con trai; sinh ngẫu nhiên nhiều con để so sánh với lí thuyết. Chế độ phả hệ cho một gia đình ba thế hệ, học sinh suy luận kiểu gene của người được đánh dấu.",
   "learningGoals": [
     "Viết được giao tử và sơ đồ lai của gene lặn nằm trên X, không có allele trên Y.",
@@ -40,7 +43,10 @@
     "breed": {
       "kind": "action",
       "description": "Học sinh sinh ngẫu nhiên thêm một đợt con",
-      "data": { "count": "Số con của đợt này", "total": "Tổng số con đã sinh" }
+      "data": {
+        "count": "Số con của đợt này",
+        "total": "Tổng số con đã sinh"
+      }
     },
     "clear-offspring": {
       "kind": "action",
@@ -50,12 +56,16 @@
     "genotype-deduced": {
       "kind": "goal",
       "description": "Học sinh suy luận đúng kiểu gene của người «?» trong phả hệ",
-      "data": { "attempts": "Số lần kiểm tra cho đến khi đúng" }
+      "data": {
+        "attempts": "Số lần kiểm tra cho đến khi đúng"
+      }
     },
     "wrong-answer": {
       "kind": "action",
       "description": "Học sinh kiểm tra một kiểu gene sai cho người «?»",
-      "data": { "attempts": "Số lần kiểm tra đến lúc này" }
+      "data": {
+        "attempts": "Số lần kiểm tra đến lúc này"
+      }
     },
     "new-pedigree": {
       "kind": "action",

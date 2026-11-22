@@ -1,9 +1,12 @@
 {
   "slug": "thoat-hoi-nuoc",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Thoát hơi nước ở thực vật",
   "subject": "biology",
-  "grades": [11],
+  "grades": [
+    11
+  ],
   "description": "Thí nghiệm đo tốc độ hút nước (bằng tốc độ thoát hơi nước) của một cành lá bằng ống mao dẫn: bọt khí trong ống chạy một đoạn x = E·t/S. Học sinh thay đổi cường độ ánh sáng, nhiệt độ, độ ẩm không khí, tốc độ gió và bôi vaseline lên mặt trên, mặt dưới hoặc cả hai mặt lá; hình phóng to lát cắt lá cho thấy khí khổng đóng mở và hơi nước thoát ra. Mô hình đơn giản: độ mở khí khổng a = L/(L + 25) theo ánh sáng (đóng hoàn toàn trong tối), chênh lệch hơi nước D = eₛ(T)·(1 − độ ẩm), độ dẫn lớp không khí sát lá tăng theo gió, mặt dưới có 75 % số khí khổng; bỏ qua thoát hơi nước qua cutin. Chế độ câu hỏi yêu cầu tìm thay đổi làm tốc độ tăng nhiều nhất.",
   "learningGoals": [
     "Mô tả cách đo tốc độ thoát hơi nước bằng ống mao dẫn và tính tốc độ từ quãng đường bọt khí: E = x·S/t.",

@@ -1,9 +1,12 @@
 {
   "slug": "ham-so-mu-logarit",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Hàm số mũ và hàm số lôgarit",
   "subject": "math",
-  "grades": [11],
+  "grades": [
+    11
+  ],
   "description": "Chọn cơ số a (0 < a ≠ 1) để vẽ đồ thị hàm số mũ y = aˣ và hàm số lôgarit y = logₐ x trên cùng mặt phẳng tọa độ, cùng đường thẳng y = x. Kéo điểm M trên đồ thị y = aˣ (hoặc M' trên đồ thị y = logₐ x) để thấy hai điểm luôn đối xứng qua y = x. Bảng bên cho tập xác định, tập giá trị, tính đơn điệu, hai điểm cố định (0; 1), (1; 0) và giá trị logₐ t, kể cả khi t ≤ 0 (không xác định).",
   "learningGoals": [
     "Nhận ra y = aˣ và y = logₐ x là hai hàm số ngược nhau: đồ thị đối xứng qua đường thẳng y = x, logₐ(aˣ) = x và a^(logₐ x) = x.",

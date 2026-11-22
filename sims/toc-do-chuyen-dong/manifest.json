@@ -1,9 +1,12 @@
 {
   "slug": "toc-do-chuyen-dong",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Tốc độ và đồ thị quãng đường – thời gian",
   "subject": "physics",
-  "grades": [7],
+  "grades": [
+    7
+  ],
   "description": "Hai hoặc ba vật chạy trên cùng một đường thẳng với tốc độ do học sinh chọn; vật A có thể dừng lại một lúc ở giữa đường. Đồng hồ bấm giờ và các mốc quãng đường giúp đo tốc độ, đồ thị quãng đường – thời gian được vẽ ngay khi các vật chạy. Học sinh đọc tốc độ từ độ dốc của đồ thị và trả lời câu hỏi.",
   "learningGoals": [
     "Tính tốc độ v = s / t và đổi đơn vị: 1 m/s = 3,6 km/h.",

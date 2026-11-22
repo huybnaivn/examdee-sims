@@ -1,9 +1,13 @@
 {
   "slug": "lai-menden",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Phép lai Men-đen",
   "subject": "biology",
-  "grades": [9, 12],
+  "grades": [
+    9,
+    12
+  ],
   "description": "Chọn kiểu gene của bố và mẹ cho một cặp gene (AA, Aa, aa) hoặc hai cặp gene phân li độc lập (AaBb, …), trội hoàn toàn hoặc trội không hoàn toàn ở gene A. Mô phỏng viết giao tử, lập sơ đồ lai (bảng Punnett), cho tỉ lệ kiểu gene và tỉ lệ kiểu hình lí thuyết; sau đó lai tạo một số cá thể con ngẫu nhiên và so sánh tỉ lệ kiểu hình quan sát được với tỉ lệ lí thuyết trên biểu đồ cột. Ví dụ ở cây đậu hà lan: gene A quy định màu hoa, gene B quy định chiều cao thân.",
   "learningGoals": [
     "Viết được các loại giao tử của một kiểu gene và lập sơ đồ lai cho phép lai một cặp và hai cặp tính trạng.",

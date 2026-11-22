@@ -1,9 +1,12 @@
 {
   "slug": "quang-pho-vach",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Quang phổ liên tục, quang phổ vạch phát xạ và hấp thụ",
   "subject": "physics",
-  "grades": [12],
+  "grades": [
+    12
+  ],
   "description": "Nhìn qua máy quang phổ: đèn sợi đốt cho quang phổ liên tục, khí loãng nóng sáng (hiđrô, natri, thủy ngân, heli, neon) cho quang phổ vạch phát xạ. Đặt khí nguội hơn trước đèn sợi đốt để thấy các vạch hấp thụ ở đúng vị trí các vạch phát xạ, rồi nhận biết một khí chưa biết bằng cách so sánh vị trí các vạch.",
   "learningGoals": [
     "Phân biệt quang phổ liên tục, quang phổ vạch phát xạ và quang phổ vạch hấp thụ, cùng nguồn phát và điều kiện tạo ra mỗi loại.",

@@ -1,9 +1,13 @@
 {
   "slug": "bang-nhan",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Phép nhân bằng mảng",
   "subject": "math",
-  "grades": [2, 3],
+  "grades": [
+    2,
+    3
+  ],
   "description": "Xếp các chấm thành mảng gồm một số hàng (1 đến 10), mỗi hàng có số chấm bằng nhau (1 đến 10). Mô phỏng viết phép nhân theo thứ tự trong sách giáo khoa (số chấm một hàng được lấy số hàng lần: 5 × 3 = 15) kèm tổng các số hạng bằng nhau (5 + 5 + 5 = 15), đếm thêm ở cuối mỗi hàng, và hai phép chia ngược lại (15 : 3 = 5, 15 : 5 = 3). Nút xoay mảng đổi hàng thành cột để thấy 5 × 3 = 3 × 5. Chế độ luyện tập hỏi một phép nhân với 12 nút đáp án lớn.",
   "learningGoals": [
     "Hiểu phép nhân là phép cộng các số hạng bằng nhau: 5 × 3 nghĩa là 5 được lấy 3 lần, 5 + 5 + 5.",

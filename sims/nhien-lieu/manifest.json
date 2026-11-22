@@ -1,9 +1,12 @@
 {
   "slug": "nhien-lieu",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Nhiên liệu và sự đốt cháy",
   "subject": "chemistry",
-  "grades": [9],
+  "grades": [
+    9
+  ],
   "description": "Đốt than, xăng, khí gas, cồn hoặc hydrogen với lượng không khí tùy chọn. Đủ oxygen thì nhiên liệu cháy hoàn toàn thành CO₂ và H₂O; thiếu oxygen thì sinh ra khí CO độc và muội than, nhiệt lượng tỏa ra giảm. So sánh nhiệt lượng và lượng CO₂ của các nhiên liệu.",
   "learningGoals": [
     "Viết được phương trình hoá học của phản ứng cháy hoàn toàn của carbon, hydrocarbon, ethanol và hydrogen.",

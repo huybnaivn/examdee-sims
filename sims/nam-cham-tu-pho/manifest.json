@@ -1,9 +1,12 @@
 {
   "slug": "nam-cham-tu-pho",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Nam châm và từ phổ",
   "subject": "physics",
-  "grades": [7],
+  "grades": [
+    7
+  ],
   "description": "Rắc mạt sắt quanh một hoặc hai nam châm thẳng để thấy từ phổ, dùng kim nam châm nhỏ và la bàn thử để tìm hướng của từ trường, vẽ đường sức từ đi ra ở cực Bắc và đi vào ở cực Nam. Kéo, xoay, đảo cực nam châm để thấy hai cực cùng tên đẩy nhau, khác tên hút nhau, và tìm điểm từ trường triệt tiêu giữa hai cực cùng tên. Cảnh thứ hai cho thấy từ trường Trái Đất và vì sao kim la bàn chỉ hướng Bắc – Nam.",
   "learningGoals": [
     "Mô tả từ phổ của nam châm thẳng bằng mạt sắt và đường sức từ.",

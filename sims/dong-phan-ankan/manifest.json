@@ -1,9 +1,12 @@
 {
   "slug": "dong-phan-ankan",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Đồng phân và danh pháp alkane",
   "subject": "chemistry",
-  "grades": [11],
+  "grades": [
+    11
+  ],
   "description": "Vẽ mạch carbon của alkane CₙH₂ₙ₊₂ (n = 1 đến 7) trên một lưới: kéo để nối thêm carbon, chạm để xóa. Sim kiểm tra mạch có liền và hở không, carbon có vượt quá hóa trị IV không, đếm số nguyên tử H trên mỗi carbon, tìm mạch chính dài nhất, đánh số và gọi tên theo IUPAC. Chọn một giá trị n rồi tìm đủ các đồng phân cấu tạo của nó; vẽ lại một đồng phân đã có (dù ở vị trí hay hướng khác) sẽ được nhận ra là trùng. Lưới chỉ là sơ đồ phẳng, góc liên kết thật khoảng 109,5°.",
   "learningGoals": [
     "Viết được các đồng phân cấu tạo mạch carbon của alkane có từ 4 đến 7 nguyên tử C (2, 3, 5 và 9 đồng phân).",
@@ -22,17 +25,24 @@
     "carbon-add": {
       "kind": "action",
       "description": "Học sinh thêm một nguyên tử carbon lên lưới",
-      "data": { "n": "Số nguyên tử C trên lưới sau khi thêm" }
+      "data": {
+        "n": "Số nguyên tử C trên lưới sau khi thêm"
+      }
     },
     "carbon-remove": {
       "kind": "action",
       "description": "Học sinh xóa một nguyên tử carbon (cùng các liên kết của nó)",
-      "data": { "n": "Số nguyên tử C trên lưới sau khi xóa" }
+      "data": {
+        "n": "Số nguyên tử C trên lưới sau khi xóa"
+      }
     },
     "bond-remove": {
       "kind": "action",
       "description": "Học sinh bỏ một liên kết C–C",
-      "data": { "n": "Số nguyên tử C trên lưới", "bonds": "Số liên kết C–C còn lại" }
+      "data": {
+        "n": "Số nguyên tử C trên lưới",
+        "bonds": "Số liên kết C–C còn lại"
+      }
     },
     "clear": {
       "kind": "action",
@@ -50,7 +60,10 @@
     "all-isomers": {
       "kind": "goal",
       "description": "Học sinh đã vẽ đủ mọi đồng phân cấu tạo của CₙH₂ₙ₊₂ với n đang chọn",
-      "data": { "n": "Số nguyên tử C", "count": "Số đồng phân (1, 1, 1, 2, 3, 5, 9 với n = 1…7)" }
+      "data": {
+        "n": "Số nguyên tử C",
+        "count": "Số đồng phân (1, 1, 1, 2, 3, 5, 9 với n = 1…7)"
+      }
     }
   }
 }

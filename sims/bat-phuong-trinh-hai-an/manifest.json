@@ -1,6 +1,7 @@
 {
   "slug": "bat-phuong-trinh-hai-an",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Bất phương trình bậc nhất hai ẩn và hệ",
   "subject": "math",
   "grades": [

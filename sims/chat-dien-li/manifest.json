@@ -1,9 +1,12 @@
 {
   "slug": "chat-dien-li",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Chất điện li và độ dẫn điện",
   "subject": "chemistry",
-  "grades": [11],
+  "grades": [
+    11
+  ],
   "description": "Nhúng hai điện cực của bộ thử tính dẫn điện vào các dung dịch NaCl, HCl, NaOH, CaCl₂, CH₃COOH, saccharose, ethanol hoặc nước cất và thay đổi nồng độ. Sim cho thấy ion và phân tử trong cốc, phương trình điện li (→ hoặc ⇌), độ điện li α của acid yếu tính từ Kₐ, độ dẫn điện theo mô hình và độ sáng của đèn.",
   "learningGoals": [
     "Phân biệt chất điện li mạnh, chất điện li yếu và chất không điện li qua khả năng dẫn điện của dung dịch.",

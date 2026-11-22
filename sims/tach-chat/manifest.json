@@ -1,6 +1,7 @@
 {
   "slug": "tach-chat",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Tách chất ra khỏi hỗn hợp",
   "subject": "chemistry",
   "grades": [

@@ -1,6 +1,7 @@
 {
   "slug": "tich-vo-huong",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Tích vô hướng của hai vectơ",
   "subject": "math",
   "grades": [

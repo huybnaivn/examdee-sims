@@ -1,9 +1,13 @@
 {
   "slug": "cau-truc-te-bao",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Cấu trúc tế bào",
   "subject": "biology",
-  "grades": [6, 10],
+  "grades": [
+    6,
+    10
+  ],
   "description": "Sơ đồ ba loại tế bào: tế bào nhân sơ (vi khuẩn), tế bào động vật và tế bào thực vật. Ở hoạt động khám phá, học sinh chạm vào một thành phần (hoặc chọn trong danh sách) để xem tên, chức năng và những loại tế bào có thành phần đó; có thể viền các bào quan có màng bao bọc để thấy tế bào nhân sơ không có bào quan nào như vậy. Ở hoạt động so sánh, bảng liệt kê từng thành phần có hay không có ở hai loại tế bào đã chọn và tô màu các hàng khác nhau. Ở hoạt động trắc nghiệm, mô phỏng lần lượt đánh dấu «?» từng thành phần của tế bào, học sinh chọn tên của nó; mỗi thành phần được hỏi một lần. Sự có mặt của các thành phần theo tế bào điển hình trong sách giáo khoa: thành tế bào, lục lạp, không bào trung tâm chỉ có ở tế bào thực vật trong hai loại tế bào nhân thực; lysosome và trung thể chỉ có ở tế bào động vật; tế bào nhân sơ có thành tế bào, màng sinh chất, tế bào chất, ribosome, vùng nhân, plasmid và roi nhưng không có nhân và không có bào quan có màng bao bọc. Hình vẽ là sơ đồ, không theo tỉ lệ.",
   "learningGoals": [
     "Nhận biết và gọi đúng tên các thành phần của tế bào nhân sơ, tế bào động vật và tế bào thực vật trên sơ đồ.",

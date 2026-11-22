@@ -1,9 +1,12 @@
 {
   "slug": "truyen-nhiet",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Dẫn nhiệt, đối lưu và bức xạ nhiệt",
   "subject": "physics",
-  "grades": [8],
+  "grades": [
+    8
+  ],
   "description": "Ba thí nghiệm về các cách truyền nhiệt. Dẫn nhiệt: bốn thanh đồng, nhôm, sắt, thủy tinh được nung một đầu, đinh gắn bằng sáp lần lượt rơi; học sinh dự đoán thứ tự trước khi chạy. Đối lưu: cốc nước được đun ở đáy (hoặc ở phía trên) với hạt thuốc tím cho thấy dòng nước chuyển động. Bức xạ nhiệt: một vật đen và một vật trắng giống nhau được chiếu sáng, vật đen hấp thụ nhiều hơn và nóng lên nhanh hơn. Mô hình dẫn nhiệt một chiều bỏ qua tỏa nhiệt ra không khí; hình dạng dòng đối lưu được vẽ theo quy ước.",
   "learningGoals": [
     "Chất rắn dẫn nhiệt tốt, kim loại dẫn nhiệt tốt nhất; so sánh đồng, nhôm, sắt và thủy tinh.",

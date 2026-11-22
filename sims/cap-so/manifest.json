@@ -1,6 +1,7 @@
 {
   "slug": "cap-so",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Cấp số cộng và cấp số nhân",
   "subject": "math",
   "grades": [

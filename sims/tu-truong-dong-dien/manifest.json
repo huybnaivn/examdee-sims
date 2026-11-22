@@ -1,9 +1,14 @@
 {
   "slug": "tu-truong-dong-dien",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Từ trường của dòng điện",
   "subject": "physics",
-  "grades": [9, 11, 12],
+  "grades": [
+    9,
+    11,
+    12
+  ],
   "description": "Quan sát từ trường của dòng điện chạy trong dây dẫn thẳng dài (nhìn từ đầu dây), trong vòng dây tròn và trong ống dây. Thay đổi cường độ và chiều dòng điện, bán kính vòng dây, số vòng và chiều dài ống dây; xem đường sức từ, lưới kim nam châm thử định hướng theo từ trường và kéo đầu dò để đo cảm ứng từ B tại từng điểm.",
   "learningGoals": [
     "Mô tả đường sức từ của dòng điện thẳng (đường tròn đồng tâm), của vòng dây tròn và của ống dây (song song, cách đều trong lòng ống).",

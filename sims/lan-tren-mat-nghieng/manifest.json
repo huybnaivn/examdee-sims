@@ -1,9 +1,13 @@
 {
   "slug": "lan-tren-mat-nghieng",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Vật lăn trên mặt phẳng nghiêng",
   "subject": "physics",
-  "grades": [10, 12],
+  "grades": [
+    10,
+    12
+  ],
   "description": "Thả cùng lúc từ đỉnh một mặt phẳng nghiêng bốn vật: khối hộp trượt không ma sát, quả cầu đặc, trụ đặc và trụ rỗng (vành) lăn không trượt. Thay đổi góc nghiêng, chiều dài dốc, khối lượng và bán kính để xem vật nào tới đích trước, thời gian của từng vật, và động năng được chia thành phần tịnh tiến và phần quay như thế nào.",
   "learningGoals": [
     "Vật lăn không trượt có momen quán tính I = k·mR² xuống dốc với gia tốc a = g·sin α/(1 + k), với k = 2/5 (cầu đặc), 1/2 (trụ đặc), 1 (trụ rỗng); khối hộp trượt không ma sát có a = g·sin α.",

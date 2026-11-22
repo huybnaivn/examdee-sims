@@ -1,9 +1,13 @@
 {
   "slug": "may-bien-ap",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Máy biến áp và truyền tải điện năng",
   "subject": "physics",
-  "grades": [9, 12],
+  "grades": [
+    9,
+    12
+  ],
   "description": "Phần 1: máy biến áp lí tưởng; thay đổi điện áp sơ cấp, số vòng dây hai cuộn và điện trở tải để xem điện áp thứ cấp, cường độ dòng điện và công suất ở hai cuộn. Phần 2: nhà máy truyền đi công suất cố định 500 kW trên đường dây có điện trở R; thay đổi điện áp truyền tải và điện trở đường dây để thấy công suất hao phí và hiệu suất truyền tải thay đổi thế nào.",
   "learningGoals": [
     "Vận dụng U₁/U₂ = N₁/N₂ cho máy biến áp; phân biệt máy tăng áp (N₂ > N₁) và máy hạ áp (N₂ < N₁).",

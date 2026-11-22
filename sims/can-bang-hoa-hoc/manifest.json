@@ -1,9 +1,12 @@
 {
   "slug": "can-bang-hoa-hoc",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Cân bằng hóa học và nguyên lí Lơ Sa-tơ-li-ê",
   "subject": "chemistry",
-  "grades": [11],
+  "grades": [
+    11
+  ],
   "description": "Chọn một phản ứng thuận nghịch của chất khí trong bình kín (N₂ + 3H₂ ⇌ 2NH₃ tỏa nhiệt; N₂O₄ ⇌ 2NO₂ thu nhiệt; H₂ + I₂ ⇌ 2HI), chọn lượng chất ban đầu và quan sát nồng độ tiến tới trạng thái cân bằng trên đồ thị. Sau đó thêm hoặc lấy bớt một chất, thay đổi thể tích bình (áp suất) hoặc nhiệt độ để thấy cân bằng chuyển dịch, so sánh thương số phản ứng Q với hằng số cân bằng Kc. Mô hình động học đơn giản: tốc độ thuận và nghịch theo định luật tác dụng khối lượng với bậc bằng hệ số tỉ lượng, tỉ số hằng số tốc độ bằng Kc; Kc phụ thuộc nhiệt độ theo phương trình van 't Hoff với ΔrH không đổi. Thời gian trên đồ thị là minh họa, chỉ vị trí cân bằng và chiều chuyển dịch mang ý nghĩa định lượng.",
   "learningGoals": [
     "Nhận biết trạng thái cân bằng hóa học: tốc độ phản ứng thuận bằng tốc độ phản ứng nghịch, nồng độ các chất không đổi.",

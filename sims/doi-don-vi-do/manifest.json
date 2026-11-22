@@ -1,9 +1,14 @@
 {
   "slug": "doi-don-vi-do",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Đổi đơn vị đo",
   "subject": "math",
-  "grades": [3, 4, 5],
+  "grades": [
+    3,
+    4,
+    5
+  ],
   "description": "Đổi số đo độ dài (km, hm, dam, m, dm, cm, mm), khối lượng (tấn, tạ, yến, kg, hg, dag, g), diện tích (km², hm² hay ha, dam², m², dm², cm², mm²) và thời gian (ngày, giờ, phút, giây). Bảng đơn vị đo cho thấy các chữ số đứng yên còn dấu phẩy trượt sang cột đơn vị cần đổi, các chữ số 0 được viết thêm vào chỗ trống; với thời gian, số đo đi qua từng cột và được nhân (chia) cho 24 hoặc 60. Mỗi đại lượng có quy tắc riêng: độ dài, khối lượng gấp 10 lần, diện tích gấp 100 lần. Chế độ luyện tập cho câu đổi ngẫu nhiên để học sinh tự viết kết quả.",
   "learningGoals": [
     "Thuộc bảng đơn vị đo độ dài, khối lượng: mỗi đơn vị gấp 10 lần đơn vị bé hơn liền sau.",

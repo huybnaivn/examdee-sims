@@ -1,6 +1,7 @@
 {
   "slug": "gioi-han-day-so",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Giới hạn của dãy số",
   "subject": "math",
   "grades": [

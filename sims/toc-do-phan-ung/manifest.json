@@ -1,9 +1,13 @@
 {
   "slug": "toc-do-phan-ung",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Tốc độ phản ứng",
   "subject": "chemistry",
-  "grades": [8, 10],
+  "grades": [
+    8,
+    10
+  ],
   "description": "Các hạt của hai chất A và B chuyển động hỗn loạn trong một bình kín và phản ứng A + B → AB khi va chạm với năng lượng không nhỏ hơn năng lượng hoạt hóa Eₐ. Thay đổi nhiệt độ, nồng độ ban đầu của từng chất và thêm chất xúc tác (làm giảm Eₐ) để xem đồ thị nồng độ theo thời gian, tỉ lệ va chạm hiệu quả và tốc độ đầu đo được thay đổi thế nào. Mô hình minh họa hai chiều: số hạt ít (80 hạt ứng với 1 mol/L), Eₐ chỉ 5 kJ/mol (2,5 kJ/mol khi có xúc tác), nhỏ hơn thực tế rất nhiều; nhiệt độ được giữ không đổi. Vì số hạt ít nên mỗi lần chạy cho kết quả hơi khác nhau.",
   "learningGoals": [
     "Giải thích bằng thuyết va chạm: chỉ những va chạm có năng lượng đủ lớn (va chạm hiệu quả) mới gây ra phản ứng.",

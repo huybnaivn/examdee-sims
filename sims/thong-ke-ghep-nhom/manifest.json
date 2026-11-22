@@ -1,9 +1,12 @@
 {
   "slug": "thong-ke-ghep-nhom",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Mẫu số liệu ghép nhóm",
   "subject": "math",
-  "grades": [11],
+  "grades": [
+    11
+  ],
   "description": "Mẫu số liệu gốc là chiều cao (cm, làm tròn đến 1 cm) của 40 học sinh, sinh từ một số hạt giống nên cùng hạt giống luôn cho cùng mẫu. Số liệu được ghép thành các nhóm [a; a + h) có cùng độ dài h (chỉnh được từ 3 đến 10 cm), nhóm đầu bắt đầu từ bội của h ngay dưới giá trị nhỏ nhất. Sim vẽ biểu đồ tần số dạng cột liền nhau, bảng tần số ghép nhóm và các giá trị ước lượng theo công thức của sách giáo khoa: số trung bình (dùng giá trị đại diện là trung điểm nhóm), trung vị, tứ phân vị Q₁, Q₃ (nội suy trong nhóm chứa), mốt (trong nhóm chứa mốt), đặt cạnh các giá trị tính đúng từ số liệu gốc (Q₁, Q₃ của số liệu gốc là trung vị nửa dưới và nửa trên). Học sinh bấm vào cột để chọn nhóm chứa mốt; giá trị mốt ước lượng chỉ hiện khi chọn đúng.",
   "learningGoals": [
     "Lập bảng tần số ghép nhóm từ mẫu số liệu gốc với độ dài nhóm cho trước; tổng các tần số bằng cỡ mẫu.",

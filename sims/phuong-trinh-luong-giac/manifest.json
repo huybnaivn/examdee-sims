@@ -1,9 +1,12 @@
 {
   "slug": "phuong-trinh-luong-giac",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Phương trình lượng giác cơ bản",
   "subject": "math",
-  "grades": [11],
+  "grades": [
+    11
+  ],
   "description": "Chọn dạng sin x = a, cos x = a, tan x = a hoặc cot x = a và thay đổi a. Đường tròn lượng giác cho thấy đường thẳng cắt đường tròn tại các điểm biểu diễn nghiệm; sim viết công thức nghiệm tổng quát với k ∈ ℤ, liệt kê các nghiệm trên một đoạn đã chọn và đánh dấu chúng trên đồ thị hàm số. Có chế độ luyện tập đếm số nghiệm.",
   "learningGoals": [
     "Viết công thức nghiệm của sin x = a, cos x = a, tan x = a, cot x = a, kể cả các trường hợp đặc biệt a = 0, a = ±1.",

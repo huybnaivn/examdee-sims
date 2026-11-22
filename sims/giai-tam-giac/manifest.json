@@ -1,6 +1,7 @@
 {
   "slug": "giai-tam-giac",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Định lí côsin, định lí sin và giải tam giác",
   "subject": "math",
   "grades": [

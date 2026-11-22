@@ -1,9 +1,12 @@
 {
   "slug": "tieu-hoa",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Hệ tiêu hóa ở người",
   "subject": "biology",
-  "grades": [8],
+  "grades": [
+    8
+  ],
   "description": "Một bữa ăn gồm tinh bột, protein, lipid và nước đi lần lượt qua miệng (pH ≈ 7,2; khoảng 1 phút), dạ dày (pH ≈ 2; khoảng 4 giờ), ruột non (pH ≈ 8; khoảng 4 giờ) và ruột già (pH ≈ 6,5; khoảng 15 giờ). Bảng enzyme của mô hình: amylase nước bọt ở miệng biến một phần tinh bột thành maltose; pepsin ở dạ dày cắt một phần protein thành peptide; ở ruột non, amylase tụy biến tinh bột thành maltose, maltase biến maltose thành glucose, trypsin cắt protein thành peptide, peptidase biến peptide thành amino acid, lipase biến lipid (đã được dịch mật nhũ tương hóa) thành glycerol và acid béo; ruột già không có enzyme tiêu hóa. Mỗi enzyme chỉ hoạt động khi pH của cơ quan nằm trong khoảng pH của nó. Glucose, amino acid, glycerol và acid béo chỉ được hấp thụ ở ruột non; nước được hấp thụ khoảng 90 % ở ruột non, phần lớn lượng còn lại ở ruột già. Các thanh cho thấy mỗi chất đang ở dạng nào (chưa tiêu hóa, chất trung gian, sản phẩm cuối, đã hấp thụ). Ở chế độ thử thách, học sinh tự đặt 5 enzyme vào các cơ quan rồi xem bữa ăn được tiêu hóa đến đâu. pH và thời gian là giá trị điển hình; tốc độ phản ứng chỉ có tính minh họa.",
   "learningGoals": [
     "Kể tên các cơ quan của ống tiêu hóa theo thứ tự thức ăn đi qua và thời gian thức ăn lưu lại ở mỗi cơ quan.",

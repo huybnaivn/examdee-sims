@@ -1,9 +1,12 @@
 {
   "slug": "hang-dang-thuc",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Hằng đẳng thức đáng nhớ",
   "subject": "math",
-  "grades": [8],
+  "grades": [
+    8
+  ],
   "description": "Mô hình diện tích và thể tích của bốn hằng đẳng thức: (a + b)² là hình vuông cạnh a + b chia thành a², hai hình chữ nhật ab và b²; (a − b)² là phần còn lại của hình vuông a² sau khi bớt hai dải b(a − b) và hình vuông b²; a² − b² là hình vuông a² bị cắt góc b², cắt một mảnh, xoay và ghép thành hình chữ nhật (a − b)(a + b); (a + b)³ là hình lập phương chia thành 8 khối a³, 3 khối a²b, 3 khối ab², b³. Thanh trượt a, b (bước 0,5) đổi kích thước các mảnh đúng tỉ lệ; nút tách / sắp xếp lại các mảnh có hoạt hình; dòng dưới cùng kiểm tra hai vế bằng số. Chế độ đố: chạm vào từng mảnh để gắn tên hạng tử.",
   "learningGoals": [
     "Giải thích (a + b)² = a² + 2ab + b² và (a − b)² = a² − 2ab + b² bằng diện tích.",

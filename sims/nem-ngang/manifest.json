@@ -1,6 +1,7 @@
 {
   "slug": "nem-ngang",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Chuyển động ném ngang",
   "subject": "physics",
   "grades": [

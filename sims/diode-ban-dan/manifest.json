@@ -1,9 +1,13 @@
 {
   "slug": "diode-ban-dan",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Điốt bán dẫn và chỉnh lưu",
   "subject": "physics",
-  "grades": [11, 12],
+  "grades": [
+    11,
+    12
+  ],
   "description": "Mắc điốt nối tiếp điện trở R vào nguồn một chiều E có thể đổi chiều để dò đặc tuyến vôn – ampe: dòng điện thuận tăng rất nhanh khi hiệu điện thế vượt ngưỡng (khoảng 0,6–0,7 V với điốt silic), dòng điện ngược gần bằng 0. So sánh điện áp ngưỡng của điốt silic, gemani và LED các màu (bảng giá trị tiêu biểu, minh họa). Chuyển sang nguồn xoay chiều để xem chỉnh lưu nửa chu kỳ bằng một điốt và chỉnh lưu cả chu kỳ bằng cầu bốn điốt, cùng giá trị trung bình của điện áp ra. Mô hình: phương trình Shockley cho đặc tuyến; điốt dẫn có hiệu điện thế không đổi U_ng khi chỉnh lưu.",
   "learningGoals": [
     "Mô tả đặc tuyến vôn – ampe của điốt: dẫn điện theo một chiều khi phân cực thuận và vượt điện áp ngưỡng, gần như không dẫn khi phân cực ngược.",

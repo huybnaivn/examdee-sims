@@ -1,9 +1,12 @@
 {
   "slug": "diem-duong-thang-doan-thang",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Điểm, đường thẳng, tia và đoạn thẳng",
   "subject": "math",
-  "grades": [6],
+  "grades": [
+    6
+  ],
   "description": "Đặt các điểm trên lưới ô vuông 1 cm rồi vẽ đường thẳng, tia, đoạn thẳng đi qua chúng; sim chỉ ra các điểm thẳng hàng, hai tia đối nhau và độ dài đoạn thẳng. Hai hoạt động khác: đếm số đường thẳng đi qua n điểm (không có ba điểm nào thẳng hàng) và đo đoạn thẳng, tìm trung điểm của nó.",
   "learningGoals": [
     "Phân biệt đường thẳng, tia và đoạn thẳng; nhận biết điểm thuộc và không thuộc mỗi hình.",

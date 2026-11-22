@@ -1,6 +1,7 @@
 {
   "slug": "phep-bien-hinh",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Phép tịnh tiến, đối xứng và quay",
   "subject": "math",
   "grades": [

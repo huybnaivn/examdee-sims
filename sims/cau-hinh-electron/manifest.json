@@ -1,6 +1,7 @@
 {
   "slug": "cau-hinh-electron",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Cấu hình electron và ô orbital",
   "subject": "chemistry",
   "grades": [

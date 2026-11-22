@@ -1,9 +1,12 @@
 {
   "slug": "ti-le-thuan-nghich",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Đại lượng tỉ lệ thuận và tỉ lệ nghịch",
   "subject": "math",
-  "grades": [7],
+  "grades": [
+    7
+  ],
   "description": "Bốn tình huống thực tế: mua vở (số tiền theo số quyển), số công nhân và thời gian làm xong một công việc, quãng đường đi được theo thời gian, cước taxi theo số km. Học sinh dùng nút − / + điền bốn giá trị của x, bảng tự tính y, y/x và x·y. Nếu y/x không đổi thì y tỉ lệ thuận với x (y = kx), nếu x·y không đổi thì y tỉ lệ nghịch với x (xy = a), nếu cả hai đều thay đổi thì không phải. Các điểm (x; y) được vẽ cùng đồ thị của tình huống: đường thẳng qua gốc O, đường cong y = a/x, hoặc đường thẳng không qua O. Mỗi tình huống có một câu hỏi tìm giá trị y còn thiếu tại một x nằm ngoài bảng.",
   "learningGoals": [
     "Nhận biết hai đại lượng tỉ lệ thuận: y/x = k không đổi, y = kx.",

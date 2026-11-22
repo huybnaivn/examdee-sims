@@ -1,9 +1,13 @@
 {
   "slug": "may-phat-dien",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Máy phát điện xoay chiều",
   "subject": "physics",
-  "grades": [9, 12],
+  "grades": [
+    9,
+    12
+  ],
   "description": "Khung dây phẳng N vòng, diện tích S quay đều với tốc độ n vòng/s trong từ trường đều B (nhìn dọc trục quay). Sim vẽ pháp tuyến của khung, chiều dòng điện trong hai cạnh khung, đồ thị suất điện động e = E₀·sin(ωt + φ) và từ thông Φ = NBS·cos(ωt + φ) theo thời gian, cùng một bóng đèn sáng theo |e|. Có thể đổi số cặp cực p (f = n·p) và bật cổ góp để có máy phát điện một chiều (điện áp ra không đổi chiều). E₀ = NBSω, giá trị hiệu dụng E = E₀/√2. Chuyển động quay được làm chậm để quan sát; hình không theo tỉ lệ.",
   "learningGoals": [
     "Giải thích sự xuất hiện suất điện động xoay chiều khi khung dây quay đều trong từ trường đều: từ thông qua khung Φ = NBS·cos ωt biến thiên điều hòa.",

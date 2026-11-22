@@ -1,9 +1,12 @@
 {
   "slug": "cung-phan-xa",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Cung phản xạ và thời gian phản xạ",
   "subject": "biology",
-  "grades": [8],
+  "grades": [
+    8
+  ],
   "description": "Phần 1: xung thần kinh chạy trên cung phản xạ rụt tay khi chạm vật nóng (thụ quan → nơron hướng tâm → trung ương thần kinh → nơron li tâm → cơ quan phản ứng) với tốc độ dẫn truyền chọn được; so sánh thời gian của phản xạ qua tủy sống với phản ứng có ý thức qua não theo t = L/v cộng thời gian xử lí ở trung ương. Học sinh sắp xếp đúng thứ tự các bộ phận của cung phản xạ. Phần 2: tự đo thời gian phản xạ bằng cách bấm khi màn hình chuyển xanh hoặc bắt thước rơi (đổi quãng đường rơi d ra thời gian bằng t = √(2d/g)); ghi nhiều lượt, tính trung bình và độ lệch chuẩn; bấm sớm bị loại.",
   "learningGoals": [
     "Nêu được các bộ phận của cung phản xạ theo đường đi của xung thần kinh.",
@@ -47,12 +50,17 @@
     "arc-ordered": {
       "kind": "goal",
       "description": "Học sinh sắp xếp đúng thứ tự năm bộ phận của cung phản xạ",
-      "data": { "attempts": "Số lần kiểm tra cho đến khi đúng" }
+      "data": {
+        "attempts": "Số lần kiểm tra cho đến khi đúng"
+      }
     },
     "order-wrong": {
       "kind": "action",
       "description": "Học sinh kiểm tra một thứ tự cung phản xạ chưa đúng",
-      "data": { "attempts": "Số lần kiểm tra đến lúc này", "correctPositions": "Số vị trí đã đúng (0 đến 5)" }
+      "data": {
+        "attempts": "Số lần kiểm tra đến lúc này",
+        "correctPositions": "Số vị trí đã đúng (0 đến 5)"
+      }
     },
     "trial-start": {
       "kind": "action",
@@ -62,22 +70,34 @@
     "trial": {
       "kind": "result",
       "description": "Một lượt đo hợp lệ",
-      "data": { "reactionTime": "Thời gian phản xạ (ms); với thước rơi là t = √(2d/g)", "distance": "Quãng đường thước rơi đọc được (cm); 0 khi đo bằng màn hình" }
+      "data": {
+        "reactionTime": "Thời gian phản xạ (ms); với thước rơi là t = √(2d/g)",
+        "distance": "Quãng đường thước rơi đọc được (cm); 0 khi đo bằng màn hình"
+      }
     },
     "trial-set": {
       "kind": "result",
       "description": "Xong một loạt đo",
-      "data": { "count": "Số lượt hợp lệ trong loạt", "mean": "Thời gian phản xạ trung bình (ms)", "sd": "Độ lệch chuẩn mẫu, chia n − 1 (ms)", "falseStarts": "Tổng số lần bấm sớm" }
+      "data": {
+        "count": "Số lượt hợp lệ trong loạt",
+        "mean": "Thời gian phản xạ trung bình (ms)",
+        "sd": "Độ lệch chuẩn mẫu, chia n − 1 (ms)",
+        "falseStarts": "Tổng số lần bấm sớm"
+      }
     },
     "false-start": {
       "kind": "action",
       "description": "Học sinh bấm trước tín hiệu hoặc quá sớm sau tín hiệu; lượt bị loại",
-      "data": { "falseStarts": "Tổng số lần bấm sớm" }
+      "data": {
+        "falseStarts": "Tổng số lần bấm sớm"
+      }
     },
     "trial-missed": {
       "kind": "action",
       "description": "Học sinh không bấm kịp (quá 2 s, hoặc thước đã rơi qua tay)",
-      "data": { "limit": "Thời gian tối đa của lượt (ms)" }
+      "data": {
+        "limit": "Thời gian tối đa của lượt (ms)"
+      }
     },
     "clear-trials": {
       "kind": "action",

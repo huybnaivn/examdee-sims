@@ -1,9 +1,13 @@
 {
   "slug": "nang-luong-tai-tao",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Năng lượng tái tạo: pin mặt trời và tua-bin gió",
   "subject": "physics",
-  "grades": [9, 10],
+  "grades": [
+    9,
+    10
+  ],
   "description": "Hai nguồn năng lượng tái tạo đặt cạnh nhau: pin mặt trời (diện tích, hiệu suất, góc tia nắng, số giờ nắng) và tua-bin gió (chiều dài cánh, tốc độ gió, hệ số công suất). Xem công suất, điện năng mỗi ngày, so sánh với nhu cầu điện của một hộ gia đình và quan sát công suất gió tỉ lệ với lập phương tốc độ gió.",
   "learningGoals": [
     "Tính công suất pin mặt trời P = η·G·A·cos θ và nhận ra công suất lớn nhất khi tia nắng vuông góc với tấm pin.",

@@ -1,9 +1,12 @@
 {
   "slug": "doc-ampe-ke-von-ke",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Đọc ampe kế và vôn kế",
   "subject": "physics",
-  "grades": [8],
+  "grades": [
+    8
+  ],
   "description": "Ampe kế và vôn kế kim có hai thang đo, mỗi thang có giới hạn đo (GHĐ) và độ chia nhỏ nhất (ĐCNN) riêng. Chọn thang đo phù hợp cho mạch điện một bóng đèn, đọc số chỉ của kim, thử mắc ngược cực hoặc mắc sai cách để thấy hậu quả, và so sánh với đồng hồ đo điện hiện số. Có chế độ luyện đọc số chỉ.",
   "learningGoals": [
     "Nhận biết GHĐ và ĐCNN của từng thang đo trên ampe kế, vôn kế; đọc số chỉ = số vạch × ĐCNN.",

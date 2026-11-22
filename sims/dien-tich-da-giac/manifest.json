@@ -1,9 +1,13 @@
 {
   "slug": "dien-tich-da-giac",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Diện tích tam giác, hình bình hành, hình thang",
   "subject": "math",
-  "grades": [5, 6],
+  "grades": [
+    5,
+    6
+  ],
   "description": "Một hình bình hành, tam giác hoặc hình thang trên lưới ô vuông cạnh 1 cm, đáy AB nằm ngang và đỉnh A cố định. Kéo các đỉnh B, C, D (hoặc dùng thanh trượt) để đổi đáy, chiều cao và độ lệch của đỉnh trên; đường cao luôn được kẻ vuông góc với đáy, kể cả khi chân đường cao nằm ngoài đáy (khi đó đáy được kéo dài). Bấm “Cắt và ghép”: hình bình hành được cắt dọc theo đường cao và ghép thành hình chữ nhật cùng đáy, cùng chiều cao; tam giác (hình thang) được ghép với một hình bằng nó, quay nửa vòng quanh trung điểm cạnh BC, thành hình bình hành đáy a (đáy a + b) rồi thành hình chữ nhật, nên diện tích bằng một nửa hình chữ nhật. Có thể đếm ô vuông đơn vị (ô nguyên và ô bị cắt) để kiểm tra. Phần thử thách yêu cầu tạo hình có diện tích cho trước.",
   "learningGoals": [
     "Giải thích công thức diện tích hình bình hành S = a × h bằng cách cắt ghép thành hình chữ nhật.",

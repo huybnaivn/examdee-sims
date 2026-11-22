@@ -1,9 +1,14 @@
 {
   "slug": "hieu-ung-nha-kinh",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Hiệu ứng nhà kính",
   "subject": "physics",
-  "grades": [8, 9, 10],
+  "grades": [
+    8,
+    9,
+    10
+  ],
   "description": "Ánh sáng Mặt Trời (sóng ngắn) xuyên qua khí quyển tới mặt đất; mặt đất bức xạ hồng ngoại (sóng dài), một phần bị các phân tử khí nhà kính hấp thụ rồi phát xạ trở lại. Thay đổi nồng độ CO₂ và lượng mây để xem nhiệt độ bề mặt cân bằng theo mô hình cân bằng năng lượng một lớp, và thử giữ mức tăng nhiệt độ dưới giới hạn +1,5 °C hoặc +2 °C.",
   "learningGoals": [
     "Mô tả hiệu ứng nhà kính: khí nhà kính cho ánh sáng Mặt Trời đi qua nhưng hấp thụ và phát xạ lại bức xạ hồng ngoại từ mặt đất.",

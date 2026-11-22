@@ -1,9 +1,12 @@
 {
   "slug": "tang-truong-quan-the",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Tăng trưởng quần thể",
   "subject": "biology",
-  "grades": [12],
+  "grades": [
+    12
+  ],
   "description": "So sánh tăng trưởng theo tiềm năng sinh học (đường cong chữ J, N = N₀eʳᵗ) với tăng trưởng trong môi trường có giới hạn (đường cong chữ S, mô hình logistic dN/dt = rN(1 − N/K)). Học sinh đặt kích thước ban đầu N₀, tốc độ tăng trưởng nội tại r và sức chứa của môi trường K; đồ thị N(t) và đồ thị tốc độ tăng trưởng dN/dt theo N (parabol, cực đại rK/4 tại N = K/2). Có thể khai thác một lượng cố định H mỗi năm để thấy khai thác vượt rK/4 làm quần thể bị diệt vong.",
   "learningGoals": [
     "Phân biệt tăng trưởng theo tiềm năng sinh học (chữ J) và tăng trưởng trong môi trường có giới hạn (chữ S).",

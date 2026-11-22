@@ -1,9 +1,12 @@
 {
   "slug": "can-bang-oxi-hoa-khu",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Cân bằng phản ứng oxi hóa – khử",
   "subject": "chemistry",
-  "grades": [10],
+  "grades": [
+    10
+  ],
   "description": "Chọn một phản ứng oxi hóa – khử và đi qua từng bước của phương pháp thăng bằng electron: ghi số oxi hóa trên mọi nguyên tử, xác định chất khử và chất oxi hóa, viết quá trình oxi hóa và quá trình khử, tìm bội chung nhỏ nhất của số electron, đặt hệ số rồi cân bằng các nguyên tố còn lại. Chế độ tự luyện cho học sinh tự làm và kiểm tra từng bước.",
   "learningGoals": [
     "Xác định số oxi hóa của nguyên tử các nguyên tố trong đơn chất, hợp chất và ion theo các quy tắc.",

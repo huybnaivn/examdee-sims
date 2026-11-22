@@ -1,9 +1,15 @@
 {
   "slug": "phep-chia-co-du",
   "version": "1.0.0",
+  "status": "needs-rework",
   "title": "Phép chia hết và phép chia có dư",
   "subject": "math",
-  "grades": [3, 4, 5, 6],
+  "grades": [
+    3,
+    4,
+    5,
+    6
+  ],
   "description": "Chia đều một số chấm (0 đến 60) vào các nhóm (0 đến 10 nhóm). Mô phỏng vẽ các nhóm với số chấm bằng nhau, khung chấm còn dư, viết phép chia a : b = q (dư r), đẳng thức a = b × q + r kèm điều kiện số dư bé hơn số chia, và cho biết đó là phép chia hết hay phép chia có dư. Chọn số chia bằng 0 thì mô phỏng báo không có phép chia cho 0. Hoạt động đặt tính rồi tính thực hiện từng bước phép chia số có đến bốn chữ số cho số có một hoặc hai chữ số (chia, nhân, trừ, hạ) kèm lời đọc từng bước và phép thử lại. Hoạt động luyện tập hỏi thương và số dư của một phép chia trong phạm vi 99, có gợi ý khi số dư còn lớn hơn hoặc bằng số chia.",
   "learningGoals": [
     "Hiểu phép chia là chia đều thành các nhóm bằng nhau; phần không đủ chia thêm là số dư.",
