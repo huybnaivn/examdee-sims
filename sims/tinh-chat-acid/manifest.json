@@ -1,0 +1,40 @@
+{
+  "slug": "tinh-chat-acid",
+  "version": "1.0.0",
+  "title": "Tính chất hóa học của acid và base",
+  "subject": "chemistry",
+  "grades": [
+    8
+  ],
+  "description": "Cho dung dịch acid (HCl, H₂SO₄ loãng) hoặc dung dịch base (NaOH, Ca(OH)₂) vào ống nghiệm chứa quỳ tím, kim loại (Zn, Fe, Cu), oxide base (CuO), chất trung hòa (dung dịch NaOH hoặc HCl có phenolphthalein) hoặc muối (CaCO₃, BaCl₂, CuSO₄). Mô phỏng cho thấy hiện tượng (đổi màu, sủi bọt khí, chất rắn tan, kết tủa) và phương trình hóa học đã cân bằng; mỗi thí nghiệm điền một ô vào bảng tính chất 4 × 9.\n\nBảng kết quả (cột: quỳ tím | Zn | Fe | Cu | CuO | trung hòa | CaCO₃ | BaCl₂ | CuSO₄):\nHCl: đỏ | khí H₂ | khí H₂ | – | tan, dung dịch xanh lam | mất màu hồng | khí CO₂ | – | –\nH₂SO₄ loãng: đỏ | khí H₂ | khí H₂ | – | tan, dung dịch xanh lam | mất màu hồng | khí CO₂ | kết tủa trắng BaSO₄ | –\nNaOH: xanh | – | – | – | – | hóa hồng khi base dư | – | – | kết tủa xanh lam Cu(OH)₂\nCa(OH)₂: xanh | – | – | – | – | hóa hồng khi base dư | – | – | kết tủa xanh lam Cu(OH)₂\n\nĐiều kiện: dung dịch loãng, nhiệt độ thường. Zn với dung dịch base được ghi là không có hiện tượng ở điều kiện này (Zn chỉ tan trong kiềm đặc, nóng).",
+  "learningGoals": [
+    "Dung dịch acid làm quỳ tím hóa đỏ, dung dịch base làm quỳ tím hóa xanh.",
+    "Acid loãng tác dụng với kim loại đứng trước H (Zn, Fe) tạo muối và khí hydrogen; Cu không phản ứng.",
+    "Acid tác dụng với oxide base và với base (phản ứng trung hòa) tạo muối và nước.",
+    "Acid và base tác dụng với muối khi sản phẩm có kết tủa hoặc chất khí: BaSO₄, CO₂, Cu(OH)₂.",
+    "Viết và cân bằng phương trình hóa học của các phản ứng đã quan sát."
+  ],
+  "state": {
+    "reagent": "Dung dịch cho vào: \"HCl\", \"H2SO4\" (loãng), \"NaOH\" hoặc \"CaOH2\" (Ca(OH)₂)",
+    "target": "Chất có sẵn trong ống nghiệm: \"quy\" (quỳ tím), \"Zn\", \"Fe\", \"Cu\", \"CuO\", \"neut\" (chất trung hòa: dung dịch NaOH có phenolphthalein nếu cho acid vào, dung dịch HCl có phenolphthalein nếu cho base vào), \"CaCO3\", \"BaCl2\", \"CuSO4\"",
+    "done": "Chuỗi 36 ký tự 0/1: ô thứ (chỉ số dung dịch × 9 + chỉ số chất) bằng 1 nếu thí nghiệm đó đã làm. Thứ tự dung dịch: HCl, H2SO4, NaOH, CaOH2; thứ tự chất như ở target. Trạng thái ban đầu có sẵn thí nghiệm mẫu HCl + Zn."
+  },
+  "events": {
+    "experiment": {
+      "kind": "result",
+      "description": "Học sinh làm một thí nghiệm (bấm «Làm thí nghiệm» hoặc chạm vào một ô của bảng)",
+      "data": {
+        "reagent": "Chỉ số dung dịch cho vào: 0 = HCl, 1 = H₂SO₄ loãng, 2 = NaOH, 3 = Ca(OH)₂",
+        "target": "Chỉ số chất trong ống nghiệm: 0 = quỳ tím, 1 = Zn, 2 = Fe, 3 = Cu, 4 = CuO, 5 = chất trung hòa, 6 = CaCO₃, 7 = BaCl₂, 8 = CuSO₄",
+        "reacted": "1 nếu có phản ứng hoặc chất chỉ thị đổi màu, 0 nếu không có hiện tượng"
+      }
+    },
+    "table-complete": {
+      "kind": "goal",
+      "description": "Học sinh đã làm đủ 36 thí nghiệm, bảng tính chất được điền đầy đủ",
+      "data": {
+        "experiments": "Số thí nghiệm trong bảng (36)"
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "slug": "chu-trinh-carbon",
+  "version": "1.0.0",
+  "title": "Chu trình carbon",
+  "subject": "biology",
+  "grades": [8, 12],
+  "description": "Sáu kho chứa carbon (khí quyển, thực vật, động vật, đất, đại dương, nhiên liệu hóa thạch) nối với nhau bằng các dòng carbon: quang hợp, hô hấp, ăn, xác và chất thải, phân giải, trao đổi với đại dương, đốt cháy. Học sinh chọn mức đốt nhiên liệu hóa thạch và tỉ lệ rừng bị phá rồi chạy mô hình hộp trong 100 năm, quan sát lượng carbon ở từng kho và đồ thị CO₂ khí quyển (ppm). Mô hình đơn giản hóa: năm 0 là trạng thái cân bằng trước thời kì công nghiệp (280 ppm; 1 ppm ≈ 2,13 GtC); mỗi dòng tỉ lệ với kho mà nó đi ra; quang hợp = 120·(1 − d)·f(A) với d là phần rừng bị phá và f là hệ số bão hòa theo CO₂; đại dương thoát ra 90 + 0,27·(O − O₀) GtC/năm. Tổng carbon của sáu kho không đổi.",
+  "learningGoals": [
+    "Mô tả chu trình carbon: carbon đi từ khí quyển vào sinh vật qua quang hợp và trở lại qua hô hấp, phân giải và đốt cháy.",
+    "Nhận ra carbon chỉ chuyển từ kho này sang kho khác, tổng lượng carbon được bảo toàn.",
+    "Giải thích vì sao đốt nhiên liệu hóa thạch và phá rừng làm tăng nồng độ CO₂ trong khí quyển.",
+    "Đề xuất biện pháp (giảm đốt nhiên liệu hóa thạch, bảo vệ rừng) để giữ CO₂ dưới một ngưỡng cho trước."
+  ],
+  "state": {
+    "burning": "Lượng carbon từ nhiên liệu hóa thạch bị đốt mỗi năm (GtC/năm, 0 đến 20)",
+    "deforestation": "Phần diện tích rừng bị phá (%, 0 đến 50); làm giảm quang hợp theo cùng tỉ lệ",
+    "year": "Số năm đã mô phỏng (0 đến 100); các kho carbon ở năm đó được tính lại từ burning và deforestation",
+    "showNames": "true nếu hiện tên của các dòng carbon bên cạnh mũi tên"
+  },
+  "events": {
+    "run-finished": {
+      "kind": "result",
+      "description": "Mô hình vừa chạy hết 100 năm",
+      "data": {
+        "years": "Số năm đã mô phỏng (năm)",
+        "co2": "Nồng độ CO₂ khí quyển ở năm cuối (ppm)",
+        "peakCo2": "Nồng độ CO₂ khí quyển cao nhất trong cả lần chạy (ppm)",
+        "burning": "Mức đốt nhiên liệu hóa thạch đã chọn (GtC/năm)",
+        "deforestation": "Phần rừng bị phá đã chọn (%)"
+      }
+    },
+    "co2-below-target": {
+      "kind": "goal",
+      "description": "Học sinh giữ được CO₂ khí quyển dưới ngưỡng mục tiêu trong suốt 100 năm",
+      "data": {
+        "co2": "Nồng độ CO₂ khí quyển ở năm cuối (ppm)",
+        "target": "Ngưỡng mục tiêu (ppm)"
+      }
+    }
+  }
+}

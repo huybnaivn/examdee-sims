@@ -1,0 +1,50 @@
+{
+  "slug": "ghep-nguon-dien",
+  "version": "1.0.0",
+  "title": "Ghép nguồn điện và định luật Ôm cho toàn mạch",
+  "subject": "physics",
+  "grades": [
+    11
+  ],
+  "description": "Ghép các nguồn điện giống nhau (suất điện động E, điện trở trong r) nối tiếp, song song hoặc hỗn hợp đối xứng rồi nối với điện trở R. Quan sát suất điện động và điện trở trong của bộ nguồn, cường độ dòng điện, hiệu điện thế mạch ngoài, công suất và hiệu suất; đồ thị P và H theo R cho thấy công suất mạch ngoài lớn nhất khi R = r_b. Khi R = 0 xảy ra đoản mạch.",
+  "learningGoals": [
+    "Bộ nguồn nối tiếp: E_b = nE, r_b = nr. Bộ nguồn song song (các nguồn giống nhau): E_b = E, r_b = r/m. Bộ hỗn hợp đối xứng m dãy, mỗi dãy n nguồn: E_b = nE, r_b = nr/m.",
+    "Vận dụng định luật Ôm cho toàn mạch I = E_b/(R + r_b) và hiệu điện thế mạch ngoài U = E_b − I·r_b.",
+    "Tính công suất mạch ngoài P = U·I và hiệu suất của nguồn H = U/E_b = R/(R + r_b).",
+    "Phát hiện công suất mạch ngoài lớn nhất P_max = E_b²/(4r_b) khi R = r_b, khi đó H = 50 %.",
+    "Giải thích hiện tượng đoản mạch (R ≈ 0, I = E_b/r_b rất lớn) và tác hại của nó."
+  ],
+  "state": {
+    "mode": "Cách ghép: \"series\" (nối tiếp), \"parallel\" (song song) hoặc \"mixed\" (hỗn hợp đối xứng)",
+    "n": "Số nguồn nối tiếp trong mỗi dãy (1–6); không dùng khi mode = parallel",
+    "m": "Số dãy song song (1–4); không dùng khi mode = series",
+    "emf": "Suất điện động của mỗi nguồn E (V)",
+    "r": "Điện trở trong của mỗi nguồn r (Ω)",
+    "R": "Điện trở mạch ngoài R (Ω); R = 0 là đoản mạch",
+    "showGraph": "true nếu hiện đồ thị công suất P và hiệu suất H theo R",
+    "atMax": "true nếu R đang ở vị trí cho công suất mạch ngoài lớn nhất (R ≈ r_b, sai khác không quá nửa bước con trượt 0,025 Ω)"
+  },
+  "events": {
+    "circuit-solved": {
+      "kind": "result",
+      "description": "Kết quả của mạch sau khi học sinh đổi xong cách ghép, số nguồn, E, r hoặc R",
+      "data": {
+        "emfBank": "Suất điện động của bộ nguồn E_b (V)",
+        "rBank": "Điện trở trong của bộ nguồn r_b (Ω)",
+        "current": "Cường độ dòng điện mạch chính I (A)",
+        "voltage": "Hiệu điện thế mạch ngoài U (V)",
+        "power": "Công suất mạch ngoài P (W)",
+        "efficiency": "Hiệu suất của nguồn H = U/E_b (0–1)"
+      }
+    },
+    "max-power": {
+      "kind": "goal",
+      "description": "Học sinh đã chỉnh R về giá trị cho công suất mạch ngoài lớn nhất (R ≈ r_b)",
+      "data": {
+        "resistance": "Điện trở mạch ngoài R (Ω)",
+        "rBank": "Điện trở trong của bộ nguồn r_b (Ω)",
+        "power": "Công suất mạch ngoài khi đó (W)"
+      }
+    }
+  }
+}

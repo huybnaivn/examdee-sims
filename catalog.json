@@ -1522,6 +1522,52 @@
     "thumbnailUrl": "/chon-loc-tu-nhien/1.0.0/thumb.png"
   },
   {
+    "slug": "chu-trinh-carbon",
+    "version": "1.0.0",
+    "title": "Chu trình carbon",
+    "subject": "biology",
+    "grades": [
+      8,
+      12
+    ],
+    "description": "Sáu kho chứa carbon (khí quyển, thực vật, động vật, đất, đại dương, nhiên liệu hóa thạch) nối với nhau bằng các dòng carbon: quang hợp, hô hấp, ăn, xác và chất thải, phân giải, trao đổi với đại dương, đốt cháy. Học sinh chọn mức đốt nhiên liệu hóa thạch và tỉ lệ rừng bị phá rồi chạy mô hình hộp trong 100 năm, quan sát lượng carbon ở từng kho và đồ thị CO₂ khí quyển (ppm). Mô hình đơn giản hóa: năm 0 là trạng thái cân bằng trước thời kì công nghiệp (280 ppm; 1 ppm ≈ 2,13 GtC); mỗi dòng tỉ lệ với kho mà nó đi ra; quang hợp = 120·(1 − d)·f(A) với d là phần rừng bị phá và f là hệ số bão hòa theo CO₂; đại dương thoát ra 90 + 0,27·(O − O₀) GtC/năm. Tổng carbon của sáu kho không đổi.",
+    "learningGoals": [
+      "Mô tả chu trình carbon: carbon đi từ khí quyển vào sinh vật qua quang hợp và trở lại qua hô hấp, phân giải và đốt cháy.",
+      "Nhận ra carbon chỉ chuyển từ kho này sang kho khác, tổng lượng carbon được bảo toàn.",
+      "Giải thích vì sao đốt nhiên liệu hóa thạch và phá rừng làm tăng nồng độ CO₂ trong khí quyển.",
+      "Đề xuất biện pháp (giảm đốt nhiên liệu hóa thạch, bảo vệ rừng) để giữ CO₂ dưới một ngưỡng cho trước."
+    ],
+    "state": {
+      "burning": "Lượng carbon từ nhiên liệu hóa thạch bị đốt mỗi năm (GtC/năm, 0 đến 20)",
+      "deforestation": "Phần diện tích rừng bị phá (%, 0 đến 50); làm giảm quang hợp theo cùng tỉ lệ",
+      "year": "Số năm đã mô phỏng (0 đến 100); các kho carbon ở năm đó được tính lại từ burning và deforestation",
+      "showNames": "true nếu hiện tên của các dòng carbon bên cạnh mũi tên"
+    },
+    "events": {
+      "run-finished": {
+        "kind": "result",
+        "description": "Mô hình vừa chạy hết 100 năm",
+        "data": {
+          "years": "Số năm đã mô phỏng (năm)",
+          "co2": "Nồng độ CO₂ khí quyển ở năm cuối (ppm)",
+          "peakCo2": "Nồng độ CO₂ khí quyển cao nhất trong cả lần chạy (ppm)",
+          "burning": "Mức đốt nhiên liệu hóa thạch đã chọn (GtC/năm)",
+          "deforestation": "Phần rừng bị phá đã chọn (%)"
+        }
+      },
+      "co2-below-target": {
+        "kind": "goal",
+        "description": "Học sinh giữ được CO₂ khí quyển dưới ngưỡng mục tiêu trong suốt 100 năm",
+        "data": {
+          "co2": "Nồng độ CO₂ khí quyển ở năm cuối (ppm)",
+          "target": "Ngưỡng mục tiêu (ppm)"
+        }
+      }
+    },
+    "url": "/chu-trinh-carbon/1.0.0/index.html",
+    "thumbnailUrl": "/chu-trinh-carbon/1.0.0/thumb.png"
+  },
+  {
     "slug": "chu-vi-hinh-tron",
     "version": "1.0.0",
     "title": "Chu vi và diện tích hình tròn",
@@ -3885,6 +3931,58 @@
     },
     "url": "/enzyme/1.0.0/index.html",
     "thumbnailUrl": "/enzyme/1.0.0/thumb.png"
+  },
+  {
+    "slug": "ghep-nguon-dien",
+    "version": "1.0.0",
+    "title": "Ghép nguồn điện và định luật Ôm cho toàn mạch",
+    "subject": "physics",
+    "grades": [
+      11
+    ],
+    "description": "Ghép các nguồn điện giống nhau (suất điện động E, điện trở trong r) nối tiếp, song song hoặc hỗn hợp đối xứng rồi nối với điện trở R. Quan sát suất điện động và điện trở trong của bộ nguồn, cường độ dòng điện, hiệu điện thế mạch ngoài, công suất và hiệu suất; đồ thị P và H theo R cho thấy công suất mạch ngoài lớn nhất khi R = r_b. Khi R = 0 xảy ra đoản mạch.",
+    "learningGoals": [
+      "Bộ nguồn nối tiếp: E_b = nE, r_b = nr. Bộ nguồn song song (các nguồn giống nhau): E_b = E, r_b = r/m. Bộ hỗn hợp đối xứng m dãy, mỗi dãy n nguồn: E_b = nE, r_b = nr/m.",
+      "Vận dụng định luật Ôm cho toàn mạch I = E_b/(R + r_b) và hiệu điện thế mạch ngoài U = E_b − I·r_b.",
+      "Tính công suất mạch ngoài P = U·I và hiệu suất của nguồn H = U/E_b = R/(R + r_b).",
+      "Phát hiện công suất mạch ngoài lớn nhất P_max = E_b²/(4r_b) khi R = r_b, khi đó H = 50 %.",
+      "Giải thích hiện tượng đoản mạch (R ≈ 0, I = E_b/r_b rất lớn) và tác hại của nó."
+    ],
+    "state": {
+      "mode": "Cách ghép: \"series\" (nối tiếp), \"parallel\" (song song) hoặc \"mixed\" (hỗn hợp đối xứng)",
+      "n": "Số nguồn nối tiếp trong mỗi dãy (1–6); không dùng khi mode = parallel",
+      "m": "Số dãy song song (1–4); không dùng khi mode = series",
+      "emf": "Suất điện động của mỗi nguồn E (V)",
+      "r": "Điện trở trong của mỗi nguồn r (Ω)",
+      "R": "Điện trở mạch ngoài R (Ω); R = 0 là đoản mạch",
+      "showGraph": "true nếu hiện đồ thị công suất P và hiệu suất H theo R",
+      "atMax": "true nếu R đang ở vị trí cho công suất mạch ngoài lớn nhất (R ≈ r_b, sai khác không quá nửa bước con trượt 0,025 Ω)"
+    },
+    "events": {
+      "circuit-solved": {
+        "kind": "result",
+        "description": "Kết quả của mạch sau khi học sinh đổi xong cách ghép, số nguồn, E, r hoặc R",
+        "data": {
+          "emfBank": "Suất điện động của bộ nguồn E_b (V)",
+          "rBank": "Điện trở trong của bộ nguồn r_b (Ω)",
+          "current": "Cường độ dòng điện mạch chính I (A)",
+          "voltage": "Hiệu điện thế mạch ngoài U (V)",
+          "power": "Công suất mạch ngoài P (W)",
+          "efficiency": "Hiệu suất của nguồn H = U/E_b (0–1)"
+        }
+      },
+      "max-power": {
+        "kind": "goal",
+        "description": "Học sinh đã chỉnh R về giá trị cho công suất mạch ngoài lớn nhất (R ≈ r_b)",
+        "data": {
+          "resistance": "Điện trở mạch ngoài R (Ω)",
+          "rBank": "Điện trở trong của bộ nguồn r_b (Ω)",
+          "power": "Công suất mạch ngoài khi đó (W)"
+        }
+      }
+    },
+    "url": "/ghep-nguon-dien/1.0.0/index.html",
+    "thumbnailUrl": "/ghep-nguon-dien/1.0.0/thumb.png"
   },
   {
     "slug": "giai-tam-giac",
@@ -9741,6 +9839,48 @@
     "thumbnailUrl": "/tieu-hoa/1.0.0/thumb.png"
   },
   {
+    "slug": "tinh-chat-acid",
+    "version": "1.0.0",
+    "title": "Tính chất hóa học của acid và base",
+    "subject": "chemistry",
+    "grades": [
+      8
+    ],
+    "description": "Cho dung dịch acid (HCl, H₂SO₄ loãng) hoặc dung dịch base (NaOH, Ca(OH)₂) vào ống nghiệm chứa quỳ tím, kim loại (Zn, Fe, Cu), oxide base (CuO), chất trung hòa (dung dịch NaOH hoặc HCl có phenolphthalein) hoặc muối (CaCO₃, BaCl₂, CuSO₄). Mô phỏng cho thấy hiện tượng (đổi màu, sủi bọt khí, chất rắn tan, kết tủa) và phương trình hóa học đã cân bằng; mỗi thí nghiệm điền một ô vào bảng tính chất 4 × 9.\n\nBảng kết quả (cột: quỳ tím | Zn | Fe | Cu | CuO | trung hòa | CaCO₃ | BaCl₂ | CuSO₄):\nHCl: đỏ | khí H₂ | khí H₂ | – | tan, dung dịch xanh lam | mất màu hồng | khí CO₂ | – | –\nH₂SO₄ loãng: đỏ | khí H₂ | khí H₂ | – | tan, dung dịch xanh lam | mất màu hồng | khí CO₂ | kết tủa trắng BaSO₄ | –\nNaOH: xanh | – | – | – | – | hóa hồng khi base dư | – | – | kết tủa xanh lam Cu(OH)₂\nCa(OH)₂: xanh | – | – | – | – | hóa hồng khi base dư | – | – | kết tủa xanh lam Cu(OH)₂\n\nĐiều kiện: dung dịch loãng, nhiệt độ thường. Zn với dung dịch base được ghi là không có hiện tượng ở điều kiện này (Zn chỉ tan trong kiềm đặc, nóng).",
+    "learningGoals": [
+      "Dung dịch acid làm quỳ tím hóa đỏ, dung dịch base làm quỳ tím hóa xanh.",
+      "Acid loãng tác dụng với kim loại đứng trước H (Zn, Fe) tạo muối và khí hydrogen; Cu không phản ứng.",
+      "Acid tác dụng với oxide base và với base (phản ứng trung hòa) tạo muối và nước.",
+      "Acid và base tác dụng với muối khi sản phẩm có kết tủa hoặc chất khí: BaSO₄, CO₂, Cu(OH)₂.",
+      "Viết và cân bằng phương trình hóa học của các phản ứng đã quan sát."
+    ],
+    "state": {
+      "reagent": "Dung dịch cho vào: \"HCl\", \"H2SO4\" (loãng), \"NaOH\" hoặc \"CaOH2\" (Ca(OH)₂)",
+      "target": "Chất có sẵn trong ống nghiệm: \"quy\" (quỳ tím), \"Zn\", \"Fe\", \"Cu\", \"CuO\", \"neut\" (chất trung hòa: dung dịch NaOH có phenolphthalein nếu cho acid vào, dung dịch HCl có phenolphthalein nếu cho base vào), \"CaCO3\", \"BaCl2\", \"CuSO4\"",
+      "done": "Chuỗi 36 ký tự 0/1: ô thứ (chỉ số dung dịch × 9 + chỉ số chất) bằng 1 nếu thí nghiệm đó đã làm. Thứ tự dung dịch: HCl, H2SO4, NaOH, CaOH2; thứ tự chất như ở target. Trạng thái ban đầu có sẵn thí nghiệm mẫu HCl + Zn."
+    },
+    "events": {
+      "experiment": {
+        "kind": "result",
+        "description": "Học sinh làm một thí nghiệm (bấm «Làm thí nghiệm» hoặc chạm vào một ô của bảng)",
+        "data": {
+          "reagent": "Chỉ số dung dịch cho vào: 0 = HCl, 1 = H₂SO₄ loãng, 2 = NaOH, 3 = Ca(OH)₂",
+          "target": "Chỉ số chất trong ống nghiệm: 0 = quỳ tím, 1 = Zn, 2 = Fe, 3 = Cu, 4 = CuO, 5 = chất trung hòa, 6 = CaCO₃, 7 = BaCl₂, 8 = CuSO₄",
+          "reacted": "1 nếu có phản ứng hoặc chất chỉ thị đổi màu, 0 nếu không có hiện tượng"
+        }
+      },
+      "table-complete": {
+        "kind": "goal",
+        "description": "Học sinh đã làm đủ 36 thí nghiệm, bảng tính chất được điền đầy đủ",
+        "data": {
+          "experiments": "Số thí nghiệm trong bảng (36)"
+        }
+      }
+    },
+    "url": "/tinh-chat-acid/1.0.0/index.html",
+    "thumbnailUrl": "/tinh-chat-acid/1.0.0/thumb.png"
+  },
+  {
     "slug": "to-hop",
     "version": "1.0.0",
     "title": "Hoán vị, chỉnh hợp và tổ hợp",
@@ -10003,6 +10143,63 @@
     },
     "url": "/tong-hop-luc/1.0.0/index.html",
     "thumbnailUrl": "/tong-hop-luc/1.0.0/thumb.png"
+  },
+  {
+    "slug": "trong-luong-khoi-luong",
+    "version": "1.0.0",
+    "title": "Khối lượng và trọng lượng",
+    "subject": "physics",
+    "grades": [
+      6
+    ],
+    "description": "Đem một phi hành gia, thùng dụng cụ, hòn đá hoặc quả cân đi cân bằng lực kế và cân đòn trên Trái Đất, Mặt Trăng, Sao Hỏa, Sao Mộc và trên trạm vũ trụ đang bay quanh Trái Đất. Cân đòn luôn chỉ cùng một khối lượng, còn số chỉ lực kế (trọng lượng P = m·g) thay đổi theo nơi cân; trên Trái Đất có thể lấy tròn P = 10·m như sách giáo khoa. Có thể che số chỉ lực kế để tự dự đoán rồi kiểm tra.",
+    "learningGoals": [
+      "Phân biệt khối lượng (lượng chất của vật, đo bằng cân, đơn vị kg) với trọng lượng (độ lớn lực hút tác dụng lên vật, đo bằng lực kế, đơn vị N).",
+      "Nhận ra khối lượng của vật không đổi khi đem vật tới nơi khác, còn trọng lượng thì thay đổi.",
+      "Tính trọng lượng theo P = m·g và đổi giữa kg và N trên Trái Đất theo P = 10·m.",
+      "Thấy độ dãn của lò xo lực kế tỉ lệ với trọng lượng của vật treo vào.",
+      "Giải thích vì sao trên trạm vũ trụ lực kế chỉ 0 N dù khối lượng của vật vẫn như cũ."
+    ],
+    "state": {
+      "place": "Nơi cân: \"earth\" (Trái Đất), \"moon\" (Mặt Trăng), \"mars\" (Sao Hỏa), \"jupiter\" (Sao Mộc), \"orbit\" (trạm vũ trụ trên quỹ đạo)",
+      "object": "Vật được cân: \"astronaut\" (phi hành gia 75 kg), \"crate\" (thùng dụng cụ 20 kg), \"rock\" (hòn đá 5 kg), \"weight\" (quả cân 1 kg)",
+      "approx": "true nếu trên Trái Đất lấy tròn g = 10 N/kg như sách giáo khoa; false thì dùng 9,81 N/kg",
+      "predict": "true nếu số chỉ lực kế đang được che để học sinh dự đoán",
+      "guess": "Số chỉ lực kế học sinh dự đoán (N)",
+      "verdict": "Kết quả kiểm tra dự đoán: 0 chưa kiểm tra, 1 đúng, -1 sai"
+    },
+    "events": {
+      "weighed": {
+        "kind": "result",
+        "description": "Học sinh vừa chọn xong nơi cân, vật được cân hoặc cách lấy g; đây là số chỉ của hai dụng cụ",
+        "data": {
+          "mass": "Khối lượng của vật, số chỉ cân đòn (kg)",
+          "weight": "Trọng lượng của vật, số chỉ lực kế (N); bằng 0 trên trạm vũ trụ",
+          "gravity": "g tại nơi cân (N/kg); bằng 0 trên trạm vũ trụ (không trọng lượng)"
+        }
+      },
+      "predict": {
+        "kind": "action",
+        "description": "Học sinh bấm kiểm tra một dự đoán về số chỉ lực kế",
+        "data": {
+          "guess": "Số chỉ học sinh dự đoán (N)",
+          "weight": "Số chỉ thật của lực kế (N)",
+          "correct": "1 nếu dự đoán lệch không quá 2 % (hoặc 0,5 N), 0 nếu sai"
+        }
+      },
+      "weight-predicted": {
+        "kind": "goal",
+        "description": "Học sinh dự đoán đúng trọng lượng của vật ở một nơi không phải Trái Đất",
+        "data": {
+          "mass": "Khối lượng của vật (kg)",
+          "weight": "Trọng lượng thật (N)",
+          "gravity": "g tại nơi cân (N/kg)",
+          "guess": "Số chỉ học sinh dự đoán (N)"
+        }
+      }
+    },
+    "url": "/trong-luong-khoi-luong/1.0.0/index.html",
+    "thumbnailUrl": "/trong-luong-khoi-luong/1.0.0/thumb.png"
   },
   {
     "slug": "trong-tam-can-bang",

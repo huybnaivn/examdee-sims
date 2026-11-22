@@ -1,0 +1,53 @@
+{
+  "slug": "trong-luong-khoi-luong",
+  "version": "1.0.0",
+  "title": "Khối lượng và trọng lượng",
+  "subject": "physics",
+  "grades": [6],
+  "description": "Đem một phi hành gia, thùng dụng cụ, hòn đá hoặc quả cân đi cân bằng lực kế và cân đòn trên Trái Đất, Mặt Trăng, Sao Hỏa, Sao Mộc và trên trạm vũ trụ đang bay quanh Trái Đất. Cân đòn luôn chỉ cùng một khối lượng, còn số chỉ lực kế (trọng lượng P = m·g) thay đổi theo nơi cân; trên Trái Đất có thể lấy tròn P = 10·m như sách giáo khoa. Có thể che số chỉ lực kế để tự dự đoán rồi kiểm tra.",
+  "learningGoals": [
+    "Phân biệt khối lượng (lượng chất của vật, đo bằng cân, đơn vị kg) với trọng lượng (độ lớn lực hút tác dụng lên vật, đo bằng lực kế, đơn vị N).",
+    "Nhận ra khối lượng của vật không đổi khi đem vật tới nơi khác, còn trọng lượng thì thay đổi.",
+    "Tính trọng lượng theo P = m·g và đổi giữa kg và N trên Trái Đất theo P = 10·m.",
+    "Thấy độ dãn của lò xo lực kế tỉ lệ với trọng lượng của vật treo vào.",
+    "Giải thích vì sao trên trạm vũ trụ lực kế chỉ 0 N dù khối lượng của vật vẫn như cũ."
+  ],
+  "state": {
+    "place": "Nơi cân: \"earth\" (Trái Đất), \"moon\" (Mặt Trăng), \"mars\" (Sao Hỏa), \"jupiter\" (Sao Mộc), \"orbit\" (trạm vũ trụ trên quỹ đạo)",
+    "object": "Vật được cân: \"astronaut\" (phi hành gia 75 kg), \"crate\" (thùng dụng cụ 20 kg), \"rock\" (hòn đá 5 kg), \"weight\" (quả cân 1 kg)",
+    "approx": "true nếu trên Trái Đất lấy tròn g = 10 N/kg như sách giáo khoa; false thì dùng 9,81 N/kg",
+    "predict": "true nếu số chỉ lực kế đang được che để học sinh dự đoán",
+    "guess": "Số chỉ lực kế học sinh dự đoán (N)",
+    "verdict": "Kết quả kiểm tra dự đoán: 0 chưa kiểm tra, 1 đúng, -1 sai"
+  },
+  "events": {
+    "weighed": {
+      "kind": "result",
+      "description": "Học sinh vừa chọn xong nơi cân, vật được cân hoặc cách lấy g; đây là số chỉ của hai dụng cụ",
+      "data": {
+        "mass": "Khối lượng của vật, số chỉ cân đòn (kg)",
+        "weight": "Trọng lượng của vật, số chỉ lực kế (N); bằng 0 trên trạm vũ trụ",
+        "gravity": "g tại nơi cân (N/kg); bằng 0 trên trạm vũ trụ (không trọng lượng)"
+      }
+    },
+    "predict": {
+      "kind": "action",
+      "description": "Học sinh bấm kiểm tra một dự đoán về số chỉ lực kế",
+      "data": {
+        "guess": "Số chỉ học sinh dự đoán (N)",
+        "weight": "Số chỉ thật của lực kế (N)",
+        "correct": "1 nếu dự đoán lệch không quá 2 % (hoặc 0,5 N), 0 nếu sai"
+      }
+    },
+    "weight-predicted": {
+      "kind": "goal",
+      "description": "Học sinh dự đoán đúng trọng lượng của vật ở một nơi không phải Trái Đất",
+      "data": {
+        "mass": "Khối lượng của vật (kg)",
+        "weight": "Trọng lượng thật (N)",
+        "gravity": "g tại nơi cân (N/kg)",
+        "guess": "Số chỉ học sinh dự đoán (N)"
+      }
+    }
+  }
+}
