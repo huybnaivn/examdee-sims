@@ -1,0 +1,68 @@
+{
+  "slug": "hat-trong-dien-truong",
+  "version": "1.0.0",
+  "title": "Chuyển động của hạt mang điện trong điện trường đều",
+  "subject": "physics",
+  "grades": [
+    11
+  ],
+  "description": "Bắn một electron hoặc proton vào giữa hai bản kim loại phẳng song song (bản trên tích điện dương), với vận tốc ban đầu vuông góc với đường sức. Thay đổi hiệu điện thế, khoảng cách hai bản và tốc độ để xem quỹ đạo parabol, độ lệch và góc lệch khi ra khỏi bản, hoặc hạt chạm vào bản. Chế độ thứ hai thả hạt không vận tốc đầu để nó tăng tốc từ bản này sang bản kia. Hai bản dài L = 10 cm, đặt trong chân không, bỏ qua trọng lực.",
+  "learningGoals": [
+    "Tính cường độ điện trường đều giữa hai bản phẳng: E = U/d.",
+    "Tính lực điện F = |q|E và gia tốc a = |q|E/m; nhận ra electron bị lệch về phía bản dương, proton về phía bản âm.",
+    "Giải thích quỹ đạo parabol (giống chuyển động ném ngang) và tính độ lệch y = |q|EL²/(2mv₀²), góc lệch tan θ = |q|EL/(mv₀²).",
+    "Xác định điều kiện hạt chạm bản: độ lệch vượt quá d/2 trước khi ra khỏi bản.",
+    "Vận dụng định lí động năng cho hạt được tăng tốc từ trạng thái nghỉ: v = √(2|q|U/m), không phụ thuộc khoảng cách d."
+  ],
+  "state": {
+    "particle": "Loại hạt: electron hoặc proton",
+    "mode": "across: hạt bay vào chính giữa hai bản với v₀ vuông góc đường sức; rest: hạt được thả không vận tốc đầu từ bản đẩy nó (electron từ bản âm, proton từ bản dương)",
+    "voltage": "Hiệu điện thế U giữa hai bản (V, 0 đến 200)",
+    "gap": "Khoảng cách d giữa hai bản (cm, 2 đến 10)",
+    "speedE": "Tốc độ ban đầu của electron, tính theo 10⁶ m/s (5 đến 30)",
+    "speedP": "Tốc độ ban đầu của proton, tính theo 10⁵ m/s (1 đến 10)",
+    "time": "Thời gian trên màn hình kể từ lúc bắn (s, 0 đến 2; 2 s ứng với quãng bay hết chiều dài bản hoặc hết khoảng cách d). 0 là chưa bắn; chuyến bay kết thúc sớm hơn nếu hạt chạm bản"
+  },
+  "events": {
+    "fire": {
+      "kind": "action",
+      "description": "Học sinh bấm bắn (hoặc thả) hạt",
+      "data": {
+        "voltage": "Hiệu điện thế U (V)",
+        "gap": "Khoảng cách hai bản d (cm)",
+        "speed": "Tốc độ ban đầu v₀ (m/s); 0 khi thả từ trạng thái nghỉ"
+      }
+    },
+    "flight-ended": {
+      "kind": "result",
+      "description": "Hạt bay vào với v₀ vuông góc đường sức vừa ra khỏi hai bản hoặc vừa chạm vào một bản",
+      "data": {
+        "deflection": "Độ lệch theo phương đường sức ở cuối chuyến bay (cm); bằng d/2 khi chạm bản",
+        "exitAngle": "Góc lệch θ của vận tốc khi ra khỏi bản (độ); không có khóa này khi hạt chạm bản",
+        "impactX": "Khoảng cách từ mép vào đến điểm chạm bản (cm); chỉ có khi hạt chạm bản",
+        "hit": "1 nếu hạt chạm bản, 0 nếu ra khỏi bản",
+        "voltage": "Hiệu điện thế U (V)",
+        "gap": "Khoảng cách hai bản d (cm)",
+        "speed": "Tốc độ ban đầu v₀ (m/s)"
+      }
+    },
+    "reached-plate": {
+      "kind": "result",
+      "description": "Hạt được thả từ trạng thái nghỉ vừa tới bản đối diện",
+      "data": {
+        "speed": "Tốc độ khi tới bản, bằng √(2|q|U/m) (m/s)",
+        "time": "Thời gian đi hết khoảng cách d (ns)",
+        "voltage": "Hiệu điện thế U (V)",
+        "gap": "Khoảng cách hai bản d (cm)"
+      }
+    },
+    "grazing-exit": {
+      "kind": "goal",
+      "description": "Hạt ra khỏi hai bản mà không chạm, sát mép bản: độ lệch đạt ít nhất 90 % của d/2",
+      "data": {
+        "deflection": "Độ lệch khi ra khỏi bản (cm)",
+        "margin": "Khoảng hở còn lại giữa hạt và mép bản (cm)"
+      }
+    }
+  }
+}

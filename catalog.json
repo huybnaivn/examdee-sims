@@ -237,6 +237,82 @@
     "thumbnailUrl": "/ap-suat-khi-quyen/1.0.0/thumb.png"
   },
   {
+    "slug": "ban-mat-song-song",
+    "version": "1.0.0",
+    "title": "Khúc xạ qua bản mặt song song và lăng kính phản xạ toàn phần",
+    "subject": "physics",
+    "grades": [
+      11
+    ],
+    "description": "Chiếu một tia sáng qua bản mặt song song đặt trong không khí, thay đổi góc tới, bề dày và chiết suất để thấy tia ló luôn song song với tia tới và bị dời ngang một đoạn d. Chế độ thứ hai dùng lăng kính tam giác vuông cân: nhờ phản xạ toàn phần ở góc tới 45°, tia sáng đổi hướng 90° hoặc quay ngược 180°. Chế độ thứ ba cho học sinh xoay hai lăng kính để lắp một kính tiềm vọng đưa tia sáng từ vật tới mắt.",
+    "learningGoals": [
+      "Vận dụng định luật khúc xạ ánh sáng sin i = n·sin r ở hai mặt của bản mặt song song để giải thích vì sao tia ló song song với tia tới.",
+      "Tính độ dời ngang của tia sáng d = e·sin(i − r)/cos r; nhận ra d = 0 khi tia tới vuông góc với bản và d tăng theo bề dày, góc tới và chiết suất.",
+      "Nêu điều kiện phản xạ toàn phần: ánh sáng đi từ môi trường chiết quang hơn sang môi trường chiết quang kém và i ≥ i_gh với sin i_gh = 1/n.",
+      "Giải thích vì sao lăng kính thủy tinh vuông cân (n = 1,5; i_gh ≈ 41,8° < 45°) đổi hướng tia sáng 90° hoặc 180°, còn với n < √2 thì không.",
+      "Mô tả ứng dụng của lăng kính phản xạ toàn phần trong kính tiềm vọng và ống nhòm."
+    ],
+    "state": {
+      "mode": "Thí nghiệm: slab (bản mặt song song), prism (một lăng kính phản xạ toàn phần) hoặc periscope (kính tiềm vọng gồm hai lăng kính)",
+      "angle": "Góc tới i trên bản mặt song song (độ, 0 đến 85)",
+      "thickness": "Bề dày e của bản (cm, 1 đến 10)",
+      "n": "Chiết suất của bản mặt song song (1 đến 2,5); môi trường xung quanh là không khí",
+      "turn": "Chế độ prism: 90 (tia vào vuông góc một mặt bên, phản xạ trên mặt huyền, đổi hướng 90°) hoặc 180 (tia vào vuông góc mặt huyền, phản xạ trên hai mặt bên, quay ngược lại)",
+      "prismN": "Chiết suất của các lăng kính (1,3 đến 2)",
+      "top": "Kính tiềm vọng: vị trí góc vuông của lăng kính phía trên: tl (trên trái), tr (trên phải), br (dưới phải), bl (dưới trái)",
+      "bottom": "Kính tiềm vọng: vị trí góc vuông của lăng kính phía dưới, cùng các giá trị như top. Kính hoạt động khi top = br và bottom = tl (ánh sáng đi từ vật ở bên phải tới mắt ở bên trái) và prismN > √2",
+      "solved": "true nếu cách lắp kính tiềm vọng hiện tại hoạt động và đã được ghi nhận"
+    },
+    "events": {
+      "aim": {
+        "kind": "action",
+        "description": "Học sinh kéo tia tới trên hình để đổi góc tới rồi thả",
+        "data": {
+          "angle": "Góc tới i sau khi thả (độ)"
+        }
+      },
+      "slab-refraction": {
+        "kind": "result",
+        "description": "Kết quả khúc xạ qua bản mặt song song sau khi học sinh đổi xong góc tới, bề dày hoặc chiết suất",
+        "data": {
+          "incidence": "Góc tới i, cũng là góc ló (độ)",
+          "refraction": "Góc khúc xạ r trong bản (độ)",
+          "shift": "Độ dời ngang d giữa tia ló và tia tới (cm)",
+          "thickness": "Bề dày e của bản (cm)",
+          "n": "Chiết suất của bản"
+        }
+      },
+      "prism-turn": {
+        "kind": "result",
+        "description": "Đường đi của tia sáng qua một lăng kính vuông cân sau khi học sinh đổi xong chiết suất hoặc cách chiếu",
+        "data": {
+          "n": "Chiết suất của lăng kính",
+          "criticalAngle": "Góc giới hạn phản xạ toàn phần i_gh (độ)",
+          "reflections": "Số lần phản xạ toàn phần trong lăng kính",
+          "deviation": "Góc giữa tia ló và tia tới (độ)",
+          "works": "1 nếu tia sáng đổi hướng đúng 90° hoặc 180° nhờ phản xạ toàn phần, 0 nếu không"
+        }
+      },
+      "rotate-prism": {
+        "kind": "action",
+        "description": "Học sinh bấm vào một lăng kính của kính tiềm vọng để xoay nó 90° theo chiều kim đồng hồ",
+        "data": {
+          "prism": "1 = lăng kính phía trên, 2 = lăng kính phía dưới"
+        }
+      },
+      "periscope-working": {
+        "kind": "goal",
+        "description": "Học sinh lắp được kính tiềm vọng hoạt động: tia sáng phản xạ toàn phần trên cả hai lăng kính và tới mắt; báo một lần cho mỗi lần lắp đúng",
+        "data": {
+          "n": "Chiết suất của hai lăng kính",
+          "reflections": "Số lần phản xạ toàn phần (2)"
+        }
+      }
+    },
+    "url": "/ban-mat-song-song/1.0.0/index.html",
+    "thumbnailUrl": "/ban-mat-song-song/1.0.0/thumb.png"
+  },
+  {
     "slug": "bang-nhan",
     "version": "1.0.0",
     "title": "Phép nhân bằng mảng",
@@ -4151,6 +4227,76 @@
     "thumbnailUrl": "/hap-dan-quy-dao/1.0.0/thumb.png"
   },
   {
+    "slug": "hat-trong-dien-truong",
+    "version": "1.0.0",
+    "title": "Chuyển động của hạt mang điện trong điện trường đều",
+    "subject": "physics",
+    "grades": [
+      11
+    ],
+    "description": "Bắn một electron hoặc proton vào giữa hai bản kim loại phẳng song song (bản trên tích điện dương), với vận tốc ban đầu vuông góc với đường sức. Thay đổi hiệu điện thế, khoảng cách hai bản và tốc độ để xem quỹ đạo parabol, độ lệch và góc lệch khi ra khỏi bản, hoặc hạt chạm vào bản. Chế độ thứ hai thả hạt không vận tốc đầu để nó tăng tốc từ bản này sang bản kia. Hai bản dài L = 10 cm, đặt trong chân không, bỏ qua trọng lực.",
+    "learningGoals": [
+      "Tính cường độ điện trường đều giữa hai bản phẳng: E = U/d.",
+      "Tính lực điện F = |q|E và gia tốc a = |q|E/m; nhận ra electron bị lệch về phía bản dương, proton về phía bản âm.",
+      "Giải thích quỹ đạo parabol (giống chuyển động ném ngang) và tính độ lệch y = |q|EL²/(2mv₀²), góc lệch tan θ = |q|EL/(mv₀²).",
+      "Xác định điều kiện hạt chạm bản: độ lệch vượt quá d/2 trước khi ra khỏi bản.",
+      "Vận dụng định lí động năng cho hạt được tăng tốc từ trạng thái nghỉ: v = √(2|q|U/m), không phụ thuộc khoảng cách d."
+    ],
+    "state": {
+      "particle": "Loại hạt: electron hoặc proton",
+      "mode": "across: hạt bay vào chính giữa hai bản với v₀ vuông góc đường sức; rest: hạt được thả không vận tốc đầu từ bản đẩy nó (electron từ bản âm, proton từ bản dương)",
+      "voltage": "Hiệu điện thế U giữa hai bản (V, 0 đến 200)",
+      "gap": "Khoảng cách d giữa hai bản (cm, 2 đến 10)",
+      "speedE": "Tốc độ ban đầu của electron, tính theo 10⁶ m/s (5 đến 30)",
+      "speedP": "Tốc độ ban đầu của proton, tính theo 10⁵ m/s (1 đến 10)",
+      "time": "Thời gian trên màn hình kể từ lúc bắn (s, 0 đến 2; 2 s ứng với quãng bay hết chiều dài bản hoặc hết khoảng cách d). 0 là chưa bắn; chuyến bay kết thúc sớm hơn nếu hạt chạm bản"
+    },
+    "events": {
+      "fire": {
+        "kind": "action",
+        "description": "Học sinh bấm bắn (hoặc thả) hạt",
+        "data": {
+          "voltage": "Hiệu điện thế U (V)",
+          "gap": "Khoảng cách hai bản d (cm)",
+          "speed": "Tốc độ ban đầu v₀ (m/s); 0 khi thả từ trạng thái nghỉ"
+        }
+      },
+      "flight-ended": {
+        "kind": "result",
+        "description": "Hạt bay vào với v₀ vuông góc đường sức vừa ra khỏi hai bản hoặc vừa chạm vào một bản",
+        "data": {
+          "deflection": "Độ lệch theo phương đường sức ở cuối chuyến bay (cm); bằng d/2 khi chạm bản",
+          "exitAngle": "Góc lệch θ của vận tốc khi ra khỏi bản (độ); không có khóa này khi hạt chạm bản",
+          "impactX": "Khoảng cách từ mép vào đến điểm chạm bản (cm); chỉ có khi hạt chạm bản",
+          "hit": "1 nếu hạt chạm bản, 0 nếu ra khỏi bản",
+          "voltage": "Hiệu điện thế U (V)",
+          "gap": "Khoảng cách hai bản d (cm)",
+          "speed": "Tốc độ ban đầu v₀ (m/s)"
+        }
+      },
+      "reached-plate": {
+        "kind": "result",
+        "description": "Hạt được thả từ trạng thái nghỉ vừa tới bản đối diện",
+        "data": {
+          "speed": "Tốc độ khi tới bản, bằng √(2|q|U/m) (m/s)",
+          "time": "Thời gian đi hết khoảng cách d (ns)",
+          "voltage": "Hiệu điện thế U (V)",
+          "gap": "Khoảng cách hai bản d (cm)"
+        }
+      },
+      "grazing-exit": {
+        "kind": "goal",
+        "description": "Hạt ra khỏi hai bản mà không chạm, sát mép bản: độ lệch đạt ít nhất 90 % của d/2",
+        "data": {
+          "deflection": "Độ lệch khi ra khỏi bản (cm)",
+          "margin": "Khoảng hở còn lại giữa hạt và mép bản (cm)"
+        }
+      }
+    },
+    "url": "/hat-trong-dien-truong/1.0.0/index.html",
+    "thumbnailUrl": "/hat-trong-dien-truong/1.0.0/thumb.png"
+  },
+  {
     "slug": "he-mat-troi",
     "version": "1.0.0",
     "title": "Hệ Mặt Trời",
@@ -7335,6 +7481,70 @@
     },
     "url": "/quan-he-vat-an-thit-con-moi/1.0.0/index.html",
     "thumbnailUrl": "/quan-he-vat-an-thit-con-moi/1.0.0/thumb.png"
+  },
+  {
+    "slug": "quan-he-vuong-goc-khong-gian",
+    "version": "1.0.0",
+    "title": "Đường thẳng vuông góc với mặt phẳng và góc trong không gian",
+    "subject": "math",
+    "grades": [
+      11
+    ],
+    "description": "Xoay hình lập phương ABCD.A'B'C'D' hoặc hình chóp tứ giác đều S.ABCD, chọn một đường thẳng (hoặc mặt phẳng) và một mặt phẳng để xem chúng song song, vuông góc hay tạo với nhau một góc. Hình vẽ dựng hình chiếu của đường thẳng trên mặt phẳng, hoặc hai đường thẳng cùng vuông góc với giao tuyến, và cho biết số đo góc. Có danh sách ví dụ quen thuộc trong sách giáo khoa và chế độ đố tìm cặp vuông góc.",
+    "learningGoals": [
+      "Xác định góc giữa đường thẳng và mặt phẳng là góc giữa đường thẳng đó và hình chiếu vuông góc của nó trên mặt phẳng.",
+      "Chứng minh đường thẳng vuông góc với mặt phẳng bằng cách chỉ ra nó vuông góc với hai đường thẳng cắt nhau trong mặt phẳng.",
+      "Xác định góc giữa hai mặt phẳng nhờ hai đường thẳng lần lượt nằm trong hai mặt phẳng và cùng vuông góc với giao tuyến tại một điểm.",
+      "Nhận biết đường thẳng song song với mặt phẳng và hai mặt phẳng song song trong hình lập phương, hình chóp đều.",
+      "Ghi nhớ các kết quả quen thuộc: trong hình lập phương AC' ⊥ (A'BD), góc giữa A'C và (ABCD) có tan φ = 1/√2; trong hình chóp đều SO ⊥ (ABCD), BD ⊥ (SAC)."
+    ],
+    "state": {
+      "solid": "Khối đang xét: cube (hình lập phương ABCD.A'B'C'D', cạnh a) hoặc pyramid (hình chóp tứ giác đều S.ABCD, cạnh đáy a, O là tâm đáy, M là trung điểm CD)",
+      "edge": "Cạnh bên của hình chóp: a (SA = a) hoặc a2 (SA = a√2)",
+      "mode": "Chế độ: explore (khám phá) hoặc quiz (đố tìm đối tượng vuông góc với mặt phẳng cho trước)",
+      "example": "Mã ví dụ sách giáo khoa đang chọn (c1…c9 cho hình lập phương, p1…p9 cho hình chóp); chuỗi rỗng khi học sinh tự chọn cặp",
+      "c1": "Hình lập phương: đối tượng thứ nhất, tên đường thẳng (ví dụ A'C) hoặc mặt phẳng trong ngoặc (ví dụ (A'BD))",
+      "c2": "Hình lập phương: mặt phẳng thứ hai, ví dụ (ABCD)",
+      "p1": "Hình chóp: đối tượng thứ nhất, tên đường thẳng (ví dụ SA) hoặc mặt phẳng (ví dụ (SCD))",
+      "p2": "Hình chóp: mặt phẳng thứ hai, ví dụ (ABCD)",
+      "yaw": "Góc xoay hình quanh trục thẳng đứng (độ, −180 đến 180)",
+      "pitch": "Góc nghiêng của hướng nhìn (độ, −30 đến 70; dương là nhìn từ trên xuống)",
+      "quiz": "Chỉ số câu đố hiện tại (0 đến 3); ở chế độ đố, mặt phẳng thứ hai luôn là mặt phẳng của câu này",
+      "solved": "true nếu câu đố hiện tại đã được trả lời đúng",
+      "found": "Số câu đố đã trả lời đúng từ lúc đặt lại"
+    },
+    "events": {
+      "pair-selected": {
+        "kind": "result",
+        "description": "Học sinh vừa chọn xong một cặp (đường thẳng hoặc mặt phẳng, mặt phẳng), một ví dụ, khối hoặc cạnh bên",
+        "data": {
+          "relation": "Mã quan hệ: 0 = nằm trong hoặc trùng nhau, 1 = song song, 2 = vuông góc, 3 = cắt nhau không vuông góc",
+          "angle": "Góc giữa hai đối tượng (độ, 0 đến 90)"
+        }
+      },
+      "perpendicular-found": {
+        "kind": "goal",
+        "description": "Ở chế độ đố, học sinh chọn đúng một đường thẳng hoặc mặt phẳng vuông góc với mặt phẳng được hỏi; báo một lần cho mỗi câu",
+        "data": {
+          "question": "Số thứ tự câu đố (1 đến 4)",
+          "found": "Tổng số câu đã trả lời đúng"
+        }
+      },
+      "next-question": {
+        "kind": "action",
+        "description": "Học sinh bấm \"Câu tiếp theo\" ở chế độ đố"
+      },
+      "rotate": {
+        "kind": "action",
+        "description": "Học sinh kéo trên hình để xoay khối rồi thả",
+        "data": {
+          "yaw": "Góc xoay ngang sau khi thả (độ)",
+          "pitch": "Góc nghiêng sau khi thả (độ)"
+        }
+      }
+    },
+    "url": "/quan-he-vuong-goc-khong-gian/1.0.0/index.html",
+    "thumbnailUrl": "/quan-he-vuong-goc-khong-gian/1.0.0/thumb.png"
   },
   {
     "slug": "quang-hop",

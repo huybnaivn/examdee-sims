@@ -1,0 +1,62 @@
+{
+  "slug": "quan-he-vuong-goc-khong-gian",
+  "version": "1.0.0",
+  "title": "Đường thẳng vuông góc với mặt phẳng và góc trong không gian",
+  "subject": "math",
+  "grades": [
+    11
+  ],
+  "description": "Xoay hình lập phương ABCD.A'B'C'D' hoặc hình chóp tứ giác đều S.ABCD, chọn một đường thẳng (hoặc mặt phẳng) và một mặt phẳng để xem chúng song song, vuông góc hay tạo với nhau một góc. Hình vẽ dựng hình chiếu của đường thẳng trên mặt phẳng, hoặc hai đường thẳng cùng vuông góc với giao tuyến, và cho biết số đo góc. Có danh sách ví dụ quen thuộc trong sách giáo khoa và chế độ đố tìm cặp vuông góc.",
+  "learningGoals": [
+    "Xác định góc giữa đường thẳng và mặt phẳng là góc giữa đường thẳng đó và hình chiếu vuông góc của nó trên mặt phẳng.",
+    "Chứng minh đường thẳng vuông góc với mặt phẳng bằng cách chỉ ra nó vuông góc với hai đường thẳng cắt nhau trong mặt phẳng.",
+    "Xác định góc giữa hai mặt phẳng nhờ hai đường thẳng lần lượt nằm trong hai mặt phẳng và cùng vuông góc với giao tuyến tại một điểm.",
+    "Nhận biết đường thẳng song song với mặt phẳng và hai mặt phẳng song song trong hình lập phương, hình chóp đều.",
+    "Ghi nhớ các kết quả quen thuộc: trong hình lập phương AC' ⊥ (A'BD), góc giữa A'C và (ABCD) có tan φ = 1/√2; trong hình chóp đều SO ⊥ (ABCD), BD ⊥ (SAC)."
+  ],
+  "state": {
+    "solid": "Khối đang xét: cube (hình lập phương ABCD.A'B'C'D', cạnh a) hoặc pyramid (hình chóp tứ giác đều S.ABCD, cạnh đáy a, O là tâm đáy, M là trung điểm CD)",
+    "edge": "Cạnh bên của hình chóp: a (SA = a) hoặc a2 (SA = a√2)",
+    "mode": "Chế độ: explore (khám phá) hoặc quiz (đố tìm đối tượng vuông góc với mặt phẳng cho trước)",
+    "example": "Mã ví dụ sách giáo khoa đang chọn (c1…c9 cho hình lập phương, p1…p9 cho hình chóp); chuỗi rỗng khi học sinh tự chọn cặp",
+    "c1": "Hình lập phương: đối tượng thứ nhất, tên đường thẳng (ví dụ A'C) hoặc mặt phẳng trong ngoặc (ví dụ (A'BD))",
+    "c2": "Hình lập phương: mặt phẳng thứ hai, ví dụ (ABCD)",
+    "p1": "Hình chóp: đối tượng thứ nhất, tên đường thẳng (ví dụ SA) hoặc mặt phẳng (ví dụ (SCD))",
+    "p2": "Hình chóp: mặt phẳng thứ hai, ví dụ (ABCD)",
+    "yaw": "Góc xoay hình quanh trục thẳng đứng (độ, −180 đến 180)",
+    "pitch": "Góc nghiêng của hướng nhìn (độ, −30 đến 70; dương là nhìn từ trên xuống)",
+    "quiz": "Chỉ số câu đố hiện tại (0 đến 3); ở chế độ đố, mặt phẳng thứ hai luôn là mặt phẳng của câu này",
+    "solved": "true nếu câu đố hiện tại đã được trả lời đúng",
+    "found": "Số câu đố đã trả lời đúng từ lúc đặt lại"
+  },
+  "events": {
+    "pair-selected": {
+      "kind": "result",
+      "description": "Học sinh vừa chọn xong một cặp (đường thẳng hoặc mặt phẳng, mặt phẳng), một ví dụ, khối hoặc cạnh bên",
+      "data": {
+        "relation": "Mã quan hệ: 0 = nằm trong hoặc trùng nhau, 1 = song song, 2 = vuông góc, 3 = cắt nhau không vuông góc",
+        "angle": "Góc giữa hai đối tượng (độ, 0 đến 90)"
+      }
+    },
+    "perpendicular-found": {
+      "kind": "goal",
+      "description": "Ở chế độ đố, học sinh chọn đúng một đường thẳng hoặc mặt phẳng vuông góc với mặt phẳng được hỏi; báo một lần cho mỗi câu",
+      "data": {
+        "question": "Số thứ tự câu đố (1 đến 4)",
+        "found": "Tổng số câu đã trả lời đúng"
+      }
+    },
+    "next-question": {
+      "kind": "action",
+      "description": "Học sinh bấm \"Câu tiếp theo\" ở chế độ đố"
+    },
+    "rotate": {
+      "kind": "action",
+      "description": "Học sinh kéo trên hình để xoay khối rồi thả",
+      "data": {
+        "yaw": "Góc xoay ngang sau khi thả (độ)",
+        "pitch": "Góc nghiêng sau khi thả (độ)"
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "slug": "ban-mat-song-song",
+  "version": "1.0.0",
+  "title": "Khúc xạ qua bản mặt song song và lăng kính phản xạ toàn phần",
+  "subject": "physics",
+  "grades": [
+    11
+  ],
+  "description": "Chiếu một tia sáng qua bản mặt song song đặt trong không khí, thay đổi góc tới, bề dày và chiết suất để thấy tia ló luôn song song với tia tới và bị dời ngang một đoạn d. Chế độ thứ hai dùng lăng kính tam giác vuông cân: nhờ phản xạ toàn phần ở góc tới 45°, tia sáng đổi hướng 90° hoặc quay ngược 180°. Chế độ thứ ba cho học sinh xoay hai lăng kính để lắp một kính tiềm vọng đưa tia sáng từ vật tới mắt.",
+  "learningGoals": [
+    "Vận dụng định luật khúc xạ ánh sáng sin i = n·sin r ở hai mặt của bản mặt song song để giải thích vì sao tia ló song song với tia tới.",
+    "Tính độ dời ngang của tia sáng d = e·sin(i − r)/cos r; nhận ra d = 0 khi tia tới vuông góc với bản và d tăng theo bề dày, góc tới và chiết suất.",
+    "Nêu điều kiện phản xạ toàn phần: ánh sáng đi từ môi trường chiết quang hơn sang môi trường chiết quang kém và i ≥ i_gh với sin i_gh = 1/n.",
+    "Giải thích vì sao lăng kính thủy tinh vuông cân (n = 1,5; i_gh ≈ 41,8° < 45°) đổi hướng tia sáng 90° hoặc 180°, còn với n < √2 thì không.",
+    "Mô tả ứng dụng của lăng kính phản xạ toàn phần trong kính tiềm vọng và ống nhòm."
+  ],
+  "state": {
+    "mode": "Thí nghiệm: slab (bản mặt song song), prism (một lăng kính phản xạ toàn phần) hoặc periscope (kính tiềm vọng gồm hai lăng kính)",
+    "angle": "Góc tới i trên bản mặt song song (độ, 0 đến 85)",
+    "thickness": "Bề dày e của bản (cm, 1 đến 10)",
+    "n": "Chiết suất của bản mặt song song (1 đến 2,5); môi trường xung quanh là không khí",
+    "turn": "Chế độ prism: 90 (tia vào vuông góc một mặt bên, phản xạ trên mặt huyền, đổi hướng 90°) hoặc 180 (tia vào vuông góc mặt huyền, phản xạ trên hai mặt bên, quay ngược lại)",
+    "prismN": "Chiết suất của các lăng kính (1,3 đến 2)",
+    "top": "Kính tiềm vọng: vị trí góc vuông của lăng kính phía trên: tl (trên trái), tr (trên phải), br (dưới phải), bl (dưới trái)",
+    "bottom": "Kính tiềm vọng: vị trí góc vuông của lăng kính phía dưới, cùng các giá trị như top. Kính hoạt động khi top = br và bottom = tl (ánh sáng đi từ vật ở bên phải tới mắt ở bên trái) và prismN > √2",
+    "solved": "true nếu cách lắp kính tiềm vọng hiện tại hoạt động và đã được ghi nhận"
+  },
+  "events": {
+    "aim": {
+      "kind": "action",
+      "description": "Học sinh kéo tia tới trên hình để đổi góc tới rồi thả",
+      "data": {
+        "angle": "Góc tới i sau khi thả (độ)"
+      }
+    },
+    "slab-refraction": {
+      "kind": "result",
+      "description": "Kết quả khúc xạ qua bản mặt song song sau khi học sinh đổi xong góc tới, bề dày hoặc chiết suất",
+      "data": {
+        "incidence": "Góc tới i, cũng là góc ló (độ)",
+        "refraction": "Góc khúc xạ r trong bản (độ)",
+        "shift": "Độ dời ngang d giữa tia ló và tia tới (cm)",
+        "thickness": "Bề dày e của bản (cm)",
+        "n": "Chiết suất của bản"
+      }
+    },
+    "prism-turn": {
+      "kind": "result",
+      "description": "Đường đi của tia sáng qua một lăng kính vuông cân sau khi học sinh đổi xong chiết suất hoặc cách chiếu",
+      "data": {
+        "n": "Chiết suất của lăng kính",
+        "criticalAngle": "Góc giới hạn phản xạ toàn phần i_gh (độ)",
+        "reflections": "Số lần phản xạ toàn phần trong lăng kính",
+        "deviation": "Góc giữa tia ló và tia tới (độ)",
+        "works": "1 nếu tia sáng đổi hướng đúng 90° hoặc 180° nhờ phản xạ toàn phần, 0 nếu không"
+      }
+    },
+    "rotate-prism": {
+      "kind": "action",
+      "description": "Học sinh bấm vào một lăng kính của kính tiềm vọng để xoay nó 90° theo chiều kim đồng hồ",
+      "data": {
+        "prism": "1 = lăng kính phía trên, 2 = lăng kính phía dưới"
+      }
+    },
+    "periscope-working": {
+      "kind": "goal",
+      "description": "Học sinh lắp được kính tiềm vọng hoạt động: tia sáng phản xạ toàn phần trên cả hai lăng kính và tới mắt; báo một lần cho mỗi lần lắp đúng",
+      "data": {
+        "n": "Chiết suất của hai lăng kính",
+        "reflections": "Số lần phản xạ toàn phần (2)"
+      }
+    }
+  }
+}
