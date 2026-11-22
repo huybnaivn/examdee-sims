@@ -1,0 +1,47 @@
+{
+  "slug": "cam-ung-thuc-vat",
+  "version": "1.0.0",
+  "title": "Cảm ứng ở thực vật",
+  "subject": "biology",
+  "grades": [11],
+  "description": "Một cây mầm trong chậu (vẽ cắt dọc để thấy rễ) sinh trưởng trong 72 giờ dưới tác động của ánh sáng và trọng lực. Học sinh chọn chiếu sáng từ một phía (đổi hướng nguồn sáng) hoặc sáng đều, xoay chậu (đặt đứng, nằm ngang, lộn ngược) hoặc đặt chậu nằm ngang trên máy hồi chuyển (clinostat), và làm thí nghiệm với đỉnh ngọn: để nguyên, chụp mũ không trong suốt, chụp mũ trong suốt, quấn băng không trong suốt phía dưới đỉnh, cắt bỏ đỉnh. Trước khi chạy một thí nghiệm mới, học sinh có thể dự đoán ngọn cây sẽ mọc thế nào. Hình phóng to đỉnh ngọn cho thấy tỉ lệ auxin ở hai phía. Mô hình sinh trưởng đơn giản theo giả thuyết auxin phân bố không đều: đỉnh ngọn tạo auxin và tiếp nhận ánh sáng; kích thích từ một phía làm auxin lệch sang phía khuất sáng và sang mặt dưới, với độ chênh giữa hai phía = 0,2 × sin(góc nghiêng của cơ quan so với phương thẳng đứng) − 0,3 × sin(góc giữa hướng sáng và hướng ngọn) (số hạng ánh sáng chỉ có ở ngọn), nghĩa là ánh sáng hoàn toàn từ một bên cho tỉ lệ 65% : 35%, cơ quan nằm ngang cho 60% : 40%. Ở thân, phía nhiều auxin dài nhanh hơn nên ngọn cong về phía sáng và cong lên (hướng sáng dương, hướng trọng lực âm); ở rễ, auxin nồng độ cao ức chế nên rễ cong xuống (hướng trọng lực dương). Tốc độ uốn cong = 30° mỗi giờ × độ chênh auxin; ngọn dài thêm 0,06 cm/giờ, rễ 0,04 cm/giờ. Cắt đỉnh thì ngọn ngừng dài và không uốn cong; che kín đỉnh thì không hướng sáng nhưng vẫn hướng trọng lực; trên máy hồi chuyển mọi phía nhận kích thích như nhau nên ngọn và rễ mọc thẳng. Không mô phỏng tính hướng sáng âm yếu của rễ. Các hằng số chỉ có tính minh hoạ, hình không theo tỉ lệ.",
+  "learningGoals": [
+    "Nêu được khái niệm hướng động; phân biệt hướng sáng dương của thân với hướng trọng lực dương của rễ và hướng trọng lực âm của thân.",
+    "Giải thích hướng sáng và hướng trọng lực bằng sự phân bố không đều của auxin: auxin dồn về phía khuất sáng và về mặt dưới.",
+    "Giải thích vì sao cùng lượng auxin tăng lên lại kích thích tế bào thân dài ra nhưng ức chế tế bào rễ.",
+    "Rút ra vai trò của đỉnh ngọn từ các thí nghiệm che đỉnh và cắt đỉnh: đỉnh là nơi tiếp nhận kích thích ánh sáng và là nguồn auxin.",
+    "Giải thích vì sao cây đặt trên máy hồi chuyển không uốn cong.",
+    "Dự đoán được kết quả của một thí nghiệm về hướng động trước khi tiến hành."
+  ],
+  "state": {
+    "oneSided": "true nếu chiếu sáng từ một phía; false nếu ánh sáng đều mọi phía",
+    "lightAngle": "Hướng của nguồn sáng nhìn từ cây, độ, tính từ hướng thẳng lên, dương về bên phải (−105 đến 105; 0 là ngay phía trên, 90 là từ bên phải); chỉ có tác dụng khi oneSided = true",
+    "tilt": "Góc xoay của chậu, độ, theo chiều kim đồng hồ (0 đến 180; 0 đặt đứng, 90 nằm ngang với ngọn hướng sang phải, 180 lộn ngược); bị bỏ qua khi clinostat = true",
+    "clinostat": "true nếu chậu được đặt nằm ngang trên máy hồi chuyển quay đều (triệt tiêu tác động một phía của trọng lực và ánh sáng)",
+    "tip": "Xử lí đỉnh ngọn: \"intact\" để nguyên, \"cap\" chụp mũ không trong suốt, \"clear\" chụp mũ trong suốt, \"band\" quấn băng không trong suốt phía dưới đỉnh, \"removed\" cắt bỏ đỉnh",
+    "predict": "Dự đoán của học sinh về ngọn cây sau 72 giờ: \"\" chưa dự đoán, \"light\" uốn cong về phía ánh sáng, \"up\" uốn cong lên trên, \"straight\" mọc thẳng, \"none\" không dài ra",
+    "time": "Thời gian sinh trưởng đã trôi qua của thí nghiệm hiện tại, giờ (0 đến 72)",
+    "tested": "true nếu kết quả của thí nghiệm với các điều kiện hiện tại đã được xem (khi đó dự đoán không còn được chấm); trở lại false khi đổi điều kiện",
+    "verdict": "Kết quả chấm dự đoán của thí nghiệm hiện tại: \"\" chưa chấm, \"correct\" đúng, \"wrong\" chưa đúng"
+  },
+  "events": {
+    "growth-finished": {
+      "kind": "result",
+      "description": "Cây mầm vừa sinh trưởng xong 72 giờ trong các điều kiện đã chọn",
+      "data": {
+        "shootAngle": "Hướng của ngọn so với hướng thẳng lên, độ, dương là lệch sang phải (−180 đến 180)",
+        "rootAngle": "Hướng của chóp rễ so với hướng thẳng xuống, độ, dương là lệch sang phải (−180 đến 180)",
+        "hours": "Thời gian sinh trưởng (giờ)",
+        "predicted": "1 nếu học sinh đã dự đoán trước khi chạy thí nghiệm mới này, 0 nếu không",
+        "correct": "1 nếu dự đoán đó đúng, 0 nếu sai hoặc không dự đoán"
+      }
+    },
+    "prediction-correct": {
+      "kind": "goal",
+      "description": "Học sinh dự đoán đúng kết quả của một thí nghiệm chưa từng xem kết quả",
+      "data": {
+        "shootAngle": "Hướng của ngọn khi kết thúc thí nghiệm, độ so với hướng thẳng lên, dương là lệch sang phải"
+      }
+    }
+  }
+}

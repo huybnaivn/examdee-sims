@@ -1,0 +1,72 @@
+{
+  "slug": "cau-truc-te-bao",
+  "version": "1.0.0",
+  "title": "Cấu trúc tế bào",
+  "subject": "biology",
+  "grades": [6, 10],
+  "description": "Sơ đồ ba loại tế bào: tế bào nhân sơ (vi khuẩn), tế bào động vật và tế bào thực vật. Ở hoạt động khám phá, học sinh chạm vào một thành phần (hoặc chọn trong danh sách) để xem tên, chức năng và những loại tế bào có thành phần đó; có thể viền các bào quan có màng bao bọc để thấy tế bào nhân sơ không có bào quan nào như vậy. Ở hoạt động so sánh, bảng liệt kê từng thành phần có hay không có ở hai loại tế bào đã chọn và tô màu các hàng khác nhau. Ở hoạt động trắc nghiệm, mô phỏng lần lượt đánh dấu «?» từng thành phần của tế bào, học sinh chọn tên của nó; mỗi thành phần được hỏi một lần. Sự có mặt của các thành phần theo tế bào điển hình trong sách giáo khoa: thành tế bào, lục lạp, không bào trung tâm chỉ có ở tế bào thực vật trong hai loại tế bào nhân thực; lysosome và trung thể chỉ có ở tế bào động vật; tế bào nhân sơ có thành tế bào, màng sinh chất, tế bào chất, ribosome, vùng nhân, plasmid và roi nhưng không có nhân và không có bào quan có màng bao bọc. Hình vẽ là sơ đồ, không theo tỉ lệ.",
+  "learningGoals": [
+    "Nhận biết và gọi đúng tên các thành phần của tế bào nhân sơ, tế bào động vật và tế bào thực vật trên sơ đồ.",
+    "Trình bày được chức năng của thành tế bào, màng sinh chất, tế bào chất, nhân, ribosome, lưới nội chất, bộ máy Golgi, ti thể, lục lạp, không bào trung tâm, lysosome và trung thể.",
+    "Phân biệt tế bào nhân sơ với tế bào nhân thực: tế bào nhân sơ chưa có màng nhân (chỉ có vùng nhân) và không có bào quan có màng bao bọc.",
+    "So sánh tế bào thực vật với tế bào động vật: tế bào thực vật có thêm thành tế bào, lục lạp và không bào trung tâm; tế bào động vật có lysosome và trung thể.",
+    "Nhận ra mọi tế bào đều có màng sinh chất, tế bào chất và ribosome."
+  ],
+  "state": {
+    "cell": "Loại tế bào đang xem: \"prokaryote\" tế bào nhân sơ, \"animal\" tế bào động vật, \"plant\" tế bào thực vật",
+    "mode": "Hoạt động: \"explore\" khám phá tên và chức năng, \"compare\" so sánh hai loại tế bào, \"quiz\" trắc nghiệm gọi tên thành phần",
+    "selected": "Thành phần đang được chọn ở hoạt động khám phá, \"\" nếu chưa chọn: \"thanh-te-bao\", \"mang-sinh-chat\", \"te-bao-chat\", \"ribosome\", \"vung-nhan\", \"plasmid\", \"roi\", \"nhan\", \"luoi-noi-chat\", \"bo-may-golgi\", \"ti-the\", \"luc-lap\", \"khong-bao\", \"lysosome\", \"trung-the\"; có thể là thành phần mà loại tế bào đang xem không có",
+    "membranes": "true nếu đang viền các bào quan có màng bao bọc trên sơ đồ (hoạt động khám phá)",
+    "other": "Loại tế bào thứ hai dùng để so sánh với cell: \"prokaryote\", \"animal\" hoặc \"plant\"",
+    "answer": "Tên thành phần học sinh đã chọn cho câu trắc nghiệm hiện tại (cùng các giá trị như selected), \"\" nếu chưa trả lời",
+    "quizSeed": "Hạt giống quyết định thứ tự các câu hỏi trắc nghiệm (số nguyên không âm); tăng 1 mỗi lần làm bài mới",
+    "quizStep": "Số câu trắc nghiệm đã qua (0 đến số thành phần của loại tế bào: 7 với nhân sơ, 9 với động vật, 10 với thực vật); bằng số thành phần nghĩa là đã làm xong",
+    "quizScore": "Số câu trắc nghiệm đã trả lời đúng, kể cả câu hiện tại nếu đã trả lời"
+  },
+  "events": {
+    "organelle-selected": {
+      "kind": "action",
+      "description": "Học sinh chọn một thành phần của tế bào (chạm trên sơ đồ hoặc chọn trong danh sách) để xem tên và chức năng",
+      "data": {
+        "organelle": "Mã thành phần được chọn, ví dụ \"ti-the\"",
+        "cell": "Loại tế bào đang xem: \"prokaryote\", \"animal\" hoặc \"plant\"",
+        "present": "true nếu loại tế bào đang xem có thành phần này"
+      }
+    },
+    "comparison-shown": {
+      "kind": "result",
+      "description": "Bảng so sánh hai loại tế bào khác nhau vừa được hiển thị",
+      "data": {
+        "first": "Loại tế bào thứ nhất: 0 nhân sơ, 1 động vật, 2 thực vật",
+        "second": "Loại tế bào thứ hai: 0 nhân sơ, 1 động vật, 2 thực vật",
+        "differences": "Số thành phần chỉ có ở một trong hai loại tế bào",
+        "shared": "Số thành phần cả hai loại tế bào đều có"
+      }
+    },
+    "quiz-finished": {
+      "kind": "result",
+      "description": "Học sinh vừa trả lời câu trắc nghiệm cuối cùng của một loại tế bào",
+      "data": {
+        "score": "Số câu trả lời đúng",
+        "total": "Tổng số câu (bằng số thành phần của loại tế bào)"
+      }
+    },
+    "quiz-perfect": {
+      "kind": "goal",
+      "description": "Học sinh hoàn thành bài trắc nghiệm và gọi đúng tên tất cả các thành phần",
+      "data": {
+        "total": "Tổng số câu, tất cả đều đúng"
+      }
+    },
+    "quiz-next": {
+      "kind": "action",
+      "description": "Học sinh chuyển sang câu trắc nghiệm tiếp theo sau khi xem đáp án",
+      "data": {}
+    },
+    "quiz-restart": {
+      "kind": "action",
+      "description": "Học sinh bắt đầu một bài trắc nghiệm mới với thứ tự câu hỏi khác",
+      "data": {}
+    }
+  }
+}
