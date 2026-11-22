@@ -1,0 +1,52 @@
+{
+  "slug": "luc-dan-hoi",
+  "version": "1.0.0",
+  "title": "Lực đàn hồi và định luật Húc",
+  "subject": "physics",
+  "grades": [
+    6,
+    10
+  ],
+  "description": "Treo các quả nặng 50 g vào lò xo đặt cạnh thước và đọc độ dãn. Trong giới hạn đàn hồi, độ dãn tỉ lệ thuận với lực (F = k·Δl) và độ cứng k là hệ số góc của đồ thị F – Δl; vượt giới hạn, lò xo không trở về chiều dài ban đầu. So sánh một lò xo với hai lò xo ghép nối tiếp, ghép song song, và tự xác định độ cứng của một lò xo chưa biết.",
+  "learningGoals": [
+    "Nhận ra trong giới hạn đàn hồi, độ dãn của lò xo tỉ lệ thuận với trọng lượng vật treo; phát biểu định luật Húc F = k·Δl.",
+    "Tính trọng lượng theo quy ước P = 10·m và xác định độ cứng k từ hệ số góc của đồ thị F – Δl.",
+    "Mô tả giới hạn đàn hồi: vượt giới hạn, lò xo dãn nhiều hơn và còn biến dạng dư khi bỏ vật.",
+    "So sánh độ cứng của hệ hai lò xo: nối tiếp 1/k = 1/k₁ + 1/k₂, song song k = k₁ + k₂."
+  ],
+  "state": {
+    "setup": "Thí nghiệm: \"single\" (một lò xo k₁), \"series\" (k₁ nối tiếp k₂), \"parallel\" (k₁ song song k₂), \"unknown\" (lò xo chưa biết độ cứng)",
+    "k1": "Độ cứng lò xo thứ nhất k₁ (N/m)",
+    "k2": "Độ cứng lò xo thứ hai k₂ (N/m), chỉ dùng khi ghép nối tiếp hoặc song song",
+    "count": "Số quả nặng 50 g đang treo (0–10); trọng lượng P = 10·m = 0,5 N mỗi quả",
+    "maxLoad": "Tải lớn nhất các lò xo hiện tại từng chịu (N); dùng để tính biến dạng dư khi đã vượt giới hạn đàn hồi (mỗi lò xo dãn quá 16 cm)",
+    "kx": "Độ cứng thật của lò xo chưa biết (N/m, 20–80); không hiện cho học sinh trước khi trả lời đúng",
+    "guess": "Độ cứng học sinh nhập cho lò xo chưa biết (N/m)",
+    "verdict": "Kết quả lần kiểm tra gần nhất: 0 chưa kiểm tra, 1 đúng (sai lệch không quá 5 %), −1 sai"
+  },
+  "events": {
+    "load-changed": {
+      "kind": "result",
+      "description": "Học sinh vừa thêm hoặc bớt một quả nặng; hệ lò xo đứng yên ở độ dãn mới",
+      "data": {
+        "count": "Số quả nặng đang treo",
+        "mass": "Khối lượng treo (kg)",
+        "load": "Trọng lượng vật treo = lực đàn hồi (N), P = 10·m",
+        "extension": "Độ dãn của cả hệ lò xo (m), gồm cả biến dạng dư nếu có"
+      }
+    },
+    "stiffness-found": {
+      "kind": "goal",
+      "description": "Học sinh xác định đúng độ cứng của lò xo chưa biết (sai lệch không quá 5 %)",
+      "data": {
+        "stiffness": "Độ cứng thật (N/m)",
+        "answer": "Giá trị học sinh nhập (N/m)"
+      }
+    },
+    "spring-replaced": {
+      "kind": "action",
+      "description": "Học sinh bỏ hết quả nặng và thay lò xo mới (với lò xo chưa biết: một lò xo có độ cứng khác)",
+      "data": {}
+    }
+  }
+}

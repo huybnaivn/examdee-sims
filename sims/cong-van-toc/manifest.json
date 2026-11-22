@@ -1,0 +1,61 @@
+{
+  "slug": "cong-van-toc",
+  "version": "1.0.0",
+  "title": "Tính tương đối của chuyển động và công thức cộng vận tốc",
+  "subject": "physics",
+  "grades": [
+    10
+  ],
+  "description": "Một chiếc thuyền qua sông có dòng nước chảy: chọn tốc độ và hướng mũi thuyền so với nước, tốc độ dòng nước, rồi cho thuyền xuất phát để xem ba vectơ vận tốc (thuyền–nước, nước–bờ, thuyền–bờ), quỹ đạo thật, thời gian qua sông và độ trôi theo dòng. Tìm hướng mũi thuyền để cập bến đúng điểm đối diện. Tình huống người đi trên tàu minh họa cộng vận tốc trên một đường thẳng.",
+  "learningGoals": [
+    "Phát biểu và vận dụng công thức cộng vận tốc: vectơ v₁₃ = v₁₂ + v₂₃ (1: vật, 2: hệ quy chiếu chuyển động, 3: hệ quy chiếu đứng yên).",
+    "Tính thời gian qua sông bằng bề rộng sông chia cho thành phần vận tốc vuông góc với bờ; nhận ra thời gian này không phụ thuộc tốc độ dòng nước.",
+    "Tính độ trôi theo dòng d = v₂₃·t khi mũi thuyền vuông góc với bờ.",
+    "Xác định hướng mũi thuyền để sang đúng điểm đối diện: sinθ = v₂₃/v₁₂, và giải thích vì sao không thể khi nước chảy nhanh hơn thuyền.",
+    "Cộng, trừ vận tốc khi hai chuyển động cùng phương (người đi trên tàu cùng chiều hoặc ngược chiều tàu)."
+  ],
+  "state": {
+    "mode": "Tình huống: \"river\" (thuyền qua sông) hoặc \"train\" (người đi trên tàu)",
+    "width": "Bề rộng sông (m)",
+    "vBoat": "Tốc độ thuyền so với nước v₁₂ (m/s)",
+    "heading": "Hướng mũi thuyền θ so với phương vuông góc bờ (độ); dương là chếch ngược dòng, âm là chếch xuôi dòng",
+    "vCurrent": "Tốc độ dòng nước so với bờ v₂₃ (m/s)",
+    "t": "Thời gian kể từ lúc thuyền xuất phát (s); bằng thời gian qua sông khi thuyền đã cập bến, 0 khi còn ở điểm xuất phát",
+    "sailing": "true khi thuyền đang ở trên sông",
+    "vTrain": "Tốc độ tàu so với mặt đất v₂₃ (m/s)",
+    "vWalk": "Vận tốc người so với tàu v₁₂ (m/s); dương là cùng chiều tàu chạy, âm là ngược chiều",
+    "clock": "Thời gian trong tình huống người đi trên tàu (s), lặp lại sau mỗi 5 s"
+  },
+  "events": {
+    "launch": {
+      "kind": "action",
+      "description": "Học sinh cho thuyền xuất phát",
+      "data": {
+        "speed": "Tốc độ thuyền so với nước v₁₂ (m/s)",
+        "heading": "Hướng mũi thuyền so với phương vuông góc bờ (độ, dương là chếch ngược dòng)",
+        "current": "Tốc độ dòng nước v₂₃ (m/s)",
+        "width": "Bề rộng sông (m)"
+      }
+    },
+    "landed": {
+      "kind": "result",
+      "description": "Thuyền vừa cập bờ bên kia",
+      "data": {
+        "time": "Thời gian qua sông (s)",
+        "drift": "Độ trôi so với điểm đối diện (m); dương là xuôi dòng, âm là ngược dòng",
+        "heading": "Hướng mũi thuyền đã dùng (độ)",
+        "width": "Bề rộng sông (m)"
+      }
+    },
+    "landed-opposite": {
+      "kind": "goal",
+      "description": "Thuyền cập bến đúng điểm đối diện điểm xuất phát (lệch không quá 2 % bề rộng sông)",
+      "data": {
+        "drift": "Độ lệch còn lại (m)",
+        "heading": "Hướng mũi thuyền (độ)",
+        "speed": "Tốc độ thuyền so với nước (m/s)",
+        "current": "Tốc độ dòng nước (m/s)"
+      }
+    }
+  }
+}

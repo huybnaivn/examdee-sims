@@ -1,0 +1,49 @@
+{
+  "slug": "luc-huong-tam-thuc-te",
+  "version": "1.0.0",
+  "title": "Lực hướng tâm trong thực tế",
+  "subject": "physics",
+  "grades": [
+    10
+  ],
+  "description": "Ba tình huống chuyển động tròn trong đời sống: ô tô qua khúc cua trên đường nằm ngang (lực ma sát nghỉ là lực hướng tâm, xe trượt khi v > √(μgR)), ô tô qua khúc cua trên mặt đường nghiêng (tốc độ lí tưởng v₀ = √(gR·tanα) không cần ma sát) và xô nước quay trong mặt phẳng thẳng đứng (nước không đổ khi tốc độ ở điểm cao nhất không nhỏ hơn √(gR)). Thay đổi tốc độ, bán kính, hệ số ma sát, góc nghiêng để xem các lực và chuyển động có còn giữ được hay không.",
+  "learningGoals": [
+    "Tính gia tốc hướng tâm aₕₜ = v²/R và lực hướng tâm Fₕₜ = m·v²/R; chỉ ra lực nào đóng vai trò lực hướng tâm trong từng tình huống.",
+    "Giải thích vì sao ô tô trượt khỏi khúc cua nằm ngang khi v > vₘₐₓ = √(μ·g·R), và vì sao phải giảm tốc độ khi đường trơn hoặc cua gấp.",
+    "Giải thích tác dụng của mặt đường nghiêng: ở tốc độ v₀ = √(g·R·tanα) hợp lực của phản lực và trọng lực đủ làm lực hướng tâm, không cần ma sát.",
+    "Xác định tốc độ nhỏ nhất ở điểm cao nhất của quỹ đạo tròn thẳng đứng, vₘᵢₙ = √(g·R), để nước không đổ khỏi xô."
+  ],
+  "state": {
+    "scene": "Tình huống: \"flat\" (khúc cua nằm ngang), \"banked\" (mặt đường nghiêng), \"bucket\" (xô nước quay trong mặt phẳng thẳng đứng)",
+    "speed": "Tốc độ ô tô (m/s)",
+    "radius": "Bán kính khúc cua (m)",
+    "mu": "Hệ số ma sát nghỉ giữa lốp xe và mặt đường",
+    "bank": "Góc nghiêng của mặt đường (độ), chỉ dùng trong tình huống \"banked\"",
+    "vTop": "Tốc độ của xô nước tại điểm cao nhất (m/s)",
+    "rope": "Bán kính quỹ đạo của xô nước (m)",
+    "dist": "Quãng đường ô tô đã đi trong vòng hoạt ảnh hiện tại (m)",
+    "phi": "Vị trí của xô nước, góc tính từ điểm cao nhất theo chiều chuyển động (rad)"
+  },
+  "events": {
+    "motion-checked": {
+      "kind": "result",
+      "description": "Học sinh vừa chỉnh xong một thông số; kết quả chuyển động có giữ được hay không",
+      "data": {
+        "scene": "Tình huống: 1 khúc cua nằm ngang, 2 mặt đường nghiêng, 3 xô nước",
+        "speed": "Tốc độ đã chọn (m/s); với xô nước là tốc độ ở điểm cao nhất",
+        "radius": "Bán kính quỹ đạo (m)",
+        "limit": "Tốc độ giới hạn (m/s): tốc độ lớn nhất còn bám đường với ô tô, tốc độ nhỏ nhất ở điểm cao nhất với xô nước; không có khóa này khi đường nghiêng không có giới hạn trên",
+        "holds": "1 nếu chuyển động tròn giữ được (xe bám đường, nước không đổ), 0 nếu không"
+      }
+    },
+    "max-safe-speed-found": {
+      "kind": "goal",
+      "description": "Học sinh tìm được tốc độ an toàn lớn nhất của ô tô qua khúc cua: xe còn bám đường và tốc độ thấp hơn giới hạn không quá 3 %",
+      "data": {
+        "speed": "Tốc độ học sinh chọn (m/s)",
+        "limit": "Tốc độ an toàn lớn nhất theo lí thuyết (m/s)",
+        "radius": "Bán kính khúc cua (m)"
+      }
+    }
+  }
+}
