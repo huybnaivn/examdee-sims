@@ -1,0 +1,131 @@
+{
+  "slug": "tien-viet-nam",
+  "version": "1.0.0",
+  "title": "Tiền Việt Nam: tính tiền và trả lại",
+  "subject": "math",
+  "grades": [2, 3],
+  "description": "Một cửa hàng nhỏ có tám món hàng gắn thẻ giá (3.000 đến 120.000 đồng) và chín loại tờ tiền từ 1.000 đến 500.000 đồng, vẽ giản lược thành hình chữ nhật màu chỉ ghi mệnh giá. Học sinh chọn hàng, bấm vào tờ tiền để trả; đưa thiếu tiền thì cửa hàng không nhận. Sau khi trả, học sinh tự tính tiền trả lại (tiền đưa trừ tổng tiền hàng) và xếp các tờ tiền cho đúng số đó. Hoạt động thứ hai: lấy đúng một số tiền bằng ít tờ tiền nhất (luôn lấy tờ lớn nhất có thể trước).",
+  "learningGoals": [
+    "Nhận biết các mệnh giá tiền Việt Nam từ 1.000 đồng đến 500.000 đồng và đọc, viết số tiền có dấu chấm tách nghìn.",
+    "Tính tổng số tiền phải trả khi mua nhiều món hàng.",
+    "Tính tiền trả lại: tiền đưa trừ tổng tiền hàng.",
+    "Đổi một số tiền thành các tờ tiền và tìm cách dùng ít tờ nhất."
+  ],
+  "state": {
+    "mode": "Hoạt động: \"shop\" (mua hàng và tính tiền trả lại) hoặc \"fewest\" (lấy tiền bằng ít tờ nhất)",
+    "item0": "true nếu Bút chì (3.000 đồng) đang được chọn mua",
+    "item1": "true nếu Thước kẻ (5.000 đồng) đang được chọn mua",
+    "item2": "true nếu Quyển vở (7.000 đồng) đang được chọn mua",
+    "item3": "true nếu Hộp sữa (8.000 đồng) đang được chọn mua",
+    "item4": "true nếu Bánh mì (15.000 đồng) đang được chọn mua",
+    "item5": "true nếu Truyện tranh (22.000 đồng) đang được chọn mua",
+    "item6": "true nếu Quả bóng (45.000 đồng) đang được chọn mua",
+    "item7": "true nếu Cặp sách (120.000 đồng) đang được chọn mua",
+    "phase": "Giai đoạn: \"pay\" (đang chọn hàng, đưa tiền hoặc đang xếp tiền), \"change\" (đã trả đủ, đang tính tiền trả lại), \"done\" (đã xong)",
+    "paid": "Danh sách mệnh giá (đồng) các tờ tiền học sinh đã đưa (mua hàng) hoặc đã lấy (ít tờ nhất), theo thứ tự bấm, tối đa 10 tờ",
+    "back": "Danh sách mệnh giá (đồng) các tờ tiền học sinh xếp làm tiền trả lại, tối đa 10 tờ",
+    "target": "Số tiền cần lấy trong hoạt động ít tờ nhất (đồng, bội của 1.000, từ 1.000 đến 500.000)"
+  },
+  "events": {
+    "note-tapped": {
+      "kind": "action",
+      "description": "Học sinh bấm một tờ tiền để đặt lên khay (tiền đưa, tiền trả lại hoặc tiền cần lấy)",
+      "data": {
+        "value": "Mệnh giá tờ tiền vừa bấm (đồng)",
+        "amount": "Tổng số tiền trên khay sau khi bấm (đồng)",
+        "notes": "Số tờ trên khay sau khi bấm"
+      }
+    },
+    "note-removed": {
+      "kind": "action",
+      "description": "Học sinh lấy lại tờ tiền vừa bấm",
+      "data": {
+        "value": "Mệnh giá tờ tiền lấy lại (đồng)",
+        "amount": "Tổng số tiền còn trên khay (đồng)",
+        "notes": "Số tờ còn trên khay"
+      }
+    },
+    "item-toggled": {
+      "kind": "action",
+      "description": "Học sinh bấm vào một món hàng trên hình để chọn hoặc bỏ chọn",
+      "data": {
+        "item": "Số thứ tự món hàng (0 đến 7)",
+        "price": "Giá món hàng (đồng)",
+        "selected": "1 nếu vừa chọn, 0 nếu vừa bỏ",
+        "total": "Tổng tiền hàng sau khi bấm (đồng)"
+      }
+    },
+    "payment-refused": {
+      "kind": "action",
+      "description": "Học sinh bấm “Trả tiền” khi số tiền đưa còn ít hơn tổng tiền hàng; cửa hàng không nhận",
+      "data": {
+        "total": "Tổng tiền hàng (đồng)",
+        "paid": "Số tiền đã đưa (đồng)",
+        "short": "Số tiền còn thiếu (đồng)"
+      }
+    },
+    "purchase-paid": {
+      "kind": "result",
+      "description": "Một lượt mua vừa được trả đủ tiền",
+      "data": {
+        "total": "Tổng tiền hàng (đồng)",
+        "paid": "Số tiền đã đưa (đồng)",
+        "change": "Tiền trả lại = tiền đưa − tổng tiền hàng (đồng)"
+      }
+    },
+    "wrong-change": {
+      "kind": "action",
+      "description": "Học sinh kiểm tra tiền trả lại nhưng số tiền xếp chưa đúng",
+      "data": {
+        "given": "Số tiền học sinh xếp (đồng)",
+        "change": "Tiền trả lại đúng (đồng)"
+      }
+    },
+    "exact-change": {
+      "kind": "goal",
+      "description": "Học sinh xếp đúng số tiền trả lại, hoặc đã đưa vừa đủ tiền nên không cần trả lại (change = 0)",
+      "data": {
+        "total": "Tổng tiền hàng (đồng)",
+        "paid": "Số tiền đã đưa (đồng)",
+        "change": "Tiền trả lại (đồng)",
+        "notes": "Số tờ học sinh dùng để trả lại",
+        "fewest": "Số tờ ít nhất có thể dùng để trả lại"
+      }
+    },
+    "wrong-amount": {
+      "kind": "action",
+      "description": "Trong hoạt động ít tờ nhất, học sinh kiểm tra khi tổng các tờ chưa bằng số tiền cần lấy",
+      "data": {
+        "target": "Số tiền cần lấy (đồng)",
+        "given": "Số tiền đã lấy (đồng)"
+      }
+    },
+    "amount-made": {
+      "kind": "result",
+      "description": "Trong hoạt động ít tờ nhất, học sinh lấy đúng số tiền (có thể chưa phải ít tờ nhất)",
+      "data": {
+        "amount": "Số tiền (đồng)",
+        "notes": "Số tờ học sinh đã dùng",
+        "fewest": "Số tờ ít nhất có thể"
+      }
+    },
+    "fewest-notes": {
+      "kind": "goal",
+      "description": "Học sinh lấy đúng số tiền bằng số tờ ít nhất",
+      "data": {
+        "amount": "Số tiền (đồng)",
+        "notes": "Số tờ đã dùng"
+      }
+    },
+    "new-purchase": {
+      "kind": "action",
+      "description": "Học sinh bấm “Mua lượt khác” để bắt đầu lượt mua mới",
+      "data": {}
+    },
+    "new-amount": {
+      "kind": "action",
+      "description": "Học sinh bấm “Số tiền khác” để lấy một số tiền ngẫu nhiên",
+      "data": {}
+    }
+  }
+}

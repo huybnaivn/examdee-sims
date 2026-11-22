@@ -1,0 +1,55 @@
+{
+  "slug": "dau-tam-thuc-bac-hai",
+  "version": "1.0.0",
+  "title": "Dấu của tam thức bậc hai và bất phương trình bậc hai",
+  "subject": "math",
+  "grades": [
+    10
+  ],
+  "description": "Đổi các hệ số của tam thức f(x) = ax² + bx + c: parabol được tô xanh ở phần f(x) > 0 và đỏ ở phần f(x) < 0, bảng xét dấu được lập ngay bên dưới theo quy tắc “trong trái, ngoài cùng”, và tập nghiệm của bất phương trình f(x) > 0, ≥ 0, < 0 hoặc ≤ 0 được viết thành khoảng, đoạn và tô trên trục số (đầu mút lấy hay không lấy). Chế độ luyện tập ẩn tập nghiệm để học sinh tự chọn.",
+  "learningGoals": [
+    "Xét dấu tam thức bậc hai theo dấu của a và của Δ: Δ < 0 thì f(x) luôn cùng dấu với a; Δ = 0 thì f(x) cùng dấu với a với mọi x ≠ −b/(2a); Δ > 0 thì “trong trái, ngoài cùng”.",
+    "Lập bảng xét dấu của f(x) và liên hệ với vị trí của parabol so với trục Ox.",
+    "Giải bất phương trình bậc hai và viết tập nghiệm dưới dạng khoảng, đoạn, hợp của hai khoảng, ℝ, ∅ hoặc một điểm.",
+    "Phân biệt bất phương trình có dấu bằng (lấy đầu mút) và không có dấu bằng (không lấy đầu mút)."
+  ],
+  "state": {
+    "a": "Hệ số a (số nguyên từ −5 đến 5); a = 0 thì f(x) không còn là tam thức bậc hai",
+    "b": "Hệ số b (số nguyên từ −12 đến 12)",
+    "c": "Hệ số c (số nguyên từ −18 đến 18)",
+    "ineq": "Dấu của bất phương trình: \"gt\" (f(x) > 0), \"ge\" (f(x) ≥ 0), \"lt\" (f(x) < 0), \"le\" (f(x) ≤ 0)",
+    "practice": "true nếu đang luyện tập (tập nghiệm bị ẩn cho đến khi học sinh chọn đúng)",
+    "answer": "Dạng tập nghiệm học sinh chọn khi luyện tập: \"none\" (chưa chọn), \"empty\" (∅), \"all\" (ℝ), \"point\" ({x₀}), \"allExcept\" (ℝ \\ {x₀}), \"between\" ((x₁; x₂)), \"betweenClosed\" ([x₁; x₂]), \"outside\" ((−∞; x₁) ∪ (x₂; +∞)), \"outsideClosed\" ((−∞; x₁] ∪ [x₂; +∞))"
+  },
+  "events": {
+    "sign-analyzed": {
+      "kind": "result",
+      "description": "Học sinh vừa chốt một hệ số hoặc dấu của bất phương trình; sim báo kết quả xét dấu và dạng tập nghiệm",
+      "data": {
+        "a": "Hệ số a",
+        "b": "Hệ số b",
+        "c": "Hệ số c",
+        "inequality": "Dấu bất phương trình: 0 là > 0, 1 là ≥ 0, 2 là < 0, 3 là ≤ 0",
+        "delta": "Biệt thức Δ = b² − 4ac; không có khi a = 0",
+        "deltaSign": "Dấu của Δ: −1, 0 hoặc 1; không có khi a = 0",
+        "solutionType": "Mã dạng tập nghiệm: 0 ∅; 1 ℝ; 2 {x₀}; 3 ℝ \\ {x₀}; 4 (x₁; x₂); 5 [x₁; x₂]; 6 (−∞; x₁) ∪ (x₂; +∞); 7 (−∞; x₁] ∪ [x₂; +∞); khi a = 0: 8 (−∞; x₀); 9 (−∞; x₀]; 10 (x₀; +∞); 11 [x₀; +∞)"
+      }
+    },
+    "solution-set-chosen": {
+      "kind": "goal",
+      "description": "Trong chế độ luyện tập, học sinh đã chọn đúng dạng tập nghiệm của bất phương trình",
+      "data": {
+        "a": "Hệ số a",
+        "b": "Hệ số b",
+        "c": "Hệ số c",
+        "inequality": "Dấu bất phương trình: 0 là > 0, 1 là ≥ 0, 2 là < 0, 3 là ≤ 0",
+        "solutionType": "Mã dạng tập nghiệm đã chọn đúng (0–7, như ở sự kiện sign-analyzed)"
+      }
+    },
+    "new-problem": {
+      "kind": "action",
+      "description": "Học sinh bấm \"Đề mới\" trong chế độ luyện tập để nhận một tam thức và một dấu bất phương trình khác",
+      "data": {}
+    }
+  }
+}

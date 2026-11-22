@@ -1,0 +1,74 @@
+{
+  "slug": "ba-duong-conic",
+  "version": "1.0.0",
+  "title": "Ba đường conic: elip, hypebol, parabol",
+  "subject": "math",
+  "grades": [
+    10
+  ],
+  "description": "Vẽ ba đường conic từ định nghĩa hình học của chúng. Elip: hai tiêu điểm và một sợi dây dài không đổi, kéo đầu bút M để thấy MF₁ + MF₂ = 2a. Hypebol: |MF₁ − MF₂| = 2a trên cả hai nhánh. Parabol: MF = d(M, Δ). Đổi a, b (hoặc p) để xem phương trình chính tắc, tiêu điểm, đỉnh, tâm sai và hai đường tiệm cận của hypebol. Thử thách: tìm b (hoặc p) để đường conic đi qua một điểm P cho trước.",
+  "learningGoals": [
+    "Phát biểu định nghĩa elip, hypebol, parabol bằng khoảng cách tới tiêu điểm và đường chuẩn.",
+    "Viết phương trình chính tắc: x²/a² + y²/b² = 1 (a > b > 0), x²/a² − y²/b² = 1, y² = 2px (p > 0).",
+    "Tính tiêu cự: c² = a² − b² với elip, c² = a² + b² với hypebol; tiêu điểm F(p/2; 0) và đường chuẩn x = −p/2 của parabol.",
+    "Nhận biết đỉnh, tâm sai e = c/a (elip: 0 < e < 1; hypebol: e > 1; parabol: e = 1) và tiệm cận y = ±(b/a)x của hypebol.",
+    "Dùng phương trình chính tắc để tìm tham số sao cho đường conic đi qua một điểm cho trước."
+  ],
+  "state": {
+    "curve": "Đường conic đang xem: \"ellipse\" (elip), \"hyperbola\" (hypebol), \"parabola\" (parabol)",
+    "a": "Bán trục lớn của elip hoặc bán trục thực của hypebol (từ 1,5 đến 6, bước 0,5)",
+    "b": "Bán trục bé của elip (luôn nhỏ hơn a) hoặc bán trục ảo của hypebol (từ 1 đến 5, bước 0,5)",
+    "p": "Tham số tiêu p của parabol y² = 2px (từ 0,5 đến 4, bước 0,5)",
+    "angle": "Elip: tham số t (độ) của đầu bút M(a·cos t; b·sin t)",
+    "my": "Hypebol và parabol: tung độ của đầu bút M",
+    "left": "Hypebol: true nếu M nằm trên nhánh bên trái",
+    "challenge": "true nếu đang làm thử thách cho đường conic đi qua điểm P",
+    "tx": "Hoành độ điểm P của thử thách",
+    "ty": "Tung độ điểm P của thử thách"
+  },
+  "events": {
+    "conic-set": {
+      "kind": "result",
+      "description": "Học sinh vừa chốt loại đường conic hoặc một tham số a, b, p; sim báo các yếu tố của đường conic hiện tại",
+      "data": {
+        "curve": "Mã đường conic: 0 elip, 1 hypebol, 2 parabol",
+        "a": "Bán trục a (chỉ có với elip và hypebol)",
+        "b": "Bán trục b (chỉ có với elip và hypebol)",
+        "c": "Nửa tiêu cự c: c² = a² − b² (elip) hoặc c² = a² + b² (hypebol); chỉ có với elip và hypebol",
+        "p": "Tham số tiêu p (chỉ có với parabol)",
+        "focus": "Hoành độ tiêu điểm p/2 của parabol (chỉ có với parabol)",
+        "eccentricity": "Tâm sai e = c/a; bằng 1 với parabol"
+      }
+    },
+    "through-point": {
+      "kind": "goal",
+      "description": "Trong thử thách, học sinh đã chỉnh b (hoặc p) để đường conic đi qua điểm P cho trước",
+      "data": {
+        "curve": "Mã đường conic: 0 elip, 1 hypebol, 2 parabol",
+        "a": "Bán trục a (elip, hypebol)",
+        "b": "Bán trục b tìm được (elip, hypebol)",
+        "c": "Nửa tiêu cự c (elip, hypebol)",
+        "p": "Tham số tiêu p tìm được (parabol)",
+        "focus": "Hoành độ tiêu điểm p/2 (parabol)",
+        "eccentricity": "Tâm sai e",
+        "x": "Hoành độ điểm P",
+        "y": "Tung độ điểm P"
+      }
+    },
+    "pencil-moved": {
+      "kind": "action",
+      "description": "Học sinh kéo đầu bút M dọc theo đường conic rồi thả",
+      "data": {
+        "x": "Hoành độ của M",
+        "y": "Tung độ của M",
+        "d1": "MF₁ (elip, hypebol) hoặc MF (parabol)",
+        "d2": "MF₂ (elip, hypebol) hoặc khoảng cách từ M đến đường chuẩn (parabol)"
+      }
+    },
+    "new-target": {
+      "kind": "action",
+      "description": "Học sinh bấm \"Điểm P khác\" để nhận một thử thách mới",
+      "data": {}
+    }
+  }
+}

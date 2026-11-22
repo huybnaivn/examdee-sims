@@ -1,0 +1,58 @@
+{
+  "slug": "phuong-trinh-bac-hai-viet",
+  "version": "1.0.0",
+  "title": "Phương trình bậc hai và hệ thức Vi-ét",
+  "subject": "math",
+  "grades": [
+    9
+  ],
+  "description": "Đổi các hệ số a, b, c của phương trình ax² + bx + c = 0 và đọc lời giải viết ra từng bước: tính Δ (hoặc Δ′ khi b chẵn), kết luận số nghiệm, tính x₁, x₂ và xem các nghiệm trên parabol y = ax² + bx + c. Phần Vi-ét thử lại S = x₁ + x₂ = −b/a, P = x₁·x₂ = c/a bằng số và nhẩm nghiệm khi a + b + c = 0 hoặc a − b + c = 0. Phần bài toán ngược: tìm hai số khi biết tổng và tích của chúng. Khi a = 0 sim giải như phương trình bậc nhất.",
+  "learningGoals": [
+    "Giải phương trình bậc hai bằng công thức nghiệm: Δ = b² − 4ac, phân biệt ba trường hợp Δ > 0, Δ = 0, Δ < 0.",
+    "Dùng công thức nghiệm thu gọn Δ′ = b′² − ac khi b = 2b′.",
+    "Phát biểu và kiểm tra hệ thức Vi-ét: x₁ + x₂ = −b/a, x₁·x₂ = c/a khi phương trình có nghiệm.",
+    "Nhẩm nghiệm: a + b + c = 0 thì x₁ = 1, x₂ = c/a; a − b + c = 0 thì x₁ = −1, x₂ = −c/a.",
+    "Tìm hai số biết tổng S và tích P: chúng là nghiệm của X² − SX + P = 0, với điều kiện S² − 4P ≥ 0."
+  ],
+  "state": {
+    "mode": "Nội dung đang xem: \"delta\" (công thức nghiệm Δ), \"deltaPrime\" (công thức nghiệm thu gọn Δ′), \"viete\" (hệ thức Vi-ét và nhẩm nghiệm), \"reverse\" (tìm hai số biết tổng và tích)",
+    "a": "Hệ số a (số nguyên từ −9 đến 9); a = 0 thì phương trình trở thành bậc nhất",
+    "b": "Hệ số b (số nguyên từ −9 đến 9)",
+    "c": "Hệ số c (số nguyên từ −9 đến 9)",
+    "sum": "Bài toán tìm hai số: tổng S đã cho (từ −12 đến 12)",
+    "product": "Bài toán tìm hai số: tích P đã cho (từ −36 đến 36)",
+    "u": "Số thứ nhất học sinh đang chọn (số nguyên từ −15 đến 15)",
+    "v": "Số thứ hai học sinh đang chọn (số nguyên từ −15 đến 15)",
+    "showAnswer": "true nếu đang hiện đáp án của bài toán tìm hai số"
+  },
+  "events": {
+    "equation-solved": {
+      "kind": "result",
+      "description": "Học sinh vừa chốt một hệ số a, b hoặc c; sim báo kết quả giải phương trình hiện tại",
+      "data": {
+        "a": "Hệ số a",
+        "b": "Hệ số b",
+        "c": "Hệ số c",
+        "rootCount": "Số nghiệm thực phân biệt (2, 1 hoặc 0); −1 nếu phương trình nghiệm đúng với mọi x (a = b = c = 0)",
+        "delta": "Biệt thức Δ = b² − 4ac; không có khi a = 0",
+        "sum": "Tổng hai nghiệm S = −b/a; chỉ có khi a ≠ 0 và Δ ≥ 0",
+        "product": "Tích hai nghiệm P = c/a; chỉ có khi a ≠ 0 và Δ ≥ 0"
+      }
+    },
+    "two-numbers-found": {
+      "kind": "goal",
+      "description": "Học sinh đã chỉnh u và v đúng với tổng và tích đề cho (u + v = S và u·v = P)",
+      "data": {
+        "sum": "Tổng S đề cho",
+        "product": "Tích P đề cho",
+        "u": "Số thứ nhất học sinh tìm được",
+        "v": "Số thứ hai học sinh tìm được"
+      }
+    },
+    "new-problem": {
+      "kind": "action",
+      "description": "Học sinh bấm \"Đề mới\" để nhận một cặp tổng, tích khác (đáp án là hai số nguyên từ −6 đến 6)",
+      "data": {}
+    }
+  }
+}

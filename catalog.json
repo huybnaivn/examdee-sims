@@ -237,6 +237,82 @@
     "thumbnailUrl": "/ap-suat-khi-quyen/1.0.0/thumb.png"
   },
   {
+    "slug": "ba-duong-conic",
+    "version": "1.0.0",
+    "title": "Ba đường conic: elip, hypebol, parabol",
+    "subject": "math",
+    "grades": [
+      10
+    ],
+    "description": "Vẽ ba đường conic từ định nghĩa hình học của chúng. Elip: hai tiêu điểm và một sợi dây dài không đổi, kéo đầu bút M để thấy MF₁ + MF₂ = 2a. Hypebol: |MF₁ − MF₂| = 2a trên cả hai nhánh. Parabol: MF = d(M, Δ). Đổi a, b (hoặc p) để xem phương trình chính tắc, tiêu điểm, đỉnh, tâm sai và hai đường tiệm cận của hypebol. Thử thách: tìm b (hoặc p) để đường conic đi qua một điểm P cho trước.",
+    "learningGoals": [
+      "Phát biểu định nghĩa elip, hypebol, parabol bằng khoảng cách tới tiêu điểm và đường chuẩn.",
+      "Viết phương trình chính tắc: x²/a² + y²/b² = 1 (a > b > 0), x²/a² − y²/b² = 1, y² = 2px (p > 0).",
+      "Tính tiêu cự: c² = a² − b² với elip, c² = a² + b² với hypebol; tiêu điểm F(p/2; 0) và đường chuẩn x = −p/2 của parabol.",
+      "Nhận biết đỉnh, tâm sai e = c/a (elip: 0 < e < 1; hypebol: e > 1; parabol: e = 1) và tiệm cận y = ±(b/a)x của hypebol.",
+      "Dùng phương trình chính tắc để tìm tham số sao cho đường conic đi qua một điểm cho trước."
+    ],
+    "state": {
+      "curve": "Đường conic đang xem: \"ellipse\" (elip), \"hyperbola\" (hypebol), \"parabola\" (parabol)",
+      "a": "Bán trục lớn của elip hoặc bán trục thực của hypebol (từ 1,5 đến 6, bước 0,5)",
+      "b": "Bán trục bé của elip (luôn nhỏ hơn a) hoặc bán trục ảo của hypebol (từ 1 đến 5, bước 0,5)",
+      "p": "Tham số tiêu p của parabol y² = 2px (từ 0,5 đến 4, bước 0,5)",
+      "angle": "Elip: tham số t (độ) của đầu bút M(a·cos t; b·sin t)",
+      "my": "Hypebol và parabol: tung độ của đầu bút M",
+      "left": "Hypebol: true nếu M nằm trên nhánh bên trái",
+      "challenge": "true nếu đang làm thử thách cho đường conic đi qua điểm P",
+      "tx": "Hoành độ điểm P của thử thách",
+      "ty": "Tung độ điểm P của thử thách"
+    },
+    "events": {
+      "conic-set": {
+        "kind": "result",
+        "description": "Học sinh vừa chốt loại đường conic hoặc một tham số a, b, p; sim báo các yếu tố của đường conic hiện tại",
+        "data": {
+          "curve": "Mã đường conic: 0 elip, 1 hypebol, 2 parabol",
+          "a": "Bán trục a (chỉ có với elip và hypebol)",
+          "b": "Bán trục b (chỉ có với elip và hypebol)",
+          "c": "Nửa tiêu cự c: c² = a² − b² (elip) hoặc c² = a² + b² (hypebol); chỉ có với elip và hypebol",
+          "p": "Tham số tiêu p (chỉ có với parabol)",
+          "focus": "Hoành độ tiêu điểm p/2 của parabol (chỉ có với parabol)",
+          "eccentricity": "Tâm sai e = c/a; bằng 1 với parabol"
+        }
+      },
+      "through-point": {
+        "kind": "goal",
+        "description": "Trong thử thách, học sinh đã chỉnh b (hoặc p) để đường conic đi qua điểm P cho trước",
+        "data": {
+          "curve": "Mã đường conic: 0 elip, 1 hypebol, 2 parabol",
+          "a": "Bán trục a (elip, hypebol)",
+          "b": "Bán trục b tìm được (elip, hypebol)",
+          "c": "Nửa tiêu cự c (elip, hypebol)",
+          "p": "Tham số tiêu p tìm được (parabol)",
+          "focus": "Hoành độ tiêu điểm p/2 (parabol)",
+          "eccentricity": "Tâm sai e",
+          "x": "Hoành độ điểm P",
+          "y": "Tung độ điểm P"
+        }
+      },
+      "pencil-moved": {
+        "kind": "action",
+        "description": "Học sinh kéo đầu bút M dọc theo đường conic rồi thả",
+        "data": {
+          "x": "Hoành độ của M",
+          "y": "Tung độ của M",
+          "d1": "MF₁ (elip, hypebol) hoặc MF (parabol)",
+          "d2": "MF₂ (elip, hypebol) hoặc khoảng cách từ M đến đường chuẩn (parabol)"
+        }
+      },
+      "new-target": {
+        "kind": "action",
+        "description": "Học sinh bấm \"Điểm P khác\" để nhận một thử thách mới",
+        "data": {}
+      }
+    },
+    "url": "/ba-duong-conic/1.0.0/index.html",
+    "thumbnailUrl": "/ba-duong-conic/1.0.0/thumb.png"
+  },
+  {
     "slug": "ban-mat-song-song",
     "version": "1.0.0",
     "title": "Khúc xạ qua bản mặt song song và lăng kính phản xạ toàn phần",
@@ -2789,6 +2865,63 @@
     },
     "url": "/dao-ham-tiep-tuyen/1.0.0/index.html",
     "thumbnailUrl": "/dao-ham-tiep-tuyen/1.0.0/thumb.png"
+  },
+  {
+    "slug": "dau-tam-thuc-bac-hai",
+    "version": "1.0.0",
+    "title": "Dấu của tam thức bậc hai và bất phương trình bậc hai",
+    "subject": "math",
+    "grades": [
+      10
+    ],
+    "description": "Đổi các hệ số của tam thức f(x) = ax² + bx + c: parabol được tô xanh ở phần f(x) > 0 và đỏ ở phần f(x) < 0, bảng xét dấu được lập ngay bên dưới theo quy tắc “trong trái, ngoài cùng”, và tập nghiệm của bất phương trình f(x) > 0, ≥ 0, < 0 hoặc ≤ 0 được viết thành khoảng, đoạn và tô trên trục số (đầu mút lấy hay không lấy). Chế độ luyện tập ẩn tập nghiệm để học sinh tự chọn.",
+    "learningGoals": [
+      "Xét dấu tam thức bậc hai theo dấu của a và của Δ: Δ < 0 thì f(x) luôn cùng dấu với a; Δ = 0 thì f(x) cùng dấu với a với mọi x ≠ −b/(2a); Δ > 0 thì “trong trái, ngoài cùng”.",
+      "Lập bảng xét dấu của f(x) và liên hệ với vị trí của parabol so với trục Ox.",
+      "Giải bất phương trình bậc hai và viết tập nghiệm dưới dạng khoảng, đoạn, hợp của hai khoảng, ℝ, ∅ hoặc một điểm.",
+      "Phân biệt bất phương trình có dấu bằng (lấy đầu mút) và không có dấu bằng (không lấy đầu mút)."
+    ],
+    "state": {
+      "a": "Hệ số a (số nguyên từ −5 đến 5); a = 0 thì f(x) không còn là tam thức bậc hai",
+      "b": "Hệ số b (số nguyên từ −12 đến 12)",
+      "c": "Hệ số c (số nguyên từ −18 đến 18)",
+      "ineq": "Dấu của bất phương trình: \"gt\" (f(x) > 0), \"ge\" (f(x) ≥ 0), \"lt\" (f(x) < 0), \"le\" (f(x) ≤ 0)",
+      "practice": "true nếu đang luyện tập (tập nghiệm bị ẩn cho đến khi học sinh chọn đúng)",
+      "answer": "Dạng tập nghiệm học sinh chọn khi luyện tập: \"none\" (chưa chọn), \"empty\" (∅), \"all\" (ℝ), \"point\" ({x₀}), \"allExcept\" (ℝ \\ {x₀}), \"between\" ((x₁; x₂)), \"betweenClosed\" ([x₁; x₂]), \"outside\" ((−∞; x₁) ∪ (x₂; +∞)), \"outsideClosed\" ((−∞; x₁] ∪ [x₂; +∞))"
+    },
+    "events": {
+      "sign-analyzed": {
+        "kind": "result",
+        "description": "Học sinh vừa chốt một hệ số hoặc dấu của bất phương trình; sim báo kết quả xét dấu và dạng tập nghiệm",
+        "data": {
+          "a": "Hệ số a",
+          "b": "Hệ số b",
+          "c": "Hệ số c",
+          "inequality": "Dấu bất phương trình: 0 là > 0, 1 là ≥ 0, 2 là < 0, 3 là ≤ 0",
+          "delta": "Biệt thức Δ = b² − 4ac; không có khi a = 0",
+          "deltaSign": "Dấu của Δ: −1, 0 hoặc 1; không có khi a = 0",
+          "solutionType": "Mã dạng tập nghiệm: 0 ∅; 1 ℝ; 2 {x₀}; 3 ℝ \\ {x₀}; 4 (x₁; x₂); 5 [x₁; x₂]; 6 (−∞; x₁) ∪ (x₂; +∞); 7 (−∞; x₁] ∪ [x₂; +∞); khi a = 0: 8 (−∞; x₀); 9 (−∞; x₀]; 10 (x₀; +∞); 11 [x₀; +∞)"
+        }
+      },
+      "solution-set-chosen": {
+        "kind": "goal",
+        "description": "Trong chế độ luyện tập, học sinh đã chọn đúng dạng tập nghiệm của bất phương trình",
+        "data": {
+          "a": "Hệ số a",
+          "b": "Hệ số b",
+          "c": "Hệ số c",
+          "inequality": "Dấu bất phương trình: 0 là > 0, 1 là ≥ 0, 2 là < 0, 3 là ≤ 0",
+          "solutionType": "Mã dạng tập nghiệm đã chọn đúng (0–7, như ở sự kiện sign-analyzed)"
+        }
+      },
+      "new-problem": {
+        "kind": "action",
+        "description": "Học sinh bấm \"Đề mới\" trong chế độ luyện tập để nhận một tam thức và một dấu bất phương trình khác",
+        "data": {}
+      }
+    },
+    "url": "/dau-tam-thuc-bac-hai/1.0.0/index.html",
+    "thumbnailUrl": "/dau-tam-thuc-bac-hai/1.0.0/thumb.png"
   },
   {
     "slug": "day-hoat-dong-kim-loai",
@@ -9010,6 +9143,66 @@
     "thumbnailUrl": "/phong-xa/1.0.0/thumb.png"
   },
   {
+    "slug": "phuong-trinh-bac-hai-viet",
+    "version": "1.0.0",
+    "title": "Phương trình bậc hai và hệ thức Vi-ét",
+    "subject": "math",
+    "grades": [
+      9
+    ],
+    "description": "Đổi các hệ số a, b, c của phương trình ax² + bx + c = 0 và đọc lời giải viết ra từng bước: tính Δ (hoặc Δ′ khi b chẵn), kết luận số nghiệm, tính x₁, x₂ và xem các nghiệm trên parabol y = ax² + bx + c. Phần Vi-ét thử lại S = x₁ + x₂ = −b/a, P = x₁·x₂ = c/a bằng số và nhẩm nghiệm khi a + b + c = 0 hoặc a − b + c = 0. Phần bài toán ngược: tìm hai số khi biết tổng và tích của chúng. Khi a = 0 sim giải như phương trình bậc nhất.",
+    "learningGoals": [
+      "Giải phương trình bậc hai bằng công thức nghiệm: Δ = b² − 4ac, phân biệt ba trường hợp Δ > 0, Δ = 0, Δ < 0.",
+      "Dùng công thức nghiệm thu gọn Δ′ = b′² − ac khi b = 2b′.",
+      "Phát biểu và kiểm tra hệ thức Vi-ét: x₁ + x₂ = −b/a, x₁·x₂ = c/a khi phương trình có nghiệm.",
+      "Nhẩm nghiệm: a + b + c = 0 thì x₁ = 1, x₂ = c/a; a − b + c = 0 thì x₁ = −1, x₂ = −c/a.",
+      "Tìm hai số biết tổng S và tích P: chúng là nghiệm của X² − SX + P = 0, với điều kiện S² − 4P ≥ 0."
+    ],
+    "state": {
+      "mode": "Nội dung đang xem: \"delta\" (công thức nghiệm Δ), \"deltaPrime\" (công thức nghiệm thu gọn Δ′), \"viete\" (hệ thức Vi-ét và nhẩm nghiệm), \"reverse\" (tìm hai số biết tổng và tích)",
+      "a": "Hệ số a (số nguyên từ −9 đến 9); a = 0 thì phương trình trở thành bậc nhất",
+      "b": "Hệ số b (số nguyên từ −9 đến 9)",
+      "c": "Hệ số c (số nguyên từ −9 đến 9)",
+      "sum": "Bài toán tìm hai số: tổng S đã cho (từ −12 đến 12)",
+      "product": "Bài toán tìm hai số: tích P đã cho (từ −36 đến 36)",
+      "u": "Số thứ nhất học sinh đang chọn (số nguyên từ −15 đến 15)",
+      "v": "Số thứ hai học sinh đang chọn (số nguyên từ −15 đến 15)",
+      "showAnswer": "true nếu đang hiện đáp án của bài toán tìm hai số"
+    },
+    "events": {
+      "equation-solved": {
+        "kind": "result",
+        "description": "Học sinh vừa chốt một hệ số a, b hoặc c; sim báo kết quả giải phương trình hiện tại",
+        "data": {
+          "a": "Hệ số a",
+          "b": "Hệ số b",
+          "c": "Hệ số c",
+          "rootCount": "Số nghiệm thực phân biệt (2, 1 hoặc 0); −1 nếu phương trình nghiệm đúng với mọi x (a = b = c = 0)",
+          "delta": "Biệt thức Δ = b² − 4ac; không có khi a = 0",
+          "sum": "Tổng hai nghiệm S = −b/a; chỉ có khi a ≠ 0 và Δ ≥ 0",
+          "product": "Tích hai nghiệm P = c/a; chỉ có khi a ≠ 0 và Δ ≥ 0"
+        }
+      },
+      "two-numbers-found": {
+        "kind": "goal",
+        "description": "Học sinh đã chỉnh u và v đúng với tổng và tích đề cho (u + v = S và u·v = P)",
+        "data": {
+          "sum": "Tổng S đề cho",
+          "product": "Tích P đề cho",
+          "u": "Số thứ nhất học sinh tìm được",
+          "v": "Số thứ hai học sinh tìm được"
+        }
+      },
+      "new-problem": {
+        "kind": "action",
+        "description": "Học sinh bấm \"Đề mới\" để nhận một cặp tổng, tích khác (đáp án là hai số nguyên từ −6 đến 6)",
+        "data": {}
+      }
+    },
+    "url": "/phuong-trinh-bac-hai-viet/1.0.0/index.html",
+    "thumbnailUrl": "/phuong-trinh-bac-hai-viet/1.0.0/thumb.png"
+  },
+  {
     "slug": "phuong-trinh-duong-thang",
     "version": "1.0.0",
     "title": "Phương trình đường thẳng",
@@ -11012,6 +11205,142 @@
     },
     "url": "/tich-vo-huong/1.0.0/index.html",
     "thumbnailUrl": "/tich-vo-huong/1.0.0/thumb.png"
+  },
+  {
+    "slug": "tien-viet-nam",
+    "version": "1.0.0",
+    "title": "Tiền Việt Nam: tính tiền và trả lại",
+    "subject": "math",
+    "grades": [
+      2,
+      3
+    ],
+    "description": "Một cửa hàng nhỏ có tám món hàng gắn thẻ giá (3.000 đến 120.000 đồng) và chín loại tờ tiền từ 1.000 đến 500.000 đồng, vẽ giản lược thành hình chữ nhật màu chỉ ghi mệnh giá. Học sinh chọn hàng, bấm vào tờ tiền để trả; đưa thiếu tiền thì cửa hàng không nhận. Sau khi trả, học sinh tự tính tiền trả lại (tiền đưa trừ tổng tiền hàng) và xếp các tờ tiền cho đúng số đó. Hoạt động thứ hai: lấy đúng một số tiền bằng ít tờ tiền nhất (luôn lấy tờ lớn nhất có thể trước).",
+    "learningGoals": [
+      "Nhận biết các mệnh giá tiền Việt Nam từ 1.000 đồng đến 500.000 đồng và đọc, viết số tiền có dấu chấm tách nghìn.",
+      "Tính tổng số tiền phải trả khi mua nhiều món hàng.",
+      "Tính tiền trả lại: tiền đưa trừ tổng tiền hàng.",
+      "Đổi một số tiền thành các tờ tiền và tìm cách dùng ít tờ nhất."
+    ],
+    "state": {
+      "mode": "Hoạt động: \"shop\" (mua hàng và tính tiền trả lại) hoặc \"fewest\" (lấy tiền bằng ít tờ nhất)",
+      "item0": "true nếu Bút chì (3.000 đồng) đang được chọn mua",
+      "item1": "true nếu Thước kẻ (5.000 đồng) đang được chọn mua",
+      "item2": "true nếu Quyển vở (7.000 đồng) đang được chọn mua",
+      "item3": "true nếu Hộp sữa (8.000 đồng) đang được chọn mua",
+      "item4": "true nếu Bánh mì (15.000 đồng) đang được chọn mua",
+      "item5": "true nếu Truyện tranh (22.000 đồng) đang được chọn mua",
+      "item6": "true nếu Quả bóng (45.000 đồng) đang được chọn mua",
+      "item7": "true nếu Cặp sách (120.000 đồng) đang được chọn mua",
+      "phase": "Giai đoạn: \"pay\" (đang chọn hàng, đưa tiền hoặc đang xếp tiền), \"change\" (đã trả đủ, đang tính tiền trả lại), \"done\" (đã xong)",
+      "paid": "Danh sách mệnh giá (đồng) các tờ tiền học sinh đã đưa (mua hàng) hoặc đã lấy (ít tờ nhất), theo thứ tự bấm, tối đa 10 tờ",
+      "back": "Danh sách mệnh giá (đồng) các tờ tiền học sinh xếp làm tiền trả lại, tối đa 10 tờ",
+      "target": "Số tiền cần lấy trong hoạt động ít tờ nhất (đồng, bội của 1.000, từ 1.000 đến 500.000)"
+    },
+    "events": {
+      "note-tapped": {
+        "kind": "action",
+        "description": "Học sinh bấm một tờ tiền để đặt lên khay (tiền đưa, tiền trả lại hoặc tiền cần lấy)",
+        "data": {
+          "value": "Mệnh giá tờ tiền vừa bấm (đồng)",
+          "amount": "Tổng số tiền trên khay sau khi bấm (đồng)",
+          "notes": "Số tờ trên khay sau khi bấm"
+        }
+      },
+      "note-removed": {
+        "kind": "action",
+        "description": "Học sinh lấy lại tờ tiền vừa bấm",
+        "data": {
+          "value": "Mệnh giá tờ tiền lấy lại (đồng)",
+          "amount": "Tổng số tiền còn trên khay (đồng)",
+          "notes": "Số tờ còn trên khay"
+        }
+      },
+      "item-toggled": {
+        "kind": "action",
+        "description": "Học sinh bấm vào một món hàng trên hình để chọn hoặc bỏ chọn",
+        "data": {
+          "item": "Số thứ tự món hàng (0 đến 7)",
+          "price": "Giá món hàng (đồng)",
+          "selected": "1 nếu vừa chọn, 0 nếu vừa bỏ",
+          "total": "Tổng tiền hàng sau khi bấm (đồng)"
+        }
+      },
+      "payment-refused": {
+        "kind": "action",
+        "description": "Học sinh bấm “Trả tiền” khi số tiền đưa còn ít hơn tổng tiền hàng; cửa hàng không nhận",
+        "data": {
+          "total": "Tổng tiền hàng (đồng)",
+          "paid": "Số tiền đã đưa (đồng)",
+          "short": "Số tiền còn thiếu (đồng)"
+        }
+      },
+      "purchase-paid": {
+        "kind": "result",
+        "description": "Một lượt mua vừa được trả đủ tiền",
+        "data": {
+          "total": "Tổng tiền hàng (đồng)",
+          "paid": "Số tiền đã đưa (đồng)",
+          "change": "Tiền trả lại = tiền đưa − tổng tiền hàng (đồng)"
+        }
+      },
+      "wrong-change": {
+        "kind": "action",
+        "description": "Học sinh kiểm tra tiền trả lại nhưng số tiền xếp chưa đúng",
+        "data": {
+          "given": "Số tiền học sinh xếp (đồng)",
+          "change": "Tiền trả lại đúng (đồng)"
+        }
+      },
+      "exact-change": {
+        "kind": "goal",
+        "description": "Học sinh xếp đúng số tiền trả lại, hoặc đã đưa vừa đủ tiền nên không cần trả lại (change = 0)",
+        "data": {
+          "total": "Tổng tiền hàng (đồng)",
+          "paid": "Số tiền đã đưa (đồng)",
+          "change": "Tiền trả lại (đồng)",
+          "notes": "Số tờ học sinh dùng để trả lại",
+          "fewest": "Số tờ ít nhất có thể dùng để trả lại"
+        }
+      },
+      "wrong-amount": {
+        "kind": "action",
+        "description": "Trong hoạt động ít tờ nhất, học sinh kiểm tra khi tổng các tờ chưa bằng số tiền cần lấy",
+        "data": {
+          "target": "Số tiền cần lấy (đồng)",
+          "given": "Số tiền đã lấy (đồng)"
+        }
+      },
+      "amount-made": {
+        "kind": "result",
+        "description": "Trong hoạt động ít tờ nhất, học sinh lấy đúng số tiền (có thể chưa phải ít tờ nhất)",
+        "data": {
+          "amount": "Số tiền (đồng)",
+          "notes": "Số tờ học sinh đã dùng",
+          "fewest": "Số tờ ít nhất có thể"
+        }
+      },
+      "fewest-notes": {
+        "kind": "goal",
+        "description": "Học sinh lấy đúng số tiền bằng số tờ ít nhất",
+        "data": {
+          "amount": "Số tiền (đồng)",
+          "notes": "Số tờ đã dùng"
+        }
+      },
+      "new-purchase": {
+        "kind": "action",
+        "description": "Học sinh bấm “Mua lượt khác” để bắt đầu lượt mua mới",
+        "data": {}
+      },
+      "new-amount": {
+        "kind": "action",
+        "description": "Học sinh bấm “Số tiền khác” để lấy một số tiền ngẫu nhiên",
+        "data": {}
+      }
+    },
+    "url": "/tien-viet-nam/1.0.0/index.html",
+    "thumbnailUrl": "/tien-viet-nam/1.0.0/thumb.png"
   },
   {
     "slug": "tieu-hoa",
