@@ -1,0 +1,71 @@
+{
+  "slug": "phep-chia-co-du",
+  "version": "1.0.0",
+  "title": "Phép chia hết và phép chia có dư",
+  "subject": "math",
+  "grades": [3, 4, 5, 6],
+  "description": "Chia đều một số chấm (0 đến 60) vào các nhóm (0 đến 10 nhóm). Mô phỏng vẽ các nhóm với số chấm bằng nhau, khung chấm còn dư, viết phép chia a : b = q (dư r), đẳng thức a = b × q + r kèm điều kiện số dư bé hơn số chia, và cho biết đó là phép chia hết hay phép chia có dư. Chọn số chia bằng 0 thì mô phỏng báo không có phép chia cho 0. Hoạt động đặt tính rồi tính thực hiện từng bước phép chia số có đến bốn chữ số cho số có một hoặc hai chữ số (chia, nhân, trừ, hạ) kèm lời đọc từng bước và phép thử lại. Hoạt động luyện tập hỏi thương và số dư của một phép chia trong phạm vi 99, có gợi ý khi số dư còn lớn hơn hoặc bằng số chia.",
+  "learningGoals": [
+    "Hiểu phép chia là chia đều thành các nhóm bằng nhau; phần không đủ chia thêm là số dư.",
+    "Viết được a : b = q (dư r) và a = b × q + r với 0 ≤ r < b.",
+    "Phân biệt phép chia hết (số dư bằng 0) và phép chia có dư; nhận biết a chia hết cho b.",
+    "Biết số dư luôn bé hơn số chia và không có phép chia cho 0.",
+    "Thực hiện đặt tính rồi tính phép chia theo từng bước: chia, nhân, trừ, hạ.",
+    "Thử lại phép chia bằng phép nhân và phép cộng."
+  ],
+  "state": {
+    "mode": "Hoạt động: \"share\" (chia đều chấm vào các nhóm), \"long\" (đặt tính rồi tính), \"practice\" (luyện tập)",
+    "a": "Số bị chia trong hoạt động chia đều: số chấm (số nguyên từ 0 đến 60)",
+    "b": "Số chia trong hoạt động chia đều: số nhóm (số nguyên từ 0 đến 10; bằng 0 thì không có phép chia)",
+    "bigA": "Số bị chia khi đặt tính (số nguyên từ 0 đến 9999)",
+    "bigB": "Số chia khi đặt tính (số nguyên từ 2 đến 99)",
+    "step": "Số bước chia đã hiện khi đặt tính (0 là chưa chia; tối đa bằng số chữ số của thương)",
+    "qa": "Số bị chia của câu luyện tập (0 đến 99)",
+    "qb": "Số chia của câu luyện tập (2 đến 9)",
+    "ansQ": "Thương học sinh đang chọn trong câu luyện tập (0 đến 12)",
+    "ansR": "Số dư học sinh đang chọn trong câu luyện tập (0 đến 9)"
+  },
+  "events": {
+    "divided": {
+      "kind": "result",
+      "description": "Một phép chia vừa được thực hiện xong: học sinh đổi số bị chia hoặc số chia khi chia đều, đi đến bước cuối khi đặt tính, hoặc trả lời đúng câu luyện tập. Không báo khi số chia bằng 0.",
+      "data": {
+        "dividend": "Số bị chia",
+        "divisor": "Số chia",
+        "quotient": "Thương",
+        "remainder": "Số dư (0 nếu chia hết)"
+      }
+    },
+    "correct-answer": {
+      "kind": "goal",
+      "description": "Học sinh trả lời đúng cả thương và số dư của câu luyện tập",
+      "data": {
+        "dividend": "Số bị chia",
+        "divisor": "Số chia",
+        "quotient": "Thương",
+        "remainder": "Số dư",
+        "wrongTries": "Số lần kiểm tra sai trước khi đúng"
+      }
+    },
+    "wrong-answer": {
+      "kind": "action",
+      "description": "Học sinh bấm kiểm tra với thương hoặc số dư chưa đúng",
+      "data": {
+        "dividend": "Số bị chia",
+        "divisor": "Số chia",
+        "quotient": "Thương học sinh chọn",
+        "remainder": "Số dư học sinh chọn"
+      }
+    },
+    "new-division": {
+      "kind": "action",
+      "description": "Học sinh bấm \"Phép chia khác\" để lấy một phép chia ngẫu nhiên khi đặt tính",
+      "data": {}
+    },
+    "new-question": {
+      "kind": "action",
+      "description": "Học sinh bấm \"Câu khác\" để lấy câu luyện tập mới",
+      "data": {}
+    }
+  }
+}

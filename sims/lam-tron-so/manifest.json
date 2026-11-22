@@ -1,0 +1,78 @@
+{
+  "slug": "lam-tron-so",
+  "version": "1.0.0",
+  "title": "Làm tròn số và ước lượng",
+  "subject": "math",
+  "grades": [4, 5, 6, 7],
+  "description": "Chọn một số (đến 9999,999, có thể là số âm) và hàng làm tròn (hàng nghìn, trăm, chục, đơn vị, phần mười, phần trăm). Tia số được phóng to đến đúng hai mốc liền nhau của hàng đó: số nằm giữa hai mốc, mô phỏng ghi khoảng cách đến từng mốc, mốc chính giữa và tô mốc gần hơn. Kèm theo là quy tắc theo chữ số: chữ số ngay bên phải hàng làm tròn từ 5 trở lên thì cộng thêm 1, nhỏ hơn 5 thì giữ nguyên; số âm được làm tròn qua số đối. Có thể kéo điểm trên tia số. Hoạt động ước lượng làm tròn hai số trước rồi cộng hoặc nhân, so với kết quả đúng và cho biết độ lệch lớn nhất có thể. Hoạt động luyện tập hỏi một số gần mốc nào hơn.",
+  "learningGoals": [
+    "Hiểu làm tròn là chọn mốc gần nhất của hàng làm tròn trên tia số.",
+    "Làm tròn số tự nhiên đến hàng chục, hàng trăm, hàng nghìn và số thập phân đến hàng đơn vị, phần mười, phần trăm.",
+    "Áp dụng quy tắc chữ số 5: chữ số đầu tiên bỏ đi từ 5 trở lên thì cộng thêm 1 vào chữ số hàng làm tròn.",
+    "Làm tròn số thập phân âm bằng cách làm tròn số đối rồi đặt dấu trừ.",
+    "Ước lượng tổng và tích bằng cách làm tròn các số trước khi tính, và nhận xét độ lệch so với kết quả đúng."
+  ],
+  "state": {
+    "mode": "Hoạt động: \"round\" (làm tròn một số), \"estimate\" (ước lượng tổng, tích), \"practice\" (luyện tập)",
+    "neg": "true nếu số cần làm tròn là số âm",
+    "int": "Phần nguyên của giá trị tuyệt đối của số cần làm tròn (0 đến 9999)",
+    "frac": "Phần thập phân của số cần làm tròn, tính bằng phần nghìn (0 đến 999; 360 nghĩa là 0,36)",
+    "place": "Hàng làm tròn, tính bằng phần nghìn: 10 (phần trăm), 100 (phần mười), 1000 (đơn vị), 10000 (chục), 100000 (trăm), 1000000 (nghìn)",
+    "eop": "Phép tính cần ước lượng: \"add\" (tổng) hoặc \"mul\" (tích)",
+    "ea": "Số a trong hoạt động ước lượng (số nguyên từ 1 đến 9999)",
+    "eb": "Số b trong hoạt động ước lượng (số nguyên từ 1 đến 9999)",
+    "ePlace": "Hàng làm tròn của a và b khi ước lượng: 10, 100, 1000, hoặc 0 nếu mỗi số được làm tròn đến hàng cao nhất của nó",
+    "pm": "Số của câu luyện tập, tính bằng phần nghìn (3470 nghĩa là 3,47)",
+    "pUnit": "Hàng làm tròn của câu luyện tập, tính bằng phần nghìn như khoá place"
+  },
+  "events": {
+    "rounded": {
+      "kind": "result",
+      "description": "Một phép làm tròn vừa được hiện ra: học sinh đổi số hoặc hàng làm tròn, thả điểm trên tia số, hoặc vừa trả lời câu luyện tập",
+      "data": {
+        "value": "Số được làm tròn",
+        "place": "Giá trị một đơn vị của hàng làm tròn (0.01, 0.1, 1, 10, 100 hoặc 1000)",
+        "rounded": "Số sau khi làm tròn"
+      }
+    },
+    "number-dragged": {
+      "kind": "action",
+      "description": "Học sinh kéo điểm trên tia số rồi thả",
+      "data": { "value": "Số tại vị trí thả" }
+    },
+    "estimated": {
+      "kind": "result",
+      "description": "Một ước lượng vừa được hiện ra sau khi học sinh đổi số, phép tính hoặc hàng làm tròn",
+      "data": {
+        "a": "Số a",
+        "b": "Số b",
+        "exact": "Kết quả đúng của tổng hoặc tích",
+        "estimate": "Kết quả ước lượng sau khi làm tròn hai số",
+        "error": "Ước lượng trừ kết quả đúng"
+      }
+    },
+    "correct-answer": {
+      "kind": "goal",
+      "description": "Học sinh chọn đúng mốc làm tròn trong câu luyện tập",
+      "data": {
+        "value": "Số của câu hỏi",
+        "place": "Giá trị một đơn vị của hàng làm tròn",
+        "rounded": "Số sau khi làm tròn"
+      }
+    },
+    "wrong-answer": {
+      "kind": "action",
+      "description": "Học sinh chọn sai mốc trong câu luyện tập",
+      "data": {
+        "value": "Số của câu hỏi",
+        "place": "Giá trị một đơn vị của hàng làm tròn",
+        "answer": "Mốc học sinh đã chọn"
+      }
+    },
+    "new-question": {
+      "kind": "action",
+      "description": "Học sinh bấm \"Câu khác\" để lấy câu luyện tập mới",
+      "data": {}
+    }
+  }
+}

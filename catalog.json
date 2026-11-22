@@ -5289,6 +5289,93 @@
     "thumbnailUrl": "/lai-menden/1.0.0/thumb.png"
   },
   {
+    "slug": "lam-tron-so",
+    "version": "1.0.0",
+    "title": "Làm tròn số và ước lượng",
+    "subject": "math",
+    "grades": [
+      4,
+      5,
+      6,
+      7
+    ],
+    "description": "Chọn một số (đến 9999,999, có thể là số âm) và hàng làm tròn (hàng nghìn, trăm, chục, đơn vị, phần mười, phần trăm). Tia số được phóng to đến đúng hai mốc liền nhau của hàng đó: số nằm giữa hai mốc, mô phỏng ghi khoảng cách đến từng mốc, mốc chính giữa và tô mốc gần hơn. Kèm theo là quy tắc theo chữ số: chữ số ngay bên phải hàng làm tròn từ 5 trở lên thì cộng thêm 1, nhỏ hơn 5 thì giữ nguyên; số âm được làm tròn qua số đối. Có thể kéo điểm trên tia số. Hoạt động ước lượng làm tròn hai số trước rồi cộng hoặc nhân, so với kết quả đúng và cho biết độ lệch lớn nhất có thể. Hoạt động luyện tập hỏi một số gần mốc nào hơn.",
+    "learningGoals": [
+      "Hiểu làm tròn là chọn mốc gần nhất của hàng làm tròn trên tia số.",
+      "Làm tròn số tự nhiên đến hàng chục, hàng trăm, hàng nghìn và số thập phân đến hàng đơn vị, phần mười, phần trăm.",
+      "Áp dụng quy tắc chữ số 5: chữ số đầu tiên bỏ đi từ 5 trở lên thì cộng thêm 1 vào chữ số hàng làm tròn.",
+      "Làm tròn số thập phân âm bằng cách làm tròn số đối rồi đặt dấu trừ.",
+      "Ước lượng tổng và tích bằng cách làm tròn các số trước khi tính, và nhận xét độ lệch so với kết quả đúng."
+    ],
+    "state": {
+      "mode": "Hoạt động: \"round\" (làm tròn một số), \"estimate\" (ước lượng tổng, tích), \"practice\" (luyện tập)",
+      "neg": "true nếu số cần làm tròn là số âm",
+      "int": "Phần nguyên của giá trị tuyệt đối của số cần làm tròn (0 đến 9999)",
+      "frac": "Phần thập phân của số cần làm tròn, tính bằng phần nghìn (0 đến 999; 360 nghĩa là 0,36)",
+      "place": "Hàng làm tròn, tính bằng phần nghìn: 10 (phần trăm), 100 (phần mười), 1000 (đơn vị), 10000 (chục), 100000 (trăm), 1000000 (nghìn)",
+      "eop": "Phép tính cần ước lượng: \"add\" (tổng) hoặc \"mul\" (tích)",
+      "ea": "Số a trong hoạt động ước lượng (số nguyên từ 1 đến 9999)",
+      "eb": "Số b trong hoạt động ước lượng (số nguyên từ 1 đến 9999)",
+      "ePlace": "Hàng làm tròn của a và b khi ước lượng: 10, 100, 1000, hoặc 0 nếu mỗi số được làm tròn đến hàng cao nhất của nó",
+      "pm": "Số của câu luyện tập, tính bằng phần nghìn (3470 nghĩa là 3,47)",
+      "pUnit": "Hàng làm tròn của câu luyện tập, tính bằng phần nghìn như khoá place"
+    },
+    "events": {
+      "rounded": {
+        "kind": "result",
+        "description": "Một phép làm tròn vừa được hiện ra: học sinh đổi số hoặc hàng làm tròn, thả điểm trên tia số, hoặc vừa trả lời câu luyện tập",
+        "data": {
+          "value": "Số được làm tròn",
+          "place": "Giá trị một đơn vị của hàng làm tròn (0.01, 0.1, 1, 10, 100 hoặc 1000)",
+          "rounded": "Số sau khi làm tròn"
+        }
+      },
+      "number-dragged": {
+        "kind": "action",
+        "description": "Học sinh kéo điểm trên tia số rồi thả",
+        "data": {
+          "value": "Số tại vị trí thả"
+        }
+      },
+      "estimated": {
+        "kind": "result",
+        "description": "Một ước lượng vừa được hiện ra sau khi học sinh đổi số, phép tính hoặc hàng làm tròn",
+        "data": {
+          "a": "Số a",
+          "b": "Số b",
+          "exact": "Kết quả đúng của tổng hoặc tích",
+          "estimate": "Kết quả ước lượng sau khi làm tròn hai số",
+          "error": "Ước lượng trừ kết quả đúng"
+        }
+      },
+      "correct-answer": {
+        "kind": "goal",
+        "description": "Học sinh chọn đúng mốc làm tròn trong câu luyện tập",
+        "data": {
+          "value": "Số của câu hỏi",
+          "place": "Giá trị một đơn vị của hàng làm tròn",
+          "rounded": "Số sau khi làm tròn"
+        }
+      },
+      "wrong-answer": {
+        "kind": "action",
+        "description": "Học sinh chọn sai mốc trong câu luyện tập",
+        "data": {
+          "value": "Số của câu hỏi",
+          "place": "Giá trị một đơn vị của hàng làm tròn",
+          "answer": "Mốc học sinh đã chọn"
+        }
+      },
+      "new-question": {
+        "kind": "action",
+        "description": "Học sinh bấm \"Câu khác\" để lấy câu luyện tập mới",
+        "data": {}
+      }
+    },
+    "url": "/lam-tron-so/1.0.0/index.html",
+    "thumbnailUrl": "/lam-tron-so/1.0.0/thumb.png"
+  },
+  {
     "slug": "lan-tren-mat-nghieng",
     "version": "1.0.0",
     "title": "Vật lăn trên mặt phẳng nghiêng",
@@ -7406,6 +7493,84 @@
     "thumbnailUrl": "/phep-bien-hinh/1.0.0/thumb.png"
   },
   {
+    "slug": "phep-chia-co-du",
+    "version": "1.0.0",
+    "title": "Phép chia hết và phép chia có dư",
+    "subject": "math",
+    "grades": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "description": "Chia đều một số chấm (0 đến 60) vào các nhóm (0 đến 10 nhóm). Mô phỏng vẽ các nhóm với số chấm bằng nhau, khung chấm còn dư, viết phép chia a : b = q (dư r), đẳng thức a = b × q + r kèm điều kiện số dư bé hơn số chia, và cho biết đó là phép chia hết hay phép chia có dư. Chọn số chia bằng 0 thì mô phỏng báo không có phép chia cho 0. Hoạt động đặt tính rồi tính thực hiện từng bước phép chia số có đến bốn chữ số cho số có một hoặc hai chữ số (chia, nhân, trừ, hạ) kèm lời đọc từng bước và phép thử lại. Hoạt động luyện tập hỏi thương và số dư của một phép chia trong phạm vi 99, có gợi ý khi số dư còn lớn hơn hoặc bằng số chia.",
+    "learningGoals": [
+      "Hiểu phép chia là chia đều thành các nhóm bằng nhau; phần không đủ chia thêm là số dư.",
+      "Viết được a : b = q (dư r) và a = b × q + r với 0 ≤ r < b.",
+      "Phân biệt phép chia hết (số dư bằng 0) và phép chia có dư; nhận biết a chia hết cho b.",
+      "Biết số dư luôn bé hơn số chia và không có phép chia cho 0.",
+      "Thực hiện đặt tính rồi tính phép chia theo từng bước: chia, nhân, trừ, hạ.",
+      "Thử lại phép chia bằng phép nhân và phép cộng."
+    ],
+    "state": {
+      "mode": "Hoạt động: \"share\" (chia đều chấm vào các nhóm), \"long\" (đặt tính rồi tính), \"practice\" (luyện tập)",
+      "a": "Số bị chia trong hoạt động chia đều: số chấm (số nguyên từ 0 đến 60)",
+      "b": "Số chia trong hoạt động chia đều: số nhóm (số nguyên từ 0 đến 10; bằng 0 thì không có phép chia)",
+      "bigA": "Số bị chia khi đặt tính (số nguyên từ 0 đến 9999)",
+      "bigB": "Số chia khi đặt tính (số nguyên từ 2 đến 99)",
+      "step": "Số bước chia đã hiện khi đặt tính (0 là chưa chia; tối đa bằng số chữ số của thương)",
+      "qa": "Số bị chia của câu luyện tập (0 đến 99)",
+      "qb": "Số chia của câu luyện tập (2 đến 9)",
+      "ansQ": "Thương học sinh đang chọn trong câu luyện tập (0 đến 12)",
+      "ansR": "Số dư học sinh đang chọn trong câu luyện tập (0 đến 9)"
+    },
+    "events": {
+      "divided": {
+        "kind": "result",
+        "description": "Một phép chia vừa được thực hiện xong: học sinh đổi số bị chia hoặc số chia khi chia đều, đi đến bước cuối khi đặt tính, hoặc trả lời đúng câu luyện tập. Không báo khi số chia bằng 0.",
+        "data": {
+          "dividend": "Số bị chia",
+          "divisor": "Số chia",
+          "quotient": "Thương",
+          "remainder": "Số dư (0 nếu chia hết)"
+        }
+      },
+      "correct-answer": {
+        "kind": "goal",
+        "description": "Học sinh trả lời đúng cả thương và số dư của câu luyện tập",
+        "data": {
+          "dividend": "Số bị chia",
+          "divisor": "Số chia",
+          "quotient": "Thương",
+          "remainder": "Số dư",
+          "wrongTries": "Số lần kiểm tra sai trước khi đúng"
+        }
+      },
+      "wrong-answer": {
+        "kind": "action",
+        "description": "Học sinh bấm kiểm tra với thương hoặc số dư chưa đúng",
+        "data": {
+          "dividend": "Số bị chia",
+          "divisor": "Số chia",
+          "quotient": "Thương học sinh chọn",
+          "remainder": "Số dư học sinh chọn"
+        }
+      },
+      "new-division": {
+        "kind": "action",
+        "description": "Học sinh bấm \"Phép chia khác\" để lấy một phép chia ngẫu nhiên khi đặt tính",
+        "data": {}
+      },
+      "new-question": {
+        "kind": "action",
+        "description": "Học sinh bấm \"Câu khác\" để lấy câu luyện tập mới",
+        "data": {}
+      }
+    },
+    "url": "/phep-chia-co-du/1.0.0/index.html",
+    "thumbnailUrl": "/phep-chia-co-du/1.0.0/thumb.png"
+  },
+  {
     "slug": "phien-ma-dich-ma",
     "version": "1.0.0",
     "title": "Phiên mã và dịch mã",
@@ -8336,6 +8501,98 @@
     },
     "url": "/tang-truong-quan-the/1.0.0/index.html",
     "thumbnailUrl": "/tang-truong-quan-the/1.0.0/thumb.png"
+  },
+  {
+    "slug": "tap-hop-ven",
+    "version": "1.0.0",
+    "title": "Tập hợp và biểu đồ Ven",
+    "subject": "math",
+    "grades": [
+      6,
+      10
+    ],
+    "description": "Biểu đồ Ven của hai hoặc ba tập hợp A, B, C trong tập hợp U. Các phần tử (số hoặc chữ cái, tối đa 12) lấy từ bộ có sẵn (bội của 2, 3, 4 trong các số từ 1 đến 12; ước của 12, 18, 30; chữ cái của các từ TOAN, TIN, NAM) hoặc do học sinh tự kéo vào từng vùng. Bấm một phép toán để tô vùng của hợp, giao, hiệu, phần bù trên biểu đồ và liệt kê kết quả trong dấu ngoặc nhọn. Mô phỏng đếm số phần tử theo công thức n(A ∪ B) = n(A) + n(B) − n(A ∩ B) (và công thức tương ứng cho ba tập hợp), báo khi có tập hợp rỗng, tập hợp con hoặc hai tập hợp không giao nhau. Hoạt động bài toán khảo sát cho một đề bài có lời văn (ví dụ số học sinh thích bóng đá, cầu lông, cả hai) để học sinh tìm số còn thiếu bằng biểu đồ Ven.",
+    "learningGoals": [
+      "Biểu diễn tập hợp bằng biểu đồ Ven; xác định một phần tử thuộc hay không thuộc một tập hợp.",
+      "Xác định hợp, giao, hiệu của hai tập hợp và phần bù của một tập hợp con trong U.",
+      "Nhận biết tập hợp rỗng, tập hợp con, hai tập hợp không giao nhau trên biểu đồ.",
+      "Đếm số phần tử của hợp bằng công thức n(A ∪ B) = n(A) + n(B) − n(A ∩ B) và mở rộng cho ba tập hợp.",
+      "Dùng biểu đồ Ven để giải bài toán đếm trong thực tế."
+    ],
+    "state": {
+      "mode": "Hoạt động: \"explore\" (tìm hiểu tập hợp) hoặc \"survey\" (giải bài toán khảo sát)",
+      "sets": "Số tập hợp trên biểu đồ: 2 (A, B) hoặc 3 (A, B, C)",
+      "preset": "Bộ phần tử: \"boi\" (số 1 đến 12, bội của 2, 3, 4), \"uoc\" (ước của 12, 18, 30), \"chu\" (chữ cái của TOAN, TIN, NAM), \"tu\" (học sinh tự xếp)",
+      "op": "Phép toán đang tô: 0 không tô, 1 A ∪ B, 2 A ∩ B, 3 A \\ B, 4 B \\ A, 5 phần bù của A trong U, 6 A ∪ B ∪ C, 7 A ∩ B ∩ C",
+      "sel": "Thứ tự (từ 1) của phần tử đang chọn trong danh sách elems",
+      "elems": "Danh sách phần tử, mỗi phần tử là { t: nhãn (tối đa 3 kí tự), r: vùng } với r là tổng của 1 (thuộc A), 2 (thuộc B), 4 (thuộc C); r = 0 là chỉ thuộc U",
+      "qType": "Dạng bài khảo sát: 0 hỏi số bạn không thuộc nhóm nào, 1 hỏi số bạn thuộc ít nhất một nhóm, 2 hỏi số bạn thuộc cả hai nhóm",
+      "qCtx": "Ngữ cảnh của đề bài (0: bóng đá và cầu lông, 1: cờ vua và cờ tướng, 2: nuôi chó và mèo)",
+      "qN": "Tổng số người trong bài khảo sát",
+      "qA": "Số người thuộc nhóm thứ nhất",
+      "qB": "Số người thuộc nhóm thứ hai",
+      "qBoth": "Số người thuộc cả hai nhóm",
+      "answer": "Câu trả lời học sinh đang chọn cho bài khảo sát (0 đến 60)"
+    },
+    "events": {
+      "element-placed": {
+        "kind": "action",
+        "description": "Học sinh vừa đặt một phần tử vào một vùng của biểu đồ (kéo thả hoặc bấm nút cho vào / lấy ra khỏi một tập hợp)",
+        "data": {
+          "index": "Thứ tự của phần tử trong danh sách (từ 1)",
+          "region": "Vùng mới: tổng của 1 (thuộc A), 2 (thuộc B), 4 (thuộc C); 0 là ngoài cả ba tập hợp",
+          "inA": "1 nếu phần tử thuộc A, 0 nếu không",
+          "inB": "1 nếu phần tử thuộc B, 0 nếu không",
+          "inC": "1 nếu phần tử thuộc C, 0 nếu không"
+        }
+      },
+      "element-added": {
+        "kind": "action",
+        "description": "Học sinh thêm một phần tử mới vào U",
+        "data": {
+          "count": "Số phần tử sau khi thêm"
+        }
+      },
+      "element-removed": {
+        "kind": "action",
+        "description": "Học sinh xoá phần tử đang chọn",
+        "data": {
+          "count": "Số phần tử còn lại"
+        }
+      },
+      "operation-shown": {
+        "kind": "result",
+        "description": "Học sinh bấm một phép toán và vùng của nó được tô trên biểu đồ",
+        "data": {
+          "operation": "Mã phép toán: 1 A ∪ B, 2 A ∩ B, 3 A \\ B, 4 B \\ A, 5 phần bù của A trong U, 6 A ∪ B ∪ C, 7 A ∩ B ∩ C",
+          "size": "Số phần tử của tập hợp kết quả"
+        }
+      },
+      "survey-solved": {
+        "kind": "goal",
+        "description": "Học sinh trả lời đúng bài toán khảo sát",
+        "data": {
+          "type": "Dạng bài: 0 không thuộc nhóm nào, 1 thuộc ít nhất một nhóm, 2 thuộc cả hai nhóm",
+          "answer": "Đáp số",
+          "wrongTries": "Số lần kiểm tra sai trước khi đúng"
+        }
+      },
+      "wrong-answer": {
+        "kind": "action",
+        "description": "Học sinh bấm kiểm tra bài khảo sát với câu trả lời chưa đúng",
+        "data": {
+          "type": "Dạng bài (0, 1 hoặc 2)",
+          "answer": "Câu trả lời học sinh chọn"
+        }
+      },
+      "new-survey": {
+        "kind": "action",
+        "description": "Học sinh bấm \"Bài khác\" để lấy bài khảo sát mới",
+        "data": {}
+      }
+    },
+    "url": "/tap-hop-ven/1.0.0/index.html",
+    "thumbnailUrl": "/tap-hop-ven/1.0.0/thumb.png"
   },
   {
     "slug": "ten-lua",
