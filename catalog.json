@@ -4956,6 +4956,87 @@
     "thumbnailUrl": "/khi-ly-tuong/1.0.0/thumb.png"
   },
   {
+    "slug": "khoa-luong-phan",
+    "version": "1.0.0",
+    "title": "Khóa lưỡng phân phân loại sinh vật",
+    "subject": "biology",
+    "grades": [
+      6
+    ],
+    "description": "Tám con vật (cá chép, ếch đồng, rắn, bồ câu, mèo, dơi, bướm, cua đồng) và bảy đặc điểm có/không (xương sống, chân, cánh, lông vũ, lông mao, vảy, thở bằng mang). Ở chế độ dùng khóa có sẵn, học sinh chọn một con vật rồi trả lời Có hoặc Không cho từng câu hỏi để đi dọc khóa lưỡng phân đến tên con vật; câu trả lời sai không được đi tiếp và được đếm lại. Khóa có sẵn: xương sống? → (có) lông mao? → cánh? (dơi / mèo); (không lông mao) lông vũ? (bồ câu) → chân? (ếch đồng) → mang? (cá chép / rắn); (không xương sống) cánh? (bướm / cua đồng). Ở chế độ tự xây dựng, học sinh lần lượt chọn một đặc điểm để tách nhóm còn nhiều con vật đầu tiên thành hai nhóm; mô phỏng đánh dấu đỏ câu hỏi không tách được nhóm (mọi con vật trả lời giống nhau) và công nhận khóa hợp lệ khi mỗi con vật nằm ở một nhánh riêng và không có câu hỏi thừa. Độ sâu của khóa là số câu hỏi nhiều nhất cần trả lời để định danh một con vật. Có thể xem bảng đặc điểm thay cho sơ đồ khóa.",
+    "learningGoals": [
+      "Nêu được nguyên tắc của khóa lưỡng phân: mỗi bước dùng một đặc điểm để tách một nhóm sinh vật thành hai nhóm đối lập.",
+      "Sử dụng được khóa lưỡng phân có sẵn để định danh một sinh vật từ các đặc điểm của nó.",
+      "Tự xây dựng được khóa lưỡng phân cho một nhóm sinh vật và nhận ra đặc điểm nào không dùng để tách nhóm được.",
+      "Nhận ra n sinh vật cần n − 1 câu hỏi tách nhóm, và cách chọn đặc điểm làm khóa nông hay sâu."
+    ],
+    "state": {
+      "mode": "Chế độ: \"follow\" (dùng khóa có sẵn) hoặc \"build\" (tự xây dựng khóa)",
+      "organism": "Con vật đang được định danh: \"ca-chep\", \"ech\", \"ran\", \"bo-cau\", \"meo\", \"doi\", \"buom\" hoặc \"cua\"",
+      "path": "Các câu trả lời đúng đã đưa ra cho con vật này trong khóa có sẵn, mỗi ký tự là \"y\" (có) hoặc \"n\" (không)",
+      "mistakes": "Số lần trả lời sai cho con vật đang định danh",
+      "lastWrong": "true nếu câu trả lời gần nhất sai",
+      "foundMask": "Các con vật đã định danh xong, dạng số nhị phân: bit thứ i (từ 0, theo thứ tự cá chép, ếch đồng, rắn, bồ câu, mèo, dơi, bướm, cua đồng) bằng 1 nếu đã định danh; 255 là đủ cả 8",
+      "showTable": "true nếu đang xem bảng đặc điểm thay cho sơ đồ khóa",
+      "key": "Khóa do học sinh xây dựng: các mục \"đường đi:đặc điểm\" nối bằng dấu \";\"; đường đi là chuỗi y/n dẫn tới câu hỏi (gốc là chuỗi rỗng), đặc điểm là \"xuong\", \"chan\", \"canh\", \"longvu\", \"longmao\", \"vay\" hoặc \"mang\". Ví dụ \":xuong;y:longmao;n:canh\"",
+      "feature": "Đặc điểm đang chọn cho câu hỏi tiếp theo ở chế độ xây dựng"
+    },
+    "events": {
+      "answer": {
+        "kind": "action",
+        "description": "Học sinh trả lời Có hoặc Không cho một câu hỏi của khóa có sẵn",
+        "data": {
+          "organism": "Số thứ tự con vật (1 cá chép, 2 ếch đồng, 3 rắn, 4 bồ câu, 5 mèo, 6 dơi, 7 bướm, 8 cua đồng)",
+          "question": "Câu hỏi thứ mấy trên đường đi của con vật này (từ 1)",
+          "yes": "1 nếu trả lời Có, 0 nếu trả lời Không",
+          "correct": "1 nếu câu trả lời đúng với đặc điểm của con vật, 0 nếu sai"
+        }
+      },
+      "identified": {
+        "kind": "result",
+        "description": "Học sinh đi hết khóa có sẵn và định danh được một con vật",
+        "data": {
+          "organism": "Số thứ tự con vật (1 cá chép, 2 ếch đồng, 3 rắn, 4 bồ câu, 5 mèo, 6 dơi, 7 bướm, 8 cua đồng)",
+          "steps": "Số câu hỏi phải trả lời để tới con vật này",
+          "mistakes": "Số lần trả lời sai trên đường đi"
+        }
+      },
+      "next-organism": {
+        "kind": "action",
+        "description": "Học sinh bấm Con vật tiếp theo sau khi định danh xong một con vật",
+        "data": {}
+      },
+      "question-added": {
+        "kind": "action",
+        "description": "Ở chế độ xây dựng, học sinh thêm một câu hỏi vào khóa của mình",
+        "data": {
+          "questions": "Số câu hỏi của khóa sau khi thêm",
+          "splits": "1 nếu câu hỏi mới tách được nhóm thành hai phần, 0 nếu không tách được (bị đánh dấu đỏ)"
+        }
+      },
+      "question-removed": {
+        "kind": "action",
+        "description": "Học sinh hoàn tác câu hỏi cuối cùng của khóa đang xây dựng",
+        "data": {}
+      },
+      "key-cleared": {
+        "kind": "action",
+        "description": "Học sinh xóa toàn bộ khóa đang xây dựng",
+        "data": {}
+      },
+      "key-built": {
+        "kind": "goal",
+        "description": "Học sinh xây dựng xong một khóa hợp lệ: mỗi con vật ở một nhánh riêng và không có câu hỏi nào không tách được nhóm",
+        "data": {
+          "questions": "Số câu hỏi của khóa",
+          "depth": "Độ sâu của khóa: số câu hỏi nhiều nhất để định danh một con vật"
+        }
+      }
+    },
+    "url": "/khoa-luong-phan/1.0.0/index.html",
+    "thumbnailUrl": "/khoa-luong-phan/1.0.0/thumb.png"
+  },
+  {
     "slug": "khoi-luong-rieng",
     "version": "1.0.0",
     "title": "Khối lượng riêng",
@@ -8409,6 +8490,71 @@
     "thumbnailUrl": "/su-no-vi-nhiet/1.0.0/thumb.png"
   },
   {
+    "slug": "tai-ban-adn",
+    "version": "1.0.0",
+    "title": "Tái bản DNA",
+    "subject": "biology",
+    "grades": [
+      12
+    ],
+    "description": "Một đoạn DNA mạch kép ngắn (6 đến 16 cặp nucleotide) được vẽ duỗi thẳng. Helicase mở dần chạc tái bản từ trái sang phải, phá vỡ liên kết hydro giữa hai mạch; các nucleotide tự do bắt cặp với từng mạch khuôn theo nguyên tắc bổ sung (A–T bằng 2 liên kết hydro, G–C bằng 3 liên kết hydro). Trên mạch khuôn 3′ → 5′, mạch mới được tổng hợp liên tục cùng chiều tháo xoắn (mạch dẫn đầu); trên mạch khuôn 5′ → 3′, mạch mới được tổng hợp gián đoạn thành các đoạn Okazaki (mỗi đoạn 4 nucleotide trong mô hình) ngược chiều tháo xoắn, sau đó ligase nối lại. Kết quả là hai phân tử con giống phân tử mẹ, mỗi phân tử có một mạch cũ và một mạch mới (bán bảo toàn); mạch của phân tử ban đầu tô xanh, mạch mới tô cam. Sau mỗi lượt tái bản, sơ đồ bên dưới vẽ tất cả 2ᵏ phân tử với màu của từng mạch: chỉ có 2 phân tử còn mang mạch ban đầu. Mô phỏng đếm số nucleotide tự do đã dùng N(2ᵏ − 1) và số liên kết hydro H = 2A + 3G. Học sinh dự đoán số phân tử còn mạch ban đầu sau n lượt rồi kiểm tra. Sơ đồ phẳng, không theo tỉ lệ, bỏ qua đoạn mồi; đoạn Okazaki thật dài hàng trăm đến hàng nghìn nucleotide.",
+    "learningGoals": [
+      "Trình bày được nguyên tắc bổ sung trong tái bản DNA: A liên kết với T bằng 2 liên kết hydro, G liên kết với C bằng 3 liên kết hydro.",
+      "Giải thích vì sao một mạch mới được tổng hợp liên tục còn mạch kia gián đoạn thành các đoạn Okazaki: DNA polymerase chỉ kéo dài mạch mới theo chiều 5′ → 3′.",
+      "Nêu được nguyên tắc bán bảo toàn: mỗi phân tử DNA con có một mạch của phân tử mẹ và một mạch mới.",
+      "Tính được sau n lượt tái bản có 2ⁿ phân tử, trong đó chỉ 2 phân tử còn mạch ban đầu, và môi trường cung cấp N(2ⁿ − 1) nucleotide tự do.",
+      "Tính được số liên kết hydro của phân tử H = 2A + 3G."
+    ],
+    "state": {
+      "length": "Số cặp nucleotide của phân tử DNA (6 đến 16); trình tự là phần đầu của mạch khuôn TACGGCATTCAGGCTA (viết theo chiều 3′ → 5′)",
+      "rounds": "Số lượt tái bản n cần thực hiện (1 đến 5)",
+      "round": "Số lượt tái bản đã hoàn thành (0 đến n)",
+      "progress": "Tiến trình của lượt đang xem trên hình chạc tái bản (0 đến 100 %); 100 là lượt đã xong",
+      "guess": "Dự đoán của học sinh: số phân tử còn mang mạch ban đầu sau n lượt (0 đến 32)",
+      "verdict": "Kết quả kiểm tra dự đoán: \"none\" (chưa kiểm tra), \"right\" (đúng) hoặc \"wrong\" (sai)"
+    },
+    "events": {
+      "round-finished": {
+        "kind": "result",
+        "description": "Một lượt tái bản vừa hoàn thành",
+        "data": {
+          "round": "Số lượt đã hoàn thành (k)",
+          "molecules": "Số phân tử DNA sau lượt này (2ᵏ)",
+          "withOriginal": "Số phân tử còn mang một mạch của phân tử ban đầu (2)",
+          "nucleotidesUsed": "Tổng số nucleotide tự do đã dùng từ đầu, N(2ᵏ − 1) (nucleotide)",
+          "nucleotidesThisRound": "Số nucleotide tự do dùng riêng trong lượt này, N·2ᵏ⁻¹ (nucleotide)",
+          "hydrogenBonds": "Số liên kết hydro của một phân tử, H = 2A + 3G"
+        }
+      },
+      "prediction-correct": {
+        "kind": "goal",
+        "description": "Học sinh dự đoán đúng số phân tử còn mạch ban đầu sau n lượt tái bản",
+        "data": {
+          "rounds": "Số lượt tái bản n được dự đoán",
+          "guess": "Số phân tử học sinh dự đoán",
+          "roundsShown": "Số lượt đã chạy xong trên màn hình lúc dự đoán (nhỏ hơn n nghĩa là dự đoán trước khi xem kết quả)",
+          "molecules": "Tổng số phân tử sau n lượt (2ⁿ)"
+        }
+      },
+      "prediction-wrong": {
+        "kind": "action",
+        "description": "Học sinh kiểm tra một dự đoán chưa đúng",
+        "data": {
+          "rounds": "Số lượt tái bản n được dự đoán",
+          "guess": "Số phân tử học sinh dự đoán",
+          "roundsShown": "Số lượt đã chạy xong trên màn hình lúc dự đoán"
+        }
+      },
+      "restart": {
+        "kind": "action",
+        "description": "Học sinh bấm tái bản lại từ phân tử ban đầu (về 0 lượt)",
+        "data": {}
+      }
+    },
+    "url": "/tai-ban-adn/1.0.0/index.html",
+    "thumbnailUrl": "/tai-ban-adn/1.0.0/thumb.png"
+  },
+  {
     "slug": "tam-giac",
     "version": "1.0.0",
     "title": "Tam giác: góc, cạnh và diện tích",
@@ -9268,6 +9414,77 @@
     },
     "url": "/tich-vo-huong/1.0.0/index.html",
     "thumbnailUrl": "/tich-vo-huong/1.0.0/thumb.png"
+  },
+  {
+    "slug": "tieu-hoa",
+    "version": "1.0.0",
+    "title": "Hệ tiêu hóa ở người",
+    "subject": "biology",
+    "grades": [
+      8
+    ],
+    "description": "Một bữa ăn gồm tinh bột, protein, lipid và nước đi lần lượt qua miệng (pH ≈ 7,2; khoảng 1 phút), dạ dày (pH ≈ 2; khoảng 4 giờ), ruột non (pH ≈ 8; khoảng 4 giờ) và ruột già (pH ≈ 6,5; khoảng 15 giờ). Bảng enzyme của mô hình: amylase nước bọt ở miệng biến một phần tinh bột thành maltose; pepsin ở dạ dày cắt một phần protein thành peptide; ở ruột non, amylase tụy biến tinh bột thành maltose, maltase biến maltose thành glucose, trypsin cắt protein thành peptide, peptidase biến peptide thành amino acid, lipase biến lipid (đã được dịch mật nhũ tương hóa) thành glycerol và acid béo; ruột già không có enzyme tiêu hóa. Mỗi enzyme chỉ hoạt động khi pH của cơ quan nằm trong khoảng pH của nó. Glucose, amino acid, glycerol và acid béo chỉ được hấp thụ ở ruột non; nước được hấp thụ khoảng 90 % ở ruột non, phần lớn lượng còn lại ở ruột già. Các thanh cho thấy mỗi chất đang ở dạng nào (chưa tiêu hóa, chất trung gian, sản phẩm cuối, đã hấp thụ). Ở chế độ thử thách, học sinh tự đặt 5 enzyme vào các cơ quan rồi xem bữa ăn được tiêu hóa đến đâu. pH và thời gian là giá trị điển hình; tốc độ phản ứng chỉ có tính minh họa.",
+    "learningGoals": [
+      "Kể tên các cơ quan của ống tiêu hóa theo thứ tự thức ăn đi qua và thời gian thức ăn lưu lại ở mỗi cơ quan.",
+      "Nêu được enzyme tiêu hóa chính ở miệng, dạ dày, ruột non, cơ chất và sản phẩm của từng enzyme.",
+      "Nhận ra tinh bột, protein, lipid chỉ được tiêu hóa hoàn toàn ở ruột non, thành glucose, amino acid, glycerol và acid béo.",
+      "Giải thích vì sao mỗi enzyme chỉ hoạt động ở cơ quan có pH phù hợp (pepsin trong môi trường acid của dạ dày, enzyme ruột non trong môi trường kiềm nhẹ).",
+      "Nhận ra chất dinh dưỡng được hấp thụ chủ yếu ở ruột non, ruột già chủ yếu hấp thụ nước."
+    ],
+    "state": {
+      "mode": "Chế độ: \"body\" (enzyme ở đúng vị trí như trong cơ thể) hoặc \"quiz\" (học sinh tự đặt enzyme)",
+      "pAmylase": "Nơi học sinh đặt amylase nước bọt: \"none\", \"mieng\", \"da-day\", \"ruot-non\" hoặc \"ruot-gia\" (chỉ dùng ở chế độ quiz; đúng là \"mieng\")",
+      "pPepsin": "Nơi học sinh đặt pepsin, cùng các giá trị như pAmylase (đúng là \"da-day\")",
+      "pMaltase": "Nơi học sinh đặt maltase (đúng là \"ruot-non\")",
+      "pTrypsin": "Nơi học sinh đặt trypsin (đúng là \"ruot-non\")",
+      "pLipase": "Nơi học sinh đặt lipase (đúng là \"ruot-non\")",
+      "speed": "Tốc độ mô phỏng (hệ số nhân, 0,5 đến 4)",
+      "t": "Thời gian từ lúc thức ăn vào miệng (giờ, 0 đến khoảng 23,02): miệng đến 1/60, dạ dày đến 4,02, ruột non đến 8,02, sau đó là ruột già",
+      "starch": "Phần tinh bột chưa tiêu hóa (0 đến 1)",
+      "maltose": "Phần tinh bột đang ở dạng maltose (0 đến 1)",
+      "glucose": "Phần tinh bột đã thành glucose nhưng chưa hấp thụ (0 đến 1)",
+      "absGlucose": "Phần tinh bột đã được hấp thụ dưới dạng glucose (0 đến 1)",
+      "protein": "Phần protein chưa tiêu hóa (0 đến 1)",
+      "peptide": "Phần protein đang ở dạng peptide (0 đến 1)",
+      "amino": "Phần protein đã thành amino acid nhưng chưa hấp thụ (0 đến 1)",
+      "absAmino": "Phần protein đã được hấp thụ dưới dạng amino acid (0 đến 1)",
+      "lipid": "Phần lipid chưa tiêu hóa (0 đến 1)",
+      "glyFat": "Phần lipid đã thành glycerol và acid béo nhưng chưa hấp thụ (0 đến 1)",
+      "absGlyFat": "Phần lipid đã được hấp thụ dưới dạng glycerol và acid béo (0 đến 1)",
+      "water": "Phần nước chưa hấp thụ (0 đến 1)",
+      "absWaterSmall": "Phần nước đã hấp thụ ở ruột non (0 đến 1)",
+      "absWaterLarge": "Phần nước đã hấp thụ ở ruột già (0 đến 1)"
+    },
+    "events": {
+      "meal-digested": {
+        "kind": "result",
+        "description": "Bữa ăn đi hết ống tiêu hóa (đến cuối ruột già)",
+        "data": {
+          "starchDigested": "Phần tinh bột đã tiêu hóa hoàn toàn thành glucose (0 đến 1)",
+          "proteinDigested": "Phần protein đã tiêu hóa hoàn toàn thành amino acid (0 đến 1)",
+          "lipidDigested": "Phần lipid đã tiêu hóa hoàn toàn thành glycerol và acid béo (0 đến 1)",
+          "starchAbsorbed": "Phần tinh bột đã được hấp thụ dưới dạng glucose (0 đến 1)",
+          "proteinAbsorbed": "Phần protein đã được hấp thụ dưới dạng amino acid (0 đến 1)",
+          "lipidAbsorbed": "Phần lipid đã được hấp thụ dưới dạng glycerol và acid béo (0 đến 1)",
+          "waterAbsorbed": "Phần nước đã được hấp thụ (0 đến 1)",
+          "hours": "Tổng thời gian trong ống tiêu hóa (giờ)"
+        }
+      },
+      "enzymes-matched": {
+        "kind": "goal",
+        "description": "Ở chế độ thử thách, học sinh đã đặt cả 5 enzyme vào đúng cơ quan",
+        "data": {
+          "enzymes": "Số enzyme đã đặt đúng (5)"
+        }
+      },
+      "new-meal": {
+        "kind": "action",
+        "description": "Học sinh bấm Ăn bữa mới để cho một bữa ăn mới đi từ miệng",
+        "data": {}
+      }
+    },
+    "url": "/tieu-hoa/1.0.0/index.html",
+    "thumbnailUrl": "/tieu-hoa/1.0.0/thumb.png"
   },
   {
     "slug": "to-hop",

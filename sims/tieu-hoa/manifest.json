@@ -1,0 +1,67 @@
+{
+  "slug": "tieu-hoa",
+  "version": "1.0.0",
+  "title": "Hệ tiêu hóa ở người",
+  "subject": "biology",
+  "grades": [8],
+  "description": "Một bữa ăn gồm tinh bột, protein, lipid và nước đi lần lượt qua miệng (pH ≈ 7,2; khoảng 1 phút), dạ dày (pH ≈ 2; khoảng 4 giờ), ruột non (pH ≈ 8; khoảng 4 giờ) và ruột già (pH ≈ 6,5; khoảng 15 giờ). Bảng enzyme của mô hình: amylase nước bọt ở miệng biến một phần tinh bột thành maltose; pepsin ở dạ dày cắt một phần protein thành peptide; ở ruột non, amylase tụy biến tinh bột thành maltose, maltase biến maltose thành glucose, trypsin cắt protein thành peptide, peptidase biến peptide thành amino acid, lipase biến lipid (đã được dịch mật nhũ tương hóa) thành glycerol và acid béo; ruột già không có enzyme tiêu hóa. Mỗi enzyme chỉ hoạt động khi pH của cơ quan nằm trong khoảng pH của nó. Glucose, amino acid, glycerol và acid béo chỉ được hấp thụ ở ruột non; nước được hấp thụ khoảng 90 % ở ruột non, phần lớn lượng còn lại ở ruột già. Các thanh cho thấy mỗi chất đang ở dạng nào (chưa tiêu hóa, chất trung gian, sản phẩm cuối, đã hấp thụ). Ở chế độ thử thách, học sinh tự đặt 5 enzyme vào các cơ quan rồi xem bữa ăn được tiêu hóa đến đâu. pH và thời gian là giá trị điển hình; tốc độ phản ứng chỉ có tính minh họa.",
+  "learningGoals": [
+    "Kể tên các cơ quan của ống tiêu hóa theo thứ tự thức ăn đi qua và thời gian thức ăn lưu lại ở mỗi cơ quan.",
+    "Nêu được enzyme tiêu hóa chính ở miệng, dạ dày, ruột non, cơ chất và sản phẩm của từng enzyme.",
+    "Nhận ra tinh bột, protein, lipid chỉ được tiêu hóa hoàn toàn ở ruột non, thành glucose, amino acid, glycerol và acid béo.",
+    "Giải thích vì sao mỗi enzyme chỉ hoạt động ở cơ quan có pH phù hợp (pepsin trong môi trường acid của dạ dày, enzyme ruột non trong môi trường kiềm nhẹ).",
+    "Nhận ra chất dinh dưỡng được hấp thụ chủ yếu ở ruột non, ruột già chủ yếu hấp thụ nước."
+  ],
+  "state": {
+    "mode": "Chế độ: \"body\" (enzyme ở đúng vị trí như trong cơ thể) hoặc \"quiz\" (học sinh tự đặt enzyme)",
+    "pAmylase": "Nơi học sinh đặt amylase nước bọt: \"none\", \"mieng\", \"da-day\", \"ruot-non\" hoặc \"ruot-gia\" (chỉ dùng ở chế độ quiz; đúng là \"mieng\")",
+    "pPepsin": "Nơi học sinh đặt pepsin, cùng các giá trị như pAmylase (đúng là \"da-day\")",
+    "pMaltase": "Nơi học sinh đặt maltase (đúng là \"ruot-non\")",
+    "pTrypsin": "Nơi học sinh đặt trypsin (đúng là \"ruot-non\")",
+    "pLipase": "Nơi học sinh đặt lipase (đúng là \"ruot-non\")",
+    "speed": "Tốc độ mô phỏng (hệ số nhân, 0,5 đến 4)",
+    "t": "Thời gian từ lúc thức ăn vào miệng (giờ, 0 đến khoảng 23,02): miệng đến 1/60, dạ dày đến 4,02, ruột non đến 8,02, sau đó là ruột già",
+    "starch": "Phần tinh bột chưa tiêu hóa (0 đến 1)",
+    "maltose": "Phần tinh bột đang ở dạng maltose (0 đến 1)",
+    "glucose": "Phần tinh bột đã thành glucose nhưng chưa hấp thụ (0 đến 1)",
+    "absGlucose": "Phần tinh bột đã được hấp thụ dưới dạng glucose (0 đến 1)",
+    "protein": "Phần protein chưa tiêu hóa (0 đến 1)",
+    "peptide": "Phần protein đang ở dạng peptide (0 đến 1)",
+    "amino": "Phần protein đã thành amino acid nhưng chưa hấp thụ (0 đến 1)",
+    "absAmino": "Phần protein đã được hấp thụ dưới dạng amino acid (0 đến 1)",
+    "lipid": "Phần lipid chưa tiêu hóa (0 đến 1)",
+    "glyFat": "Phần lipid đã thành glycerol và acid béo nhưng chưa hấp thụ (0 đến 1)",
+    "absGlyFat": "Phần lipid đã được hấp thụ dưới dạng glycerol và acid béo (0 đến 1)",
+    "water": "Phần nước chưa hấp thụ (0 đến 1)",
+    "absWaterSmall": "Phần nước đã hấp thụ ở ruột non (0 đến 1)",
+    "absWaterLarge": "Phần nước đã hấp thụ ở ruột già (0 đến 1)"
+  },
+  "events": {
+    "meal-digested": {
+      "kind": "result",
+      "description": "Bữa ăn đi hết ống tiêu hóa (đến cuối ruột già)",
+      "data": {
+        "starchDigested": "Phần tinh bột đã tiêu hóa hoàn toàn thành glucose (0 đến 1)",
+        "proteinDigested": "Phần protein đã tiêu hóa hoàn toàn thành amino acid (0 đến 1)",
+        "lipidDigested": "Phần lipid đã tiêu hóa hoàn toàn thành glycerol và acid béo (0 đến 1)",
+        "starchAbsorbed": "Phần tinh bột đã được hấp thụ dưới dạng glucose (0 đến 1)",
+        "proteinAbsorbed": "Phần protein đã được hấp thụ dưới dạng amino acid (0 đến 1)",
+        "lipidAbsorbed": "Phần lipid đã được hấp thụ dưới dạng glycerol và acid béo (0 đến 1)",
+        "waterAbsorbed": "Phần nước đã được hấp thụ (0 đến 1)",
+        "hours": "Tổng thời gian trong ống tiêu hóa (giờ)"
+      }
+    },
+    "enzymes-matched": {
+      "kind": "goal",
+      "description": "Ở chế độ thử thách, học sinh đã đặt cả 5 enzyme vào đúng cơ quan",
+      "data": {
+        "enzymes": "Số enzyme đã đặt đúng (5)"
+      }
+    },
+    "new-meal": {
+      "kind": "action",
+      "description": "Học sinh bấm Ăn bữa mới để cho một bữa ăn mới đi từ miệng",
+      "data": {}
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "slug": "tai-ban-adn",
+  "version": "1.0.0",
+  "title": "Tái bản DNA",
+  "subject": "biology",
+  "grades": [12],
+  "description": "Một đoạn DNA mạch kép ngắn (6 đến 16 cặp nucleotide) được vẽ duỗi thẳng. Helicase mở dần chạc tái bản từ trái sang phải, phá vỡ liên kết hydro giữa hai mạch; các nucleotide tự do bắt cặp với từng mạch khuôn theo nguyên tắc bổ sung (A–T bằng 2 liên kết hydro, G–C bằng 3 liên kết hydro). Trên mạch khuôn 3′ → 5′, mạch mới được tổng hợp liên tục cùng chiều tháo xoắn (mạch dẫn đầu); trên mạch khuôn 5′ → 3′, mạch mới được tổng hợp gián đoạn thành các đoạn Okazaki (mỗi đoạn 4 nucleotide trong mô hình) ngược chiều tháo xoắn, sau đó ligase nối lại. Kết quả là hai phân tử con giống phân tử mẹ, mỗi phân tử có một mạch cũ và một mạch mới (bán bảo toàn); mạch của phân tử ban đầu tô xanh, mạch mới tô cam. Sau mỗi lượt tái bản, sơ đồ bên dưới vẽ tất cả 2ᵏ phân tử với màu của từng mạch: chỉ có 2 phân tử còn mang mạch ban đầu. Mô phỏng đếm số nucleotide tự do đã dùng N(2ᵏ − 1) và số liên kết hydro H = 2A + 3G. Học sinh dự đoán số phân tử còn mạch ban đầu sau n lượt rồi kiểm tra. Sơ đồ phẳng, không theo tỉ lệ, bỏ qua đoạn mồi; đoạn Okazaki thật dài hàng trăm đến hàng nghìn nucleotide.",
+  "learningGoals": [
+    "Trình bày được nguyên tắc bổ sung trong tái bản DNA: A liên kết với T bằng 2 liên kết hydro, G liên kết với C bằng 3 liên kết hydro.",
+    "Giải thích vì sao một mạch mới được tổng hợp liên tục còn mạch kia gián đoạn thành các đoạn Okazaki: DNA polymerase chỉ kéo dài mạch mới theo chiều 5′ → 3′.",
+    "Nêu được nguyên tắc bán bảo toàn: mỗi phân tử DNA con có một mạch của phân tử mẹ và một mạch mới.",
+    "Tính được sau n lượt tái bản có 2ⁿ phân tử, trong đó chỉ 2 phân tử còn mạch ban đầu, và môi trường cung cấp N(2ⁿ − 1) nucleotide tự do.",
+    "Tính được số liên kết hydro của phân tử H = 2A + 3G."
+  ],
+  "state": {
+    "length": "Số cặp nucleotide của phân tử DNA (6 đến 16); trình tự là phần đầu của mạch khuôn TACGGCATTCAGGCTA (viết theo chiều 3′ → 5′)",
+    "rounds": "Số lượt tái bản n cần thực hiện (1 đến 5)",
+    "round": "Số lượt tái bản đã hoàn thành (0 đến n)",
+    "progress": "Tiến trình của lượt đang xem trên hình chạc tái bản (0 đến 100 %); 100 là lượt đã xong",
+    "guess": "Dự đoán của học sinh: số phân tử còn mang mạch ban đầu sau n lượt (0 đến 32)",
+    "verdict": "Kết quả kiểm tra dự đoán: \"none\" (chưa kiểm tra), \"right\" (đúng) hoặc \"wrong\" (sai)"
+  },
+  "events": {
+    "round-finished": {
+      "kind": "result",
+      "description": "Một lượt tái bản vừa hoàn thành",
+      "data": {
+        "round": "Số lượt đã hoàn thành (k)",
+        "molecules": "Số phân tử DNA sau lượt này (2ᵏ)",
+        "withOriginal": "Số phân tử còn mang một mạch của phân tử ban đầu (2)",
+        "nucleotidesUsed": "Tổng số nucleotide tự do đã dùng từ đầu, N(2ᵏ − 1) (nucleotide)",
+        "nucleotidesThisRound": "Số nucleotide tự do dùng riêng trong lượt này, N·2ᵏ⁻¹ (nucleotide)",
+        "hydrogenBonds": "Số liên kết hydro của một phân tử, H = 2A + 3G"
+      }
+    },
+    "prediction-correct": {
+      "kind": "goal",
+      "description": "Học sinh dự đoán đúng số phân tử còn mạch ban đầu sau n lượt tái bản",
+      "data": {
+        "rounds": "Số lượt tái bản n được dự đoán",
+        "guess": "Số phân tử học sinh dự đoán",
+        "roundsShown": "Số lượt đã chạy xong trên màn hình lúc dự đoán (nhỏ hơn n nghĩa là dự đoán trước khi xem kết quả)",
+        "molecules": "Tổng số phân tử sau n lượt (2ⁿ)"
+      }
+    },
+    "prediction-wrong": {
+      "kind": "action",
+      "description": "Học sinh kiểm tra một dự đoán chưa đúng",
+      "data": {
+        "rounds": "Số lượt tái bản n được dự đoán",
+        "guess": "Số phân tử học sinh dự đoán",
+        "roundsShown": "Số lượt đã chạy xong trên màn hình lúc dự đoán"
+      }
+    },
+    "restart": {
+      "kind": "action",
+      "description": "Học sinh bấm tái bản lại từ phân tử ban đầu (về 0 lượt)",
+      "data": {}
+    }
+  }
+}
