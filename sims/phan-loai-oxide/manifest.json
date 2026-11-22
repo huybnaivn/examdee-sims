@@ -1,0 +1,61 @@
+{
+  "slug": "phan-loai-oxide",
+  "version": "1.0.0",
+  "title": "Oxide: phân loại và tính chất",
+  "subject": "chemistry",
+  "grades": [8, 10],
+  "description": "Cho lần lượt 11 oxide (CaO, Na₂O, CuO, Fe₂O₃, CO₂, SO₂, P₂O₅, Al₂O₃, ZnO, CO, NO) vào nước có quỳ tím, dung dịch HCl và dung dịch NaOH; quan sát hiện tượng, đọc phương trình hóa học rồi xếp mỗi oxide vào loại oxide base, oxide acid, oxide lưỡng tính hoặc oxide trung tính. Có phần luyện gọi tên oxide theo danh pháp của chương trình 2018.",
+  "learningGoals": [
+    "Phân loại oxide thành oxide base, oxide acid, oxide lưỡng tính và oxide trung tính dựa vào khả năng phản ứng với acid và base.",
+    "Viết phương trình hóa học của oxide base với acid, oxide acid với base, và của một số oxide với nước.",
+    "Nhận biết oxide lưỡng tính (Al₂O₃, ZnO) tác dụng được với cả acid và base; oxide trung tính (CO, NO) không tác dụng với nước, acid, base.",
+    "Gọi tên oxide của kim loại (kèm hóa trị nếu kim loại có nhiều hóa trị) và oxide của phi kim (dùng tiền tố chỉ số nguyên tử)."
+  ],
+  "state": {
+    "oxide": "Oxide đang xét: \"CaO\", \"Na2O\", \"CuO\", \"Fe2O3\", \"CO2\", \"SO2\", \"P2O5\", \"Al2O3\", \"ZnO\", \"CO\" hoặc \"NO\"",
+    "reagent": "Phép thử đang xem chi tiết: \"water\" (nước có quỳ tím), \"acid\" (dung dịch HCl) hoặc \"base\" (dung dịch NaOH)",
+    "tested": "Chuỗi 11 chữ số, mỗi chữ số ứng với một oxide theo thứ tự trên: tổng của 1 (đã thử với nước), 2 (đã thử với HCl), 4 (đã thử với NaOH)",
+    "classes": "Chuỗi 11 chữ số: loại mà học sinh đã xếp cho từng oxide, 0 = chưa xếp, 1 = oxide base, 2 = oxide acid, 3 = oxide lưỡng tính, 4 = oxide trung tính",
+    "named": "Chuỗi 11 chữ số: 1 nếu học sinh đã gọi đúng tên oxide đó, 0 nếu chưa",
+    "guess": "Loại đang chọn trong danh sách cho oxide đang xét: \"basic\", \"acidic\", \"amphoteric\", \"neutral\" hoặc \"\" (chưa chọn)",
+    "name": "Tên gọi đang chọn trong danh sách cho oxide đang xét, \"\" nếu chưa chọn",
+    "attempts": "Số lần học sinh đã xác nhận phân loại"
+  },
+  "events": {
+    "test": {
+      "kind": "action",
+      "description": "Học sinh cho oxide đang xét vào nước, dung dịch HCl hoặc dung dịch NaOH",
+      "data": {
+        "oxide": "Số thứ tự oxide: 1 CaO, 2 Na₂O, 3 CuO, 4 Fe₂O₃, 5 CO₂, 6 SO₂, 7 P₂O₅, 8 Al₂O₃, 9 ZnO, 10 CO, 11 NO",
+        "reagent": "1 = nước (có quỳ tím), 2 = dung dịch HCl, 3 = dung dịch NaOH",
+        "reacts": "1 nếu có phản ứng hóa học, 0 nếu không"
+      }
+    },
+    "classified": {
+      "kind": "result",
+      "description": "Học sinh xác nhận xếp oxide đang xét vào một loại",
+      "data": {
+        "oxide": "Số thứ tự oxide (1–11, theo thứ tự như ở sự kiện test)",
+        "classCode": "Loại học sinh chọn: 1 = oxide base, 2 = oxide acid, 3 = oxide lưỡng tính, 4 = oxide trung tính",
+        "correct": "1 nếu xếp đúng, 0 nếu sai",
+        "correctTotal": "Số oxide đang được xếp đúng (0–11)"
+      }
+    },
+    "all-classified": {
+      "kind": "goal",
+      "description": "Cả 11 oxide đã được xếp đúng loại",
+      "data": {
+        "oxides": "Số oxide (11)",
+        "attempts": "Tổng số lần xác nhận phân loại"
+      }
+    },
+    "name-checked": {
+      "kind": "action",
+      "description": "Học sinh kiểm tra tên gọi đã chọn cho oxide đang xét",
+      "data": {
+        "oxide": "Số thứ tự oxide (1–11)",
+        "correct": "1 nếu tên đúng, 0 nếu sai"
+      }
+    }
+  }
+}

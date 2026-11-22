@@ -1,0 +1,60 @@
+{
+  "slug": "phuong-trinh-luong-giac",
+  "version": "1.0.0",
+  "title": "Phương trình lượng giác cơ bản",
+  "subject": "math",
+  "grades": [11],
+  "description": "Chọn dạng sin x = a, cos x = a, tan x = a hoặc cot x = a và thay đổi a. Đường tròn lượng giác cho thấy đường thẳng cắt đường tròn tại các điểm biểu diễn nghiệm; sim viết công thức nghiệm tổng quát với k ∈ ℤ, liệt kê các nghiệm trên một đoạn đã chọn và đánh dấu chúng trên đồ thị hàm số. Có chế độ luyện tập đếm số nghiệm.",
+  "learningGoals": [
+    "Viết công thức nghiệm của sin x = a, cos x = a, tan x = a, cot x = a, kể cả các trường hợp đặc biệt a = 0, a = ±1.",
+    "Giải thích vì sao sin x = a và cos x = a vô nghiệm khi |a| > 1, còn tan x = a và cot x = a luôn có nghiệm.",
+    "Liên hệ nghiệm của phương trình với điểm trên đường tròn lượng giác và với giao điểm của đồ thị hàm số và đường thẳng y = a.",
+    "Tìm và đếm các nghiệm thuộc một đoạn cho trước, theo radian và theo độ."
+  ],
+  "state": {
+    "form": "Dạng phương trình: \"sin\", \"cos\", \"tan\" hoặc \"cot\" (vế trái là sin x, cos x, tan x, cot x)",
+    "a": "Vế phải a của phương trình, từ −2 đến 2",
+    "preset": "Giá trị đặc biệt đang chọn trong danh sách (\"1/2\", \"r3/2\" = √3/2, \"-r3\" = −√3, …) hoặc \"free\" khi a lấy từ thanh trượt; a luôn là giá trị được dùng",
+    "interval": "Đoạn xét nghiệm: \"0..2pi\", \"-pi..pi\", \"-2pi..2pi\", \"0..pi\", \"-pi/2..pi/2\" hoặc \"-2pi..0\" (đoạn kín)",
+    "unit": "Đơn vị góc hiển thị: \"rad\" (radian) hoặc \"deg\" (độ)",
+    "practice": "true khi đang luyện tập: danh sách nghiệm trên đoạn bị ẩn cho tới khi học sinh đếm đúng",
+    "answer": "Số nghiệm trên đoạn mà học sinh trả lời (0–9)",
+    "status": "Kết quả lần kiểm tra gần nhất: \"\" (chưa kiểm tra), \"right\" (đúng) hoặc \"wrong\" (sai)",
+    "solved": "Số phương trình học sinh đã đếm đúng số nghiệm"
+  },
+  "events": {
+    "equation-solved": {
+      "kind": "result",
+      "description": "Học sinh vừa chọn xong dạng phương trình, giá trị a hoặc đoạn xét nghiệm",
+      "data": {
+        "form": "Dạng phương trình: 1 = sin, 2 = cos, 3 = tan, 4 = cot",
+        "a": "Vế phải a",
+        "count": "Số nghiệm trên đoạn đang xét",
+        "solvable": "1 nếu phương trình có nghiệm, 0 nếu vô nghiệm"
+      }
+    },
+    "answer-checked": {
+      "kind": "action",
+      "description": "Học sinh bấm Kiểm tra số nghiệm đã đếm",
+      "data": {
+        "answer": "Số nghiệm học sinh trả lời",
+        "correct": "1 nếu đúng, 0 nếu sai"
+      }
+    },
+    "new-question": {
+      "kind": "action",
+      "description": "Học sinh xin một phương trình khác để luyện đếm nghiệm",
+      "data": {}
+    },
+    "count-correct": {
+      "kind": "goal",
+      "description": "Học sinh đếm đúng số nghiệm của phương trình trên đoạn đang xét",
+      "data": {
+        "form": "Dạng phương trình: 1 = sin, 2 = cos, 3 = tan, 4 = cot",
+        "a": "Vế phải a",
+        "count": "Số nghiệm trên đoạn",
+        "solved": "Tổng số phương trình đã đếm đúng"
+      }
+    }
+  }
+}

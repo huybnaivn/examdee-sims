@@ -2700,6 +2700,102 @@
     "thumbnailUrl": "/di-truyen-quan-the/1.0.0/thumb.png"
   },
   {
+    "slug": "diem-duong-thang-doan-thang",
+    "version": "1.0.0",
+    "title": "Điểm, đường thẳng, tia và đoạn thẳng",
+    "subject": "math",
+    "grades": [
+      6
+    ],
+    "description": "Đặt các điểm trên lưới ô vuông 1 cm rồi vẽ đường thẳng, tia, đoạn thẳng đi qua chúng; sim chỉ ra các điểm thẳng hàng, hai tia đối nhau và độ dài đoạn thẳng. Hai hoạt động khác: đếm số đường thẳng đi qua n điểm (không có ba điểm nào thẳng hàng) và đo đoạn thẳng, tìm trung điểm của nó.",
+    "learningGoals": [
+      "Phân biệt đường thẳng, tia và đoạn thẳng; nhận biết điểm thuộc và không thuộc mỗi hình.",
+      "Nhận biết ba điểm thẳng hàng và hai tia đối nhau.",
+      "Giải thích vì sao qua n điểm, trong đó không có ba điểm nào thẳng hàng, vẽ được n(n − 1)/2 đường thẳng.",
+      "Đo độ dài đoạn thẳng; biết M là trung điểm của AB khi M nằm giữa A, B và MA = MB = AB/2."
+    ],
+    "state": {
+      "mode": "Hoạt động: \"draw\" (vẽ hình), \"count\" (đếm đường thẳng qua n điểm) hoặc \"midpoint\" (đo đoạn thẳng, tìm trung điểm)",
+      "tool": "Công cụ vẽ: \"point\" (đặt điểm), \"l\" (đường thẳng), \"r\" (tia), \"s\" (đoạn thẳng)",
+      "points": "Các điểm đã đặt, dạng \"x,y;x,y;…\" theo ô lưới (cm, x sang phải 0–12, y lên trên 0–8); điểm thứ i có tên A, B, C, …; nhiều nhất 8 điểm",
+      "objects": "Các hình đã vẽ, dạng \"l:0-1;r:3-4;s:1-3\": l = đường thẳng, r = tia (gốc là điểm viết trước), s = đoạn thẳng; hai số là số thứ tự điểm (0 = A)",
+      "from": "Số thứ tự điểm thứ nhất (gốc của tia) khi vẽ bằng danh sách chọn, 0 = A",
+      "to": "Số thứ tự điểm thứ hai khi vẽ bằng danh sách chọn, 0 = A",
+      "n": "Số điểm trong hoạt động đếm đường thẳng (2–8), không có ba điểm nào thẳng hàng",
+      "answer": "Số đường thẳng học sinh trả lời trong hoạt động đếm",
+      "showLines": "true nếu vẽ sẵn tất cả các đường thẳng đi qua từng cặp điểm trong hoạt động đếm",
+      "ax": "Hoạt động trung điểm: cột của điểm A (cm, 0–12)",
+      "ay": "Hoạt động trung điểm: hàng của điểm A (cm, 0–8)",
+      "bx": "Hoạt động trung điểm: cột của điểm B (cm, 0–12)",
+      "by": "Hoạt động trung điểm: hàng của điểm B (cm, 0–8)",
+      "am": "Độ dài AM (cm), M nằm trên đoạn thẳng AB",
+      "found": "true khi M đang là trung điểm của AB"
+    },
+    "events": {
+      "object-drawn": {
+        "kind": "action",
+        "description": "Học sinh đặt một điểm hoặc vẽ một đường thẳng, tia, đoạn thẳng",
+        "data": {
+          "type": "0 = điểm, 1 = đường thẳng, 2 = tia, 3 = đoạn thẳng",
+          "from": "Số thứ tự điểm thứ nhất (gốc của tia), 0 = A; với điểm mới là số thứ tự của chính nó",
+          "to": "Số thứ tự điểm thứ hai; với điểm mới bằng from",
+          "lines": "Số đường thẳng phân biệt đi qua các điểm đang có"
+        }
+      },
+      "point-moved": {
+        "kind": "action",
+        "description": "Học sinh kéo một điểm sang nút lưới khác",
+        "data": {
+          "point": "Số thứ tự điểm, 0 = A",
+          "x": "Cột mới (cm)",
+          "y": "Hàng mới (cm)"
+        }
+      },
+      "undo": {
+        "kind": "action",
+        "description": "Học sinh xóa hình (hoặc điểm) vẽ sau cùng",
+        "data": {}
+      },
+      "segment-adjusted": {
+        "kind": "action",
+        "description": "Học sinh kéo A, B hoặc M trong hoạt động trung điểm",
+        "data": {
+          "length": "Độ dài AB (cm)",
+          "am": "Độ dài AM (cm)"
+        }
+      },
+      "midpoint-found": {
+        "kind": "result",
+        "description": "Học sinh đưa M về đúng trung điểm của đoạn thẳng AB",
+        "data": {
+          "length": "Độ dài AB (cm)",
+          "half": "MA = MB = AB/2 (cm)",
+          "midX": "Cột của trung điểm (cm)",
+          "midY": "Hàng của trung điểm (cm)"
+        }
+      },
+      "answer-checked": {
+        "kind": "action",
+        "description": "Học sinh bấm Kiểm tra số đường thẳng đã đếm",
+        "data": {
+          "n": "Số điểm",
+          "answer": "Số đường thẳng học sinh trả lời",
+          "correct": "1 nếu đúng, 0 nếu sai"
+        }
+      },
+      "count-correct": {
+        "kind": "goal",
+        "description": "Học sinh trả lời đúng số đường thẳng đi qua n điểm, không có ba điểm nào thẳng hàng",
+        "data": {
+          "n": "Số điểm",
+          "lines": "Số đường thẳng n(n − 1)/2"
+        }
+      }
+    },
+    "url": "/diem-duong-thang-doan-thang/1.0.0/index.html",
+    "thumbnailUrl": "/diem-duong-thang-doan-thang/1.0.0/thumb.png"
+  },
+  {
     "slug": "dien-nang-tieu-thu",
     "version": "1.0.0",
     "title": "Điện năng tiêu thụ và tiền điện",
@@ -7691,6 +7787,72 @@
     "thumbnailUrl": "/phan-loai-chat/1.0.0/thumb.png"
   },
   {
+    "slug": "phan-loai-oxide",
+    "version": "1.0.0",
+    "title": "Oxide: phân loại và tính chất",
+    "subject": "chemistry",
+    "grades": [
+      8,
+      10
+    ],
+    "description": "Cho lần lượt 11 oxide (CaO, Na₂O, CuO, Fe₂O₃, CO₂, SO₂, P₂O₅, Al₂O₃, ZnO, CO, NO) vào nước có quỳ tím, dung dịch HCl và dung dịch NaOH; quan sát hiện tượng, đọc phương trình hóa học rồi xếp mỗi oxide vào loại oxide base, oxide acid, oxide lưỡng tính hoặc oxide trung tính. Có phần luyện gọi tên oxide theo danh pháp của chương trình 2018.",
+    "learningGoals": [
+      "Phân loại oxide thành oxide base, oxide acid, oxide lưỡng tính và oxide trung tính dựa vào khả năng phản ứng với acid và base.",
+      "Viết phương trình hóa học của oxide base với acid, oxide acid với base, và của một số oxide với nước.",
+      "Nhận biết oxide lưỡng tính (Al₂O₃, ZnO) tác dụng được với cả acid và base; oxide trung tính (CO, NO) không tác dụng với nước, acid, base.",
+      "Gọi tên oxide của kim loại (kèm hóa trị nếu kim loại có nhiều hóa trị) và oxide của phi kim (dùng tiền tố chỉ số nguyên tử)."
+    ],
+    "state": {
+      "oxide": "Oxide đang xét: \"CaO\", \"Na2O\", \"CuO\", \"Fe2O3\", \"CO2\", \"SO2\", \"P2O5\", \"Al2O3\", \"ZnO\", \"CO\" hoặc \"NO\"",
+      "reagent": "Phép thử đang xem chi tiết: \"water\" (nước có quỳ tím), \"acid\" (dung dịch HCl) hoặc \"base\" (dung dịch NaOH)",
+      "tested": "Chuỗi 11 chữ số, mỗi chữ số ứng với một oxide theo thứ tự trên: tổng của 1 (đã thử với nước), 2 (đã thử với HCl), 4 (đã thử với NaOH)",
+      "classes": "Chuỗi 11 chữ số: loại mà học sinh đã xếp cho từng oxide, 0 = chưa xếp, 1 = oxide base, 2 = oxide acid, 3 = oxide lưỡng tính, 4 = oxide trung tính",
+      "named": "Chuỗi 11 chữ số: 1 nếu học sinh đã gọi đúng tên oxide đó, 0 nếu chưa",
+      "guess": "Loại đang chọn trong danh sách cho oxide đang xét: \"basic\", \"acidic\", \"amphoteric\", \"neutral\" hoặc \"\" (chưa chọn)",
+      "name": "Tên gọi đang chọn trong danh sách cho oxide đang xét, \"\" nếu chưa chọn",
+      "attempts": "Số lần học sinh đã xác nhận phân loại"
+    },
+    "events": {
+      "test": {
+        "kind": "action",
+        "description": "Học sinh cho oxide đang xét vào nước, dung dịch HCl hoặc dung dịch NaOH",
+        "data": {
+          "oxide": "Số thứ tự oxide: 1 CaO, 2 Na₂O, 3 CuO, 4 Fe₂O₃, 5 CO₂, 6 SO₂, 7 P₂O₅, 8 Al₂O₃, 9 ZnO, 10 CO, 11 NO",
+          "reagent": "1 = nước (có quỳ tím), 2 = dung dịch HCl, 3 = dung dịch NaOH",
+          "reacts": "1 nếu có phản ứng hóa học, 0 nếu không"
+        }
+      },
+      "classified": {
+        "kind": "result",
+        "description": "Học sinh xác nhận xếp oxide đang xét vào một loại",
+        "data": {
+          "oxide": "Số thứ tự oxide (1–11, theo thứ tự như ở sự kiện test)",
+          "classCode": "Loại học sinh chọn: 1 = oxide base, 2 = oxide acid, 3 = oxide lưỡng tính, 4 = oxide trung tính",
+          "correct": "1 nếu xếp đúng, 0 nếu sai",
+          "correctTotal": "Số oxide đang được xếp đúng (0–11)"
+        }
+      },
+      "all-classified": {
+        "kind": "goal",
+        "description": "Cả 11 oxide đã được xếp đúng loại",
+        "data": {
+          "oxides": "Số oxide (11)",
+          "attempts": "Tổng số lần xác nhận phân loại"
+        }
+      },
+      "name-checked": {
+        "kind": "action",
+        "description": "Học sinh kiểm tra tên gọi đã chọn cho oxide đang xét",
+        "data": {
+          "oxide": "Số thứ tự oxide (1–11)",
+          "correct": "1 nếu tên đúng, 0 nếu sai"
+        }
+      }
+    },
+    "url": "/phan-loai-oxide/1.0.0/index.html",
+    "thumbnailUrl": "/phan-loai-oxide/1.0.0/thumb.png"
+  },
+  {
     "slug": "phan-so",
     "version": "1.0.0",
     "title": "Phân số",
@@ -8251,6 +8413,70 @@
     },
     "url": "/phuong-trinh-duong-thang/1.0.0/index.html",
     "thumbnailUrl": "/phuong-trinh-duong-thang/1.0.0/thumb.png"
+  },
+  {
+    "slug": "phuong-trinh-luong-giac",
+    "version": "1.0.0",
+    "title": "Phương trình lượng giác cơ bản",
+    "subject": "math",
+    "grades": [
+      11
+    ],
+    "description": "Chọn dạng sin x = a, cos x = a, tan x = a hoặc cot x = a và thay đổi a. Đường tròn lượng giác cho thấy đường thẳng cắt đường tròn tại các điểm biểu diễn nghiệm; sim viết công thức nghiệm tổng quát với k ∈ ℤ, liệt kê các nghiệm trên một đoạn đã chọn và đánh dấu chúng trên đồ thị hàm số. Có chế độ luyện tập đếm số nghiệm.",
+    "learningGoals": [
+      "Viết công thức nghiệm của sin x = a, cos x = a, tan x = a, cot x = a, kể cả các trường hợp đặc biệt a = 0, a = ±1.",
+      "Giải thích vì sao sin x = a và cos x = a vô nghiệm khi |a| > 1, còn tan x = a và cot x = a luôn có nghiệm.",
+      "Liên hệ nghiệm của phương trình với điểm trên đường tròn lượng giác và với giao điểm của đồ thị hàm số và đường thẳng y = a.",
+      "Tìm và đếm các nghiệm thuộc một đoạn cho trước, theo radian và theo độ."
+    ],
+    "state": {
+      "form": "Dạng phương trình: \"sin\", \"cos\", \"tan\" hoặc \"cot\" (vế trái là sin x, cos x, tan x, cot x)",
+      "a": "Vế phải a của phương trình, từ −2 đến 2",
+      "preset": "Giá trị đặc biệt đang chọn trong danh sách (\"1/2\", \"r3/2\" = √3/2, \"-r3\" = −√3, …) hoặc \"free\" khi a lấy từ thanh trượt; a luôn là giá trị được dùng",
+      "interval": "Đoạn xét nghiệm: \"0..2pi\", \"-pi..pi\", \"-2pi..2pi\", \"0..pi\", \"-pi/2..pi/2\" hoặc \"-2pi..0\" (đoạn kín)",
+      "unit": "Đơn vị góc hiển thị: \"rad\" (radian) hoặc \"deg\" (độ)",
+      "practice": "true khi đang luyện tập: danh sách nghiệm trên đoạn bị ẩn cho tới khi học sinh đếm đúng",
+      "answer": "Số nghiệm trên đoạn mà học sinh trả lời (0–9)",
+      "status": "Kết quả lần kiểm tra gần nhất: \"\" (chưa kiểm tra), \"right\" (đúng) hoặc \"wrong\" (sai)",
+      "solved": "Số phương trình học sinh đã đếm đúng số nghiệm"
+    },
+    "events": {
+      "equation-solved": {
+        "kind": "result",
+        "description": "Học sinh vừa chọn xong dạng phương trình, giá trị a hoặc đoạn xét nghiệm",
+        "data": {
+          "form": "Dạng phương trình: 1 = sin, 2 = cos, 3 = tan, 4 = cot",
+          "a": "Vế phải a",
+          "count": "Số nghiệm trên đoạn đang xét",
+          "solvable": "1 nếu phương trình có nghiệm, 0 nếu vô nghiệm"
+        }
+      },
+      "answer-checked": {
+        "kind": "action",
+        "description": "Học sinh bấm Kiểm tra số nghiệm đã đếm",
+        "data": {
+          "answer": "Số nghiệm học sinh trả lời",
+          "correct": "1 nếu đúng, 0 nếu sai"
+        }
+      },
+      "new-question": {
+        "kind": "action",
+        "description": "Học sinh xin một phương trình khác để luyện đếm nghiệm",
+        "data": {}
+      },
+      "count-correct": {
+        "kind": "goal",
+        "description": "Học sinh đếm đúng số nghiệm của phương trình trên đoạn đang xét",
+        "data": {
+          "form": "Dạng phương trình: 1 = sin, 2 = cos, 3 = tan, 4 = cot",
+          "a": "Vế phải a",
+          "count": "Số nghiệm trên đoạn",
+          "solved": "Tổng số phương trình đã đếm đúng"
+        }
+      }
+    },
+    "url": "/phuong-trinh-luong-giac/1.0.0/index.html",
+    "thumbnailUrl": "/phuong-trinh-luong-giac/1.0.0/thumb.png"
   },
   {
     "slug": "pin-dien-hoa",

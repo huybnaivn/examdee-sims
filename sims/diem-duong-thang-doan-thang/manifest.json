@@ -1,0 +1,92 @@
+{
+  "slug": "diem-duong-thang-doan-thang",
+  "version": "1.0.0",
+  "title": "Điểm, đường thẳng, tia và đoạn thẳng",
+  "subject": "math",
+  "grades": [6],
+  "description": "Đặt các điểm trên lưới ô vuông 1 cm rồi vẽ đường thẳng, tia, đoạn thẳng đi qua chúng; sim chỉ ra các điểm thẳng hàng, hai tia đối nhau và độ dài đoạn thẳng. Hai hoạt động khác: đếm số đường thẳng đi qua n điểm (không có ba điểm nào thẳng hàng) và đo đoạn thẳng, tìm trung điểm của nó.",
+  "learningGoals": [
+    "Phân biệt đường thẳng, tia và đoạn thẳng; nhận biết điểm thuộc và không thuộc mỗi hình.",
+    "Nhận biết ba điểm thẳng hàng và hai tia đối nhau.",
+    "Giải thích vì sao qua n điểm, trong đó không có ba điểm nào thẳng hàng, vẽ được n(n − 1)/2 đường thẳng.",
+    "Đo độ dài đoạn thẳng; biết M là trung điểm của AB khi M nằm giữa A, B và MA = MB = AB/2."
+  ],
+  "state": {
+    "mode": "Hoạt động: \"draw\" (vẽ hình), \"count\" (đếm đường thẳng qua n điểm) hoặc \"midpoint\" (đo đoạn thẳng, tìm trung điểm)",
+    "tool": "Công cụ vẽ: \"point\" (đặt điểm), \"l\" (đường thẳng), \"r\" (tia), \"s\" (đoạn thẳng)",
+    "points": "Các điểm đã đặt, dạng \"x,y;x,y;…\" theo ô lưới (cm, x sang phải 0–12, y lên trên 0–8); điểm thứ i có tên A, B, C, …; nhiều nhất 8 điểm",
+    "objects": "Các hình đã vẽ, dạng \"l:0-1;r:3-4;s:1-3\": l = đường thẳng, r = tia (gốc là điểm viết trước), s = đoạn thẳng; hai số là số thứ tự điểm (0 = A)",
+    "from": "Số thứ tự điểm thứ nhất (gốc của tia) khi vẽ bằng danh sách chọn, 0 = A",
+    "to": "Số thứ tự điểm thứ hai khi vẽ bằng danh sách chọn, 0 = A",
+    "n": "Số điểm trong hoạt động đếm đường thẳng (2–8), không có ba điểm nào thẳng hàng",
+    "answer": "Số đường thẳng học sinh trả lời trong hoạt động đếm",
+    "showLines": "true nếu vẽ sẵn tất cả các đường thẳng đi qua từng cặp điểm trong hoạt động đếm",
+    "ax": "Hoạt động trung điểm: cột của điểm A (cm, 0–12)",
+    "ay": "Hoạt động trung điểm: hàng của điểm A (cm, 0–8)",
+    "bx": "Hoạt động trung điểm: cột của điểm B (cm, 0–12)",
+    "by": "Hoạt động trung điểm: hàng của điểm B (cm, 0–8)",
+    "am": "Độ dài AM (cm), M nằm trên đoạn thẳng AB",
+    "found": "true khi M đang là trung điểm của AB"
+  },
+  "events": {
+    "object-drawn": {
+      "kind": "action",
+      "description": "Học sinh đặt một điểm hoặc vẽ một đường thẳng, tia, đoạn thẳng",
+      "data": {
+        "type": "0 = điểm, 1 = đường thẳng, 2 = tia, 3 = đoạn thẳng",
+        "from": "Số thứ tự điểm thứ nhất (gốc của tia), 0 = A; với điểm mới là số thứ tự của chính nó",
+        "to": "Số thứ tự điểm thứ hai; với điểm mới bằng from",
+        "lines": "Số đường thẳng phân biệt đi qua các điểm đang có"
+      }
+    },
+    "point-moved": {
+      "kind": "action",
+      "description": "Học sinh kéo một điểm sang nút lưới khác",
+      "data": {
+        "point": "Số thứ tự điểm, 0 = A",
+        "x": "Cột mới (cm)",
+        "y": "Hàng mới (cm)"
+      }
+    },
+    "undo": {
+      "kind": "action",
+      "description": "Học sinh xóa hình (hoặc điểm) vẽ sau cùng",
+      "data": {}
+    },
+    "segment-adjusted": {
+      "kind": "action",
+      "description": "Học sinh kéo A, B hoặc M trong hoạt động trung điểm",
+      "data": {
+        "length": "Độ dài AB (cm)",
+        "am": "Độ dài AM (cm)"
+      }
+    },
+    "midpoint-found": {
+      "kind": "result",
+      "description": "Học sinh đưa M về đúng trung điểm của đoạn thẳng AB",
+      "data": {
+        "length": "Độ dài AB (cm)",
+        "half": "MA = MB = AB/2 (cm)",
+        "midX": "Cột của trung điểm (cm)",
+        "midY": "Hàng của trung điểm (cm)"
+      }
+    },
+    "answer-checked": {
+      "kind": "action",
+      "description": "Học sinh bấm Kiểm tra số đường thẳng đã đếm",
+      "data": {
+        "n": "Số điểm",
+        "answer": "Số đường thẳng học sinh trả lời",
+        "correct": "1 nếu đúng, 0 nếu sai"
+      }
+    },
+    "count-correct": {
+      "kind": "goal",
+      "description": "Học sinh trả lời đúng số đường thẳng đi qua n điểm, không có ba điểm nào thẳng hàng",
+      "data": {
+        "n": "Số điểm",
+        "lines": "Số đường thẳng n(n − 1)/2"
+      }
+    }
+  }
+}
