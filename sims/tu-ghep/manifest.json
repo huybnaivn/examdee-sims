@@ -1,0 +1,47 @@
+{
+  "slug": "tu-ghep",
+  "version": "1.0.0",
+  "title": "Ghép tụ điện nối tiếp và song song",
+  "subject": "physics",
+  "grades": [
+    11
+  ],
+  "description": "Ghép hai hoặc ba tụ điện nối tiếp, song song hoặc hỗn hợp rồi nối vào nguồn. Thay đổi điện dung từng tụ và hiệu điện thế nguồn để xem điện dung của bộ tụ, điện tích, hiệu điện thế và năng lượng của từng tụ. Thử thách: ghép bộ tụ có điện dung cho trước.",
+  "learningGoals": [
+    "Ghép song song: Cb = C₁ + C₂ + …, các tụ có cùng hiệu điện thế, Q = Q₁ + Q₂ + …",
+    "Ghép nối tiếp: 1/Cb = 1/C₁ + 1/C₂ + …, các tụ có cùng điện tích, U = U₁ + U₂ + …",
+    "Trong bộ tụ ghép nối tiếp, hiệu điện thế trên mỗi tụ tỉ lệ nghịch với điện dung của nó.",
+    "Năng lượng của bộ tụ W = Cb·U²/2 bằng tổng năng lượng của các tụ.",
+    "Tính điện dung của bộ tụ ghép hỗn hợp bằng cách thu gọn từng nhóm nối tiếp, song song."
+  ],
+  "state": {
+    "arrangement": "Cách ghép: \"series\" (nối tiếp), \"parallel\" (song song), \"mixed-a\" (C₁ nối tiếp với cụm C₂ song song C₃) hoặc \"mixed-b\" (cụm C₁ nối tiếp C₂, song song với C₃)",
+    "useC3": "Với nối tiếp hoặc song song: true nếu ghép thêm tụ C₃; cách ghép hỗn hợp luôn dùng ba tụ",
+    "voltage": "Hiệu điện thế nguồn U đặt vào bộ tụ (V)",
+    "c1": "Điện dung tụ C₁ (µF)",
+    "c2": "Điện dung tụ C₂ (µF)",
+    "c3": "Điện dung tụ C₃ (µF), chỉ có tác dụng khi bộ tụ có ba tụ",
+    "target": "Điện dung bộ tụ mà thử thách yêu cầu (µF); 0 là không đặt mục tiêu"
+  },
+  "events": {
+    "bank-charged": {
+      "kind": "result",
+      "description": "Kết quả của bộ tụ sau khi học sinh đổi xong cách ghép, một điện dung, hiệu điện thế hoặc mục tiêu",
+      "data": {
+        "capacitance": "Điện dung của bộ tụ Cb (µF)",
+        "charge": "Điện tích của bộ tụ Q = Cb·U (µC)",
+        "energy": "Năng lượng của bộ tụ W = Cb·U²/2 (µJ)",
+        "voltage": "Hiệu điện thế nguồn U (V)",
+        "capacitors": "Số tụ trong bộ (2 hoặc 3)"
+      }
+    },
+    "target-built": {
+      "kind": "goal",
+      "description": "Học sinh ghép được bộ tụ có điện dung bằng mục tiêu (sai lệch không quá 0,5 %)",
+      "data": {
+        "target": "Điện dung mục tiêu (µF)",
+        "capacitance": "Điện dung bộ tụ đã ghép (µF)"
+      }
+    }
+  }
+}

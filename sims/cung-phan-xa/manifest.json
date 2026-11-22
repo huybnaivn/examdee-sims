@@ -1,0 +1,88 @@
+{
+  "slug": "cung-phan-xa",
+  "version": "1.0.0",
+  "title": "Cung phản xạ và thời gian phản xạ",
+  "subject": "biology",
+  "grades": [8],
+  "description": "Phần 1: xung thần kinh chạy trên cung phản xạ rụt tay khi chạm vật nóng (thụ quan → nơron hướng tâm → trung ương thần kinh → nơron li tâm → cơ quan phản ứng) với tốc độ dẫn truyền chọn được; so sánh thời gian của phản xạ qua tủy sống với phản ứng có ý thức qua não theo t = L/v cộng thời gian xử lí ở trung ương. Học sinh sắp xếp đúng thứ tự các bộ phận của cung phản xạ. Phần 2: tự đo thời gian phản xạ bằng cách bấm khi màn hình chuyển xanh hoặc bắt thước rơi (đổi quãng đường rơi d ra thời gian bằng t = √(2d/g)); ghi nhiều lượt, tính trung bình và độ lệch chuẩn; bấm sớm bị loại.",
+  "learningGoals": [
+    "Nêu được các bộ phận của cung phản xạ theo đường đi của xung thần kinh.",
+    "Giải thích vì sao phản xạ qua tủy sống nhanh hơn phản ứng có ý thức qua não (đường dẫn ngắn hơn, ít thời gian xử lí hơn).",
+    "Tính thời gian dẫn truyền bằng t = L/v và nhận ra ảnh hưởng của tốc độ dẫn truyền (sợi có hay không có bao myelin).",
+    "Đo thời gian phản xạ nhiều lần, tính trung bình và độ lệch chuẩn; hiểu vì sao loại các lần bấm sớm.",
+    "Đổi quãng đường rơi của thước ra thời gian phản xạ bằng t = √(2d/g)."
+  ],
+  "state": {
+    "part": "Phần đang xem: \"arc\" (cung phản xạ) hoặc \"game\" (đo thời gian phản xạ)",
+    "speedV": "Tốc độ dẫn truyền xung thần kinh trên sợi thần kinh (m/s, 1 đến 120)",
+    "slow": "Tốc độ phát hình của hoạt cảnh cung phản xạ so với thực (0,05; 0,02 hoặc 0,005)",
+    "compare": "true nếu chạy cả đường phản ứng có ý thức qua não để so sánh",
+    "t": "Thời gian từ lúc kích thích trong hoạt cảnh (s)",
+    "showNames": "true nếu hiện tên các bộ phận trên hình",
+    "o1": "Bộ phận học sinh xếp ở vị trí 1: \"receptor\" (thụ quan), \"afferent\" (nơron hướng tâm), \"centre\" (trung ương thần kinh), \"efferent\" (nơron li tâm), \"effector\" (cơ quan phản ứng)",
+    "o2": "Bộ phận học sinh xếp ở vị trí 2 (giá trị như o1)",
+    "o3": "Bộ phận học sinh xếp ở vị trí 3 (giá trị như o1)",
+    "o4": "Bộ phận học sinh xếp ở vị trí 4 (giá trị như o1)",
+    "o5": "Bộ phận học sinh xếp ở vị trí 5 (giá trị như o1)",
+    "orderAttempts": "Số lần học sinh kiểm tra thứ tự cung phản xạ",
+    "ordered": "true nếu học sinh đã xếp đúng thứ tự",
+    "orderChecked": "true nếu thứ tự hiện tại đã được kiểm tra",
+    "mode": "Cách đo thời gian phản xạ: \"screen\" (bấm khi màn hình chuyển xanh) hoặc \"ruler\" (bắt thước rơi dài 50 cm)",
+    "setSize": "Số lượt đo trong một loạt (3 đến 10)",
+    "phase": "Trạng thái lượt đo: idle, waiting (chờ tín hiệu), go (đã có tín hiệu), false (bấm sớm), slow (quá 2 s), missed (thước rơi qua tay), trial (vừa đo xong một lượt), set (xong một loạt)",
+    "clock": "Thời gian từ đầu lượt đo đang chờ (s)",
+    "waitUntil": "Thời điểm có tín hiệu tính từ đầu lượt (s, ngẫu nhiên 1,5 đến 4)",
+    "seed": "Hạt giống sinh thời gian chờ ngẫu nhiên",
+    "trials": "Mảng thời gian phản xạ hợp lệ của loạt hiện tại (ms, tối đa 10 lượt)",
+    "falseStarts": "Số lần bấm sớm (trước tín hiệu hoặc sớm hơn 100 ms sau tín hiệu)",
+    "lastRt": "Thời gian phản xạ của lượt gần nhất (ms)",
+    "lastDistance": "Quãng đường thước rơi đọc được ở lượt gần nhất (m, làm tròn đến mm)"
+  },
+  "events": {
+    "stimulate": {
+      "kind": "action",
+      "description": "Học sinh tạo kích thích để xung thần kinh chạy trên cung phản xạ",
+      "data": {}
+    },
+    "arc-ordered": {
+      "kind": "goal",
+      "description": "Học sinh sắp xếp đúng thứ tự năm bộ phận của cung phản xạ",
+      "data": { "attempts": "Số lần kiểm tra cho đến khi đúng" }
+    },
+    "order-wrong": {
+      "kind": "action",
+      "description": "Học sinh kiểm tra một thứ tự cung phản xạ chưa đúng",
+      "data": { "attempts": "Số lần kiểm tra đến lúc này", "correctPositions": "Số vị trí đã đúng (0 đến 5)" }
+    },
+    "trial-start": {
+      "kind": "action",
+      "description": "Học sinh bắt đầu một lượt đo thời gian phản xạ",
+      "data": {}
+    },
+    "trial": {
+      "kind": "result",
+      "description": "Một lượt đo hợp lệ",
+      "data": { "reactionTime": "Thời gian phản xạ (ms); với thước rơi là t = √(2d/g)", "distance": "Quãng đường thước rơi đọc được (cm); 0 khi đo bằng màn hình" }
+    },
+    "trial-set": {
+      "kind": "result",
+      "description": "Xong một loạt đo",
+      "data": { "count": "Số lượt hợp lệ trong loạt", "mean": "Thời gian phản xạ trung bình (ms)", "sd": "Độ lệch chuẩn mẫu, chia n − 1 (ms)", "falseStarts": "Tổng số lần bấm sớm" }
+    },
+    "false-start": {
+      "kind": "action",
+      "description": "Học sinh bấm trước tín hiệu hoặc quá sớm sau tín hiệu; lượt bị loại",
+      "data": { "falseStarts": "Tổng số lần bấm sớm" }
+    },
+    "trial-missed": {
+      "kind": "action",
+      "description": "Học sinh không bấm kịp (quá 2 s, hoặc thước đã rơi qua tay)",
+      "data": { "limit": "Thời gian tối đa của lượt (ms)" }
+    },
+    "clear-trials": {
+      "kind": "action",
+      "description": "Học sinh xoá các lượt đo",
+      "data": {}
+    }
+  }
+}

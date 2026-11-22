@@ -1,0 +1,50 @@
+{
+  "slug": "goc-so-le-dong-vi",
+  "version": "1.0.0",
+  "title": "Hai đường thẳng song song và các góc tạo bởi một đường cắt",
+  "subject": "math",
+  "grades": [7],
+  "description": "Đường thẳng c cắt hai đường thẳng a, b tại A và B, tạo thành tám góc A₁…A₄, B₁…B₄. Kéo để xoay a hoặc b quanh giao điểm (hoặc dùng thanh trượt A₁, B₁), chọn một cặp góc so le trong, đồng vị, trong cùng phía, đối đỉnh hay kề bù để tô màu và xem số đo. Khi a // b, các góc so le trong bằng nhau, các góc đồng vị bằng nhau, hai góc trong cùng phía bù nhau; ngược lại, nếu có một cặp như vậy thì a // b. Khi kéo gần song song (trong 2°), đường thẳng tự hút vào vị trí song song.",
+  "learningGoals": [
+    "Nhận biết các cặp góc so le trong, đồng vị, trong cùng phía tạo bởi một đường thẳng cắt hai đường thẳng.",
+    "Nếu a // b thì hai góc so le trong bằng nhau, hai góc đồng vị bằng nhau, hai góc trong cùng phía bù nhau.",
+    "Dấu hiệu nhận biết: nếu có một cặp góc so le trong (hoặc đồng vị) bằng nhau thì a // b.",
+    "Hai góc đối đỉnh thì bằng nhau; hai góc kề bù có tổng bằng 180°."
+  ],
+  "state": {
+    "c": "Hướng của đường thẳng c (độ, 60–120, đo ngược chiều kim đồng hồ từ phương nằm ngang)",
+    "a1": "Số đo góc A₁ (độ, nguyên, 30–150): góc giữa tia bên phải của a và tia phía trên của c",
+    "b1": "Số đo góc B₁ (độ, nguyên, 30–150), cùng quy ước với a1; a // b khi a1 = b1",
+    "pair": "Cặp góc đang tô màu: slt1 (A₃, B₁), slt2 (A₄, B₂) so le trong; dv1–dv4 (Aᵢ, Bᵢ) đồng vị; tcp1 (A₄, B₁), tcp2 (A₃, B₂) trong cùng phía; dd1 (A₁, A₃), dd2 (B₂, B₄) đối đỉnh; kb1 (A₁, A₂), kb2 (B₃, B₄) kề bù",
+    "showValues": "true nếu hiện số đo của cả tám góc"
+  },
+  "events": {
+    "rotate-line": {
+      "kind": "action",
+      "description": "Học sinh kéo xoay đường thẳng a hoặc b trên hình rồi thả",
+      "data": {
+        "line": "1 = đường thẳng a, 2 = đường thẳng b",
+        "angle": "Số đo A₁ (nếu line = 1) hoặc B₁ (nếu line = 2) sau khi thả (độ)"
+      }
+    },
+    "line-released": {
+      "kind": "result",
+      "description": "Các góc sau khi học sinh thả một đường thẳng (kéo trên hình hoặc thanh trượt A₁, B₁)",
+      "data": {
+        "a1": "A₁ = A₃ (độ)",
+        "a2": "A₂ = A₄ = 180° − A₁ (độ)",
+        "b1": "B₁ = B₃ (độ)",
+        "b2": "B₂ = B₄ = 180° − B₁ (độ)",
+        "c": "Hướng của đường thẳng c (độ)",
+        "parallel": "1 nếu a // b, 0 nếu a cắt b"
+      }
+    },
+    "made-parallel": {
+      "kind": "goal",
+      "description": "Học sinh vừa xoay để a song song với b (các góc đồng vị bằng nhau)",
+      "data": {
+        "angle": "Số đo chung A₁ = B₁ (độ)"
+      }
+    }
+  }
+}

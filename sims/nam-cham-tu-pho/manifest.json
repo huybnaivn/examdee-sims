@@ -1,0 +1,70 @@
+{
+  "slug": "nam-cham-tu-pho",
+  "version": "1.0.0",
+  "title": "Nam châm và từ phổ",
+  "subject": "physics",
+  "grades": [7],
+  "description": "Rắc mạt sắt quanh một hoặc hai nam châm thẳng để thấy từ phổ, dùng kim nam châm nhỏ và la bàn thử để tìm hướng của từ trường, vẽ đường sức từ đi ra ở cực Bắc và đi vào ở cực Nam. Kéo, xoay, đảo cực nam châm để thấy hai cực cùng tên đẩy nhau, khác tên hút nhau, và tìm điểm từ trường triệt tiêu giữa hai cực cùng tên. Cảnh thứ hai cho thấy từ trường Trái Đất và vì sao kim la bàn chỉ hướng Bắc – Nam.",
+  "learningGoals": [
+    "Mô tả từ phổ của nam châm thẳng bằng mạt sắt và đường sức từ.",
+    "Biết đường sức từ bên ngoài nam châm đi ra ở cực Bắc (N), đi vào ở cực Nam (S); kim nam châm đặt trong từ trường nằm dọc theo đường sức, cực Bắc của kim chỉ theo chiều đường sức.",
+    "Hai cực cùng tên đẩy nhau, hai cực khác tên hút nhau; đảo cực nam châm thì chiều từ trường đảo ngược.",
+    "Từ trường của hai nam châm là tổng hợp từ trường của từng nam châm; giữa hai cực cùng tên có một điểm từ trường triệt tiêu.",
+    "Trái Đất có từ trường; gần cực Bắc địa lí là cực từ Nam, nên cực Bắc của kim la bàn chỉ về phía Bắc địa lí."
+  ],
+  "state": {
+    "scene": "\"magnets\" (nam châm thẳng trên tấm bìa) hoặc \"earth\" (từ trường Trái Đất)",
+    "count": "Số nam châm thẳng: 1 hoặc 2",
+    "x1": "Tọa độ ngang tâm nam châm 1 (đơn vị dài của tấm bìa, gốc ở giữa, tấm bìa rộng 12 đơn vị, cao 7,2)",
+    "y1": "Tọa độ dọc tâm nam châm 1 (đơn vị dài, hướng lên là dương)",
+    "a1": "Góc quay nam châm 1 (độ, ngược chiều kim đồng hồ từ phương ngang sang phải), là hướng từ cực S đến cực N",
+    "x2": "Tọa độ ngang tâm nam châm 2 (đơn vị dài)",
+    "y2": "Tọa độ dọc tâm nam châm 2 (đơn vị dài)",
+    "a2": "Góc quay nam châm 2 (độ), hướng từ S đến N",
+    "px": "Tọa độ ngang của la bàn thử (đơn vị dài)",
+    "py": "Tọa độ dọc của la bàn thử (đơn vị dài)",
+    "found": "true khi la bàn thử đang đặt tại điểm từ trường triệt tiêu giữa hai cực cùng tên",
+    "showFilings": "Hiện mạt sắt",
+    "showLines": "Hiện đường sức từ",
+    "showCompass": "Hiện lưới kim nam châm nhỏ"
+  },
+  "events": {
+    "move-magnet": {
+      "kind": "action",
+      "description": "Học sinh kéo một nam châm đến chỗ mới trên tấm bìa",
+      "data": {
+        "index": "Số thứ tự nam châm (1 hoặc 2)",
+        "x": "Tọa độ ngang mới của tâm (đơn vị dài)",
+        "y": "Tọa độ dọc mới của tâm (đơn vị dài)",
+        "angle": "Góc quay của nam châm (độ, hướng S → N)"
+      }
+    },
+    "flip-magnet": {
+      "kind": "action",
+      "description": "Học sinh đảo cực một nam châm (quay 180°)",
+      "data": {
+        "index": "Số thứ tự nam châm (1 hoặc 2)",
+        "angle": "Góc quay mới (độ, hướng S → N)"
+      }
+    },
+    "compass-read": {
+      "kind": "result",
+      "description": "Học sinh thả la bàn thử ở một vị trí; kim chỉ hướng của từ trường tại đó",
+      "data": {
+        "x": "Tọa độ ngang của la bàn (đơn vị dài)",
+        "y": "Tọa độ dọc của la bàn (đơn vị dài)",
+        "angle": "Hướng cực Bắc của kim, cũng là hướng của từ trường (độ, ngược chiều kim đồng hồ từ phương ngang sang phải)",
+        "strength": "Độ mạnh từ trường tương đối (1 = từ trường của một cực ở cách 1 đơn vị dài)"
+      }
+    },
+    "neutral-point": {
+      "kind": "goal",
+      "description": "Học sinh đặt la bàn thử đúng vào điểm từ trường triệt tiêu giữa hai cực cùng tên",
+      "data": {
+        "x": "Tọa độ ngang của la bàn (đơn vị dài)",
+        "y": "Tọa độ dọc của la bàn (đơn vị dài)",
+        "strength": "Độ mạnh từ trường tương đối tại đó"
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "slug": "bong-toi-nhat-thuc",
+  "version": "1.0.0",
+  "title": "Bóng tối, nhật thực và nguyệt thực",
+  "subject": "physics",
+  "grades": [7],
+  "description": "Phần 1: một nguồn sáng hẹp hoặc rộng (bóng đèn) chiếu vào vật cản đặt trước màn chắn. Kéo nguồn sáng và vật cản để thấy vùng bóng tối và bóng nửa tối trên màn thay đổi; các tia sáng đi qua mép vật cho biết ranh giới các vùng. Phần 2: Mặt Trời, Trái Đất và Mặt Trăng (không đúng tỉ lệ); kéo Mặt Trăng trên quỹ đạo để tạo nhật thực và nguyệt thực toàn phần hoặc một phần.",
+  "learningGoals": [
+    "Ánh sáng truyền theo đường thẳng nên sau vật cản có vùng không nhận được ánh sáng.",
+    "Với nguồn sáng hẹp chỉ có bóng tối, kích thước bóng tính bằng tam giác đồng dạng: bóng / vật = (nguồn – màn) / (nguồn – vật).",
+    "Với nguồn sáng rộng có thêm bóng nửa tối; đưa vật lại gần nguồn sáng thì bóng to ra.",
+    "Nhật thực xảy ra khi Mặt Trăng nằm giữa Mặt Trời và Trái Đất; nguyệt thực xảy ra khi Trái Đất nằm giữa Mặt Trời và Mặt Trăng."
+  ],
+  "state": {
+    "part": "Phần đang xem: \"shadow\" (bóng tối, bóng nửa tối) hoặc \"eclipse\" (nhật thực, nguyệt thực)",
+    "source": "Loại nguồn sáng: \"point\" (hẹp, coi như một điểm) hoặc \"bulb\" (rộng, bóng đèn)",
+    "bulbSize": "Đường kính bóng đèn (cm), chỉ dùng khi source = \"bulb\"",
+    "sourceX": "Vị trí nguồn sáng trên thước (cm); màn chắn ở 100 cm",
+    "objectX": "Vị trí vật cản trên thước (cm), luôn cách nguồn sáng ít nhất 10 cm",
+    "objectSize": "Đường kính vật cản hình đĩa (cm)",
+    "moonAngle": "Vị trí Mặt Trăng trên quỹ đạo quanh Trái Đất (độ); 180 là phía Mặt Trời, 0 là phía sau Trái Đất"
+  },
+  "events": {
+    "shadow-measured": {
+      "kind": "result",
+      "description": "Học sinh thả nguồn sáng hoặc vật cản (hoặc chỉnh xong một thanh trượt ở phần 1); kích thước bóng trên màn",
+      "data": {
+        "umbraWidth": "Bề rộng vùng bóng tối trên màn (cm), 0 nếu không có",
+        "penumbraWidth": "Bề rộng vùng bóng nửa tối ở mỗi bên bóng tối (cm), 0 với nguồn sáng hẹp",
+        "sourceToObject": "Khoảng cách nguồn sáng – vật cản (cm)",
+        "sourceToScreen": "Khoảng cách nguồn sáng – màn chắn (cm)"
+      }
+    },
+    "moon-moved": {
+      "kind": "action",
+      "description": "Học sinh kéo và thả Mặt Trăng trên quỹ đạo",
+      "data": { "moonAngle": "Vị trí Mặt Trăng (độ)" }
+    },
+    "total-solar-eclipse": {
+      "kind": "goal",
+      "description": "Học sinh đặt Mặt Trăng sao cho có nhật thực toàn phần (vùng bóng tối của Mặt Trăng rơi lên Trái Đất)",
+      "data": { "moonAngle": "Vị trí Mặt Trăng (độ)" }
+    },
+    "total-lunar-eclipse": {
+      "kind": "goal",
+      "description": "Học sinh đặt Mặt Trăng sao cho có nguyệt thực toàn phần (Mặt Trăng nằm hẳn trong bóng tối của Trái Đất)",
+      "data": { "moonAngle": "Vị trí Mặt Trăng (độ)" }
+    }
+  }
+}

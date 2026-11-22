@@ -1,0 +1,58 @@
+{
+  "slug": "can-bac-hai",
+  "version": "1.0.0",
+  "title": "Căn bậc hai và số vô tỉ",
+  "subject": "math",
+  "grades": [7, 8, 9],
+  "description": "Hình vuông có diện tích S thì cạnh là √S. Với số chính phương, cạnh là số tự nhiên; với số khác, √S nằm giữa hai số tự nhiên liên tiếp và được kẹp dần giữa hai số thập phân bằng cách thử cạnh x hoặc chia đôi khoảng (so sánh x² với S), cho đến hai chữ số thập phân. Xem √2 là cạnh của hình vuông diện tích 2 (đường chéo hình vuông cạnh 1) và đặt nó lên trục số bằng compa; đưa thừa số ra ngoài dấu căn √(a²b) = a√b.",
+  "learningGoals": [
+    "Hiểu căn bậc hai số học của số không âm S là số không âm có bình phương bằng S, là cạnh của hình vuông có diện tích S; số âm không có căn bậc hai.",
+    "Nhận ra √S là số tự nhiên khi S là số chính phương, còn lại là số vô tỉ (số thập phân vô hạn không tuần hoàn).",
+    "Ước lượng √S bằng cách kẹp giữa hai số thập phân: x² ≤ S < y² thì x ≤ √S < y.",
+    "Biết √2 là độ dài đường chéo hình vuông cạnh 1 và biểu diễn được √2 trên trục số.",
+    "Vận dụng √(A·B) = √A·√B (A, B ≥ 0) để đưa thừa số ra ngoài dấu căn: √(a²b) = a√b."
+  ],
+  "state": {
+    "mode": "Nội dung: \"area\" (cạnh hình vuông biết diện tích), \"diagonal\" (√2 và đường chéo), \"simplify\" (đưa thừa số ra ngoài dấu căn)",
+    "n": "Diện tích S của hình vuông, số tự nhiên từ 0 đến 200",
+    "lo": "Cận dưới của khoảng kẹp √S (bội của 0,01), lo² ≤ S",
+    "hi": "Cận trên của khoảng kẹp √S (bội của 0,01), hi² > S",
+    "trial": "Cạnh x học sinh thử lần gần nhất (0 đến 15, bước 0,01)",
+    "a": "Cạnh hình vuông nhỏ trong phần đường chéo, 1 đến 5; hình vuông tô màu có diện tích 2a², cạnh a√2",
+    "m": "Số dưới dấu căn cần đưa thừa số ra ngoài, 1 đến 300"
+  },
+  "events": {
+    "area-set": {
+      "kind": "result",
+      "description": "Học sinh thả thanh trượt diện tích S; báo cạnh của hình vuông",
+      "data": {
+        "area": "Diện tích S",
+        "side": "Cạnh √S",
+        "irrational": "1 nếu √S là số vô tỉ (S không phải số chính phương), 0 nếu là số tự nhiên"
+      }
+    },
+    "sqrt-trapped": {
+      "kind": "goal",
+      "description": "Học sinh kẹp được √S giữa hai số thập phân cách nhau 0,01 (biết √S đến hai chữ số thập phân)",
+      "data": {
+        "area": "Diện tích S",
+        "lo": "Cận dưới, lo ≤ √S",
+        "hi": "Cận trên, √S < hi = lo + 0,01"
+      }
+    },
+    "halved": {
+      "kind": "action",
+      "description": "Học sinh bấm \"Chia đôi khoảng\": thử cạnh x bằng trung điểm của khoảng kẹp (làm tròn xuống đến 0,01)",
+      "data": {}
+    },
+    "simplified": {
+      "kind": "result",
+      "description": "Học sinh thả thanh trượt số dưới dấu căn; báo dạng √m = a√b với b không có ước chính phương lớn hơn 1",
+      "data": {
+        "number": "Số dưới dấu căn m",
+        "a": "Thừa số đưa ra ngoài dấu căn",
+        "b": "Số còn lại dưới dấu căn (m = a²·b)"
+      }
+    }
+  }
+}

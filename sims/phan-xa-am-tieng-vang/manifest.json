@@ -1,0 +1,80 @@
+{
+  "slug": "phan-xa-am-tieng-vang",
+  "version": "1.0.0",
+  "title": "Phản xạ âm, tiếng vang và đo độ sâu",
+  "subject": "physics",
+  "grades": [7],
+  "description": "Một người hét về phía bức tường ở khoảng cách thay đổi được. Quan sát âm truyền tới tường, phản xạ trở lại và thời gian đi về t = 2d/v; khi t ≥ 1/15 s thì nghe được tiếng vang riêng. Đổi mặt phản xạ (tường bê tông, vách gỗ, rèm xốp) để thấy vật cứng, nhẵn phản xạ âm tốt còn vật mềm, xốp hấp thụ âm. Cảnh thứ hai: tàu biển phát sóng siêu âm, đo thời gian đi và về rồi tính độ sâu đáy biển h = v·t/2.",
+  "learningGoals": [
+    "Âm gặp vật cản thì bị phản xạ; âm phản xạ trở về sau thời gian t = 2d/v.",
+    "Nghe được tiếng vang khi âm phản xạ đến tai chậm hơn âm phát ra ít nhất 1/15 s, tức là vật phản xạ cách người khoảng 11,3 m trở lên trong không khí (v = 340 m/s).",
+    "Vật cứng, có bề mặt nhẵn phản xạ âm tốt; vật mềm, xốp, bề mặt gồ ghề phản xạ âm kém (hấp thụ âm).",
+    "Dùng phản xạ của siêu âm để đo độ sâu đáy biển: h = v·t/2 với v = 1500 m/s trong nước biển."
+  ],
+  "state": {
+    "scene": "\"wall\" (tiếng vang trước bức tường) hoặc \"sonar\" (đo độ sâu đáy biển)",
+    "distance": "Khoảng cách từ người đến tường d (m), 2 đến 40",
+    "surface": "Mặt phản xạ: \"concrete\" (bê tông, phản xạ 95 % biên độ), \"wood\" (gỗ, 60 %), \"curtain\" (rèm xốp, 15 %); các tỉ lệ chỉ để minh họa",
+    "t": "Thời gian kể từ lúc âm (hoặc siêu âm) vừa phát ra (s)",
+    "flying": "true khi âm đang truyền",
+    "returned": "true khi âm đã phản xạ trở về chỗ phát",
+    "seed": "Số hiệu vùng biển; quyết định độ sâu đáy biển được giấu (200 đến 4000 m)",
+    "answer": "Độ sâu học sinh tính được và nhập vào (m)",
+    "measured": "Thời gian đi và về của siêu âm đo được lần gần nhất (s), 0 nếu chưa đo",
+    "solved": "true khi học sinh đã tính đúng độ sâu vùng biển này"
+  },
+  "events": {
+    "shout": {
+      "kind": "action",
+      "description": "Học sinh cho người hét một tiếng về phía tường",
+      "data": { "distance": "Khoảng cách đến tường (m)" }
+    },
+    "move-wall": {
+      "kind": "action",
+      "description": "Học sinh kéo bức tường đến khoảng cách mới",
+      "data": { "distance": "Khoảng cách mới đến tường (m)" }
+    },
+    "echo": {
+      "kind": "result",
+      "description": "Âm phản xạ từ tường vừa trở về chỗ người đứng",
+      "data": {
+        "distance": "Khoảng cách đến tường d (m)",
+        "delay": "Thời gian đi và về t = 2d/v (s)",
+        "heard": "1 nếu t ≥ 1/15 s (nghe được tiếng vang riêng), 0 nếu không",
+        "amplitude": "Biên độ âm phản xạ so với âm tới (0 đến 1)"
+      }
+    },
+    "ping": {
+      "kind": "action",
+      "description": "Học sinh cho tàu phát một xung siêu âm xuống đáy biển",
+      "data": {}
+    },
+    "sonar-echo": {
+      "kind": "result",
+      "description": "Siêu âm phản xạ từ đáy biển vừa trở về máy thu trên tàu",
+      "data": { "delay": "Thời gian từ lúc phát đến lúc thu t (s)" }
+    },
+    "depth-answer": {
+      "kind": "result",
+      "description": "Học sinh nhập độ sâu tính được và bấm kiểm tra",
+      "data": {
+        "answer": "Độ sâu học sinh nhập (m)",
+        "correct": "1 nếu sai lệch không quá 2 % (ít nhất 5 m), 0 nếu không"
+      }
+    },
+    "depth-found": {
+      "kind": "goal",
+      "description": "Học sinh tính đúng độ sâu đáy biển được giấu, sai lệch không quá 2 % (ít nhất 5 m)",
+      "data": {
+        "depth": "Độ sâu thật (m)",
+        "answer": "Độ sâu học sinh tính được (m)",
+        "delay": "Thời gian đi và về của siêu âm (s)"
+      }
+    },
+    "new-sea": {
+      "kind": "action",
+      "description": "Học sinh chuyển sang một vùng biển khác (độ sâu mới được giấu)",
+      "data": { "seed": "Số hiệu vùng biển mới" }
+    }
+  }
+}

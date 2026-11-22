@@ -1,0 +1,62 @@
+{
+  "slug": "tong-hop-luc",
+  "version": "1.0.0",
+  "title": "Tổng hợp lực và cân bằng của chất điểm",
+  "subject": "physics",
+  "grades": [
+    10
+  ],
+  "description": "Một vòng nhỏ treo vật nặng được giữ bởi hai hoặc ba sợi dây gắn lực kế. Kéo các chốt để đổi hướng dây, chỉnh số chỉ lực kế, quan sát hình bình hành lực và hợp lực cho tới khi vòng cân bằng. Tình huống thứ hai: đèn giao thông treo trên hai dây, tự tính lực căng mỗi dây rồi bật đáp số để kiểm tra.",
+  "learningGoals": [
+    "Tổng hợp hai lực đồng quy bằng quy tắc hình bình hành: F² = F₁² + F₂² + 2F₁F₂cos α, và bằng phương pháp chiếu lên hai trục Ox, Oy.",
+    "Điều kiện cân bằng của chất điểm: hợp lực của các lực tác dụng bằng 0 (F⃗₁ + F⃗₂ + … = 0⃗).",
+    "Vật treo đối xứng trên hai dây hợp với nhau góc θ: T = P/(2cos(θ/2)); dây càng gần nằm ngang thì lực căng càng lớn, không có giới hạn.",
+    "Ba lực cân bằng: mỗi lực tỉ lệ với sin của góc tạo bởi hai lực còn lại (định lí Lami)."
+  ],
+  "state": {
+    "mode": "Tình huống: \"lab\" (vòng treo bởi các lực kế) hoặc \"light\" (đèn giao thông treo trên hai dây)",
+    "count": "Số dây có lực kế trong tình huống lab: 2 hoặc 3",
+    "weight": "Trọng lượng P của vật treo hoặc của đèn (N)",
+    "a1": "Hướng dây 1 tính từ vòng (độ, 0 = sang phải theo phương ngang, 90 = thẳng lên, 180 = sang trái)",
+    "f1": "Số chỉ lực kế trên dây 1 (N)",
+    "a2": "Hướng dây 2 (độ, cùng quy ước với a1)",
+    "f2": "Số chỉ lực kế trên dây 2 (N)",
+    "a3": "Hướng dây 3 (độ), chỉ có tác dụng khi count = 3",
+    "f3": "Số chỉ lực kế trên dây 3 (N), chỉ có tác dụng khi count = 3",
+    "b1": "Tình huống đèn: góc giữa dây trái và phương ngang (độ)",
+    "b2": "Tình huống đèn: góc giữa dây phải và phương ngang (độ)",
+    "showT": "Tình huống đèn: true nếu đang hiện đáp số lực căng",
+    "showParallelogram": "true nếu vẽ hình bình hành và hợp lực của hai lực đầu"
+  },
+  "events": {
+    "anchor-drag": {
+      "kind": "action",
+      "description": "Học sinh kéo một chốt treo dây rồi thả",
+      "data": {
+        "index": "Số thứ tự dây (1–3)",
+        "angle": "Hướng mới của dây (độ; tình huống lab: tính từ phương ngang bên phải; tình huống đèn: góc với phương ngang)"
+      }
+    },
+    "tensions": {
+      "kind": "result",
+      "description": "Lực căng các dây và trạng thái cân bằng sau khi thả chốt hoặc chỉnh xong một thanh trượt",
+      "data": {
+        "t1": "Lực căng (số chỉ lực kế) dây 1 (N)",
+        "t2": "Lực căng dây 2 (N)",
+        "t3": "Lực căng dây 3 (N), chỉ có khi có ba dây",
+        "weight": "Trọng lượng P (N)",
+        "resultant": "Độ lớn hợp lực tác dụng lên vòng (N); 0 trong tình huống đèn",
+        "angleBetween": "Tình huống đèn: góc giữa hai dây (độ)",
+        "balanced": "1 nếu vòng cân bằng, 0 nếu chưa"
+      }
+    },
+    "balanced": {
+      "kind": "goal",
+      "description": "Học sinh chỉnh các lực kế để vòng cân bằng (hợp lực bằng 0 trong sai số 0,15 N hoặc 1,5 % P)",
+      "data": {
+        "strings": "Số dây có lực kế",
+        "weight": "Trọng lượng P (N)"
+      }
+    }
+  }
+}

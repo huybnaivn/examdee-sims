@@ -1,0 +1,66 @@
+{
+  "slug": "di-truyen-lien-ket-gioi-tinh",
+  "version": "1.0.0",
+  "title": "Di truyền liên kết với giới tính",
+  "subject": "biology",
+  "grades": [12],
+  "description": "Tính trạng do allele lặn a nằm trên nhiễm sắc thể X (không có allele tương ứng trên Y) quy định, ví dụ bệnh mù màu đỏ – lục hoặc bệnh máu khó đông ở người. Chọn kiểu gene của mẹ (XᴬXᴬ, XᴬXᵃ, XᵃXᵃ) và của bố (XᴬY, XᵃY) để xem giao tử, bảng Punnett, tỉ lệ kiểu gene và tỉ lệ con bị bệnh riêng ở con gái và con trai; sinh ngẫu nhiên nhiều con để so sánh với lí thuyết. Chế độ phả hệ cho một gia đình ba thế hệ, học sinh suy luận kiểu gene của người được đánh dấu.",
+  "learningGoals": [
+    "Viết được giao tử và sơ đồ lai của gene lặn nằm trên X, không có allele trên Y.",
+    "Giải thích vì sao bệnh do gene lặn trên X gặp ở nam nhiều hơn nữ.",
+    "Nhận ra mẹ mang allele bệnh (XᴬXᵃ) và bố bình thường có thể sinh con trai bị bệnh với xác suất 1/2, con gái không bị bệnh.",
+    "Nhận ra bố bị bệnh truyền Xᵃ cho mọi con gái và không truyền bệnh cho con trai (di truyền chéo).",
+    "Suy luận kiểu gene của một người trong phả hệ từ kiểu hình của bố mẹ và con cái."
+  ],
+  "state": {
+    "trait": "Tính trạng đang xét: \"colour\" (mù màu đỏ – lục) hoặc \"haemo\" (máu khó đông); cả hai do allele lặn a trên X",
+    "mother": "Kiểu gene của mẹ: \"AA\" (XᴬXᴬ), \"Aa\" (XᴬXᵃ) hoặc \"aa\" (XᵃXᵃ)",
+    "father": "Kiểu gene của bố (allele trên X): \"A\" (XᴬY) hoặc \"a\" (XᵃY)",
+    "view": "Nội dung hiển thị: \"cross\" (sơ đồ lai, tỉ lệ đời con) hoặc \"pedigree\" (phả hệ)",
+    "batch": "Số con sinh ra mỗi lần bấm nút (10 đến 1000)",
+    "seed": "Hạt giống của bộ sinh số ngẫu nhiên cho các con được sinh",
+    "born": "Tổng số con đã sinh ngẫu nhiên với seed hiện tại (0 đến 5000)",
+    "pedSeed": "Số thứ tự của phả hệ (mỗi số cho một gia đình cố định)",
+    "answer": "Kiểu gene học sinh chọn cho người «?» trong phả hệ: \"\" (chưa chọn), \"AA\", \"Aa\", \"aa\", \"A\" hoặc \"a\"",
+    "attempts": "Số lần học sinh đã kiểm tra đáp án với phả hệ hiện tại",
+    "checked": "true nếu đáp án hiện tại đã được kiểm tra",
+    "solved": "true nếu học sinh đã suy ra đúng kiểu gene của người «?»"
+  },
+  "events": {
+    "cross-result": {
+      "kind": "result",
+      "description": "Học sinh chọn xong kiểu gene của mẹ hoặc bố; tỉ lệ con bị bệnh lí thuyết theo giới tính",
+      "data": {
+        "sonsAffected": "Tỉ lệ con trai bị bệnh trong số con trai (0 đến 1)",
+        "daughtersAffected": "Tỉ lệ con gái bị bệnh trong số con gái (0 đến 1)",
+        "daughtersCarrier": "Tỉ lệ con gái mang allele bệnh (XᴬXᵃ) trong số con gái (0 đến 1)",
+        "childrenAffected": "Tỉ lệ con bị bệnh trong tất cả các con (0 đến 1)"
+      }
+    },
+    "breed": {
+      "kind": "action",
+      "description": "Học sinh sinh ngẫu nhiên thêm một đợt con",
+      "data": { "count": "Số con của đợt này", "total": "Tổng số con đã sinh" }
+    },
+    "clear-offspring": {
+      "kind": "action",
+      "description": "Học sinh xoá các con đã sinh để lấy mẫu ngẫu nhiên mới",
+      "data": {}
+    },
+    "genotype-deduced": {
+      "kind": "goal",
+      "description": "Học sinh suy luận đúng kiểu gene của người «?» trong phả hệ",
+      "data": { "attempts": "Số lần kiểm tra cho đến khi đúng" }
+    },
+    "wrong-answer": {
+      "kind": "action",
+      "description": "Học sinh kiểm tra một kiểu gene sai cho người «?»",
+      "data": { "attempts": "Số lần kiểm tra đến lúc này" }
+    },
+    "new-pedigree": {
+      "kind": "action",
+      "description": "Học sinh chuyển sang một phả hệ gia đình khác",
+      "data": {}
+    }
+  }
+}

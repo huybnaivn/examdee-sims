@@ -1,0 +1,47 @@
+{
+  "slug": "mat-phang-toa-do",
+  "version": "1.0.0",
+  "title": "Mặt phẳng tọa độ",
+  "subject": "math",
+  "grades": [7],
+  "description": "Mặt phẳng tọa độ Oxy với lưới ô vuông. Đặt điểm M bằng cách bấm, kéo trên lưới hoặc dùng thanh trượt hoành độ, tung độ; đọc tọa độ qua hai đường vuông góc hạ xuống hai trục, xem M thuộc góc phần tư nào (điểm trên trục không thuộc góc phần tư nào) và các điểm đối xứng với M qua Ox, Oy, O. Trò chơi tìm kho báu: đưa M tới đúng điểm có tọa độ cho trước.",
+  "learningGoals": [
+    "Xác định tọa độ (x; y) của một điểm trên mặt phẳng tọa độ: hoành độ viết trước, tung độ viết sau.",
+    "Biểu diễn một điểm khi biết tọa độ của nó.",
+    "Nhận biết góc phần tư chứa một điểm từ dấu của hoành độ và tung độ; điểm nằm trên các trục tọa độ không thuộc góc phần tư nào.",
+    "Nhận ra tọa độ của điểm đối xứng qua Ox (x; −y), qua Oy (−x; y) và qua gốc O (−x; −y)."
+  ],
+  "state": {
+    "mode": "Chế độ: \"explore\" (khám phá) hoặc \"game\" (trò chơi tìm kho báu)",
+    "x": "Hoành độ của điểm M, từ −6 đến 6, bước 0,5",
+    "y": "Tung độ của điểm M, từ −6 đến 6, bước 0,5",
+    "showCoords": "true nếu hiện tọa độ của M trên hình (chế độ khám phá)",
+    "showMirror": "true nếu hiện các điểm đối xứng của M qua Ox (M₁), Oy (M₂) và O (M₃)",
+    "found": "Số kho báu đã tìm được trong trò chơi (0 đến 8); kho báu cần tìm tiếp là kho báu thứ found + 1"
+  },
+  "events": {
+    "point-placed": {
+      "kind": "result",
+      "description": "Học sinh thả điểm M sau khi bấm, kéo trên lưới hoặc thả thanh trượt; báo tọa độ và góc phần tư",
+      "data": {
+        "x": "Hoành độ của M",
+        "y": "Tung độ của M",
+        "quadrant": "Góc phần tư chứa M: 1 đến 4 (I đến IV), 0 nếu M nằm trên một trục tọa độ"
+      }
+    },
+    "treasure-found": {
+      "kind": "goal",
+      "description": "Trong trò chơi, học sinh đặt M đúng vào tọa độ của kho báu đang cần tìm",
+      "data": {
+        "x": "Hoành độ của kho báu",
+        "y": "Tung độ của kho báu",
+        "found": "Số kho báu đã tìm được, tính cả kho báu này"
+      }
+    },
+    "game-restarted": {
+      "kind": "action",
+      "description": "Học sinh bấm \"Chơi lại\" để bắt đầu trò chơi tìm kho báu từ đầu",
+      "data": {}
+    }
+  }
+}

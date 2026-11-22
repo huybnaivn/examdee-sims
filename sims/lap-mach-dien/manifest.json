@@ -1,0 +1,52 @@
+{
+  "slug": "lap-mach-dien",
+  "version": "1.0.0",
+  "title": "Lắp mạch điện đơn giản",
+  "subject": "physics",
+  "grades": [7, 9],
+  "description": "Lắp mạch điện trên một lưới bằng pin, công tắc, bóng đèn, ampe kế, vôn kế và dây nối. Mô phỏng giải mạch (các đèn mắc nối tiếp, song song hoặc hỗn hợp), cho biết đèn nào sáng và sáng mạnh hay yếu, số chỉ của ampe kế và vôn kế, và cảnh báo khi đoản mạch, khi ampe kế mắc song song hoặc vôn kế mắc nối tiếp. Có các nhiệm vụ lắp mạch theo yêu cầu.",
+  "learningGoals": [
+    "Mạch điện kín gồm nguồn điện, dây nối, công tắc và vật tiêu thụ điện; khi công tắc mở thì mạch hở và không có dòng điện.",
+    "Mắc ampe kế nối tiếp để đo cường độ dòng điện, mắc vôn kế song song để đo hiệu điện thế giữa hai đầu vật.",
+    "Nối thẳng hai cực của nguồn bằng dây dẫn (hoặc ampe kế) gây đoản mạch, rất nguy hiểm.",
+    "So sánh độ sáng của đèn khi mắc nối tiếp, song song và hỗn hợp: đèn sáng hơn khi công suất lớn hơn."
+  ],
+  "state": {
+    "parts": "Danh sách linh kiện trên lưới 6 × 4 nút. Mỗi phần tử { e, t, on?, flip? }: e là cạnh \"h-x-y\" (nối nút (x, y) với (x+1, y)) hoặc \"v-x-y\" (nối (x, y) với (x, y+1)); t là wire, battery, switch, bulb, ammeter hoặc voltmeter; on (công tắc) true là đóng; flip (pin) true là cực dương ở nút thứ hai",
+    "tool": "Linh kiện đang chọn để đặt: wire, battery, switch, bulb, ammeter, voltmeter hoặc erase (xóa)",
+    "emf": "Hiệu điện thế mỗi pin (V)",
+    "bulbR": "Điện trở mỗi bóng đèn (Ω)",
+    "task": "Nhiệm vụ đang chọn: series1 (pin, công tắc, một đèn), series2 (hai đèn nối tiếp), parallel2 (hai đèn song song), measure (đo I và U của đèn), mixed (một đèn nối tiếp với hai đèn song song)"
+  },
+  "events": {
+    "place": {
+      "kind": "action",
+      "description": "Học sinh đặt, thay, xóa một linh kiện, đóng/mở công tắc hoặc đổi chiều pin",
+      "data": {
+        "did": "place (đặt), remove (xóa), toggle (đóng/mở công tắc) hoặc flip (đổi chiều pin)",
+        "type": "Loại linh kiện: wire, battery, switch, bulb, ammeter, voltmeter",
+        "parts": "Số linh kiện trên lưới sau thao tác"
+      }
+    },
+    "preset": {
+      "kind": "action",
+      "description": "Học sinh chọn một mạch mẫu hoặc xóa hết lưới",
+      "data": { "parts": "Số linh kiện trên lưới" }
+    },
+    "circuit-closed": {
+      "kind": "result",
+      "description": "Mạch vừa thành mạch kín (hoặc kết quả của mạch kín thay đổi) sau một thao tác",
+      "data": {
+        "current": "Cường độ dòng điện qua nguồn (A)",
+        "litBulbs": "Số đèn sáng",
+        "bulbs": "Tổng số đèn trên lưới",
+        "errors": "Số lỗi mắc dụng cụ đo (ampe kế song song, vôn kế nối tiếp)"
+      }
+    },
+    "task-done": {
+      "kind": "goal",
+      "description": "Học sinh lắp đúng mạch theo nhiệm vụ đang chọn",
+      "data": { "task": "Số thứ tự nhiệm vụ: 1 pin–công tắc–một đèn, 2 hai đèn nối tiếp, 3 hai đèn song song, 4 đo I và U của đèn, 5 mạch hỗn hợp" }
+    }
+  }
+}

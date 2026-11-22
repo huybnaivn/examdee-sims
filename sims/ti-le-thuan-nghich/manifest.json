@@ -1,0 +1,52 @@
+{
+  "slug": "ti-le-thuan-nghich",
+  "version": "1.0.0",
+  "title": "Đại lượng tỉ lệ thuận và tỉ lệ nghịch",
+  "subject": "math",
+  "grades": [7],
+  "description": "Bốn tình huống thực tế: mua vở (số tiền theo số quyển), số công nhân và thời gian làm xong một công việc, quãng đường đi được theo thời gian, cước taxi theo số km. Học sinh dùng nút − / + điền bốn giá trị của x, bảng tự tính y, y/x và x·y. Nếu y/x không đổi thì y tỉ lệ thuận với x (y = kx), nếu x·y không đổi thì y tỉ lệ nghịch với x (xy = a), nếu cả hai đều thay đổi thì không phải. Các điểm (x; y) được vẽ cùng đồ thị của tình huống: đường thẳng qua gốc O, đường cong y = a/x, hoặc đường thẳng không qua O. Mỗi tình huống có một câu hỏi tìm giá trị y còn thiếu tại một x nằm ngoài bảng.",
+  "learningGoals": [
+    "Nhận biết hai đại lượng tỉ lệ thuận: y/x = k không đổi, y = kx.",
+    "Nhận biết hai đại lượng tỉ lệ nghịch: x·y = a không đổi, y = a/x.",
+    "Phân biệt với trường hợp không tỉ lệ (ví dụ cước taxi có phí mở cửa).",
+    "Giải bài toán tìm giá trị còn thiếu bằng hệ số tỉ lệ.",
+    "Đồ thị của y = kx là đường thẳng đi qua gốc tọa độ; đồ thị của y = a/x (x > 0) là một đường cong."
+  ],
+  "state": {
+    "scenario": "Tình huống: \"gia-tien\" (vở 8 nghìn đồng/quyển, y = 8x), \"cong-nhan\" (công việc 60 giờ công, xy = 60), \"quang-duong\" (12 km/h, y = 12x), \"taxi\" (y = 12x + 10, không tỉ lệ)",
+    "x1": "Giá trị x thứ nhất trong bảng (số nguyên 1–12)",
+    "x2": "Giá trị x thứ hai (1–12)",
+    "x3": "Giá trị x thứ ba (1–12)",
+    "x4": "Giá trị x thứ tư (1–12)",
+    "answer": "Giá trị y học sinh tính được cho câu hỏi giá trị còn thiếu (0–200, đơn vị của y)",
+    "showGraph": "true nếu vẽ các điểm và đồ thị"
+  },
+  "events": {
+    "table-classified": {
+      "kind": "result",
+      "description": "Bảng giá trị vừa được điền xong (đổi một giá trị x hoặc đổi tình huống) và được phân loại",
+      "data": {
+        "type": "1 = tỉ lệ thuận, 2 = tỉ lệ nghịch, 0 = không tỉ lệ, −1 = chưa đủ hai giá trị x khác nhau",
+        "constant": "Hệ số tỉ lệ k = y/x (nếu type = 1) hoặc a = x·y (nếu type = 2); 0 nếu không có",
+        "scenario": "Tình huống: 1 = mua vở, 2 = công nhân, 3 = quãng đường, 4 = taxi"
+      }
+    },
+    "check-answer": {
+      "kind": "action",
+      "description": "Học sinh bấm Kiểm tra câu trả lời cho giá trị còn thiếu",
+      "data": {
+        "answer": "Giá trị y học sinh chọn (đơn vị của y)",
+        "correct": "1 nếu đúng, 0 nếu sai"
+      }
+    },
+    "missing-value-found": {
+      "kind": "goal",
+      "description": "Học sinh tìm đúng giá trị y còn thiếu",
+      "data": {
+        "x": "Giá trị x của câu hỏi",
+        "y": "Giá trị y đúng (đơn vị của y)",
+        "scenario": "Tình huống: 1 = mua vở, 2 = công nhân, 3 = quãng đường, 4 = taxi"
+      }
+    }
+  }
+}

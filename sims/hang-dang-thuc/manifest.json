@@ -1,0 +1,50 @@
+{
+  "slug": "hang-dang-thuc",
+  "version": "1.0.0",
+  "title": "Hằng đẳng thức đáng nhớ",
+  "subject": "math",
+  "grades": [8],
+  "description": "Mô hình diện tích và thể tích của bốn hằng đẳng thức: (a + b)² là hình vuông cạnh a + b chia thành a², hai hình chữ nhật ab và b²; (a − b)² là phần còn lại của hình vuông a² sau khi bớt hai dải b(a − b) và hình vuông b²; a² − b² là hình vuông a² bị cắt góc b², cắt một mảnh, xoay và ghép thành hình chữ nhật (a − b)(a + b); (a + b)³ là hình lập phương chia thành 8 khối a³, 3 khối a²b, 3 khối ab², b³. Thanh trượt a, b (bước 0,5) đổi kích thước các mảnh đúng tỉ lệ; nút tách / sắp xếp lại các mảnh có hoạt hình; dòng dưới cùng kiểm tra hai vế bằng số. Chế độ đố: chạm vào từng mảnh để gắn tên hạng tử.",
+  "learningGoals": [
+    "Giải thích (a + b)² = a² + 2ab + b² và (a − b)² = a² − 2ab + b² bằng diện tích.",
+    "Giải thích a² − b² = (a − b)(a + b) bằng cách cắt và ghép lại hình (diện tích không đổi).",
+    "Giải thích (a + b)³ = a³ + 3a²b + 3ab² + b³ bằng thể tích hình lập phương.",
+    "Kiểm tra hằng đẳng thức bằng số, kể cả các trường hợp đặc biệt a = b và b = 0."
+  ],
+  "state": {
+    "identity": "Hằng đẳng thức: \"binh-phuong-tong\" (a + b)², \"binh-phuong-hieu\" (a − b)², \"hieu-hai-binh-phuong\" a² − b², \"lap-phuong-tong\" (a + b)³",
+    "a": "Độ dài a (đơn vị độ dài, 0,5–8)",
+    "b": "Độ dài b (0–8); với (a − b)² và a² − b² luôn giữ b ≤ a để vẽ được hình",
+    "apart": "true nếu các mảnh đang được tách ra / sắp xếp lại, false nếu ở hình ban đầu",
+    "t": "Tiến trình hoạt hình (0 = hình ban đầu, 1 = đã tách / sắp xếp lại)",
+    "quiz": "true nếu đang ở chế độ đố gắn tên cho từng mảnh"
+  },
+  "events": {
+    "identity-checked": {
+      "kind": "result",
+      "description": "Học sinh chọn xong hằng đẳng thức hoặc thả thanh trượt a, b; giá trị của hai vế (bằng nhau)",
+      "data": {
+        "identity": "1 = (a + b)², 2 = (a − b)², 3 = a² − b², 4 = (a + b)³",
+        "a": "Giá trị a",
+        "b": "Giá trị b",
+        "value": "Giá trị của vế trái (bằng vế phải), đơn vị diện tích hoặc thể tích"
+      }
+    },
+    "label-piece": {
+      "kind": "action",
+      "description": "Ở chế độ đố, học sinh chạm vào một mảnh để đổi tên hạng tử của nó",
+      "data": {
+        "piece": "Số thứ tự của mảnh",
+        "term": "Số thứ tự của hạng tử vừa gắn trong danh sách gợi ý (bắt đầu từ 1)"
+      }
+    },
+    "pieces-matched": {
+      "kind": "goal",
+      "description": "Ở chế độ đố, mọi mảnh (có kích thước khác 0) đều được gắn đúng hạng tử",
+      "data": {
+        "identity": "1 = (a + b)², 2 = (a − b)², 3 = a² − b², 4 = (a + b)³",
+        "taps": "Số lần chạm đã dùng"
+      }
+    }
+  }
+}

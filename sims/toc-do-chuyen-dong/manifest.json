@@ -1,0 +1,50 @@
+{
+  "slug": "toc-do-chuyen-dong",
+  "version": "1.0.0",
+  "title": "Tốc độ và đồ thị quãng đường – thời gian",
+  "subject": "physics",
+  "grades": [7],
+  "description": "Hai hoặc ba vật chạy trên cùng một đường thẳng với tốc độ do học sinh chọn; vật A có thể dừng lại một lúc ở giữa đường. Đồng hồ bấm giờ và các mốc quãng đường giúp đo tốc độ, đồ thị quãng đường – thời gian được vẽ ngay khi các vật chạy. Học sinh đọc tốc độ từ độ dốc của đồ thị và trả lời câu hỏi.",
+  "learningGoals": [
+    "Tính tốc độ v = s / t và đổi đơn vị: 1 m/s = 3,6 km/h.",
+    "Đồ thị quãng đường – thời gian của chuyển động đều là đường thẳng; đường càng dốc thì vật chạy càng nhanh.",
+    "Đoạn đồ thị nằm ngang cho biết vật đứng yên (quãng đường không đổi theo thời gian).",
+    "Tốc độ trung bình cả chuyến = tổng quãng đường / tổng thời gian, kể cả thời gian dừng lại."
+  ],
+  "state": {
+    "length": "Chiều dài đường chạy (m)",
+    "vA": "Tốc độ của vật A khi chuyển động (m/s)",
+    "vB": "Tốc độ của vật B (m/s)",
+    "vC": "Tốc độ của vật C (m/s), chỉ dùng khi three = true",
+    "three": "true nếu có vật C tham gia",
+    "stop": "true nếu vật A dừng lại ở giữa đường chạy",
+    "stopTime": "Thời gian A dừng lại (s)",
+    "time": "Số chỉ đồng hồ bấm giờ (s)",
+    "finished": "true khi mọi vật đã về đích",
+    "showSlope": "true thì vẽ Δs của từng vật trong cùng một khoảng Δt để đọc tốc độ từ độ dốc",
+    "question": "Câu hỏi đang chọn: fastest (vật nhanh nhất), first (về đích đầu tiên), still (có lúc đứng yên), speedB (tốc độ của B), avgA (tốc độ trung bình của A)",
+    "answer": "Câu trả lời cho câu hỏi chọn vật: A, B, C hoặc none (không có vật nào)",
+    "guess": "Câu trả lời dạng số cho speedB và avgA (m/s)"
+  },
+  "events": {
+    "race-finished": {
+      "kind": "result",
+      "description": "Vật cuối cùng vừa về đích; thời gian và tốc độ trung bình của từng vật",
+      "data": {
+        "timeA": "Thời gian về đích của A (s), kể cả lúc dừng",
+        "timeB": "Thời gian về đích của B (s)",
+        "timeC": "Thời gian về đích của C (s); không có khi chỉ có hai vật",
+        "avgSpeedA": "Tốc độ trung bình của A cả quãng đường (m/s)",
+        "avgSpeedB": "Tốc độ trung bình của B (m/s)",
+        "avgSpeedC": "Tốc độ trung bình của C (m/s); không có khi chỉ có hai vật"
+      }
+    },
+    "answered": {
+      "kind": "goal",
+      "description": "Học sinh trả lời đúng một câu hỏi đọc đồ thị",
+      "data": {
+        "question": "Số thứ tự câu hỏi: 1 vật nhanh nhất, 2 về đích đầu tiên, 3 có lúc đứng yên, 4 tốc độ của B, 5 tốc độ trung bình của A"
+      }
+    }
+  }
+}

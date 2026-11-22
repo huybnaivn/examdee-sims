@@ -563,6 +563,66 @@
     "thumbnailUrl": "/bieu-do-thong-ke/1.0.0/thumb.png"
   },
   {
+    "slug": "bong-toi-nhat-thuc",
+    "version": "1.0.0",
+    "title": "Bóng tối, nhật thực và nguyệt thực",
+    "subject": "physics",
+    "grades": [
+      7
+    ],
+    "description": "Phần 1: một nguồn sáng hẹp hoặc rộng (bóng đèn) chiếu vào vật cản đặt trước màn chắn. Kéo nguồn sáng và vật cản để thấy vùng bóng tối và bóng nửa tối trên màn thay đổi; các tia sáng đi qua mép vật cho biết ranh giới các vùng. Phần 2: Mặt Trời, Trái Đất và Mặt Trăng (không đúng tỉ lệ); kéo Mặt Trăng trên quỹ đạo để tạo nhật thực và nguyệt thực toàn phần hoặc một phần.",
+    "learningGoals": [
+      "Ánh sáng truyền theo đường thẳng nên sau vật cản có vùng không nhận được ánh sáng.",
+      "Với nguồn sáng hẹp chỉ có bóng tối, kích thước bóng tính bằng tam giác đồng dạng: bóng / vật = (nguồn – màn) / (nguồn – vật).",
+      "Với nguồn sáng rộng có thêm bóng nửa tối; đưa vật lại gần nguồn sáng thì bóng to ra.",
+      "Nhật thực xảy ra khi Mặt Trăng nằm giữa Mặt Trời và Trái Đất; nguyệt thực xảy ra khi Trái Đất nằm giữa Mặt Trời và Mặt Trăng."
+    ],
+    "state": {
+      "part": "Phần đang xem: \"shadow\" (bóng tối, bóng nửa tối) hoặc \"eclipse\" (nhật thực, nguyệt thực)",
+      "source": "Loại nguồn sáng: \"point\" (hẹp, coi như một điểm) hoặc \"bulb\" (rộng, bóng đèn)",
+      "bulbSize": "Đường kính bóng đèn (cm), chỉ dùng khi source = \"bulb\"",
+      "sourceX": "Vị trí nguồn sáng trên thước (cm); màn chắn ở 100 cm",
+      "objectX": "Vị trí vật cản trên thước (cm), luôn cách nguồn sáng ít nhất 10 cm",
+      "objectSize": "Đường kính vật cản hình đĩa (cm)",
+      "moonAngle": "Vị trí Mặt Trăng trên quỹ đạo quanh Trái Đất (độ); 180 là phía Mặt Trời, 0 là phía sau Trái Đất"
+    },
+    "events": {
+      "shadow-measured": {
+        "kind": "result",
+        "description": "Học sinh thả nguồn sáng hoặc vật cản (hoặc chỉnh xong một thanh trượt ở phần 1); kích thước bóng trên màn",
+        "data": {
+          "umbraWidth": "Bề rộng vùng bóng tối trên màn (cm), 0 nếu không có",
+          "penumbraWidth": "Bề rộng vùng bóng nửa tối ở mỗi bên bóng tối (cm), 0 với nguồn sáng hẹp",
+          "sourceToObject": "Khoảng cách nguồn sáng – vật cản (cm)",
+          "sourceToScreen": "Khoảng cách nguồn sáng – màn chắn (cm)"
+        }
+      },
+      "moon-moved": {
+        "kind": "action",
+        "description": "Học sinh kéo và thả Mặt Trăng trên quỹ đạo",
+        "data": {
+          "moonAngle": "Vị trí Mặt Trăng (độ)"
+        }
+      },
+      "total-solar-eclipse": {
+        "kind": "goal",
+        "description": "Học sinh đặt Mặt Trăng sao cho có nhật thực toàn phần (vùng bóng tối của Mặt Trăng rơi lên Trái Đất)",
+        "data": {
+          "moonAngle": "Vị trí Mặt Trăng (độ)"
+        }
+      },
+      "total-lunar-eclipse": {
+        "kind": "goal",
+        "description": "Học sinh đặt Mặt Trăng sao cho có nguyệt thực toàn phần (Mặt Trăng nằm hẳn trong bóng tối của Trái Đất)",
+        "data": {
+          "moonAngle": "Vị trí Mặt Trăng (độ)"
+        }
+      }
+    },
+    "url": "/bong-toi-nhat-thuc/1.0.0/index.html",
+    "thumbnailUrl": "/bong-toi-nhat-thuc/1.0.0/thumb.png"
+  },
+  {
     "slug": "cam-ung-dien-tu",
     "version": "1.0.0",
     "title": "Cảm ứng điện từ",
@@ -622,6 +682,70 @@
     },
     "url": "/cam-ung-dien-tu/1.0.0/index.html",
     "thumbnailUrl": "/cam-ung-dien-tu/1.0.0/thumb.png"
+  },
+  {
+    "slug": "can-bac-hai",
+    "version": "1.0.0",
+    "title": "Căn bậc hai và số vô tỉ",
+    "subject": "math",
+    "grades": [
+      7,
+      8,
+      9
+    ],
+    "description": "Hình vuông có diện tích S thì cạnh là √S. Với số chính phương, cạnh là số tự nhiên; với số khác, √S nằm giữa hai số tự nhiên liên tiếp và được kẹp dần giữa hai số thập phân bằng cách thử cạnh x hoặc chia đôi khoảng (so sánh x² với S), cho đến hai chữ số thập phân. Xem √2 là cạnh của hình vuông diện tích 2 (đường chéo hình vuông cạnh 1) và đặt nó lên trục số bằng compa; đưa thừa số ra ngoài dấu căn √(a²b) = a√b.",
+    "learningGoals": [
+      "Hiểu căn bậc hai số học của số không âm S là số không âm có bình phương bằng S, là cạnh của hình vuông có diện tích S; số âm không có căn bậc hai.",
+      "Nhận ra √S là số tự nhiên khi S là số chính phương, còn lại là số vô tỉ (số thập phân vô hạn không tuần hoàn).",
+      "Ước lượng √S bằng cách kẹp giữa hai số thập phân: x² ≤ S < y² thì x ≤ √S < y.",
+      "Biết √2 là độ dài đường chéo hình vuông cạnh 1 và biểu diễn được √2 trên trục số.",
+      "Vận dụng √(A·B) = √A·√B (A, B ≥ 0) để đưa thừa số ra ngoài dấu căn: √(a²b) = a√b."
+    ],
+    "state": {
+      "mode": "Nội dung: \"area\" (cạnh hình vuông biết diện tích), \"diagonal\" (√2 và đường chéo), \"simplify\" (đưa thừa số ra ngoài dấu căn)",
+      "n": "Diện tích S của hình vuông, số tự nhiên từ 0 đến 200",
+      "lo": "Cận dưới của khoảng kẹp √S (bội của 0,01), lo² ≤ S",
+      "hi": "Cận trên của khoảng kẹp √S (bội của 0,01), hi² > S",
+      "trial": "Cạnh x học sinh thử lần gần nhất (0 đến 15, bước 0,01)",
+      "a": "Cạnh hình vuông nhỏ trong phần đường chéo, 1 đến 5; hình vuông tô màu có diện tích 2a², cạnh a√2",
+      "m": "Số dưới dấu căn cần đưa thừa số ra ngoài, 1 đến 300"
+    },
+    "events": {
+      "area-set": {
+        "kind": "result",
+        "description": "Học sinh thả thanh trượt diện tích S; báo cạnh của hình vuông",
+        "data": {
+          "area": "Diện tích S",
+          "side": "Cạnh √S",
+          "irrational": "1 nếu √S là số vô tỉ (S không phải số chính phương), 0 nếu là số tự nhiên"
+        }
+      },
+      "sqrt-trapped": {
+        "kind": "goal",
+        "description": "Học sinh kẹp được √S giữa hai số thập phân cách nhau 0,01 (biết √S đến hai chữ số thập phân)",
+        "data": {
+          "area": "Diện tích S",
+          "lo": "Cận dưới, lo ≤ √S",
+          "hi": "Cận trên, √S < hi = lo + 0,01"
+        }
+      },
+      "halved": {
+        "kind": "action",
+        "description": "Học sinh bấm \"Chia đôi khoảng\": thử cạnh x bằng trung điểm của khoảng kẹp (làm tròn xuống đến 0,01)",
+        "data": {}
+      },
+      "simplified": {
+        "kind": "result",
+        "description": "Học sinh thả thanh trượt số dưới dấu căn; báo dạng √m = a√b với b không có ước chính phương lớn hơn 1",
+        "data": {
+          "number": "Số dưới dấu căn m",
+          "a": "Thừa số đưa ra ngoài dấu căn",
+          "b": "Số còn lại dưới dấu căn (m = a²·b)"
+        }
+      }
+    },
+    "url": "/can-bac-hai/1.0.0/index.html",
+    "thumbnailUrl": "/can-bac-hai/1.0.0/thumb.png"
   },
   {
     "slug": "can-bang-hoa-hoc",
@@ -1738,6 +1862,115 @@
     "thumbnailUrl": "/cong-vecto/1.0.0/thumb.png"
   },
   {
+    "slug": "cung-phan-xa",
+    "version": "1.0.0",
+    "title": "Cung phản xạ và thời gian phản xạ",
+    "subject": "biology",
+    "grades": [
+      8
+    ],
+    "description": "Phần 1: xung thần kinh chạy trên cung phản xạ rụt tay khi chạm vật nóng (thụ quan → nơron hướng tâm → trung ương thần kinh → nơron li tâm → cơ quan phản ứng) với tốc độ dẫn truyền chọn được; so sánh thời gian của phản xạ qua tủy sống với phản ứng có ý thức qua não theo t = L/v cộng thời gian xử lí ở trung ương. Học sinh sắp xếp đúng thứ tự các bộ phận của cung phản xạ. Phần 2: tự đo thời gian phản xạ bằng cách bấm khi màn hình chuyển xanh hoặc bắt thước rơi (đổi quãng đường rơi d ra thời gian bằng t = √(2d/g)); ghi nhiều lượt, tính trung bình và độ lệch chuẩn; bấm sớm bị loại.",
+    "learningGoals": [
+      "Nêu được các bộ phận của cung phản xạ theo đường đi của xung thần kinh.",
+      "Giải thích vì sao phản xạ qua tủy sống nhanh hơn phản ứng có ý thức qua não (đường dẫn ngắn hơn, ít thời gian xử lí hơn).",
+      "Tính thời gian dẫn truyền bằng t = L/v và nhận ra ảnh hưởng của tốc độ dẫn truyền (sợi có hay không có bao myelin).",
+      "Đo thời gian phản xạ nhiều lần, tính trung bình và độ lệch chuẩn; hiểu vì sao loại các lần bấm sớm.",
+      "Đổi quãng đường rơi của thước ra thời gian phản xạ bằng t = √(2d/g)."
+    ],
+    "state": {
+      "part": "Phần đang xem: \"arc\" (cung phản xạ) hoặc \"game\" (đo thời gian phản xạ)",
+      "speedV": "Tốc độ dẫn truyền xung thần kinh trên sợi thần kinh (m/s, 1 đến 120)",
+      "slow": "Tốc độ phát hình của hoạt cảnh cung phản xạ so với thực (0,05; 0,02 hoặc 0,005)",
+      "compare": "true nếu chạy cả đường phản ứng có ý thức qua não để so sánh",
+      "t": "Thời gian từ lúc kích thích trong hoạt cảnh (s)",
+      "showNames": "true nếu hiện tên các bộ phận trên hình",
+      "o1": "Bộ phận học sinh xếp ở vị trí 1: \"receptor\" (thụ quan), \"afferent\" (nơron hướng tâm), \"centre\" (trung ương thần kinh), \"efferent\" (nơron li tâm), \"effector\" (cơ quan phản ứng)",
+      "o2": "Bộ phận học sinh xếp ở vị trí 2 (giá trị như o1)",
+      "o3": "Bộ phận học sinh xếp ở vị trí 3 (giá trị như o1)",
+      "o4": "Bộ phận học sinh xếp ở vị trí 4 (giá trị như o1)",
+      "o5": "Bộ phận học sinh xếp ở vị trí 5 (giá trị như o1)",
+      "orderAttempts": "Số lần học sinh kiểm tra thứ tự cung phản xạ",
+      "ordered": "true nếu học sinh đã xếp đúng thứ tự",
+      "orderChecked": "true nếu thứ tự hiện tại đã được kiểm tra",
+      "mode": "Cách đo thời gian phản xạ: \"screen\" (bấm khi màn hình chuyển xanh) hoặc \"ruler\" (bắt thước rơi dài 50 cm)",
+      "setSize": "Số lượt đo trong một loạt (3 đến 10)",
+      "phase": "Trạng thái lượt đo: idle, waiting (chờ tín hiệu), go (đã có tín hiệu), false (bấm sớm), slow (quá 2 s), missed (thước rơi qua tay), trial (vừa đo xong một lượt), set (xong một loạt)",
+      "clock": "Thời gian từ đầu lượt đo đang chờ (s)",
+      "waitUntil": "Thời điểm có tín hiệu tính từ đầu lượt (s, ngẫu nhiên 1,5 đến 4)",
+      "seed": "Hạt giống sinh thời gian chờ ngẫu nhiên",
+      "trials": "Mảng thời gian phản xạ hợp lệ của loạt hiện tại (ms, tối đa 10 lượt)",
+      "falseStarts": "Số lần bấm sớm (trước tín hiệu hoặc sớm hơn 100 ms sau tín hiệu)",
+      "lastRt": "Thời gian phản xạ của lượt gần nhất (ms)",
+      "lastDistance": "Quãng đường thước rơi đọc được ở lượt gần nhất (m, làm tròn đến mm)"
+    },
+    "events": {
+      "stimulate": {
+        "kind": "action",
+        "description": "Học sinh tạo kích thích để xung thần kinh chạy trên cung phản xạ",
+        "data": {}
+      },
+      "arc-ordered": {
+        "kind": "goal",
+        "description": "Học sinh sắp xếp đúng thứ tự năm bộ phận của cung phản xạ",
+        "data": {
+          "attempts": "Số lần kiểm tra cho đến khi đúng"
+        }
+      },
+      "order-wrong": {
+        "kind": "action",
+        "description": "Học sinh kiểm tra một thứ tự cung phản xạ chưa đúng",
+        "data": {
+          "attempts": "Số lần kiểm tra đến lúc này",
+          "correctPositions": "Số vị trí đã đúng (0 đến 5)"
+        }
+      },
+      "trial-start": {
+        "kind": "action",
+        "description": "Học sinh bắt đầu một lượt đo thời gian phản xạ",
+        "data": {}
+      },
+      "trial": {
+        "kind": "result",
+        "description": "Một lượt đo hợp lệ",
+        "data": {
+          "reactionTime": "Thời gian phản xạ (ms); với thước rơi là t = √(2d/g)",
+          "distance": "Quãng đường thước rơi đọc được (cm); 0 khi đo bằng màn hình"
+        }
+      },
+      "trial-set": {
+        "kind": "result",
+        "description": "Xong một loạt đo",
+        "data": {
+          "count": "Số lượt hợp lệ trong loạt",
+          "mean": "Thời gian phản xạ trung bình (ms)",
+          "sd": "Độ lệch chuẩn mẫu, chia n − 1 (ms)",
+          "falseStarts": "Tổng số lần bấm sớm"
+        }
+      },
+      "false-start": {
+        "kind": "action",
+        "description": "Học sinh bấm trước tín hiệu hoặc quá sớm sau tín hiệu; lượt bị loại",
+        "data": {
+          "falseStarts": "Tổng số lần bấm sớm"
+        }
+      },
+      "trial-missed": {
+        "kind": "action",
+        "description": "Học sinh không bấm kịp (quá 2 s, hoặc thước đã rơi qua tay)",
+        "data": {
+          "limit": "Thời gian tối đa của lượt (ms)"
+        }
+      },
+      "clear-trials": {
+        "kind": "action",
+        "description": "Học sinh xoá các lượt đo",
+        "data": {}
+      }
+    },
+    "url": "/cung-phan-xa/1.0.0/index.html",
+    "thumbnailUrl": "/cung-phan-xa/1.0.0/thumb.png"
+  },
+  {
     "slug": "dao-dong-cuong-buc",
     "version": "1.0.0",
     "title": "Dao động tắt dần, duy trì và cưỡng bức",
@@ -1938,6 +2171,83 @@
     },
     "url": "/day-hoat-dong-kim-loai/1.0.0/index.html",
     "thumbnailUrl": "/day-hoat-dong-kim-loai/1.0.0/thumb.png"
+  },
+  {
+    "slug": "di-truyen-lien-ket-gioi-tinh",
+    "version": "1.0.0",
+    "title": "Di truyền liên kết với giới tính",
+    "subject": "biology",
+    "grades": [
+      12
+    ],
+    "description": "Tính trạng do allele lặn a nằm trên nhiễm sắc thể X (không có allele tương ứng trên Y) quy định, ví dụ bệnh mù màu đỏ – lục hoặc bệnh máu khó đông ở người. Chọn kiểu gene của mẹ (XᴬXᴬ, XᴬXᵃ, XᵃXᵃ) và của bố (XᴬY, XᵃY) để xem giao tử, bảng Punnett, tỉ lệ kiểu gene và tỉ lệ con bị bệnh riêng ở con gái và con trai; sinh ngẫu nhiên nhiều con để so sánh với lí thuyết. Chế độ phả hệ cho một gia đình ba thế hệ, học sinh suy luận kiểu gene của người được đánh dấu.",
+    "learningGoals": [
+      "Viết được giao tử và sơ đồ lai của gene lặn nằm trên X, không có allele trên Y.",
+      "Giải thích vì sao bệnh do gene lặn trên X gặp ở nam nhiều hơn nữ.",
+      "Nhận ra mẹ mang allele bệnh (XᴬXᵃ) và bố bình thường có thể sinh con trai bị bệnh với xác suất 1/2, con gái không bị bệnh.",
+      "Nhận ra bố bị bệnh truyền Xᵃ cho mọi con gái và không truyền bệnh cho con trai (di truyền chéo).",
+      "Suy luận kiểu gene của một người trong phả hệ từ kiểu hình của bố mẹ và con cái."
+    ],
+    "state": {
+      "trait": "Tính trạng đang xét: \"colour\" (mù màu đỏ – lục) hoặc \"haemo\" (máu khó đông); cả hai do allele lặn a trên X",
+      "mother": "Kiểu gene của mẹ: \"AA\" (XᴬXᴬ), \"Aa\" (XᴬXᵃ) hoặc \"aa\" (XᵃXᵃ)",
+      "father": "Kiểu gene của bố (allele trên X): \"A\" (XᴬY) hoặc \"a\" (XᵃY)",
+      "view": "Nội dung hiển thị: \"cross\" (sơ đồ lai, tỉ lệ đời con) hoặc \"pedigree\" (phả hệ)",
+      "batch": "Số con sinh ra mỗi lần bấm nút (10 đến 1000)",
+      "seed": "Hạt giống của bộ sinh số ngẫu nhiên cho các con được sinh",
+      "born": "Tổng số con đã sinh ngẫu nhiên với seed hiện tại (0 đến 5000)",
+      "pedSeed": "Số thứ tự của phả hệ (mỗi số cho một gia đình cố định)",
+      "answer": "Kiểu gene học sinh chọn cho người «?» trong phả hệ: \"\" (chưa chọn), \"AA\", \"Aa\", \"aa\", \"A\" hoặc \"a\"",
+      "attempts": "Số lần học sinh đã kiểm tra đáp án với phả hệ hiện tại",
+      "checked": "true nếu đáp án hiện tại đã được kiểm tra",
+      "solved": "true nếu học sinh đã suy ra đúng kiểu gene của người «?»"
+    },
+    "events": {
+      "cross-result": {
+        "kind": "result",
+        "description": "Học sinh chọn xong kiểu gene của mẹ hoặc bố; tỉ lệ con bị bệnh lí thuyết theo giới tính",
+        "data": {
+          "sonsAffected": "Tỉ lệ con trai bị bệnh trong số con trai (0 đến 1)",
+          "daughtersAffected": "Tỉ lệ con gái bị bệnh trong số con gái (0 đến 1)",
+          "daughtersCarrier": "Tỉ lệ con gái mang allele bệnh (XᴬXᵃ) trong số con gái (0 đến 1)",
+          "childrenAffected": "Tỉ lệ con bị bệnh trong tất cả các con (0 đến 1)"
+        }
+      },
+      "breed": {
+        "kind": "action",
+        "description": "Học sinh sinh ngẫu nhiên thêm một đợt con",
+        "data": {
+          "count": "Số con của đợt này",
+          "total": "Tổng số con đã sinh"
+        }
+      },
+      "clear-offspring": {
+        "kind": "action",
+        "description": "Học sinh xoá các con đã sinh để lấy mẫu ngẫu nhiên mới",
+        "data": {}
+      },
+      "genotype-deduced": {
+        "kind": "goal",
+        "description": "Học sinh suy luận đúng kiểu gene của người «?» trong phả hệ",
+        "data": {
+          "attempts": "Số lần kiểm tra cho đến khi đúng"
+        }
+      },
+      "wrong-answer": {
+        "kind": "action",
+        "description": "Học sinh kiểm tra một kiểu gene sai cho người «?»",
+        "data": {
+          "attempts": "Số lần kiểm tra đến lúc này"
+        }
+      },
+      "new-pedigree": {
+        "kind": "action",
+        "description": "Học sinh chuyển sang một phả hệ gia đình khác",
+        "data": {}
+      }
+    },
+    "url": "/di-truyen-lien-ket-gioi-tinh/1.0.0/index.html",
+    "thumbnailUrl": "/di-truyen-lien-ket-gioi-tinh/1.0.0/thumb.png"
   },
   {
     "slug": "di-truyen-quan-the",
@@ -3485,6 +3795,60 @@
     "thumbnailUrl": "/goc-noi-tiep/1.0.0/thumb.png"
   },
   {
+    "slug": "goc-so-le-dong-vi",
+    "version": "1.0.0",
+    "title": "Hai đường thẳng song song và các góc tạo bởi một đường cắt",
+    "subject": "math",
+    "grades": [
+      7
+    ],
+    "description": "Đường thẳng c cắt hai đường thẳng a, b tại A và B, tạo thành tám góc A₁…A₄, B₁…B₄. Kéo để xoay a hoặc b quanh giao điểm (hoặc dùng thanh trượt A₁, B₁), chọn một cặp góc so le trong, đồng vị, trong cùng phía, đối đỉnh hay kề bù để tô màu và xem số đo. Khi a // b, các góc so le trong bằng nhau, các góc đồng vị bằng nhau, hai góc trong cùng phía bù nhau; ngược lại, nếu có một cặp như vậy thì a // b. Khi kéo gần song song (trong 2°), đường thẳng tự hút vào vị trí song song.",
+    "learningGoals": [
+      "Nhận biết các cặp góc so le trong, đồng vị, trong cùng phía tạo bởi một đường thẳng cắt hai đường thẳng.",
+      "Nếu a // b thì hai góc so le trong bằng nhau, hai góc đồng vị bằng nhau, hai góc trong cùng phía bù nhau.",
+      "Dấu hiệu nhận biết: nếu có một cặp góc so le trong (hoặc đồng vị) bằng nhau thì a // b.",
+      "Hai góc đối đỉnh thì bằng nhau; hai góc kề bù có tổng bằng 180°."
+    ],
+    "state": {
+      "c": "Hướng của đường thẳng c (độ, 60–120, đo ngược chiều kim đồng hồ từ phương nằm ngang)",
+      "a1": "Số đo góc A₁ (độ, nguyên, 30–150): góc giữa tia bên phải của a và tia phía trên của c",
+      "b1": "Số đo góc B₁ (độ, nguyên, 30–150), cùng quy ước với a1; a // b khi a1 = b1",
+      "pair": "Cặp góc đang tô màu: slt1 (A₃, B₁), slt2 (A₄, B₂) so le trong; dv1–dv4 (Aᵢ, Bᵢ) đồng vị; tcp1 (A₄, B₁), tcp2 (A₃, B₂) trong cùng phía; dd1 (A₁, A₃), dd2 (B₂, B₄) đối đỉnh; kb1 (A₁, A₂), kb2 (B₃, B₄) kề bù",
+      "showValues": "true nếu hiện số đo của cả tám góc"
+    },
+    "events": {
+      "rotate-line": {
+        "kind": "action",
+        "description": "Học sinh kéo xoay đường thẳng a hoặc b trên hình rồi thả",
+        "data": {
+          "line": "1 = đường thẳng a, 2 = đường thẳng b",
+          "angle": "Số đo A₁ (nếu line = 1) hoặc B₁ (nếu line = 2) sau khi thả (độ)"
+        }
+      },
+      "line-released": {
+        "kind": "result",
+        "description": "Các góc sau khi học sinh thả một đường thẳng (kéo trên hình hoặc thanh trượt A₁, B₁)",
+        "data": {
+          "a1": "A₁ = A₃ (độ)",
+          "a2": "A₂ = A₄ = 180° − A₁ (độ)",
+          "b1": "B₁ = B₃ (độ)",
+          "b2": "B₂ = B₄ = 180° − B₁ (độ)",
+          "c": "Hướng của đường thẳng c (độ)",
+          "parallel": "1 nếu a // b, 0 nếu a cắt b"
+        }
+      },
+      "made-parallel": {
+        "kind": "goal",
+        "description": "Học sinh vừa xoay để a song song với b (các góc đồng vị bằng nhau)",
+        "data": {
+          "angle": "Số đo chung A₁ = B₁ (độ)"
+        }
+      }
+    },
+    "url": "/goc-so-le-dong-vi/1.0.0/index.html",
+    "thumbnailUrl": "/goc-so-le-dong-vi/1.0.0/thumb.png"
+  },
+  {
     "slug": "guong",
     "version": "1.0.0",
     "title": "Gương phẳng và gương cầu",
@@ -3679,6 +4043,60 @@
     "thumbnailUrl": "/ham-so-mu-logarit/1.0.0/thumb.png"
   },
   {
+    "slug": "hang-dang-thuc",
+    "version": "1.0.0",
+    "title": "Hằng đẳng thức đáng nhớ",
+    "subject": "math",
+    "grades": [
+      8
+    ],
+    "description": "Mô hình diện tích và thể tích của bốn hằng đẳng thức: (a + b)² là hình vuông cạnh a + b chia thành a², hai hình chữ nhật ab và b²; (a − b)² là phần còn lại của hình vuông a² sau khi bớt hai dải b(a − b) và hình vuông b²; a² − b² là hình vuông a² bị cắt góc b², cắt một mảnh, xoay và ghép thành hình chữ nhật (a − b)(a + b); (a + b)³ là hình lập phương chia thành 8 khối a³, 3 khối a²b, 3 khối ab², b³. Thanh trượt a, b (bước 0,5) đổi kích thước các mảnh đúng tỉ lệ; nút tách / sắp xếp lại các mảnh có hoạt hình; dòng dưới cùng kiểm tra hai vế bằng số. Chế độ đố: chạm vào từng mảnh để gắn tên hạng tử.",
+    "learningGoals": [
+      "Giải thích (a + b)² = a² + 2ab + b² và (a − b)² = a² − 2ab + b² bằng diện tích.",
+      "Giải thích a² − b² = (a − b)(a + b) bằng cách cắt và ghép lại hình (diện tích không đổi).",
+      "Giải thích (a + b)³ = a³ + 3a²b + 3ab² + b³ bằng thể tích hình lập phương.",
+      "Kiểm tra hằng đẳng thức bằng số, kể cả các trường hợp đặc biệt a = b và b = 0."
+    ],
+    "state": {
+      "identity": "Hằng đẳng thức: \"binh-phuong-tong\" (a + b)², \"binh-phuong-hieu\" (a − b)², \"hieu-hai-binh-phuong\" a² − b², \"lap-phuong-tong\" (a + b)³",
+      "a": "Độ dài a (đơn vị độ dài, 0,5–8)",
+      "b": "Độ dài b (0–8); với (a − b)² và a² − b² luôn giữ b ≤ a để vẽ được hình",
+      "apart": "true nếu các mảnh đang được tách ra / sắp xếp lại, false nếu ở hình ban đầu",
+      "t": "Tiến trình hoạt hình (0 = hình ban đầu, 1 = đã tách / sắp xếp lại)",
+      "quiz": "true nếu đang ở chế độ đố gắn tên cho từng mảnh"
+    },
+    "events": {
+      "identity-checked": {
+        "kind": "result",
+        "description": "Học sinh chọn xong hằng đẳng thức hoặc thả thanh trượt a, b; giá trị của hai vế (bằng nhau)",
+        "data": {
+          "identity": "1 = (a + b)², 2 = (a − b)², 3 = a² − b², 4 = (a + b)³",
+          "a": "Giá trị a",
+          "b": "Giá trị b",
+          "value": "Giá trị của vế trái (bằng vế phải), đơn vị diện tích hoặc thể tích"
+        }
+      },
+      "label-piece": {
+        "kind": "action",
+        "description": "Ở chế độ đố, học sinh chạm vào một mảnh để đổi tên hạng tử của nó",
+        "data": {
+          "piece": "Số thứ tự của mảnh",
+          "term": "Số thứ tự của hạng tử vừa gắn trong danh sách gợi ý (bắt đầu từ 1)"
+        }
+      },
+      "pieces-matched": {
+        "kind": "goal",
+        "description": "Ở chế độ đố, mọi mảnh (có kích thước khác 0) đều được gắn đúng hạng tử",
+        "data": {
+          "identity": "1 = (a + b)², 2 = (a − b)², 3 = a² − b², 4 = (a + b)³",
+          "taps": "Số lần chạm đã dùng"
+        }
+      }
+    },
+    "url": "/hang-dang-thuc/1.0.0/index.html",
+    "thumbnailUrl": "/hang-dang-thuc/1.0.0/thumb.png"
+  },
+  {
     "slug": "hap-dan-quy-dao",
     "version": "1.0.0",
     "title": "Lực hấp dẫn và quỹ đạo",
@@ -3731,6 +4149,75 @@
     },
     "url": "/hap-dan-quy-dao/1.0.0/index.html",
     "thumbnailUrl": "/hap-dan-quy-dao/1.0.0/thumb.png"
+  },
+  {
+    "slug": "he-mat-troi",
+    "version": "1.0.0",
+    "title": "Hệ Mặt Trời",
+    "subject": "physics",
+    "grades": [
+      6
+    ],
+    "description": "Tám hành tinh chuyển động quanh Mặt Trời. Tăng giảm tốc độ thời gian, chuyển giữa cách vẽ dễ nhìn và cách vẽ đúng tỉ lệ khoảng cách, chạm vào một hành tinh để xem khoảng cách tới Mặt Trời (AU), chu kì quay quanh Mặt Trời, đường kính so với Trái Đất và loại hành tinh (đất đá hay khí); chạm hai hành tinh để so sánh. Dải dưới cùng so sánh đường kính các hành tinh theo đúng tỉ lệ. Có câu đố xếp các hành tinh theo thứ tự từ gần đến xa Mặt Trời. Quỹ đạo vẽ gần đúng là đường tròn; Mặt Trời và hành tinh vẽ phóng to.",
+    "learningGoals": [
+      "Kể tên và xếp đúng thứ tự tám hành tinh từ gần đến xa Mặt Trời: Thủy, Kim, Trái Đất, Hỏa, Mộc, Thổ, Thiên Vương, Hải Vương.",
+      "Phân biệt bốn hành tinh vòng trong (đất đá, nhỏ) với bốn hành tinh vòng ngoài (khí, lớn), ngăn cách bởi vành đai tiểu hành tinh.",
+      "Nhận ra hành tinh càng xa Mặt Trời thì chu kì quay quanh Mặt Trời càng dài.",
+      "Hình dung khoảng cách thật: các hành tinh vòng trong nằm rất gần Mặt Trời so với các hành tinh vòng ngoài; 1 AU là khoảng cách trung bình Trái Đất – Mặt Trời."
+    ],
+    "state": {
+      "time": "Thời gian đã trôi qua kể từ lúc bắt đầu (năm Trái Đất)",
+      "speed": "Tốc độ thời gian: số năm trôi qua trong mỗi giây thực",
+      "layout": "Cách vẽ khoảng cách: \"easy\" (dễ nhìn, không theo tỉ lệ) hoặc \"scale\" (đúng tỉ lệ khoảng cách)",
+      "selected": "Hành tinh A đang xem, số thứ tự từ Mặt Trời ra 0 (Sao Thủy) … 7 (Sao Hải Vương); −1 là chưa chọn",
+      "compare": "Hành tinh B để so sánh với A (cùng cách đánh số); −1 là chưa chọn",
+      "quiz": "true khi đang làm câu đố xếp hành tinh theo khoảng cách",
+      "quizStep": "Số hành tinh đã xếp đúng thứ tự trong câu đố (0–8)",
+      "quizMistakes": "Số lần chọn sai trong câu đố"
+    },
+    "events": {
+      "select-planet": {
+        "kind": "action",
+        "description": "Học sinh chạm vào một hành tinh trên hình",
+        "data": {
+          "index": "Số thứ tự hành tinh từ Mặt Trời ra (0 = Sao Thủy … 7 = Sao Hải Vương)",
+          "distance": "Khoảng cách trung bình tới Mặt Trời (AU)",
+          "period": "Chu kì quay quanh Mặt Trời (năm)"
+        }
+      },
+      "compare-planets": {
+        "kind": "result",
+        "description": "Học sinh chọn hai hành tinh khác nhau để so sánh",
+        "data": {
+          "first": "Số thứ tự hành tinh A",
+          "second": "Số thứ tự hành tinh B",
+          "periodRatio": "Chu kì của A chia chu kì của B",
+          "distanceRatio": "Khoảng cách tới Mặt Trời của A chia của B"
+        }
+      },
+      "quiz-pick": {
+        "kind": "action",
+        "description": "Học sinh chạm một hành tinh trong câu đố xếp thứ tự",
+        "data": {
+          "index": "Số thứ tự thật của hành tinh được chạm (0 = Sao Thủy … 7 = Sao Hải Vương)",
+          "correct": "1 nếu đó đúng là hành tinh tiếp theo, 0 nếu sai"
+        }
+      },
+      "quiz-restart": {
+        "kind": "action",
+        "description": "Học sinh bắt đầu lại câu đố xếp thứ tự",
+        "data": {}
+      },
+      "planets-ordered": {
+        "kind": "goal",
+        "description": "Học sinh xếp đủ tám hành tinh đúng thứ tự từ gần đến xa Mặt Trời",
+        "data": {
+          "mistakes": "Số lần chọn sai trước khi hoàn thành"
+        }
+      }
+    },
+    "url": "/he-mat-troi/1.0.0/index.html",
+    "thumbnailUrl": "/he-mat-troi/1.0.0/thumb.png"
   },
   {
     "slug": "he-phuong-trinh",
@@ -3917,6 +4404,59 @@
     },
     "url": "/hieu-ung-nha-kinh/1.0.0/index.html",
     "thumbnailUrl": "/hieu-ung-nha-kinh/1.0.0/thumb.png"
+  },
+  {
+    "slug": "ho-hap-te-bao",
+    "version": "1.0.0",
+    "title": "Hô hấp tế bào",
+    "subject": "biology",
+    "grades": [
+      10
+    ],
+    "description": "Sơ đồ phân giải một phân tử glucose qua các giai đoạn đường phân (tế bào chất), oxi hoá pyruvic acid và chu trình Krebs (chất nền ti thể), chuỗi truyền electron (màng trong ti thể), với số ATP, NADH, FADH₂, CO₂ của từng giai đoạn. Số ATP theo cách tính trong sách giáo khoa: đường phân 2, chu trình Krebs 2, chuỗi truyền electron 10 NADH × 3 + 2 FADH₂ × 2 = 34, tổng 38 ATP (số đo thực tế khoảng 30–32 ATP). Học sinh giảm nồng độ O₂: không có O₂ nhận electron cuối cùng thì chuỗi truyền electron dừng, tế bào lên men (lên men lactic: pyruvic acid → lactic acid; lên men rượu: pyruvic acid → ethanol + CO₂) và chỉ thu được 2 ATP của đường phân. Mô hình minh hoạ: phần glucose được hô hấp hiếu khí bằng min(1, O₂/25 %), phần còn lại lên men. Có thử thách xếp bốn giai đoạn theo đúng thứ tự.",
+    "learningGoals": [
+      "Trình bày được các giai đoạn của hô hấp tế bào (đường phân, oxi hoá pyruvic acid và chu trình Krebs, chuỗi truyền electron), nơi diễn ra và sản phẩm của từng giai đoạn.",
+      "Viết được phương trình tổng quát C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + năng lượng (ATP + nhiệt) và kiểm tra cân bằng nguyên tố.",
+      "Giải thích vì sao phần lớn ATP được tạo ra ở chuỗi truyền electron và vì sao chuỗi này cần O₂.",
+      "So sánh hô hấp hiếu khí (38 ATP theo SGK) với lên men (2 ATP); phân biệt sản phẩm của lên men lactic và lên men rượu."
+    ],
+    "state": {
+      "oxygen": "Nồng độ O₂ so với mức bình thường (%, 0 đến 100); từ 25 % trở lên toàn bộ glucose được hô hấp hiếu khí",
+      "fermentation": "Kiểu lên men khi thiếu O₂: \"lactic\" (lactic acid) hoặc \"ethanol\" (ethanol + CO₂)",
+      "quiz": "true khi đang làm thử thách xếp thứ tự các giai đoạn (tên các giai đoạn trên sơ đồ được ẩn)",
+      "placed": "Số giai đoạn đã xếp đúng thứ tự trong thử thách (0 đến 4)",
+      "mistakes": "Số lần chọn sai trong thử thách",
+      "pick": "Ô chọn giai đoạn bằng bàn phím; luôn trở về −1 sau khi chọn"
+    },
+    "events": {
+      "respiration-yield": {
+        "kind": "result",
+        "description": "Học sinh vừa chỉnh xong nồng độ O₂; lượng ATP trung bình thu được từ một glucose",
+        "data": {
+          "oxygen": "Nồng độ O₂ so với bình thường (%)",
+          "atpPerGlucose": "Số ATP trung bình trên một phân tử glucose",
+          "pathway": "Con đường: 0 = chỉ lên men, 1 = vừa hô hấp hiếu khí vừa lên men, 2 = chỉ hô hấp hiếu khí",
+          "aerobicPercent": "Phần trăm glucose được hô hấp hiếu khí (%)"
+        }
+      },
+      "stage-picked": {
+        "kind": "action",
+        "description": "Trong thử thách, học sinh chọn một giai đoạn làm giai đoạn tiếp theo",
+        "data": {
+          "stage": "Giai đoạn được chọn theo thứ tự đúng: 1 đường phân, 2 oxi hoá pyruvic acid, 3 chu trình Krebs, 4 chuỗi truyền electron",
+          "correct": "1 nếu chọn đúng, 0 nếu sai"
+        }
+      },
+      "stages-ordered": {
+        "kind": "goal",
+        "description": "Học sinh xếp xong bốn giai đoạn hô hấp tế bào theo đúng thứ tự",
+        "data": {
+          "mistakes": "Số lần chọn sai trong lúc xếp"
+        }
+      }
+    },
+    "url": "/ho-hap-te-bao/1.0.0/index.html",
+    "thumbnailUrl": "/ho-hap-te-bao/1.0.0/thumb.png"
   },
   {
     "slug": "khao-sat-ham-so",
@@ -4355,6 +4895,67 @@
     },
     "url": "/lang-kinh-tan-sac/1.0.0/index.html",
     "thumbnailUrl": "/lang-kinh-tan-sac/1.0.0/thumb.png"
+  },
+  {
+    "slug": "lap-mach-dien",
+    "version": "1.0.0",
+    "title": "Lắp mạch điện đơn giản",
+    "subject": "physics",
+    "grades": [
+      7,
+      9
+    ],
+    "description": "Lắp mạch điện trên một lưới bằng pin, công tắc, bóng đèn, ampe kế, vôn kế và dây nối. Mô phỏng giải mạch (các đèn mắc nối tiếp, song song hoặc hỗn hợp), cho biết đèn nào sáng và sáng mạnh hay yếu, số chỉ của ampe kế và vôn kế, và cảnh báo khi đoản mạch, khi ampe kế mắc song song hoặc vôn kế mắc nối tiếp. Có các nhiệm vụ lắp mạch theo yêu cầu.",
+    "learningGoals": [
+      "Mạch điện kín gồm nguồn điện, dây nối, công tắc và vật tiêu thụ điện; khi công tắc mở thì mạch hở và không có dòng điện.",
+      "Mắc ampe kế nối tiếp để đo cường độ dòng điện, mắc vôn kế song song để đo hiệu điện thế giữa hai đầu vật.",
+      "Nối thẳng hai cực của nguồn bằng dây dẫn (hoặc ampe kế) gây đoản mạch, rất nguy hiểm.",
+      "So sánh độ sáng của đèn khi mắc nối tiếp, song song và hỗn hợp: đèn sáng hơn khi công suất lớn hơn."
+    ],
+    "state": {
+      "parts": "Danh sách linh kiện trên lưới 6 × 4 nút. Mỗi phần tử { e, t, on?, flip? }: e là cạnh \"h-x-y\" (nối nút (x, y) với (x+1, y)) hoặc \"v-x-y\" (nối (x, y) với (x, y+1)); t là wire, battery, switch, bulb, ammeter hoặc voltmeter; on (công tắc) true là đóng; flip (pin) true là cực dương ở nút thứ hai",
+      "tool": "Linh kiện đang chọn để đặt: wire, battery, switch, bulb, ammeter, voltmeter hoặc erase (xóa)",
+      "emf": "Hiệu điện thế mỗi pin (V)",
+      "bulbR": "Điện trở mỗi bóng đèn (Ω)",
+      "task": "Nhiệm vụ đang chọn: series1 (pin, công tắc, một đèn), series2 (hai đèn nối tiếp), parallel2 (hai đèn song song), measure (đo I và U của đèn), mixed (một đèn nối tiếp với hai đèn song song)"
+    },
+    "events": {
+      "place": {
+        "kind": "action",
+        "description": "Học sinh đặt, thay, xóa một linh kiện, đóng/mở công tắc hoặc đổi chiều pin",
+        "data": {
+          "did": "place (đặt), remove (xóa), toggle (đóng/mở công tắc) hoặc flip (đổi chiều pin)",
+          "type": "Loại linh kiện: wire, battery, switch, bulb, ammeter, voltmeter",
+          "parts": "Số linh kiện trên lưới sau thao tác"
+        }
+      },
+      "preset": {
+        "kind": "action",
+        "description": "Học sinh chọn một mạch mẫu hoặc xóa hết lưới",
+        "data": {
+          "parts": "Số linh kiện trên lưới"
+        }
+      },
+      "circuit-closed": {
+        "kind": "result",
+        "description": "Mạch vừa thành mạch kín (hoặc kết quả của mạch kín thay đổi) sau một thao tác",
+        "data": {
+          "current": "Cường độ dòng điện qua nguồn (A)",
+          "litBulbs": "Số đèn sáng",
+          "bulbs": "Tổng số đèn trên lưới",
+          "errors": "Số lỗi mắc dụng cụ đo (ampe kế song song, vôn kế nối tiếp)"
+        }
+      },
+      "task-done": {
+        "kind": "goal",
+        "description": "Học sinh lắp đúng mạch theo nhiệm vụ đang chọn",
+        "data": {
+          "task": "Số thứ tự nhiệm vụ: 1 pin–công tắc–một đèn, 2 hai đèn nối tiếp, 3 hai đèn song song, 4 đo I và U của đèn, 5 mạch hỗn hợp"
+        }
+      }
+    },
+    "url": "/lap-mach-dien/1.0.0/index.html",
+    "thumbnailUrl": "/lap-mach-dien/1.0.0/thumb.png"
   },
   {
     "slug": "lien-ket-hoa-hoc",
@@ -4812,6 +5413,57 @@
     "thumbnailUrl": "/mat-phang-nghieng/1.0.0/thumb.png"
   },
   {
+    "slug": "mat-phang-toa-do",
+    "version": "1.0.0",
+    "title": "Mặt phẳng tọa độ",
+    "subject": "math",
+    "grades": [
+      7
+    ],
+    "description": "Mặt phẳng tọa độ Oxy với lưới ô vuông. Đặt điểm M bằng cách bấm, kéo trên lưới hoặc dùng thanh trượt hoành độ, tung độ; đọc tọa độ qua hai đường vuông góc hạ xuống hai trục, xem M thuộc góc phần tư nào (điểm trên trục không thuộc góc phần tư nào) và các điểm đối xứng với M qua Ox, Oy, O. Trò chơi tìm kho báu: đưa M tới đúng điểm có tọa độ cho trước.",
+    "learningGoals": [
+      "Xác định tọa độ (x; y) của một điểm trên mặt phẳng tọa độ: hoành độ viết trước, tung độ viết sau.",
+      "Biểu diễn một điểm khi biết tọa độ của nó.",
+      "Nhận biết góc phần tư chứa một điểm từ dấu của hoành độ và tung độ; điểm nằm trên các trục tọa độ không thuộc góc phần tư nào.",
+      "Nhận ra tọa độ của điểm đối xứng qua Ox (x; −y), qua Oy (−x; y) và qua gốc O (−x; −y)."
+    ],
+    "state": {
+      "mode": "Chế độ: \"explore\" (khám phá) hoặc \"game\" (trò chơi tìm kho báu)",
+      "x": "Hoành độ của điểm M, từ −6 đến 6, bước 0,5",
+      "y": "Tung độ của điểm M, từ −6 đến 6, bước 0,5",
+      "showCoords": "true nếu hiện tọa độ của M trên hình (chế độ khám phá)",
+      "showMirror": "true nếu hiện các điểm đối xứng của M qua Ox (M₁), Oy (M₂) và O (M₃)",
+      "found": "Số kho báu đã tìm được trong trò chơi (0 đến 8); kho báu cần tìm tiếp là kho báu thứ found + 1"
+    },
+    "events": {
+      "point-placed": {
+        "kind": "result",
+        "description": "Học sinh thả điểm M sau khi bấm, kéo trên lưới hoặc thả thanh trượt; báo tọa độ và góc phần tư",
+        "data": {
+          "x": "Hoành độ của M",
+          "y": "Tung độ của M",
+          "quadrant": "Góc phần tư chứa M: 1 đến 4 (I đến IV), 0 nếu M nằm trên một trục tọa độ"
+        }
+      },
+      "treasure-found": {
+        "kind": "goal",
+        "description": "Trong trò chơi, học sinh đặt M đúng vào tọa độ của kho báu đang cần tìm",
+        "data": {
+          "x": "Hoành độ của kho báu",
+          "y": "Tung độ của kho báu",
+          "found": "Số kho báu đã tìm được, tính cả kho báu này"
+        }
+      },
+      "game-restarted": {
+        "kind": "action",
+        "description": "Học sinh bấm \"Chơi lại\" để bắt đầu trò chơi tìm kho báu từ đầu",
+        "data": {}
+      }
+    },
+    "url": "/mat-phang-toa-do/1.0.0/index.html",
+    "thumbnailUrl": "/mat-phang-toa-do/1.0.0/thumb.png"
+  },
+  {
     "slug": "mat-va-tat-khuc-xa",
     "version": "1.0.0",
     "title": "Mắt và các tật khúc xạ",
@@ -5100,6 +5752,80 @@
     },
     "url": "/mol/1.0.0/index.html",
     "thumbnailUrl": "/mol/1.0.0/thumb.png"
+  },
+  {
+    "slug": "nam-cham-tu-pho",
+    "version": "1.0.0",
+    "title": "Nam châm và từ phổ",
+    "subject": "physics",
+    "grades": [
+      7
+    ],
+    "description": "Rắc mạt sắt quanh một hoặc hai nam châm thẳng để thấy từ phổ, dùng kim nam châm nhỏ và la bàn thử để tìm hướng của từ trường, vẽ đường sức từ đi ra ở cực Bắc và đi vào ở cực Nam. Kéo, xoay, đảo cực nam châm để thấy hai cực cùng tên đẩy nhau, khác tên hút nhau, và tìm điểm từ trường triệt tiêu giữa hai cực cùng tên. Cảnh thứ hai cho thấy từ trường Trái Đất và vì sao kim la bàn chỉ hướng Bắc – Nam.",
+    "learningGoals": [
+      "Mô tả từ phổ của nam châm thẳng bằng mạt sắt và đường sức từ.",
+      "Biết đường sức từ bên ngoài nam châm đi ra ở cực Bắc (N), đi vào ở cực Nam (S); kim nam châm đặt trong từ trường nằm dọc theo đường sức, cực Bắc của kim chỉ theo chiều đường sức.",
+      "Hai cực cùng tên đẩy nhau, hai cực khác tên hút nhau; đảo cực nam châm thì chiều từ trường đảo ngược.",
+      "Từ trường của hai nam châm là tổng hợp từ trường của từng nam châm; giữa hai cực cùng tên có một điểm từ trường triệt tiêu.",
+      "Trái Đất có từ trường; gần cực Bắc địa lí là cực từ Nam, nên cực Bắc của kim la bàn chỉ về phía Bắc địa lí."
+    ],
+    "state": {
+      "scene": "\"magnets\" (nam châm thẳng trên tấm bìa) hoặc \"earth\" (từ trường Trái Đất)",
+      "count": "Số nam châm thẳng: 1 hoặc 2",
+      "x1": "Tọa độ ngang tâm nam châm 1 (đơn vị dài của tấm bìa, gốc ở giữa, tấm bìa rộng 12 đơn vị, cao 7,2)",
+      "y1": "Tọa độ dọc tâm nam châm 1 (đơn vị dài, hướng lên là dương)",
+      "a1": "Góc quay nam châm 1 (độ, ngược chiều kim đồng hồ từ phương ngang sang phải), là hướng từ cực S đến cực N",
+      "x2": "Tọa độ ngang tâm nam châm 2 (đơn vị dài)",
+      "y2": "Tọa độ dọc tâm nam châm 2 (đơn vị dài)",
+      "a2": "Góc quay nam châm 2 (độ), hướng từ S đến N",
+      "px": "Tọa độ ngang của la bàn thử (đơn vị dài)",
+      "py": "Tọa độ dọc của la bàn thử (đơn vị dài)",
+      "found": "true khi la bàn thử đang đặt tại điểm từ trường triệt tiêu giữa hai cực cùng tên",
+      "showFilings": "Hiện mạt sắt",
+      "showLines": "Hiện đường sức từ",
+      "showCompass": "Hiện lưới kim nam châm nhỏ"
+    },
+    "events": {
+      "move-magnet": {
+        "kind": "action",
+        "description": "Học sinh kéo một nam châm đến chỗ mới trên tấm bìa",
+        "data": {
+          "index": "Số thứ tự nam châm (1 hoặc 2)",
+          "x": "Tọa độ ngang mới của tâm (đơn vị dài)",
+          "y": "Tọa độ dọc mới của tâm (đơn vị dài)",
+          "angle": "Góc quay của nam châm (độ, hướng S → N)"
+        }
+      },
+      "flip-magnet": {
+        "kind": "action",
+        "description": "Học sinh đảo cực một nam châm (quay 180°)",
+        "data": {
+          "index": "Số thứ tự nam châm (1 hoặc 2)",
+          "angle": "Góc quay mới (độ, hướng S → N)"
+        }
+      },
+      "compass-read": {
+        "kind": "result",
+        "description": "Học sinh thả la bàn thử ở một vị trí; kim chỉ hướng của từ trường tại đó",
+        "data": {
+          "x": "Tọa độ ngang của la bàn (đơn vị dài)",
+          "y": "Tọa độ dọc của la bàn (đơn vị dài)",
+          "angle": "Hướng cực Bắc của kim, cũng là hướng của từ trường (độ, ngược chiều kim đồng hồ từ phương ngang sang phải)",
+          "strength": "Độ mạnh từ trường tương đối (1 = từ trường của một cực ở cách 1 đơn vị dài)"
+        }
+      },
+      "neutral-point": {
+        "kind": "goal",
+        "description": "Học sinh đặt la bàn thử đúng vào điểm từ trường triệt tiêu giữa hai cực cùng tên",
+        "data": {
+          "x": "Tọa độ ngang của la bàn (đơn vị dài)",
+          "y": "Tọa độ dọc của la bàn (đơn vị dài)",
+          "strength": "Độ mạnh từ trường tương đối tại đó"
+        }
+      }
+    },
+    "url": "/nam-cham-tu-pho/1.0.0/index.html",
+    "thumbnailUrl": "/nam-cham-tu-pho/1.0.0/thumb.png"
   },
   {
     "slug": "nang-luong-phan-ung",
@@ -5424,6 +6150,75 @@
     "thumbnailUrl": "/nguyen-phan-giam-phan/1.0.0/thumb.png"
   },
   {
+    "slug": "nhan-biet-chat",
+    "version": "1.0.0",
+    "title": "Nhận biết dung dịch bằng thuốc thử",
+    "subject": "chemistry",
+    "grades": [
+      8,
+      9
+    ],
+    "description": "Các lọ dung dịch mất nhãn chứa HCl, NaOH, NaCl, Na₂SO₄, Na₂CO₃ hoặc AgNO₃. Học sinh trích mẫu thử, nhỏ thuốc thử (quỳ tím, phenolphthalein, BaCl₂, AgNO₃, HCl) vào từng lọ, quan sát đổi màu, kết tủa (kèm màu) hoặc sủi bọt khí, rồi dán nhãn cho từng lọ. Mô phỏng đếm số lần thử và so với số lần ít nhất luôn đủ để nhận biết.\n\nBảng hiện tượng (hàng: dung dịch; cột: quỳ tím | phenolphthalein | BaCl₂ | AgNO₃ | HCl):\nHCl: đỏ | không màu | – | kết tủa trắng AgCl | –\nNaOH: xanh | hồng | – | kết tủa nâu đen Ag₂O | – (phản ứng trung hòa, không quan sát được)\nNaCl: tím | không màu | – | kết tủa trắng AgCl | –\nNa₂SO₄: tím | không màu | kết tủa trắng BaSO₄ | – (Ag₂SO₄ ít tan) | –\nNa₂CO₃: xanh | hồng | kết tủa trắng BaCO₃ | kết tủa vàng nhạt Ag₂CO₃ | sủi bọt khí CO₂\nAgNO₃: tím | không màu | kết tủa trắng AgCl | – | kết tủa trắng AgCl",
+    "learningGoals": [
+      "Dùng chất chỉ thị (quỳ tím, phenolphthalein) để phân biệt dung dịch acid, base và muối trung tính.",
+      "Nhận biết ion bằng phản ứng tạo kết tủa hoặc tạo khí: Cl⁻ với AgNO₃ (AgCl trắng), SO₄²⁻ và CO₃²⁻ với BaCl₂, CO₃²⁻ với HCl (khí CO₂).",
+      "Viết phương trình hóa học của các phản ứng dùng để nhận biết.",
+      "Lập trình tự nhận biết hợp lý với ít lần thử nhất, dùng phép loại trừ cho lọ cuối cùng."
+    ],
+    "state": {
+      "preset": "Bộ lọ: \"acid-base\" (HCl, NaOH, NaCl), \"sulfate\" (HCl, NaOH, NaCl, Na₂SO₄), \"salts\" (NaCl, Na₂SO₄, Na₂CO₃, AgNO₃), \"all\" (cả sáu)",
+      "seed": "Số nguyên quyết định lọ nào chứa dung dịch nào (thứ tự ẩn)",
+      "reagent": "Thuốc thử đang chọn: q = quỳ tím, p = phenolphthalein, b = BaCl₂, a = AgNO₃, h = HCl",
+      "target": "Số thứ tự lọ sẽ nhỏ thuốc thử khi bấm nút (bắt đầu từ 1)",
+      "t1": "Các thuốc thử đã nhỏ vào lọ 1, theo thứ tự, mỗi ký tự một mã (q, p, b, a, h); t2…t6 tương tự cho lọ 2…6",
+      "t2": "Như t1, cho lọ 2",
+      "t3": "Như t1, cho lọ 3",
+      "t4": "Như t1, cho lọ 4",
+      "t5": "Như t1, cho lọ 5",
+      "t6": "Như t1, cho lọ 6",
+      "l1": "Nhãn học sinh dán cho lọ 1: công thức dung dịch (HCl, NaOH, NaCl, Na2SO4, Na2CO3, AgNO3) hoặc \"\" nếu chưa dán; l2…l6 tương tự",
+      "l2": "Như l1, cho lọ 2",
+      "l3": "Như l1, cho lọ 3",
+      "l4": "Như l1, cho lọ 4",
+      "l5": "Như l1, cho lọ 5",
+      "l6": "Như l1, cho lọ 6"
+    },
+    "events": {
+      "add-reagent": {
+        "kind": "action",
+        "description": "Học sinh nhỏ một thuốc thử vào mẫu thử của một lọ",
+        "data": {
+          "tube": "Số thứ tự lọ (từ 1)",
+          "reagent": "Mã thuốc thử: q, p, b, a, h",
+          "look": "Hiện tượng thấy được: red, blue, purple, pink, clear, ppt-white, ppt-yellow, ppt-black, gas"
+        }
+      },
+      "new-round": {
+        "kind": "action",
+        "description": "Học sinh bắt đầu lượt mới: các lọ được xáo lại, xóa kết quả thử và nhãn"
+      },
+      "labelled": {
+        "kind": "result",
+        "description": "Mọi lọ đều đã được dán nhãn (phát lại mỗi lần học sinh đổi một nhãn khi tất cả đã có nhãn)",
+        "data": {
+          "correct": "Số lọ dán nhãn đúng",
+          "total": "Tổng số lọ",
+          "additions": "Tổng số lần đã nhỏ thuốc thử"
+        }
+      },
+      "identified": {
+        "kind": "goal",
+        "description": "Dán đúng tất cả các lọ, kết quả thử đủ để suy ra từng lọ (không đoán mò), và số lần thử không quá số lần ít nhất cần",
+        "data": {
+          "additions": "Số lần đã nhỏ thuốc thử",
+          "best": "Số lần ít nhất luôn đủ để nhận biết bộ lọ này"
+        }
+      }
+    },
+    "url": "/nhan-biet-chat/1.0.0/index.html",
+    "thumbnailUrl": "/nhan-biet-chat/1.0.0/thumb.png"
+  },
+  {
     "slug": "nhi-thuc-newton",
     "version": "1.0.0",
     "title": "Nhị thức Niu-tơn và tam giác Pa-xcan",
@@ -5477,6 +6272,96 @@
     },
     "url": "/nhi-thuc-newton/1.0.0/index.html",
     "thumbnailUrl": "/nhi-thuc-newton/1.0.0/thumb.png"
+  },
+  {
+    "slug": "nhiem-dien",
+    "version": "1.0.0",
+    "title": "Sự nhiễm điện do cọ xát",
+    "subject": "physics",
+    "grades": [
+      8
+    ],
+    "description": "Cọ xát thước nhựa, đũa thủy tinh hoặc bóng bay với mảnh len, mảnh lụa hoặc tóc và xem electron chuyển từ vật này sang vật kia theo dãy nhiễm điện (thủy tinh, tóc, len, lụa, cao su, nhựa: chất đứng trước dễ mất electron hơn). Dự đoán dấu điện tích trước khi cọ. Đưa vật nhiễm điện lại gần mẩu giấy vụn, cho hai vật nhiễm điện lại gần nhau để thấy chúng hút hay đẩy, và chạm vật vào điện nghiệm để thấy hai lá kim loại xòe ra. Mỗi dấu + hoặc − tượng trưng cho rất nhiều điện tích; chỉ electron di chuyển.",
+    "learningGoals": [
+      "Giải thích sự nhiễm điện do cọ xát: electron di chuyển từ vật này sang vật kia; vật mất electron nhiễm điện dương, vật nhận thêm electron nhiễm điện âm.",
+      "Dự đoán dấu điện tích của vật sau khi cọ xát (thủy tinh cọ lụa nhiễm điện dương, thước nhựa cọ len nhiễm điện âm).",
+      "Nhận ra tổng điện tích không đổi: hai vật cọ xát nhau nhiễm điện trái dấu, độ lớn bằng nhau.",
+      "Hai vật nhiễm điện cùng loại thì đẩy nhau, khác loại thì hút nhau; vật nhiễm điện hút được các vật nhẹ không nhiễm điện như mẩu giấy vụn.",
+      "Dùng điện nghiệm để phát hiện vật nhiễm điện: điện tích càng nhiều, hai lá xòe càng rộng."
+    ],
+    "state": {
+      "scene": "Thí nghiệm đang xem: \"rub\" (cọ xát), \"paper\" (hút giấy vụn), \"pair\" (hai vật lại gần nhau), \"electroscope\" (điện nghiệm)",
+      "m1": "Vật 1: \"ruler\" (thước nhựa), \"glass\" (đũa thủy tinh) hoặc \"balloon\" (bóng bay)",
+      "m2": "Vật 2, cùng các lựa chọn như vật 1",
+      "cloth": "Vật dùng để cọ: \"wool\" (mảnh len), \"silk\" (mảnh lụa) hoặc \"hair\" (tóc)",
+      "q1": "Điện tích của vật 1 (đơn vị quy ước, mỗi đơn vị ứng với rất nhiều electron; dương là thiếu electron)",
+      "q2": "Điện tích của vật 2 (cùng đơn vị)",
+      "qc": "Điện tích của vật dùng để cọ (cùng đơn vị)",
+      "qe": "Điện tích của điện nghiệm (cùng đơn vị)",
+      "use": "Vật (1 hoặc 2) dùng trong thí nghiệm giấy vụn và điện nghiệm",
+      "near": "true khi vật 2 được đưa lại gần vật 1 đang treo",
+      "guess": "Dự đoán của học sinh cho lần cọ tiếp theo: \"\" (chưa dự đoán), \"+\" hoặc \"-\"",
+      "showOrder": "true khi dãy nhiễm điện được hiện trên hình"
+    },
+    "events": {
+      "rub": {
+        "kind": "action",
+        "description": "Học sinh cọ xát vật 1 hoặc vật 2 với vật dùng để cọ",
+        "data": {
+          "object": "Vật được cọ (1 hoặc 2)",
+          "gained": "Điện tích vật nhận được trong lần cọ này (đơn vị quy ước; âm là nhận thêm electron)",
+          "charge": "Điện tích của vật sau khi cọ",
+          "clothCharge": "Điện tích của vật dùng để cọ sau khi cọ",
+          "prediction": "Dự đoán trước khi cọ: 1 dương, −1 âm, 0 không dự đoán"
+        }
+      },
+      "prediction-correct": {
+        "kind": "goal",
+        "description": "Học sinh dự đoán đúng dấu điện tích của vật trước khi cọ xát",
+        "data": {
+          "object": "Vật được cọ (1 hoặc 2)",
+          "sign": "Dấu điện tích vật nhận được: 1 dương, −1 âm"
+        }
+      },
+      "move-object": {
+        "kind": "action",
+        "description": "Học sinh đưa vật 2 lại gần hoặc ra xa vật 1 đang treo",
+        "data": {
+          "near": "1 khi đưa lại gần, 0 khi đưa ra xa"
+        }
+      },
+      "bring-together": {
+        "kind": "result",
+        "description": "Hai vật đều nhiễm điện được đưa lại gần nhau",
+        "data": {
+          "interaction": "1 nếu hút nhau, −1 nếu đẩy nhau",
+          "q1": "Điện tích vật 1 (đơn vị quy ước)",
+          "q2": "Điện tích vật 2 (đơn vị quy ước)"
+        }
+      },
+      "touch-electroscope": {
+        "kind": "action",
+        "description": "Học sinh chạm vật vào núm điện nghiệm, điện tích được chia cho điện nghiệm",
+        "data": {
+          "object": "Vật được chạm (1 hoặc 2)",
+          "moved": "Điện tích chuyển sang điện nghiệm (đơn vị quy ước)",
+          "charge": "Điện tích của điện nghiệm sau khi chạm",
+          "angle": "Góc giữa hai lá điện nghiệm (độ)"
+        }
+      },
+      "ground-electroscope": {
+        "kind": "action",
+        "description": "Học sinh chạm tay vào núm, điện nghiệm mất hết điện tích",
+        "data": {}
+      },
+      "discharge-all": {
+        "kind": "action",
+        "description": "Học sinh làm mất điện tích của mọi vật",
+        "data": {}
+      }
+    },
+    "url": "/nhiem-dien/1.0.0/index.html",
+    "thumbnailUrl": "/nhiem-dien/1.0.0/thumb.png"
   },
   {
     "slug": "nhiet-ke-thang-nhiet-do",
@@ -5703,6 +6588,98 @@
     },
     "url": "/phan-so/1.0.0/index.html",
     "thumbnailUrl": "/phan-so/1.0.0/thumb.png"
+  },
+  {
+    "slug": "phan-xa-am-tieng-vang",
+    "version": "1.0.0",
+    "title": "Phản xạ âm, tiếng vang và đo độ sâu",
+    "subject": "physics",
+    "grades": [
+      7
+    ],
+    "description": "Một người hét về phía bức tường ở khoảng cách thay đổi được. Quan sát âm truyền tới tường, phản xạ trở lại và thời gian đi về t = 2d/v; khi t ≥ 1/15 s thì nghe được tiếng vang riêng. Đổi mặt phản xạ (tường bê tông, vách gỗ, rèm xốp) để thấy vật cứng, nhẵn phản xạ âm tốt còn vật mềm, xốp hấp thụ âm. Cảnh thứ hai: tàu biển phát sóng siêu âm, đo thời gian đi và về rồi tính độ sâu đáy biển h = v·t/2.",
+    "learningGoals": [
+      "Âm gặp vật cản thì bị phản xạ; âm phản xạ trở về sau thời gian t = 2d/v.",
+      "Nghe được tiếng vang khi âm phản xạ đến tai chậm hơn âm phát ra ít nhất 1/15 s, tức là vật phản xạ cách người khoảng 11,3 m trở lên trong không khí (v = 340 m/s).",
+      "Vật cứng, có bề mặt nhẵn phản xạ âm tốt; vật mềm, xốp, bề mặt gồ ghề phản xạ âm kém (hấp thụ âm).",
+      "Dùng phản xạ của siêu âm để đo độ sâu đáy biển: h = v·t/2 với v = 1500 m/s trong nước biển."
+    ],
+    "state": {
+      "scene": "\"wall\" (tiếng vang trước bức tường) hoặc \"sonar\" (đo độ sâu đáy biển)",
+      "distance": "Khoảng cách từ người đến tường d (m), 2 đến 40",
+      "surface": "Mặt phản xạ: \"concrete\" (bê tông, phản xạ 95 % biên độ), \"wood\" (gỗ, 60 %), \"curtain\" (rèm xốp, 15 %); các tỉ lệ chỉ để minh họa",
+      "t": "Thời gian kể từ lúc âm (hoặc siêu âm) vừa phát ra (s)",
+      "flying": "true khi âm đang truyền",
+      "returned": "true khi âm đã phản xạ trở về chỗ phát",
+      "seed": "Số hiệu vùng biển; quyết định độ sâu đáy biển được giấu (200 đến 4000 m)",
+      "answer": "Độ sâu học sinh tính được và nhập vào (m)",
+      "measured": "Thời gian đi và về của siêu âm đo được lần gần nhất (s), 0 nếu chưa đo",
+      "solved": "true khi học sinh đã tính đúng độ sâu vùng biển này"
+    },
+    "events": {
+      "shout": {
+        "kind": "action",
+        "description": "Học sinh cho người hét một tiếng về phía tường",
+        "data": {
+          "distance": "Khoảng cách đến tường (m)"
+        }
+      },
+      "move-wall": {
+        "kind": "action",
+        "description": "Học sinh kéo bức tường đến khoảng cách mới",
+        "data": {
+          "distance": "Khoảng cách mới đến tường (m)"
+        }
+      },
+      "echo": {
+        "kind": "result",
+        "description": "Âm phản xạ từ tường vừa trở về chỗ người đứng",
+        "data": {
+          "distance": "Khoảng cách đến tường d (m)",
+          "delay": "Thời gian đi và về t = 2d/v (s)",
+          "heard": "1 nếu t ≥ 1/15 s (nghe được tiếng vang riêng), 0 nếu không",
+          "amplitude": "Biên độ âm phản xạ so với âm tới (0 đến 1)"
+        }
+      },
+      "ping": {
+        "kind": "action",
+        "description": "Học sinh cho tàu phát một xung siêu âm xuống đáy biển",
+        "data": {}
+      },
+      "sonar-echo": {
+        "kind": "result",
+        "description": "Siêu âm phản xạ từ đáy biển vừa trở về máy thu trên tàu",
+        "data": {
+          "delay": "Thời gian từ lúc phát đến lúc thu t (s)"
+        }
+      },
+      "depth-answer": {
+        "kind": "result",
+        "description": "Học sinh nhập độ sâu tính được và bấm kiểm tra",
+        "data": {
+          "answer": "Độ sâu học sinh nhập (m)",
+          "correct": "1 nếu sai lệch không quá 2 % (ít nhất 5 m), 0 nếu không"
+        }
+      },
+      "depth-found": {
+        "kind": "goal",
+        "description": "Học sinh tính đúng độ sâu đáy biển được giấu, sai lệch không quá 2 % (ít nhất 5 m)",
+        "data": {
+          "depth": "Độ sâu thật (m)",
+          "answer": "Độ sâu học sinh tính được (m)",
+          "delay": "Thời gian đi và về của siêu âm (s)"
+        }
+      },
+      "new-sea": {
+        "kind": "action",
+        "description": "Học sinh chuyển sang một vùng biển khác (độ sâu mới được giấu)",
+        "data": {
+          "seed": "Số hiệu vùng biển mới"
+        }
+      }
+    },
+    "url": "/phan-xa-am-tieng-vang/1.0.0/index.html",
+    "thumbnailUrl": "/phan-xa-am-tieng-vang/1.0.0/thumb.png"
   },
   {
     "slug": "phep-bien-hinh",
@@ -7055,6 +8032,62 @@
     "thumbnailUrl": "/thong-ke-mo-ta/1.0.0/thumb.png"
   },
   {
+    "slug": "ti-le-thuan-nghich",
+    "version": "1.0.0",
+    "title": "Đại lượng tỉ lệ thuận và tỉ lệ nghịch",
+    "subject": "math",
+    "grades": [
+      7
+    ],
+    "description": "Bốn tình huống thực tế: mua vở (số tiền theo số quyển), số công nhân và thời gian làm xong một công việc, quãng đường đi được theo thời gian, cước taxi theo số km. Học sinh dùng nút − / + điền bốn giá trị của x, bảng tự tính y, y/x và x·y. Nếu y/x không đổi thì y tỉ lệ thuận với x (y = kx), nếu x·y không đổi thì y tỉ lệ nghịch với x (xy = a), nếu cả hai đều thay đổi thì không phải. Các điểm (x; y) được vẽ cùng đồ thị của tình huống: đường thẳng qua gốc O, đường cong y = a/x, hoặc đường thẳng không qua O. Mỗi tình huống có một câu hỏi tìm giá trị y còn thiếu tại một x nằm ngoài bảng.",
+    "learningGoals": [
+      "Nhận biết hai đại lượng tỉ lệ thuận: y/x = k không đổi, y = kx.",
+      "Nhận biết hai đại lượng tỉ lệ nghịch: x·y = a không đổi, y = a/x.",
+      "Phân biệt với trường hợp không tỉ lệ (ví dụ cước taxi có phí mở cửa).",
+      "Giải bài toán tìm giá trị còn thiếu bằng hệ số tỉ lệ.",
+      "Đồ thị của y = kx là đường thẳng đi qua gốc tọa độ; đồ thị của y = a/x (x > 0) là một đường cong."
+    ],
+    "state": {
+      "scenario": "Tình huống: \"gia-tien\" (vở 8 nghìn đồng/quyển, y = 8x), \"cong-nhan\" (công việc 60 giờ công, xy = 60), \"quang-duong\" (12 km/h, y = 12x), \"taxi\" (y = 12x + 10, không tỉ lệ)",
+      "x1": "Giá trị x thứ nhất trong bảng (số nguyên 1–12)",
+      "x2": "Giá trị x thứ hai (1–12)",
+      "x3": "Giá trị x thứ ba (1–12)",
+      "x4": "Giá trị x thứ tư (1–12)",
+      "answer": "Giá trị y học sinh tính được cho câu hỏi giá trị còn thiếu (0–200, đơn vị của y)",
+      "showGraph": "true nếu vẽ các điểm và đồ thị"
+    },
+    "events": {
+      "table-classified": {
+        "kind": "result",
+        "description": "Bảng giá trị vừa được điền xong (đổi một giá trị x hoặc đổi tình huống) và được phân loại",
+        "data": {
+          "type": "1 = tỉ lệ thuận, 2 = tỉ lệ nghịch, 0 = không tỉ lệ, −1 = chưa đủ hai giá trị x khác nhau",
+          "constant": "Hệ số tỉ lệ k = y/x (nếu type = 1) hoặc a = x·y (nếu type = 2); 0 nếu không có",
+          "scenario": "Tình huống: 1 = mua vở, 2 = công nhân, 3 = quãng đường, 4 = taxi"
+        }
+      },
+      "check-answer": {
+        "kind": "action",
+        "description": "Học sinh bấm Kiểm tra câu trả lời cho giá trị còn thiếu",
+        "data": {
+          "answer": "Giá trị y học sinh chọn (đơn vị của y)",
+          "correct": "1 nếu đúng, 0 nếu sai"
+        }
+      },
+      "missing-value-found": {
+        "kind": "goal",
+        "description": "Học sinh tìm đúng giá trị y còn thiếu",
+        "data": {
+          "x": "Giá trị x của câu hỏi",
+          "y": "Giá trị y đúng (đơn vị của y)",
+          "scenario": "Tình huống: 1 = mua vở, 2 = công nhân, 3 = quãng đường, 4 = taxi"
+        }
+      }
+    },
+    "url": "/ti-le-thuan-nghich/1.0.0/index.html",
+    "thumbnailUrl": "/ti-le-thuan-nghich/1.0.0/thumb.png"
+  },
+  {
     "slug": "ti-so-luong-giac",
     "version": "1.0.0",
     "title": "Tỉ số lượng giác của góc nhọn",
@@ -7304,6 +8337,60 @@
     "thumbnailUrl": "/to-hop/1.0.0/thumb.png"
   },
   {
+    "slug": "toc-do-chuyen-dong",
+    "version": "1.0.0",
+    "title": "Tốc độ và đồ thị quãng đường – thời gian",
+    "subject": "physics",
+    "grades": [
+      7
+    ],
+    "description": "Hai hoặc ba vật chạy trên cùng một đường thẳng với tốc độ do học sinh chọn; vật A có thể dừng lại một lúc ở giữa đường. Đồng hồ bấm giờ và các mốc quãng đường giúp đo tốc độ, đồ thị quãng đường – thời gian được vẽ ngay khi các vật chạy. Học sinh đọc tốc độ từ độ dốc của đồ thị và trả lời câu hỏi.",
+    "learningGoals": [
+      "Tính tốc độ v = s / t và đổi đơn vị: 1 m/s = 3,6 km/h.",
+      "Đồ thị quãng đường – thời gian của chuyển động đều là đường thẳng; đường càng dốc thì vật chạy càng nhanh.",
+      "Đoạn đồ thị nằm ngang cho biết vật đứng yên (quãng đường không đổi theo thời gian).",
+      "Tốc độ trung bình cả chuyến = tổng quãng đường / tổng thời gian, kể cả thời gian dừng lại."
+    ],
+    "state": {
+      "length": "Chiều dài đường chạy (m)",
+      "vA": "Tốc độ của vật A khi chuyển động (m/s)",
+      "vB": "Tốc độ của vật B (m/s)",
+      "vC": "Tốc độ của vật C (m/s), chỉ dùng khi three = true",
+      "three": "true nếu có vật C tham gia",
+      "stop": "true nếu vật A dừng lại ở giữa đường chạy",
+      "stopTime": "Thời gian A dừng lại (s)",
+      "time": "Số chỉ đồng hồ bấm giờ (s)",
+      "finished": "true khi mọi vật đã về đích",
+      "showSlope": "true thì vẽ Δs của từng vật trong cùng một khoảng Δt để đọc tốc độ từ độ dốc",
+      "question": "Câu hỏi đang chọn: fastest (vật nhanh nhất), first (về đích đầu tiên), still (có lúc đứng yên), speedB (tốc độ của B), avgA (tốc độ trung bình của A)",
+      "answer": "Câu trả lời cho câu hỏi chọn vật: A, B, C hoặc none (không có vật nào)",
+      "guess": "Câu trả lời dạng số cho speedB và avgA (m/s)"
+    },
+    "events": {
+      "race-finished": {
+        "kind": "result",
+        "description": "Vật cuối cùng vừa về đích; thời gian và tốc độ trung bình của từng vật",
+        "data": {
+          "timeA": "Thời gian về đích của A (s), kể cả lúc dừng",
+          "timeB": "Thời gian về đích của B (s)",
+          "timeC": "Thời gian về đích của C (s); không có khi chỉ có hai vật",
+          "avgSpeedA": "Tốc độ trung bình của A cả quãng đường (m/s)",
+          "avgSpeedB": "Tốc độ trung bình của B (m/s)",
+          "avgSpeedC": "Tốc độ trung bình của C (m/s); không có khi chỉ có hai vật"
+        }
+      },
+      "answered": {
+        "kind": "goal",
+        "description": "Học sinh trả lời đúng một câu hỏi đọc đồ thị",
+        "data": {
+          "question": "Số thứ tự câu hỏi: 1 vật nhanh nhất, 2 về đích đầu tiên, 3 có lúc đứng yên, 4 tốc độ của B, 5 tốc độ trung bình của A"
+        }
+      }
+    },
+    "url": "/toc-do-chuyen-dong/1.0.0/index.html",
+    "thumbnailUrl": "/toc-do-chuyen-dong/1.0.0/thumb.png"
+  },
+  {
     "slug": "toc-do-phan-ung",
     "version": "1.0.0",
     "title": "Tốc độ phản ứng",
@@ -7411,6 +8498,70 @@
     },
     "url": "/tong-hop-dao-dong/1.0.0/index.html",
     "thumbnailUrl": "/tong-hop-dao-dong/1.0.0/thumb.png"
+  },
+  {
+    "slug": "tong-hop-luc",
+    "version": "1.0.0",
+    "title": "Tổng hợp lực và cân bằng của chất điểm",
+    "subject": "physics",
+    "grades": [
+      10
+    ],
+    "description": "Một vòng nhỏ treo vật nặng được giữ bởi hai hoặc ba sợi dây gắn lực kế. Kéo các chốt để đổi hướng dây, chỉnh số chỉ lực kế, quan sát hình bình hành lực và hợp lực cho tới khi vòng cân bằng. Tình huống thứ hai: đèn giao thông treo trên hai dây, tự tính lực căng mỗi dây rồi bật đáp số để kiểm tra.",
+    "learningGoals": [
+      "Tổng hợp hai lực đồng quy bằng quy tắc hình bình hành: F² = F₁² + F₂² + 2F₁F₂cos α, và bằng phương pháp chiếu lên hai trục Ox, Oy.",
+      "Điều kiện cân bằng của chất điểm: hợp lực của các lực tác dụng bằng 0 (F⃗₁ + F⃗₂ + … = 0⃗).",
+      "Vật treo đối xứng trên hai dây hợp với nhau góc θ: T = P/(2cos(θ/2)); dây càng gần nằm ngang thì lực căng càng lớn, không có giới hạn.",
+      "Ba lực cân bằng: mỗi lực tỉ lệ với sin của góc tạo bởi hai lực còn lại (định lí Lami)."
+    ],
+    "state": {
+      "mode": "Tình huống: \"lab\" (vòng treo bởi các lực kế) hoặc \"light\" (đèn giao thông treo trên hai dây)",
+      "count": "Số dây có lực kế trong tình huống lab: 2 hoặc 3",
+      "weight": "Trọng lượng P của vật treo hoặc của đèn (N)",
+      "a1": "Hướng dây 1 tính từ vòng (độ, 0 = sang phải theo phương ngang, 90 = thẳng lên, 180 = sang trái)",
+      "f1": "Số chỉ lực kế trên dây 1 (N)",
+      "a2": "Hướng dây 2 (độ, cùng quy ước với a1)",
+      "f2": "Số chỉ lực kế trên dây 2 (N)",
+      "a3": "Hướng dây 3 (độ), chỉ có tác dụng khi count = 3",
+      "f3": "Số chỉ lực kế trên dây 3 (N), chỉ có tác dụng khi count = 3",
+      "b1": "Tình huống đèn: góc giữa dây trái và phương ngang (độ)",
+      "b2": "Tình huống đèn: góc giữa dây phải và phương ngang (độ)",
+      "showT": "Tình huống đèn: true nếu đang hiện đáp số lực căng",
+      "showParallelogram": "true nếu vẽ hình bình hành và hợp lực của hai lực đầu"
+    },
+    "events": {
+      "anchor-drag": {
+        "kind": "action",
+        "description": "Học sinh kéo một chốt treo dây rồi thả",
+        "data": {
+          "index": "Số thứ tự dây (1–3)",
+          "angle": "Hướng mới của dây (độ; tình huống lab: tính từ phương ngang bên phải; tình huống đèn: góc với phương ngang)"
+        }
+      },
+      "tensions": {
+        "kind": "result",
+        "description": "Lực căng các dây và trạng thái cân bằng sau khi thả chốt hoặc chỉnh xong một thanh trượt",
+        "data": {
+          "t1": "Lực căng (số chỉ lực kế) dây 1 (N)",
+          "t2": "Lực căng dây 2 (N)",
+          "t3": "Lực căng dây 3 (N), chỉ có khi có ba dây",
+          "weight": "Trọng lượng P (N)",
+          "resultant": "Độ lớn hợp lực tác dụng lên vòng (N); 0 trong tình huống đèn",
+          "angleBetween": "Tình huống đèn: góc giữa hai dây (độ)",
+          "balanced": "1 nếu vòng cân bằng, 0 nếu chưa"
+        }
+      },
+      "balanced": {
+        "kind": "goal",
+        "description": "Học sinh chỉnh các lực kế để vòng cân bằng (hợp lực bằng 0 trong sai số 0,15 N hoặc 1,5 % P)",
+        "data": {
+          "strings": "Số dây có lực kế",
+          "weight": "Trọng lượng P (N)"
+        }
+      }
+    },
+    "url": "/tong-hop-luc/1.0.0/index.html",
+    "thumbnailUrl": "/tong-hop-luc/1.0.0/thumb.png"
   },
   {
     "slug": "truc-doi-xung",
@@ -7537,6 +8688,55 @@
     "thumbnailUrl": "/tu-dien/1.0.0/thumb.png"
   },
   {
+    "slug": "tu-ghep",
+    "version": "1.0.0",
+    "title": "Ghép tụ điện nối tiếp và song song",
+    "subject": "physics",
+    "grades": [
+      11
+    ],
+    "description": "Ghép hai hoặc ba tụ điện nối tiếp, song song hoặc hỗn hợp rồi nối vào nguồn. Thay đổi điện dung từng tụ và hiệu điện thế nguồn để xem điện dung của bộ tụ, điện tích, hiệu điện thế và năng lượng của từng tụ. Thử thách: ghép bộ tụ có điện dung cho trước.",
+    "learningGoals": [
+      "Ghép song song: Cb = C₁ + C₂ + …, các tụ có cùng hiệu điện thế, Q = Q₁ + Q₂ + …",
+      "Ghép nối tiếp: 1/Cb = 1/C₁ + 1/C₂ + …, các tụ có cùng điện tích, U = U₁ + U₂ + …",
+      "Trong bộ tụ ghép nối tiếp, hiệu điện thế trên mỗi tụ tỉ lệ nghịch với điện dung của nó.",
+      "Năng lượng của bộ tụ W = Cb·U²/2 bằng tổng năng lượng của các tụ.",
+      "Tính điện dung của bộ tụ ghép hỗn hợp bằng cách thu gọn từng nhóm nối tiếp, song song."
+    ],
+    "state": {
+      "arrangement": "Cách ghép: \"series\" (nối tiếp), \"parallel\" (song song), \"mixed-a\" (C₁ nối tiếp với cụm C₂ song song C₃) hoặc \"mixed-b\" (cụm C₁ nối tiếp C₂, song song với C₃)",
+      "useC3": "Với nối tiếp hoặc song song: true nếu ghép thêm tụ C₃; cách ghép hỗn hợp luôn dùng ba tụ",
+      "voltage": "Hiệu điện thế nguồn U đặt vào bộ tụ (V)",
+      "c1": "Điện dung tụ C₁ (µF)",
+      "c2": "Điện dung tụ C₂ (µF)",
+      "c3": "Điện dung tụ C₃ (µF), chỉ có tác dụng khi bộ tụ có ba tụ",
+      "target": "Điện dung bộ tụ mà thử thách yêu cầu (µF); 0 là không đặt mục tiêu"
+    },
+    "events": {
+      "bank-charged": {
+        "kind": "result",
+        "description": "Kết quả của bộ tụ sau khi học sinh đổi xong cách ghép, một điện dung, hiệu điện thế hoặc mục tiêu",
+        "data": {
+          "capacitance": "Điện dung của bộ tụ Cb (µF)",
+          "charge": "Điện tích của bộ tụ Q = Cb·U (µC)",
+          "energy": "Năng lượng của bộ tụ W = Cb·U²/2 (µJ)",
+          "voltage": "Hiệu điện thế nguồn U (V)",
+          "capacitors": "Số tụ trong bộ (2 hoặc 3)"
+        }
+      },
+      "target-built": {
+        "kind": "goal",
+        "description": "Học sinh ghép được bộ tụ có điện dung bằng mục tiêu (sai lệch không quá 0,5 %)",
+        "data": {
+          "target": "Điện dung mục tiêu (µF)",
+          "capacitance": "Điện dung bộ tụ đã ghép (µF)"
+        }
+      }
+    },
+    "url": "/tu-ghep/1.0.0/index.html",
+    "thumbnailUrl": "/tu-ghep/1.0.0/thumb.png"
+  },
+  {
     "slug": "tu-truong-dong-dien",
     "version": "1.0.0",
     "title": "Từ trường của dòng điện",
@@ -7590,6 +8790,71 @@
     },
     "url": "/tu-truong-dong-dien/1.0.0/index.html",
     "thumbnailUrl": "/tu-truong-dong-dien/1.0.0/thumb.png"
+  },
+  {
+    "slug": "tuan-hoan-mau",
+    "version": "1.0.0",
+    "title": "Tim và hệ tuần hoàn",
+    "subject": "biology",
+    "grades": [
+      8,
+      11
+    ],
+    "description": "Sơ đồ tim bốn ngăn với các van tim hoạt động theo chu kì tim (pha co tâm nhĩ 0,1 s, pha co tâm thất 0,3 s, pha dãn chung 0,4 s khi nhịp tim 75 nhịp/phút; các pha giữ tỉ lệ này ở mọi nhịp tim). Máu giàu O₂ (đỏ) và nghèo O₂ (xanh) chảy qua vòng tuần hoàn nhỏ và vòng tuần hoàn lớn. Học sinh chỉnh nhịp tim, thể tích tâm thu và mức độ vận động để xem lưu lượng tim = nhịp tim × thể tích tâm thu và thời gian một chu kì tim = 60 / nhịp tim. Mô hình đơn giản, chỉ có tính minh hoạ: khi vận động ở mức e (0 đến 1), nhịp tim = f₀ + (190 − f₀)·e, thể tích tâm thu = V₀·(1 + 0,4·e); huyết áp trung bình = lưu lượng tim × sức cản, sức cản = R₀/(1 + 2e); hiệu số huyết áp tỉ lệ với thể tích tâm thu; R₀ và hệ số được chọn để lúc nghỉ (75 nhịp/phút, 70 mL) huyết áp khoảng 120/80 mmHg. Học sinh lần theo đường đi của một hồng cầu bằng cách chạm vào các chặng theo thứ tự.",
+    "learningGoals": [
+      "Mô tả cấu tạo tim bốn ngăn và vai trò của van nhĩ – thất (van ba lá, van hai lá) và van động mạch giúp máu chảy theo một chiều.",
+      "Trình bày chu kì tim gồm pha co tâm nhĩ, pha co tâm thất và pha dãn chung; trạng thái đóng, mở của các van trong từng pha.",
+      "Trình bày đường đi của máu trong vòng tuần hoàn nhỏ và vòng tuần hoàn lớn.",
+      "Tính lưu lượng tim = nhịp tim × thể tích tâm thu và thời gian một chu kì tim = 60 / nhịp tim; giải thích vì sao khi vận động lưu lượng tim tăng."
+    ],
+    "state": {
+      "restRate": "Nhịp tim lúc nghỉ f₀ (nhịp/phút, 50 đến 100)",
+      "restSV": "Thể tích tâm thu lúc nghỉ V₀ (mL, 50 đến 100)",
+      "exercise": "Mức độ vận động (%, 0 đến 100); làm tăng cả nhịp tim và thể tích tâm thu",
+      "slow": "true nếu chiếu chậm 4 lần",
+      "t": "Thời gian đã trôi qua trong chu kì tim hiện tại (s)",
+      "flow": "Vị trí của các hồng cầu trên vòng tuần hoàn (0 đến 1), chỉ để vẽ",
+      "traceStart": "Chặng học sinh bắt đầu lần theo (0 = tâm nhĩ phải, 1 = tâm thất phải, 2 = động mạch phổi, 3 = mao mạch phổi, 4 = tĩnh mạch phổi, 5 = tâm nhĩ trái, 6 = tâm thất trái, 7 = động mạch chủ, 8 = mao mạch các cơ quan, 9 = tĩnh mạch chủ); −1 nếu chưa bắt đầu",
+      "traceLen": "Số chặng đã lần theo đúng thứ tự (0 đến 10)",
+      "traceMistakes": "Số lần chọn sai chặng trong lần theo hiện tại",
+      "pick": "Ô chọn chặng bằng bàn phím; luôn trở về −1 sau khi chọn"
+    },
+    "events": {
+      "cardiac-output": {
+        "kind": "result",
+        "description": "Học sinh vừa chỉnh xong nhịp tim, thể tích tâm thu hoặc mức độ vận động",
+        "data": {
+          "heartRate": "Nhịp tim (nhịp/phút)",
+          "strokeVolume": "Thể tích tâm thu (mL)",
+          "cardiacOutput": "Lưu lượng tim (L/phút)",
+          "cycleDuration": "Thời gian một chu kì tim (s)",
+          "exercise": "Mức độ vận động (%)",
+          "meanPressure": "Huyết áp trung bình theo mô hình (mmHg)"
+        }
+      },
+      "trace-step": {
+        "kind": "action",
+        "description": "Học sinh chạm (hoặc chọn) một chặng khi lần theo đường đi của hồng cầu",
+        "data": {
+          "station": "Chặng được chọn (1 đến 10, thứ tự như trong traceStart + 1)",
+          "correct": "1 nếu đúng chặng tiếp theo, 0 nếu sai"
+        }
+      },
+      "trace-cleared": {
+        "kind": "action",
+        "description": "Học sinh xoá đường đã lần theo để làm lại",
+        "data": {}
+      },
+      "path-traced": {
+        "kind": "goal",
+        "description": "Học sinh lần theo đủ 10 chặng của một vòng tuần hoàn theo đúng thứ tự",
+        "data": {
+          "mistakes": "Số lần chọn sai trong lúc lần theo"
+        }
+      }
+    },
+    "url": "/tuan-hoan-mau/1.0.0/index.html",
+    "thumbnailUrl": "/tuan-hoan-mau/1.0.0/thumb.png"
   },
   {
     "slug": "uoc-boi-so-nguyen-to",

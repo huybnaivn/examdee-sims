@@ -1,0 +1,67 @@
+{
+  "slug": "he-mat-troi",
+  "version": "1.0.0",
+  "title": "Hệ Mặt Trời",
+  "subject": "physics",
+  "grades": [
+    6
+  ],
+  "description": "Tám hành tinh chuyển động quanh Mặt Trời. Tăng giảm tốc độ thời gian, chuyển giữa cách vẽ dễ nhìn và cách vẽ đúng tỉ lệ khoảng cách, chạm vào một hành tinh để xem khoảng cách tới Mặt Trời (AU), chu kì quay quanh Mặt Trời, đường kính so với Trái Đất và loại hành tinh (đất đá hay khí); chạm hai hành tinh để so sánh. Dải dưới cùng so sánh đường kính các hành tinh theo đúng tỉ lệ. Có câu đố xếp các hành tinh theo thứ tự từ gần đến xa Mặt Trời. Quỹ đạo vẽ gần đúng là đường tròn; Mặt Trời và hành tinh vẽ phóng to.",
+  "learningGoals": [
+    "Kể tên và xếp đúng thứ tự tám hành tinh từ gần đến xa Mặt Trời: Thủy, Kim, Trái Đất, Hỏa, Mộc, Thổ, Thiên Vương, Hải Vương.",
+    "Phân biệt bốn hành tinh vòng trong (đất đá, nhỏ) với bốn hành tinh vòng ngoài (khí, lớn), ngăn cách bởi vành đai tiểu hành tinh.",
+    "Nhận ra hành tinh càng xa Mặt Trời thì chu kì quay quanh Mặt Trời càng dài.",
+    "Hình dung khoảng cách thật: các hành tinh vòng trong nằm rất gần Mặt Trời so với các hành tinh vòng ngoài; 1 AU là khoảng cách trung bình Trái Đất – Mặt Trời."
+  ],
+  "state": {
+    "time": "Thời gian đã trôi qua kể từ lúc bắt đầu (năm Trái Đất)",
+    "speed": "Tốc độ thời gian: số năm trôi qua trong mỗi giây thực",
+    "layout": "Cách vẽ khoảng cách: \"easy\" (dễ nhìn, không theo tỉ lệ) hoặc \"scale\" (đúng tỉ lệ khoảng cách)",
+    "selected": "Hành tinh A đang xem, số thứ tự từ Mặt Trời ra 0 (Sao Thủy) … 7 (Sao Hải Vương); −1 là chưa chọn",
+    "compare": "Hành tinh B để so sánh với A (cùng cách đánh số); −1 là chưa chọn",
+    "quiz": "true khi đang làm câu đố xếp hành tinh theo khoảng cách",
+    "quizStep": "Số hành tinh đã xếp đúng thứ tự trong câu đố (0–8)",
+    "quizMistakes": "Số lần chọn sai trong câu đố"
+  },
+  "events": {
+    "select-planet": {
+      "kind": "action",
+      "description": "Học sinh chạm vào một hành tinh trên hình",
+      "data": {
+        "index": "Số thứ tự hành tinh từ Mặt Trời ra (0 = Sao Thủy … 7 = Sao Hải Vương)",
+        "distance": "Khoảng cách trung bình tới Mặt Trời (AU)",
+        "period": "Chu kì quay quanh Mặt Trời (năm)"
+      }
+    },
+    "compare-planets": {
+      "kind": "result",
+      "description": "Học sinh chọn hai hành tinh khác nhau để so sánh",
+      "data": {
+        "first": "Số thứ tự hành tinh A",
+        "second": "Số thứ tự hành tinh B",
+        "periodRatio": "Chu kì của A chia chu kì của B",
+        "distanceRatio": "Khoảng cách tới Mặt Trời của A chia của B"
+      }
+    },
+    "quiz-pick": {
+      "kind": "action",
+      "description": "Học sinh chạm một hành tinh trong câu đố xếp thứ tự",
+      "data": {
+        "index": "Số thứ tự thật của hành tinh được chạm (0 = Sao Thủy … 7 = Sao Hải Vương)",
+        "correct": "1 nếu đó đúng là hành tinh tiếp theo, 0 nếu sai"
+      }
+    },
+    "quiz-restart": {
+      "kind": "action",
+      "description": "Học sinh bắt đầu lại câu đố xếp thứ tự",
+      "data": {}
+    },
+    "planets-ordered": {
+      "kind": "goal",
+      "description": "Học sinh xếp đủ tám hành tinh đúng thứ tự từ gần đến xa Mặt Trời",
+      "data": {
+        "mistakes": "Số lần chọn sai trước khi hoàn thành"
+      }
+    }
+  }
+}

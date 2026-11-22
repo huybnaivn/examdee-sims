@@ -1,0 +1,67 @@
+{
+  "slug": "nhan-biet-chat",
+  "version": "1.0.0",
+  "title": "Nhận biết dung dịch bằng thuốc thử",
+  "subject": "chemistry",
+  "grades": [
+    8,
+    9
+  ],
+  "description": "Các lọ dung dịch mất nhãn chứa HCl, NaOH, NaCl, Na₂SO₄, Na₂CO₃ hoặc AgNO₃. Học sinh trích mẫu thử, nhỏ thuốc thử (quỳ tím, phenolphthalein, BaCl₂, AgNO₃, HCl) vào từng lọ, quan sát đổi màu, kết tủa (kèm màu) hoặc sủi bọt khí, rồi dán nhãn cho từng lọ. Mô phỏng đếm số lần thử và so với số lần ít nhất luôn đủ để nhận biết.\n\nBảng hiện tượng (hàng: dung dịch; cột: quỳ tím | phenolphthalein | BaCl₂ | AgNO₃ | HCl):\nHCl: đỏ | không màu | – | kết tủa trắng AgCl | –\nNaOH: xanh | hồng | – | kết tủa nâu đen Ag₂O | – (phản ứng trung hòa, không quan sát được)\nNaCl: tím | không màu | – | kết tủa trắng AgCl | –\nNa₂SO₄: tím | không màu | kết tủa trắng BaSO₄ | – (Ag₂SO₄ ít tan) | –\nNa₂CO₃: xanh | hồng | kết tủa trắng BaCO₃ | kết tủa vàng nhạt Ag₂CO₃ | sủi bọt khí CO₂\nAgNO₃: tím | không màu | kết tủa trắng AgCl | – | kết tủa trắng AgCl",
+  "learningGoals": [
+    "Dùng chất chỉ thị (quỳ tím, phenolphthalein) để phân biệt dung dịch acid, base và muối trung tính.",
+    "Nhận biết ion bằng phản ứng tạo kết tủa hoặc tạo khí: Cl⁻ với AgNO₃ (AgCl trắng), SO₄²⁻ và CO₃²⁻ với BaCl₂, CO₃²⁻ với HCl (khí CO₂).",
+    "Viết phương trình hóa học của các phản ứng dùng để nhận biết.",
+    "Lập trình tự nhận biết hợp lý với ít lần thử nhất, dùng phép loại trừ cho lọ cuối cùng."
+  ],
+  "state": {
+    "preset": "Bộ lọ: \"acid-base\" (HCl, NaOH, NaCl), \"sulfate\" (HCl, NaOH, NaCl, Na₂SO₄), \"salts\" (NaCl, Na₂SO₄, Na₂CO₃, AgNO₃), \"all\" (cả sáu)",
+    "seed": "Số nguyên quyết định lọ nào chứa dung dịch nào (thứ tự ẩn)",
+    "reagent": "Thuốc thử đang chọn: q = quỳ tím, p = phenolphthalein, b = BaCl₂, a = AgNO₃, h = HCl",
+    "target": "Số thứ tự lọ sẽ nhỏ thuốc thử khi bấm nút (bắt đầu từ 1)",
+    "t1": "Các thuốc thử đã nhỏ vào lọ 1, theo thứ tự, mỗi ký tự một mã (q, p, b, a, h); t2…t6 tương tự cho lọ 2…6",
+    "t2": "Như t1, cho lọ 2",
+    "t3": "Như t1, cho lọ 3",
+    "t4": "Như t1, cho lọ 4",
+    "t5": "Như t1, cho lọ 5",
+    "t6": "Như t1, cho lọ 6",
+    "l1": "Nhãn học sinh dán cho lọ 1: công thức dung dịch (HCl, NaOH, NaCl, Na2SO4, Na2CO3, AgNO3) hoặc \"\" nếu chưa dán; l2…l6 tương tự",
+    "l2": "Như l1, cho lọ 2",
+    "l3": "Như l1, cho lọ 3",
+    "l4": "Như l1, cho lọ 4",
+    "l5": "Như l1, cho lọ 5",
+    "l6": "Như l1, cho lọ 6"
+  },
+  "events": {
+    "add-reagent": {
+      "kind": "action",
+      "description": "Học sinh nhỏ một thuốc thử vào mẫu thử của một lọ",
+      "data": {
+        "tube": "Số thứ tự lọ (từ 1)",
+        "reagent": "Mã thuốc thử: q, p, b, a, h",
+        "look": "Hiện tượng thấy được: red, blue, purple, pink, clear, ppt-white, ppt-yellow, ppt-black, gas"
+      }
+    },
+    "new-round": {
+      "kind": "action",
+      "description": "Học sinh bắt đầu lượt mới: các lọ được xáo lại, xóa kết quả thử và nhãn"
+    },
+    "labelled": {
+      "kind": "result",
+      "description": "Mọi lọ đều đã được dán nhãn (phát lại mỗi lần học sinh đổi một nhãn khi tất cả đã có nhãn)",
+      "data": {
+        "correct": "Số lọ dán nhãn đúng",
+        "total": "Tổng số lọ",
+        "additions": "Tổng số lần đã nhỏ thuốc thử"
+      }
+    },
+    "identified": {
+      "kind": "goal",
+      "description": "Dán đúng tất cả các lọ, kết quả thử đủ để suy ra từng lọ (không đoán mò), và số lần thử không quá số lần ít nhất cần",
+      "data": {
+        "additions": "Số lần đã nhỏ thuốc thử",
+        "best": "Số lần ít nhất luôn đủ để nhận biết bộ lọ này"
+      }
+    }
+  }
+}

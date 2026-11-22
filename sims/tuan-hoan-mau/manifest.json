@@ -1,0 +1,60 @@
+{
+  "slug": "tuan-hoan-mau",
+  "version": "1.0.0",
+  "title": "Tim và hệ tuần hoàn",
+  "subject": "biology",
+  "grades": [8, 11],
+  "description": "Sơ đồ tim bốn ngăn với các van tim hoạt động theo chu kì tim (pha co tâm nhĩ 0,1 s, pha co tâm thất 0,3 s, pha dãn chung 0,4 s khi nhịp tim 75 nhịp/phút; các pha giữ tỉ lệ này ở mọi nhịp tim). Máu giàu O₂ (đỏ) và nghèo O₂ (xanh) chảy qua vòng tuần hoàn nhỏ và vòng tuần hoàn lớn. Học sinh chỉnh nhịp tim, thể tích tâm thu và mức độ vận động để xem lưu lượng tim = nhịp tim × thể tích tâm thu và thời gian một chu kì tim = 60 / nhịp tim. Mô hình đơn giản, chỉ có tính minh hoạ: khi vận động ở mức e (0 đến 1), nhịp tim = f₀ + (190 − f₀)·e, thể tích tâm thu = V₀·(1 + 0,4·e); huyết áp trung bình = lưu lượng tim × sức cản, sức cản = R₀/(1 + 2e); hiệu số huyết áp tỉ lệ với thể tích tâm thu; R₀ và hệ số được chọn để lúc nghỉ (75 nhịp/phút, 70 mL) huyết áp khoảng 120/80 mmHg. Học sinh lần theo đường đi của một hồng cầu bằng cách chạm vào các chặng theo thứ tự.",
+  "learningGoals": [
+    "Mô tả cấu tạo tim bốn ngăn và vai trò của van nhĩ – thất (van ba lá, van hai lá) và van động mạch giúp máu chảy theo một chiều.",
+    "Trình bày chu kì tim gồm pha co tâm nhĩ, pha co tâm thất và pha dãn chung; trạng thái đóng, mở của các van trong từng pha.",
+    "Trình bày đường đi của máu trong vòng tuần hoàn nhỏ và vòng tuần hoàn lớn.",
+    "Tính lưu lượng tim = nhịp tim × thể tích tâm thu và thời gian một chu kì tim = 60 / nhịp tim; giải thích vì sao khi vận động lưu lượng tim tăng."
+  ],
+  "state": {
+    "restRate": "Nhịp tim lúc nghỉ f₀ (nhịp/phút, 50 đến 100)",
+    "restSV": "Thể tích tâm thu lúc nghỉ V₀ (mL, 50 đến 100)",
+    "exercise": "Mức độ vận động (%, 0 đến 100); làm tăng cả nhịp tim và thể tích tâm thu",
+    "slow": "true nếu chiếu chậm 4 lần",
+    "t": "Thời gian đã trôi qua trong chu kì tim hiện tại (s)",
+    "flow": "Vị trí của các hồng cầu trên vòng tuần hoàn (0 đến 1), chỉ để vẽ",
+    "traceStart": "Chặng học sinh bắt đầu lần theo (0 = tâm nhĩ phải, 1 = tâm thất phải, 2 = động mạch phổi, 3 = mao mạch phổi, 4 = tĩnh mạch phổi, 5 = tâm nhĩ trái, 6 = tâm thất trái, 7 = động mạch chủ, 8 = mao mạch các cơ quan, 9 = tĩnh mạch chủ); −1 nếu chưa bắt đầu",
+    "traceLen": "Số chặng đã lần theo đúng thứ tự (0 đến 10)",
+    "traceMistakes": "Số lần chọn sai chặng trong lần theo hiện tại",
+    "pick": "Ô chọn chặng bằng bàn phím; luôn trở về −1 sau khi chọn"
+  },
+  "events": {
+    "cardiac-output": {
+      "kind": "result",
+      "description": "Học sinh vừa chỉnh xong nhịp tim, thể tích tâm thu hoặc mức độ vận động",
+      "data": {
+        "heartRate": "Nhịp tim (nhịp/phút)",
+        "strokeVolume": "Thể tích tâm thu (mL)",
+        "cardiacOutput": "Lưu lượng tim (L/phút)",
+        "cycleDuration": "Thời gian một chu kì tim (s)",
+        "exercise": "Mức độ vận động (%)",
+        "meanPressure": "Huyết áp trung bình theo mô hình (mmHg)"
+      }
+    },
+    "trace-step": {
+      "kind": "action",
+      "description": "Học sinh chạm (hoặc chọn) một chặng khi lần theo đường đi của hồng cầu",
+      "data": {
+        "station": "Chặng được chọn (1 đến 10, thứ tự như trong traceStart + 1)",
+        "correct": "1 nếu đúng chặng tiếp theo, 0 nếu sai"
+      }
+    },
+    "trace-cleared": {
+      "kind": "action",
+      "description": "Học sinh xoá đường đã lần theo để làm lại",
+      "data": {}
+    },
+    "path-traced": {
+      "kind": "goal",
+      "description": "Học sinh lần theo đủ 10 chặng của một vòng tuần hoàn theo đúng thứ tự",
+      "data": {
+        "mistakes": "Số lần chọn sai trong lúc lần theo"
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "slug": "ho-hap-te-bao",
+  "version": "1.0.0",
+  "title": "Hô hấp tế bào",
+  "subject": "biology",
+  "grades": [10],
+  "description": "Sơ đồ phân giải một phân tử glucose qua các giai đoạn đường phân (tế bào chất), oxi hoá pyruvic acid và chu trình Krebs (chất nền ti thể), chuỗi truyền electron (màng trong ti thể), với số ATP, NADH, FADH₂, CO₂ của từng giai đoạn. Số ATP theo cách tính trong sách giáo khoa: đường phân 2, chu trình Krebs 2, chuỗi truyền electron 10 NADH × 3 + 2 FADH₂ × 2 = 34, tổng 38 ATP (số đo thực tế khoảng 30–32 ATP). Học sinh giảm nồng độ O₂: không có O₂ nhận electron cuối cùng thì chuỗi truyền electron dừng, tế bào lên men (lên men lactic: pyruvic acid → lactic acid; lên men rượu: pyruvic acid → ethanol + CO₂) và chỉ thu được 2 ATP của đường phân. Mô hình minh hoạ: phần glucose được hô hấp hiếu khí bằng min(1, O₂/25 %), phần còn lại lên men. Có thử thách xếp bốn giai đoạn theo đúng thứ tự.",
+  "learningGoals": [
+    "Trình bày được các giai đoạn của hô hấp tế bào (đường phân, oxi hoá pyruvic acid và chu trình Krebs, chuỗi truyền electron), nơi diễn ra và sản phẩm của từng giai đoạn.",
+    "Viết được phương trình tổng quát C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + năng lượng (ATP + nhiệt) và kiểm tra cân bằng nguyên tố.",
+    "Giải thích vì sao phần lớn ATP được tạo ra ở chuỗi truyền electron và vì sao chuỗi này cần O₂.",
+    "So sánh hô hấp hiếu khí (38 ATP theo SGK) với lên men (2 ATP); phân biệt sản phẩm của lên men lactic và lên men rượu."
+  ],
+  "state": {
+    "oxygen": "Nồng độ O₂ so với mức bình thường (%, 0 đến 100); từ 25 % trở lên toàn bộ glucose được hô hấp hiếu khí",
+    "fermentation": "Kiểu lên men khi thiếu O₂: \"lactic\" (lactic acid) hoặc \"ethanol\" (ethanol + CO₂)",
+    "quiz": "true khi đang làm thử thách xếp thứ tự các giai đoạn (tên các giai đoạn trên sơ đồ được ẩn)",
+    "placed": "Số giai đoạn đã xếp đúng thứ tự trong thử thách (0 đến 4)",
+    "mistakes": "Số lần chọn sai trong thử thách",
+    "pick": "Ô chọn giai đoạn bằng bàn phím; luôn trở về −1 sau khi chọn"
+  },
+  "events": {
+    "respiration-yield": {
+      "kind": "result",
+      "description": "Học sinh vừa chỉnh xong nồng độ O₂; lượng ATP trung bình thu được từ một glucose",
+      "data": {
+        "oxygen": "Nồng độ O₂ so với bình thường (%)",
+        "atpPerGlucose": "Số ATP trung bình trên một phân tử glucose",
+        "pathway": "Con đường: 0 = chỉ lên men, 1 = vừa hô hấp hiếu khí vừa lên men, 2 = chỉ hô hấp hiếu khí",
+        "aerobicPercent": "Phần trăm glucose được hô hấp hiếu khí (%)"
+      }
+    },
+    "stage-picked": {
+      "kind": "action",
+      "description": "Trong thử thách, học sinh chọn một giai đoạn làm giai đoạn tiếp theo",
+      "data": {
+        "stage": "Giai đoạn được chọn theo thứ tự đúng: 1 đường phân, 2 oxi hoá pyruvic acid, 3 chu trình Krebs, 4 chuỗi truyền electron",
+        "correct": "1 nếu chọn đúng, 0 nếu sai"
+      }
+    },
+    "stages-ordered": {
+      "kind": "goal",
+      "description": "Học sinh xếp xong bốn giai đoạn hô hấp tế bào theo đúng thứ tự",
+      "data": {
+        "mistakes": "Số lần chọn sai trong lúc xếp"
+      }
+    }
+  }
+}

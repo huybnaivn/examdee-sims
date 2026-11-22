@@ -1,0 +1,88 @@
+{
+  "slug": "nhiem-dien",
+  "version": "1.0.0",
+  "title": "Sự nhiễm điện do cọ xát",
+  "subject": "physics",
+  "grades": [
+    8
+  ],
+  "description": "Cọ xát thước nhựa, đũa thủy tinh hoặc bóng bay với mảnh len, mảnh lụa hoặc tóc và xem electron chuyển từ vật này sang vật kia theo dãy nhiễm điện (thủy tinh, tóc, len, lụa, cao su, nhựa: chất đứng trước dễ mất electron hơn). Dự đoán dấu điện tích trước khi cọ. Đưa vật nhiễm điện lại gần mẩu giấy vụn, cho hai vật nhiễm điện lại gần nhau để thấy chúng hút hay đẩy, và chạm vật vào điện nghiệm để thấy hai lá kim loại xòe ra. Mỗi dấu + hoặc − tượng trưng cho rất nhiều điện tích; chỉ electron di chuyển.",
+  "learningGoals": [
+    "Giải thích sự nhiễm điện do cọ xát: electron di chuyển từ vật này sang vật kia; vật mất electron nhiễm điện dương, vật nhận thêm electron nhiễm điện âm.",
+    "Dự đoán dấu điện tích của vật sau khi cọ xát (thủy tinh cọ lụa nhiễm điện dương, thước nhựa cọ len nhiễm điện âm).",
+    "Nhận ra tổng điện tích không đổi: hai vật cọ xát nhau nhiễm điện trái dấu, độ lớn bằng nhau.",
+    "Hai vật nhiễm điện cùng loại thì đẩy nhau, khác loại thì hút nhau; vật nhiễm điện hút được các vật nhẹ không nhiễm điện như mẩu giấy vụn.",
+    "Dùng điện nghiệm để phát hiện vật nhiễm điện: điện tích càng nhiều, hai lá xòe càng rộng."
+  ],
+  "state": {
+    "scene": "Thí nghiệm đang xem: \"rub\" (cọ xát), \"paper\" (hút giấy vụn), \"pair\" (hai vật lại gần nhau), \"electroscope\" (điện nghiệm)",
+    "m1": "Vật 1: \"ruler\" (thước nhựa), \"glass\" (đũa thủy tinh) hoặc \"balloon\" (bóng bay)",
+    "m2": "Vật 2, cùng các lựa chọn như vật 1",
+    "cloth": "Vật dùng để cọ: \"wool\" (mảnh len), \"silk\" (mảnh lụa) hoặc \"hair\" (tóc)",
+    "q1": "Điện tích của vật 1 (đơn vị quy ước, mỗi đơn vị ứng với rất nhiều electron; dương là thiếu electron)",
+    "q2": "Điện tích của vật 2 (cùng đơn vị)",
+    "qc": "Điện tích của vật dùng để cọ (cùng đơn vị)",
+    "qe": "Điện tích của điện nghiệm (cùng đơn vị)",
+    "use": "Vật (1 hoặc 2) dùng trong thí nghiệm giấy vụn và điện nghiệm",
+    "near": "true khi vật 2 được đưa lại gần vật 1 đang treo",
+    "guess": "Dự đoán của học sinh cho lần cọ tiếp theo: \"\" (chưa dự đoán), \"+\" hoặc \"-\"",
+    "showOrder": "true khi dãy nhiễm điện được hiện trên hình"
+  },
+  "events": {
+    "rub": {
+      "kind": "action",
+      "description": "Học sinh cọ xát vật 1 hoặc vật 2 với vật dùng để cọ",
+      "data": {
+        "object": "Vật được cọ (1 hoặc 2)",
+        "gained": "Điện tích vật nhận được trong lần cọ này (đơn vị quy ước; âm là nhận thêm electron)",
+        "charge": "Điện tích của vật sau khi cọ",
+        "clothCharge": "Điện tích của vật dùng để cọ sau khi cọ",
+        "prediction": "Dự đoán trước khi cọ: 1 dương, −1 âm, 0 không dự đoán"
+      }
+    },
+    "prediction-correct": {
+      "kind": "goal",
+      "description": "Học sinh dự đoán đúng dấu điện tích của vật trước khi cọ xát",
+      "data": {
+        "object": "Vật được cọ (1 hoặc 2)",
+        "sign": "Dấu điện tích vật nhận được: 1 dương, −1 âm"
+      }
+    },
+    "move-object": {
+      "kind": "action",
+      "description": "Học sinh đưa vật 2 lại gần hoặc ra xa vật 1 đang treo",
+      "data": {
+        "near": "1 khi đưa lại gần, 0 khi đưa ra xa"
+      }
+    },
+    "bring-together": {
+      "kind": "result",
+      "description": "Hai vật đều nhiễm điện được đưa lại gần nhau",
+      "data": {
+        "interaction": "1 nếu hút nhau, −1 nếu đẩy nhau",
+        "q1": "Điện tích vật 1 (đơn vị quy ước)",
+        "q2": "Điện tích vật 2 (đơn vị quy ước)"
+      }
+    },
+    "touch-electroscope": {
+      "kind": "action",
+      "description": "Học sinh chạm vật vào núm điện nghiệm, điện tích được chia cho điện nghiệm",
+      "data": {
+        "object": "Vật được chạm (1 hoặc 2)",
+        "moved": "Điện tích chuyển sang điện nghiệm (đơn vị quy ước)",
+        "charge": "Điện tích của điện nghiệm sau khi chạm",
+        "angle": "Góc giữa hai lá điện nghiệm (độ)"
+      }
+    },
+    "ground-electroscope": {
+      "kind": "action",
+      "description": "Học sinh chạm tay vào núm, điện nghiệm mất hết điện tích",
+      "data": {}
+    },
+    "discharge-all": {
+      "kind": "action",
+      "description": "Học sinh làm mất điện tích của mọi vật",
+      "data": {}
+    }
+  }
+}
