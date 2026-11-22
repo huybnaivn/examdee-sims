@@ -1,0 +1,72 @@
+{
+  "slug": "phan-ung-hat-nhan",
+  "version": "1.0.0",
+  "title": "Phản ứng hạt nhân, phân hạch và nhiệt hạch",
+  "subject": "physics",
+  "grades": [12],
+  "description": "Lập phương trình phản ứng hạt nhân bằng cách chọn các hạt, kiểm tra định luật bảo toàn số khối và điện tích, tìm hạt còn thiếu và tính năng lượng tỏa ra hay thu vào từ độ hụt khối. Xem đường cong năng lượng liên kết riêng theo số khối và điều khiển hệ số nhân neutron của phản ứng phân hạch dây chuyền ²³⁵U.",
+  "learningGoals": [
+    "Vận dụng định luật bảo toàn số khối và bảo toàn điện tích để hoàn thành phương trình phản ứng hạt nhân.",
+    "Tính năng lượng của phản ứng hạt nhân W = (m trước − m sau)c² với 1 u·c² = 931,5 MeV và nhận biết phản ứng tỏa hay thu năng lượng.",
+    "Dùng năng lượng liên kết riêng để so sánh độ bền vững của các hạt nhân và giải thích vì sao phân hạch hạt nhân nặng và nhiệt hạch hạt nhân nhẹ đều tỏa năng lượng.",
+    "Phân biệt phản ứng dây chuyền dưới hạn (k < 1), tới hạn (k = 1) và vượt hạn (k > 1)."
+  ],
+  "state": {
+    "mode": "Nội dung đang xem: reaction (lập phương trình phản ứng), curve (năng lượng liên kết riêng), chain (phản ứng phân hạch dây chuyền)",
+    "preset": "Phản ứng mẫu đang dùng (dt, dd, pli, an, abe, aal, nli, fbk, fxs) hoặc custom nếu học sinh tự chọn các hạt",
+    "a": "Hạt tham gia thứ nhất (mã hạt nhân, ví dụ H2, He4, U235, n)",
+    "b": "Hạt tham gia thứ hai (mã hạt nhân)",
+    "c": "Hạt tạo thành thứ nhất (mã hạt nhân)",
+    "d": "Hạt tạo thành thứ hai (mã hạt nhân), hoặc ? nếu chưa biết",
+    "extra": "Số neutron tạo thành kèm theo (0 đến 3)",
+    "nuclide": "Hạt nhân được chọn trên đường cong năng lượng liên kết riêng (mã hạt nhân)",
+    "k": "Hệ số nhân neutron: số phân hạch trung bình do các neutron của một phân hạch gây ra",
+    "n0": "Số phân hạch ban đầu (thế hệ 0)",
+    "seed": "Hạt giống của bộ sinh số giả ngẫu nhiên; cùng seed, k và n0 thì chuỗi phản ứng diễn ra y hệt",
+    "gens": "Số thế hệ neutron đã mô phỏng trong lần chạy hiện tại (0 đến 12)"
+  },
+  "events": {
+    "reaction-completed": {
+      "kind": "result",
+      "description": "Học sinh vừa hoàn thành một phương trình phản ứng bảo toàn cả số khối và điện tích",
+      "data": {
+        "energy": "Năng lượng phản ứng W (MeV), dương nếu tỏa, âm nếu thu",
+        "massDefect": "Độ hụt khối m trước − m sau (u)",
+        "massNumber": "Tổng số khối mỗi vế",
+        "charge": "Tổng điện tích (số Z) mỗi vế"
+      }
+    },
+    "hint-used": {
+      "kind": "action",
+      "description": "Học sinh bấm gợi ý để mô phỏng tự điền hạt X còn thiếu",
+      "data": {}
+    },
+    "chain-started": {
+      "kind": "action",
+      "description": "Học sinh bấm chạy chuỗi phản ứng phân hạch",
+      "data": {}
+    },
+    "chain-reseeded": {
+      "kind": "action",
+      "description": "Học sinh chạy một lần ngẫu nhiên khác (đổi hạt giống)",
+      "data": {}
+    },
+    "chain-finished": {
+      "kind": "result",
+      "description": "Một lần chạy chuỗi phản ứng vừa kết thúc (đủ 12 thế hệ, tắt hẳn hoặc vượt giới hạn mô phỏng)",
+      "data": {
+        "k": "Hệ số nhân neutron đã đặt",
+        "generations": "Số thế hệ đã diễn ra",
+        "fissions": "Tổng số phân hạch của cả chuỗi",
+        "last": "Số phân hạch ở thế hệ cuối cùng"
+      }
+    },
+    "critical-reached": {
+      "kind": "goal",
+      "description": "Học sinh đặt hệ số nhân neutron đúng bằng 1: hệ tới hạn",
+      "data": {
+        "k": "Hệ số nhân neutron (bằng 1)"
+      }
+    }
+  }
+}

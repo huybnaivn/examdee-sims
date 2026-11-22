@@ -1,0 +1,49 @@
+{
+  "slug": "nhien-lieu",
+  "version": "1.0.0",
+  "title": "Nhiên liệu và sự đốt cháy",
+  "subject": "chemistry",
+  "grades": [9],
+  "description": "Đốt than, xăng, khí gas, cồn hoặc hydrogen với lượng không khí tùy chọn. Đủ oxygen thì nhiên liệu cháy hoàn toàn thành CO₂ và H₂O; thiếu oxygen thì sinh ra khí CO độc và muội than, nhiệt lượng tỏa ra giảm. So sánh nhiệt lượng và lượng CO₂ của các nhiên liệu.",
+  "learningGoals": [
+    "Viết được phương trình hoá học của phản ứng cháy hoàn toàn của carbon, hydrocarbon, ethanol và hydrogen.",
+    "Tính được lượng oxygen cần dùng, khối lượng CO₂ sinh ra và nhiệt lượng tỏa ra khi đốt một lượng nhiên liệu.",
+    "Giải thích vì sao phải cung cấp đủ không khí khi đốt nhiên liệu: thiếu oxygen sinh ra CO, muội than và tỏa ít nhiệt hơn.",
+    "So sánh các nhiên liệu theo nhiệt lượng tỏa ra trên mỗi kilôgam và lượng CO₂ thải ra cho cùng một nhiệt lượng."
+  ],
+  "state": {
+    "fuel": "Nhiên liệu: than (carbon), xang (tính theo octane C₈H₁₈), gas (tính theo propane C₃H₈), con (ethanol), hydro (H₂)",
+    "mass": "Khối lượng nhiên liệu đem đốt (g)",
+    "air": "Lượng không khí cung cấp, tính theo phần trăm lượng cần để cháy hoàn toàn (%)",
+    "progress": "Tiến trình cháy: 0 = chưa đốt, 1 = đã cháy hết",
+    "compare": "Đang hiện biểu đồ so sánh các nhiên liệu thay cho thí nghiệm đốt",
+    "pick": "Câu trả lời của học sinh cho câu hỏi nhiên liệu nào thải ít CO₂ nhất cho cùng một nhiệt lượng (chuỗi rỗng nếu chưa chọn)"
+  },
+  "events": {
+    "ignite": {
+      "kind": "action",
+      "description": "Học sinh bấm Đốt để châm lửa mẫu nhiên liệu",
+      "data": {}
+    },
+    "burned": {
+      "kind": "result",
+      "description": "Mẫu nhiên liệu vừa cháy hết",
+      "data": {
+        "heat": "Nhiệt lượng tỏa ra (kJ)",
+        "co2": "Khối lượng CO₂ sinh ra (g)",
+        "co": "Khối lượng CO sinh ra (g)",
+        "soot": "Khối lượng muội than (g)",
+        "water": "Khối lượng nước đun nóng được từ 20 °C lên 100 °C, bỏ qua hao phí (kg)",
+        "mass": "Khối lượng nhiên liệu đã đốt (g)",
+        "air": "Lượng không khí cung cấp (% lượng cần để cháy hoàn toàn)"
+      }
+    },
+    "least-co2-picked": {
+      "kind": "goal",
+      "description": "Học sinh chọn đúng nhiên liệu thải ít CO₂ nhất cho cùng một nhiệt lượng (hydrogen)",
+      "data": {
+        "co2PerMJ": "Lượng CO₂ cho mỗi MJ nhiệt lượng của nhiên liệu đã chọn (g/MJ)"
+      }
+    }
+  }
+}

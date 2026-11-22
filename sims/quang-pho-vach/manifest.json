@@ -1,0 +1,61 @@
+{
+  "slug": "quang-pho-vach",
+  "version": "1.0.0",
+  "title": "Quang phổ liên tục, quang phổ vạch phát xạ và hấp thụ",
+  "subject": "physics",
+  "grades": [12],
+  "description": "Nhìn qua máy quang phổ: đèn sợi đốt cho quang phổ liên tục, khí loãng nóng sáng (hiđrô, natri, thủy ngân, heli, neon) cho quang phổ vạch phát xạ. Đặt khí nguội hơn trước đèn sợi đốt để thấy các vạch hấp thụ ở đúng vị trí các vạch phát xạ, rồi nhận biết một khí chưa biết bằng cách so sánh vị trí các vạch.",
+  "learningGoals": [
+    "Phân biệt quang phổ liên tục, quang phổ vạch phát xạ và quang phổ vạch hấp thụ, cùng nguồn phát và điều kiện tạo ra mỗi loại.",
+    "Nhận ra mỗi nguyên tố có quang phổ vạch đặc trưng về số vạch, vị trí (bước sóng) và màu các vạch.",
+    "Giải thích vì sao vạch hấp thụ của một chất khí nằm đúng vị trí vạch phát xạ của chính nó.",
+    "Vận dụng phép phân tích quang phổ để nhận biết một chất khí từ quang phổ vạch của nó."
+  ],
+  "state": {
+    "mode": "Thí nghiệm: emission (quang phổ phát xạ của nguồn sáng), absorption (quang phổ vạch hấp thụ), unknown (nhận biết khí chưa biết)",
+    "source": "Nguồn sáng ở chế độ phát xạ: lamp (đèn sợi đốt), H, Na, Hg, He, Ne",
+    "gas": "Khí nguội hơn đặt trước đèn sợi đốt ở chế độ hấp thụ: H, Na, Hg, He, Ne",
+    "guess": "Mẫu so sánh học sinh đang chọn ở chế độ nhận biết: H, Na, Hg, He, Ne",
+    "unknown": "Chỉ số của khí chưa biết (0 = H, 1 = Na, 2 = Hg, 3 = He, 4 = Ne)",
+    "seed": "Hạt giống của bộ sinh số giả ngẫu nhiên dùng để chọn khí chưa biết kế tiếp",
+    "tries": "Số lần bấm Kiểm tra với khí chưa biết hiện tại",
+    "checked": "Mẫu so sánh hiện tại đã được kiểm tra hay chưa",
+    "solved": "Khí chưa biết hiện tại đã được nhận biết đúng hay chưa",
+    "showLabels": "Hiện bước sóng (nm) dưới các vạch"
+  },
+  "events": {
+    "spectrum-shown": {
+      "kind": "result",
+      "description": "Học sinh vừa chọn một nguồn sáng (chế độ phát xạ) hoặc một khí đặt trước đèn (chế độ hấp thụ) và quang phổ tương ứng được hiển thị",
+      "data": {
+        "source": "Nguồn hoặc khí được chọn: 0 = đèn sợi đốt, 1 = H, 2 = Na, 3 = Hg, 4 = He, 5 = Ne",
+        "lines": "Số vạch trong vùng nhìn thấy (0 với đèn sợi đốt)",
+        "continuous": "1 nếu có nền quang phổ liên tục, 0 nếu không",
+        "absorption": "1 nếu là quang phổ vạch hấp thụ, 0 nếu là quang phổ phát xạ"
+      }
+    },
+    "guess-checked": {
+      "kind": "result",
+      "description": "Học sinh bấm Kiểm tra để so mẫu đang chọn với khí chưa biết",
+      "data": {
+        "correct": "1 nếu mẫu so sánh đúng là khí chưa biết, 0 nếu sai",
+        "matched": "Số vạch của khí chưa biết trùng với vạch của mẫu so sánh",
+        "total": "Tổng số vạch của khí chưa biết",
+        "tries": "Số lần đã kiểm tra với khí này"
+      }
+    },
+    "gas-identified": {
+      "kind": "goal",
+      "description": "Học sinh nhận biết đúng khí chưa biết",
+      "data": {
+        "gas": "Khí đã nhận biết: 1 = H, 2 = Na, 3 = Hg, 4 = He, 5 = Ne",
+        "tries": "Số lần kiểm tra đã dùng"
+      }
+    },
+    "next-unknown": {
+      "kind": "action",
+      "description": "Học sinh yêu cầu một khí chưa biết khác",
+      "data": {}
+    }
+  }
+}

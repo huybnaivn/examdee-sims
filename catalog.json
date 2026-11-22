@@ -7405,6 +7405,59 @@
     "thumbnailUrl": "/nhiem-dien/1.0.0/thumb.png"
   },
   {
+    "slug": "nhien-lieu",
+    "version": "1.0.0",
+    "title": "Nhiên liệu và sự đốt cháy",
+    "subject": "chemistry",
+    "grades": [
+      9
+    ],
+    "description": "Đốt than, xăng, khí gas, cồn hoặc hydrogen với lượng không khí tùy chọn. Đủ oxygen thì nhiên liệu cháy hoàn toàn thành CO₂ và H₂O; thiếu oxygen thì sinh ra khí CO độc và muội than, nhiệt lượng tỏa ra giảm. So sánh nhiệt lượng và lượng CO₂ của các nhiên liệu.",
+    "learningGoals": [
+      "Viết được phương trình hoá học của phản ứng cháy hoàn toàn của carbon, hydrocarbon, ethanol và hydrogen.",
+      "Tính được lượng oxygen cần dùng, khối lượng CO₂ sinh ra và nhiệt lượng tỏa ra khi đốt một lượng nhiên liệu.",
+      "Giải thích vì sao phải cung cấp đủ không khí khi đốt nhiên liệu: thiếu oxygen sinh ra CO, muội than và tỏa ít nhiệt hơn.",
+      "So sánh các nhiên liệu theo nhiệt lượng tỏa ra trên mỗi kilôgam và lượng CO₂ thải ra cho cùng một nhiệt lượng."
+    ],
+    "state": {
+      "fuel": "Nhiên liệu: than (carbon), xang (tính theo octane C₈H₁₈), gas (tính theo propane C₃H₈), con (ethanol), hydro (H₂)",
+      "mass": "Khối lượng nhiên liệu đem đốt (g)",
+      "air": "Lượng không khí cung cấp, tính theo phần trăm lượng cần để cháy hoàn toàn (%)",
+      "progress": "Tiến trình cháy: 0 = chưa đốt, 1 = đã cháy hết",
+      "compare": "Đang hiện biểu đồ so sánh các nhiên liệu thay cho thí nghiệm đốt",
+      "pick": "Câu trả lời của học sinh cho câu hỏi nhiên liệu nào thải ít CO₂ nhất cho cùng một nhiệt lượng (chuỗi rỗng nếu chưa chọn)"
+    },
+    "events": {
+      "ignite": {
+        "kind": "action",
+        "description": "Học sinh bấm Đốt để châm lửa mẫu nhiên liệu",
+        "data": {}
+      },
+      "burned": {
+        "kind": "result",
+        "description": "Mẫu nhiên liệu vừa cháy hết",
+        "data": {
+          "heat": "Nhiệt lượng tỏa ra (kJ)",
+          "co2": "Khối lượng CO₂ sinh ra (g)",
+          "co": "Khối lượng CO sinh ra (g)",
+          "soot": "Khối lượng muội than (g)",
+          "water": "Khối lượng nước đun nóng được từ 20 °C lên 100 °C, bỏ qua hao phí (kg)",
+          "mass": "Khối lượng nhiên liệu đã đốt (g)",
+          "air": "Lượng không khí cung cấp (% lượng cần để cháy hoàn toàn)"
+        }
+      },
+      "least-co2-picked": {
+        "kind": "goal",
+        "description": "Học sinh chọn đúng nhiên liệu thải ít CO₂ nhất cho cùng một nhiệt lượng (hydrogen)",
+        "data": {
+          "co2PerMJ": "Lượng CO₂ cho mỗi MJ nhiệt lượng của nhiên liệu đã chọn (g/MJ)"
+        }
+      }
+    },
+    "url": "/nhien-lieu/1.0.0/index.html",
+    "thumbnailUrl": "/nhien-lieu/1.0.0/thumb.png"
+  },
+  {
     "slug": "nhiet-ke-thang-nhiet-do",
     "version": "1.0.0",
     "title": "Nhiệt kế và thang nhiệt độ",
@@ -7686,6 +7739,82 @@
     },
     "url": "/phan-so/1.0.0/index.html",
     "thumbnailUrl": "/phan-so/1.0.0/thumb.png"
+  },
+  {
+    "slug": "phan-ung-hat-nhan",
+    "version": "1.0.0",
+    "title": "Phản ứng hạt nhân, phân hạch và nhiệt hạch",
+    "subject": "physics",
+    "grades": [
+      12
+    ],
+    "description": "Lập phương trình phản ứng hạt nhân bằng cách chọn các hạt, kiểm tra định luật bảo toàn số khối và điện tích, tìm hạt còn thiếu và tính năng lượng tỏa ra hay thu vào từ độ hụt khối. Xem đường cong năng lượng liên kết riêng theo số khối và điều khiển hệ số nhân neutron của phản ứng phân hạch dây chuyền ²³⁵U.",
+    "learningGoals": [
+      "Vận dụng định luật bảo toàn số khối và bảo toàn điện tích để hoàn thành phương trình phản ứng hạt nhân.",
+      "Tính năng lượng của phản ứng hạt nhân W = (m trước − m sau)c² với 1 u·c² = 931,5 MeV và nhận biết phản ứng tỏa hay thu năng lượng.",
+      "Dùng năng lượng liên kết riêng để so sánh độ bền vững của các hạt nhân và giải thích vì sao phân hạch hạt nhân nặng và nhiệt hạch hạt nhân nhẹ đều tỏa năng lượng.",
+      "Phân biệt phản ứng dây chuyền dưới hạn (k < 1), tới hạn (k = 1) và vượt hạn (k > 1)."
+    ],
+    "state": {
+      "mode": "Nội dung đang xem: reaction (lập phương trình phản ứng), curve (năng lượng liên kết riêng), chain (phản ứng phân hạch dây chuyền)",
+      "preset": "Phản ứng mẫu đang dùng (dt, dd, pli, an, abe, aal, nli, fbk, fxs) hoặc custom nếu học sinh tự chọn các hạt",
+      "a": "Hạt tham gia thứ nhất (mã hạt nhân, ví dụ H2, He4, U235, n)",
+      "b": "Hạt tham gia thứ hai (mã hạt nhân)",
+      "c": "Hạt tạo thành thứ nhất (mã hạt nhân)",
+      "d": "Hạt tạo thành thứ hai (mã hạt nhân), hoặc ? nếu chưa biết",
+      "extra": "Số neutron tạo thành kèm theo (0 đến 3)",
+      "nuclide": "Hạt nhân được chọn trên đường cong năng lượng liên kết riêng (mã hạt nhân)",
+      "k": "Hệ số nhân neutron: số phân hạch trung bình do các neutron của một phân hạch gây ra",
+      "n0": "Số phân hạch ban đầu (thế hệ 0)",
+      "seed": "Hạt giống của bộ sinh số giả ngẫu nhiên; cùng seed, k và n0 thì chuỗi phản ứng diễn ra y hệt",
+      "gens": "Số thế hệ neutron đã mô phỏng trong lần chạy hiện tại (0 đến 12)"
+    },
+    "events": {
+      "reaction-completed": {
+        "kind": "result",
+        "description": "Học sinh vừa hoàn thành một phương trình phản ứng bảo toàn cả số khối và điện tích",
+        "data": {
+          "energy": "Năng lượng phản ứng W (MeV), dương nếu tỏa, âm nếu thu",
+          "massDefect": "Độ hụt khối m trước − m sau (u)",
+          "massNumber": "Tổng số khối mỗi vế",
+          "charge": "Tổng điện tích (số Z) mỗi vế"
+        }
+      },
+      "hint-used": {
+        "kind": "action",
+        "description": "Học sinh bấm gợi ý để mô phỏng tự điền hạt X còn thiếu",
+        "data": {}
+      },
+      "chain-started": {
+        "kind": "action",
+        "description": "Học sinh bấm chạy chuỗi phản ứng phân hạch",
+        "data": {}
+      },
+      "chain-reseeded": {
+        "kind": "action",
+        "description": "Học sinh chạy một lần ngẫu nhiên khác (đổi hạt giống)",
+        "data": {}
+      },
+      "chain-finished": {
+        "kind": "result",
+        "description": "Một lần chạy chuỗi phản ứng vừa kết thúc (đủ 12 thế hệ, tắt hẳn hoặc vượt giới hạn mô phỏng)",
+        "data": {
+          "k": "Hệ số nhân neutron đã đặt",
+          "generations": "Số thế hệ đã diễn ra",
+          "fissions": "Tổng số phân hạch của cả chuỗi",
+          "last": "Số phân hạch ở thế hệ cuối cùng"
+        }
+      },
+      "critical-reached": {
+        "kind": "goal",
+        "description": "Học sinh đặt hệ số nhân neutron đúng bằng 1: hệ tới hạn",
+        "data": {
+          "k": "Hệ số nhân neutron (bằng 1)"
+        }
+      }
+    },
+    "url": "/phan-ung-hat-nhan/1.0.0/index.html",
+    "thumbnailUrl": "/phan-ung-hat-nhan/1.0.0/thumb.png"
   },
   {
     "slug": "phan-xa-am-tieng-vang",
@@ -8397,6 +8526,71 @@
     },
     "url": "/quang-hop/1.0.0/index.html",
     "thumbnailUrl": "/quang-hop/1.0.0/thumb.png"
+  },
+  {
+    "slug": "quang-pho-vach",
+    "version": "1.0.0",
+    "title": "Quang phổ liên tục, quang phổ vạch phát xạ và hấp thụ",
+    "subject": "physics",
+    "grades": [
+      12
+    ],
+    "description": "Nhìn qua máy quang phổ: đèn sợi đốt cho quang phổ liên tục, khí loãng nóng sáng (hiđrô, natri, thủy ngân, heli, neon) cho quang phổ vạch phát xạ. Đặt khí nguội hơn trước đèn sợi đốt để thấy các vạch hấp thụ ở đúng vị trí các vạch phát xạ, rồi nhận biết một khí chưa biết bằng cách so sánh vị trí các vạch.",
+    "learningGoals": [
+      "Phân biệt quang phổ liên tục, quang phổ vạch phát xạ và quang phổ vạch hấp thụ, cùng nguồn phát và điều kiện tạo ra mỗi loại.",
+      "Nhận ra mỗi nguyên tố có quang phổ vạch đặc trưng về số vạch, vị trí (bước sóng) và màu các vạch.",
+      "Giải thích vì sao vạch hấp thụ của một chất khí nằm đúng vị trí vạch phát xạ của chính nó.",
+      "Vận dụng phép phân tích quang phổ để nhận biết một chất khí từ quang phổ vạch của nó."
+    ],
+    "state": {
+      "mode": "Thí nghiệm: emission (quang phổ phát xạ của nguồn sáng), absorption (quang phổ vạch hấp thụ), unknown (nhận biết khí chưa biết)",
+      "source": "Nguồn sáng ở chế độ phát xạ: lamp (đèn sợi đốt), H, Na, Hg, He, Ne",
+      "gas": "Khí nguội hơn đặt trước đèn sợi đốt ở chế độ hấp thụ: H, Na, Hg, He, Ne",
+      "guess": "Mẫu so sánh học sinh đang chọn ở chế độ nhận biết: H, Na, Hg, He, Ne",
+      "unknown": "Chỉ số của khí chưa biết (0 = H, 1 = Na, 2 = Hg, 3 = He, 4 = Ne)",
+      "seed": "Hạt giống của bộ sinh số giả ngẫu nhiên dùng để chọn khí chưa biết kế tiếp",
+      "tries": "Số lần bấm Kiểm tra với khí chưa biết hiện tại",
+      "checked": "Mẫu so sánh hiện tại đã được kiểm tra hay chưa",
+      "solved": "Khí chưa biết hiện tại đã được nhận biết đúng hay chưa",
+      "showLabels": "Hiện bước sóng (nm) dưới các vạch"
+    },
+    "events": {
+      "spectrum-shown": {
+        "kind": "result",
+        "description": "Học sinh vừa chọn một nguồn sáng (chế độ phát xạ) hoặc một khí đặt trước đèn (chế độ hấp thụ) và quang phổ tương ứng được hiển thị",
+        "data": {
+          "source": "Nguồn hoặc khí được chọn: 0 = đèn sợi đốt, 1 = H, 2 = Na, 3 = Hg, 4 = He, 5 = Ne",
+          "lines": "Số vạch trong vùng nhìn thấy (0 với đèn sợi đốt)",
+          "continuous": "1 nếu có nền quang phổ liên tục, 0 nếu không",
+          "absorption": "1 nếu là quang phổ vạch hấp thụ, 0 nếu là quang phổ phát xạ"
+        }
+      },
+      "guess-checked": {
+        "kind": "result",
+        "description": "Học sinh bấm Kiểm tra để so mẫu đang chọn với khí chưa biết",
+        "data": {
+          "correct": "1 nếu mẫu so sánh đúng là khí chưa biết, 0 nếu sai",
+          "matched": "Số vạch của khí chưa biết trùng với vạch của mẫu so sánh",
+          "total": "Tổng số vạch của khí chưa biết",
+          "tries": "Số lần đã kiểm tra với khí này"
+        }
+      },
+      "gas-identified": {
+        "kind": "goal",
+        "description": "Học sinh nhận biết đúng khí chưa biết",
+        "data": {
+          "gas": "Khí đã nhận biết: 1 = H, 2 = Na, 3 = Hg, 4 = He, 5 = Ne",
+          "tries": "Số lần kiểm tra đã dùng"
+        }
+      },
+      "next-unknown": {
+        "kind": "action",
+        "description": "Học sinh yêu cầu một khí chưa biết khác",
+        "data": {}
+      }
+    },
+    "url": "/quang-pho-vach/1.0.0/index.html",
+    "thumbnailUrl": "/quang-pho-vach/1.0.0/thumb.png"
   },
   {
     "slug": "roi-tu-do",
