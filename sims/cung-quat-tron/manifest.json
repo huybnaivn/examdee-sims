@@ -1,0 +1,67 @@
+{
+  "slug": "cung-quat-tron",
+  "version": "1.0.0",
+  "title": "Độ dài cung tròn và diện tích hình quạt",
+  "subject": "math",
+  "grades": [9],
+  "description": "Đường tròn tâm O bán kính R với cung AB có số đo n° kéo được bằng điểm B hoặc thanh trượt. Sim tô cung và hình quạt tròn, tính độ dài cung l = πRn/180 và diện tích hình quạt S = πR²n/360 = lR/2, so với chu vi và diện tích cả hình tròn. Chế độ hình vành khuyên có hai bán kính R và r với S = π(R² − r²). Thử thách yêu cầu tạo hình quạt có diện tích cho trước.",
+  "learningGoals": [
+    "Tính độ dài cung tròn n° của đường tròn bán kính R: l = πRn/180.",
+    "Tính diện tích hình quạt tròn: S = πR²n/360 = lR/2.",
+    "Nhận ra cung và hình quạt tỉ lệ với số đo cung: cả đường tròn (360°) cho 2πR và πR².",
+    "Tính diện tích hình vành khuyên giới hạn bởi hai đường tròn đồng tâm: S = π(R² − r²).",
+    "Chọn R và n thích hợp để hình quạt có diện tích cho trước."
+  ],
+  "state": {
+    "mode": "\"sector\" (cung tròn và hình quạt tròn) hoặc \"ring\" (hình vành khuyên)",
+    "R": "Bán kính R của đường tròn, cũng là bán kính lớn của hình vành khuyên (cm, 1 đến 10)",
+    "r": "Bán kính nhỏ r của hình vành khuyên (cm, luôn nhỏ hơn R ít nhất 0,5); chỉ dùng khi mode = \"ring\"",
+    "angle": "Số đo cung AB, cũng là số đo góc ở tâm AOB (độ, 0 đến 360); chỉ dùng khi mode = \"sector\"",
+    "challenge": "Số thứ tự thử thách đang làm (0 là chưa bật thử thách); mỗi thử thách cho trước một diện tích hình quạt",
+    "solved": "true nếu thử thách hiện tại đã đạt"
+  },
+  "events": {
+    "sector-set": {
+      "kind": "result",
+      "description": "Học sinh chỉnh xong bán kính hoặc số đo cung (thả thanh trượt hoặc thả điểm B)",
+      "data": {
+        "angle": "Số đo cung n (độ)",
+        "radius": "Bán kính R (cm)",
+        "arcLength": "Độ dài cung l = πRn/180 (cm)",
+        "sectorArea": "Diện tích hình quạt S = πR²n/360 (cm²)"
+      }
+    },
+    "ring-set": {
+      "kind": "result",
+      "description": "Học sinh chỉnh xong một bán kính của hình vành khuyên",
+      "data": {
+        "outer": "Bán kính lớn R (cm)",
+        "inner": "Bán kính nhỏ r (cm)",
+        "area": "Diện tích hình vành khuyên π(R² − r²) (cm²)"
+      }
+    },
+    "angle-dragged": {
+      "kind": "action",
+      "description": "Học sinh kéo điểm B trên đường tròn rồi thả",
+      "data": {
+        "angle": "Số đo cung mới (độ)"
+      }
+    },
+    "challenge-started": {
+      "kind": "action",
+      "description": "Học sinh bấm nút nhận một thử thách mới (diện tích hình quạt cho trước)",
+      "data": {}
+    },
+    "target-area-reached": {
+      "kind": "goal",
+      "description": "Học sinh tạo được hình quạt có diện tích bằng diện tích thử thách yêu cầu (làm tròn đến 0,01 cm²)",
+      "data": {
+        "challenge": "Số thứ tự thử thách",
+        "target": "Diện tích yêu cầu (cm²)",
+        "area": "Diện tích hình quạt đã tạo (cm²)",
+        "radius": "Bán kính R đã dùng (cm)",
+        "angle": "Số đo cung đã dùng (độ)"
+      }
+    }
+  }
+}

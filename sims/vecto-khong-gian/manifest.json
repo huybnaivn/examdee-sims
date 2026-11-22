@@ -1,0 +1,60 @@
+{
+  "slug": "vecto-khong-gian",
+  "version": "1.0.0",
+  "title": "Vectơ và tọa độ trong không gian Oxyz",
+  "subject": "math",
+  "grades": [12],
+  "description": "Hệ trục tọa độ Oxyz xoay được, với hai vectơ a và b chung gốc O chỉnh bằng thanh trượt tọa độ. Sim vẽ tổng a + b theo quy tắc hình bình hành, hiệu a − b, tính tích vô hướng, độ dài và góc giữa hai vectơ theo biểu thức tọa độ; phần mở rộng vẽ tích có hướng [a, b] vuông góc với cả hai vectơ. Có thể hiện điểm A (đầu mút của a) cùng hình chiếu vuông góc của nó trên ba mặt phẳng tọa độ.",
+  "learningGoals": [
+    "Đọc tọa độ của vectơ và của điểm trong không gian Oxyz; hình chiếu của A(x; y; z) trên (Oxy), (Oyz), (Oxz) lần lượt là (x; y; 0), (0; y; z), (x; 0; z).",
+    "Tính tổng, hiệu hai vectơ theo tọa độ: a ± b = (a₁ ± b₁; a₂ ± b₂; a₃ ± b₃).",
+    "Tính tích vô hướng a·b = a₁b₁ + a₂b₂ + a₃b₃, độ dài |a| = √(a₁² + a₂² + a₃²) và cos(a, b) = a·b / (|a|·|b|).",
+    "Nhận biết a ⊥ b khi và chỉ khi a·b = 0 (hai vectơ khác vectơ-không).",
+    "Mở rộng: tích có hướng [a, b] vuông góc với cả a và b, có độ dài |a|·|b|·sin(a, b) bằng diện tích hình bình hành dựng trên a và b."
+  ],
+  "state": {
+    "ax": "Hoành độ a₁ của vectơ a (số nguyên từ −5 đến 5)",
+    "ay": "Tung độ a₂ của vectơ a (−5 đến 5)",
+    "az": "Cao độ a₃ của vectơ a (−5 đến 5)",
+    "bx": "Hoành độ b₁ của vectơ b (−5 đến 5)",
+    "by": "Tung độ b₂ của vectơ b (−5 đến 5)",
+    "bz": "Cao độ b₃ của vectơ b (−5 đến 5)",
+    "show": "Vectơ vẽ thêm: \"sum\" (tổng a + b), \"diff\" (hiệu a − b), \"cross\" (tích có hướng [a, b]) hoặc \"none\"",
+    "showPoint": "true thì hiện điểm A (đầu mút của a) và ba hình chiếu của nó trên các mặt phẳng tọa độ",
+    "yaw": "Góc xoay hình quanh trục Oz (độ, −180 đến 180); chỉ đổi góc nhìn",
+    "pitch": "Góc nghiêng nhìn xuống mặt phẳng (Oxy) (độ, −10 đến 85); chỉ đổi góc nhìn",
+    "perp": "true nếu ở lần chỉnh gần nhất hai vectơ vuông góc (dùng để chỉ báo đạt mục tiêu một lần)"
+  },
+  "events": {
+    "vectors-set": {
+      "kind": "result",
+      "description": "Học sinh chỉnh xong một tọa độ của a hoặc b",
+      "data": {
+        "dot": "Tích vô hướng a·b",
+        "angle": "Góc giữa a và b (độ, 0–180); không có khi một vectơ là vectơ-không",
+        "lengthA": "Độ dài |a|",
+        "lengthB": "Độ dài |b|"
+      }
+    },
+    "perpendicular": {
+      "kind": "goal",
+      "description": "Học sinh vừa làm cho hai vectơ (khác vectơ-không) vuông góc với nhau, a·b = 0",
+      "data": {
+        "ax": "Hoành độ của a",
+        "ay": "Tung độ của a",
+        "az": "Cao độ của a",
+        "bx": "Hoành độ của b",
+        "by": "Tung độ của b",
+        "bz": "Cao độ của b"
+      }
+    },
+    "rotate": {
+      "kind": "action",
+      "description": "Học sinh kéo trên hình để xoay hệ trục rồi thả",
+      "data": {
+        "yaw": "Góc xoay quanh Oz (độ)",
+        "pitch": "Góc nghiêng (độ)"
+      }
+    }
+  }
+}

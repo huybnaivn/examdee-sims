@@ -1,0 +1,84 @@
+{
+  "slug": "luoi-hinh-lap-phuong",
+  "version": "1.0.0",
+  "title": "Hình khai triển của hình lập phương",
+  "subject": "math",
+  "grades": [6, 7],
+  "description": "Gấp một hình khai triển thành hình lập phương rồi mở ra, có hoạt hình và xoay được; hai mặt đối diện tô cùng màu. Xem đủ 11 hình khai triển khác nhau của hình lập phương. Ở phần thử thách, học sinh tự xếp sáu ô vuông trên lưới, sim kiểm tra xem có gấp được thành hình lập phương không, chỉ ra các mặt đối diện hoặc lí do không gấp được.",
+  "learningGoals": [
+    "Nhận biết hình khai triển của hình lập phương: sáu hình vuông bằng nhau, gấp theo cạnh chung thành sáu mặt.",
+    "Xác định hai mặt đối diện của hình lập phương ngay trên hình khai triển.",
+    "Biết hình lập phương có đúng 11 hình khai triển khác nhau (không kể xoay và lật).",
+    "Giải thích vì sao một số cách xếp sáu ô vuông không gấp được (bốn ô chụm quanh một đỉnh, hai ô chồng lên cùng một mặt).",
+    "Tính diện tích toàn phần của hình lập phương cạnh a: Stp = 6a², bằng diện tích hình khai triển."
+  ],
+  "state": {
+    "mode": "\"fold\" (gấp và mở), \"gallery\" (xem 11 hình khai triển) hoặc \"puzzle\" (thử thách tự xếp)",
+    "net": "Số thứ tự hình khai triển đang gấp (1 đến 11; số 10 là hình chữ thập)",
+    "fold": "Mức gấp (%, 0 là trải phẳng, 100 là hình lập phương kín)",
+    "dir": "Chiều chạy của hoạt hình: 1 là gấp lại, −1 là mở ra",
+    "edge": "Cạnh a của hình lập phương (cm, 1 đến 10)",
+    "yaw": "Góc xoay ngang của hình (độ); chỉ đổi góc nhìn",
+    "pitch": "Góc nghiêng nhìn xuống (độ, 5 đến 90); chỉ đổi góc nhìn",
+    "cells": "Các ô vuông học sinh đã đặt trên lưới 6 × 5 ở phần thử thách, dạng \"x,y;x,y;…\" (x: cột từ 0, y: hàng từ 0 tính từ trên xuống), nhiều nhất 6 ô",
+    "checked": "true nếu các ô đang có trên lưới đã được bấm \"Kiểm tra\"",
+    "found": "Số thứ tự các hình khai triển khác nhau học sinh đã tự xếp đúng, dạng \"3,7,10\""
+  },
+  "events": {
+    "square-placed": {
+      "kind": "action",
+      "description": "Học sinh đặt thêm một ô vuông lên lưới ở phần thử thách",
+      "data": {
+        "x": "Cột của ô (0–5)",
+        "y": "Hàng của ô (0–4, tính từ trên xuống)",
+        "count": "Số ô vuông trên lưới sau khi đặt"
+      }
+    },
+    "square-removed": {
+      "kind": "action",
+      "description": "Học sinh bỏ một ô vuông khỏi lưới",
+      "data": {
+        "x": "Cột của ô (0–5)",
+        "y": "Hàng của ô (0–4)",
+        "count": "Số ô vuông còn lại trên lưới"
+      }
+    },
+    "grid-cleared": {
+      "kind": "action",
+      "description": "Học sinh bấm \"Xóa các ô\" để xếp lại từ đầu",
+      "data": {}
+    },
+    "net-checked": {
+      "kind": "result",
+      "description": "Học sinh bấm \"Kiểm tra\" sáu ô vuông đã xếp",
+      "data": {
+        "valid": "1 nếu gấp được thành hình lập phương, 0 nếu không",
+        "net": "Số thứ tự hình khai triển (1–11) nếu đúng, 0 nếu sai",
+        "isNew": "1 nếu là hình khai triển học sinh chưa tìm ra trước đó, 0 nếu không",
+        "found": "Số hình khai triển khác nhau đã tìm được sau lần kiểm tra này"
+      }
+    },
+    "five-nets-found": {
+      "kind": "goal",
+      "description": "Học sinh đã tự xếp đúng năm hình khai triển khác nhau",
+      "data": {
+        "found": "Số hình khai triển khác nhau đã tìm được (5)"
+      }
+    },
+    "net-selected": {
+      "kind": "action",
+      "description": "Học sinh bấm vào một hình trong bảng 11 hình khai triển để gấp thử",
+      "data": {
+        "net": "Số thứ tự hình khai triển (1–11)"
+      }
+    },
+    "rotate": {
+      "kind": "action",
+      "description": "Học sinh kéo trên hình để xoay rồi thả",
+      "data": {
+        "yaw": "Góc xoay ngang (độ)",
+        "pitch": "Góc nghiêng (độ)"
+      }
+    }
+  }
+}

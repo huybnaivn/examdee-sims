@@ -2175,6 +2175,77 @@
     "thumbnailUrl": "/cung-phan-xa/1.0.0/thumb.png"
   },
   {
+    "slug": "cung-quat-tron",
+    "version": "1.0.0",
+    "title": "Độ dài cung tròn và diện tích hình quạt",
+    "subject": "math",
+    "grades": [
+      9
+    ],
+    "description": "Đường tròn tâm O bán kính R với cung AB có số đo n° kéo được bằng điểm B hoặc thanh trượt. Sim tô cung và hình quạt tròn, tính độ dài cung l = πRn/180 và diện tích hình quạt S = πR²n/360 = lR/2, so với chu vi và diện tích cả hình tròn. Chế độ hình vành khuyên có hai bán kính R và r với S = π(R² − r²). Thử thách yêu cầu tạo hình quạt có diện tích cho trước.",
+    "learningGoals": [
+      "Tính độ dài cung tròn n° của đường tròn bán kính R: l = πRn/180.",
+      "Tính diện tích hình quạt tròn: S = πR²n/360 = lR/2.",
+      "Nhận ra cung và hình quạt tỉ lệ với số đo cung: cả đường tròn (360°) cho 2πR và πR².",
+      "Tính diện tích hình vành khuyên giới hạn bởi hai đường tròn đồng tâm: S = π(R² − r²).",
+      "Chọn R và n thích hợp để hình quạt có diện tích cho trước."
+    ],
+    "state": {
+      "mode": "\"sector\" (cung tròn và hình quạt tròn) hoặc \"ring\" (hình vành khuyên)",
+      "R": "Bán kính R của đường tròn, cũng là bán kính lớn của hình vành khuyên (cm, 1 đến 10)",
+      "r": "Bán kính nhỏ r của hình vành khuyên (cm, luôn nhỏ hơn R ít nhất 0,5); chỉ dùng khi mode = \"ring\"",
+      "angle": "Số đo cung AB, cũng là số đo góc ở tâm AOB (độ, 0 đến 360); chỉ dùng khi mode = \"sector\"",
+      "challenge": "Số thứ tự thử thách đang làm (0 là chưa bật thử thách); mỗi thử thách cho trước một diện tích hình quạt",
+      "solved": "true nếu thử thách hiện tại đã đạt"
+    },
+    "events": {
+      "sector-set": {
+        "kind": "result",
+        "description": "Học sinh chỉnh xong bán kính hoặc số đo cung (thả thanh trượt hoặc thả điểm B)",
+        "data": {
+          "angle": "Số đo cung n (độ)",
+          "radius": "Bán kính R (cm)",
+          "arcLength": "Độ dài cung l = πRn/180 (cm)",
+          "sectorArea": "Diện tích hình quạt S = πR²n/360 (cm²)"
+        }
+      },
+      "ring-set": {
+        "kind": "result",
+        "description": "Học sinh chỉnh xong một bán kính của hình vành khuyên",
+        "data": {
+          "outer": "Bán kính lớn R (cm)",
+          "inner": "Bán kính nhỏ r (cm)",
+          "area": "Diện tích hình vành khuyên π(R² − r²) (cm²)"
+        }
+      },
+      "angle-dragged": {
+        "kind": "action",
+        "description": "Học sinh kéo điểm B trên đường tròn rồi thả",
+        "data": {
+          "angle": "Số đo cung mới (độ)"
+        }
+      },
+      "challenge-started": {
+        "kind": "action",
+        "description": "Học sinh bấm nút nhận một thử thách mới (diện tích hình quạt cho trước)",
+        "data": {}
+      },
+      "target-area-reached": {
+        "kind": "goal",
+        "description": "Học sinh tạo được hình quạt có diện tích bằng diện tích thử thách yêu cầu (làm tròn đến 0,01 cm²)",
+        "data": {
+          "challenge": "Số thứ tự thử thách",
+          "target": "Diện tích yêu cầu (cm²)",
+          "area": "Diện tích hình quạt đã tạo (cm²)",
+          "radius": "Bán kính R đã dùng (cm)",
+          "angle": "Số đo cung đã dùng (độ)"
+        }
+      }
+    },
+    "url": "/cung-quat-tron/1.0.0/index.html",
+    "thumbnailUrl": "/cung-quat-tron/1.0.0/thumb.png"
+  },
+  {
     "slug": "dao-dong-cuong-buc",
     "version": "1.0.0",
     "title": "Dao động tắt dần, duy trì và cưỡng bức",
@@ -5681,6 +5752,95 @@
     },
     "url": "/luc-va-chuyen-dong/1.0.0/index.html",
     "thumbnailUrl": "/luc-va-chuyen-dong/1.0.0/thumb.png"
+  },
+  {
+    "slug": "luoi-hinh-lap-phuong",
+    "version": "1.0.0",
+    "title": "Hình khai triển của hình lập phương",
+    "subject": "math",
+    "grades": [
+      6,
+      7
+    ],
+    "description": "Gấp một hình khai triển thành hình lập phương rồi mở ra, có hoạt hình và xoay được; hai mặt đối diện tô cùng màu. Xem đủ 11 hình khai triển khác nhau của hình lập phương. Ở phần thử thách, học sinh tự xếp sáu ô vuông trên lưới, sim kiểm tra xem có gấp được thành hình lập phương không, chỉ ra các mặt đối diện hoặc lí do không gấp được.",
+    "learningGoals": [
+      "Nhận biết hình khai triển của hình lập phương: sáu hình vuông bằng nhau, gấp theo cạnh chung thành sáu mặt.",
+      "Xác định hai mặt đối diện của hình lập phương ngay trên hình khai triển.",
+      "Biết hình lập phương có đúng 11 hình khai triển khác nhau (không kể xoay và lật).",
+      "Giải thích vì sao một số cách xếp sáu ô vuông không gấp được (bốn ô chụm quanh một đỉnh, hai ô chồng lên cùng một mặt).",
+      "Tính diện tích toàn phần của hình lập phương cạnh a: Stp = 6a², bằng diện tích hình khai triển."
+    ],
+    "state": {
+      "mode": "\"fold\" (gấp và mở), \"gallery\" (xem 11 hình khai triển) hoặc \"puzzle\" (thử thách tự xếp)",
+      "net": "Số thứ tự hình khai triển đang gấp (1 đến 11; số 10 là hình chữ thập)",
+      "fold": "Mức gấp (%, 0 là trải phẳng, 100 là hình lập phương kín)",
+      "dir": "Chiều chạy của hoạt hình: 1 là gấp lại, −1 là mở ra",
+      "edge": "Cạnh a của hình lập phương (cm, 1 đến 10)",
+      "yaw": "Góc xoay ngang của hình (độ); chỉ đổi góc nhìn",
+      "pitch": "Góc nghiêng nhìn xuống (độ, 5 đến 90); chỉ đổi góc nhìn",
+      "cells": "Các ô vuông học sinh đã đặt trên lưới 6 × 5 ở phần thử thách, dạng \"x,y;x,y;…\" (x: cột từ 0, y: hàng từ 0 tính từ trên xuống), nhiều nhất 6 ô",
+      "checked": "true nếu các ô đang có trên lưới đã được bấm \"Kiểm tra\"",
+      "found": "Số thứ tự các hình khai triển khác nhau học sinh đã tự xếp đúng, dạng \"3,7,10\""
+    },
+    "events": {
+      "square-placed": {
+        "kind": "action",
+        "description": "Học sinh đặt thêm một ô vuông lên lưới ở phần thử thách",
+        "data": {
+          "x": "Cột của ô (0–5)",
+          "y": "Hàng của ô (0–4, tính từ trên xuống)",
+          "count": "Số ô vuông trên lưới sau khi đặt"
+        }
+      },
+      "square-removed": {
+        "kind": "action",
+        "description": "Học sinh bỏ một ô vuông khỏi lưới",
+        "data": {
+          "x": "Cột của ô (0–5)",
+          "y": "Hàng của ô (0–4)",
+          "count": "Số ô vuông còn lại trên lưới"
+        }
+      },
+      "grid-cleared": {
+        "kind": "action",
+        "description": "Học sinh bấm \"Xóa các ô\" để xếp lại từ đầu",
+        "data": {}
+      },
+      "net-checked": {
+        "kind": "result",
+        "description": "Học sinh bấm \"Kiểm tra\" sáu ô vuông đã xếp",
+        "data": {
+          "valid": "1 nếu gấp được thành hình lập phương, 0 nếu không",
+          "net": "Số thứ tự hình khai triển (1–11) nếu đúng, 0 nếu sai",
+          "isNew": "1 nếu là hình khai triển học sinh chưa tìm ra trước đó, 0 nếu không",
+          "found": "Số hình khai triển khác nhau đã tìm được sau lần kiểm tra này"
+        }
+      },
+      "five-nets-found": {
+        "kind": "goal",
+        "description": "Học sinh đã tự xếp đúng năm hình khai triển khác nhau",
+        "data": {
+          "found": "Số hình khai triển khác nhau đã tìm được (5)"
+        }
+      },
+      "net-selected": {
+        "kind": "action",
+        "description": "Học sinh bấm vào một hình trong bảng 11 hình khai triển để gấp thử",
+        "data": {
+          "net": "Số thứ tự hình khai triển (1–11)"
+        }
+      },
+      "rotate": {
+        "kind": "action",
+        "description": "Học sinh kéo trên hình để xoay rồi thả",
+        "data": {
+          "yaw": "Góc xoay ngang (độ)",
+          "pitch": "Góc nghiêng (độ)"
+        }
+      }
+    },
+    "url": "/luoi-hinh-lap-phuong/1.0.0/index.html",
+    "thumbnailUrl": "/luoi-hinh-lap-phuong/1.0.0/thumb.png"
   },
   {
     "slug": "mach-dao-dong-lc",
@@ -9548,6 +9708,70 @@
     },
     "url": "/va-cham/1.0.0/index.html",
     "thumbnailUrl": "/va-cham/1.0.0/thumb.png"
+  },
+  {
+    "slug": "vecto-khong-gian",
+    "version": "1.0.0",
+    "title": "Vectơ và tọa độ trong không gian Oxyz",
+    "subject": "math",
+    "grades": [
+      12
+    ],
+    "description": "Hệ trục tọa độ Oxyz xoay được, với hai vectơ a và b chung gốc O chỉnh bằng thanh trượt tọa độ. Sim vẽ tổng a + b theo quy tắc hình bình hành, hiệu a − b, tính tích vô hướng, độ dài và góc giữa hai vectơ theo biểu thức tọa độ; phần mở rộng vẽ tích có hướng [a, b] vuông góc với cả hai vectơ. Có thể hiện điểm A (đầu mút của a) cùng hình chiếu vuông góc của nó trên ba mặt phẳng tọa độ.",
+    "learningGoals": [
+      "Đọc tọa độ của vectơ và của điểm trong không gian Oxyz; hình chiếu của A(x; y; z) trên (Oxy), (Oyz), (Oxz) lần lượt là (x; y; 0), (0; y; z), (x; 0; z).",
+      "Tính tổng, hiệu hai vectơ theo tọa độ: a ± b = (a₁ ± b₁; a₂ ± b₂; a₃ ± b₃).",
+      "Tính tích vô hướng a·b = a₁b₁ + a₂b₂ + a₃b₃, độ dài |a| = √(a₁² + a₂² + a₃²) và cos(a, b) = a·b / (|a|·|b|).",
+      "Nhận biết a ⊥ b khi và chỉ khi a·b = 0 (hai vectơ khác vectơ-không).",
+      "Mở rộng: tích có hướng [a, b] vuông góc với cả a và b, có độ dài |a|·|b|·sin(a, b) bằng diện tích hình bình hành dựng trên a và b."
+    ],
+    "state": {
+      "ax": "Hoành độ a₁ của vectơ a (số nguyên từ −5 đến 5)",
+      "ay": "Tung độ a₂ của vectơ a (−5 đến 5)",
+      "az": "Cao độ a₃ của vectơ a (−5 đến 5)",
+      "bx": "Hoành độ b₁ của vectơ b (−5 đến 5)",
+      "by": "Tung độ b₂ của vectơ b (−5 đến 5)",
+      "bz": "Cao độ b₃ của vectơ b (−5 đến 5)",
+      "show": "Vectơ vẽ thêm: \"sum\" (tổng a + b), \"diff\" (hiệu a − b), \"cross\" (tích có hướng [a, b]) hoặc \"none\"",
+      "showPoint": "true thì hiện điểm A (đầu mút của a) và ba hình chiếu của nó trên các mặt phẳng tọa độ",
+      "yaw": "Góc xoay hình quanh trục Oz (độ, −180 đến 180); chỉ đổi góc nhìn",
+      "pitch": "Góc nghiêng nhìn xuống mặt phẳng (Oxy) (độ, −10 đến 85); chỉ đổi góc nhìn",
+      "perp": "true nếu ở lần chỉnh gần nhất hai vectơ vuông góc (dùng để chỉ báo đạt mục tiêu một lần)"
+    },
+    "events": {
+      "vectors-set": {
+        "kind": "result",
+        "description": "Học sinh chỉnh xong một tọa độ của a hoặc b",
+        "data": {
+          "dot": "Tích vô hướng a·b",
+          "angle": "Góc giữa a và b (độ, 0–180); không có khi một vectơ là vectơ-không",
+          "lengthA": "Độ dài |a|",
+          "lengthB": "Độ dài |b|"
+        }
+      },
+      "perpendicular": {
+        "kind": "goal",
+        "description": "Học sinh vừa làm cho hai vectơ (khác vectơ-không) vuông góc với nhau, a·b = 0",
+        "data": {
+          "ax": "Hoành độ của a",
+          "ay": "Tung độ của a",
+          "az": "Cao độ của a",
+          "bx": "Hoành độ của b",
+          "by": "Tung độ của b",
+          "bz": "Cao độ của b"
+        }
+      },
+      "rotate": {
+        "kind": "action",
+        "description": "Học sinh kéo trên hình để xoay hệ trục rồi thả",
+        "data": {
+          "yaw": "Góc xoay quanh Oz (độ)",
+          "pitch": "Góc nghiêng (độ)"
+        }
+      }
+    },
+    "url": "/vecto-khong-gian/1.0.0/index.html",
+    "thumbnailUrl": "/vecto-khong-gian/1.0.0/thumb.png"
   },
   {
     "slug": "xac-suat-co-dien",
