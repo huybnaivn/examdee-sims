@@ -1,0 +1,64 @@
+{
+  "slug": "nem-thang-dung",
+  "version": "1.0.0",
+  "title": "Chuyển động ném thẳng đứng",
+  "subject": "physics",
+  "grades": [
+    10
+  ],
+  "description": "Ném một vật thẳng đứng lên trên (hoặc xuống dưới) từ một độ cao với vận tốc ban đầu tùy chọn. Quan sát ảnh hoạt nghiệm của vật, vectơ vận tốc giảm dần về 0 ở điểm cao nhất rồi đổi chiều, cùng đồ thị vận tốc – thời gian và độ cao – thời gian. Có thể bật lực cản không khí để so sánh, và thử chọn vận tốc ném để điểm cao nhất trùng với độ cao mục tiêu.",
+  "learningGoals": [
+    "Vận dụng v = v₀ − g·t và y = y₀ + v₀·t − ½·g·t² (chiều dương hướng lên) cho chuyển động ném thẳng đứng.",
+    "Xác định thời gian lên đến điểm cao nhất t = v₀/g và độ cao cực đại y₀ + v₀²/(2g).",
+    "Tính thời gian chạm đất từ phương trình bậc hai và tốc độ khi chạm đất.",
+    "Nhận ra khi bỏ qua lực cản, vật trở lại độ cao ném với tốc độ đúng bằng v₀; đồ thị v – t là đường thẳng, đồ thị y – t là parabol.",
+    "So sánh chuyển động khi có và không có lực cản không khí."
+  ],
+  "state": {
+    "height": "Độ cao ban đầu y₀ so với mặt đất (m)",
+    "speed": "Vận tốc ban đầu v₀ (m/s); dương là ném lên, âm là ném xuống, 0 là thả rơi",
+    "gravity": "Gia tốc rơi tự do g (m/s²)",
+    "air": "true nếu có lực cản không khí (tỉ lệ với vận tốc: a = −g − k·v)",
+    "drag": "Hệ số cản k (1/s), chỉ có tác dụng khi air = true",
+    "target": "Độ cao mục tiêu mà điểm cao nhất cần đạt tới (m)",
+    "showVectors": "Có hiện vectơ vận tốc hay không",
+    "time": "Thời gian từ lúc ném (s); 0 là chưa ném, bằng thời gian chạm đất khi vật đã rơi xuống đất"
+  },
+  "events": {
+    "throw": {
+      "kind": "action",
+      "description": "Học sinh ném vật (bấm “Ném vật” hoặc “Chạy”)",
+      "data": {
+        "height": "Độ cao ban đầu y₀ (m)",
+        "speed": "Vận tốc ban đầu v₀ (m/s, dương hướng lên)",
+        "gravity": "Gia tốc rơi tự do g (m/s²)",
+        "drag": "Hệ số cản k (1/s); 0 nếu bỏ qua lực cản không khí"
+      }
+    },
+    "top": {
+      "kind": "result",
+      "description": "Vật vừa lên đến điểm cao nhất (chỉ có khi ném lên)",
+      "data": {
+        "time": "Thời gian từ lúc ném đến điểm cao nhất (s)",
+        "maxHeight": "Độ cao cực đại so với mặt đất (m)"
+      }
+    },
+    "landed": {
+      "kind": "result",
+      "description": "Vật vừa chạm đất",
+      "data": {
+        "time": "Thời gian từ lúc ném đến lúc chạm đất (s)",
+        "impactSpeed": "Tốc độ khi chạm đất (m/s)"
+      }
+    },
+    "target-hit": {
+      "kind": "goal",
+      "description": "Điểm cao nhất của lần ném nằm trong khoảng 0,25 m quanh độ cao mục tiêu",
+      "data": {
+        "target": "Độ cao mục tiêu (m)",
+        "maxHeight": "Độ cao cực đại đạt được (m)",
+        "speed": "Vận tốc ném v₀ đã dùng (m/s)"
+      }
+    }
+  }
+}

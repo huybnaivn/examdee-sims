@@ -1,0 +1,100 @@
+{
+  "slug": "trong-tam-can-bang",
+  "version": "1.0.0",
+  "title": "Trọng tâm và các dạng cân bằng",
+  "subject": "physics",
+  "grades": [
+    10
+  ],
+  "description": "Ba thí nghiệm về trọng tâm và cân bằng của vật rắn. (1) Treo một tấm phẳng đồng chất (chữ nhật, chữ L, tam giác, đa giác) vào chốt: tấm dao động rồi dừng lại khi trọng tâm nằm ngay dưới chốt; treo ở hai lỗ khác nhau để tìm trọng tâm là giao điểm của hai vết dây dọi, rồi đánh dấu × dự đoán. (2) Đặt một khối hộp đồng chất trên mặt nghiêng và tăng dần góc nghiêng: khối đổ khi giá của trọng lực rơi ra ngoài mặt chân đế. (3) Đặt viên bi trên mặt lõm, mặt lồi và mặt phẳng để phân biệt cân bằng bền, không bền và phiếm định.",
+  "learningGoals": [
+    "Xác định trọng tâm của một tấm phẳng mỏng bằng phương pháp dây dọi: trọng tâm là giao điểm của hai đường dây dọi vẽ khi treo vật ở hai điểm khác nhau.",
+    "Giải thích vì sao vật treo cân bằng khi trọng tâm nằm trên đường thẳng đứng đi qua điểm treo.",
+    "Điều kiện cân bằng của vật có mặt chân đế: giá của trọng lực phải đi qua mặt chân đế; khối hộp đồng chất đáy b, cao H bắt đầu đổ khi tan θ = (b/2)/(H/2) = b/H.",
+    "Mức vững vàng của cân bằng tăng khi mặt chân đế rộng hơn và trọng tâm thấp hơn.",
+    "Phân biệt cân bằng bền, không bền và phiếm định qua sự thay đổi độ cao của trọng tâm khi vật lệch khỏi vị trí cân bằng."
+  ],
+  "state": {
+    "mode": "Thí nghiệm đang xem: \"hang\" (treo tấm phẳng, dây dọi), \"topple\" (khối hộp trên mặt nghiêng) hoặc \"balance\" (viên bi trên mặt cong)",
+    "shape": "Tấm phẳng: \"L\" (chữ L), \"rect\" (chữ nhật), \"triangle\" (tam giác) hoặc \"polygon\" (đa giác bất kì)",
+    "pin": "Số thứ tự lỗ đang treo (1–5)",
+    "angle": "Góc quay của tấm phẳng quanh chốt so với hình vẽ gốc (rad, dương là ngược chiều kim đồng hồ)",
+    "omega": "Tốc độ góc của tấm phẳng (rad/s); 0 và trọng tâm ngay dưới chốt nghĩa là đã cân bằng",
+    "traced": "Các vết dây dọi đã vẽ, dạng số nhị phân: bit thứ i bật nghĩa là đã có vết qua lỗ i + 1",
+    "marking": "true nếu đang ở chế độ đánh dấu × (bấm lên tấm phẳng để đặt dấu)",
+    "guessX": "Tọa độ ngang của dấu × trên tấm phẳng (cm, theo hệ trục gắn với tấm)",
+    "guessY": "Tọa độ dọc của dấu × trên tấm phẳng (cm, theo hệ trục gắn với tấm)",
+    "guessed": "true nếu học sinh đã đặt dấu ×",
+    "found": "true nếu dấu × đã từng nằm cách trọng tâm không quá 0,5 cm",
+    "showCentre": "Có hiện trọng tâm G của tấm phẳng hay không",
+    "slope": "Góc nghiêng θ của mặt dốc (độ)",
+    "base": "Bề rộng đáy b của khối hộp (cm)",
+    "height": "Chiều cao H của khối hộp (cm)",
+    "tilt": "Góc khối hộp đã lật quanh cạnh dưới (rad); 0 là đứng trên đáy, π/2 là đã đổ nằm xuống",
+    "tiltSpeed": "Tốc độ góc khi khối đang lật (rad/s)",
+    "curvature": "Độ cong của mặt đỡ viên bi tại vị trí cân bằng (1/m): dương là mặt lõm, âm là mặt lồi, 0 là mặt phẳng",
+    "ballX": "Vị trí của viên bi theo phương ngang, tính từ vị trí cân bằng (m)",
+    "ballV": "Vận tốc của viên bi theo phương ngang (m/s)"
+  },
+  "events": {
+    "release": {
+      "kind": "action",
+      "description": "Học sinh xoay tấm phẳng quanh chốt rồi thả",
+      "data": {
+        "pin": "Lỗ đang treo (1–5)",
+        "angle": "Góc lệch của trọng tâm so với đường thẳng đứng qua chốt lúc thả (độ)"
+      }
+    },
+    "settled": {
+      "kind": "result",
+      "description": "Tấm phẳng vừa dừng lại ở vị trí cân bằng; vết dây dọi qua lỗ đang treo được vẽ lên tấm",
+      "data": {
+        "pin": "Lỗ đang treo (1–5)",
+        "angle": "Góc quay của tấm phẳng ở vị trí cân bằng so với hình vẽ gốc (độ)",
+        "lines": "Số vết dây dọi đã có trên tấm phẳng"
+      }
+    },
+    "clear-lines": {
+      "kind": "action",
+      "description": "Học sinh xóa các vết dây dọi đã vẽ"
+    },
+    "mark": {
+      "kind": "action",
+      "description": "Học sinh đặt dấu × dự đoán trọng tâm bằng cách bấm lên tấm phẳng",
+      "data": {
+        "x": "Tọa độ ngang của dấu × trên tấm phẳng (cm)",
+        "y": "Tọa độ dọc của dấu × trên tấm phẳng (cm)"
+      }
+    },
+    "centre-found": {
+      "kind": "goal",
+      "description": "Dấu × của học sinh nằm cách trọng tâm không quá 0,5 cm (một lần cho mỗi tấm phẳng)",
+      "data": {
+        "error": "Khoảng cách từ dấu × đến trọng tâm (cm)",
+        "lines": "Số vết dây dọi đã vẽ khi tìm ra"
+      }
+    },
+    "toppled": {
+      "kind": "result",
+      "description": "Khối hộp vừa đổ nằm xuống mặt nghiêng",
+      "data": {
+        "angle": "Góc nghiêng θ của mặt dốc lúc khối đổ (độ)",
+        "criticalAngle": "Góc giới hạn θ₀ = arctan(b/H) (độ)",
+        "base": "Bề rộng đáy b (cm)",
+        "height": "Chiều cao H (cm)"
+      }
+    },
+    "block-reset": {
+      "kind": "action",
+      "description": "Học sinh dựng khối hộp đứng lại trên đáy"
+    },
+    "ball-release": {
+      "kind": "action",
+      "description": "Học sinh kéo viên bi đến một vị trí trên mặt đỡ rồi thả",
+      "data": {
+        "x": "Vị trí thả viên bi, tính từ vị trí cân bằng (m)",
+        "curvature": "Độ cong của mặt đỡ (1/m): dương là lõm, âm là lồi, 0 là phẳng"
+      }
+    }
+  }
+}

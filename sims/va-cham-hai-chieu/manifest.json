@@ -1,0 +1,75 @@
+{
+  "slug": "va-cham-hai-chieu",
+  "version": "1.0.0",
+  "title": "Va chạm trên mặt phẳng",
+  "subject": "physics",
+  "grades": [
+    10
+  ],
+  "description": "Hai đĩa tròn nhẵn trượt không ma sát trên bàn đệm khí rồi va chạm, nhìn từ trên xuống. Đặt khối lượng, vectơ vận tốc của từng đĩa (kéo đầu mũi tên hoặc dùng thanh trượt), hệ số hồi phục e và độ lệch tâm b để có va chạm xuyên tâm hoặc va chạm lệch. Quan sát đường đi của hai đĩa, các vectơ động lượng trước và sau va chạm cùng vectơ tổng của chúng, và so sánh động năng trước và sau.",
+  "learningGoals": [
+    "Động lượng là đại lượng vectơ: vectơ tổng động lượng của hệ hai đĩa được bảo toàn trong mọi va chạm, kể cả va chạm lệch.",
+    "Động năng chỉ được bảo toàn trong va chạm đàn hồi (e = 1); e càng nhỏ thì động năng mất đi càng nhiều.",
+    "Hai đĩa cùng khối lượng va chạm đàn hồi lệch tâm, một đĩa ban đầu đứng yên: sau va chạm hai vận tốc vuông góc với nhau.",
+    "Va chạm xuyên tâm (b = 0) trở về các công thức va chạm trên một đường thẳng.",
+    "Lực tương tác giữa hai đĩa nhẵn hướng dọc theo đường nối hai tâm; nếu hai đĩa không chạm nhau thì vận tốc của chúng không đổi."
+  ],
+  "state": {
+    "m1": "Khối lượng đĩa 1, đĩa xanh (kg)",
+    "v1x": "Thành phần vận tốc ban đầu của đĩa 1 theo phương ngang (m/s, dương là sang phải)",
+    "v1y": "Thành phần vận tốc ban đầu của đĩa 1 theo phương dọc màn hình (m/s, dương là lên trên)",
+    "m2": "Khối lượng đĩa 2, đĩa đỏ (kg)",
+    "v2x": "Thành phần vận tốc ban đầu của đĩa 2 theo phương ngang (m/s, dương là sang phải)",
+    "v2y": "Thành phần vận tốc ban đầu của đĩa 2 theo phương dọc màn hình (m/s, dương là lên trên)",
+    "restitution": "Hệ số hồi phục e: 1 là va chạm đàn hồi, 0 là va chạm mềm (hai đĩa không bật ra theo đường nối tâm)",
+    "offset": "Độ lệch tâm b (m): khoảng cách giữa hai tâm lúc gần nhau nhất nếu hai đĩa không tương tác; 0 là xuyên tâm, từ 0,8 m trở lên (hai lần bán kính đĩa) là không chạm nhau; dương khi đĩa 1 đi qua bên trái đĩa 2",
+    "time": "Thời gian từ lúc hai đĩa bắt đầu chuyển động (s); 0 là hai đĩa còn ở vị trí xuất phát"
+  },
+  "events": {
+    "set-velocity": {
+      "kind": "action",
+      "description": "Học sinh kéo đầu mũi tên vận tốc của một đĩa rồi thả",
+      "data": {
+        "puck": "Đĩa được chỉnh (1 hoặc 2)",
+        "vx": "Thành phần vận tốc theo phương ngang (m/s)",
+        "vy": "Thành phần vận tốc theo phương dọc (m/s)"
+      }
+    },
+    "launch": {
+      "kind": "action",
+      "description": "Học sinh cho hai đĩa bắt đầu chuyển động (bấm “Bắt đầu” hoặc “Chạy”)",
+      "data": {
+        "m1": "Khối lượng đĩa 1 (kg)",
+        "v1x": "Vận tốc đĩa 1 theo phương ngang (m/s)",
+        "v1y": "Vận tốc đĩa 1 theo phương dọc (m/s)",
+        "m2": "Khối lượng đĩa 2 (kg)",
+        "v2x": "Vận tốc đĩa 2 theo phương ngang (m/s)",
+        "v2y": "Vận tốc đĩa 2 theo phương dọc (m/s)",
+        "restitution": "Hệ số hồi phục e (0 đến 1)",
+        "offset": "Độ lệch tâm b (m)"
+      }
+    },
+    "collision": {
+      "kind": "result",
+      "description": "Hai đĩa vừa va chạm",
+      "data": {
+        "v1xAfter": "Vận tốc đĩa 1 sau va chạm theo phương ngang (m/s)",
+        "v1yAfter": "Vận tốc đĩa 1 sau va chạm theo phương dọc (m/s)",
+        "v2xAfter": "Vận tốc đĩa 2 sau va chạm theo phương ngang (m/s)",
+        "v2yAfter": "Vận tốc đĩa 2 sau va chạm theo phương dọc (m/s)",
+        "momentumX": "Tổng động lượng của hệ theo phương ngang (kg·m/s), trước và sau như nhau",
+        "momentumY": "Tổng động lượng của hệ theo phương dọc (kg·m/s), trước và sau như nhau",
+        "energyLost": "Động năng mất đi trong va chạm (J)"
+      }
+    },
+    "missed": {
+      "kind": "result",
+      "description": "Hai đĩa đi qua nhau mà không chạm (độ lệch tâm quá lớn hoặc hai đĩa không tiến lại gần nhau)",
+      "data": {
+        "offset": "Độ lệch tâm b (m)",
+        "momentumX": "Tổng động lượng của hệ theo phương ngang (kg·m/s), không đổi",
+        "momentumY": "Tổng động lượng của hệ theo phương dọc (kg·m/s), không đổi"
+      }
+    }
+  }
+}

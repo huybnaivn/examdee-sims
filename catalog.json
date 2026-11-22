@@ -6823,6 +6823,72 @@
     "thumbnailUrl": "/nem-ngang/1.0.0/thumb.png"
   },
   {
+    "slug": "nem-thang-dung",
+    "version": "1.0.0",
+    "title": "Chuyển động ném thẳng đứng",
+    "subject": "physics",
+    "grades": [
+      10
+    ],
+    "description": "Ném một vật thẳng đứng lên trên (hoặc xuống dưới) từ một độ cao với vận tốc ban đầu tùy chọn. Quan sát ảnh hoạt nghiệm của vật, vectơ vận tốc giảm dần về 0 ở điểm cao nhất rồi đổi chiều, cùng đồ thị vận tốc – thời gian và độ cao – thời gian. Có thể bật lực cản không khí để so sánh, và thử chọn vận tốc ném để điểm cao nhất trùng với độ cao mục tiêu.",
+    "learningGoals": [
+      "Vận dụng v = v₀ − g·t và y = y₀ + v₀·t − ½·g·t² (chiều dương hướng lên) cho chuyển động ném thẳng đứng.",
+      "Xác định thời gian lên đến điểm cao nhất t = v₀/g và độ cao cực đại y₀ + v₀²/(2g).",
+      "Tính thời gian chạm đất từ phương trình bậc hai và tốc độ khi chạm đất.",
+      "Nhận ra khi bỏ qua lực cản, vật trở lại độ cao ném với tốc độ đúng bằng v₀; đồ thị v – t là đường thẳng, đồ thị y – t là parabol.",
+      "So sánh chuyển động khi có và không có lực cản không khí."
+    ],
+    "state": {
+      "height": "Độ cao ban đầu y₀ so với mặt đất (m)",
+      "speed": "Vận tốc ban đầu v₀ (m/s); dương là ném lên, âm là ném xuống, 0 là thả rơi",
+      "gravity": "Gia tốc rơi tự do g (m/s²)",
+      "air": "true nếu có lực cản không khí (tỉ lệ với vận tốc: a = −g − k·v)",
+      "drag": "Hệ số cản k (1/s), chỉ có tác dụng khi air = true",
+      "target": "Độ cao mục tiêu mà điểm cao nhất cần đạt tới (m)",
+      "showVectors": "Có hiện vectơ vận tốc hay không",
+      "time": "Thời gian từ lúc ném (s); 0 là chưa ném, bằng thời gian chạm đất khi vật đã rơi xuống đất"
+    },
+    "events": {
+      "throw": {
+        "kind": "action",
+        "description": "Học sinh ném vật (bấm “Ném vật” hoặc “Chạy”)",
+        "data": {
+          "height": "Độ cao ban đầu y₀ (m)",
+          "speed": "Vận tốc ban đầu v₀ (m/s, dương hướng lên)",
+          "gravity": "Gia tốc rơi tự do g (m/s²)",
+          "drag": "Hệ số cản k (1/s); 0 nếu bỏ qua lực cản không khí"
+        }
+      },
+      "top": {
+        "kind": "result",
+        "description": "Vật vừa lên đến điểm cao nhất (chỉ có khi ném lên)",
+        "data": {
+          "time": "Thời gian từ lúc ném đến điểm cao nhất (s)",
+          "maxHeight": "Độ cao cực đại so với mặt đất (m)"
+        }
+      },
+      "landed": {
+        "kind": "result",
+        "description": "Vật vừa chạm đất",
+        "data": {
+          "time": "Thời gian từ lúc ném đến lúc chạm đất (s)",
+          "impactSpeed": "Tốc độ khi chạm đất (m/s)"
+        }
+      },
+      "target-hit": {
+        "kind": "goal",
+        "description": "Điểm cao nhất của lần ném nằm trong khoảng 0,25 m quanh độ cao mục tiêu",
+        "data": {
+          "target": "Độ cao mục tiêu (m)",
+          "maxHeight": "Độ cao cực đại đạt được (m)",
+          "speed": "Vận tốc ném v₀ đã dùng (m/s)"
+        }
+      }
+    },
+    "url": "/nem-thang-dung/1.0.0/index.html",
+    "thumbnailUrl": "/nem-thang-dung/1.0.0/thumb.png"
+  },
+  {
     "slug": "nem-xien",
     "version": "1.0.0",
     "title": "Chuyển động ném xiên",
@@ -9751,6 +9817,108 @@
     "thumbnailUrl": "/tong-hop-luc/1.0.0/thumb.png"
   },
   {
+    "slug": "trong-tam-can-bang",
+    "version": "1.0.0",
+    "title": "Trọng tâm và các dạng cân bằng",
+    "subject": "physics",
+    "grades": [
+      10
+    ],
+    "description": "Ba thí nghiệm về trọng tâm và cân bằng của vật rắn. (1) Treo một tấm phẳng đồng chất (chữ nhật, chữ L, tam giác, đa giác) vào chốt: tấm dao động rồi dừng lại khi trọng tâm nằm ngay dưới chốt; treo ở hai lỗ khác nhau để tìm trọng tâm là giao điểm của hai vết dây dọi, rồi đánh dấu × dự đoán. (2) Đặt một khối hộp đồng chất trên mặt nghiêng và tăng dần góc nghiêng: khối đổ khi giá của trọng lực rơi ra ngoài mặt chân đế. (3) Đặt viên bi trên mặt lõm, mặt lồi và mặt phẳng để phân biệt cân bằng bền, không bền và phiếm định.",
+    "learningGoals": [
+      "Xác định trọng tâm của một tấm phẳng mỏng bằng phương pháp dây dọi: trọng tâm là giao điểm của hai đường dây dọi vẽ khi treo vật ở hai điểm khác nhau.",
+      "Giải thích vì sao vật treo cân bằng khi trọng tâm nằm trên đường thẳng đứng đi qua điểm treo.",
+      "Điều kiện cân bằng của vật có mặt chân đế: giá của trọng lực phải đi qua mặt chân đế; khối hộp đồng chất đáy b, cao H bắt đầu đổ khi tan θ = (b/2)/(H/2) = b/H.",
+      "Mức vững vàng của cân bằng tăng khi mặt chân đế rộng hơn và trọng tâm thấp hơn.",
+      "Phân biệt cân bằng bền, không bền và phiếm định qua sự thay đổi độ cao của trọng tâm khi vật lệch khỏi vị trí cân bằng."
+    ],
+    "state": {
+      "mode": "Thí nghiệm đang xem: \"hang\" (treo tấm phẳng, dây dọi), \"topple\" (khối hộp trên mặt nghiêng) hoặc \"balance\" (viên bi trên mặt cong)",
+      "shape": "Tấm phẳng: \"L\" (chữ L), \"rect\" (chữ nhật), \"triangle\" (tam giác) hoặc \"polygon\" (đa giác bất kì)",
+      "pin": "Số thứ tự lỗ đang treo (1–5)",
+      "angle": "Góc quay của tấm phẳng quanh chốt so với hình vẽ gốc (rad, dương là ngược chiều kim đồng hồ)",
+      "omega": "Tốc độ góc của tấm phẳng (rad/s); 0 và trọng tâm ngay dưới chốt nghĩa là đã cân bằng",
+      "traced": "Các vết dây dọi đã vẽ, dạng số nhị phân: bit thứ i bật nghĩa là đã có vết qua lỗ i + 1",
+      "marking": "true nếu đang ở chế độ đánh dấu × (bấm lên tấm phẳng để đặt dấu)",
+      "guessX": "Tọa độ ngang của dấu × trên tấm phẳng (cm, theo hệ trục gắn với tấm)",
+      "guessY": "Tọa độ dọc của dấu × trên tấm phẳng (cm, theo hệ trục gắn với tấm)",
+      "guessed": "true nếu học sinh đã đặt dấu ×",
+      "found": "true nếu dấu × đã từng nằm cách trọng tâm không quá 0,5 cm",
+      "showCentre": "Có hiện trọng tâm G của tấm phẳng hay không",
+      "slope": "Góc nghiêng θ của mặt dốc (độ)",
+      "base": "Bề rộng đáy b của khối hộp (cm)",
+      "height": "Chiều cao H của khối hộp (cm)",
+      "tilt": "Góc khối hộp đã lật quanh cạnh dưới (rad); 0 là đứng trên đáy, π/2 là đã đổ nằm xuống",
+      "tiltSpeed": "Tốc độ góc khi khối đang lật (rad/s)",
+      "curvature": "Độ cong của mặt đỡ viên bi tại vị trí cân bằng (1/m): dương là mặt lõm, âm là mặt lồi, 0 là mặt phẳng",
+      "ballX": "Vị trí của viên bi theo phương ngang, tính từ vị trí cân bằng (m)",
+      "ballV": "Vận tốc của viên bi theo phương ngang (m/s)"
+    },
+    "events": {
+      "release": {
+        "kind": "action",
+        "description": "Học sinh xoay tấm phẳng quanh chốt rồi thả",
+        "data": {
+          "pin": "Lỗ đang treo (1–5)",
+          "angle": "Góc lệch của trọng tâm so với đường thẳng đứng qua chốt lúc thả (độ)"
+        }
+      },
+      "settled": {
+        "kind": "result",
+        "description": "Tấm phẳng vừa dừng lại ở vị trí cân bằng; vết dây dọi qua lỗ đang treo được vẽ lên tấm",
+        "data": {
+          "pin": "Lỗ đang treo (1–5)",
+          "angle": "Góc quay của tấm phẳng ở vị trí cân bằng so với hình vẽ gốc (độ)",
+          "lines": "Số vết dây dọi đã có trên tấm phẳng"
+        }
+      },
+      "clear-lines": {
+        "kind": "action",
+        "description": "Học sinh xóa các vết dây dọi đã vẽ"
+      },
+      "mark": {
+        "kind": "action",
+        "description": "Học sinh đặt dấu × dự đoán trọng tâm bằng cách bấm lên tấm phẳng",
+        "data": {
+          "x": "Tọa độ ngang của dấu × trên tấm phẳng (cm)",
+          "y": "Tọa độ dọc của dấu × trên tấm phẳng (cm)"
+        }
+      },
+      "centre-found": {
+        "kind": "goal",
+        "description": "Dấu × của học sinh nằm cách trọng tâm không quá 0,5 cm (một lần cho mỗi tấm phẳng)",
+        "data": {
+          "error": "Khoảng cách từ dấu × đến trọng tâm (cm)",
+          "lines": "Số vết dây dọi đã vẽ khi tìm ra"
+        }
+      },
+      "toppled": {
+        "kind": "result",
+        "description": "Khối hộp vừa đổ nằm xuống mặt nghiêng",
+        "data": {
+          "angle": "Góc nghiêng θ của mặt dốc lúc khối đổ (độ)",
+          "criticalAngle": "Góc giới hạn θ₀ = arctan(b/H) (độ)",
+          "base": "Bề rộng đáy b (cm)",
+          "height": "Chiều cao H (cm)"
+        }
+      },
+      "block-reset": {
+        "kind": "action",
+        "description": "Học sinh dựng khối hộp đứng lại trên đáy"
+      },
+      "ball-release": {
+        "kind": "action",
+        "description": "Học sinh kéo viên bi đến một vị trí trên mặt đỡ rồi thả",
+        "data": {
+          "x": "Vị trí thả viên bi, tính từ vị trí cân bằng (m)",
+          "curvature": "Độ cong của mặt đỡ (1/m): dương là lõm, âm là lồi, 0 là phẳng"
+        }
+      }
+    },
+    "url": "/trong-tam-can-bang/1.0.0/index.html",
+    "thumbnailUrl": "/trong-tam-can-bang/1.0.0/thumb.png"
+  },
+  {
     "slug": "truc-doi-xung",
     "version": "1.0.0",
     "title": "Hình có trục đối xứng",
@@ -10182,6 +10350,83 @@
     },
     "url": "/va-cham/1.0.0/index.html",
     "thumbnailUrl": "/va-cham/1.0.0/thumb.png"
+  },
+  {
+    "slug": "va-cham-hai-chieu",
+    "version": "1.0.0",
+    "title": "Va chạm trên mặt phẳng",
+    "subject": "physics",
+    "grades": [
+      10
+    ],
+    "description": "Hai đĩa tròn nhẵn trượt không ma sát trên bàn đệm khí rồi va chạm, nhìn từ trên xuống. Đặt khối lượng, vectơ vận tốc của từng đĩa (kéo đầu mũi tên hoặc dùng thanh trượt), hệ số hồi phục e và độ lệch tâm b để có va chạm xuyên tâm hoặc va chạm lệch. Quan sát đường đi của hai đĩa, các vectơ động lượng trước và sau va chạm cùng vectơ tổng của chúng, và so sánh động năng trước và sau.",
+    "learningGoals": [
+      "Động lượng là đại lượng vectơ: vectơ tổng động lượng của hệ hai đĩa được bảo toàn trong mọi va chạm, kể cả va chạm lệch.",
+      "Động năng chỉ được bảo toàn trong va chạm đàn hồi (e = 1); e càng nhỏ thì động năng mất đi càng nhiều.",
+      "Hai đĩa cùng khối lượng va chạm đàn hồi lệch tâm, một đĩa ban đầu đứng yên: sau va chạm hai vận tốc vuông góc với nhau.",
+      "Va chạm xuyên tâm (b = 0) trở về các công thức va chạm trên một đường thẳng.",
+      "Lực tương tác giữa hai đĩa nhẵn hướng dọc theo đường nối hai tâm; nếu hai đĩa không chạm nhau thì vận tốc của chúng không đổi."
+    ],
+    "state": {
+      "m1": "Khối lượng đĩa 1, đĩa xanh (kg)",
+      "v1x": "Thành phần vận tốc ban đầu của đĩa 1 theo phương ngang (m/s, dương là sang phải)",
+      "v1y": "Thành phần vận tốc ban đầu của đĩa 1 theo phương dọc màn hình (m/s, dương là lên trên)",
+      "m2": "Khối lượng đĩa 2, đĩa đỏ (kg)",
+      "v2x": "Thành phần vận tốc ban đầu của đĩa 2 theo phương ngang (m/s, dương là sang phải)",
+      "v2y": "Thành phần vận tốc ban đầu của đĩa 2 theo phương dọc màn hình (m/s, dương là lên trên)",
+      "restitution": "Hệ số hồi phục e: 1 là va chạm đàn hồi, 0 là va chạm mềm (hai đĩa không bật ra theo đường nối tâm)",
+      "offset": "Độ lệch tâm b (m): khoảng cách giữa hai tâm lúc gần nhau nhất nếu hai đĩa không tương tác; 0 là xuyên tâm, từ 0,8 m trở lên (hai lần bán kính đĩa) là không chạm nhau; dương khi đĩa 1 đi qua bên trái đĩa 2",
+      "time": "Thời gian từ lúc hai đĩa bắt đầu chuyển động (s); 0 là hai đĩa còn ở vị trí xuất phát"
+    },
+    "events": {
+      "set-velocity": {
+        "kind": "action",
+        "description": "Học sinh kéo đầu mũi tên vận tốc của một đĩa rồi thả",
+        "data": {
+          "puck": "Đĩa được chỉnh (1 hoặc 2)",
+          "vx": "Thành phần vận tốc theo phương ngang (m/s)",
+          "vy": "Thành phần vận tốc theo phương dọc (m/s)"
+        }
+      },
+      "launch": {
+        "kind": "action",
+        "description": "Học sinh cho hai đĩa bắt đầu chuyển động (bấm “Bắt đầu” hoặc “Chạy”)",
+        "data": {
+          "m1": "Khối lượng đĩa 1 (kg)",
+          "v1x": "Vận tốc đĩa 1 theo phương ngang (m/s)",
+          "v1y": "Vận tốc đĩa 1 theo phương dọc (m/s)",
+          "m2": "Khối lượng đĩa 2 (kg)",
+          "v2x": "Vận tốc đĩa 2 theo phương ngang (m/s)",
+          "v2y": "Vận tốc đĩa 2 theo phương dọc (m/s)",
+          "restitution": "Hệ số hồi phục e (0 đến 1)",
+          "offset": "Độ lệch tâm b (m)"
+        }
+      },
+      "collision": {
+        "kind": "result",
+        "description": "Hai đĩa vừa va chạm",
+        "data": {
+          "v1xAfter": "Vận tốc đĩa 1 sau va chạm theo phương ngang (m/s)",
+          "v1yAfter": "Vận tốc đĩa 1 sau va chạm theo phương dọc (m/s)",
+          "v2xAfter": "Vận tốc đĩa 2 sau va chạm theo phương ngang (m/s)",
+          "v2yAfter": "Vận tốc đĩa 2 sau va chạm theo phương dọc (m/s)",
+          "momentumX": "Tổng động lượng của hệ theo phương ngang (kg·m/s), trước và sau như nhau",
+          "momentumY": "Tổng động lượng của hệ theo phương dọc (kg·m/s), trước và sau như nhau",
+          "energyLost": "Động năng mất đi trong va chạm (J)"
+        }
+      },
+      "missed": {
+        "kind": "result",
+        "description": "Hai đĩa đi qua nhau mà không chạm (độ lệch tâm quá lớn hoặc hai đĩa không tiến lại gần nhau)",
+        "data": {
+          "offset": "Độ lệch tâm b (m)",
+          "momentumX": "Tổng động lượng của hệ theo phương ngang (kg·m/s), không đổi",
+          "momentumY": "Tổng động lượng của hệ theo phương dọc (kg·m/s), không đổi"
+        }
+      }
+    },
+    "url": "/va-cham-hai-chieu/1.0.0/index.html",
+    "thumbnailUrl": "/va-cham-hai-chieu/1.0.0/thumb.png"
   },
   {
     "slug": "vecto-khong-gian",
