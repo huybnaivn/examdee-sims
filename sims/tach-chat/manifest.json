@@ -1,0 +1,69 @@
+{
+  "slug": "tach-chat",
+  "version": "1.0.0",
+  "title": "Tách chất ra khỏi hỗn hợp",
+  "subject": "chemistry",
+  "grades": [
+    6
+  ],
+  "description": "Chọn một hỗn hợp (cát + nước, muối ăn + nước, dầu ăn + nước, bột sắt + bột lưu huỳnh, rượu + nước) và một phương pháp (lọc, cô cạn, chiết, dùng nam châm, chưng cất), xem quá trình diễn ra, phương pháp có tách được không và mỗi chất nằm lại ở đâu. Phần thử thách yêu cầu chọn đúng trình tự hai phương pháp để tách riêng cát và muối ăn khỏi hỗn hợp cát + muối ăn + nước.",
+  "learningGoals": [
+    "Trình bày được nguyên tắc của các phương pháp lọc, cô cạn, chiết, dùng nam châm và chưng cất.",
+    "Chọn được phương pháp tách phù hợp dựa trên sự khác nhau về tính chất của các chất trong hỗn hợp (tính tan, nhiệt độ sôi, khối lượng riêng, từ tính).",
+    "Nhận ra khối lượng mỗi chất được bảo toàn khi tách và biết phối hợp các phương pháp theo đúng trình tự."
+  ],
+  "state": {
+    "mode": "Chế độ: explore (một hỗn hợp, một phương pháp) hoặc challenge (thử thách cát + muối ăn + nước)",
+    "mixture": "Hỗn hợp đang chọn: cat-nuoc, muoi-nuoc, dau-nuoc, sat-luuhuynh, ruou-nuoc",
+    "method": "Phương pháp đang chọn: loc, co-can, chiet, nam-cham, chung-cat",
+    "step1": "Thử thách: phương pháp ở bước 1",
+    "step2": "Thử thách: phương pháp ở bước 2, áp dụng cho phần còn là hỗn hợp sau bước 1",
+    "progress": "Tiến độ của quá trình tách: 0–1 cho một phương pháp, 0–2 cho hai bước của thử thách",
+    "started": "Đã bấm Tiến hành cho lựa chọn hiện tại hay chưa"
+  },
+  "events": {
+    "try-method": {
+      "kind": "action",
+      "description": "Học sinh tiến hành một phương pháp với một hỗn hợp",
+      "data": {
+        "mixture": "Hỗn hợp (1 = cát + nước, 2 = muối ăn + nước, 3 = dầu ăn + nước, 4 = bột sắt + bột lưu huỳnh, 5 = rượu + nước)",
+        "method": "Phương pháp (1 = lọc, 2 = cô cạn, 3 = chiết, 4 = dùng nam châm, 5 = chưng cất)"
+      }
+    },
+    "separation-done": {
+      "kind": "result",
+      "description": "Một quá trình tách vừa kết thúc",
+      "data": {
+        "mixture": "Hỗn hợp (1–5, như ở try-method)",
+        "method": "Phương pháp (1–5, như ở try-method)",
+        "success": "1 nếu thu được riêng ít nhất một chất, 0 nếu không tách được",
+        "recommended": "1 nếu đây là phương pháp phù hợp nhất cho hỗn hợp theo sách giáo khoa, 0 nếu không"
+      }
+    },
+    "try-sequence": {
+      "kind": "action",
+      "description": "Học sinh tiến hành một trình tự hai phương pháp trong thử thách",
+      "data": {
+        "step1": "Phương pháp ở bước 1 (1–5, như ở try-method)",
+        "step2": "Phương pháp ở bước 2 (1–5)"
+      }
+    },
+    "sequence-done": {
+      "kind": "result",
+      "description": "Trình tự hai bước của thử thách vừa chạy xong",
+      "data": {
+        "step1": "Phương pháp ở bước 1 (1–5)",
+        "step2": "Phương pháp ở bước 2 (1–5)",
+        "success": "1 nếu cát và muối ăn đều được tách riêng, 0 nếu chưa"
+      }
+    },
+    "challenge-solved": {
+      "kind": "goal",
+      "description": "Học sinh chọn đúng trình tự tách cát và muối ăn khỏi hỗn hợp cát + muối ăn + nước (lọc rồi cô cạn, hoặc lọc rồi chưng cất)",
+      "data": {
+        "step1": "Phương pháp ở bước 1 (1–5)",
+        "step2": "Phương pháp ở bước 2 (1–5)"
+      }
+    }
+  }
+}

@@ -1201,6 +1201,66 @@
     "thumbnailUrl": "/cap-so/1.0.0/thumb.png"
   },
   {
+    "slug": "cau-hinh-electron",
+    "version": "1.0.0",
+    "title": "Cấu hình electron và ô orbital",
+    "subject": "chemistry",
+    "grades": [
+      10
+    ],
+    "description": "Chọn nguyên tố có Z từ 1 đến 36 để xem electron được điền vào các ô orbital theo thứ tự mức năng lượng, nguyên lí Pauli và quy tắc Hund; đọc cấu hình electron, số electron độc thân, electron hoá trị, khối và vị trí trong bảng tuần hoàn. Ở chế độ luyện tập, học sinh tự đặt mũi tên vào các ô và được kiểm tra theo từng quy tắc.",
+    "learningGoals": [
+      "Viết được cấu hình electron và biểu diễn theo ô orbital cho 36 nguyên tố đầu, kể cả hai ngoại lệ Cr và Cu.",
+      "Vận dụng nguyên lí Pauli, quy tắc Hund và thứ tự mức năng lượng 1s 2s 2p 3s 3p 4s 3d 4p khi điền electron.",
+      "Xác định số electron độc thân, số electron hoá trị, khối nguyên tố (s, p, d), chu kì và nhóm từ cấu hình electron."
+    ],
+    "state": {
+      "z": "Số hiệu nguyên tử của nguyên tố đang xem (1–36)",
+      "mode": "Chế độ: view (xem cách điền) hoặc practice (học sinh tự điền)",
+      "fill": "Sơ đồ ô orbital do học sinh điền: chuỗi 36 kí tự, mỗi ô 2 kí tự theo thứ tự 1s 2s 2p 3s 3p 4s 3d 4p; '-' là trống, 'u' là mũi tên lên, 'd' là mũi tên xuống",
+      "cursor": "Ô đang chọn cho các nút bàn phím (1–18)",
+      "checked": "Học sinh đã bấm Kiểm tra cho sơ đồ hiện tại hay chưa"
+    },
+    "events": {
+      "z-committed": {
+        "kind": "result",
+        "description": "Học sinh chọn xong một nguyên tố (thả thanh Z)",
+        "data": {
+          "z": "Số hiệu nguyên tử",
+          "unpaired": "Số electron độc thân ở trạng thái cơ bản",
+          "block": "Mã khối nguyên tố: 1 = s, 2 = p, 3 = d"
+        }
+      },
+      "edit-orbital": {
+        "kind": "action",
+        "description": "Học sinh thêm, đổi chiều hoặc xoá mũi tên trong một ô orbital ở chế độ luyện tập",
+        "data": {
+          "box": "Số thứ tự ô (1–18, theo thứ tự 1s 2s 2p 3s 3p 4s 3d 4p)",
+          "electrons": "Số electron trong ô sau khi sửa (0–2)"
+        }
+      },
+      "diagram-checked": {
+        "kind": "result",
+        "description": "Học sinh bấm Kiểm tra sơ đồ ô orbital đã điền",
+        "data": {
+          "z": "Số hiệu nguyên tử",
+          "correct": "1 nếu sơ đồ đúng, 0 nếu sai",
+          "errors": "Số loại lỗi (số electron, Pauli, Hund, thứ tự mức năng lượng)",
+          "electrons": "Số electron đã xếp"
+        }
+      },
+      "diagram-correct": {
+        "kind": "goal",
+        "description": "Học sinh điền đúng sơ đồ ô orbital của nguyên tố",
+        "data": {
+          "z": "Số hiệu nguyên tử"
+        }
+      }
+    },
+    "url": "/cau-hinh-electron/1.0.0/index.html",
+    "thumbnailUrl": "/cau-hinh-electron/1.0.0/thumb.png"
+  },
+  {
     "slug": "cau-tao-nguyen-tu",
     "version": "1.0.0",
     "title": "Cấu tạo nguyên tử",
@@ -7423,6 +7483,63 @@
     "thumbnailUrl": "/pha-mat-trang/1.0.0/thumb.png"
   },
   {
+    "slug": "phan-loai-chat",
+    "version": "1.0.0",
+    "title": "Chất tinh khiết, hỗn hợp, đơn chất và hợp chất",
+    "subject": "chemistry",
+    "grades": [
+      6,
+      7,
+      8
+    ],
+    "description": "Quan sát hình vẽ các hạt (nguyên tử, phân tử, ion) của tám mẫu chất quen thuộc như khí oxygen, sắt, nước cất, muối ăn, không khí, nước muối, cát lẫn bột sắt, nước lẫn cát, rồi kéo từng mẫu vào sơ đồ phân loại: chất tinh khiết (đơn chất, hợp chất) hoặc hỗn hợp (đồng nhất, không đồng nhất).",
+    "learningGoals": [
+      "Phân biệt chất tinh khiết với hỗn hợp dựa vào số loại chất có trong mẫu.",
+      "Phân biệt đơn chất (một nguyên tố) với hợp chất (nhiều nguyên tố liên kết theo tỉ lệ xác định).",
+      "Phân biệt hỗn hợp đồng nhất với hỗn hợp không đồng nhất qua cách các hạt phân bố trong mẫu."
+    ],
+    "state": {
+      "sel": "Mẫu đang được phóng to: oxygen, sat, nuoc, muoi, khongkhi, nuocmuoi, catsat, nuoccat",
+      "bin": "Nhóm đang chọn cho nút xếp bằng bàn phím: don-chat, hop-chat, dong-nhat, khong-dong-nhat",
+      "at_oxygen": "Nhóm học sinh đã xếp mẫu khí oxygen vào (chuỗi rỗng nếu chưa xếp)",
+      "at_sat": "Nhóm học sinh đã xếp mẫu sắt vào (chuỗi rỗng nếu chưa xếp)",
+      "at_nuoc": "Nhóm học sinh đã xếp mẫu nước cất vào (chuỗi rỗng nếu chưa xếp)",
+      "at_muoi": "Nhóm học sinh đã xếp mẫu muối ăn vào (chuỗi rỗng nếu chưa xếp)",
+      "at_khongkhi": "Nhóm học sinh đã xếp mẫu không khí vào (chuỗi rỗng nếu chưa xếp)",
+      "at_nuocmuoi": "Nhóm học sinh đã xếp mẫu nước muối vào (chuỗi rỗng nếu chưa xếp)",
+      "at_catsat": "Nhóm học sinh đã xếp mẫu cát lẫn bột sắt vào (chuỗi rỗng nếu chưa xếp)",
+      "at_nuoccat": "Nhóm học sinh đã xếp mẫu nước lẫn cát vào (chuỗi rỗng nếu chưa xếp)"
+    },
+    "events": {
+      "sort": {
+        "kind": "action",
+        "description": "Học sinh xếp một mẫu vào một nhóm, đổi nhóm hoặc lấy mẫu ra khỏi nhóm",
+        "data": {
+          "sample": "Số thứ tự mẫu (1 = khí oxygen, 2 = sắt, 3 = nước cất, 4 = muối ăn, 5 = không khí, 6 = nước muối, 7 = cát lẫn bột sắt, 8 = nước lẫn cát)",
+          "bin": "Nhóm được chọn (1 = đơn chất, 2 = hợp chất, 3 = hỗn hợp đồng nhất, 4 = hỗn hợp không đồng nhất, 0 = lấy ra khỏi nhóm)",
+          "correct": "1 nếu mẫu nằm đúng nhóm, 0 nếu sai hoặc đã lấy ra"
+        }
+      },
+      "all-sorted": {
+        "kind": "result",
+        "description": "Cả tám mẫu đều đã được xếp vào nhóm; phát lại mỗi lần học sinh đổi nhóm một mẫu khi tất cả vẫn đang được xếp",
+        "data": {
+          "correct": "Số mẫu xếp đúng",
+          "total": "Tổng số mẫu"
+        }
+      },
+      "all-correct": {
+        "kind": "goal",
+        "description": "Tất cả các mẫu đều được phân loại đúng",
+        "data": {
+          "total": "Tổng số mẫu"
+        }
+      }
+    },
+    "url": "/phan-loai-chat/1.0.0/index.html",
+    "thumbnailUrl": "/phan-loai-chat/1.0.0/thumb.png"
+  },
+  {
     "slug": "phan-so",
     "version": "1.0.0",
     "title": "Phân số",
@@ -8554,6 +8671,77 @@
     },
     "url": "/su-no-vi-nhiet/1.0.0/index.html",
     "thumbnailUrl": "/su-no-vi-nhiet/1.0.0/thumb.png"
+  },
+  {
+    "slug": "tach-chat",
+    "version": "1.0.0",
+    "title": "Tách chất ra khỏi hỗn hợp",
+    "subject": "chemistry",
+    "grades": [
+      6
+    ],
+    "description": "Chọn một hỗn hợp (cát + nước, muối ăn + nước, dầu ăn + nước, bột sắt + bột lưu huỳnh, rượu + nước) và một phương pháp (lọc, cô cạn, chiết, dùng nam châm, chưng cất), xem quá trình diễn ra, phương pháp có tách được không và mỗi chất nằm lại ở đâu. Phần thử thách yêu cầu chọn đúng trình tự hai phương pháp để tách riêng cát và muối ăn khỏi hỗn hợp cát + muối ăn + nước.",
+    "learningGoals": [
+      "Trình bày được nguyên tắc của các phương pháp lọc, cô cạn, chiết, dùng nam châm và chưng cất.",
+      "Chọn được phương pháp tách phù hợp dựa trên sự khác nhau về tính chất của các chất trong hỗn hợp (tính tan, nhiệt độ sôi, khối lượng riêng, từ tính).",
+      "Nhận ra khối lượng mỗi chất được bảo toàn khi tách và biết phối hợp các phương pháp theo đúng trình tự."
+    ],
+    "state": {
+      "mode": "Chế độ: explore (một hỗn hợp, một phương pháp) hoặc challenge (thử thách cát + muối ăn + nước)",
+      "mixture": "Hỗn hợp đang chọn: cat-nuoc, muoi-nuoc, dau-nuoc, sat-luuhuynh, ruou-nuoc",
+      "method": "Phương pháp đang chọn: loc, co-can, chiet, nam-cham, chung-cat",
+      "step1": "Thử thách: phương pháp ở bước 1",
+      "step2": "Thử thách: phương pháp ở bước 2, áp dụng cho phần còn là hỗn hợp sau bước 1",
+      "progress": "Tiến độ của quá trình tách: 0–1 cho một phương pháp, 0–2 cho hai bước của thử thách",
+      "started": "Đã bấm Tiến hành cho lựa chọn hiện tại hay chưa"
+    },
+    "events": {
+      "try-method": {
+        "kind": "action",
+        "description": "Học sinh tiến hành một phương pháp với một hỗn hợp",
+        "data": {
+          "mixture": "Hỗn hợp (1 = cát + nước, 2 = muối ăn + nước, 3 = dầu ăn + nước, 4 = bột sắt + bột lưu huỳnh, 5 = rượu + nước)",
+          "method": "Phương pháp (1 = lọc, 2 = cô cạn, 3 = chiết, 4 = dùng nam châm, 5 = chưng cất)"
+        }
+      },
+      "separation-done": {
+        "kind": "result",
+        "description": "Một quá trình tách vừa kết thúc",
+        "data": {
+          "mixture": "Hỗn hợp (1–5, như ở try-method)",
+          "method": "Phương pháp (1–5, như ở try-method)",
+          "success": "1 nếu thu được riêng ít nhất một chất, 0 nếu không tách được",
+          "recommended": "1 nếu đây là phương pháp phù hợp nhất cho hỗn hợp theo sách giáo khoa, 0 nếu không"
+        }
+      },
+      "try-sequence": {
+        "kind": "action",
+        "description": "Học sinh tiến hành một trình tự hai phương pháp trong thử thách",
+        "data": {
+          "step1": "Phương pháp ở bước 1 (1–5, như ở try-method)",
+          "step2": "Phương pháp ở bước 2 (1–5)"
+        }
+      },
+      "sequence-done": {
+        "kind": "result",
+        "description": "Trình tự hai bước của thử thách vừa chạy xong",
+        "data": {
+          "step1": "Phương pháp ở bước 1 (1–5)",
+          "step2": "Phương pháp ở bước 2 (1–5)",
+          "success": "1 nếu cát và muối ăn đều được tách riêng, 0 nếu chưa"
+        }
+      },
+      "challenge-solved": {
+        "kind": "goal",
+        "description": "Học sinh chọn đúng trình tự tách cát và muối ăn khỏi hỗn hợp cát + muối ăn + nước (lọc rồi cô cạn, hoặc lọc rồi chưng cất)",
+        "data": {
+          "step1": "Phương pháp ở bước 1 (1–5)",
+          "step2": "Phương pháp ở bước 2 (1–5)"
+        }
+      }
+    },
+    "url": "/tach-chat/1.0.0/index.html",
+    "thumbnailUrl": "/tach-chat/1.0.0/thumb.png"
   },
   {
     "slug": "tai-ban-adn",

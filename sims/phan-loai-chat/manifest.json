@@ -1,0 +1,55 @@
+{
+  "slug": "phan-loai-chat",
+  "version": "1.0.0",
+  "title": "Chất tinh khiết, hỗn hợp, đơn chất và hợp chất",
+  "subject": "chemistry",
+  "grades": [
+    6,
+    7,
+    8
+  ],
+  "description": "Quan sát hình vẽ các hạt (nguyên tử, phân tử, ion) của tám mẫu chất quen thuộc như khí oxygen, sắt, nước cất, muối ăn, không khí, nước muối, cát lẫn bột sắt, nước lẫn cát, rồi kéo từng mẫu vào sơ đồ phân loại: chất tinh khiết (đơn chất, hợp chất) hoặc hỗn hợp (đồng nhất, không đồng nhất).",
+  "learningGoals": [
+    "Phân biệt chất tinh khiết với hỗn hợp dựa vào số loại chất có trong mẫu.",
+    "Phân biệt đơn chất (một nguyên tố) với hợp chất (nhiều nguyên tố liên kết theo tỉ lệ xác định).",
+    "Phân biệt hỗn hợp đồng nhất với hỗn hợp không đồng nhất qua cách các hạt phân bố trong mẫu."
+  ],
+  "state": {
+    "sel": "Mẫu đang được phóng to: oxygen, sat, nuoc, muoi, khongkhi, nuocmuoi, catsat, nuoccat",
+    "bin": "Nhóm đang chọn cho nút xếp bằng bàn phím: don-chat, hop-chat, dong-nhat, khong-dong-nhat",
+    "at_oxygen": "Nhóm học sinh đã xếp mẫu khí oxygen vào (chuỗi rỗng nếu chưa xếp)",
+    "at_sat": "Nhóm học sinh đã xếp mẫu sắt vào (chuỗi rỗng nếu chưa xếp)",
+    "at_nuoc": "Nhóm học sinh đã xếp mẫu nước cất vào (chuỗi rỗng nếu chưa xếp)",
+    "at_muoi": "Nhóm học sinh đã xếp mẫu muối ăn vào (chuỗi rỗng nếu chưa xếp)",
+    "at_khongkhi": "Nhóm học sinh đã xếp mẫu không khí vào (chuỗi rỗng nếu chưa xếp)",
+    "at_nuocmuoi": "Nhóm học sinh đã xếp mẫu nước muối vào (chuỗi rỗng nếu chưa xếp)",
+    "at_catsat": "Nhóm học sinh đã xếp mẫu cát lẫn bột sắt vào (chuỗi rỗng nếu chưa xếp)",
+    "at_nuoccat": "Nhóm học sinh đã xếp mẫu nước lẫn cát vào (chuỗi rỗng nếu chưa xếp)"
+  },
+  "events": {
+    "sort": {
+      "kind": "action",
+      "description": "Học sinh xếp một mẫu vào một nhóm, đổi nhóm hoặc lấy mẫu ra khỏi nhóm",
+      "data": {
+        "sample": "Số thứ tự mẫu (1 = khí oxygen, 2 = sắt, 3 = nước cất, 4 = muối ăn, 5 = không khí, 6 = nước muối, 7 = cát lẫn bột sắt, 8 = nước lẫn cát)",
+        "bin": "Nhóm được chọn (1 = đơn chất, 2 = hợp chất, 3 = hỗn hợp đồng nhất, 4 = hỗn hợp không đồng nhất, 0 = lấy ra khỏi nhóm)",
+        "correct": "1 nếu mẫu nằm đúng nhóm, 0 nếu sai hoặc đã lấy ra"
+      }
+    },
+    "all-sorted": {
+      "kind": "result",
+      "description": "Cả tám mẫu đều đã được xếp vào nhóm; phát lại mỗi lần học sinh đổi nhóm một mẫu khi tất cả vẫn đang được xếp",
+      "data": {
+        "correct": "Số mẫu xếp đúng",
+        "total": "Tổng số mẫu"
+      }
+    },
+    "all-correct": {
+      "kind": "goal",
+      "description": "Tất cả các mẫu đều được phân loại đúng",
+      "data": {
+        "total": "Tổng số mẫu"
+      }
+    }
+  }
+}

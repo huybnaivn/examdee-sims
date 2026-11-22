@@ -1,0 +1,58 @@
+{
+  "slug": "cau-hinh-electron",
+  "version": "1.0.0",
+  "title": "Cấu hình electron và ô orbital",
+  "subject": "chemistry",
+  "grades": [
+    10
+  ],
+  "description": "Chọn nguyên tố có Z từ 1 đến 36 để xem electron được điền vào các ô orbital theo thứ tự mức năng lượng, nguyên lí Pauli và quy tắc Hund; đọc cấu hình electron, số electron độc thân, electron hoá trị, khối và vị trí trong bảng tuần hoàn. Ở chế độ luyện tập, học sinh tự đặt mũi tên vào các ô và được kiểm tra theo từng quy tắc.",
+  "learningGoals": [
+    "Viết được cấu hình electron và biểu diễn theo ô orbital cho 36 nguyên tố đầu, kể cả hai ngoại lệ Cr và Cu.",
+    "Vận dụng nguyên lí Pauli, quy tắc Hund và thứ tự mức năng lượng 1s 2s 2p 3s 3p 4s 3d 4p khi điền electron.",
+    "Xác định số electron độc thân, số electron hoá trị, khối nguyên tố (s, p, d), chu kì và nhóm từ cấu hình electron."
+  ],
+  "state": {
+    "z": "Số hiệu nguyên tử của nguyên tố đang xem (1–36)",
+    "mode": "Chế độ: view (xem cách điền) hoặc practice (học sinh tự điền)",
+    "fill": "Sơ đồ ô orbital do học sinh điền: chuỗi 36 kí tự, mỗi ô 2 kí tự theo thứ tự 1s 2s 2p 3s 3p 4s 3d 4p; '-' là trống, 'u' là mũi tên lên, 'd' là mũi tên xuống",
+    "cursor": "Ô đang chọn cho các nút bàn phím (1–18)",
+    "checked": "Học sinh đã bấm Kiểm tra cho sơ đồ hiện tại hay chưa"
+  },
+  "events": {
+    "z-committed": {
+      "kind": "result",
+      "description": "Học sinh chọn xong một nguyên tố (thả thanh Z)",
+      "data": {
+        "z": "Số hiệu nguyên tử",
+        "unpaired": "Số electron độc thân ở trạng thái cơ bản",
+        "block": "Mã khối nguyên tố: 1 = s, 2 = p, 3 = d"
+      }
+    },
+    "edit-orbital": {
+      "kind": "action",
+      "description": "Học sinh thêm, đổi chiều hoặc xoá mũi tên trong một ô orbital ở chế độ luyện tập",
+      "data": {
+        "box": "Số thứ tự ô (1–18, theo thứ tự 1s 2s 2p 3s 3p 4s 3d 4p)",
+        "electrons": "Số electron trong ô sau khi sửa (0–2)"
+      }
+    },
+    "diagram-checked": {
+      "kind": "result",
+      "description": "Học sinh bấm Kiểm tra sơ đồ ô orbital đã điền",
+      "data": {
+        "z": "Số hiệu nguyên tử",
+        "correct": "1 nếu sơ đồ đúng, 0 nếu sai",
+        "errors": "Số loại lỗi (số electron, Pauli, Hund, thứ tự mức năng lượng)",
+        "electrons": "Số electron đã xếp"
+      }
+    },
+    "diagram-correct": {
+      "kind": "goal",
+      "description": "Học sinh điền đúng sơ đồ ô orbital của nguyên tố",
+      "data": {
+        "z": "Số hiệu nguyên tử"
+      }
+    }
+  }
+}
