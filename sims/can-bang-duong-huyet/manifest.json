@@ -1,0 +1,76 @@
+{
+  "slug": "can-bang-duong-huyet",
+  "version": "1.0.0",
+  "title": "Cân bằng nội môi: điều hòa đường huyết",
+  "subject": "biology",
+  "grades": [
+    11
+  ],
+  "description": "Nồng độ glucose trong máu suốt một ngày (06:00 đến 06:00 hôm sau). Học sinh thêm bữa ăn (lượng carbohydrate) và các lần vận động vào thời điểm tùy chọn; tuyến tụy đáp lại bằng insulin khi glucose máu cao (tế bào nhận glucose, gan tổng hợp glycogen) hoặc glucagon khi glucose máu thấp (gan phân giải glycogen) theo cơ chế liên hệ ngược âm tính. So sánh người khỏe mạnh với đái tháo đường type 1 (tiết rất ít insulin) và type 2 (tế bào kháng insulin). Mô hình toán đã đơn giản hóa, chỉ để minh họa cơ chế: hormone tính theo đơn vị tương đối, khoảng cho phép lấy 3,9–7,8 mmol/L, ngưỡng thận 10 mmol/L; không dùng để chẩn đoán hay điều trị.",
+  "learningGoals": [
+    "Trình bày được cơ chế điều hòa nồng độ glucose máu: insulin làm giảm, glucagon làm tăng, gan dự trữ và giải phóng glucose dưới dạng glycogen.",
+    "Giải thích được liên hệ ngược âm tính trong cân bằng nội môi: bộ phận tiếp nhận, điều khiển (tuyến tụy) và thực hiện (gan, tế bào cơ thể).",
+    "So sánh đáp ứng sau bữa ăn của người khỏe mạnh với người thiếu insulin (type 1) và người kháng insulin (type 2).",
+    "Vận dụng: chia nhỏ bữa ăn và vận động hợp lí giúp giữ glucose máu trong khoảng cho phép."
+  ],
+  "state": {
+    "condition": "Cơ thể: healthy (khỏe mạnh), type1 (đái tháo đường type 1, thiếu insulin) hoặc type2 (đái tháo đường type 2, kháng insulin)",
+    "events": "Lịch trong ngày, chuỗi các sự kiện cách nhau bằng dấu chấm phẩy: \"m,<phút sau 06:00>,<g carbohydrate>\" là bữa ăn, \"x,<phút sau 06:00>,<số phút>,<mức 1–3>\" là vận động; tối đa 8 sự kiện",
+    "time": "Thời điểm đang xem và là nơi đặt sự kiện mới (phút sau 06:00), 0–1425",
+    "carbs": "Lượng carbohydrate của bữa ăn sắp thêm (g), 10–120",
+    "minutes": "Thời gian của lần vận động sắp thêm (phút), 10–90",
+    "level": "Mức độ vận động sắp thêm: 1 nhẹ, 2 vừa, 3 nặng",
+    "compare": "Vẽ thêm đường glucose của người khỏe mạnh (nét đứt) khi đang chọn type1 hoặc type2"
+  },
+  "events": {
+    "meal-added": {
+      "kind": "action",
+      "description": "Học sinh thêm một bữa ăn",
+      "data": {
+        "time": "Thời điểm bữa ăn (phút sau 06:00)",
+        "carbs": "Lượng carbohydrate (g)"
+      }
+    },
+    "exercise-added": {
+      "kind": "action",
+      "description": "Học sinh thêm một lần vận động",
+      "data": {
+        "time": "Thời điểm bắt đầu (phút sau 06:00)",
+        "minutes": "Thời gian vận động (phút)",
+        "level": "Mức độ: 1 nhẹ, 2 vừa, 3 nặng"
+      }
+    },
+    "event-removed": {
+      "kind": "action",
+      "description": "Học sinh xóa sự kiện muộn nhất hoặc xóa tất cả",
+      "data": {
+        "remaining": "Số sự kiện còn lại trong ngày"
+      }
+    },
+    "day-simulated": {
+      "kind": "result",
+      "description": "Kết quả của cả ngày (tính đến 06:00 hôm sau) sau khi học sinh đổi lịch hoặc đổi cơ thể",
+      "data": {
+        "peak": "Nồng độ glucose máu cao nhất trong ngày (mmol/L)",
+        "low": "Nồng độ glucose máu thấp nhất trong ngày (mmol/L)",
+        "minutesAbove": "Thời gian glucose máu trên 7,8 mmol/L (phút)",
+        "minutesBelow": "Thời gian glucose máu dưới 3,9 mmol/L (phút)",
+        "meals": "Số bữa ăn",
+        "carbs": "Tổng lượng carbohydrate (g)",
+        "exercises": "Số lần vận động",
+        "condition": "Cơ thể: 0 khỏe mạnh, 1 type 1, 2 type 2"
+      }
+    },
+    "kept-in-range": {
+      "kind": "goal",
+      "description": "Glucose máu nằm trong khoảng 3,9–7,8 mmol/L suốt cả ngày, với ít nhất 3 bữa ăn và tổng cộng từ 150 g carbohydrate",
+      "data": {
+        "condition": "Cơ thể: 0 khỏe mạnh, 1 type 1, 2 type 2",
+        "meals": "Số bữa ăn",
+        "carbs": "Tổng lượng carbohydrate (g)",
+        "exercises": "Số lần vận động",
+        "peak": "Nồng độ glucose máu cao nhất trong ngày (mmol/L)"
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "slug": "phan-ung-trao-doi-ion",
+  "version": "1.0.0",
+  "title": "Phản ứng trao đổi ion trong dung dịch",
+  "subject": "chemistry",
+  "grades": [
+    11
+  ],
+  "description": "Trộn hai dung dịch chất điện li chọn từ danh sách (NaCl, AgNO₃, BaCl₂, Na₂SO₄, Na₂CO₃, HCl, NaOH, CuSO₄, CH₃COONa, NH₄Cl, KNO₃). Mô phỏng cho thấy các ion trong từng dung dịch trước khi trộn, hiện tượng sau khi trộn (kết tủa và màu của nó, khí thoát ra hoặc không có hiện tượng). Học sinh chọn cation và anion đã kết hợp với nhau, rồi kiểm tra: mô phỏng hiện phương trình phân tử, phương trình ion đầy đủ, phương trình ion rút gọn và các ion không tham gia phản ứng. Quy ước: Ag₂SO₄ và CH₃COOAg (ít tan) coi như tan trong dung dịch loãng; AgOH không bền nên viết sản phẩm là Ag₂O; Cu²⁺ với CO₃²⁻ viết đơn giản là CuCO₃; số ion vẽ trong cốc chỉ minh họa tỉ lệ.",
+  "learningGoals": [
+    "Nêu được điều kiện xảy ra phản ứng trao đổi ion trong dung dịch chất điện li: tạo thành chất kết tủa, chất khí hoặc chất điện li yếu.",
+    "Viết được phương trình phân tử, phương trình ion đầy đủ và phương trình ion rút gọn; kiểm tra cân bằng nguyên tố và điện tích.",
+    "Xác định được các ion không tham gia phản ứng và giải thích vì sao một số cặp dung dịch không phản ứng với nhau.",
+    "Nhận biết màu của một số kết tủa thường gặp: AgCl, BaSO₄, BaCO₃ trắng; Cu(OH)₂ xanh lam."
+  ],
+  "state": {
+    "a": "Dung dịch 1: NaCl, AgNO3, BaCl2, Na2SO4, Na2CO3, HCl, NaOH, CuSO4, CH3COONa, NH4Cl hoặc KNO3",
+    "b": "Dung dịch 2, cùng danh sách với a",
+    "pickCation": "Cation học sinh chọn là tham gia phản ứng: Na, K, Ag, Ba, Cu, H, NH4 hoặc none (không phản ứng)",
+    "pickAnion": "Anion học sinh chọn là tham gia phản ứng: Cl, NO3, SO4, CO3, OH, CH3COO hoặc none (không phản ứng)",
+    "revealed": "true: đã kiểm tra, các phương trình đang hiện; false: phương trình đang ẩn chờ học sinh trả lời"
+  },
+  "events": {
+    "mixed": {
+      "kind": "result",
+      "description": "Học sinh vừa chọn xong một cặp dung dịch để trộn",
+      "data": {
+        "a": "Số thứ tự dung dịch 1 trong danh sách (0 NaCl, 1 AgNO₃, 2 BaCl₂, 3 Na₂SO₄, 4 Na₂CO₃, 5 HCl, 6 NaOH, 7 CuSO₄, 8 CH₃COONa, 9 NH₄Cl, 10 KNO₃)",
+        "b": "Số thứ tự dung dịch 2, cùng cách đánh số",
+        "reacted": "1 nếu có phản ứng, 0 nếu không",
+        "productType": "Loại chất tách khỏi dung dịch: 0 không có, 1 kết tủa, 2 khí, 3 chất điện li yếu"
+      }
+    },
+    "retry": {
+      "kind": "action",
+      "description": "Học sinh ẩn các phương trình để tự trả lời lại với cùng cặp dung dịch",
+      "data": {}
+    },
+    "answer-checked": {
+      "kind": "action",
+      "description": "Học sinh bấm kiểm tra cặp ion đã chọn",
+      "data": {
+        "correct": "1 nếu chọn đúng (kể cả chọn đúng “không phản ứng”), 0 nếu sai",
+        "reacted": "1 nếu cặp dung dịch có phản ứng, 0 nếu không"
+      }
+    },
+    "net-ionic-correct": {
+      "kind": "goal",
+      "description": "Học sinh chọn đúng cation và anion của phương trình ion rút gọn cho một cặp dung dịch có phản ứng",
+      "data": {
+        "a": "Số thứ tự dung dịch 1 (như sự kiện mixed)",
+        "b": "Số thứ tự dung dịch 2",
+        "productType": "1 kết tủa, 2 khí, 3 chất điện li yếu"
+      }
+    }
+  }
+}

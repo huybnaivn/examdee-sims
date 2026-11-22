@@ -950,6 +950,84 @@
     "thumbnailUrl": "/can-bac-hai/1.0.0/thumb.png"
   },
   {
+    "slug": "can-bang-duong-huyet",
+    "version": "1.0.0",
+    "title": "Cân bằng nội môi: điều hòa đường huyết",
+    "subject": "biology",
+    "grades": [
+      11
+    ],
+    "description": "Nồng độ glucose trong máu suốt một ngày (06:00 đến 06:00 hôm sau). Học sinh thêm bữa ăn (lượng carbohydrate) và các lần vận động vào thời điểm tùy chọn; tuyến tụy đáp lại bằng insulin khi glucose máu cao (tế bào nhận glucose, gan tổng hợp glycogen) hoặc glucagon khi glucose máu thấp (gan phân giải glycogen) theo cơ chế liên hệ ngược âm tính. So sánh người khỏe mạnh với đái tháo đường type 1 (tiết rất ít insulin) và type 2 (tế bào kháng insulin). Mô hình toán đã đơn giản hóa, chỉ để minh họa cơ chế: hormone tính theo đơn vị tương đối, khoảng cho phép lấy 3,9–7,8 mmol/L, ngưỡng thận 10 mmol/L; không dùng để chẩn đoán hay điều trị.",
+    "learningGoals": [
+      "Trình bày được cơ chế điều hòa nồng độ glucose máu: insulin làm giảm, glucagon làm tăng, gan dự trữ và giải phóng glucose dưới dạng glycogen.",
+      "Giải thích được liên hệ ngược âm tính trong cân bằng nội môi: bộ phận tiếp nhận, điều khiển (tuyến tụy) và thực hiện (gan, tế bào cơ thể).",
+      "So sánh đáp ứng sau bữa ăn của người khỏe mạnh với người thiếu insulin (type 1) và người kháng insulin (type 2).",
+      "Vận dụng: chia nhỏ bữa ăn và vận động hợp lí giúp giữ glucose máu trong khoảng cho phép."
+    ],
+    "state": {
+      "condition": "Cơ thể: healthy (khỏe mạnh), type1 (đái tháo đường type 1, thiếu insulin) hoặc type2 (đái tháo đường type 2, kháng insulin)",
+      "events": "Lịch trong ngày, chuỗi các sự kiện cách nhau bằng dấu chấm phẩy: \"m,<phút sau 06:00>,<g carbohydrate>\" là bữa ăn, \"x,<phút sau 06:00>,<số phút>,<mức 1–3>\" là vận động; tối đa 8 sự kiện",
+      "time": "Thời điểm đang xem và là nơi đặt sự kiện mới (phút sau 06:00), 0–1425",
+      "carbs": "Lượng carbohydrate của bữa ăn sắp thêm (g), 10–120",
+      "minutes": "Thời gian của lần vận động sắp thêm (phút), 10–90",
+      "level": "Mức độ vận động sắp thêm: 1 nhẹ, 2 vừa, 3 nặng",
+      "compare": "Vẽ thêm đường glucose của người khỏe mạnh (nét đứt) khi đang chọn type1 hoặc type2"
+    },
+    "events": {
+      "meal-added": {
+        "kind": "action",
+        "description": "Học sinh thêm một bữa ăn",
+        "data": {
+          "time": "Thời điểm bữa ăn (phút sau 06:00)",
+          "carbs": "Lượng carbohydrate (g)"
+        }
+      },
+      "exercise-added": {
+        "kind": "action",
+        "description": "Học sinh thêm một lần vận động",
+        "data": {
+          "time": "Thời điểm bắt đầu (phút sau 06:00)",
+          "minutes": "Thời gian vận động (phút)",
+          "level": "Mức độ: 1 nhẹ, 2 vừa, 3 nặng"
+        }
+      },
+      "event-removed": {
+        "kind": "action",
+        "description": "Học sinh xóa sự kiện muộn nhất hoặc xóa tất cả",
+        "data": {
+          "remaining": "Số sự kiện còn lại trong ngày"
+        }
+      },
+      "day-simulated": {
+        "kind": "result",
+        "description": "Kết quả của cả ngày (tính đến 06:00 hôm sau) sau khi học sinh đổi lịch hoặc đổi cơ thể",
+        "data": {
+          "peak": "Nồng độ glucose máu cao nhất trong ngày (mmol/L)",
+          "low": "Nồng độ glucose máu thấp nhất trong ngày (mmol/L)",
+          "minutesAbove": "Thời gian glucose máu trên 7,8 mmol/L (phút)",
+          "minutesBelow": "Thời gian glucose máu dưới 3,9 mmol/L (phút)",
+          "meals": "Số bữa ăn",
+          "carbs": "Tổng lượng carbohydrate (g)",
+          "exercises": "Số lần vận động",
+          "condition": "Cơ thể: 0 khỏe mạnh, 1 type 1, 2 type 2"
+        }
+      },
+      "kept-in-range": {
+        "kind": "goal",
+        "description": "Glucose máu nằm trong khoảng 3,9–7,8 mmol/L suốt cả ngày, với ít nhất 3 bữa ăn và tổng cộng từ 150 g carbohydrate",
+        "data": {
+          "condition": "Cơ thể: 0 khỏe mạnh, 1 type 1, 2 type 2",
+          "meals": "Số bữa ăn",
+          "carbs": "Tổng lượng carbohydrate (g)",
+          "exercises": "Số lần vận động",
+          "peak": "Nồng độ glucose máu cao nhất trong ngày (mmol/L)"
+        }
+      }
+    },
+    "url": "/can-bang-duong-huyet/1.0.0/index.html",
+    "thumbnailUrl": "/can-bang-duong-huyet/1.0.0/thumb.png"
+  },
+  {
     "slug": "can-bang-hoa-hoc",
     "version": "1.0.0",
     "title": "Cân bằng hóa học và nguyên lí Lơ Sa-tơ-li-ê",
@@ -3568,6 +3646,68 @@
     },
     "url": "/do-goc/1.0.0/index.html",
     "thumbnailUrl": "/do-goc/1.0.0/thumb.png"
+  },
+  {
+    "slug": "do-tan-ket-tinh",
+    "version": "1.0.0",
+    "title": "Độ tan và sự kết tinh",
+    "subject": "chemistry",
+    "grades": [
+      8
+    ],
+    "description": "Đường độ tan theo nhiệt độ của KNO₃, NaCl, CuSO₄, KCl (g chất tan trong 100 g nước) và của khí O₂ (mg trong 100 g nước, trục riêng). Hòa tan một khối lượng chất rắn vào nước ở nhiệt độ t₁, rồi đưa dung dịch về nhiệt độ t₂: khi làm nguội, phần chất tan vượt quá độ tan ở t₂ kết tinh ở đáy cốc. Học sinh dự đoán khối lượng kết tinh rồi kiểm tra. Có thể bỏ mầm tinh thể để thấy dung dịch quá bão hòa. Quy ước: số liệu độ tan làm tròn, cách nhau 10 °C và nối thẳng giữa hai điểm; CuSO₄ tính theo muối khan, bỏ qua nước kết tinh; O₂ ở áp suất 1 atm.",
+    "learningGoals": [
+      "Nêu được độ tan của một chất trong nước là số gam chất đó tan trong 100 g nước để tạo dung dịch bão hòa ở một nhiệt độ xác định.",
+      "Đọc đường độ tan: độ tan của phần lớn chất rắn tăng khi nhiệt độ tăng (KNO₃ tăng mạnh, NaCl hầu như không đổi), độ tan của chất khí giảm khi nhiệt độ tăng.",
+      "Phân biệt dung dịch chưa bão hòa, bão hòa và quá bão hòa.",
+      "Tính khối lượng chất kết tinh khi làm nguội: m kết tinh = m đã tan − S(t₂) · m nước / 100."
+    ],
+    "state": {
+      "solute": "Chất tan: KNO3, NaCl, CuSO4 hoặc KCl",
+      "water": "Khối lượng nước (g), 50–200",
+      "added": "Khối lượng chất tan cho vào (g), 0–250",
+      "t1": "Nhiệt độ lúc hòa tan t₁ (°C), 0–100",
+      "t2": "Nhiệt độ lúc sau t₂ (°C), 0–100; t₂ < t₁ là làm nguội",
+      "seed": "true: có mầm tinh thể, chất tan kết tinh ngay khi vượt quá độ tan; false: dung dịch có thể ở trạng thái quá bão hòa",
+      "showGas": "Hiện đường độ tan của khí O₂ (trục bên phải, mg/100 g nước)",
+      "guess": "Khối lượng kết tinh do học sinh dự đoán (g)",
+      "checked": "true: đã kiểm tra dự đoán, đáp án đang hiện; false: đáp án đang ẩn chờ dự đoán"
+    },
+    "events": {
+      "cooled": {
+        "kind": "result",
+        "description": "Kết quả thí nghiệm sau khi học sinh chỉnh xong nhiệt độ (hoặc chất tan, lượng nước, lượng chất tan, mầm tinh thể)",
+        "data": {
+          "dissolved": "Khối lượng chất tan còn trong dung dịch ở t₂ (g)",
+          "crystallised": "Khối lượng chất kết tinh khi đi từ t₁ đến t₂ (g)",
+          "dissolvedHot": "Khối lượng chất tan đã tan ở t₁ (g)",
+          "solubility": "Độ tan ở t₂ (g/100 g nước)",
+          "t1": "Nhiệt độ hòa tan (°C)",
+          "t2": "Nhiệt độ lúc sau (°C)",
+          "water": "Khối lượng nước (g)",
+          "status": "Trạng thái dung dịch ở t₂: 0 chưa bão hòa, 1 bão hòa, 2 quá bão hòa"
+        }
+      },
+      "prediction-checked": {
+        "kind": "action",
+        "description": "Học sinh bấm kiểm tra dự đoán khối lượng kết tinh",
+        "data": {
+          "guess": "Khối lượng dự đoán (g)",
+          "crystallised": "Khối lượng kết tinh đúng (g)",
+          "error": "Sai lệch dự đoán − đúng (g)"
+        }
+      },
+      "prediction-correct": {
+        "kind": "goal",
+        "description": "Dự đoán khối lượng kết tinh đúng (sai lệch không quá 1 g hoặc 3 %), với lượng kết tinh lớn hơn 0",
+        "data": {
+          "guess": "Khối lượng dự đoán (g)",
+          "crystallised": "Khối lượng kết tinh đúng (g)"
+        }
+      }
+    },
+    "url": "/do-tan-ket-tinh/1.0.0/index.html",
+    "thumbnailUrl": "/do-tan-ket-tinh/1.0.0/thumb.png"
   },
   {
     "slug": "do-thi-ham-so",
@@ -8314,6 +8454,65 @@
     },
     "url": "/phan-ung-hat-nhan/1.0.0/index.html",
     "thumbnailUrl": "/phan-ung-hat-nhan/1.0.0/thumb.png"
+  },
+  {
+    "slug": "phan-ung-trao-doi-ion",
+    "version": "1.0.0",
+    "title": "Phản ứng trao đổi ion trong dung dịch",
+    "subject": "chemistry",
+    "grades": [
+      11
+    ],
+    "description": "Trộn hai dung dịch chất điện li chọn từ danh sách (NaCl, AgNO₃, BaCl₂, Na₂SO₄, Na₂CO₃, HCl, NaOH, CuSO₄, CH₃COONa, NH₄Cl, KNO₃). Mô phỏng cho thấy các ion trong từng dung dịch trước khi trộn, hiện tượng sau khi trộn (kết tủa và màu của nó, khí thoát ra hoặc không có hiện tượng). Học sinh chọn cation và anion đã kết hợp với nhau, rồi kiểm tra: mô phỏng hiện phương trình phân tử, phương trình ion đầy đủ, phương trình ion rút gọn và các ion không tham gia phản ứng. Quy ước: Ag₂SO₄ và CH₃COOAg (ít tan) coi như tan trong dung dịch loãng; AgOH không bền nên viết sản phẩm là Ag₂O; Cu²⁺ với CO₃²⁻ viết đơn giản là CuCO₃; số ion vẽ trong cốc chỉ minh họa tỉ lệ.",
+    "learningGoals": [
+      "Nêu được điều kiện xảy ra phản ứng trao đổi ion trong dung dịch chất điện li: tạo thành chất kết tủa, chất khí hoặc chất điện li yếu.",
+      "Viết được phương trình phân tử, phương trình ion đầy đủ và phương trình ion rút gọn; kiểm tra cân bằng nguyên tố và điện tích.",
+      "Xác định được các ion không tham gia phản ứng và giải thích vì sao một số cặp dung dịch không phản ứng với nhau.",
+      "Nhận biết màu của một số kết tủa thường gặp: AgCl, BaSO₄, BaCO₃ trắng; Cu(OH)₂ xanh lam."
+    ],
+    "state": {
+      "a": "Dung dịch 1: NaCl, AgNO3, BaCl2, Na2SO4, Na2CO3, HCl, NaOH, CuSO4, CH3COONa, NH4Cl hoặc KNO3",
+      "b": "Dung dịch 2, cùng danh sách với a",
+      "pickCation": "Cation học sinh chọn là tham gia phản ứng: Na, K, Ag, Ba, Cu, H, NH4 hoặc none (không phản ứng)",
+      "pickAnion": "Anion học sinh chọn là tham gia phản ứng: Cl, NO3, SO4, CO3, OH, CH3COO hoặc none (không phản ứng)",
+      "revealed": "true: đã kiểm tra, các phương trình đang hiện; false: phương trình đang ẩn chờ học sinh trả lời"
+    },
+    "events": {
+      "mixed": {
+        "kind": "result",
+        "description": "Học sinh vừa chọn xong một cặp dung dịch để trộn",
+        "data": {
+          "a": "Số thứ tự dung dịch 1 trong danh sách (0 NaCl, 1 AgNO₃, 2 BaCl₂, 3 Na₂SO₄, 4 Na₂CO₃, 5 HCl, 6 NaOH, 7 CuSO₄, 8 CH₃COONa, 9 NH₄Cl, 10 KNO₃)",
+          "b": "Số thứ tự dung dịch 2, cùng cách đánh số",
+          "reacted": "1 nếu có phản ứng, 0 nếu không",
+          "productType": "Loại chất tách khỏi dung dịch: 0 không có, 1 kết tủa, 2 khí, 3 chất điện li yếu"
+        }
+      },
+      "retry": {
+        "kind": "action",
+        "description": "Học sinh ẩn các phương trình để tự trả lời lại với cùng cặp dung dịch",
+        "data": {}
+      },
+      "answer-checked": {
+        "kind": "action",
+        "description": "Học sinh bấm kiểm tra cặp ion đã chọn",
+        "data": {
+          "correct": "1 nếu chọn đúng (kể cả chọn đúng “không phản ứng”), 0 nếu sai",
+          "reacted": "1 nếu cặp dung dịch có phản ứng, 0 nếu không"
+        }
+      },
+      "net-ionic-correct": {
+        "kind": "goal",
+        "description": "Học sinh chọn đúng cation và anion của phương trình ion rút gọn cho một cặp dung dịch có phản ứng",
+        "data": {
+          "a": "Số thứ tự dung dịch 1 (như sự kiện mixed)",
+          "b": "Số thứ tự dung dịch 2",
+          "productType": "1 kết tủa, 2 khí, 3 chất điện li yếu"
+        }
+      }
+    },
+    "url": "/phan-ung-trao-doi-ion/1.0.0/index.html",
+    "thumbnailUrl": "/phan-ung-trao-doi-ion/1.0.0/thumb.png"
   },
   {
     "slug": "phan-xa-am-tieng-vang",

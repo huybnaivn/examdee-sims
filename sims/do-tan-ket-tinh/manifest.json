@@ -1,0 +1,60 @@
+{
+  "slug": "do-tan-ket-tinh",
+  "version": "1.0.0",
+  "title": "Độ tan và sự kết tinh",
+  "subject": "chemistry",
+  "grades": [
+    8
+  ],
+  "description": "Đường độ tan theo nhiệt độ của KNO₃, NaCl, CuSO₄, KCl (g chất tan trong 100 g nước) và của khí O₂ (mg trong 100 g nước, trục riêng). Hòa tan một khối lượng chất rắn vào nước ở nhiệt độ t₁, rồi đưa dung dịch về nhiệt độ t₂: khi làm nguội, phần chất tan vượt quá độ tan ở t₂ kết tinh ở đáy cốc. Học sinh dự đoán khối lượng kết tinh rồi kiểm tra. Có thể bỏ mầm tinh thể để thấy dung dịch quá bão hòa. Quy ước: số liệu độ tan làm tròn, cách nhau 10 °C và nối thẳng giữa hai điểm; CuSO₄ tính theo muối khan, bỏ qua nước kết tinh; O₂ ở áp suất 1 atm.",
+  "learningGoals": [
+    "Nêu được độ tan của một chất trong nước là số gam chất đó tan trong 100 g nước để tạo dung dịch bão hòa ở một nhiệt độ xác định.",
+    "Đọc đường độ tan: độ tan của phần lớn chất rắn tăng khi nhiệt độ tăng (KNO₃ tăng mạnh, NaCl hầu như không đổi), độ tan của chất khí giảm khi nhiệt độ tăng.",
+    "Phân biệt dung dịch chưa bão hòa, bão hòa và quá bão hòa.",
+    "Tính khối lượng chất kết tinh khi làm nguội: m kết tinh = m đã tan − S(t₂) · m nước / 100."
+  ],
+  "state": {
+    "solute": "Chất tan: KNO3, NaCl, CuSO4 hoặc KCl",
+    "water": "Khối lượng nước (g), 50–200",
+    "added": "Khối lượng chất tan cho vào (g), 0–250",
+    "t1": "Nhiệt độ lúc hòa tan t₁ (°C), 0–100",
+    "t2": "Nhiệt độ lúc sau t₂ (°C), 0–100; t₂ < t₁ là làm nguội",
+    "seed": "true: có mầm tinh thể, chất tan kết tinh ngay khi vượt quá độ tan; false: dung dịch có thể ở trạng thái quá bão hòa",
+    "showGas": "Hiện đường độ tan của khí O₂ (trục bên phải, mg/100 g nước)",
+    "guess": "Khối lượng kết tinh do học sinh dự đoán (g)",
+    "checked": "true: đã kiểm tra dự đoán, đáp án đang hiện; false: đáp án đang ẩn chờ dự đoán"
+  },
+  "events": {
+    "cooled": {
+      "kind": "result",
+      "description": "Kết quả thí nghiệm sau khi học sinh chỉnh xong nhiệt độ (hoặc chất tan, lượng nước, lượng chất tan, mầm tinh thể)",
+      "data": {
+        "dissolved": "Khối lượng chất tan còn trong dung dịch ở t₂ (g)",
+        "crystallised": "Khối lượng chất kết tinh khi đi từ t₁ đến t₂ (g)",
+        "dissolvedHot": "Khối lượng chất tan đã tan ở t₁ (g)",
+        "solubility": "Độ tan ở t₂ (g/100 g nước)",
+        "t1": "Nhiệt độ hòa tan (°C)",
+        "t2": "Nhiệt độ lúc sau (°C)",
+        "water": "Khối lượng nước (g)",
+        "status": "Trạng thái dung dịch ở t₂: 0 chưa bão hòa, 1 bão hòa, 2 quá bão hòa"
+      }
+    },
+    "prediction-checked": {
+      "kind": "action",
+      "description": "Học sinh bấm kiểm tra dự đoán khối lượng kết tinh",
+      "data": {
+        "guess": "Khối lượng dự đoán (g)",
+        "crystallised": "Khối lượng kết tinh đúng (g)",
+        "error": "Sai lệch dự đoán − đúng (g)"
+      }
+    },
+    "prediction-correct": {
+      "kind": "goal",
+      "description": "Dự đoán khối lượng kết tinh đúng (sai lệch không quá 1 g hoặc 3 %), với lượng kết tinh lớn hơn 0",
+      "data": {
+        "guess": "Khối lượng dự đoán (g)",
+        "crystallised": "Khối lượng kết tinh đúng (g)"
+      }
+    }
+  }
+}
