@@ -1,0 +1,68 @@
+{
+  "slug": "cong-tru-co-nho",
+  "version": "1.0.0",
+  "title": "Cộng, trừ có nhớ theo cột dọc",
+  "subject": "math",
+  "grades": [2, 3, 4],
+  "description": "Đặt tính rồi tính hai số tự nhiên đến bốn chữ số. Phép tính viết theo cột dọc, bên cạnh là các khối đơn vị, chục, trăm, nghìn. Bấm từng bước để tính từng cột từ phải sang trái: khi cộng, đủ 10 khối thì gộp thành 1 khối của hàng bên trái (nhớ 1); khi trừ, không đủ để trừ thì đổi 1 khối của hàng bên trái thành 10 khối. Mỗi bước có lời đọc như trong sách giáo khoa (8 cộng 7 bằng 15, viết 5, nhớ 1). Ở chế độ luyện tập, học sinh tự bấm chữ số của từng cột. Phép trừ có số bị trừ bé hơn số trừ không được thực hiện ở mức này.",
+  "learningGoals": [
+    "Đặt tính thẳng cột và tính từ phải sang trái, từ hàng đơn vị.",
+    "Hiểu “nhớ 1” khi cộng là gộp 10 đơn vị thành 1 chục (10 chục thành 1 trăm, 10 trăm thành 1 nghìn).",
+    "Hiểu “nhớ 1” khi trừ tương ứng với việc đổi 1 chục thành 10 đơn vị để đủ trừ.",
+    "Thực hiện đúng phép cộng, phép trừ có nhớ với số có hai, ba, bốn chữ số."
+  ],
+  "state": {
+    "mode": "Hoạt động: \"explore\" (xem từng bước) hoặc \"practice\" (luyện tập: học sinh tự viết từng chữ số)",
+    "op": "Phép tính: \"add\" (cộng) hoặc \"sub\" (trừ)",
+    "a": "Số thứ nhất (số hạng thứ nhất hoặc số bị trừ), số tự nhiên từ 0 đến 9999",
+    "b": "Số thứ hai (số hạng thứ hai hoặc số trừ), số tự nhiên từ 0 đến 9999; khi trừ phải không lớn hơn số thứ nhất",
+    "step": "Số cột đã tính xong, kể từ hàng đơn vị (0 = chưa tính cột nào)",
+    "size": "Số chữ số (2, 3 hoặc 4) của các số khi bấm “Phép tính khác”"
+  },
+  "events": {
+    "step": {
+      "kind": "action",
+      "description": "Ở chế độ xem từng bước, học sinh bấm tiến hoặc lùi một cột",
+      "data": {
+        "step": "Số cột đã tính xong sau khi bấm",
+        "steps": "Tổng số cột của phép tính"
+      }
+    },
+    "digit-entered": {
+      "kind": "action",
+      "description": "Ở chế độ luyện tập, học sinh bấm một chữ số cho cột đang tính",
+      "data": {
+        "place": "Hàng đang tính (0 = đơn vị, 1 = chục, 2 = trăm, 3 = nghìn, 4 = chục nghìn)",
+        "digit": "Chữ số học sinh bấm",
+        "correct": "1 nếu đúng, 0 nếu sai"
+      }
+    },
+    "new-calculation": {
+      "kind": "action",
+      "description": "Học sinh bấm “Phép tính khác” để lấy hai số ngẫu nhiên",
+      "data": {}
+    },
+    "calculated": {
+      "kind": "result",
+      "description": "Một phép tính vừa được tính xong đến cột cuối cùng (ở cả hai chế độ)",
+      "data": {
+        "a": "Số thứ nhất",
+        "b": "Số thứ hai",
+        "operation": "1 là phép cộng, −1 là phép trừ",
+        "answer": "Kết quả (tổng hoặc hiệu)",
+        "carries": "Số lần nhớ 1"
+      }
+    },
+    "all-digits-right": {
+      "kind": "goal",
+      "description": "Ở chế độ luyện tập, học sinh hoàn thành một phép tính mà mọi chữ số đều viết đúng ngay lần đầu",
+      "data": {
+        "a": "Số thứ nhất",
+        "b": "Số thứ hai",
+        "operation": "1 là phép cộng, −1 là phép trừ",
+        "answer": "Kết quả",
+        "carries": "Số lần nhớ 1"
+      }
+    }
+  }
+}
