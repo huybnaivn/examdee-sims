@@ -233,6 +233,10 @@
         }
       }
     },
+    "review": {
+      "round": 1,
+      "note": "Làm lại từ đầu: kéo gạch, bạn nhỏ, voi, xe tăng từ kệ thả xuống đất, mỗi bên một nhân vật; chạm để xoay gạch hoặc đổi giày; chồng gạch, đổi khối lượng, đổi mặt đất; đoán trước và 3 thử thách; cảnh có trời, mặt đất, nhân vật vẽ riêng."
+    },
     "url": "/ap-suat-chat-ran/1.0.0/index.html",
     "thumbnailUrl": "/ap-suat-chat-ran/1.0.0/thumb.png"
   },
