@@ -850,6 +850,83 @@
     "thumbnailUrl": "/bong-toi-nhat-thuc/1.0.0/thumb.png"
   },
   {
+    "slug": "cach-tu-nhieu-xa",
+    "version": "1.0.0",
+    "title": "Nhiễu xạ ánh sáng và cách tử",
+    "subject": "physics",
+    "grades": [
+      12
+    ],
+    "description": "Chiếu ánh sáng đơn sắc có bước sóng thay đổi được, hoặc ánh sáng trắng, vuông góc qua một khe hẹp hoặc một cách tử nhiễu xạ và quan sát hình ảnh trên màn cách 1 m. Với một khe: vân trung tâm rộng ra khi khe hẹp lại. Với cách tử: các vân sáng chính thỏa mãn d·sinθ = k·λ, ánh sáng trắng cho các dải quang phổ có màu tím gần vân trung tâm nhất, và số bậc quan sát được bị giới hạn. Có nhiệm vụ đo bước sóng chưa biết bằng con trỏ trên màn. Nội dung mở rộng, nâng cao của lớp 12.",
+    "learningGoals": [
+      "Vận dụng công thức cách tử d·sinθ = k·λ để tìm góc lệch và vị trí x = L·tanθ của vân sáng chính bậc k; với góc nhỏ x ≈ k·λ·L/d.",
+      "Xác định bậc cao nhất quan sát được: kmax = ⌊d/λ⌋.",
+      "Giải thích vì sao ánh sáng trắng qua cách tử cho quang phổ, trong mỗi bậc tia tím lệch ít nhất và tia đỏ lệch nhiều nhất.",
+      "Nhiễu xạ qua một khe: vân tối thứ nhất ở a·sinθ = λ, khe càng hẹp thì vân sáng trung tâm càng rộng.",
+      "Đo bước sóng ánh sáng bằng cách tử: λ = d·sinθ / k."
+    ],
+    "state": {
+      "task": "Nhiệm vụ: \"explore\" (khám phá) hoặc \"measure\" (đo bước sóng chưa biết của nguồn đơn sắc)",
+      "mode": "Ánh sáng đi qua: \"grating\" (cách tử nhiễu xạ) hoặc \"slit\" (một khe hẹp)",
+      "source": "Nguồn sáng khi khám phá: \"mono\" (đơn sắc) hoặc \"white\" (ánh sáng trắng 380–760 nm)",
+      "wavelength": "Bước sóng của nguồn đơn sắc khi khám phá (nm)",
+      "lines": "Số vạch của cách tử trên 1 mm; chu kì d = 1/lines (mm)",
+      "slitWidth": "Bề rộng khe a (μm)",
+      "cursor": "Vị trí con trỏ đo trên màn, tính từ vân trung tâm (cm, dương về phía trên)",
+      "unknown": "Bước sóng ẩn của nguồn trong nhiệm vụ đo (nm); không hiện cho học sinh",
+      "answer": "Bước sóng học sinh đo được và nhập vào (nm)",
+      "feedback": "Kết quả lần kiểm tra gần nhất: \"\" (chưa kiểm tra), \"correct\" hoặc \"wrong\""
+    },
+    "events": {
+      "pattern-set": {
+        "kind": "result",
+        "description": "Học sinh vừa chỉnh xong nguồn sáng, cách tử hoặc khe; hình ảnh nhiễu xạ mới đã xác lập",
+        "data": {
+          "slit": "1 nếu dùng một khe, 0 nếu dùng cách tử",
+          "aperture": "Chu kì cách tử d hoặc bề rộng khe a (nm)",
+          "wavelength": "Bước sóng nguồn đơn sắc (nm); không có khóa này với ánh sáng trắng",
+          "firstOrderAngle": "Cách tử: góc lệch của vân sáng bậc 1 (độ); với ánh sáng trắng là của tia tím 380 nm",
+          "firstOrderAngleRed": "Cách tử, ánh sáng trắng: góc lệch bậc 1 của tia đỏ 760 nm (độ)",
+          "maxOrder": "Cách tử: bậc cao nhất ⌊d/λ⌋ (với ánh sáng trắng tính cho tia tím)",
+          "firstMinimumAngle": "Một khe: góc của vân tối thứ nhất (độ); với ánh sáng trắng là của tia tím",
+          "centralWidth": "Một khe: bề rộng vân sáng trung tâm trên màn (cm); với ánh sáng trắng là của tia tím"
+        }
+      },
+      "cursor-placed": {
+        "kind": "action",
+        "description": "Học sinh kéo con trỏ đo trên màn rồi thả",
+        "data": {
+          "position": "Vị trí con trỏ x (cm)",
+          "angle": "Góc θ ứng với con trỏ, tanθ = x/L (độ)"
+        }
+      },
+      "answer-checked": {
+        "kind": "action",
+        "description": "Học sinh bấm Kiểm tra trong nhiệm vụ đo bước sóng",
+        "data": {
+          "answer": "Bước sóng học sinh nhập (nm)",
+          "correct": "1 nếu lệch không quá 10 nm, 0 nếu chưa đúng"
+        }
+      },
+      "wavelength-measured": {
+        "kind": "goal",
+        "description": "Học sinh đo đúng bước sóng chưa biết, sai lệch không quá 10 nm",
+        "data": {
+          "answer": "Bước sóng học sinh nhập (nm)",
+          "wavelength": "Bước sóng thực của nguồn (nm)",
+          "error": "Độ lệch tuyệt đối (nm)"
+        }
+      },
+      "new-source": {
+        "kind": "action",
+        "description": "Học sinh bấm Nguồn sáng mới để nhận một bước sóng ẩn khác",
+        "data": {}
+      }
+    },
+    "url": "/cach-tu-nhieu-xa/1.0.0/index.html",
+    "thumbnailUrl": "/cach-tu-nhieu-xa/1.0.0/thumb.png"
+  },
+  {
     "slug": "cam-ung-dien-tu",
     "version": "1.0.0",
     "title": "Cảm ứng điện từ",
@@ -3996,6 +4073,71 @@
     "thumbnailUrl": "/do-thi-luong-giac/1.0.0/thumb.png"
   },
   {
+    "slug": "doc-ampe-ke-von-ke",
+    "version": "1.0.0",
+    "title": "Đọc ampe kế và vôn kế",
+    "subject": "physics",
+    "grades": [
+      8
+    ],
+    "description": "Ampe kế và vôn kế kim có hai thang đo, mỗi thang có giới hạn đo (GHĐ) và độ chia nhỏ nhất (ĐCNN) riêng. Chọn thang đo phù hợp cho mạch điện một bóng đèn, đọc số chỉ của kim, thử mắc ngược cực hoặc mắc sai cách để thấy hậu quả, và so sánh với đồng hồ đo điện hiện số. Có chế độ luyện đọc số chỉ.",
+    "learningGoals": [
+      "Nhận biết GHĐ và ĐCNN của từng thang đo trên ampe kế, vôn kế; đọc số chỉ = số vạch × ĐCNN.",
+      "Chọn thang đo có GHĐ nhỏ nhất mà vẫn lớn hơn giá trị cần đo để kết quả chính xác hơn; nhận ra hiện tượng quá thang đo.",
+      "Mắc ampe kế nối tiếp, vôn kế song song với dụng cụ cần đo; chốt (+) nối về phía cực dương của nguồn.",
+      "Đổi đơn vị 1 A = 1000 mA, 1 V = 1000 mV."
+    ],
+    "state": {
+      "mode": "Chế độ: \"explore\" (khám phá) hoặc \"practice\" (luyện đọc số chỉ, ẩn U, R và đồng hồ số)",
+      "meter": "Dụng cụ đo: \"ammeter\" (ampe kế) hoặc \"voltmeter\" (vôn kế)",
+      "ampRange": "GHĐ của thang đo ampe kế đang chọn: 0.6 hoặc 3 (A)",
+      "voltRange": "GHĐ của thang đo vôn kế đang chọn: 3 hoặc 15 (V)",
+      "wiring": "Cách mắc: \"correct\" (đúng), \"reversed\" (ngược cực), \"wrong\" (ampe kế mắc song song hoặc vôn kế mắc nối tiếp)",
+      "voltage": "Hiệu điện thế của nguồn (V)",
+      "resistance": "Điện trở của bóng đèn (Ω)",
+      "showDigital": "true nếu hiện đồng hồ đo điện hiện số (chế độ khám phá)",
+      "answer": "Số chỉ học sinh đọc, tính bằng số vạch chia (0–30) trên thang đang chọn",
+      "feedback": "Kết quả lần kiểm tra gần nhất: \"\" (chưa kiểm tra), \"correct\", \"wrong\", \"range\" (đọc đúng nhưng chưa chọn thang tốt nhất), \"overload\", \"wiring\""
+    },
+    "events": {
+      "range-selected": {
+        "kind": "result",
+        "description": "Học sinh vừa chọn một thang đo",
+        "data": {
+          "range": "GHĐ của thang vừa chọn (A với ampe kế, V với vôn kế)",
+          "reading": "Số chỉ của kim đã làm tròn theo ĐCNN (A hoặc V); không có khóa này khi kim nằm ngoài thang",
+          "overload": "1 nếu kim vượt quá thang đo, 0 nếu không",
+          "reversed": "1 nếu kim lệch ngược do mắc sai cực, 0 nếu không"
+        }
+      },
+      "answer-checked": {
+        "kind": "action",
+        "description": "Học sinh bấm Kiểm tra trong chế độ luyện tập",
+        "data": {
+          "answer": "Số chỉ học sinh nhập (A hoặc V)",
+          "range": "GHĐ của thang đang chọn (A hoặc V)",
+          "correct": "1 nếu đọc đúng trên thang phù hợp nhất, 0 nếu chưa"
+        }
+      },
+      "reading-correct": {
+        "kind": "goal",
+        "description": "Học sinh đọc đúng số chỉ trên thang đo phù hợp nhất trong chế độ luyện tập",
+        "data": {
+          "reading": "Số chỉ đúng theo ĐCNN (A hoặc V)",
+          "range": "GHĐ của thang đã chọn (A hoặc V)",
+          "value": "Giá trị thực của đại lượng (A hoặc V)"
+        }
+      },
+      "new-task": {
+        "kind": "action",
+        "description": "Học sinh bấm Bài mới để nhận một mạch điện khác trong chế độ luyện tập",
+        "data": {}
+      }
+    },
+    "url": "/doc-ampe-ke-von-ke/1.0.0/index.html",
+    "thumbnailUrl": "/doc-ampe-ke-von-ke/1.0.0/thumb.png"
+  },
+  {
     "slug": "doi-don-vi-do",
     "version": "1.0.0",
     "title": "Đổi đơn vị đo",
@@ -4451,6 +4593,55 @@
     },
     "url": "/dot-bien-nhiem-sac-the/1.0.0/index.html",
     "thumbnailUrl": "/dot-bien-nhiem-sac-the/1.0.0/thumb.png"
+  },
+  {
+    "slug": "dun-nuoc-hieu-suat",
+    "version": "1.0.0",
+    "title": "Nhiệt lượng và hiệu suất đun nước",
+    "subject": "physics",
+    "grades": [
+      8,
+      9
+    ],
+    "description": "Đun sôi nước bằng ấm điện hoặc bếp gas. Chọn khối lượng nước, nhiệt độ ban đầu, công suất và hiệu suất của thiết bị rồi quan sát nhiệt độ tăng đến 100 °C. Mô phỏng tính nhiệt lượng nước thu vào Q = m·c·Δt, năng lượng thiết bị cung cấp, phần hao phí, thời gian đun, chi phí theo giá minh họa và so sánh hai thiết bị. Học sinh có thể dự đoán thời gian đun sôi trước khi chạy.",
+    "learningGoals": [
+      "Tính nhiệt lượng nước thu vào để nóng lên: Q = m·c·Δt với c = 4200 J/(kg·K).",
+      "Hiểu hiệu suất H = Q có ích / năng lượng toàn phần và tính thời gian đun sôi t = Q/(H·P).",
+      "Tính điện năng tiêu thụ A = P·t, đổi ra kW·h và ước tính chi phí.",
+      "So sánh ấm điện và bếp gas: hiệu suất thấp hơn thì tốn nhiều năng lượng và thời gian hơn cho cùng một lượng nước."
+    ],
+    "state": {
+      "appliance": "Thiết bị đun: \"kettle\" (ấm điện) hoặc \"gas\" (bếp gas)",
+      "mass": "Khối lượng nước (kg)",
+      "startTemp": "Nhiệt độ ban đầu của nước (°C)",
+      "power": "Công suất của thiết bị (W): công suất điện của ấm, hoặc nhiệt lượng bếp gas tỏa ra mỗi giây",
+      "efficiency": "Hiệu suất đun (%), phần năng lượng cung cấp được nước thu vào",
+      "guess": "Thời gian đun sôi học sinh dự đoán (s); 0 nghĩa là chưa dự đoán",
+      "time": "Thời gian đã đun (s); nước sôi khi time bằng Q/(H·P)"
+    },
+    "events": {
+      "boiled": {
+        "kind": "result",
+        "description": "Nước vừa sôi (đạt 100 °C)",
+        "data": {
+          "time": "Thời gian đun sôi (s)",
+          "energyKwh": "Năng lượng thiết bị đã cung cấp (kW·h)",
+          "efficiency": "Hiệu suất đun (%)",
+          "heat": "Nhiệt lượng nước thu vào Q = m·c·Δt (J)",
+          "cost": "Chi phí theo giá minh họa (đồng)"
+        }
+      },
+      "prediction-correct": {
+        "kind": "goal",
+        "description": "Nước sôi và thời gian học sinh dự đoán lệch không quá 5 % (hoặc 10 s) so với thời gian thực",
+        "data": {
+          "guess": "Thời gian dự đoán (s)",
+          "time": "Thời gian đun sôi thực (s)"
+        }
+      }
+    },
+    "url": "/dun-nuoc-hieu-suat/1.0.0/index.html",
+    "thumbnailUrl": "/dun-nuoc-hieu-suat/1.0.0/thumb.png"
   },
   {
     "slug": "duong-tron-luong-giac",

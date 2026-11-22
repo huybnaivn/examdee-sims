@@ -1,0 +1,61 @@
+{
+  "slug": "doc-ampe-ke-von-ke",
+  "version": "1.0.0",
+  "title": "Đọc ampe kế và vôn kế",
+  "subject": "physics",
+  "grades": [8],
+  "description": "Ampe kế và vôn kế kim có hai thang đo, mỗi thang có giới hạn đo (GHĐ) và độ chia nhỏ nhất (ĐCNN) riêng. Chọn thang đo phù hợp cho mạch điện một bóng đèn, đọc số chỉ của kim, thử mắc ngược cực hoặc mắc sai cách để thấy hậu quả, và so sánh với đồng hồ đo điện hiện số. Có chế độ luyện đọc số chỉ.",
+  "learningGoals": [
+    "Nhận biết GHĐ và ĐCNN của từng thang đo trên ampe kế, vôn kế; đọc số chỉ = số vạch × ĐCNN.",
+    "Chọn thang đo có GHĐ nhỏ nhất mà vẫn lớn hơn giá trị cần đo để kết quả chính xác hơn; nhận ra hiện tượng quá thang đo.",
+    "Mắc ampe kế nối tiếp, vôn kế song song với dụng cụ cần đo; chốt (+) nối về phía cực dương của nguồn.",
+    "Đổi đơn vị 1 A = 1000 mA, 1 V = 1000 mV."
+  ],
+  "state": {
+    "mode": "Chế độ: \"explore\" (khám phá) hoặc \"practice\" (luyện đọc số chỉ, ẩn U, R và đồng hồ số)",
+    "meter": "Dụng cụ đo: \"ammeter\" (ampe kế) hoặc \"voltmeter\" (vôn kế)",
+    "ampRange": "GHĐ của thang đo ampe kế đang chọn: 0.6 hoặc 3 (A)",
+    "voltRange": "GHĐ của thang đo vôn kế đang chọn: 3 hoặc 15 (V)",
+    "wiring": "Cách mắc: \"correct\" (đúng), \"reversed\" (ngược cực), \"wrong\" (ampe kế mắc song song hoặc vôn kế mắc nối tiếp)",
+    "voltage": "Hiệu điện thế của nguồn (V)",
+    "resistance": "Điện trở của bóng đèn (Ω)",
+    "showDigital": "true nếu hiện đồng hồ đo điện hiện số (chế độ khám phá)",
+    "answer": "Số chỉ học sinh đọc, tính bằng số vạch chia (0–30) trên thang đang chọn",
+    "feedback": "Kết quả lần kiểm tra gần nhất: \"\" (chưa kiểm tra), \"correct\", \"wrong\", \"range\" (đọc đúng nhưng chưa chọn thang tốt nhất), \"overload\", \"wiring\""
+  },
+  "events": {
+    "range-selected": {
+      "kind": "result",
+      "description": "Học sinh vừa chọn một thang đo",
+      "data": {
+        "range": "GHĐ của thang vừa chọn (A với ampe kế, V với vôn kế)",
+        "reading": "Số chỉ của kim đã làm tròn theo ĐCNN (A hoặc V); không có khóa này khi kim nằm ngoài thang",
+        "overload": "1 nếu kim vượt quá thang đo, 0 nếu không",
+        "reversed": "1 nếu kim lệch ngược do mắc sai cực, 0 nếu không"
+      }
+    },
+    "answer-checked": {
+      "kind": "action",
+      "description": "Học sinh bấm Kiểm tra trong chế độ luyện tập",
+      "data": {
+        "answer": "Số chỉ học sinh nhập (A hoặc V)",
+        "range": "GHĐ của thang đang chọn (A hoặc V)",
+        "correct": "1 nếu đọc đúng trên thang phù hợp nhất, 0 nếu chưa"
+      }
+    },
+    "reading-correct": {
+      "kind": "goal",
+      "description": "Học sinh đọc đúng số chỉ trên thang đo phù hợp nhất trong chế độ luyện tập",
+      "data": {
+        "reading": "Số chỉ đúng theo ĐCNN (A hoặc V)",
+        "range": "GHĐ của thang đã chọn (A hoặc V)",
+        "value": "Giá trị thực của đại lượng (A hoặc V)"
+      }
+    },
+    "new-task": {
+      "kind": "action",
+      "description": "Học sinh bấm Bài mới để nhận một mạch điện khác trong chế độ luyện tập",
+      "data": {}
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "slug": "dun-nuoc-hieu-suat",
+  "version": "1.0.0",
+  "title": "Nhiệt lượng và hiệu suất đun nước",
+  "subject": "physics",
+  "grades": [8, 9],
+  "description": "Đun sôi nước bằng ấm điện hoặc bếp gas. Chọn khối lượng nước, nhiệt độ ban đầu, công suất và hiệu suất của thiết bị rồi quan sát nhiệt độ tăng đến 100 °C. Mô phỏng tính nhiệt lượng nước thu vào Q = m·c·Δt, năng lượng thiết bị cung cấp, phần hao phí, thời gian đun, chi phí theo giá minh họa và so sánh hai thiết bị. Học sinh có thể dự đoán thời gian đun sôi trước khi chạy.",
+  "learningGoals": [
+    "Tính nhiệt lượng nước thu vào để nóng lên: Q = m·c·Δt với c = 4200 J/(kg·K).",
+    "Hiểu hiệu suất H = Q có ích / năng lượng toàn phần và tính thời gian đun sôi t = Q/(H·P).",
+    "Tính điện năng tiêu thụ A = P·t, đổi ra kW·h và ước tính chi phí.",
+    "So sánh ấm điện và bếp gas: hiệu suất thấp hơn thì tốn nhiều năng lượng và thời gian hơn cho cùng một lượng nước."
+  ],
+  "state": {
+    "appliance": "Thiết bị đun: \"kettle\" (ấm điện) hoặc \"gas\" (bếp gas)",
+    "mass": "Khối lượng nước (kg)",
+    "startTemp": "Nhiệt độ ban đầu của nước (°C)",
+    "power": "Công suất của thiết bị (W): công suất điện của ấm, hoặc nhiệt lượng bếp gas tỏa ra mỗi giây",
+    "efficiency": "Hiệu suất đun (%), phần năng lượng cung cấp được nước thu vào",
+    "guess": "Thời gian đun sôi học sinh dự đoán (s); 0 nghĩa là chưa dự đoán",
+    "time": "Thời gian đã đun (s); nước sôi khi time bằng Q/(H·P)"
+  },
+  "events": {
+    "boiled": {
+      "kind": "result",
+      "description": "Nước vừa sôi (đạt 100 °C)",
+      "data": {
+        "time": "Thời gian đun sôi (s)",
+        "energyKwh": "Năng lượng thiết bị đã cung cấp (kW·h)",
+        "efficiency": "Hiệu suất đun (%)",
+        "heat": "Nhiệt lượng nước thu vào Q = m·c·Δt (J)",
+        "cost": "Chi phí theo giá minh họa (đồng)"
+      }
+    },
+    "prediction-correct": {
+      "kind": "goal",
+      "description": "Nước sôi và thời gian học sinh dự đoán lệch không quá 5 % (hoặc 10 s) so với thời gian thực",
+      "data": {
+        "guess": "Thời gian dự đoán (s)",
+        "time": "Thời gian đun sôi thực (s)"
+      }
+    }
+  }
+}

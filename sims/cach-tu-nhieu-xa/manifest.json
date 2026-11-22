@@ -1,0 +1,73 @@
+{
+  "slug": "cach-tu-nhieu-xa",
+  "version": "1.0.0",
+  "title": "Nhiễu xạ ánh sáng và cách tử",
+  "subject": "physics",
+  "grades": [12],
+  "description": "Chiếu ánh sáng đơn sắc có bước sóng thay đổi được, hoặc ánh sáng trắng, vuông góc qua một khe hẹp hoặc một cách tử nhiễu xạ và quan sát hình ảnh trên màn cách 1 m. Với một khe: vân trung tâm rộng ra khi khe hẹp lại. Với cách tử: các vân sáng chính thỏa mãn d·sinθ = k·λ, ánh sáng trắng cho các dải quang phổ có màu tím gần vân trung tâm nhất, và số bậc quan sát được bị giới hạn. Có nhiệm vụ đo bước sóng chưa biết bằng con trỏ trên màn. Nội dung mở rộng, nâng cao của lớp 12.",
+  "learningGoals": [
+    "Vận dụng công thức cách tử d·sinθ = k·λ để tìm góc lệch và vị trí x = L·tanθ của vân sáng chính bậc k; với góc nhỏ x ≈ k·λ·L/d.",
+    "Xác định bậc cao nhất quan sát được: kmax = ⌊d/λ⌋.",
+    "Giải thích vì sao ánh sáng trắng qua cách tử cho quang phổ, trong mỗi bậc tia tím lệch ít nhất và tia đỏ lệch nhiều nhất.",
+    "Nhiễu xạ qua một khe: vân tối thứ nhất ở a·sinθ = λ, khe càng hẹp thì vân sáng trung tâm càng rộng.",
+    "Đo bước sóng ánh sáng bằng cách tử: λ = d·sinθ / k."
+  ],
+  "state": {
+    "task": "Nhiệm vụ: \"explore\" (khám phá) hoặc \"measure\" (đo bước sóng chưa biết của nguồn đơn sắc)",
+    "mode": "Ánh sáng đi qua: \"grating\" (cách tử nhiễu xạ) hoặc \"slit\" (một khe hẹp)",
+    "source": "Nguồn sáng khi khám phá: \"mono\" (đơn sắc) hoặc \"white\" (ánh sáng trắng 380–760 nm)",
+    "wavelength": "Bước sóng của nguồn đơn sắc khi khám phá (nm)",
+    "lines": "Số vạch của cách tử trên 1 mm; chu kì d = 1/lines (mm)",
+    "slitWidth": "Bề rộng khe a (μm)",
+    "cursor": "Vị trí con trỏ đo trên màn, tính từ vân trung tâm (cm, dương về phía trên)",
+    "unknown": "Bước sóng ẩn của nguồn trong nhiệm vụ đo (nm); không hiện cho học sinh",
+    "answer": "Bước sóng học sinh đo được và nhập vào (nm)",
+    "feedback": "Kết quả lần kiểm tra gần nhất: \"\" (chưa kiểm tra), \"correct\" hoặc \"wrong\""
+  },
+  "events": {
+    "pattern-set": {
+      "kind": "result",
+      "description": "Học sinh vừa chỉnh xong nguồn sáng, cách tử hoặc khe; hình ảnh nhiễu xạ mới đã xác lập",
+      "data": {
+        "slit": "1 nếu dùng một khe, 0 nếu dùng cách tử",
+        "aperture": "Chu kì cách tử d hoặc bề rộng khe a (nm)",
+        "wavelength": "Bước sóng nguồn đơn sắc (nm); không có khóa này với ánh sáng trắng",
+        "firstOrderAngle": "Cách tử: góc lệch của vân sáng bậc 1 (độ); với ánh sáng trắng là của tia tím 380 nm",
+        "firstOrderAngleRed": "Cách tử, ánh sáng trắng: góc lệch bậc 1 của tia đỏ 760 nm (độ)",
+        "maxOrder": "Cách tử: bậc cao nhất ⌊d/λ⌋ (với ánh sáng trắng tính cho tia tím)",
+        "firstMinimumAngle": "Một khe: góc của vân tối thứ nhất (độ); với ánh sáng trắng là của tia tím",
+        "centralWidth": "Một khe: bề rộng vân sáng trung tâm trên màn (cm); với ánh sáng trắng là của tia tím"
+      }
+    },
+    "cursor-placed": {
+      "kind": "action",
+      "description": "Học sinh kéo con trỏ đo trên màn rồi thả",
+      "data": {
+        "position": "Vị trí con trỏ x (cm)",
+        "angle": "Góc θ ứng với con trỏ, tanθ = x/L (độ)"
+      }
+    },
+    "answer-checked": {
+      "kind": "action",
+      "description": "Học sinh bấm Kiểm tra trong nhiệm vụ đo bước sóng",
+      "data": {
+        "answer": "Bước sóng học sinh nhập (nm)",
+        "correct": "1 nếu lệch không quá 10 nm, 0 nếu chưa đúng"
+      }
+    },
+    "wavelength-measured": {
+      "kind": "goal",
+      "description": "Học sinh đo đúng bước sóng chưa biết, sai lệch không quá 10 nm",
+      "data": {
+        "answer": "Bước sóng học sinh nhập (nm)",
+        "wavelength": "Bước sóng thực của nguồn (nm)",
+        "error": "Độ lệch tuyệt đối (nm)"
+      }
+    },
+    "new-source": {
+      "kind": "action",
+      "description": "Học sinh bấm Nguồn sáng mới để nhận một bước sóng ẩn khác",
+      "data": {}
+    }
+  }
+}
